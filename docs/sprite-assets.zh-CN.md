@@ -1,6 +1,6 @@
 > 当前 API 指南。见[统一版本与验收状态](current-status.zh-CN.md)：当前 DLL 尚未完成实机验收；旧测试数量仅适用于其历史 DLL。
 
-# 嵌入式 Sprite 图集与肖像（）
+# 嵌入式 Sprite 图集与肖像
 
 `SpriteAssets` 让 C# Mod 把 PNG 作为程序集资源交给 EZapi 预检，再由 EZapi 安装到自己命名空间下的 Unity 图集。当前游戏构建已核实 `RenderHandler.atlasCache` 与 `GameItem.SetSprite`；EZapi 不安装全局图片解析补丁。
 

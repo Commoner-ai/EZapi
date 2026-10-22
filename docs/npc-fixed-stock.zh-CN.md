@@ -3,7 +3,7 @@
 > 历史验收记录（0.1.64/0.1.66），不作为当前 DLL 通过依据。
 > > 0.1.66：当前原生家居类型为 HOUSEHOLD_GOOD（实际 water_filter_adv 已验证），并保留旧 HOUSEHOLD 别名。随机批次可能只有未分类特殊物品，此时全部保持原样；有合格货位时才参与替换。最终原生 NPC 检查 48/0，九组共 954/0，见 验证（历史标识 `verification/guide-mesh-native-0.1.66.json`；原件未公开）。
 
-# 固定商人货位与机器供应（）
+# 固定商人货位与机器供应
 
 沿用现有 C# `NativeItemOptions.NpcTrade` / JSON `npcTrade`，无需再订阅补货事件。先声明并等待目录 Applied。
 

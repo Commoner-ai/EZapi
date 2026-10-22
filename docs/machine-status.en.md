@@ -1,6 +1,6 @@
 > Current API guide. See [release status](current-status.en.md): current-DLL native acceptance is pending; older test counts apply only to their historical binaries.
 
-# Machine readiness ()
+# Machine readiness
 
 Call `MachineRegistrationApi.Snapshot()` on the initialized game main thread. Views capture managed state at query time; query again after state changes.
 

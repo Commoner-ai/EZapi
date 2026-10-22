@@ -2,7 +2,7 @@
 
 # Installation and optional developer tools
 
-Release: **0.1.73-preview.3**, assembly version 0.1.73. This is a prerelease for the tested Probably Stolen Demo 050REV5-L baseline and MelonLoader IL2CPP .NET6. Unknown builds disable sensitive integrations.
+Release: **0.1.73-preview.4**, assembly version 0.1.73. This is a prerelease for the tested Probably Stolen Demo 050REV5-L baseline and MelonLoader IL2CPP .NET6. Unknown builds disable sensitive integrations.
 
 | Asset | Audience | Contents |
 | --- | --- | --- |
@@ -25,4 +25,4 @@ Disabling the panel does not delete test items or save data. Follow content auth
 
 The developer package puts sample packs under examples/ContentPacks; install them into Mods/EZapiPacks only when desired. Avoid simultaneously installing DLL and JSON examples that declare the same IDs. The offline validator needs .NET8. See [AI entry](AI-START-HERE.en.md), [workflows](developer-workflows.index.json) and [public signatures](public-api.index.json).
 
-This packaging change produces a new DLL hash. Earlier language/persistence evidence remains historical and is not transferred to the new binary.
+This documentation revision does not change the runtime DLL. Current-DLL native acceptance remains pending; earlier language/save tests belong to their recorded historical DLLs.

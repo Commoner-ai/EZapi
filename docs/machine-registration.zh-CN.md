@@ -9,7 +9,7 @@
 
 > 0.1.57：统一注册中的MachineRecipe可声明MaterialContents=ConsumeGraph，由标准事务处理含内部物品材料。见[machine-material-graph.zh-CN.md](machine-material-graph.zh-CN.md)。
 
-# EZapi 统一机器注册（）
+# EZapi 统一机器注册
 
 一个 `MachineRegistrationApi.RegisterMachine` 声明机器物品工厂、独立原生布局、可执行配方、输入过滤和自动图鉴。代码只依赖 EZapi 和当前游戏程序集。完整可编译示例见 `../src/EZapi.Sample/MachineRegistrationExamples.cs`；标准材料消费见 [machine-materials.zh-CN.md](machine-materials.zh-CN.md)。
 

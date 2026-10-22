@@ -78,7 +78,7 @@ Each JSON `localized*` object can contain inline `chinese` and `english` values,
 
 The game's built-in ModLoader guide uses `ModHelper.GetCurrentLocale().Identifier.Code` and `ModHelper.GetLocalized`. EZapi keeps its MelonLoader DLL API independent and does not imitate ModHelper or promise loader ABI compatibility. It adapts the locale getter for the exact current game build and retains an English fallback. See [localization.zh-CN.md](localization.zh-CN.md) for the official headerless CSV format and escaping rules.
 
-Compiled examples: [LanguageExamples.cs](../src/EZapi.Sample/LanguageExamples.cs) and the [bilingual JSON pack](../src/EZapi.Sample/Content/items.json). The pack parser, CSV bindings and item refresh have offline evidence. Current-DLL native en/zh switching, fixture items/tooltips/reopened storage and CSV display are included in the 415 checks cited above. Five fixture items passed 18 native save-stage, 27 new-process reload and 37 independent disk-readback checks.
+Compiled examples: [LanguageExamples.cs](../src/EZapi.Sample/LanguageExamples.cs) and the [bilingual JSON pack](../src/EZapi.Sample/Content/items.json). The pack parser, CSV bindings and item refresh have offline evidence. The historical 0.1.72 DLL records include 415 en/zh checks, 18 native-save checks, 27 reload checks and 37 disk-readback checks. These counts do not establish native acceptance for the current DLL.
 
 ## 0.1.72 presentation APIs
 

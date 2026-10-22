@@ -2,12 +2,12 @@
 
 # 安装与可选开发工具
 
-此版为 0.1.73-preview.3。运行 DLL 的程序集版本为 0.1.73，调试功能开关在启动时读取，修改后重启游戏。
+此版为 0.1.73-preview.4。运行 DLL 的程序集版本为 0.1.73，调试功能开关在启动时读取，修改后重启游戏。
 
 | 下载 | 用途 | 内容 |
 | --- | --- | --- |
-| EZapi-0.1.73-preview.3-game.zip | 玩家和仅需要前置的用户 | 仅一份 Mods/EZapi.dll，默认不显示调试 |
-| EZapi-0.1.73-preview.3-developer.zip | Mod作者和AI | 同一份前置、可选调试配置、校验器、完整指南、索引和样例；不需要额外游戏插件 |
+| EZapi-0.1.73-preview.4-game.zip | 玩家和仅需要前置的用户 | 仅一份 Mods/EZapi.dll，默认不显示调试 |
+| EZapi-0.1.73-preview.4-developer.zip | Mod作者和AI | 同一份前置、可选调试配置、校验器、完整指南、索引和样例；不需要额外游戏插件 |
 
 ## 玩家安装
 
@@ -50,4 +50,4 @@ powershell -NoProfile -ExecutionPolicy Bypass -File ./Set-EZapiDeveloperTools.ps
 
 开发包中的样例包放在 `examples/ContentPacks`；仅当需要示例时复制到 `Mods/EZapiPacks`。DLL 样例和 JSON 包不要重复安装同一组示例物品。离线校验器需要 .NET8；游戏内前置需要 MelonLoader 的 .NET6。从 [AI 入口](AI-START-HERE.zh-CN.md)、[开发路径索引](developer-workflows.index.json) 和 [完整公开签名](public-api.index.json) 开始。
 
-本次开关和封装改变了 DLL 哈希；此前的 415 项中英/保存重载报告保留为历史证据，不能冒充新 DLL 的完整实机验收。
+本次文档修订不改变运行 DLL。当前 DLL 实机验收仍待完成；此前 415 项中英/保存重载报告仅属于记录中的历史 DLL。

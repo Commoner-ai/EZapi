@@ -1,6 +1,6 @@
 > 当前 API 指南。见[统一版本与验收状态](current-status.zh-CN.md)：当前 DLL 尚未完成实机验收；旧测试数量仅适用于其历史 DLL。
 
-# 模块 API（）
+# 模块 API
 
 用途：追加机器模块仓准入、查询已安装模块、按官方顺序重算、订阅五个属性阶段、模块使用通知与工作成长。独立实现，不需要Forge。入口在 `src/EZapi/Modules.cs`；中文调用示例在 `src/EZapi.Sample/ModuleExamples.cs`。
 

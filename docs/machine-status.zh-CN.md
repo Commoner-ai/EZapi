@@ -1,6 +1,6 @@
 > 当前 API 指南。见[统一版本与验收状态](current-status.zh-CN.md)：当前 DLL 尚未完成实机验收；旧测试数量仅适用于其历史 DLL。
 
-# 机器状态查询（）
+# 机器状态查询
 
 `MachineRegistrationApi.Snapshot()` 仅在游戏主线程调用。返回的是调用时的托管快照；状态变化后重新查询。
 

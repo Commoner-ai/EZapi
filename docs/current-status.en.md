@@ -1,6 +1,6 @@
 # Current EZapi release and verification
 
-Current prerelease: **0.1.73-preview.3**, assembly **0.1.73**, license **MIT**. Framework source, tests and build tooling are public. Players install one Mods/EZapi.dll; the developer package adds optional tools, validator, guides and game-entry automation. Debug defaults off.
+Current prerelease: **0.1.73-preview.4**, assembly **0.1.73**, license **MIT**. Framework source, tests and build tooling are public. Players install one Mods/EZapi.dll; the developer package adds optional tools, validator, guides and game-entry automation. Debug defaults off.
 
 | Scope | Current result |
 | --- | --- |

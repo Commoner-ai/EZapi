@@ -31,3 +31,5 @@
 - [workshop-0.1.38.zh-CN.md](workshop-0.1.38.zh-CN.md)
 
 - [旧自动化命令与记录](native-test-automation.zh-CN.md)
+
+- [旧配方沿革](legacy-machine-recipes-notes.md)

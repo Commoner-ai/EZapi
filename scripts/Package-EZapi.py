@@ -15,7 +15,7 @@ import sys
 import zipfile
 
 ROOT = Path(__file__).resolve().parents[1]
-TAG = '0.1.73-preview.3'
+TAG = '0.1.73-preview.4'
 PUBLIC_REPOSITORY = 'https://github.com/Commoner-ai/EZapi'
 TEXT = {'.md', '.json', '.cs', '.csproj', '.ps1', '.xml', '.txt'}
 
@@ -87,6 +87,13 @@ for target in [game, developer]:
     write(target/'verification.json', verification)
 copy(ROOT/'docs/install-and-debug.zh-CN.md', game/'INSTALL.zh-CN.md')
 copy(ROOT/'docs/install-and-debug.en.md', game/'INSTALL.en.md')
+# The player package has no docs/ directory; its guide links must stand alone.
+for guide in game.glob('INSTALL*.md'):
+    content = guide.read_text(encoding='utf-8-sig')
+    content = re.sub(
+        r'(\[[^\]\n]*\]\()((?!https?://|#)[^\s\)]+)(\))',
+        lambda m: m[1]+PUBLIC_REPOSITORY+'/blob/v'+TAG+'/docs/'+m[2]+m[3], content)
+    guide.write_text(content, encoding='utf-8')
 for name in ['README.md', 'README.zh-CN.md']:
     copy(ROOT/name, developer/name)
 

@@ -4,7 +4,7 @@
 
 EZapi 是 Probably Stolen 的独立 Mod 前置框架，提供 DLL API、JSON 内容包、离线校验器、可编译示例及 AI 可读索引。优先使用游戏官方接口，并在当前游戏构建中集中处理兼容适配。
 
-**当前预发布：0.1.73-preview.3，程序集版本0.1.73。** 完整目标尚未完成。
+**当前预发布：0.1.73-preview.4，程序集版本0.1.73。** 完整目标尚未完成。
 
 本仓库按 **MIT 许可证开源**：框架、离线校验器、测试、构建脚本、文档、接口索引和调用示例均可查看、修改与分发。旧私有仓库的历史不迁入，游戏程序集及私人数据不分发。玩家从 Releases 下载安装包，源码开发见[构建说明](docs/build-from-source.zh-CN.md)。
 
@@ -15,7 +15,7 @@ EZapi 是 Probably Stolen 的独立 Mod 前置框架，提供 DLL API、JSON 内
 - [常见 API 任务索引](docs/API.index.zh-CN.json)、[领域索引](docs/source.index.json)、[错误索引](docs/errors.index.json)。
 - [当前游戏语言指南](docs/game-language.zh-CN.md)、[English guide](docs/game-language.en.md)、[语言任务索引](docs/game-language.index.json)。
 - [知识库升级/服务/前置条件扩展](docs/progression-requirements.index.json)、[物品版本化数据](docs/item-data.index.json)、[Forge公共能力对照](docs/forge-parity.index.json)。
-- [本次版本与验证范围](docs/releases/0.1.73-preview.3.md)。
+- [本次版本与验证范围](docs/releases/0.1.73-preview.4.md)。
 
 ## 两个下载包
 

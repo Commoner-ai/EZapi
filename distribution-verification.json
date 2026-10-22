@@ -1,16 +1,16 @@
 {
-  "tag": "0.1.73-preview.3",
+  "tag": "0.1.73-preview.4",
   "passed": true,
   "assets": [
     {
-      "file": "EZapi-0.1.73-preview.3-game.zip",
-      "sha256": "0B66541E62FC8F4E80BD73C137613CF869EBF1C99201E753326C5DBFA6C9CB5C",
-      "bytes": 709531
+      "file": "EZapi-0.1.73-preview.4-game.zip",
+      "sha256": "EB885F1B2CB7DAA9E8F20C2ACEC807407295E0826909B02886B1F9A2E2A6F8F7",
+      "bytes": 709629
     },
     {
-      "file": "EZapi-0.1.73-preview.3-developer.zip",
-      "sha256": "EA405EEA1C3BB287CBAD6F76EF99FE7B386229FA73C8A2509F128AE1656CCC5B",
-      "bytes": 1728251
+      "file": "EZapi-0.1.73-preview.4-developer.zip",
+      "sha256": "DC02BF4C81C3ED110A9B3047BC7F25A0EB302F09D935363F17E779762EADEB3F",
+      "bytes": 1731991
     }
   ],
   "dllSHA256": "7E4AB675B0E3BD81C56EEC4606731A6880287549EB4E8E90A707BE18BD52BEEF",
@@ -58,10 +58,10 @@
   "sourcePublishedInRepository": true,
   "oldPrivateHistoryImported": false,
   "documentationVerification": {
-    "releaseTag": "0.1.73-preview.3",
+    "releaseTag": "0.1.73-preview.4",
     "indexesChecked": 33,
-    "markdownPagesChecked": 155,
-    "localLinksChecked": 520,
+    "markdownPagesChecked": 157,
+    "localLinksChecked": 535,
     "nativeAcceptanceRemainsPending": true
   }
 }

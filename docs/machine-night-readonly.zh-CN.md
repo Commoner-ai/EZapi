@@ -1,6 +1,6 @@
 > 当前 API 指南。见[统一版本与验收状态](current-status.zh-CN.md)：当前 DLL 尚未完成实机验收；旧测试数量仅适用于其历史 DLL。
 
-# 夜间批次数回调的只读契约（）
+# 夜间批次数回调的只读契约
 
 `MachineDefinition.ResolveNightlyBatchCount` 只负责返回本晚允许尝试的批次数，不应修改机器、材料、槽位或存档。省略时为1；有效范围1..64。禁用自动夜间加工用 `EnableNightly=false`，不要用返回0代替。
 

@@ -1,6 +1,6 @@
 > 当前 API 指南。见[统一版本与验收状态](current-status.zh-CN.md)：当前 DLL 尚未完成实机验收；旧测试数量仅适用于其历史 DLL。
 
-# 机器自定义资源事务（）
+# 机器自定义资源事务
 
 `MachineTransactionApi.Run` 执行一次同步的自定义加工资源事务。它补齐 Forge `IForgeBatchTransaction` 对应的 Validate/Apply/Verify/Restore/Fault 契约，并统一管理新产物的创建与失败清理。复用 `MachineBatchContext`，不重新定义批次价值或液体单位。此入口尚未提供标准配方匹配、机器注册、自动冻结、跨夜调度或外部电网。
 

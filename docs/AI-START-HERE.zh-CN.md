@@ -2,7 +2,7 @@
 
 # EZapi：开发者与AI入口
 
-当前预发布 **0.1.73-preview.3**，程序集版本0.1.73。公开发布仓库：[Commoner-ai/EZapi](https://github.com/Commoner-ai/EZapi)。框架、离线校验器、测试和构建工程已按 MIT 开源，见[源码构建](build-from-source.zh-CN.md)；开发普通 Mod 仍只需公开 DLL 接口。
+当前预发布 **0.1.73-preview.4**，程序集版本0.1.73。公开发布仓库：[Commoner-ai/EZapi](https://github.com/Commoner-ai/EZapi)。框架、离线校验器、测试和构建工程已按 MIT 开源，见[源码构建](build-from-source.zh-CN.md)；开发普通 Mod 仍只需公开 DLL 接口。
 
 ## 从任务到示例
 

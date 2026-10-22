@@ -1,6 +1,6 @@
 > Current API guide. See [release status](current-status.en.md): current-DLL native acceptance is pending; older test counts apply only to their historical binaries.
 
-# Read-only nightly batch quota callbacks ()
+# Read-only nightly batch quota callbacks
 
 `MachineDefinition.ResolveNightlyBatchCount` returns the number of batches to attempt. It must not change machines, resources, inventories or saves. The default is1 and the valid range is1..64. Use `EnableNightly=false` to disable automatic processing; returning0 is invalid.
 

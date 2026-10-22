@@ -6,7 +6,7 @@
 
 An independent **Probably Stolen** Mod framework: DLL APIs, declarative JSON packs, an offline validator, buildable examples and machine-readable AI indexes. Prefer official game APIs. No Forge runtime dependency or bundled game assemblies.
 
-**0.1.73-preview.3** is a prerelease, with assembly version 0.1.73. Reference functionality has 39 implemented groups; this is not a promise of binary compatibility or complete gameplay validation.
+**0.1.73-preview.4** is a prerelease, with assembly version 0.1.73. Reference functionality has 39 implemented groups; this is not a promise of binary compatibility or complete gameplay validation.
 
 **MIT open source:** framework implementation, offline validator, tests, build tooling, documentation and examples are available here. Older private history is not imported. See [build from source](docs/build-from-source.en.md).
 
@@ -35,6 +35,6 @@ dotnet build docs/examples/minimal-dll/SimpleMod.csproj -c Release -p:GameDir='<
 
 Language follows game settings. Additional CSV locales remain supported with English/author fallback; Chinese/English are priority acceptance locales. Official docs: [probably-stolen-modding](https://github.com/dragonpan2/probably-stolen-modding). Build and reference-fetch scripts are available in this repository.
 
-The departure API creates a new DLL hash. Earlier native language/save evidence remains tied to its historical hash. Offline verification is not native gameplay verification. See [release notes](docs/releases/0.1.73-preview.3.md).
+This documentation revision keeps the runtime DLL unchanged. Earlier native language/save evidence remains tied to its historical hash. Offline verification is not native gameplay verification. See [release notes](docs/releases/0.1.73-preview.4.md).
 
 See the MIT LICENSE for source and binary reuse, and THIRD-PARTY-NOTICES.md for dependencies. Game/runtime DLLs and private workspace data are not redistributed.

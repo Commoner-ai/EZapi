@@ -1,6 +1,8 @@
 > Current API guide. See [release status](current-status.en.md): current-DLL native acceptance is pending; older test counts apply only to their historical binaries.
 
-# Native furnace contents and external power — EZapiRegister the provider, initialize each fresh detached unowned connector with InitializeConnector, and wait for IsAvailable. Keep and dispose the registration lease. The existing four-argument Register overload remains available and defaults to MachineMaterialContentsPolicy.Reject.
+# Native furnace contents and external power
+
+Register the provider, initialize each fresh detached unowned connector with InitializeConnector, and wait for IsAvailable. Keep and dispose the registration lease. The existing four-argument Register overload remains available and defaults to MachineMaterialContentsPolicy.Reject.
 
 To intentionally consume a material together with its contents, call ExternalPowerApi.Register(ownerId, connectorId, queryEnergy, planDebit, MachineMaterialContentsPolicy.ConsumeGraph). This policy applies only to the native furnace; EZapi recipes retain their own MaterialContents policy. Query and plan callbacks must be read-only. A default Reject provider can still process a furnace containing an old output with contents: old outputs and their contents are always preserved.
 

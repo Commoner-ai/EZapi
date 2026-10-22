@@ -4,7 +4,9 @@
 
 > 0.1.62：复杂材料图、液体物品/容器产出、普通电池及外电已补充两晚真实保存和冷启动验证；下方历史边界以本条限定的矩阵更新，完整范围见[跨夜指南](machine-persistence.zh-CN.md)。不包含原版熔炉所有材料策略或崩溃恢复。
 
-# 外部电力：EZapi`ExternalPowerApi`让内容Mod将连接器物品放入EZapi机器的电池槽，机器通过作者的`IPowerTransaction`操作外部电源。框架负责配方、材料预留、产物交付及失败调用顺序；作者负责真实外部能源的预检、扣除、校验、恢复。可编译示例见`src/EZapi.Sample/ExternalPowerExamples.cs`。
+# 外部电力与连接器
+
+`ExternalPowerApi`让内容Mod将连接器物品放入EZapi机器的电池槽，机器通过作者的`IPowerTransaction`操作外部电源。框架负责配方、材料预留、产物交付及失败调用顺序；作者负责真实外部能源的预检、扣除、校验、恢复。可编译示例见`src/EZapi.Sample/ExternalPowerExamples.cs`。
 
 ## 最小接入顺序
 

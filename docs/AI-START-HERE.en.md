@@ -2,7 +2,7 @@
 
 # EZapi developer and AI entry point
 
-Current prerelease: **0.1.73-preview.3**, assembly0.1.73. [Public distribution](https://github.com/Commoner-ai/EZapi). Framework implementation, offline tests and build projects are MIT open source; see [source builds](build-from-source.en.md). Use the public DLL APIs, metadata, guides and consumer examples.
+Current prerelease: **0.1.73-preview.4**, assembly0.1.73. [Public distribution](https://github.com/Commoner-ai/EZapi). Framework implementation, offline tests and build projects are MIT open source; see [source builds](build-from-source.en.md). Use the public DLL APIs, metadata, guides and consumer examples.
 
 ## Choose a task
 

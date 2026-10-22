@@ -1162,7 +1162,7 @@
   "previousImplementationVersionBaseline": "0.1.51",
   "documentationContext": {
     "kind": "current-api-guide",
-    "releaseTag": "0.1.73-preview.3",
+    "releaseTag": "0.1.73-preview.4",
     "assemblyVersion": "0.1.73",
     "releaseStatus": "release-status.json",
     "nativeRuntimeVerified": false,

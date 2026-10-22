@@ -4,7 +4,7 @@
 
 > 0.1.60：独立处理器已支持 `Process(machine,inventory)`；Runtime入口复制并绑定Template，自定义窗口可借用真实子库存。原生交互委托仍由窗口作者设置，见[machine-inventory-binding.zh-CN.md](machine-inventory-binding.zh-CN.md)。
 
-# 机器自动化与夜间加工（）
+# 机器自动化与夜间加工
 
 统一机器现在默认接入游戏的 `BeforeNight` 生命周期，每台每晚默认尝试一批。框架复用已核对的 `PlayerStore.EndNight` 生命周期入口，不添加第二套每帧调度，也不请求保存。基本注册见 [机器注册](machine-registration.zh-CN.md)，材料消费见 [标准事务](machine-materials.zh-CN.md)，可编译示例为 `src/EZapi.Sample/MachineAutomationExamples.cs`。
 

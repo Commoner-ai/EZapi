@@ -16183,7 +16183,7 @@
   "meaning": "Metadata reference only, not a dependency, code implementation, runtime capability or compatibility claim. All public DTOs/constructors/properties/methods retained for scope coverage.",
   "documentationContext": {
     "kind": "current-api-guide",
-    "releaseTag": "0.1.73-preview.3",
+    "releaseTag": "0.1.73-preview.4",
     "assemblyVersion": "0.1.73",
     "releaseStatus": "release-status.json",
     "nativeRuntimeVerified": false,

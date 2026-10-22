@@ -1,6 +1,8 @@
 > Current API guide. See [release status](current-status.en.md): current-DLL native acceptance is pending; older test counts apply only to their historical binaries.
 
-# Recipe guide images — EZapiUse an already registered `RecipeGuideFigure.ItemId`. No image path or new JSON field is required. The guide creates a temporary detached default item through the current directory and calls the official `GameItemElement.ResolveItemSprite()`. For automatic machine guides, `RecipeGuideDisplay.IllustrationItemId` controls the displayed item independently of actual recipe inputs/outputs.
+# Recipe guide images
+
+Use an already registered `RecipeGuideFigure.ItemId`. No image path or new JSON field is required. The guide creates a temporary detached default item through the current directory and calls the official `GameItemElement.ResolveItemSprite`. For automatic machine guides, `RecipeGuideDisplay.IllustrationItemId` controls the displayed item independently of actual recipe inputs/outputs.
 
 Names, requirements and quantity labels support `LocalizedName`, `LocalizedRequirement` and `LocalizedQuantity`; machine names and notes also support typed bilingual text. See [localization](recipe-guide-localization.en.md). Guide generation never executes processing conditions, dynamic resolvers or transactions.
 

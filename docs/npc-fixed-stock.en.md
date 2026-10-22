@@ -3,7 +3,7 @@
 > Historical verification note (0.1.66); not evidence for the current DLL. 
 > > 0.1.66: native household goods use HOUSEHOLD_GOOD (verified with actual water_filter_adv); HOUSEHOLD remains a legacy alias. A random batch containing only unclassified special goods remains unchanged. Eligible slots alone participate in substitution. Final native NPC checks 48/0; nine groups 954/0. See verification (historical identifier `verification/guide-mesh-native-0.1.66.json`; original artifact not distributed).
 
-# Fixed merchant slots and machine stock ()
+# Fixed merchant slots and machine stock
 
 Use existing NativeItemOptions.NpcTrade or JSON npcTrade, after catalog application. A functional custom machine sets MachineDefinition.ItemOptions.NpcTrade during RegisterMachine; a JSON category alone does not add machine behavior. Content packs require minEzapiVersion 0.1.64.
 

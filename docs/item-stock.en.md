@@ -1,6 +1,6 @@
 > Current API guide. See [release status](current-status.en.md): current-DLL native acceptance is pending; older test counts apply only to their historical binaries.
 
-# Night shop supply ()
+# Night shop supply
 
 Use `nightShop: "repeatable"` or `"unique"` in an item JSON declaration, or `NativeItemOptions.NightShop` and optional `IsNightShopAvailable` for a C# factory. Require EZapi0.1.65 or newer. None is the default. Unique means currently not owned, including nested player items; it is not a lifetime purchase limit.
 
