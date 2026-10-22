@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "releaseTag": "0.1.73-preview.4",
+  "releaseTag": "0.1.73-preview.5",
   "assemblyVersion": "0.1.73",
   "status": "prerelease",
   "license": "MIT",
@@ -30,6 +30,8 @@
     "zh": "current-status.zh-CN.md",
     "en": "current-status.en.md",
     "history": "history/README.md",
-    "exactApi": "public-api.index.json"
+    "exactApi": "public-api.index.json",
+    "artReferenceZh": "item-art.zh-CN.md",
+    "artReferenceEn": "item-art.en.md"
   }
 }

@@ -2,7 +2,9 @@
 
 # EZapi developer and AI entry point
 
-Current prerelease: **0.1.73-preview.4**, assembly0.1.73. [Public distribution](https://github.com/Commoner-ai/EZapi). Framework implementation, offline tests and build projects are MIT open source; see [source builds](build-from-source.en.md). Use the public DLL APIs, metadata, guides and consumer examples.
+Current prerelease: **0.1.73-preview.5**, assembly0.1.73. [Public distribution](https://github.com/Commoner-ai/EZapi). Framework implementation, offline tests and build projects are MIT open source; see [source builds](build-from-source.en.md). Use the public DLL APIs, metadata, guides and consumer examples.
+
+For artwork matching the original game, use the optional [item art guide](item-art.en.md), [asset/workflow index](item-art.index.json) and bundled same-category references.
 
 ## Choose a task
 
@@ -13,7 +15,7 @@ Current prerelease: **0.1.73-preview.4**, assembly0.1.73. [Public distribution](
 
 ## Download the developer package
 
-Use developer.zip from [Releases](https://github.com/Commoner-ai/EZapi/releases). It contains the same runtime DLL as game.zip, XML comments, binary validator, schemas, guides, consumer examples and automation tools. Samples are opt-in and developer tools default off. Players install one Mods/EZapi.dll. The GitHub source ZIP at the preview.2 tag includes framework and tool sources; ready-to-use binaries are in release assets.
+Use developer.zip from [Releases](https://github.com/Commoner-ai/EZapi/releases). It contains the same runtime DLL as game.zip, XML comments, binary validator, schemas, guides, consumer examples and automation tools. Samples are opt-in and developer tools default off. Players install one Mods/EZapi.dll. The GitHub source ZIP at the current release tag includes framework and tool sources; ready-to-use binaries are in release assets.
 
 JSON packs go under `Mods/EZapiPacks/<packId>/` with pack.json and items.json. See [pack guide](content-packs.zh-CN.md), [manifest schema](../schemas/pack.schema.json), [item schema](../schemas/items.schema.json) and [sample](../src/EZapi.Sample/Content/items.json). From the extracted developer package:
 

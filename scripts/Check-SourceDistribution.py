@@ -40,6 +40,17 @@ for name in names:
     allowed = (len(parts) == 1 and name in root_files)
     if len(parts) >= 2 and parts[0] in {'docs', 'schemas', 'developer-tools', 'distribution'}:
         allowed = path.suffix in {'.md', '.json', '.png', '.cs', '.csproj', '.xml', '.ps1', '.csv', '.txt'}
+    if len(parts) >= 2 and parts[:2] == ('docs', 'art-reference'):
+        # Explicit user-authorized reference set; extracted game code, runtime
+        # assemblies and unrelated game data remain outside this allowlist.
+        art_root = root/'docs/art-reference'
+        art = json.loads((art_root/'art-reference.index.json').read_text(encoding='utf-8-sig'))
+        selected_art = {'00-overview.png', '09-palette-reference.png',
+                        'AI-PROMPT.zh-CN.txt', 'AI-PROMPT.en.txt', 'NOTICE.md',
+                        'README.md', 'verification.json', 'art-reference.index.json'}
+        for item in art['items']:
+            selected_art.update([item['original'], item['enlarged4x'], 'boards/'+item['category']+'.png'])
+        allowed = path.relative_to('docs/art-reference').as_posix() in selected_art
     if len(parts) >= 3 and parts[:2] == ('examples', 'ContentPacks'):
         allowed = path.suffix in {'.json', '.png', '.csv'}
     if len(parts) >= 3 and parts[:2] in {('src', 'EZapi'), ('src', 'EZapi.Sample'), ('src', 'EZapi.ContentValidator')}:
@@ -74,6 +85,9 @@ assert len(list((root/'work').glob('ezapi-*-tests/*.csproj'))) == 59, 'offline s
 if args.write_manifest:
     (root/'source-distribution.json').write_text(json.dumps({
         'schemaVersion': 1, 'license': 'MIT', 'frameworkSourceIncluded': True,
+        'originalGameArtReferenceIncluded': True,
+        'originalArtworkCoveredByEzapiMit': False,
+        'artworkRightsNotice': 'docs/art-reference/NOTICE.md',
         'oldPrivateHistoryImported': False, 'gameAssembliesIncluded': False,
         'verificationScope': 'source file allowlist, hashes and sensitive text patterns; not native gameplay',
         'files': rows}, ensure_ascii=False, indent=2)+'\n', encoding='utf-8')

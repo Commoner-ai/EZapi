@@ -2,6 +2,9 @@
   "schemaVersion": 1,
   "license": "MIT",
   "frameworkSourceIncluded": true,
+  "originalGameArtReferenceIncluded": true,
+  "originalArtworkCoveredByEzapiMit": false,
+  "artworkRightsNotice": "docs/art-reference/NOTICE.md",
   "oldPrivateHistoryImported": false,
   "gameAssembliesIncluded": false,
   "verificationScope": "source file allowlist, hashes and sensitive text patterns; not native gameplay",
@@ -16,7 +19,7 @@
     },
     {
       "path": "AGENTS.md",
-      "sha256": "5440EB93A086842521A186166E07D209C6DE26B783F67D2C52424F2892CDE035"
+      "sha256": "5668E4AF870AEC3640F12686F8DFF419636FA0F092CC5CB32B268AF9D7A0DF5B"
     },
     {
       "path": "Build-EZapi.ps1",
@@ -28,15 +31,15 @@
     },
     {
       "path": "README.md",
-      "sha256": "A323360D5B7BD4DC634BB70CE4E0C4FA8CF43E5874A66103271CE7EDDBDBBC96"
+      "sha256": "8087A0B27F2E09FE9B246DB943F163B6295E3AA1328B05D96D14D6BF5CDC4D16"
     },
     {
       "path": "README.zh-CN.md",
-      "sha256": "8850EFD419AAA2D41B1503D041108691BB4CDC6B0C82DB73754BD0AB3051AB2B"
+      "sha256": "41375078C494DCC3819FE5B858CA1AB2D3B2495F11A0E4ED313257FB2C565441"
     },
     {
       "path": "THIRD-PARTY-NOTICES.md",
-      "sha256": "7436D9D6207EF206924DEBE766144A60D2C3E7AFF4E9A9A5B7B2A685EF13360A"
+      "sha256": "1F88F22A60C52D55B5D0569A05DC1296B485ACBB38C33C6E2E2B83A828232836"
     },
     {
       "path": "developer-tools/Set-EZapiDeveloperTools.ps1",
@@ -68,7 +71,7 @@
     },
     {
       "path": "distribution-verification.json",
-      "sha256": "D074DC099F42049C97C57458DFE9AC611AD6BA2958C9C7A76403E9B266535554"
+      "sha256": "A445626AB286F569A742159EDC27B0251E314E673E6ABC7461236FF3B9991C42"
     },
     {
       "path": "distribution/Install-EZapi.ps1",
@@ -88,15 +91,15 @@
     },
     {
       "path": "docs/AI-START-HERE.en.md",
-      "sha256": "9433EB6892074700F59BB6DB04C32332BABE3A2E62ACA048D0480EC04B446A8A"
+      "sha256": "F51B0606F5C668905B5B7B9BB68E49A22C1F6F930574E0E3C5F17295F9108793"
     },
     {
       "path": "docs/AI-START-HERE.zh-CN.md",
-      "sha256": "97720D56A20364B9C7AAC8CD56B94B9F56038B5FF8715589F4EE12C087D8FD93"
+      "sha256": "85440E7EEB66E112143EB14B0E3183DF4D1ECBA0800BC4A1A7BA2C368AC55074"
     },
     {
       "path": "docs/API.index.zh-CN.json",
-      "sha256": "93D3DAE73F1830B7BFEFDC3A24775AED893065FB9D4DA0EBB6F8D5BAD49579B5"
+      "sha256": "11AD525EA892C8ABA501D031FA663232243F657DD847C1E20F0A310D2B3C415D"
     },
     {
       "path": "docs/FORGE-PARITY.zh-CN.md",
@@ -105,6 +108,838 @@
     {
       "path": "docs/SOURCE-PROVENANCE.zh-CN.md",
       "sha256": "47AB4C8027B1709CB4C192DB76BB655EF40F7DD6ADA26232FCB10BBAFD99CC45"
+    },
+    {
+      "path": "docs/art-reference/00-overview.png",
+      "sha256": "A361B483857E485223AB29CBF1D88CE6669E96B2B235E4EE58F0F90A1401C520"
+    },
+    {
+      "path": "docs/art-reference/09-palette-reference.png",
+      "sha256": "E6BE58FF266E7D74D175B824EAF7B589F6339C3EBCACAE4EEDD9413E6E0994C7"
+    },
+    {
+      "path": "docs/art-reference/AI-PROMPT.en.txt",
+      "sha256": "3ECA2EBAD3168494F311D157FAF790F12B5CA671CD656C58531FCFCD9449E915"
+    },
+    {
+      "path": "docs/art-reference/AI-PROMPT.zh-CN.txt",
+      "sha256": "476D9CB8B3C5112C45CDEA36052D2F35156589F62F7FEAE2B602B8466F21094C"
+    },
+    {
+      "path": "docs/art-reference/NOTICE.md",
+      "sha256": "DBA19855AEE5F0D5C6E41B5CE0EB329BE9AB2BE54C96F3A042DA8E8341E3141B"
+    },
+    {
+      "path": "docs/art-reference/README.md",
+      "sha256": "B2EE6CFE8B3AA38C356CCDF8E8792F47CED1B1BAF1EA2D9F82CE709DB85F11A3"
+    },
+    {
+      "path": "docs/art-reference/art-reference.index.json",
+      "sha256": "45A353F92924A2A19A80F1E2B390695B070DF6EA5BE78E6A1EF8C741241120F2"
+    },
+    {
+      "path": "docs/art-reference/boards/01-tools.png",
+      "sha256": "565B0A7EF7BBECD8839E867160459A106B6857F8ED8E9A42E938500D62D98817"
+    },
+    {
+      "path": "docs/art-reference/boards/02-food-drink.png",
+      "sha256": "F515FBBB8FD7FA90DE8CCF5A41DF801E66935D0C6DB34D32E6C8DCF32F75B492"
+    },
+    {
+      "path": "docs/art-reference/boards/03-medical.png",
+      "sha256": "B7C3395FB7F19E37DFC813E2EB7A55154B036ABF658B15766CBCEBC9A92D0AD4"
+    },
+    {
+      "path": "docs/art-reference/boards/04-containers.png",
+      "sha256": "B51248AF945515DDB6FFF06B4FF9B756FBA30C3C034D21CF591CB45F1996960C"
+    },
+    {
+      "path": "docs/art-reference/boards/05-machines.png",
+      "sha256": "9553FFD8362D3FEAA17A4E271490EAF51B66C44ADD3D69A8831A86780477D608"
+    },
+    {
+      "path": "docs/art-reference/boards/06-modules-electronics.png",
+      "sha256": "474962134EB1035A2277059650DBA4CBE1CDA25306EA0C1A942C8F397A0E0BAB"
+    },
+    {
+      "path": "docs/art-reference/boards/07-materials-nature.png",
+      "sha256": "A0718CDB51C6984FD424DDF2FB801ABFD01E11B687A746386F8E686ED324921A"
+    },
+    {
+      "path": "docs/art-reference/boards/08-liquid-states.png",
+      "sha256": "E9FEF78DB01E8F2DF348DAF8344C5BF0DF785CDEF715749432BFE0EB92E2C342"
+    },
+    {
+      "path": "docs/art-reference/enlarged-4x/01-tools/box_cutter.png",
+      "sha256": "F91F7CB60A1E0EE9D57BC997824F462A9CAFDCDEC9FAF44442B1A0038D6B07ED"
+    },
+    {
+      "path": "docs/art-reference/enlarged-4x/01-tools/crowbar.png",
+      "sha256": "05C77FAB9E8F143C5074C9F165C0AD9F431FAAE88FAD0E1858CE3DEC5751011B"
+    },
+    {
+      "path": "docs/art-reference/enlarged-4x/01-tools/flashlight3.png",
+      "sha256": "56C7CECBFD8FD18E54E5D0EE3642BDBF6E141818940F3EC334A7DC13737699C1"
+    },
+    {
+      "path": "docs/art-reference/enlarged-4x/01-tools/hatchet.png",
+      "sha256": "45481C141315C8CC3CC56486AF8BFCDECCDC59B29CEA19E23171DE723E300BDB"
+    },
+    {
+      "path": "docs/art-reference/enlarged-4x/01-tools/labeler.png",
+      "sha256": "F9D7DEC6C7F6C52D66B4AD9B1FEB757AC26C01574AEF56F08AD315109EE1BDB7"
+    },
+    {
+      "path": "docs/art-reference/enlarged-4x/01-tools/magnifier.png",
+      "sha256": "C23558BBEE767885398FA96EC6D62B8C8A586F2A2B7380C9A7F52E6C5C8D90A3"
+    },
+    {
+      "path": "docs/art-reference/enlarged-4x/01-tools/metal_scanner.png",
+      "sha256": "5B5EFBE7DC5864782BEC2D214B200A5C100F0D19CD200598909D6A4360206CB5"
+    },
+    {
+      "path": "docs/art-reference/enlarged-4x/01-tools/portable_water_purifier.png",
+      "sha256": "E81D4CB96765A7C20501054DC058A0500DC05ED115B6A79498063EF50F4F6ABA"
+    },
+    {
+      "path": "docs/art-reference/enlarged-4x/01-tools/screwdriver_s.png",
+      "sha256": "E42957CBD7162DE6007A40579710851364576800E9A721E61540332194D5EFAA"
+    },
+    {
+      "path": "docs/art-reference/enlarged-4x/01-tools/skinning_knife.png",
+      "sha256": "F9675F7E9AA6CE392F13078E60CB6A72A1F6D410978E1615678B430A8E6B8ACC"
+    },
+    {
+      "path": "docs/art-reference/enlarged-4x/01-tools/welder_s.png",
+      "sha256": "AC1616B773E636BEE1A2CC3B8FBBC599808FC0934FACD87C02777B012E783FA4"
+    },
+    {
+      "path": "docs/art-reference/enlarged-4x/01-tools/wirecutter.png",
+      "sha256": "19AB269BFE71F86B32077EA5D821F87D2062C7D8494EA2EB4164B22A0DDDE579"
+    },
+    {
+      "path": "docs/art-reference/enlarged-4x/02-food-drink/cat_bar.png",
+      "sha256": "88E13168E858F9E1739B08AA52D7598844AB8D14D52C06B24DF7C6DBBAF25056"
+    },
+    {
+      "path": "docs/art-reference/enlarged-4x/02-food-drink/cheese.png",
+      "sha256": "5C917B06DBE065E47C492474F2108C67979ED0451722A6EB8D01391191F82163"
+    },
+    {
+      "path": "docs/art-reference/enlarged-4x/02-food-drink/coffee_bean.png",
+      "sha256": "738434A406A8661C3DF9612EC40693A2DE096D3B4B67DC7A5A297D5F8F344B65"
+    },
+    {
+      "path": "docs/art-reference/enlarged-4x/02-food-drink/cup_noodle.png",
+      "sha256": "B6BD8DCC008B2CCDAB659F1506074459FCB8AA3278E644C482645B9E71096C5A"
+    },
+    {
+      "path": "docs/art-reference/enlarged-4x/02-food-drink/energy_drink.png",
+      "sha256": "71C368B5E450139BC875180745E66E28CEE0003FE64E2DDACC3A485EC8764E4E"
+    },
+    {
+      "path": "docs/art-reference/enlarged-4x/02-food-drink/items_food_soda_red.png",
+      "sha256": "B53662F17BA5B43F9F0FCAA15CC67CB50FC23A32ECF1036B2E3C397E278DB788"
+    },
+    {
+      "path": "docs/art-reference/enlarged-4x/02-food-drink/juice_pouch.png",
+      "sha256": "6748F3F91605F71CCA4D6FAD7FEAA949E2C335BCF6F7B2E53C7CB05A36E647D5"
+    },
+    {
+      "path": "docs/art-reference/enlarged-4x/02-food-drink/nutrifruit.png",
+      "sha256": "7AC4BC47FA29F51316D82ECFC964CE7C6D4DA8E6A001A0646B18A66FEAE3096F"
+    },
+    {
+      "path": "docs/art-reference/enlarged-4x/02-food-drink/processed_meat.png",
+      "sha256": "3B1AEB718CF4FDA92586C3FAAB69289DC4EAE30B13FBBB1F2DC9441D43E795D9"
+    },
+    {
+      "path": "docs/art-reference/enlarged-4x/02-food-drink/raw_meat.png",
+      "sha256": "CEDBDB783647A478420F82FB8B873C5A8B5AF0D62E37714040DE5631A94A9780"
+    },
+    {
+      "path": "docs/art-reference/enlarged-4x/02-food-drink/ribwich.png",
+      "sha256": "D681CC7D2F10052B9CC3DDB17D359C2D847AF66C12803822E0E922FD0CD995B5"
+    },
+    {
+      "path": "docs/art-reference/enlarged-4x/02-food-drink/wine_bottle.png",
+      "sha256": "7143780FFA267A3638FC58906A01F5DACFACB13338345E14134DB9DFB52B93C5"
+    },
+    {
+      "path": "docs/art-reference/enlarged-4x/03-medical/bandage_small.png",
+      "sha256": "3186B346137CF8D5D1BB707084261CC77D7E5B8F2283A8B3868E8805C60B8936"
+    },
+    {
+      "path": "docs/art-reference/enlarged-4x/03-medical/blood_bag.png",
+      "sha256": "ADA3544F4FA83CAF35D27AB9257FB1DF30C92DDFBD4F998A88A368692F52E724"
+    },
+    {
+      "path": "docs/art-reference/enlarged-4x/03-medical/blue_blood_bag.png",
+      "sha256": "A64ECA60A7F7F287D3ABD176FBE8A0D969B806D1433C7D9E0205D0968AFCC5E5"
+    },
+    {
+      "path": "docs/art-reference/enlarged-4x/03-medical/hemostatic_bandage_small.png",
+      "sha256": "5F266FB6E7B4F727AB5659F03AFC2269C12FBA74D493F04F4FA4037605F2FA59"
+    },
+    {
+      "path": "docs/art-reference/enlarged-4x/03-medical/med_bottle_blue.png",
+      "sha256": "373D10EBE8E71EF2E2F1557E983C8C249CCA772A997D8A6EC78851B57E794F3A"
+    },
+    {
+      "path": "docs/art-reference/enlarged-4x/03-medical/med_bottle_orange.png",
+      "sha256": "739299E08CE75EE9D0850C9C1532E6F3724CEC2FBDB8623C9DD50EE1E9879694"
+    },
+    {
+      "path": "docs/art-reference/enlarged-4x/03-medical/med_bottle_red.png",
+      "sha256": "5648814BA003CFB05B911B8AFBF215BFF80BC5ECC48A6C9E3C2A466133F473E3"
+    },
+    {
+      "path": "docs/art-reference/enlarged-4x/03-medical/med_bottle_violet.png",
+      "sha256": "4994E8B1AF77BE5CFFF796455C0DDC39D7B54F9FFCD6573B732025EDDEA68DC7"
+    },
+    {
+      "path": "docs/art-reference/enlarged-4x/03-medical/salve.png",
+      "sha256": "068C9BC9B4516943FA376005197614F26E8ADEC8517B1E6E1907F3082DF7BAC9"
+    },
+    {
+      "path": "docs/art-reference/enlarged-4x/03-medical/smelling_salt.png",
+      "sha256": "B95CEB7EA932B8A9AC56EBCD464B73A2A33C6825D193807D2F44B229ED88E274"
+    },
+    {
+      "path": "docs/art-reference/enlarged-4x/03-medical/surgery_toolkit.png",
+      "sha256": "CB5778CE3CE32BAEB715F9F194E0750DE5523D2814452B428A3EBF6DD2FF246D"
+    },
+    {
+      "path": "docs/art-reference/enlarged-4x/03-medical/topical_bandage_small.png",
+      "sha256": "839347156724C2E12E3D24A5E2189FEA363605F4BD6059E05C65158ECA3C0351"
+    },
+    {
+      "path": "docs/art-reference/enlarged-4x/04-containers/eng_box.png",
+      "sha256": "AC8225D477C3D2A430AAA2D330926D228F8349349FBDD7F318E790B2A7E60FB0"
+    },
+    {
+      "path": "docs/art-reference/enlarged-4x/04-containers/evidence_box.png",
+      "sha256": "0A5E301B69F65DFE1C3D4227CD280F43E48A84CA82FAC4B2E3613CECE2773046"
+    },
+    {
+      "path": "docs/art-reference/enlarged-4x/04-containers/expedition_box.png",
+      "sha256": "20FC5869B9289ED0BB2D877B99311E24FABD4F5C786B88E4FD36140A5429B8BE"
+    },
+    {
+      "path": "docs/art-reference/enlarged-4x/04-containers/fanny_pack.png",
+      "sha256": "A327670735C6C51FA0403B2F9CAC8E1511DF6B2257F56839C6C169A2C9717768"
+    },
+    {
+      "path": "docs/art-reference/enlarged-4x/04-containers/med_box.png",
+      "sha256": "32C3DE12D24E5D95D7A9FB33622A909A4AEAB9F0A97CC9EEA5CCFEFE03CA9259"
+    },
+    {
+      "path": "docs/art-reference/enlarged-4x/04-containers/pouch.png",
+      "sha256": "C06641147F7CBFC50B3F33C1EB6685283EB9EA713EA53A1D81CDA51DD83F444D"
+    },
+    {
+      "path": "docs/art-reference/enlarged-4x/04-containers/satchel.png",
+      "sha256": "43FC004E1E59D1536DFBEB7DCA4212E724C9FAA3FFAB9434BD79D10AD161C88D"
+    },
+    {
+      "path": "docs/art-reference/enlarged-4x/04-containers/simple_backpack.png",
+      "sha256": "ED33D770DF74A11DE0B5941B4808812149FFB71E4B1F362A6939430F35AFB429"
+    },
+    {
+      "path": "docs/art-reference/enlarged-4x/04-containers/simple_backpack_large.png",
+      "sha256": "FD3DD780469B78E67F555D45A4235A47B07787B438F6C664A35A63C7659EF1A6"
+    },
+    {
+      "path": "docs/art-reference/enlarged-4x/04-containers/simple_backpack_medium.png",
+      "sha256": "7C816383AF1F68389088A20E982541B40C30FD57075E9C1994E741BD1DF6B6B0"
+    },
+    {
+      "path": "docs/art-reference/enlarged-4x/04-containers/toolbox_new.png",
+      "sha256": "4DCD03B1B146DBB9368DBC86BABE005036AA2A90827479E28CE393427BF48B3A"
+    },
+    {
+      "path": "docs/art-reference/enlarged-4x/04-containers/toolbox_old.png",
+      "sha256": "F0BF01C4E6849F34C336D168CE22001165B8E413A73A4FA397CC4315FA62763C"
+    },
+    {
+      "path": "docs/art-reference/enlarged-4x/05-machines/bottle_printer.png",
+      "sha256": "70B8E4B715E54026E2FDE3F7B62CE6B6BD04467A5C20DFB23C4D7B6099FEA60F"
+    },
+    {
+      "path": "docs/art-reference/enlarged-4x/05-machines/desequencer.png",
+      "sha256": "AD91A6ED642D4B47FDE268579D15206732D8ED355F49D726167FC5D648C0AC16"
+    },
+    {
+      "path": "docs/art-reference/enlarged-4x/05-machines/fridge.png",
+      "sha256": "82705A1B0566DFA57807AA7E798878466FD2E68077B5B54193DCC011E731A7CC"
+    },
+    {
+      "path": "docs/art-reference/enlarged-4x/05-machines/furnace.png",
+      "sha256": "08E109A1B9FF81031A22568F69B9D391299365CC437710DC04A277BA731057E7"
+    },
+    {
+      "path": "docs/art-reference/enlarged-4x/05-machines/furnace_on.png",
+      "sha256": "22C6C21A1C3D9A666BCF149996CD2476C3391809156121E3DE3F0314BB79FBE3"
+    },
+    {
+      "path": "docs/art-reference/enlarged-4x/05-machines/moisture_farm.png",
+      "sha256": "4A532E233E1E7447EC760CEBDAC6434C29D932A8D481479659DA6046C58F2750"
+    },
+    {
+      "path": "docs/art-reference/enlarged-4x/05-machines/moisture_farm_w.png",
+      "sha256": "1460F072BEB287EC93CEB481389BECADFB0E3DCB63A934CE139104B574EBDD20"
+    },
+    {
+      "path": "docs/art-reference/enlarged-4x/05-machines/powerblock.png",
+      "sha256": "1D469FECCF874C233B830136CBEC3118931926571FB6B9B2C343E68F452C9CA3"
+    },
+    {
+      "path": "docs/art-reference/enlarged-4x/05-machines/powerblock_on.png",
+      "sha256": "2108B726E78C5B692BF9EF5EF49B5053DB57FBAFB8F09EC184D1336A386001DD"
+    },
+    {
+      "path": "docs/art-reference/enlarged-4x/05-machines/purifier.png",
+      "sha256": "497764C42BD9FF32A2D416BCE53DBA2E3942F45243E9A516379983A47DF5A69B"
+    },
+    {
+      "path": "docs/art-reference/enlarged-4x/05-machines/purifier_on.png",
+      "sha256": "7E9A8DD98A6ED1E46B95230B5626E2E1C41339AF6244C2877AE7D4674C94E0FB"
+    },
+    {
+      "path": "docs/art-reference/enlarged-4x/05-machines/vacuum_robot.png",
+      "sha256": "50A3D2B89873B4964C1CADFD2E5355FFA0FD51179021B2DB6FF90C342E280409"
+    },
+    {
+      "path": "docs/art-reference/enlarged-4x/06-modules-electronics/battery100.png",
+      "sha256": "48DBC41016309333FD7D8C78E4D89DFB78351E082DBD19B6B41B92DFEB24F64B"
+    },
+    {
+      "path": "docs/art-reference/enlarged-4x/06-modules-electronics/electronic1.png",
+      "sha256": "594454E572D7224D0F5D6733ADDB5471F79A36ACA0DBD2C12291A47851AA68B0"
+    },
+    {
+      "path": "docs/art-reference/enlarged-4x/06-modules-electronics/module_corrupt.png",
+      "sha256": "CA8FF92F7E20DB3485E83F46EF74C0742792FC8DB73EC3BA9FCCEBCB95323984"
+    },
+    {
+      "path": "docs/art-reference/enlarged-4x/06-modules-electronics/module_green.png",
+      "sha256": "3DC407FDCAC76B3665583D608C16C9CE1A4F41DA54EE2772D2036598391B713F"
+    },
+    {
+      "path": "docs/art-reference/enlarged-4x/06-modules-electronics/module_green_l.png",
+      "sha256": "4B2BFA6E0FA7FBE470FAFF214D2AE05477A9DAAB2975FDBC57CA2FDE36C9923E"
+    },
+    {
+      "path": "docs/art-reference/enlarged-4x/06-modules-electronics/module_red.png",
+      "sha256": "162F43E1FBC3BC47B7ADC2B629A9EF05F4CDCA0E24B5AA3350CB4F4FEF8C48F9"
+    },
+    {
+      "path": "docs/art-reference/enlarged-4x/06-modules-electronics/module_red_t.png",
+      "sha256": "D3CC2AEED0DEFA8541B68F6667B98EB8642FFD9B165737BBA34ED393542A7501"
+    },
+    {
+      "path": "docs/art-reference/enlarged-4x/06-modules-electronics/module_white.png",
+      "sha256": "49A9DC64B2F43CF265F5FCFDE3E5B327D9562E2A59AD76FCA44B19AE90E91CE1"
+    },
+    {
+      "path": "docs/art-reference/enlarged-4x/06-modules-electronics/module_yellow.png",
+      "sha256": "9DC00920F689A3904EE411E39F73E1B0597B198C3DF6522F0C0E1458104191E7"
+    },
+    {
+      "path": "docs/art-reference/enlarged-4x/06-modules-electronics/module_yellow_c.png",
+      "sha256": "11FE8624975B95693EF055451658F01AE7FB59E44DE72D03074C733EF93E8FA3"
+    },
+    {
+      "path": "docs/art-reference/enlarged-4x/06-modules-electronics/plasma_fuel_cell.png",
+      "sha256": "AEAF8E48757A0EB87BF5BD25CD39364785F1E961EA673A45BEA61FBB6B31B0D6"
+    },
+    {
+      "path": "docs/art-reference/enlarged-4x/06-modules-electronics/printer_chip1.png",
+      "sha256": "78F2304DBE43C0EE42414AA0BED1698EB7FEEFD1CFFE568E324F040DC4378B5C"
+    },
+    {
+      "path": "docs/art-reference/enlarged-4x/07-materials-nature/chemical1.png",
+      "sha256": "BD7D10AB4B198D8C23A7E4645A1F581D7BDD7ADDD547377885205A4782502A1C"
+    },
+    {
+      "path": "docs/art-reference/enlarged-4x/07-materials-nature/chemical2.png",
+      "sha256": "907EEC5C8F82A444BD524365A99F84A48EB4E113BB445A279287EDC990513AF9"
+    },
+    {
+      "path": "docs/art-reference/enlarged-4x/07-materials-nature/glass_shard.png",
+      "sha256": "E4D9073C3AFFA536D2245DA96EA070EDC8579B951B4511F6C19302F0ED459ACC"
+    },
+    {
+      "path": "docs/art-reference/enlarged-4x/07-materials-nature/kotton_fabric.png",
+      "sha256": "A9DAD139ED14C18162D8D045E196CDD798E6C10BF4498BD86F9B7E7B007CC989"
+    },
+    {
+      "path": "docs/art-reference/enlarged-4x/07-materials-nature/metal_ingot.png",
+      "sha256": "85197C4441F25A9B9CD1213EEC37545AD494C6D02E27CD5BE4671CE82D41C44D"
+    },
+    {
+      "path": "docs/art-reference/enlarged-4x/07-materials-nature/nutrifruit_seed_packet.png",
+      "sha256": "1E69C903A003235F24254FA5BF9A6B5DA40AB78EFBC7587FA230640F5AD04C3B"
+    },
+    {
+      "path": "docs/art-reference/enlarged-4x/07-materials-nature/nuts_metal_pile.png",
+      "sha256": "BE8A6B54472A373EF704F25E390914A0DB879BEB9CFB1998B4465F166A8EBD54"
+    },
+    {
+      "path": "docs/art-reference/enlarged-4x/07-materials-nature/ore1.png",
+      "sha256": "84DE2AE2FEE18967DA6F4E8772CE6551EE51BB8F8A1C8E594491F284E576035A"
+    },
+    {
+      "path": "docs/art-reference/enlarged-4x/07-materials-nature/pipe.png",
+      "sha256": "90797122B9138EF2DAB25F11F469B22BE543FAEC3FB8FD5E9B30DB814CDFF77F"
+    },
+    {
+      "path": "docs/art-reference/enlarged-4x/07-materials-nature/scrap_metal.png",
+      "sha256": "9CCAA11AB6D096FCEECD8F3D348F5077DCF8FB71DE6720CF8A68599C4B0663BE"
+    },
+    {
+      "path": "docs/art-reference/enlarged-4x/07-materials-nature/scrap_metal_2.png",
+      "sha256": "232271884B21BB0D0F359EAF8BFA27E6C17E35B06FEFE2D2D3D2C3A375CBEF8B"
+    },
+    {
+      "path": "docs/art-reference/enlarged-4x/07-materials-nature/wire.png",
+      "sha256": "51F19E53712917183349592796590672217E2E9B436B2A8EA4C65E99672ACBA1"
+    },
+    {
+      "path": "docs/art-reference/enlarged-4x/08-liquid-states/25ml_blue_100.png",
+      "sha256": "F9E8CC3CE34D5A93E0EC4C932F2ABE6F185112B1DA9A730A58FA96D5D3F1812A"
+    },
+    {
+      "path": "docs/art-reference/enlarged-4x/08-liquid-states/large_blue_100.png",
+      "sha256": "1257BDDDDD26EF15E38CCF852EA8B2AE8DCF4FCD61B54EDD309E7BABFF86BEE5"
+    },
+    {
+      "path": "docs/art-reference/enlarged-4x/08-liquid-states/mini_blue_100.png",
+      "sha256": "8A66AF3559DFEF5DC8A2688C4A92332416C29172B52E79007C4E07AFAB9C0F30"
+    },
+    {
+      "path": "docs/art-reference/enlarged-4x/08-liquid-states/normal_blue_100.png",
+      "sha256": "E5DE8EDFBAED28C4C62B502DC5EF909D804225D9000A2122467A7ACDE0743B16"
+    },
+    {
+      "path": "docs/art-reference/enlarged-4x/08-liquid-states/normal_blue_25.png",
+      "sha256": "0E362378BF0767DC428C8EFDA9A1409F4CB16C43BBFB485CA6E6A069D9C47490"
+    },
+    {
+      "path": "docs/art-reference/enlarged-4x/08-liquid-states/normal_blue_50.png",
+      "sha256": "2FA432C911509CE7E11622B9166107C2FA20CA804C96120C925CC1D0ADFFF229"
+    },
+    {
+      "path": "docs/art-reference/enlarged-4x/08-liquid-states/normal_blue_75.png",
+      "sha256": "C6BCBBC826F7ACD7A39421E7BB4BA41473A83A2CC74913060E09A89A5D402B1B"
+    },
+    {
+      "path": "docs/art-reference/enlarged-4x/08-liquid-states/normal_dark_100.png",
+      "sha256": "A4E64877E6E05D5AAD7111FCF0DE925976D159A8935C327C6D3E461AA6F90FC1"
+    },
+    {
+      "path": "docs/art-reference/enlarged-4x/08-liquid-states/normal_red_100.png",
+      "sha256": "921ABDD9CA35EF12071C98BB443983907155A50EA6C19013295FD2185A30CF4B"
+    },
+    {
+      "path": "docs/art-reference/enlarged-4x/08-liquid-states/pitcher_blue_100.png",
+      "sha256": "19E30A380904A4E230B2089C141A1A964AC2CD503DCD835069581DDE7E493015"
+    },
+    {
+      "path": "docs/art-reference/enlarged-4x/08-liquid-states/small_blue_100.png",
+      "sha256": "0461C72B7767EF5E36914086BE55B8F95FB8385E64698F37C35063B35D54A61B"
+    },
+    {
+      "path": "docs/art-reference/enlarged-4x/08-liquid-states/xl_blue_100.png",
+      "sha256": "3D0AF76FD54527B0D6B325CF15FAD4DEBE5B4690DD41E55027D530965750621C"
+    },
+    {
+      "path": "docs/art-reference/originals/01-tools/box_cutter.png",
+      "sha256": "1C04E26AD4619466848BE89392E8DCE18A16C3D5B6C9AA8C551F23DDE0EB94E8"
+    },
+    {
+      "path": "docs/art-reference/originals/01-tools/crowbar.png",
+      "sha256": "129891313025B5C0AD49399039F46121BE8AD2C3273F94BA2CD8B7300C37D1AE"
+    },
+    {
+      "path": "docs/art-reference/originals/01-tools/flashlight3.png",
+      "sha256": "2834970A956282AB0DBED0F266ABBB3C9921C87C026B150C50E6E7D46242BA17"
+    },
+    {
+      "path": "docs/art-reference/originals/01-tools/hatchet.png",
+      "sha256": "17FF7B9C53057B54FF6675D485C7AF50BE1F857FD711E351FCA7C06D590E373E"
+    },
+    {
+      "path": "docs/art-reference/originals/01-tools/labeler.png",
+      "sha256": "EE26C89076171E8F3D454CADAFC2520BF62618A7775A0069CD37E9EE9C921365"
+    },
+    {
+      "path": "docs/art-reference/originals/01-tools/magnifier.png",
+      "sha256": "3996D41DCBA77AA35B81907ABD739708AF4D1E1B9B564116011E3B16014C4DA3"
+    },
+    {
+      "path": "docs/art-reference/originals/01-tools/metal_scanner.png",
+      "sha256": "3B7D1984FEEA21DFD740F637E2946FA0EA806FD10695235996C4010B606E8408"
+    },
+    {
+      "path": "docs/art-reference/originals/01-tools/portable_water_purifier.png",
+      "sha256": "BA24FC4ACBE7ACF631E2B9383055CA12130288CF88514155406C22681F13B538"
+    },
+    {
+      "path": "docs/art-reference/originals/01-tools/screwdriver_s.png",
+      "sha256": "AAA86559A5AF814B613A174CA861E3844C864BB15B2DE9A45D5C4A3502697018"
+    },
+    {
+      "path": "docs/art-reference/originals/01-tools/skinning_knife.png",
+      "sha256": "D54F498CC47E2D0A59634332A6850276AF2DC59BD30BA7C9813E8D7C316E0C4B"
+    },
+    {
+      "path": "docs/art-reference/originals/01-tools/welder_s.png",
+      "sha256": "07812EEC0C7AE82928E936E1DD13E9E79A4844AFBC8F53305869C539E9BE9FFC"
+    },
+    {
+      "path": "docs/art-reference/originals/01-tools/wirecutter.png",
+      "sha256": "8F16528031B01FB090E3EA725C551FC0E90FAFCE90878136560B8631A169D8EC"
+    },
+    {
+      "path": "docs/art-reference/originals/02-food-drink/cat_bar.png",
+      "sha256": "2DB149D79CC477B432543C97BA4E9F44F1B6DE0E0D18A9B040E27F63F13B5A8E"
+    },
+    {
+      "path": "docs/art-reference/originals/02-food-drink/cheese.png",
+      "sha256": "237B16CB39EC1E1BEC242B9738E2568634A98061173CAD6D5A5534D8E006B4BE"
+    },
+    {
+      "path": "docs/art-reference/originals/02-food-drink/coffee_bean.png",
+      "sha256": "DC9A7C12AC3FF80B87F7951236E32F0DBD0447B14C720702CB681C869AB064CC"
+    },
+    {
+      "path": "docs/art-reference/originals/02-food-drink/cup_noodle.png",
+      "sha256": "B2DC5AF0F290A20577FD1A265AE969B8E4685CC323DDF579B11CFDB5ACA7D82A"
+    },
+    {
+      "path": "docs/art-reference/originals/02-food-drink/energy_drink.png",
+      "sha256": "8CC34E612A91C4458C17B2A64E085FF911FE5E775BD8AE13077DF08235B9B937"
+    },
+    {
+      "path": "docs/art-reference/originals/02-food-drink/items_food_soda_red.png",
+      "sha256": "249FFE093F515E5109D53FC9D9E3C2D3F437271ED6591CFA0DF4546178999E42"
+    },
+    {
+      "path": "docs/art-reference/originals/02-food-drink/juice_pouch.png",
+      "sha256": "4A6EF0BD174316E96DF36AA3B13F73DBCA57240C650812250809A9B9B6AED602"
+    },
+    {
+      "path": "docs/art-reference/originals/02-food-drink/nutrifruit.png",
+      "sha256": "D4F07EC12CD9773A0A6E86FD32AD5BD902C6E8163F2BF25FA161446C54B1C54F"
+    },
+    {
+      "path": "docs/art-reference/originals/02-food-drink/processed_meat.png",
+      "sha256": "B12C7EDE459B0C5922F9E6E09AE9E06CF1FDAABDE899D97C390BA4CF9BA8E040"
+    },
+    {
+      "path": "docs/art-reference/originals/02-food-drink/raw_meat.png",
+      "sha256": "37A6332E9EAE5B6B6248C5BDE0325EDC22C2D2A36B5BB908E3A7BD661009C5BC"
+    },
+    {
+      "path": "docs/art-reference/originals/02-food-drink/ribwich.png",
+      "sha256": "5C6E5E46F54371A95E6750589362937FD5A46A3FA9A2A7D0FA35E82C7EAFD1B5"
+    },
+    {
+      "path": "docs/art-reference/originals/02-food-drink/wine_bottle.png",
+      "sha256": "DA6255D37C014E67BAD3A33B39896F4E51B4F32DCBD3E81E0A1EBDC55095513E"
+    },
+    {
+      "path": "docs/art-reference/originals/03-medical/bandage_small.png",
+      "sha256": "AEE7952C4E1F057298CCB369FADEBC5CFDE8F5C54BA9D7F14EBF0CCF1488C9B2"
+    },
+    {
+      "path": "docs/art-reference/originals/03-medical/blood_bag.png",
+      "sha256": "174500D5ED32D224317F7E32F09F57BA1270ABD7F55FD3B9EC2AFF4D8A11E0D1"
+    },
+    {
+      "path": "docs/art-reference/originals/03-medical/blue_blood_bag.png",
+      "sha256": "DC4C68CD0E3F26EAC79809BF4B1E8C9AA454FA4122A6AC10409B7825C465B487"
+    },
+    {
+      "path": "docs/art-reference/originals/03-medical/hemostatic_bandage_small.png",
+      "sha256": "C331C3DE4ECE9CF73657335B2A0AE81C4B84EF9762682456FCC0EBA6A670767F"
+    },
+    {
+      "path": "docs/art-reference/originals/03-medical/med_bottle_blue.png",
+      "sha256": "83618B60E5ECBC8D0314521F3C4DEDAB3477B11A0F5C13D5E8A31CBB0528D8EA"
+    },
+    {
+      "path": "docs/art-reference/originals/03-medical/med_bottle_orange.png",
+      "sha256": "0053D16869CF4807379BDADF49C270E1305A1D75DF3E00820A8EFD91632B5C84"
+    },
+    {
+      "path": "docs/art-reference/originals/03-medical/med_bottle_red.png",
+      "sha256": "AF24DEC43A0B7D75659266EC9534DC8FC00B42A08F32E45213EB177125DC3656"
+    },
+    {
+      "path": "docs/art-reference/originals/03-medical/med_bottle_violet.png",
+      "sha256": "D2BEE8B13EA4B1E36CC0F4726AC3BA5162D6EE932A5E0C43ECBF11FA59901721"
+    },
+    {
+      "path": "docs/art-reference/originals/03-medical/salve.png",
+      "sha256": "51727D60AEA8B10B5D03438824DE77095290BDEAA5113184DD7CFEF4D330A7AE"
+    },
+    {
+      "path": "docs/art-reference/originals/03-medical/smelling_salt.png",
+      "sha256": "6EFC9B4DA7FCCF0921F2F6C0BC35F7ABEFA7896BCB53D73B86738BD5D071CA3C"
+    },
+    {
+      "path": "docs/art-reference/originals/03-medical/surgery_toolkit.png",
+      "sha256": "D528DD6C3EF8F4785143E7228C4BBA0F0F6135006FB4979C1A7ADEB00A0B5D1A"
+    },
+    {
+      "path": "docs/art-reference/originals/03-medical/topical_bandage_small.png",
+      "sha256": "490355CDCD924C9D29163B88A23BA9E376E8519AFDB4B4CE74CF67D896047416"
+    },
+    {
+      "path": "docs/art-reference/originals/04-containers/eng_box.png",
+      "sha256": "EDA0758E4759A64717191548A3B0DBA51617F8E80B28EE44B7A45172272F3742"
+    },
+    {
+      "path": "docs/art-reference/originals/04-containers/evidence_box.png",
+      "sha256": "0F6143D271296CE17536B5A2733528F6CCCD48D717BCFFC34928F2E09EAB1196"
+    },
+    {
+      "path": "docs/art-reference/originals/04-containers/expedition_box.png",
+      "sha256": "5AD4771B65955BF844BA5A4CC4E62B329D08654B7DE6DE353DE1F48D423867AD"
+    },
+    {
+      "path": "docs/art-reference/originals/04-containers/fanny_pack.png",
+      "sha256": "71A75EFDC02C27B216C4C83304200F6FB8259929AA6F942405356B2220B81BB2"
+    },
+    {
+      "path": "docs/art-reference/originals/04-containers/med_box.png",
+      "sha256": "C0AF7AA3BA1D0C7EA7F19A4D8A6C63FDD59B5056A20CEDD03E5E8E634EAE231D"
+    },
+    {
+      "path": "docs/art-reference/originals/04-containers/pouch.png",
+      "sha256": "A05937A1A9E4431781B9AD708CA9D030B45C2D6802E2499217EA86BD361CF304"
+    },
+    {
+      "path": "docs/art-reference/originals/04-containers/satchel.png",
+      "sha256": "84266A44E7B4601E9A86AFC10DA3B3F1FF9DB1ACD3A5B16A09358E34B1A221CA"
+    },
+    {
+      "path": "docs/art-reference/originals/04-containers/simple_backpack.png",
+      "sha256": "0885011CE94001F3CFC08D99AD954D92AFA9C6A655519B48016FFE4FAE225945"
+    },
+    {
+      "path": "docs/art-reference/originals/04-containers/simple_backpack_large.png",
+      "sha256": "BF973E0115AC2376AF124525938D3137E11DC74687A832DCB311D3DD0FD10BA2"
+    },
+    {
+      "path": "docs/art-reference/originals/04-containers/simple_backpack_medium.png",
+      "sha256": "FEAD33EE977AFC73FAD9BFFE386E84ABFA82A64B9EE0A11FEE513C791D193DD4"
+    },
+    {
+      "path": "docs/art-reference/originals/04-containers/toolbox_new.png",
+      "sha256": "17BE4C533CA73E6B1030A1BADC8C4CB5B234F16E5F879740819766471AB08270"
+    },
+    {
+      "path": "docs/art-reference/originals/04-containers/toolbox_old.png",
+      "sha256": "4B4A82DC356679BB934DD90E279CAEAA5F313CED086876088110133122A6F580"
+    },
+    {
+      "path": "docs/art-reference/originals/05-machines/bottle_printer.png",
+      "sha256": "D45FB5C5A94A1F70CABB44EF6318B59239B60290093586F153F9A63F773AB6E8"
+    },
+    {
+      "path": "docs/art-reference/originals/05-machines/desequencer.png",
+      "sha256": "57260866DFF91176F50BADF7A63117E20172C7A37B5D60C37505B28D190B3B32"
+    },
+    {
+      "path": "docs/art-reference/originals/05-machines/fridge.png",
+      "sha256": "8251487D5010A5286CCD2FAB2AFCB8461A560150DAC3E0225BD40219004FD903"
+    },
+    {
+      "path": "docs/art-reference/originals/05-machines/furnace.png",
+      "sha256": "7B86A3E0E1379E8ADE5ABACC43AA7F221F729B89A3DBF707145428A13E3B6CBC"
+    },
+    {
+      "path": "docs/art-reference/originals/05-machines/furnace_on.png",
+      "sha256": "A3B327BDF437B248C42ABCB6B5C3B34DDC22FD9B5D88378B6033837235990DC2"
+    },
+    {
+      "path": "docs/art-reference/originals/05-machines/moisture_farm.png",
+      "sha256": "995C654A6C67599F5BD01391DF025231D4B43AA3FE0E7F82B347CD84B6A4062D"
+    },
+    {
+      "path": "docs/art-reference/originals/05-machines/moisture_farm_w.png",
+      "sha256": "57DB792129231D571FF8068D236C6A8CB2671FB4EB470EC5826B14BA298A09F5"
+    },
+    {
+      "path": "docs/art-reference/originals/05-machines/powerblock.png",
+      "sha256": "799355FDEF969B9E511A9B62486CB9C4C794234B8A219C91C64E07992B2B26D4"
+    },
+    {
+      "path": "docs/art-reference/originals/05-machines/powerblock_on.png",
+      "sha256": "121350408DACFC8D1A3F40273ED5DAF6AF525F3A7426C2D66BDF0924B8177461"
+    },
+    {
+      "path": "docs/art-reference/originals/05-machines/purifier.png",
+      "sha256": "672FF6BDA25EDEC40D0860B1E2AE3241D8CB877B85FDC401352121D3C1B0775F"
+    },
+    {
+      "path": "docs/art-reference/originals/05-machines/purifier_on.png",
+      "sha256": "3E4246520A1DF68A78B9A59BF0A67C4A692927E049247F4AC050E7580F2D9A92"
+    },
+    {
+      "path": "docs/art-reference/originals/05-machines/vacuum_robot.png",
+      "sha256": "4DFF220E8E1DFF60924A3EEB247541E2BA481FDAC17D8AAB5867E02B61118992"
+    },
+    {
+      "path": "docs/art-reference/originals/06-modules-electronics/battery100.png",
+      "sha256": "1D10C675DB605E52E206ECB678CD5E1DDE8EBE68B88CBC95A0432A675185441A"
+    },
+    {
+      "path": "docs/art-reference/originals/06-modules-electronics/electronic1.png",
+      "sha256": "FC517416695D82AD1A700E24C7D51EDB48D7C4FA10F63BA1946FAD04ECF4A3C8"
+    },
+    {
+      "path": "docs/art-reference/originals/06-modules-electronics/module_corrupt.png",
+      "sha256": "F00DABEE79B8C2E90371F7C3E29D3E43593182D0F5DD7E9970819AF84E69E24B"
+    },
+    {
+      "path": "docs/art-reference/originals/06-modules-electronics/module_green.png",
+      "sha256": "725D513219102FCE3B4324408A71700F4B7C5EEB96DE82FBAC3E5C9FDB910EE7"
+    },
+    {
+      "path": "docs/art-reference/originals/06-modules-electronics/module_green_l.png",
+      "sha256": "218AD8B5ED853E81141601B982255479D062C503DAAC0AF63EA2C2821F2142C6"
+    },
+    {
+      "path": "docs/art-reference/originals/06-modules-electronics/module_red.png",
+      "sha256": "0801F93CCBE794B72D78D31BD3ADFFAA8177C0C26A89DBD28BCF899A992CA71B"
+    },
+    {
+      "path": "docs/art-reference/originals/06-modules-electronics/module_red_t.png",
+      "sha256": "FE84D81A0A03025444167385E301E65F1EF44571C0077170C1653A0DCD95B3AE"
+    },
+    {
+      "path": "docs/art-reference/originals/06-modules-electronics/module_white.png",
+      "sha256": "46A26D12E38644DFE7B1B4D5AF89EE1F25986422CC6CF456DD248158C6F60924"
+    },
+    {
+      "path": "docs/art-reference/originals/06-modules-electronics/module_yellow.png",
+      "sha256": "A60AFC706C19D14145656FDE852356D17DCCFFAFFA3D158E90A03F7AF986D98E"
+    },
+    {
+      "path": "docs/art-reference/originals/06-modules-electronics/module_yellow_c.png",
+      "sha256": "66B81D7803C87BD1D8CA280F4AA18F33928AC4A73896B8C5AB7824139EF3FB6B"
+    },
+    {
+      "path": "docs/art-reference/originals/06-modules-electronics/plasma_fuel_cell.png",
+      "sha256": "9797F31C3BC8B71C34AEC72C46AAB2D1D6D1C967B04A750179E6FE7107173F44"
+    },
+    {
+      "path": "docs/art-reference/originals/06-modules-electronics/printer_chip1.png",
+      "sha256": "8088892684338CBB2D2A5B8B41593BF45EB5814268C62659F0D75987743E64C4"
+    },
+    {
+      "path": "docs/art-reference/originals/07-materials-nature/chemical1.png",
+      "sha256": "39C1FF3BF10CE6ACDCD69471664786F5D8D5CFA2E45A843DBB62B0EB612A0585"
+    },
+    {
+      "path": "docs/art-reference/originals/07-materials-nature/chemical2.png",
+      "sha256": "DE38E9403F466880C4602E5CBA50E6E9F34B64AA99602604158320A64850FD0A"
+    },
+    {
+      "path": "docs/art-reference/originals/07-materials-nature/glass_shard.png",
+      "sha256": "00B4BB8C2454057FA5AE64E158D874BCC9D2B1C199075F37AC0C284BAD753C5E"
+    },
+    {
+      "path": "docs/art-reference/originals/07-materials-nature/kotton_fabric.png",
+      "sha256": "9D37A59461769DCEBD68BA630C5868A597857323436981FF1D8E55A342911DCD"
+    },
+    {
+      "path": "docs/art-reference/originals/07-materials-nature/metal_ingot.png",
+      "sha256": "08BDA520817DB4CC1D41958FE24238693EDA40AE4CF1C09EB330104BC1C6FE34"
+    },
+    {
+      "path": "docs/art-reference/originals/07-materials-nature/nutrifruit_seed_packet.png",
+      "sha256": "CD1DAAFB2A39BDA9053C12E3E6ABF1346509AA54A373AC4370B219D15CA63E3B"
+    },
+    {
+      "path": "docs/art-reference/originals/07-materials-nature/nuts_metal_pile.png",
+      "sha256": "A89E2CBDB533907AA0AEAA7BA78E0F13601D304C4BF18E138EC8F987466E7396"
+    },
+    {
+      "path": "docs/art-reference/originals/07-materials-nature/ore1.png",
+      "sha256": "3CFAF6A1FA14090DE5DE3E90D8E0221692C6F1A51A15683E21CA1340B7D4F235"
+    },
+    {
+      "path": "docs/art-reference/originals/07-materials-nature/pipe.png",
+      "sha256": "4F3D737C637093601EB2BCA55A2A68112401A7E13C8A24EA4028DF30A9CECC2B"
+    },
+    {
+      "path": "docs/art-reference/originals/07-materials-nature/scrap_metal.png",
+      "sha256": "EB5391F6ABA46ADB0EAB0924F6E4A949A478DEA3B32C6F8C8C6A76EEE5B90708"
+    },
+    {
+      "path": "docs/art-reference/originals/07-materials-nature/scrap_metal_2.png",
+      "sha256": "AB4450739F12D80201F4CE340EC7B7B7CE52DD3ECEEF429EB1764254D01322E0"
+    },
+    {
+      "path": "docs/art-reference/originals/07-materials-nature/wire.png",
+      "sha256": "A04D5BC626ECEC417A5946F476146E01123AD095BCFF7A1766A89AA3A70C56FE"
+    },
+    {
+      "path": "docs/art-reference/originals/08-liquid-states/25ml_blue_100.png",
+      "sha256": "D5EAC1E08E0C03D04953D90C12E75ED4C823F14CF104FBDE2182699DF7FD87B8"
+    },
+    {
+      "path": "docs/art-reference/originals/08-liquid-states/large_blue_100.png",
+      "sha256": "1386F2D3B1570CE2B16BBBB566CAAA7A6E90B9CDCBBB17E0D1B90B4578AE1D91"
+    },
+    {
+      "path": "docs/art-reference/originals/08-liquid-states/mini_blue_100.png",
+      "sha256": "BA4506489CE85EB0BA25995084165A8D158B0297FDF946C013EF2BB1304DAB30"
+    },
+    {
+      "path": "docs/art-reference/originals/08-liquid-states/normal_blue_100.png",
+      "sha256": "C1B5E8AF372E6E00D169134F5C3711396D5B4C560D0E3871EBB1E9EB017B655D"
+    },
+    {
+      "path": "docs/art-reference/originals/08-liquid-states/normal_blue_25.png",
+      "sha256": "3187CD49CEEED32AC8964B9621F93FD5E57A338CD0FA77F38355934C44415A4D"
+    },
+    {
+      "path": "docs/art-reference/originals/08-liquid-states/normal_blue_50.png",
+      "sha256": "80A154F58697FC3F8C052B56F3910D5088552F32BB329B018E2FE3DCF2D13145"
+    },
+    {
+      "path": "docs/art-reference/originals/08-liquid-states/normal_blue_75.png",
+      "sha256": "DBA2F05D7367AAE55E5E8E8B984086D7A14B57F14E9E33DC3FBC5CDCAF790A8C"
+    },
+    {
+      "path": "docs/art-reference/originals/08-liquid-states/normal_dark_100.png",
+      "sha256": "723C231BCDB8E9E5BE1FCA4B14ED0780CD1EC90340B9371967286A3D6FC71EE7"
+    },
+    {
+      "path": "docs/art-reference/originals/08-liquid-states/normal_red_100.png",
+      "sha256": "05DE6F6FD5C6EC4E44EA9C17C1D0AC95A2F7EB9A8A141440709E33A8DA2ABD7C"
+    },
+    {
+      "path": "docs/art-reference/originals/08-liquid-states/pitcher_blue_100.png",
+      "sha256": "8FBC7F30D4F2B633C8F3F9582EFE2BF03461E915DB30E96CC41D0C184C426128"
+    },
+    {
+      "path": "docs/art-reference/originals/08-liquid-states/small_blue_100.png",
+      "sha256": "58FB819D33B53BD0565C2008A425B53F55CE9E9B27BE8A5B0CD30FE1AF45FE19"
+    },
+    {
+      "path": "docs/art-reference/originals/08-liquid-states/xl_blue_100.png",
+      "sha256": "F695608AC6BD8A41EC75482826F5DEA53AC7B19F0182602B1BF7E2AD3C599087"
+    },
+    {
+      "path": "docs/art-reference/verification.json",
+      "sha256": "CFD61FD83BC12F139D3D9FEEF51301A5D8017846BD98C0AE873347EAA17315C0"
     },
     {
       "path": "docs/automation.en.md",
@@ -128,7 +963,7 @@
     },
     {
       "path": "docs/capabilities.json",
-      "sha256": "71D8EC79595D92A361DBDA0895C6B9DA2FC7E84B9CF11150AD420C2BAEF7E9CC"
+      "sha256": "81C588D4AFB186EEFEF61C32FDAE5A92797D5968CD59D95DF5A3695864B4EFD0"
     },
     {
       "path": "docs/client-visits.zh-CN.md",
@@ -144,15 +979,15 @@
     },
     {
       "path": "docs/content-packs.zh-CN.md",
-      "sha256": "3706AD16B5D700F3EA7E643EE9C1276D6D0167C4F3B35645386E2E32146D5483"
+      "sha256": "4FE05A4861DEEF5EF13FCE550A53EE2C8C474E2162FE4383DE84F9E81E47DCB0"
     },
     {
       "path": "docs/current-status.en.md",
-      "sha256": "160BFAA1B52BF724F9961DA54E1B3568FFCA662491C540F14EBCA683C7477F76"
+      "sha256": "3D217E0EFE78D7F16C15C5255F0ADB1793BAD29C13AA22B779F8E64EB28E5118"
     },
     {
       "path": "docs/current-status.zh-CN.md",
-      "sha256": "AABB82C40084F7E7060DC297DAA98D05B752B61E8CAD396F886983E891EB4EE2"
+      "sha256": "F6CB96A906094FD077B112BB9F4673E3CE45682CFC7D4C3EEA368367D79A3706"
     },
     {
       "path": "docs/departure-buttons.en.md",
@@ -160,7 +995,7 @@
     },
     {
       "path": "docs/departure-buttons.index.json",
-      "sha256": "95BF3D1B10391326EC96AFAED7D24CBCCB1AD10FB2F062AFF7275E6BE3E4A465"
+      "sha256": "203B8B3245925C029E4F389C72F09A8420DE16BC9754993ADD08C11022B12BB0"
     },
     {
       "path": "docs/departure-buttons.zh-CN.md",
@@ -172,7 +1007,7 @@
     },
     {
       "path": "docs/developer-workflows.index.json",
-      "sha256": "3DCB2DC76688E600B51BAA68DBD9F9141621E5D516A9E30CE5E3155A33A9CB86"
+      "sha256": "4C36CC280CD147241B4AA0E31F789F3A725A6CA431CD0DF5CC88B34601165572"
     },
     {
       "path": "docs/dialogue-localization.en.md",
@@ -180,7 +1015,7 @@
     },
     {
       "path": "docs/dialogue-localization.index.json",
-      "sha256": "1E7B77E6C1AF28C50FC258FDC5D3807BE7D2476D8360955B861E96FF34BC8810"
+      "sha256": "5A4418ED020D9AE1DC8E571003B2DBAC75BC06319C1E0F4FD9A8C254E799D872"
     },
     {
       "path": "docs/dialogue-localization.zh-CN.md",
@@ -192,7 +1027,7 @@
     },
     {
       "path": "docs/errors.index.json",
-      "sha256": "6540C8ACD16607E503C2F2995F8833AAB0CDEC0BE8CA95518FE8D501A12D0729"
+      "sha256": "5CC86039878FE405AC094079A8A4930F4C43D557DC4ED5FB11216F825BAD9BAA"
     },
     {
       "path": "docs/examples/author.tools/items.json",
@@ -272,11 +1107,11 @@
     },
     {
       "path": "docs/forge-parity.index.json",
-      "sha256": "323FE8CAF3A1DC75C49D2B511150EA7002215ED3910C336AAD8487278EBDE273"
+      "sha256": "CCDA8D225ED5FB3706D3D77934FF17C996FDD79DB56DE5918ED7DBA8D9CE5705"
     },
     {
       "path": "docs/forge-public-contract.index.json",
-      "sha256": "2B93037B445BB2ABEE837CC6F24AA28CFFA92B9AE1F2A72971C1506421C66DF5"
+      "sha256": "5F88FDE54D5E10B817F8A3825901416D9F00EC0265D5C62BE5CB2E812FEE1CD8"
     },
     {
       "path": "docs/furnace-contents.en.md",
@@ -284,7 +1119,7 @@
     },
     {
       "path": "docs/furnace-contents.index.json",
-      "sha256": "FC3C980DB0E7A36EE1E727A85B2D3FEC0BAFA8E8254321B3D87B8C5DB570D564"
+      "sha256": "D2DB8E63E54C93A80633E583D66D68366BC534E96F71E8867BCFDAD2B94D33FB"
     },
     {
       "path": "docs/furnace-contents.zh-CN.md",
@@ -300,7 +1135,7 @@
     },
     {
       "path": "docs/game-language.index.json",
-      "sha256": "D6E9045B2091C855E007BF9F2E271988219CF2F0C7E912473E199185FBA69E7B"
+      "sha256": "21FA636E6B556153CBB840243AB7F483ACB28BD3C4C46050A4C82190AF576263"
     },
     {
       "path": "docs/game-language.zh-CN.md",
@@ -424,11 +1259,11 @@
     },
     {
       "path": "docs/install-and-debug.en.md",
-      "sha256": "F18D079E14D5B7743111BA4473862B85EABD8FF106CDB14D1A92387EBBBB0BF6"
+      "sha256": "D80D55C618F9961695145C56B552951E5C5325E62AB6AB9910048892F860BF3F"
     },
     {
       "path": "docs/install-and-debug.zh-CN.md",
-      "sha256": "D2C73C020BA306E54C5A7624FAF51CFE278A23BECE070BED112E19E069285CC8"
+      "sha256": "2FF28A8A0DACA7D0F0E02C08D6CC14809572CF5EE7F33AD5806C6B862F0C913A"
     },
     {
       "path": "docs/inventory-endpoints.zh-CN.md",
@@ -447,12 +1282,24 @@
       "sha256": "B0E335E0F57D997DB50DF8A0A0B168B692157D4F4A0343828D7556B3DF7A0BE3"
     },
     {
+      "path": "docs/item-art.en.md",
+      "sha256": "E74FD82C61685A4FB85F98B0C58B9948C11D81C1D691B55F294C036749EE80F6"
+    },
+    {
+      "path": "docs/item-art.index.json",
+      "sha256": "49D359789E30F876B156FB6A30486B044CEBD121AF1D70EEB9CEB38D379BAE13"
+    },
+    {
+      "path": "docs/item-art.zh-CN.md",
+      "sha256": "02D825C93C49A47C8BEC4CDF1E83AF05BA94282C654E7FA95AFD5E87FB627065"
+    },
+    {
       "path": "docs/item-data.en.md",
       "sha256": "67100084BBF0E445D23AA54D834C1CC572002F8F886A446CD7210525A61322A9"
     },
     {
       "path": "docs/item-data.index.json",
-      "sha256": "59AF802162E52D22C179347A5DADFAE7CEB58FF99DCC425C2FAB6E67BA90E198"
+      "sha256": "F60D9F26BC8D0508EAC1EE5260F6B271B2C1A48E6512283CC701DCB6FAF92CAC"
     },
     {
       "path": "docs/item-data.zh-CN.md",
@@ -460,11 +1307,11 @@
     },
     {
       "path": "docs/item-localization.index.json",
-      "sha256": "E6889D09FFF1FFC6DAB7F46497F4A7DBA934AC4C9BCE1832DD9F47172F0A9799"
+      "sha256": "BF8084F6C61437D2CD1B93F36B5DACEB5A040D11A9B56CA46582D5C0FA368ED1"
     },
     {
       "path": "docs/item-properties.index.json",
-      "sha256": "6ED60D4BDE00FB7D6CD8A0A7D260ED11D95D5C9788811A6A12478B5BC51FB58C"
+      "sha256": "BD0FC2845930D2E1BE53E976C75F0ADEF1D6A1E4E21DC4764944BA851E17CC70"
     },
     {
       "path": "docs/item-stock.en.md",
@@ -472,7 +1319,7 @@
     },
     {
       "path": "docs/item-stock.index.json",
-      "sha256": "C0E7597DB2EA7F56FDF78013C8356F4BAE0BB5D6A8D8528C431E106F3783F543"
+      "sha256": "AB2ACCA7C2746220FEFF4CF956A56FB2880F6AAF4993FE53618B525C34516355"
     },
     {
       "path": "docs/item-stock.zh-CN.md",
@@ -480,7 +1327,7 @@
     },
     {
       "path": "docs/knowledge-expansion.index.json",
-      "sha256": "24795B7E6683F1609F6465113EFFDBA04F3221BB22117E1FC30171DB715D9C60"
+      "sha256": "C4E34840C282F7B004974192C9E7994304344B7CB57996EFA3DAFDA95CA25895"
     },
     {
       "path": "docs/lifecycle-content.zh-CN.md",
@@ -492,7 +1339,7 @@
     },
     {
       "path": "docs/lifecycle.index.json",
-      "sha256": "F9BC51A49C1CB1B0D4A822924F777CDE9EE81B776C7EAE87A9BCA28E20970FA9"
+      "sha256": "42DEC386F24A2FFB4BB6D84632355809D388EA6826BD78A36119FAE76BA6A705"
     },
     {
       "path": "docs/liquid-transfer.zh-CN.md",
@@ -524,7 +1371,7 @@
     },
     {
       "path": "docs/machine-contract.index.json",
-      "sha256": "3520200D52E4BD0F94303F32FEF3CBCCD957238B387B41463F32522B1D53229D"
+      "sha256": "AE258ED2511548EF786757F5BE8A9B3910FD19CA52F7823E62B97491E3ABD2F4"
     },
     {
       "path": "docs/machine-contract.zh-CN.md",
@@ -540,7 +1387,7 @@
     },
     {
       "path": "docs/machine-layout-localization.index.json",
-      "sha256": "1AAEBFD3CF93E5252A179D1F04110AB386063E223CDE169BB1428D4741E1B8EF"
+      "sha256": "CD271D6ECDABD2BAAEBE97BC7B3076FAAA5C0DE995D630D411A8ABEEBE443FE8"
     },
     {
       "path": "docs/machine-layout-localization.zh-CN.md",
@@ -576,7 +1423,7 @@
     },
     {
       "path": "docs/machine-night-readonly.index.json",
-      "sha256": "45CB86E15D66A77B87E8FC8A03BBEA471A27E54724498FB819D561C1BCD37CC0"
+      "sha256": "DA5208FA522F33B5938525A1DE17DB1D5DA1312413FAACDAC280ED30C73DE079"
     },
     {
       "path": "docs/machine-night-readonly.zh-CN.md",
@@ -588,7 +1435,7 @@
     },
     {
       "path": "docs/machine-persistence.index.json",
-      "sha256": "15A13F923A0E7DF8FAC57F8D78DC5958EBE25505E7CF83FE25A1F54D6C74E27C"
+      "sha256": "6CCE287F811F5340F06AEEB1EC7BBB80E41750747A41EE3B910E4A272C225CF8"
     },
     {
       "path": "docs/machine-persistence.zh-CN.md",
@@ -600,7 +1447,7 @@
     },
     {
       "path": "docs/machine-recipe-readonly.index.json",
-      "sha256": "D8858881A3436F4F2911C4B6A646FF08C24FEEBEFDF7A8121A8A560638FF23CA"
+      "sha256": "FF6F760BE2FB482BB12379FB16E05DAA8E10F085E6DCEE5841A50E10D75FA543"
     },
     {
       "path": "docs/machine-recipe-readonly.zh-CN.md",
@@ -632,7 +1479,7 @@
     },
     {
       "path": "docs/machine-status.index.json",
-      "sha256": "925F0419E3F8446390783196D23383DB29AAB48DA7C76752F96246C6230C29FF"
+      "sha256": "9D51120CBF5CA8842A40AD4489B8F416FAE9101EC32271439DBA4844B9401A7B"
     },
     {
       "path": "docs/machine-status.zh-CN.md",
@@ -680,7 +1527,7 @@
     },
     {
       "path": "docs/native-item-types.json",
-      "sha256": "B43AA6C8FD58CA455AEA234D90E0506A47896FDEBB81667D5A28AA4765CCABF2"
+      "sha256": "D288F7EBE238CC0356173F49E45460598A5E1B7052C0B791C43FFA3C792117C9"
     },
     {
       "path": "docs/native-items-0.1.20.zh-CN.md",
@@ -724,7 +1571,7 @@
     },
     {
       "path": "docs/npc-fixed-stock.index.json",
-      "sha256": "C18A96BB7ED524EC9731E64798422EE300B61C934F6E59E81C487DE27BB32285"
+      "sha256": "C18E58B10A6AC76EA07DDED6387C716EF43A249FF2A8CC071B1A9524661E0914"
     },
     {
       "path": "docs/npc-fixed-stock.zh-CN.md",
@@ -740,11 +1587,11 @@
     },
     {
       "path": "docs/official-sources.index.json",
-      "sha256": "50E2C17503D91DF528F62F3B964FA08965990B920AEBD6D17BA2A3E096167F69"
+      "sha256": "DAE61B61342D7298C419BDB38B1090DAA14199FEE2FC3523DBC4B40D9A433769"
     },
     {
       "path": "docs/patches.index.json",
-      "sha256": "688527D1BB97097B7C59501A4CA49D0F221B745F1978ECA4D9C0C03F526292A0"
+      "sha256": "71969482CD73F9E430AEC2CF3D0DD738CA9C22DBE25534B1F888BE425C50E8CE"
     },
     {
       "path": "docs/phone.zh-CN.md",
@@ -768,7 +1615,7 @@
     },
     {
       "path": "docs/progression-requirements.index.json",
-      "sha256": "C7FEA79E62A9B51709E98E1AC265D05ED29900F3975B3334FCADF2E447FF3472"
+      "sha256": "A440B67C3F050CD0C74A2D821F3131FB99D444C30564FFCC809230A1889553FD"
     },
     {
       "path": "docs/progression-requirements.zh-CN.md",
@@ -776,11 +1623,11 @@
     },
     {
       "path": "docs/public-api.index.json",
-      "sha256": "6F41281184A1B602F90FBE9A5849EF34EF87C2070347C552CD5AA9284C25B45C"
+      "sha256": "F0178035D76316BDF8B563DEAA0BC533479C335F3ED325F20919572E6B3B6184"
     },
     {
       "path": "docs/public-contract-coverage.index.json",
-      "sha256": "7A0BDC3DDDA44220296B05912D2B807F74D569931819CBF6955A2C51FEA75469"
+      "sha256": "A77A76F61C24176D096EC00A4FD03BD949700B1613FB03A97835859EF3E337BB"
     },
     {
       "path": "docs/public-helpers.en.md",
@@ -788,7 +1635,7 @@
     },
     {
       "path": "docs/public-helpers.index.json",
-      "sha256": "9D7BC099050C01952B0CC21820622BFFC5B7271B6D8B8580E31A9365C7024990"
+      "sha256": "C40DEA792E91753CDF9FAF1E64BF92BE63BA7D9595AD9E0C8DF1A1201E71CF21"
     },
     {
       "path": "docs/public-helpers.zh-CN.md",
@@ -800,7 +1647,7 @@
     },
     {
       "path": "docs/recipe-guide-bilingual.index.json",
-      "sha256": "50ADE3E5E08F5753E0CF07C0F855BD3753E709CAB53B56AF5B848B7DFF91116D"
+      "sha256": "91A8AEDF0764E494EF903BAF08AD0B58E1374AC4580E21EAF08FB81D84944C02"
     },
     {
       "path": "docs/recipe-guide-images.en.md",
@@ -808,7 +1655,7 @@
     },
     {
       "path": "docs/recipe-guide-images.index.json",
-      "sha256": "0A09ED9B932817B1C1FB8923B5FB67A5BE1D3F1CE2DF38263DC2011CFF203E10"
+      "sha256": "6661D44FE9AEB7DBCF98B56CD309A34EAAF48E9B3F5288F25E79BE7FA4DEF339"
     },
     {
       "path": "docs/recipe-guide-images.zh-CN.md",
@@ -828,7 +1675,7 @@
     },
     {
       "path": "docs/release-status.json",
-      "sha256": "FB429792B0F61940D3B8F7654A04940EBDDBA834579E98AAD07A2AAE0F84435B"
+      "sha256": "87D26BC7EBA9E3891B346B319ECE226405A65198C02C4D52E93985C88785CC94"
     },
     {
       "path": "docs/releases/0.1.72-preview.1.md",
@@ -851,8 +1698,12 @@
       "sha256": "12E2DAEB1D0FC8D6D74447F1089BD1EA24565A00BA9A4DE8FAE571EE3B3CA950"
     },
     {
+      "path": "docs/releases/0.1.73-preview.5.md",
+      "sha256": "A4C0ED85243063882C7C5EB8D78C2418067B1EC6689426440A5D359F4795D069"
+    },
+    {
       "path": "docs/releases/README.md",
-      "sha256": "D6AF7DFBAE8C0681EEB968246746CC877FCAC25E26D7AF3A7961FCEFAD556912"
+      "sha256": "2F61894065A3013F3CEB37EAFC9F325E29A4887436A1151FCDE61C6697B2A193"
     },
     {
       "path": "docs/run-data-records.zh-CN.md",
@@ -884,11 +1735,11 @@
     },
     {
       "path": "docs/source.index.json",
-      "sha256": "AC9F263793808ED7C04F0E62F9C35BE8CDC33AE852F3A6A20B7818C6BF56AC3B"
+      "sha256": "BDCE79716D5AA4C35048147B3A6EC9C58A56E70316F6B3E907528D964D0130AD"
     },
     {
       "path": "docs/sprite-assets.zh-CN.md",
-      "sha256": "6FEE184975D1C81F879653A7D7818705881D238340E4CAA706E46325536805BE"
+      "sha256": "1EAD4878B5475C1EEB54F87F2EBD3394F48D8CBD184A2CCA48FD5ACFC0800633"
     },
     {
       "path": "docs/start-0.1.37.zh-CN.md",
@@ -992,7 +1843,7 @@
     },
     {
       "path": "scripts/Check-SourceDistribution.py",
-      "sha256": "2EB791AD92640F55E8E5A90AC3377F96D78309BDF579261E73B32D8AB9EC4779"
+      "sha256": "AA2F63A756A54712E3468C05046AB0532EDD1C625908E212AF2190C949BE4313"
     },
     {
       "path": "scripts/Fetch-OfficialDocs.ps1",
@@ -1000,7 +1851,7 @@
     },
     {
       "path": "scripts/Package-EZapi.py",
-      "sha256": "F857319D9526DB81E53FE53119EBDDC90C9857AA9B5ECADDA96B0F791F9CD493"
+      "sha256": "9E6860B8677C861382A11724F5B3BE36052CC21489ECB08AAD7A4EEE6971AD0E"
     },
     {
       "path": "scripts/Test-EZapiOffline.ps1",
@@ -1008,7 +1859,7 @@
     },
     {
       "path": "scripts/Verify-Documentation.py",
-      "sha256": "99FA057DD45107922DD56FCC0EAC74B4CB7E16CEA999D36965D4BDAD3F9B6E6B"
+      "sha256": "4BFAB4B1B00F2A2F58C5EAEC731E7EDF9430CF1FA7825F976E2523B44EB8D33E"
     },
     {
       "path": "src/EZapi.ContentValidator/EZapi.ContentValidator.csproj",

@@ -4,6 +4,7 @@ import argparse
 import hashlib
 import json
 import re
+import struct
 import urllib.parse
 
 parser = argparse.ArgumentParser(description=__doc__)
@@ -80,7 +81,45 @@ if full['dllSha256'] != status['runtimeDllSHA256']:
     rebuilt = root/'src/EZapi/bin/Release/net6.0/EZapi.dll'
     assert rebuilt.is_file() and hashlib.sha256(rebuilt.read_bytes()).hexdigest().upper() == full['dllSha256']
 assert all(not re.search(r'-0\.1\.\d+\.', d.get('guide', '')) for d in full['domains'])
+
+# Art references are a separate, optional developer asset set. Check the exact
+# selected files and both PNG sizes without requiring imaging libraries in CI.
+art = docs/'art-reference'
+art_entry = json.loads((docs/'item-art.index.json').read_text(encoding='utf-8-sig'))
+assets = json.loads((art/'art-reference.index.json').read_text(encoding='utf-8-sig'))
+assert art_entry['originalArtworkCoveredByEzapiMit'] is False
+assert art_entry['includedInDeveloperPackage'] and not art_entry['includedInGamePackage']
+assert art_entry['pixelConvention']['newRuntimeSizeRestriction'] is False
+assert len(assets['items']) == 96
+assert len({row['spriteName'] for row in assets['items']}) == 96
+selected = {'00-overview.png', '09-palette-reference.png'}
+categories = set()
+for row in assets['items']:
+    categories.add(row['category'])
+    for key, factor, hash_key in [('original', 1, 'sha256'), ('enlarged4x', 4, 'enlarged4xSHA256')]:
+        rel = row[key]
+        path = (art/rel).resolve(strict=True)
+        assert path.is_relative_to(art.resolve()), rel
+        data = path.read_bytes()
+        assert data[:8] == b'\x89PNG\r\n\x1a\n', rel
+        assert struct.unpack('>II', data[16:24]) == (row['widthPx']*factor, row['heightPx']*factor), rel
+        assert hashlib.sha256(data).hexdigest().upper() == row[hash_key], rel
+        selected.add(rel)
+for category in categories:
+    assert len([row for row in assets['items'] if row['category']==category]) == 12
+    selected.add('boards/'+category+'.png')
+assert len(categories) == 8
+assert {p.relative_to(art).as_posix() for p in art.rglob('*.png')} == selected
+for rel in selected:
+    assert (art/rel).read_bytes().startswith(b'\x89PNG\r\n\x1a\n')
+for name in ['AI-PROMPT.zh-CN.txt', 'AI-PROMPT.en.txt', 'NOTICE.md', 'README.md', 'verification.json']:
+    assert (art/name).is_file()
+assert 'excluded from EZapi' in (art/'NOTICE.md').read_text(encoding='utf-8')
+assert 'art-reference' in (root/'THIRD-PARTY-NOTICES.md').read_text(encoding='utf-8')
+assert 'item-art' in (docs/'AI-START-HERE.zh-CN.md').read_text(encoding='utf-8')
+assert 'item-art' in (docs/'AI-START-HERE.en.md').read_text(encoding='utf-8')
 assert not errors, json.dumps(errors, ensure_ascii=False, indent=2)
 print(json.dumps({'passed': True, 'releaseTag': tag, 'indexesChecked': indexes,
                   'markdownPagesChecked': len(pages), 'localLinksChecked': links,
+                  'artReferenceSpritesChecked': len(assets['items']),
                   'currentNativeAcceptancePending': True}))

@@ -1,0 +1,32 @@
+{
+  "originalSprites": 96,
+  "enlargedSprites": 96,
+  "categoryBoards": 8,
+  "allSelectedDimensionsMultipleOf16": true,
+  "nearestNeighborRoundtripVerified": true,
+  "visibleContentChecked": true,
+  "nativeGameStarted": false,
+  "currentDllRuntimeVerified": false,
+  "dimensions": {
+    "96x16": 1,
+    "64x32": 3,
+    "64x16": 2,
+    "16x48": 3,
+    "16x64": 8,
+    "48x16": 3,
+    "64x48": 3,
+    "32x32": 18,
+    "48x48": 9,
+    "32x48": 5,
+    "48x32": 13,
+    "16x16": 3,
+    "16x32": 12,
+    "48x64": 4,
+    "64x80": 1,
+    "64x96": 1,
+    "96x64": 4,
+    "80x32": 1,
+    "32x64": 1,
+    "64x64": 1
+  }
+}

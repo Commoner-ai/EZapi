@@ -15,7 +15,7 @@ import sys
 import zipfile
 
 ROOT = Path(__file__).resolve().parents[1]
-TAG = '0.1.73-preview.4'
+TAG = json.loads((ROOT/'docs/release-status.json').read_text(encoding='utf-8-sig'))['releaseTag']
 PUBLIC_REPOSITORY = 'https://github.com/Commoner-ai/EZapi'
 TEXT = {'.md', '.json', '.cs', '.csproj', '.ps1', '.xml', '.txt'}
 
@@ -174,6 +174,8 @@ for target in [game, developer]:
     assert [p.relative_to(target/'Mods').as_posix() for p in (target/'Mods').rglob('*.dll')] == ['EZapi.dll']
     assert not (target/'Mods/EZapiPacks').exists()
 assert not (game/'UserData').exists()
+assert not (game/'docs/art-reference').exists()
+assert (developer/'docs/art-reference/NOTICE.md').is_file()
 assert sha(game/'Mods/EZapi.dll') == sha(developer/'Mods/EZapi.dll') == verification['dllSHA256']
 assert load(developer/'docs/release-status.json')['releaseTag'] == TAG
 documentation = subprocess.run(
@@ -190,6 +192,11 @@ write(output/'package-verification.json', {
     'nativeRuntimeVerified': False, 'fullGoalComplete': False,
     'developerAutomationIncluded': True,
     'documentationConsistencyVerified': True,
+    'optionalArtReferenceIncluded': True,
+    'artReferenceOriginalSprites': 96,
+    'artReferenceNearest4xSprites': 96,
+    'artReferenceCategoryBoards': 8,
+    'originalArtworkCoveredByEzapiMit': False,
 })
 (output/'SHA256SUMS.txt').write_text(''.join(x['sha256']+'  '+x['file']+'\n' for x in assets), encoding='utf-8')
 print(json.dumps({'passed': True, 'frameworkSourceIncluded': False, 'assets': assets}, ensure_ascii=False))

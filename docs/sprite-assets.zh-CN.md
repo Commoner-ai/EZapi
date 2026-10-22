@@ -4,6 +4,10 @@
 
 `SpriteAssets` 让 C# Mod 把 PNG 作为程序集资源交给 EZapi 预检，再由 EZapi 安装到自己命名空间下的 Unity 图集。当前游戏构建已核实 `RenderHandler.atlasCache` 与 `GameItem.SetSprite`；EZapi 不安装全局图片解析补丁。
 
+## 需要贴近原版画风
+
+先看[物品美术与AI提示词](item-art.zh-CN.md)，从开发包附带的96张原版参考中选择同类图片。参考图是可选资料，生成的新图仍按下面的资源声明和加载契约接入。原版美术权属独立于MIT。
+
 ## 准备资源
 
 在 Mod 的 `.csproj` 把 PNG 嵌入程序集，并设置稳定资源名：

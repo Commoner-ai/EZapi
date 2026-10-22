@@ -1,0 +1,2097 @@
+{
+  "schemaVersion": 1,
+  "sourceKind": "installed-original-game-sprites",
+  "intendedUse": "Optional visual references for new Mod artwork; see NOTICE.md",
+  "artworkLicense": "Original game artwork; not covered by EZapi MIT license",
+  "sourceAssetSHA256": "F00E7F357DFA5C72A891763F10D39BD252D61FEB282998422400DD806DF640E1",
+  "spriteNamesAreNotItemRegistryIds": true,
+  "gridOccupancyVerified": false,
+  "items": [
+    {
+      "category": "01-tools",
+      "categoryZh": "工具与手持设备",
+      "spriteName": "crowbar",
+      "visualRole": "item-sprite-reference",
+      "source": {
+        "sourceAsset": "resources.assets",
+        "spritePathId": 1030
+      },
+      "widthPx": 96,
+      "heightPx": 16,
+      "original": "originals/01-tools/crowbar.png",
+      "enlarged4x": "enlarged-4x/01-tools/crowbar.png",
+      "sha256": "129891313025B5C0AD49399039F46121BE8AD2C3273F94BA2CD8B7300C37D1AE",
+      "enlarged4xSHA256": "05C77FAB9E8F143C5074C9F165C0AD9F431FAAE88FAD0E1858CE3DEC5751011B"
+    },
+    {
+      "category": "01-tools",
+      "categoryZh": "工具与手持设备",
+      "spriteName": "hatchet",
+      "visualRole": "item-sprite-reference",
+      "source": {
+        "sourceAsset": "resources.assets",
+        "spritePathId": 1320
+      },
+      "widthPx": 64,
+      "heightPx": 32,
+      "original": "originals/01-tools/hatchet.png",
+      "enlarged4x": "enlarged-4x/01-tools/hatchet.png",
+      "sha256": "17FF7B9C53057B54FF6675D485C7AF50BE1F857FD711E351FCA7C06D590E373E",
+      "enlarged4xSHA256": "45481C141315C8CC3CC56486AF8BFCDECCDC59B29CEA19E23171DE723E300BDB"
+    },
+    {
+      "category": "01-tools",
+      "categoryZh": "工具与手持设备",
+      "spriteName": "box_cutter",
+      "visualRole": "item-sprite-reference",
+      "source": {
+        "sourceAsset": "resources.assets",
+        "spritePathId": 571
+      },
+      "widthPx": 64,
+      "heightPx": 16,
+      "original": "originals/01-tools/box_cutter.png",
+      "enlarged4x": "enlarged-4x/01-tools/box_cutter.png",
+      "sha256": "1C04E26AD4619466848BE89392E8DCE18A16C3D5B6C9AA8C551F23DDE0EB94E8",
+      "enlarged4xSHA256": "F91F7CB60A1E0EE9D57BC997824F462A9CAFDCDEC9FAF44442B1A0038D6B07ED"
+    },
+    {
+      "category": "01-tools",
+      "categoryZh": "工具与手持设备",
+      "spriteName": "wirecutter",
+      "visualRole": "item-sprite-reference",
+      "source": {
+        "sourceAsset": "resources.assets",
+        "spritePathId": 451
+      },
+      "widthPx": 16,
+      "heightPx": 48,
+      "original": "originals/01-tools/wirecutter.png",
+      "enlarged4x": "enlarged-4x/01-tools/wirecutter.png",
+      "sha256": "8F16528031B01FB090E3EA725C551FC0E90FAFCE90878136560B8631A169D8EC",
+      "enlarged4xSHA256": "19AB269BFE71F86B32077EA5D821F87D2062C7D8494EA2EB4164B22A0DDDE579"
+    },
+    {
+      "category": "01-tools",
+      "categoryZh": "工具与手持设备",
+      "spriteName": "screwdriver_s",
+      "visualRole": "item-sprite-reference",
+      "source": {
+        "sourceAsset": "resources.assets",
+        "spritePathId": 832
+      },
+      "widthPx": 16,
+      "heightPx": 48,
+      "original": "originals/01-tools/screwdriver_s.png",
+      "enlarged4x": "enlarged-4x/01-tools/screwdriver_s.png",
+      "sha256": "AAA86559A5AF814B613A174CA861E3844C864BB15B2DE9A45D5C4A3502697018",
+      "enlarged4xSHA256": "E42957CBD7162DE6007A40579710851364576800E9A721E61540332194D5EFAA"
+    },
+    {
+      "category": "01-tools",
+      "categoryZh": "工具与手持设备",
+      "spriteName": "welder_s",
+      "visualRole": "item-sprite-reference",
+      "source": {
+        "sourceAsset": "resources.assets",
+        "spritePathId": 257
+      },
+      "widthPx": 16,
+      "heightPx": 64,
+      "original": "originals/01-tools/welder_s.png",
+      "enlarged4x": "enlarged-4x/01-tools/welder_s.png",
+      "sha256": "07812EEC0C7AE82928E936E1DD13E9E79A4844AFBC8F53305869C539E9BE9FFC",
+      "enlarged4xSHA256": "AC1616B773E636BEE1A2CC3B8FBBC599808FC0934FACD87C02777B012E783FA4"
+    },
+    {
+      "category": "01-tools",
+      "categoryZh": "工具与手持设备",
+      "spriteName": "flashlight3",
+      "visualRole": "item-sprite-reference",
+      "source": {
+        "sourceAsset": "resources.assets",
+        "spritePathId": 95
+      },
+      "widthPx": 48,
+      "heightPx": 16,
+      "original": "originals/01-tools/flashlight3.png",
+      "enlarged4x": "enlarged-4x/01-tools/flashlight3.png",
+      "sha256": "2834970A956282AB0DBED0F266ABBB3C9921C87C026B150C50E6E7D46242BA17",
+      "enlarged4xSHA256": "56C7CECBFD8FD18E54E5D0EE3642BDBF6E141818940F3EC334A7DC13737699C1"
+    },
+    {
+      "category": "01-tools",
+      "categoryZh": "工具与手持设备",
+      "spriteName": "metal_scanner",
+      "visualRole": "item-sprite-reference",
+      "source": {
+        "sourceAsset": "resources.assets",
+        "spritePathId": 520
+      },
+      "widthPx": 64,
+      "heightPx": 48,
+      "original": "originals/01-tools/metal_scanner.png",
+      "enlarged4x": "enlarged-4x/01-tools/metal_scanner.png",
+      "sha256": "3B7D1984FEEA21DFD740F637E2946FA0EA806FD10695235996C4010B606E8408",
+      "enlarged4xSHA256": "5B5EFBE7DC5864782BEC2D214B200A5C100F0D19CD200598909D6A4360206CB5"
+    },
+    {
+      "category": "01-tools",
+      "categoryZh": "工具与手持设备",
+      "spriteName": "portable_water_purifier",
+      "visualRole": "item-sprite-reference",
+      "source": {
+        "sourceAsset": "resources.assets",
+        "spritePathId": 959
+      },
+      "widthPx": 32,
+      "heightPx": 32,
+      "original": "originals/01-tools/portable_water_purifier.png",
+      "enlarged4x": "enlarged-4x/01-tools/portable_water_purifier.png",
+      "sha256": "BA24FC4ACBE7ACF631E2B9383055CA12130288CF88514155406C22681F13B538",
+      "enlarged4xSHA256": "E81D4CB96765A7C20501054DC058A0500DC05ED115B6A79498063EF50F4F6ABA"
+    },
+    {
+      "category": "01-tools",
+      "categoryZh": "工具与手持设备",
+      "spriteName": "magnifier",
+      "visualRole": "item-sprite-reference",
+      "source": {
+        "sourceAsset": "resources.assets",
+        "spritePathId": 982
+      },
+      "widthPx": 48,
+      "heightPx": 48,
+      "original": "originals/01-tools/magnifier.png",
+      "enlarged4x": "enlarged-4x/01-tools/magnifier.png",
+      "sha256": "3996D41DCBA77AA35B81907ABD739708AF4D1E1B9B564116011E3B16014C4DA3",
+      "enlarged4xSHA256": "C23558BBEE767885398FA96EC6D62B8C8A586F2A2B7380C9A7F52E6C5C8D90A3"
+    },
+    {
+      "category": "01-tools",
+      "categoryZh": "工具与手持设备",
+      "spriteName": "skinning_knife",
+      "visualRole": "item-sprite-reference",
+      "source": {
+        "sourceAsset": "resources.assets",
+        "spritePathId": 1270
+      },
+      "widthPx": 64,
+      "heightPx": 16,
+      "original": "originals/01-tools/skinning_knife.png",
+      "enlarged4x": "enlarged-4x/01-tools/skinning_knife.png",
+      "sha256": "D54F498CC47E2D0A59634332A6850276AF2DC59BD30BA7C9813E8D7C316E0C4B",
+      "enlarged4xSHA256": "F9675F7E9AA6CE392F13078E60CB6A72A1F6D410978E1615678B430A8E6B8ACC"
+    },
+    {
+      "category": "01-tools",
+      "categoryZh": "工具与手持设备",
+      "spriteName": "labeler",
+      "visualRole": "item-sprite-reference",
+      "source": {
+        "sourceAsset": "resources.assets",
+        "spritePathId": 185
+      },
+      "widthPx": 32,
+      "heightPx": 48,
+      "original": "originals/01-tools/labeler.png",
+      "enlarged4x": "enlarged-4x/01-tools/labeler.png",
+      "sha256": "EE26C89076171E8F3D454CADAFC2520BF62618A7775A0069CD37E9EE9C921365",
+      "enlarged4xSHA256": "F9D7DEC6C7F6C52D66B4AD9B1FEB757AC26C01574AEF56F08AD315109EE1BDB7"
+    },
+    {
+      "category": "02-food-drink",
+      "categoryZh": "食品与饮料",
+      "spriteName": "cheese",
+      "visualRole": "item-sprite-reference",
+      "source": {
+        "sourceAsset": "resources.assets",
+        "spritePathId": 223
+      },
+      "widthPx": 32,
+      "heightPx": 32,
+      "original": "originals/02-food-drink/cheese.png",
+      "enlarged4x": "enlarged-4x/02-food-drink/cheese.png",
+      "sha256": "237B16CB39EC1E1BEC242B9738E2568634A98061173CAD6D5A5534D8E006B4BE",
+      "enlarged4xSHA256": "5C917B06DBE065E47C492474F2108C67979ED0451722A6EB8D01391191F82163"
+    },
+    {
+      "category": "02-food-drink",
+      "categoryZh": "食品与饮料",
+      "spriteName": "cup_noodle",
+      "visualRole": "item-sprite-reference",
+      "source": {
+        "sourceAsset": "resources.assets",
+        "spritePathId": 1143
+      },
+      "widthPx": 48,
+      "heightPx": 32,
+      "original": "originals/02-food-drink/cup_noodle.png",
+      "enlarged4x": "enlarged-4x/02-food-drink/cup_noodle.png",
+      "sha256": "B2DC5AF0F290A20577FD1A265AE969B8E4685CC323DDF579B11CFDB5ACA7D82A",
+      "enlarged4xSHA256": "B6BD8DCC008B2CCDAB659F1506074459FCB8AA3278E644C482645B9E71096C5A"
+    },
+    {
+      "category": "02-food-drink",
+      "categoryZh": "食品与饮料",
+      "spriteName": "ribwich",
+      "visualRole": "item-sprite-reference",
+      "source": {
+        "sourceAsset": "resources.assets",
+        "spritePathId": 488
+      },
+      "widthPx": 48,
+      "heightPx": 32,
+      "original": "originals/02-food-drink/ribwich.png",
+      "enlarged4x": "enlarged-4x/02-food-drink/ribwich.png",
+      "sha256": "5C6E5E46F54371A95E6750589362937FD5A46A3FA9A2A7D0FA35E82C7EAFD1B5",
+      "enlarged4xSHA256": "D681CC7D2F10052B9CC3DDB17D359C2D847AF66C12803822E0E922FD0CD995B5"
+    },
+    {
+      "category": "02-food-drink",
+      "categoryZh": "食品与饮料",
+      "spriteName": "cat_bar",
+      "visualRole": "item-sprite-reference",
+      "source": {
+        "sourceAsset": "resources.assets",
+        "spritePathId": 1090
+      },
+      "widthPx": 32,
+      "heightPx": 32,
+      "original": "originals/02-food-drink/cat_bar.png",
+      "enlarged4x": "enlarged-4x/02-food-drink/cat_bar.png",
+      "sha256": "2DB149D79CC477B432543C97BA4E9F44F1B6DE0E0D18A9B040E27F63F13B5A8E",
+      "enlarged4xSHA256": "88E13168E858F9E1739B08AA52D7598844AB8D14D52C06B24DF7C6DBBAF25056"
+    },
+    {
+      "category": "02-food-drink",
+      "categoryZh": "食品与饮料",
+      "spriteName": "raw_meat",
+      "visualRole": "item-sprite-reference",
+      "source": {
+        "sourceAsset": "resources.assets",
+        "spritePathId": 154
+      },
+      "widthPx": 48,
+      "heightPx": 32,
+      "original": "originals/02-food-drink/raw_meat.png",
+      "enlarged4x": "enlarged-4x/02-food-drink/raw_meat.png",
+      "sha256": "37A6332E9EAE5B6B6248C5BDE0325EDC22C2D2A36B5BB908E3A7BD661009C5BC",
+      "enlarged4xSHA256": "CEDBDB783647A478420F82FB8B873C5A8B5AF0D62E37714040DE5631A94A9780"
+    },
+    {
+      "category": "02-food-drink",
+      "categoryZh": "食品与饮料",
+      "spriteName": "processed_meat",
+      "visualRole": "item-sprite-reference",
+      "source": {
+        "sourceAsset": "resources.assets",
+        "spritePathId": 615
+      },
+      "widthPx": 32,
+      "heightPx": 32,
+      "original": "originals/02-food-drink/processed_meat.png",
+      "enlarged4x": "enlarged-4x/02-food-drink/processed_meat.png",
+      "sha256": "B12C7EDE459B0C5922F9E6E09AE9E06CF1FDAABDE899D97C390BA4CF9BA8E040",
+      "enlarged4xSHA256": "3B1AEB718CF4FDA92586C3FAAB69289DC4EAE30B13FBBB1F2DC9441D43E795D9"
+    },
+    {
+      "category": "02-food-drink",
+      "categoryZh": "食品与饮料",
+      "spriteName": "nutrifruit",
+      "visualRole": "item-sprite-reference",
+      "source": {
+        "sourceAsset": "resources.assets",
+        "spritePathId": 688
+      },
+      "widthPx": 32,
+      "heightPx": 32,
+      "original": "originals/02-food-drink/nutrifruit.png",
+      "enlarged4x": "enlarged-4x/02-food-drink/nutrifruit.png",
+      "sha256": "D4F07EC12CD9773A0A6E86FD32AD5BD902C6E8163F2BF25FA161446C54B1C54F",
+      "enlarged4xSHA256": "7AC4BC47FA29F51316D82ECFC964CE7C6D4DA8E6A001A0646B18A66FEAE3096F"
+    },
+    {
+      "category": "02-food-drink",
+      "categoryZh": "食品与饮料",
+      "spriteName": "coffee_bean",
+      "visualRole": "item-sprite-reference",
+      "source": {
+        "sourceAsset": "resources.assets",
+        "spritePathId": 999
+      },
+      "widthPx": 16,
+      "heightPx": 16,
+      "original": "originals/02-food-drink/coffee_bean.png",
+      "enlarged4x": "enlarged-4x/02-food-drink/coffee_bean.png",
+      "sha256": "DC9A7C12AC3FF80B87F7951236E32F0DBD0447B14C720702CB681C869AB064CC",
+      "enlarged4xSHA256": "738434A406A8661C3DF9612EC40693A2DE096D3B4B67DC7A5A297D5F8F344B65"
+    },
+    {
+      "category": "02-food-drink",
+      "categoryZh": "食品与饮料",
+      "spriteName": "energy_drink",
+      "visualRole": "item-sprite-reference",
+      "source": {
+        "sourceAsset": "resources.assets",
+        "spritePathId": 437
+      },
+      "widthPx": 16,
+      "heightPx": 32,
+      "original": "originals/02-food-drink/energy_drink.png",
+      "enlarged4x": "enlarged-4x/02-food-drink/energy_drink.png",
+      "sha256": "8CC34E612A91C4458C17B2A64E085FF911FE5E775BD8AE13077DF08235B9B937",
+      "enlarged4xSHA256": "71C368B5E450139BC875180745E66E28CEE0003FE64E2DDACC3A485EC8764E4E"
+    },
+    {
+      "category": "02-food-drink",
+      "categoryZh": "食品与饮料",
+      "spriteName": "juice_pouch",
+      "visualRole": "item-sprite-reference",
+      "source": {
+        "sourceAsset": "resources.assets",
+        "spritePathId": 789
+      },
+      "widthPx": 32,
+      "heightPx": 32,
+      "original": "originals/02-food-drink/juice_pouch.png",
+      "enlarged4x": "enlarged-4x/02-food-drink/juice_pouch.png",
+      "sha256": "4A6EF0BD174316E96DF36AA3B13F73DBCA57240C650812250809A9B9B6AED602",
+      "enlarged4xSHA256": "6748F3F91605F71CCA4D6FAD7FEAA949E2C335BCF6F7B2E53C7CB05A36E647D5"
+    },
+    {
+      "category": "02-food-drink",
+      "categoryZh": "食品与饮料",
+      "spriteName": "items_food_soda_red",
+      "visualRole": "item-sprite-reference",
+      "source": {
+        "sourceAsset": "resources.assets",
+        "spritePathId": 1229
+      },
+      "widthPx": 16,
+      "heightPx": 32,
+      "original": "originals/02-food-drink/items_food_soda_red.png",
+      "enlarged4x": "enlarged-4x/02-food-drink/items_food_soda_red.png",
+      "sha256": "249FFE093F515E5109D53FC9D9E3C2D3F437271ED6591CFA0DF4546178999E42",
+      "enlarged4xSHA256": "B53662F17BA5B43F9F0FCAA15CC67CB50FC23A32ECF1036B2E3C397E278DB788"
+    },
+    {
+      "category": "02-food-drink",
+      "categoryZh": "食品与饮料",
+      "spriteName": "wine_bottle",
+      "visualRole": "item-sprite-reference",
+      "source": {
+        "sourceAsset": "resources.assets",
+        "spritePathId": 1289
+      },
+      "widthPx": 16,
+      "heightPx": 64,
+      "original": "originals/02-food-drink/wine_bottle.png",
+      "enlarged4x": "enlarged-4x/02-food-drink/wine_bottle.png",
+      "sha256": "DA6255D37C014E67BAD3A33B39896F4E51B4F32DCBD3E81E0A1EBDC55095513E",
+      "enlarged4xSHA256": "7143780FFA267A3638FC58906A01F5DACFACB13338345E14134DB9DFB52B93C5"
+    },
+    {
+      "category": "03-medical",
+      "categoryZh": "医疗用品",
+      "spriteName": "bandage_small",
+      "visualRole": "item-sprite-reference",
+      "source": {
+        "sourceAsset": "resources.assets",
+        "spritePathId": 351
+      },
+      "widthPx": 16,
+      "heightPx": 32,
+      "original": "originals/03-medical/bandage_small.png",
+      "enlarged4x": "enlarged-4x/03-medical/bandage_small.png",
+      "sha256": "AEE7952C4E1F057298CCB369FADEBC5CFDE8F5C54BA9D7F14EBF0CCF1488C9B2",
+      "enlarged4xSHA256": "3186B346137CF8D5D1BB707084261CC77D7E5B8F2283A8B3868E8805C60B8936"
+    },
+    {
+      "category": "03-medical",
+      "categoryZh": "医疗用品",
+      "spriteName": "hemostatic_bandage_small",
+      "visualRole": "item-sprite-reference",
+      "source": {
+        "sourceAsset": "resources.assets",
+        "spritePathId": 1021
+      },
+      "widthPx": 16,
+      "heightPx": 32,
+      "original": "originals/03-medical/hemostatic_bandage_small.png",
+      "enlarged4x": "enlarged-4x/03-medical/hemostatic_bandage_small.png",
+      "sha256": "C331C3DE4ECE9CF73657335B2A0AE81C4B84EF9762682456FCC0EBA6A670767F",
+      "enlarged4xSHA256": "5F266FB6E7B4F727AB5659F03AFC2269C12FBA74D493F04F4FA4037605F2FA59"
+    },
+    {
+      "category": "03-medical",
+      "categoryZh": "医疗用品",
+      "spriteName": "topical_bandage_small",
+      "visualRole": "item-sprite-reference",
+      "source": {
+        "sourceAsset": "resources.assets",
+        "spritePathId": 558
+      },
+      "widthPx": 16,
+      "heightPx": 32,
+      "original": "originals/03-medical/topical_bandage_small.png",
+      "enlarged4x": "enlarged-4x/03-medical/topical_bandage_small.png",
+      "sha256": "490355CDCD924C9D29163B88A23BA9E376E8519AFDB4B4CE74CF67D896047416",
+      "enlarged4xSHA256": "839347156724C2E12E3D24A5E2189FEA363605F4BD6059E05C65158ECA3C0351"
+    },
+    {
+      "category": "03-medical",
+      "categoryZh": "医疗用品",
+      "spriteName": "salve",
+      "visualRole": "item-sprite-reference",
+      "source": {
+        "sourceAsset": "resources.assets",
+        "spritePathId": 922
+      },
+      "widthPx": 32,
+      "heightPx": 32,
+      "original": "originals/03-medical/salve.png",
+      "enlarged4x": "enlarged-4x/03-medical/salve.png",
+      "sha256": "51727D60AEA8B10B5D03438824DE77095290BDEAA5113184DD7CFEF4D330A7AE",
+      "enlarged4xSHA256": "068C9BC9B4516943FA376005197614F26E8ADEC8517B1E6E1907F3082DF7BAC9"
+    },
+    {
+      "category": "03-medical",
+      "categoryZh": "医疗用品",
+      "spriteName": "med_bottle_blue",
+      "visualRole": "item-sprite-reference",
+      "source": {
+        "sourceAsset": "resources.assets",
+        "spritePathId": 519
+      },
+      "widthPx": 16,
+      "heightPx": 32,
+      "original": "originals/03-medical/med_bottle_blue.png",
+      "enlarged4x": "enlarged-4x/03-medical/med_bottle_blue.png",
+      "sha256": "83618B60E5ECBC8D0314521F3C4DEDAB3477B11A0F5C13D5E8A31CBB0528D8EA",
+      "enlarged4xSHA256": "373D10EBE8E71EF2E2F1557E983C8C249CCA772A997D8A6EC78851B57E794F3A"
+    },
+    {
+      "category": "03-medical",
+      "categoryZh": "医疗用品",
+      "spriteName": "med_bottle_orange",
+      "visualRole": "item-sprite-reference",
+      "source": {
+        "sourceAsset": "resources.assets",
+        "spritePathId": 242
+      },
+      "widthPx": 16,
+      "heightPx": 32,
+      "original": "originals/03-medical/med_bottle_orange.png",
+      "enlarged4x": "enlarged-4x/03-medical/med_bottle_orange.png",
+      "sha256": "0053D16869CF4807379BDADF49C270E1305A1D75DF3E00820A8EFD91632B5C84",
+      "enlarged4xSHA256": "739299E08CE75EE9D0850C9C1532E6F3724CEC2FBDB8623C9DD50EE1E9879694"
+    },
+    {
+      "category": "03-medical",
+      "categoryZh": "医疗用品",
+      "spriteName": "med_bottle_red",
+      "visualRole": "item-sprite-reference",
+      "source": {
+        "sourceAsset": "resources.assets",
+        "spritePathId": 454
+      },
+      "widthPx": 16,
+      "heightPx": 32,
+      "original": "originals/03-medical/med_bottle_red.png",
+      "enlarged4x": "enlarged-4x/03-medical/med_bottle_red.png",
+      "sha256": "AF24DEC43A0B7D75659266EC9534DC8FC00B42A08F32E45213EB177125DC3656",
+      "enlarged4xSHA256": "5648814BA003CFB05B911B8AFBF215BFF80BC5ECC48A6C9E3C2A466133F473E3"
+    },
+    {
+      "category": "03-medical",
+      "categoryZh": "医疗用品",
+      "spriteName": "med_bottle_violet",
+      "visualRole": "item-sprite-reference",
+      "source": {
+        "sourceAsset": "resources.assets",
+        "spritePathId": 631
+      },
+      "widthPx": 16,
+      "heightPx": 32,
+      "original": "originals/03-medical/med_bottle_violet.png",
+      "enlarged4x": "enlarged-4x/03-medical/med_bottle_violet.png",
+      "sha256": "D2BEE8B13EA4B1E36CC0F4726AC3BA5162D6EE932A5E0C43ECBF11FA59901721",
+      "enlarged4xSHA256": "4994E8B1AF77BE5CFFF796455C0DDC39D7B54F9FFCD6573B732025EDDEA68DC7"
+    },
+    {
+      "category": "03-medical",
+      "categoryZh": "医疗用品",
+      "spriteName": "blood_bag",
+      "visualRole": "item-sprite-reference",
+      "source": {
+        "sourceAsset": "resources.assets",
+        "spritePathId": 599
+      },
+      "widthPx": 32,
+      "heightPx": 48,
+      "original": "originals/03-medical/blood_bag.png",
+      "enlarged4x": "enlarged-4x/03-medical/blood_bag.png",
+      "sha256": "174500D5ED32D224317F7E32F09F57BA1270ABD7F55FD3B9EC2AFF4D8A11E0D1",
+      "enlarged4xSHA256": "ADA3544F4FA83CAF35D27AB9257FB1DF30C92DDFBD4F998A88A368692F52E724"
+    },
+    {
+      "category": "03-medical",
+      "categoryZh": "医疗用品",
+      "spriteName": "blue_blood_bag",
+      "visualRole": "item-sprite-reference",
+      "source": {
+        "sourceAsset": "resources.assets",
+        "spritePathId": 679
+      },
+      "widthPx": 32,
+      "heightPx": 48,
+      "original": "originals/03-medical/blue_blood_bag.png",
+      "enlarged4x": "enlarged-4x/03-medical/blue_blood_bag.png",
+      "sha256": "DC4C68CD0E3F26EAC79809BF4B1E8C9AA454FA4122A6AC10409B7825C465B487",
+      "enlarged4xSHA256": "A64ECA60A7F7F287D3ABD176FBE8A0D969B806D1433C7D9E0205D0968AFCC5E5"
+    },
+    {
+      "category": "03-medical",
+      "categoryZh": "医疗用品",
+      "spriteName": "surgery_toolkit",
+      "visualRole": "item-sprite-reference",
+      "source": {
+        "sourceAsset": "resources.assets",
+        "spritePathId": 885
+      },
+      "widthPx": 64,
+      "heightPx": 32,
+      "original": "originals/03-medical/surgery_toolkit.png",
+      "enlarged4x": "enlarged-4x/03-medical/surgery_toolkit.png",
+      "sha256": "D528DD6C3EF8F4785143E7228C4BBA0F0F6135006FB4979C1A7ADEB00A0B5D1A",
+      "enlarged4xSHA256": "CB5778CE3CE32BAEB715F9F194E0750DE5523D2814452B428A3EBF6DD2FF246D"
+    },
+    {
+      "category": "03-medical",
+      "categoryZh": "医疗用品",
+      "spriteName": "smelling_salt",
+      "visualRole": "item-sprite-reference",
+      "source": {
+        "sourceAsset": "resources.assets",
+        "spritePathId": 866
+      },
+      "widthPx": 16,
+      "heightPx": 16,
+      "original": "originals/03-medical/smelling_salt.png",
+      "enlarged4x": "enlarged-4x/03-medical/smelling_salt.png",
+      "sha256": "6EFC9B4DA7FCCF0921F2F6C0BC35F7ABEFA7896BCB53D73B86738BD5D071CA3C",
+      "enlarged4xSHA256": "B95CEB7EA932B8A9AC56EBCD464B73A2A33C6825D193807D2F44B229ED88E274"
+    },
+    {
+      "category": "04-containers",
+      "categoryZh": "背包与储物箱",
+      "spriteName": "simple_backpack",
+      "visualRole": "item-sprite-reference",
+      "source": {
+        "sourceAsset": "resources.assets",
+        "spritePathId": 979
+      },
+      "widthPx": 48,
+      "heightPx": 64,
+      "original": "originals/04-containers/simple_backpack.png",
+      "enlarged4x": "enlarged-4x/04-containers/simple_backpack.png",
+      "sha256": "0885011CE94001F3CFC08D99AD954D92AFA9C6A655519B48016FFE4FAE225945",
+      "enlarged4xSHA256": "ED33D770DF74A11DE0B5941B4808812149FFB71E4B1F362A6939430F35AFB429"
+    },
+    {
+      "category": "04-containers",
+      "categoryZh": "背包与储物箱",
+      "spriteName": "simple_backpack_medium",
+      "visualRole": "item-sprite-reference",
+      "source": {
+        "sourceAsset": "resources.assets",
+        "spritePathId": 485
+      },
+      "widthPx": 64,
+      "heightPx": 80,
+      "original": "originals/04-containers/simple_backpack_medium.png",
+      "enlarged4x": "enlarged-4x/04-containers/simple_backpack_medium.png",
+      "sha256": "FEAD33EE977AFC73FAD9BFFE386E84ABFA82A64B9EE0A11FEE513C791D193DD4",
+      "enlarged4xSHA256": "7C816383AF1F68389088A20E982541B40C30FD57075E9C1994E741BD1DF6B6B0"
+    },
+    {
+      "category": "04-containers",
+      "categoryZh": "背包与储物箱",
+      "spriteName": "simple_backpack_large",
+      "visualRole": "item-sprite-reference",
+      "source": {
+        "sourceAsset": "resources.assets",
+        "spritePathId": 158
+      },
+      "widthPx": 64,
+      "heightPx": 96,
+      "original": "originals/04-containers/simple_backpack_large.png",
+      "enlarged4x": "enlarged-4x/04-containers/simple_backpack_large.png",
+      "sha256": "BF973E0115AC2376AF124525938D3137E11DC74687A832DCB311D3DD0FD10BA2",
+      "enlarged4xSHA256": "FD3DD780469B78E67F555D45A4235A47B07787B438F6C664A35A63C7659EF1A6"
+    },
+    {
+      "category": "04-containers",
+      "categoryZh": "背包与储物箱",
+      "spriteName": "satchel",
+      "visualRole": "item-sprite-reference",
+      "source": {
+        "sourceAsset": "resources.assets",
+        "spritePathId": 399
+      },
+      "widthPx": 48,
+      "heightPx": 48,
+      "original": "originals/04-containers/satchel.png",
+      "enlarged4x": "enlarged-4x/04-containers/satchel.png",
+      "sha256": "84266A44E7B4601E9A86AFC10DA3B3F1FF9DB1ACD3A5B16A09358E34B1A221CA",
+      "enlarged4xSHA256": "43FC004E1E59D1536DFBEB7DCA4212E724C9FAA3FFAB9434BD79D10AD161C88D"
+    },
+    {
+      "category": "04-containers",
+      "categoryZh": "背包与储物箱",
+      "spriteName": "fanny_pack",
+      "visualRole": "item-sprite-reference",
+      "source": {
+        "sourceAsset": "resources.assets",
+        "spritePathId": 641
+      },
+      "widthPx": 48,
+      "heightPx": 32,
+      "original": "originals/04-containers/fanny_pack.png",
+      "enlarged4x": "enlarged-4x/04-containers/fanny_pack.png",
+      "sha256": "71A75EFDC02C27B216C4C83304200F6FB8259929AA6F942405356B2220B81BB2",
+      "enlarged4xSHA256": "A327670735C6C51FA0403B2F9CAC8E1511DF6B2257F56839C6C169A2C9717768"
+    },
+    {
+      "category": "04-containers",
+      "categoryZh": "背包与储物箱",
+      "spriteName": "pouch",
+      "visualRole": "item-sprite-reference",
+      "source": {
+        "sourceAsset": "resources.assets",
+        "spritePathId": 952
+      },
+      "widthPx": 48,
+      "heightPx": 48,
+      "original": "originals/04-containers/pouch.png",
+      "enlarged4x": "enlarged-4x/04-containers/pouch.png",
+      "sha256": "A05937A1A9E4431781B9AD708CA9D030B45C2D6802E2499217EA86BD361CF304",
+      "enlarged4xSHA256": "C06641147F7CBFC50B3F33C1EB6685283EB9EA713EA53A1D81CDA51DD83F444D"
+    },
+    {
+      "category": "04-containers",
+      "categoryZh": "背包与储物箱",
+      "spriteName": "toolbox_new",
+      "visualRole": "item-sprite-reference",
+      "source": {
+        "sourceAsset": "resources.assets",
+        "spritePathId": 1041
+      },
+      "widthPx": 64,
+      "heightPx": 48,
+      "original": "originals/04-containers/toolbox_new.png",
+      "enlarged4x": "enlarged-4x/04-containers/toolbox_new.png",
+      "sha256": "17BE4C533CA73E6B1030A1BADC8C4CB5B234F16E5F879740819766471AB08270",
+      "enlarged4xSHA256": "4DCD03B1B146DBB9368DBC86BABE005036AA2A90827479E28CE393427BF48B3A"
+    },
+    {
+      "category": "04-containers",
+      "categoryZh": "背包与储物箱",
+      "spriteName": "toolbox_old",
+      "visualRole": "item-sprite-reference",
+      "source": {
+        "sourceAsset": "resources.assets",
+        "spritePathId": 843
+      },
+      "widthPx": 64,
+      "heightPx": 48,
+      "original": "originals/04-containers/toolbox_old.png",
+      "enlarged4x": "enlarged-4x/04-containers/toolbox_old.png",
+      "sha256": "4B4A82DC356679BB934DD90E279CAEAA5F313CED086876088110133122A6F580",
+      "enlarged4xSHA256": "F0BF01C4E6849F34C336D168CE22001165B8E413A73A4FA397CC4315FA62763C"
+    },
+    {
+      "category": "04-containers",
+      "categoryZh": "背包与储物箱",
+      "spriteName": "med_box",
+      "visualRole": "item-sprite-reference",
+      "source": {
+        "sourceAsset": "resources.assets",
+        "spritePathId": 1017
+      },
+      "widthPx": 96,
+      "heightPx": 64,
+      "original": "originals/04-containers/med_box.png",
+      "enlarged4x": "enlarged-4x/04-containers/med_box.png",
+      "sha256": "C0AF7AA3BA1D0C7EA7F19A4D8A6C63FDD59B5056A20CEDD03E5E8E634EAE231D",
+      "enlarged4xSHA256": "32C3DE12D24E5D95D7A9FB33622A909A4AEAB9F0A97CC9EEA5CCFEFE03CA9259"
+    },
+    {
+      "category": "04-containers",
+      "categoryZh": "背包与储物箱",
+      "spriteName": "evidence_box",
+      "visualRole": "item-sprite-reference",
+      "source": {
+        "sourceAsset": "resources.assets",
+        "spritePathId": 319
+      },
+      "widthPx": 96,
+      "heightPx": 64,
+      "original": "originals/04-containers/evidence_box.png",
+      "enlarged4x": "enlarged-4x/04-containers/evidence_box.png",
+      "sha256": "0F6143D271296CE17536B5A2733528F6CCCD48D717BCFFC34928F2E09EAB1196",
+      "enlarged4xSHA256": "0A5E301B69F65DFE1C3D4227CD280F43E48A84CA82FAC4B2E3613CECE2773046"
+    },
+    {
+      "category": "04-containers",
+      "categoryZh": "背包与储物箱",
+      "spriteName": "expedition_box",
+      "visualRole": "item-sprite-reference",
+      "source": {
+        "sourceAsset": "resources.assets",
+        "spritePathId": 901
+      },
+      "widthPx": 96,
+      "heightPx": 64,
+      "original": "originals/04-containers/expedition_box.png",
+      "enlarged4x": "enlarged-4x/04-containers/expedition_box.png",
+      "sha256": "5AD4771B65955BF844BA5A4CC4E62B329D08654B7DE6DE353DE1F48D423867AD",
+      "enlarged4xSHA256": "20FC5869B9289ED0BB2D877B99311E24FABD4F5C786B88E4FD36140A5429B8BE"
+    },
+    {
+      "category": "04-containers",
+      "categoryZh": "背包与储物箱",
+      "spriteName": "eng_box",
+      "visualRole": "item-sprite-reference",
+      "source": {
+        "sourceAsset": "resources.assets",
+        "spritePathId": 457
+      },
+      "widthPx": 96,
+      "heightPx": 64,
+      "original": "originals/04-containers/eng_box.png",
+      "enlarged4x": "enlarged-4x/04-containers/eng_box.png",
+      "sha256": "EDA0758E4759A64717191548A3B0DBA51617F8E80B28EE44B7A45172272F3742",
+      "enlarged4xSHA256": "AC8225D477C3D2A430AAA2D330926D228F8349349FBDD7F318E790B2A7E60FB0"
+    },
+    {
+      "category": "05-machines",
+      "categoryZh": "机器与工作状态",
+      "spriteName": "furnace",
+      "visualRole": "item-sprite-reference",
+      "source": {
+        "sourceAsset": "resources.assets",
+        "spritePathId": 1301
+      },
+      "widthPx": 48,
+      "heightPx": 48,
+      "original": "originals/05-machines/furnace.png",
+      "enlarged4x": "enlarged-4x/05-machines/furnace.png",
+      "sha256": "7B86A3E0E1379E8ADE5ABACC43AA7F221F729B89A3DBF707145428A13E3B6CBC",
+      "enlarged4xSHA256": "08E109A1B9FF81031A22568F69B9D391299365CC437710DC04A277BA731057E7"
+    },
+    {
+      "category": "05-machines",
+      "categoryZh": "机器与工作状态",
+      "spriteName": "furnace_on",
+      "visualRole": "item-sprite-reference",
+      "source": {
+        "sourceAsset": "resources.assets",
+        "spritePathId": 422
+      },
+      "widthPx": 48,
+      "heightPx": 48,
+      "original": "originals/05-machines/furnace_on.png",
+      "enlarged4x": "enlarged-4x/05-machines/furnace_on.png",
+      "sha256": "A3B327BDF437B248C42ABCB6B5C3B34DDC22FD9B5D88378B6033837235990DC2",
+      "enlarged4xSHA256": "22C6C21A1C3D9A666BCF149996CD2476C3391809156121E3DE3F0314BB79FBE3"
+    },
+    {
+      "category": "05-machines",
+      "categoryZh": "机器与工作状态",
+      "spriteName": "moisture_farm",
+      "visualRole": "item-sprite-reference",
+      "source": {
+        "sourceAsset": "resources.assets",
+        "spritePathId": 272
+      },
+      "widthPx": 48,
+      "heightPx": 48,
+      "original": "originals/05-machines/moisture_farm.png",
+      "enlarged4x": "enlarged-4x/05-machines/moisture_farm.png",
+      "sha256": "995C654A6C67599F5BD01391DF025231D4B43AA3FE0E7F82B347CD84B6A4062D",
+      "enlarged4xSHA256": "4A532E233E1E7447EC760CEBDAC6434C29D932A8D481479659DA6046C58F2750"
+    },
+    {
+      "category": "05-machines",
+      "categoryZh": "机器与工作状态",
+      "spriteName": "moisture_farm_w",
+      "visualRole": "item-sprite-reference",
+      "source": {
+        "sourceAsset": "resources.assets",
+        "spritePathId": 1296
+      },
+      "widthPx": 48,
+      "heightPx": 48,
+      "original": "originals/05-machines/moisture_farm_w.png",
+      "enlarged4x": "enlarged-4x/05-machines/moisture_farm_w.png",
+      "sha256": "57DB792129231D571FF8068D236C6A8CB2671FB4EB470EC5826B14BA298A09F5",
+      "enlarged4xSHA256": "1460F072BEB287EC93CEB481389BECADFB0E3DCB63A934CE139104B574EBDD20"
+    },
+    {
+      "category": "05-machines",
+      "categoryZh": "机器与工作状态",
+      "spriteName": "purifier",
+      "visualRole": "item-sprite-reference",
+      "source": {
+        "sourceAsset": "resources.assets",
+        "spritePathId": 1095
+      },
+      "widthPx": 48,
+      "heightPx": 64,
+      "original": "originals/05-machines/purifier.png",
+      "enlarged4x": "enlarged-4x/05-machines/purifier.png",
+      "sha256": "672FF6BDA25EDEC40D0860B1E2AE3241D8CB877B85FDC401352121D3C1B0775F",
+      "enlarged4xSHA256": "497764C42BD9FF32A2D416BCE53DBA2E3942F45243E9A516379983A47DF5A69B"
+    },
+    {
+      "category": "05-machines",
+      "categoryZh": "机器与工作状态",
+      "spriteName": "purifier_on",
+      "visualRole": "item-sprite-reference",
+      "source": {
+        "sourceAsset": "resources.assets",
+        "spritePathId": 618
+      },
+      "widthPx": 48,
+      "heightPx": 64,
+      "original": "originals/05-machines/purifier_on.png",
+      "enlarged4x": "enlarged-4x/05-machines/purifier_on.png",
+      "sha256": "3E4246520A1DF68A78B9A59BF0A67C4A692927E049247F4AC050E7580F2D9A92",
+      "enlarged4xSHA256": "7E9A8DD98A6ED1E46B95230B5626E2E1C41339AF6244C2877AE7D4674C94E0FB"
+    },
+    {
+      "category": "05-machines",
+      "categoryZh": "机器与工作状态",
+      "spriteName": "fridge",
+      "visualRole": "item-sprite-reference",
+      "source": {
+        "sourceAsset": "resources.assets",
+        "spritePathId": 217
+      },
+      "widthPx": 48,
+      "heightPx": 48,
+      "original": "originals/05-machines/fridge.png",
+      "enlarged4x": "enlarged-4x/05-machines/fridge.png",
+      "sha256": "8251487D5010A5286CCD2FAB2AFCB8461A560150DAC3E0225BD40219004FD903",
+      "enlarged4xSHA256": "82705A1B0566DFA57807AA7E798878466FD2E68077B5B54193DCC011E731A7CC"
+    },
+    {
+      "category": "05-machines",
+      "categoryZh": "机器与工作状态",
+      "spriteName": "powerblock",
+      "visualRole": "item-sprite-reference",
+      "source": {
+        "sourceAsset": "resources.assets",
+        "spritePathId": 1188
+      },
+      "widthPx": 32,
+      "heightPx": 32,
+      "original": "originals/05-machines/powerblock.png",
+      "enlarged4x": "enlarged-4x/05-machines/powerblock.png",
+      "sha256": "799355FDEF969B9E511A9B62486CB9C4C794234B8A219C91C64E07992B2B26D4",
+      "enlarged4xSHA256": "1D469FECCF874C233B830136CBEC3118931926571FB6B9B2C343E68F452C9CA3"
+    },
+    {
+      "category": "05-machines",
+      "categoryZh": "机器与工作状态",
+      "spriteName": "powerblock_on",
+      "visualRole": "item-sprite-reference",
+      "source": {
+        "sourceAsset": "resources.assets",
+        "spritePathId": 587
+      },
+      "widthPx": 32,
+      "heightPx": 32,
+      "original": "originals/05-machines/powerblock_on.png",
+      "enlarged4x": "enlarged-4x/05-machines/powerblock_on.png",
+      "sha256": "121350408DACFC8D1A3F40273ED5DAF6AF525F3A7426C2D66BDF0924B8177461",
+      "enlarged4xSHA256": "2108B726E78C5B692BF9EF5EF49B5053DB57FBAFB8F09EC184D1336A386001DD"
+    },
+    {
+      "category": "05-machines",
+      "categoryZh": "机器与工作状态",
+      "spriteName": "desequencer",
+      "visualRole": "item-sprite-reference",
+      "source": {
+        "sourceAsset": "resources.assets",
+        "spritePathId": 304
+      },
+      "widthPx": 48,
+      "heightPx": 48,
+      "original": "originals/05-machines/desequencer.png",
+      "enlarged4x": "enlarged-4x/05-machines/desequencer.png",
+      "sha256": "57260866DFF91176F50BADF7A63117E20172C7A37B5D60C37505B28D190B3B32",
+      "enlarged4xSHA256": "AD91A6ED642D4B47FDE268579D15206732D8ED355F49D726167FC5D648C0AC16"
+    },
+    {
+      "category": "05-machines",
+      "categoryZh": "机器与工作状态",
+      "spriteName": "vacuum_robot",
+      "visualRole": "item-sprite-reference",
+      "source": {
+        "sourceAsset": "resources.assets",
+        "spritePathId": 671
+      },
+      "widthPx": 48,
+      "heightPx": 32,
+      "original": "originals/05-machines/vacuum_robot.png",
+      "enlarged4x": "enlarged-4x/05-machines/vacuum_robot.png",
+      "sha256": "4DFF220E8E1DFF60924A3EEB247541E2BA481FDAC17D8AAB5867E02B61118992",
+      "enlarged4xSHA256": "50A3D2B89873B4964C1CADFD2E5355FFA0FD51179021B2DB6FF90C342E280409"
+    },
+    {
+      "category": "05-machines",
+      "categoryZh": "机器与工作状态",
+      "spriteName": "bottle_printer",
+      "visualRole": "item-sprite-reference",
+      "source": {
+        "sourceAsset": "resources.assets",
+        "spritePathId": 1142
+      },
+      "widthPx": 32,
+      "heightPx": 48,
+      "original": "originals/05-machines/bottle_printer.png",
+      "enlarged4x": "enlarged-4x/05-machines/bottle_printer.png",
+      "sha256": "D45FB5C5A94A1F70CABB44EF6318B59239B60290093586F153F9A63F773AB6E8",
+      "enlarged4xSHA256": "70B8E4B715E54026E2FDE3F7B62CE6B6BD04467A5C20DFB23C4D7B6099FEA60F"
+    },
+    {
+      "category": "06-modules-electronics",
+      "categoryZh": "模块与电子元件",
+      "spriteName": "module_green",
+      "visualRole": "item-sprite-reference",
+      "source": {
+        "sourceAsset": "resources.assets",
+        "spritePathId": 243
+      },
+      "widthPx": 32,
+      "heightPx": 32,
+      "original": "originals/06-modules-electronics/module_green.png",
+      "enlarged4x": "enlarged-4x/06-modules-electronics/module_green.png",
+      "sha256": "725D513219102FCE3B4324408A71700F4B7C5EEB96DE82FBAC3E5C9FDB910EE7",
+      "enlarged4xSHA256": "3DC407FDCAC76B3665583D608C16C9CE1A4F41DA54EE2772D2036598391B713F"
+    },
+    {
+      "category": "06-modules-electronics",
+      "categoryZh": "模块与电子元件",
+      "spriteName": "module_red",
+      "visualRole": "item-sprite-reference",
+      "source": {
+        "sourceAsset": "resources.assets",
+        "spritePathId": 818
+      },
+      "widthPx": 32,
+      "heightPx": 32,
+      "original": "originals/06-modules-electronics/module_red.png",
+      "enlarged4x": "enlarged-4x/06-modules-electronics/module_red.png",
+      "sha256": "0801F93CCBE794B72D78D31BD3ADFFAA8177C0C26A89DBD28BCF899A992CA71B",
+      "enlarged4xSHA256": "162F43E1FBC3BC47B7ADC2B629A9EF05F4CDCA0E24B5AA3350CB4F4FEF8C48F9"
+    },
+    {
+      "category": "06-modules-electronics",
+      "categoryZh": "模块与电子元件",
+      "spriteName": "module_yellow",
+      "visualRole": "item-sprite-reference",
+      "source": {
+        "sourceAsset": "resources.assets",
+        "spritePathId": 1054
+      },
+      "widthPx": 32,
+      "heightPx": 32,
+      "original": "originals/06-modules-electronics/module_yellow.png",
+      "enlarged4x": "enlarged-4x/06-modules-electronics/module_yellow.png",
+      "sha256": "A60AFC706C19D14145656FDE852356D17DCCFFAFFA3D158E90A03F7AF986D98E",
+      "enlarged4xSHA256": "9DC00920F689A3904EE411E39F73E1B0597B198C3DF6522F0C0E1458104191E7"
+    },
+    {
+      "category": "06-modules-electronics",
+      "categoryZh": "模块与电子元件",
+      "spriteName": "module_white",
+      "visualRole": "item-sprite-reference",
+      "source": {
+        "sourceAsset": "resources.assets",
+        "spritePathId": 770
+      },
+      "widthPx": 32,
+      "heightPx": 32,
+      "original": "originals/06-modules-electronics/module_white.png",
+      "enlarged4x": "enlarged-4x/06-modules-electronics/module_white.png",
+      "sha256": "46A26D12E38644DFE7B1B4D5AF89EE1F25986422CC6CF456DD248158C6F60924",
+      "enlarged4xSHA256": "49A9DC64B2F43CF265F5FCFDE3E5B327D9562E2A59AD76FCA44B19AE90E91CE1"
+    },
+    {
+      "category": "06-modules-electronics",
+      "categoryZh": "模块与电子元件",
+      "spriteName": "module_green_l",
+      "visualRole": "item-sprite-reference",
+      "source": {
+        "sourceAsset": "resources.assets",
+        "spritePathId": 361
+      },
+      "widthPx": 48,
+      "heightPx": 32,
+      "original": "originals/06-modules-electronics/module_green_l.png",
+      "enlarged4x": "enlarged-4x/06-modules-electronics/module_green_l.png",
+      "sha256": "218AD8B5ED853E81141601B982255479D062C503DAAC0AF63EA2C2821F2142C6",
+      "enlarged4xSHA256": "4B2BFA6E0FA7FBE470FAFF214D2AE05477A9DAAB2975FDBC57CA2FDE36C9923E"
+    },
+    {
+      "category": "06-modules-electronics",
+      "categoryZh": "模块与电子元件",
+      "spriteName": "module_red_t",
+      "visualRole": "item-sprite-reference",
+      "source": {
+        "sourceAsset": "resources.assets",
+        "spritePathId": 1306
+      },
+      "widthPx": 32,
+      "heightPx": 48,
+      "original": "originals/06-modules-electronics/module_red_t.png",
+      "enlarged4x": "enlarged-4x/06-modules-electronics/module_red_t.png",
+      "sha256": "FE84D81A0A03025444167385E301E65F1EF44571C0077170C1653A0DCD95B3AE",
+      "enlarged4xSHA256": "D3CC2AEED0DEFA8541B68F6667B98EB8642FFD9B165737BBA34ED393542A7501"
+    },
+    {
+      "category": "06-modules-electronics",
+      "categoryZh": "模块与电子元件",
+      "spriteName": "module_yellow_c",
+      "visualRole": "item-sprite-reference",
+      "source": {
+        "sourceAsset": "resources.assets",
+        "spritePathId": 192
+      },
+      "widthPx": 32,
+      "heightPx": 32,
+      "original": "originals/06-modules-electronics/module_yellow_c.png",
+      "enlarged4x": "enlarged-4x/06-modules-electronics/module_yellow_c.png",
+      "sha256": "66B81D7803C87BD1D8CA280F4AA18F33928AC4A73896B8C5AB7824139EF3FB6B",
+      "enlarged4xSHA256": "11FE8624975B95693EF055451658F01AE7FB59E44DE72D03074C733EF93E8FA3"
+    },
+    {
+      "category": "06-modules-electronics",
+      "categoryZh": "模块与电子元件",
+      "spriteName": "module_corrupt",
+      "visualRole": "item-sprite-reference",
+      "source": {
+        "sourceAsset": "resources.assets",
+        "spritePathId": 826
+      },
+      "widthPx": 32,
+      "heightPx": 32,
+      "original": "originals/06-modules-electronics/module_corrupt.png",
+      "enlarged4x": "enlarged-4x/06-modules-electronics/module_corrupt.png",
+      "sha256": "F00DABEE79B8C2E90371F7C3E29D3E43593182D0F5DD7E9970819AF84E69E24B",
+      "enlarged4xSHA256": "CA8FF92F7E20DB3485E83F46EF74C0742792FC8DB73EC3BA9FCCEBCB95323984"
+    },
+    {
+      "category": "06-modules-electronics",
+      "categoryZh": "模块与电子元件",
+      "spriteName": "electronic1",
+      "visualRole": "item-sprite-reference",
+      "source": {
+        "sourceAsset": "resources.assets",
+        "spritePathId": 877
+      },
+      "widthPx": 48,
+      "heightPx": 32,
+      "original": "originals/06-modules-electronics/electronic1.png",
+      "enlarged4x": "enlarged-4x/06-modules-electronics/electronic1.png",
+      "sha256": "FC517416695D82AD1A700E24C7D51EDB48D7C4FA10F63BA1946FAD04ECF4A3C8",
+      "enlarged4xSHA256": "594454E572D7224D0F5D6733ADDB5471F79A36ACA0DBD2C12291A47851AA68B0"
+    },
+    {
+      "category": "06-modules-electronics",
+      "categoryZh": "模块与电子元件",
+      "spriteName": "printer_chip1",
+      "visualRole": "item-sprite-reference",
+      "source": {
+        "sourceAsset": "resources.assets",
+        "spritePathId": 1141
+      },
+      "widthPx": 16,
+      "heightPx": 16,
+      "original": "originals/06-modules-electronics/printer_chip1.png",
+      "enlarged4x": "enlarged-4x/06-modules-electronics/printer_chip1.png",
+      "sha256": "8088892684338CBB2D2A5B8B41593BF45EB5814268C62659F0D75987743E64C4",
+      "enlarged4xSHA256": "78F2304DBE43C0EE42414AA0BED1698EB7FEEFD1CFFE568E324F040DC4378B5C"
+    },
+    {
+      "category": "06-modules-electronics",
+      "categoryZh": "模块与电子元件",
+      "spriteName": "battery100",
+      "visualRole": "item-sprite-reference",
+      "source": {
+        "sourceAsset": "resources.assets",
+        "spritePathId": 419
+      },
+      "widthPx": 16,
+      "heightPx": 32,
+      "original": "originals/06-modules-electronics/battery100.png",
+      "enlarged4x": "enlarged-4x/06-modules-electronics/battery100.png",
+      "sha256": "1D10C675DB605E52E206ECB678CD5E1DDE8EBE68B88CBC95A0432A675185441A",
+      "enlarged4xSHA256": "48DBC41016309333FD7D8C78E4D89DFB78351E082DBD19B6B41B92DFEB24F64B"
+    },
+    {
+      "category": "06-modules-electronics",
+      "categoryZh": "模块与电子元件",
+      "spriteName": "plasma_fuel_cell",
+      "visualRole": "item-sprite-reference",
+      "source": {
+        "sourceAsset": "resources.assets",
+        "spritePathId": 1198
+      },
+      "widthPx": 64,
+      "heightPx": 32,
+      "original": "originals/06-modules-electronics/plasma_fuel_cell.png",
+      "enlarged4x": "enlarged-4x/06-modules-electronics/plasma_fuel_cell.png",
+      "sha256": "9797F31C3BC8B71C34AEC72C46AAB2D1D6D1C967B04A750179E6FE7107173F44",
+      "enlarged4xSHA256": "AEAF8E48757A0EB87BF5BD25CD39364785F1E961EA673A45BEA61FBB6B31B0D6"
+    },
+    {
+      "category": "07-materials-nature",
+      "categoryZh": "材料与种子",
+      "spriteName": "ore1",
+      "visualRole": "item-sprite-reference",
+      "source": {
+        "sourceAsset": "resources.assets",
+        "spritePathId": 820
+      },
+      "widthPx": 48,
+      "heightPx": 32,
+      "original": "originals/07-materials-nature/ore1.png",
+      "enlarged4x": "enlarged-4x/07-materials-nature/ore1.png",
+      "sha256": "3CFAF6A1FA14090DE5DE3E90D8E0221692C6F1A51A15683E21CA1340B7D4F235",
+      "enlarged4xSHA256": "84DE2AE2FEE18967DA6F4E8772CE6551EE51BB8F8A1C8E594491F284E576035A"
+    },
+    {
+      "category": "07-materials-nature",
+      "categoryZh": "材料与种子",
+      "spriteName": "scrap_metal",
+      "visualRole": "item-sprite-reference",
+      "source": {
+        "sourceAsset": "resources.assets",
+        "spritePathId": 521
+      },
+      "widthPx": 48,
+      "heightPx": 32,
+      "original": "originals/07-materials-nature/scrap_metal.png",
+      "enlarged4x": "enlarged-4x/07-materials-nature/scrap_metal.png",
+      "sha256": "EB5391F6ABA46ADB0EAB0924F6E4A949A478DEA3B32C6F8C8C6A76EEE5B90708",
+      "enlarged4xSHA256": "9CCAA11AB6D096FCEECD8F3D348F5077DCF8FB71DE6720CF8A68599C4B0663BE"
+    },
+    {
+      "category": "07-materials-nature",
+      "categoryZh": "材料与种子",
+      "spriteName": "scrap_metal_2",
+      "visualRole": "item-sprite-reference",
+      "source": {
+        "sourceAsset": "resources.assets",
+        "spritePathId": 1040
+      },
+      "widthPx": 48,
+      "heightPx": 32,
+      "original": "originals/07-materials-nature/scrap_metal_2.png",
+      "enlarged4x": "enlarged-4x/07-materials-nature/scrap_metal_2.png",
+      "sha256": "AB4450739F12D80201F4CE340EC7B7B7CE52DD3ECEEF429EB1764254D01322E0",
+      "enlarged4xSHA256": "232271884B21BB0D0F359EAF8BFA27E6C17E35B06FEFE2D2D3D2C3A375CBEF8B"
+    },
+    {
+      "category": "07-materials-nature",
+      "categoryZh": "材料与种子",
+      "spriteName": "metal_ingot",
+      "visualRole": "item-sprite-reference",
+      "source": {
+        "sourceAsset": "resources.assets",
+        "spritePathId": 1269
+      },
+      "widthPx": 48,
+      "heightPx": 32,
+      "original": "originals/07-materials-nature/metal_ingot.png",
+      "enlarged4x": "enlarged-4x/07-materials-nature/metal_ingot.png",
+      "sha256": "08BDA520817DB4CC1D41958FE24238693EDA40AE4CF1C09EB330104BC1C6FE34",
+      "enlarged4xSHA256": "85197C4441F25A9B9CD1213EEC37545AD494C6D02E27CD5BE4671CE82D41C44D"
+    },
+    {
+      "category": "07-materials-nature",
+      "categoryZh": "材料与种子",
+      "spriteName": "wire",
+      "visualRole": "item-sprite-reference",
+      "source": {
+        "sourceAsset": "resources.assets",
+        "spritePathId": 532
+      },
+      "widthPx": 32,
+      "heightPx": 32,
+      "original": "originals/07-materials-nature/wire.png",
+      "enlarged4x": "enlarged-4x/07-materials-nature/wire.png",
+      "sha256": "A04D5BC626ECEC417A5946F476146E01123AD095BCFF7A1766A89AA3A70C56FE",
+      "enlarged4xSHA256": "51F19E53712917183349592796590672217E2E9B436B2A8EA4C65E99672ACBA1"
+    },
+    {
+      "category": "07-materials-nature",
+      "categoryZh": "材料与种子",
+      "spriteName": "pipe",
+      "visualRole": "item-sprite-reference",
+      "source": {
+        "sourceAsset": "resources.assets",
+        "spritePathId": 534
+      },
+      "widthPx": 80,
+      "heightPx": 32,
+      "original": "originals/07-materials-nature/pipe.png",
+      "enlarged4x": "enlarged-4x/07-materials-nature/pipe.png",
+      "sha256": "4F3D737C637093601EB2BCA55A2A68112401A7E13C8A24EA4028DF30A9CECC2B",
+      "enlarged4xSHA256": "90797122B9138EF2DAB25F11F469B22BE543FAEC3FB8FD5E9B30DB814CDFF77F"
+    },
+    {
+      "category": "07-materials-nature",
+      "categoryZh": "材料与种子",
+      "spriteName": "nuts_metal_pile",
+      "visualRole": "item-sprite-reference",
+      "source": {
+        "sourceAsset": "resources.assets",
+        "spritePathId": 300
+      },
+      "widthPx": 32,
+      "heightPx": 32,
+      "original": "originals/07-materials-nature/nuts_metal_pile.png",
+      "enlarged4x": "enlarged-4x/07-materials-nature/nuts_metal_pile.png",
+      "sha256": "A89E2CBDB533907AA0AEAA7BA78E0F13601D304C4BF18E138EC8F987466E7396",
+      "enlarged4xSHA256": "BE8A6B54472A373EF704F25E390914A0DB879BEB9CFB1998B4465F166A8EBD54"
+    },
+    {
+      "category": "07-materials-nature",
+      "categoryZh": "材料与种子",
+      "spriteName": "glass_shard",
+      "visualRole": "item-sprite-reference",
+      "source": {
+        "sourceAsset": "resources.assets",
+        "spritePathId": 1058
+      },
+      "widthPx": 48,
+      "heightPx": 16,
+      "original": "originals/07-materials-nature/glass_shard.png",
+      "enlarged4x": "enlarged-4x/07-materials-nature/glass_shard.png",
+      "sha256": "00B4BB8C2454057FA5AE64E158D874BCC9D2B1C199075F37AC0C284BAD753C5E",
+      "enlarged4xSHA256": "E4D9073C3AFFA536D2245DA96EA070EDC8579B951B4511F6C19302F0ED459ACC"
+    },
+    {
+      "category": "07-materials-nature",
+      "categoryZh": "材料与种子",
+      "spriteName": "kotton_fabric",
+      "visualRole": "item-sprite-reference",
+      "source": {
+        "sourceAsset": "resources.assets",
+        "spritePathId": 827
+      },
+      "widthPx": 48,
+      "heightPx": 16,
+      "original": "originals/07-materials-nature/kotton_fabric.png",
+      "enlarged4x": "enlarged-4x/07-materials-nature/kotton_fabric.png",
+      "sha256": "9D37A59461769DCEBD68BA630C5868A597857323436981FF1D8E55A342911DCD",
+      "enlarged4xSHA256": "A9DAD139ED14C18162D8D045E196CDD798E6C10BF4498BD86F9B7E7B007CC989"
+    },
+    {
+      "category": "07-materials-nature",
+      "categoryZh": "材料与种子",
+      "spriteName": "chemical1",
+      "visualRole": "item-sprite-reference",
+      "source": {
+        "sourceAsset": "resources.assets",
+        "spritePathId": 548
+      },
+      "widthPx": 48,
+      "heightPx": 32,
+      "original": "originals/07-materials-nature/chemical1.png",
+      "enlarged4x": "enlarged-4x/07-materials-nature/chemical1.png",
+      "sha256": "39C1FF3BF10CE6ACDCD69471664786F5D8D5CFA2E45A843DBB62B0EB612A0585",
+      "enlarged4xSHA256": "BD7D10AB4B198D8C23A7E4645A1F581D7BDD7ADDD547377885205A4782502A1C"
+    },
+    {
+      "category": "07-materials-nature",
+      "categoryZh": "材料与种子",
+      "spriteName": "chemical2",
+      "visualRole": "item-sprite-reference",
+      "source": {
+        "sourceAsset": "resources.assets",
+        "spritePathId": 430
+      },
+      "widthPx": 48,
+      "heightPx": 32,
+      "original": "originals/07-materials-nature/chemical2.png",
+      "enlarged4x": "enlarged-4x/07-materials-nature/chemical2.png",
+      "sha256": "DE38E9403F466880C4602E5CBA50E6E9F34B64AA99602604158320A64850FD0A",
+      "enlarged4xSHA256": "907EEC5C8F82A444BD524365A99F84A48EB4E113BB445A279287EDC990513AF9"
+    },
+    {
+      "category": "07-materials-nature",
+      "categoryZh": "材料与种子",
+      "spriteName": "nutrifruit_seed_packet",
+      "visualRole": "item-sprite-reference",
+      "source": {
+        "sourceAsset": "resources.assets",
+        "spritePathId": 801
+      },
+      "widthPx": 32,
+      "heightPx": 32,
+      "original": "originals/07-materials-nature/nutrifruit_seed_packet.png",
+      "enlarged4x": "enlarged-4x/07-materials-nature/nutrifruit_seed_packet.png",
+      "sha256": "CD1DAAFB2A39BDA9053C12E3E6ABF1346509AA54A373AC4370B219D15CA63E3B",
+      "enlarged4xSHA256": "1E69C903A003235F24254FA5BF9A6B5DA40AB78EFBC7587FA230640F5AD04C3B"
+    },
+    {
+      "category": "08-liquid-states",
+      "categoryZh": "液体填充叠层（非完整容器）",
+      "spriteName": "mini_blue_100",
+      "visualRole": "liquid-fill-overlay-not-complete-container",
+      "source": {
+        "sourceAsset": "resources.assets",
+        "spritePathId": 146
+      },
+      "widthPx": 16,
+      "heightPx": 32,
+      "original": "originals/08-liquid-states/mini_blue_100.png",
+      "enlarged4x": "enlarged-4x/08-liquid-states/mini_blue_100.png",
+      "sha256": "BA4506489CE85EB0BA25995084165A8D158B0297FDF946C013EF2BB1304DAB30",
+      "enlarged4xSHA256": "8A66AF3559DFEF5DC8A2688C4A92332416C29172B52E79007C4E07AFAB9C0F30"
+    },
+    {
+      "category": "08-liquid-states",
+      "categoryZh": "液体填充叠层（非完整容器）",
+      "spriteName": "small_blue_100",
+      "visualRole": "liquid-fill-overlay-not-complete-container",
+      "source": {
+        "sourceAsset": "resources.assets",
+        "spritePathId": 985
+      },
+      "widthPx": 16,
+      "heightPx": 48,
+      "original": "originals/08-liquid-states/small_blue_100.png",
+      "enlarged4x": "enlarged-4x/08-liquid-states/small_blue_100.png",
+      "sha256": "58FB819D33B53BD0565C2008A425B53F55CE9E9B27BE8A5B0CD30FE1AF45FE19",
+      "enlarged4xSHA256": "0461C72B7767EF5E36914086BE55B8F95FB8385E64698F37C35063B35D54A61B"
+    },
+    {
+      "category": "08-liquid-states",
+      "categoryZh": "液体填充叠层（非完整容器）",
+      "spriteName": "normal_blue_100",
+      "visualRole": "liquid-fill-overlay-not-complete-container",
+      "source": {
+        "sourceAsset": "resources.assets",
+        "spritePathId": 757
+      },
+      "widthPx": 16,
+      "heightPx": 64,
+      "original": "originals/08-liquid-states/normal_blue_100.png",
+      "enlarged4x": "enlarged-4x/08-liquid-states/normal_blue_100.png",
+      "sha256": "C1B5E8AF372E6E00D169134F5C3711396D5B4C560D0E3871EBB1E9EB017B655D",
+      "enlarged4xSHA256": "E5DE8EDFBAED28C4C62B502DC5EF909D804225D9000A2122467A7ACDE0743B16"
+    },
+    {
+      "category": "08-liquid-states",
+      "categoryZh": "液体填充叠层（非完整容器）",
+      "spriteName": "large_blue_100",
+      "visualRole": "liquid-fill-overlay-not-complete-container",
+      "source": {
+        "sourceAsset": "resources.assets",
+        "spritePathId": 136
+      },
+      "widthPx": 32,
+      "heightPx": 64,
+      "original": "originals/08-liquid-states/large_blue_100.png",
+      "enlarged4x": "enlarged-4x/08-liquid-states/large_blue_100.png",
+      "sha256": "1386F2D3B1570CE2B16BBBB566CAAA7A6E90B9CDCBBB17E0D1B90B4578AE1D91",
+      "enlarged4xSHA256": "1257BDDDDD26EF15E38CCF852EA8B2AE8DCF4FCD61B54EDD309E7BABFF86BEE5"
+    },
+    {
+      "category": "08-liquid-states",
+      "categoryZh": "液体填充叠层（非完整容器）",
+      "spriteName": "xl_blue_100",
+      "visualRole": "liquid-fill-overlay-not-complete-container",
+      "source": {
+        "sourceAsset": "resources.assets",
+        "spritePathId": 1048
+      },
+      "widthPx": 64,
+      "heightPx": 64,
+      "original": "originals/08-liquid-states/xl_blue_100.png",
+      "enlarged4x": "enlarged-4x/08-liquid-states/xl_blue_100.png",
+      "sha256": "F695608AC6BD8A41EC75482826F5DEA53AC7B19F0182602B1BF7E2AD3C599087",
+      "enlarged4xSHA256": "3D0AF76FD54527B0D6B325CF15FAD4DEBE5B4690DD41E55027D530965750621C"
+    },
+    {
+      "category": "08-liquid-states",
+      "categoryZh": "液体填充叠层（非完整容器）",
+      "spriteName": "pitcher_blue_100",
+      "visualRole": "liquid-fill-overlay-not-complete-container",
+      "source": {
+        "sourceAsset": "resources.assets",
+        "spritePathId": 983
+      },
+      "widthPx": 48,
+      "heightPx": 64,
+      "original": "originals/08-liquid-states/pitcher_blue_100.png",
+      "enlarged4x": "enlarged-4x/08-liquid-states/pitcher_blue_100.png",
+      "sha256": "8FBC7F30D4F2B633C8F3F9582EFE2BF03461E915DB30E96CC41D0C184C426128",
+      "enlarged4xSHA256": "19E30A380904A4E230B2089C141A1A964AC2CD503DCD835069581DDE7E493015"
+    },
+    {
+      "category": "08-liquid-states",
+      "categoryZh": "液体填充叠层（非完整容器）",
+      "spriteName": "normal_blue_25",
+      "visualRole": "liquid-fill-overlay-not-complete-container",
+      "source": {
+        "sourceAsset": "resources.assets",
+        "spritePathId": 179
+      },
+      "widthPx": 16,
+      "heightPx": 64,
+      "original": "originals/08-liquid-states/normal_blue_25.png",
+      "enlarged4x": "enlarged-4x/08-liquid-states/normal_blue_25.png",
+      "sha256": "3187CD49CEEED32AC8964B9621F93FD5E57A338CD0FA77F38355934C44415A4D",
+      "enlarged4xSHA256": "0E362378BF0767DC428C8EFDA9A1409F4CB16C43BBFB485CA6E6A069D9C47490"
+    },
+    {
+      "category": "08-liquid-states",
+      "categoryZh": "液体填充叠层（非完整容器）",
+      "spriteName": "normal_blue_50",
+      "visualRole": "liquid-fill-overlay-not-complete-container",
+      "source": {
+        "sourceAsset": "resources.assets",
+        "spritePathId": 883
+      },
+      "widthPx": 16,
+      "heightPx": 64,
+      "original": "originals/08-liquid-states/normal_blue_50.png",
+      "enlarged4x": "enlarged-4x/08-liquid-states/normal_blue_50.png",
+      "sha256": "80A154F58697FC3F8C052B56F3910D5088552F32BB329B018E2FE3DCF2D13145",
+      "enlarged4xSHA256": "2FA432C911509CE7E11622B9166107C2FA20CA804C96120C925CC1D0ADFFF229"
+    },
+    {
+      "category": "08-liquid-states",
+      "categoryZh": "液体填充叠层（非完整容器）",
+      "spriteName": "normal_blue_75",
+      "visualRole": "liquid-fill-overlay-not-complete-container",
+      "source": {
+        "sourceAsset": "resources.assets",
+        "spritePathId": 889
+      },
+      "widthPx": 16,
+      "heightPx": 64,
+      "original": "originals/08-liquid-states/normal_blue_75.png",
+      "enlarged4x": "enlarged-4x/08-liquid-states/normal_blue_75.png",
+      "sha256": "DBA2F05D7367AAE55E5E8E8B984086D7A14B57F14E9E33DC3FBC5CDCAF790A8C",
+      "enlarged4xSHA256": "C6BCBBC826F7ACD7A39421E7BB4BA41473A83A2CC74913060E09A89A5D402B1B"
+    },
+    {
+      "category": "08-liquid-states",
+      "categoryZh": "液体填充叠层（非完整容器）",
+      "spriteName": "normal_red_100",
+      "visualRole": "liquid-fill-overlay-not-complete-container",
+      "source": {
+        "sourceAsset": "resources.assets",
+        "spritePathId": 1250
+      },
+      "widthPx": 16,
+      "heightPx": 64,
+      "original": "originals/08-liquid-states/normal_red_100.png",
+      "enlarged4x": "enlarged-4x/08-liquid-states/normal_red_100.png",
+      "sha256": "05DE6F6FD5C6EC4E44EA9C17C1D0AC95A2F7EB9A8A141440709E33A8DA2ABD7C",
+      "enlarged4xSHA256": "921ABDD9CA35EF12071C98BB443983907155A50EA6C19013295FD2185A30CF4B"
+    },
+    {
+      "category": "08-liquid-states",
+      "categoryZh": "液体填充叠层（非完整容器）",
+      "spriteName": "normal_dark_100",
+      "visualRole": "liquid-fill-overlay-not-complete-container",
+      "source": {
+        "sourceAsset": "resources.assets",
+        "spritePathId": 1011
+      },
+      "widthPx": 16,
+      "heightPx": 64,
+      "original": "originals/08-liquid-states/normal_dark_100.png",
+      "enlarged4x": "enlarged-4x/08-liquid-states/normal_dark_100.png",
+      "sha256": "723C231BCDB8E9E5BE1FCA4B14ED0780CD1EC90340B9371967286A3D6FC71EE7",
+      "enlarged4xSHA256": "A4E64877E6E05D5AAD7111FCF0DE925976D159A8935C327C6D3E461AA6F90FC1"
+    },
+    {
+      "category": "08-liquid-states",
+      "categoryZh": "液体填充叠层（非完整容器）",
+      "spriteName": "25ml_blue_100",
+      "visualRole": "liquid-fill-overlay-not-complete-container",
+      "source": {
+        "sourceAsset": "resources.assets",
+        "spritePathId": 516
+      },
+      "widthPx": 16,
+      "heightPx": 32,
+      "original": "originals/08-liquid-states/25ml_blue_100.png",
+      "enlarged4x": "enlarged-4x/08-liquid-states/25ml_blue_100.png",
+      "sha256": "D5EAC1E08E0C03D04953D90C12E75ED4C823F14CF104FBDE2182699DF7FD87B8",
+      "enlarged4xSHA256": "F9E8CC3CE34D5A93E0EC4C932F2ABE6F185112B1DA9A730A58FA96D5D3F1812A"
+    }
+  ],
+  "categoryPalettes": [
+    {
+      "category": "01-tools",
+      "colors": [
+        {
+          "hex": "#292234",
+          "opaquePixelCount": 2021
+        },
+        {
+          "hex": "#373541",
+          "opaquePixelCount": 616
+        },
+        {
+          "hex": "#44464C",
+          "opaquePixelCount": 545
+        },
+        {
+          "hex": "#80929B",
+          "opaquePixelCount": 364
+        },
+        {
+          "hex": "#5F6868",
+          "opaquePixelCount": 355
+        },
+        {
+          "hex": "#8ABFBB",
+          "opaquePixelCount": 319
+        },
+        {
+          "hex": "#A24043",
+          "opaquePixelCount": 282
+        },
+        {
+          "hex": "#D5D2B8",
+          "opaquePixelCount": 259
+        },
+        {
+          "hex": "#2F2B3A",
+          "opaquePixelCount": 227
+        },
+        {
+          "hex": "#74313B",
+          "opaquePixelCount": 213
+        },
+        {
+          "hex": "#A8AEA5",
+          "opaquePixelCount": 206
+        },
+        {
+          "hex": "#7AB053",
+          "opaquePixelCount": 183
+        },
+        {
+          "hex": "#67AAA5",
+          "opaquePixelCount": 148
+        },
+        {
+          "hex": "#9C3738",
+          "opaquePixelCount": 146
+        },
+        {
+          "hex": "#453943",
+          "opaquePixelCount": 129
+        },
+        {
+          "hex": "#CC7755",
+          "opaquePixelCount": 119
+        }
+      ]
+    },
+    {
+      "category": "02-food-drink",
+      "colors": [
+        {
+          "hex": "#292234",
+          "opaquePixelCount": 1171
+        },
+        {
+          "hex": "#9C3738",
+          "opaquePixelCount": 678
+        },
+        {
+          "hex": "#B26B4E",
+          "opaquePixelCount": 419
+        },
+        {
+          "hex": "#D5D2B8",
+          "opaquePixelCount": 395
+        },
+        {
+          "hex": "#74313B",
+          "opaquePixelCount": 293
+        },
+        {
+          "hex": "#C0A0A4",
+          "opaquePixelCount": 292
+        },
+        {
+          "hex": "#CCB987",
+          "opaquePixelCount": 291
+        },
+        {
+          "hex": "#44464C",
+          "opaquePixelCount": 267
+        },
+        {
+          "hex": "#5A3D4C",
+          "opaquePixelCount": 251
+        },
+        {
+          "hex": "#3B2C38",
+          "opaquePixelCount": 239
+        },
+        {
+          "hex": "#A8AEA5",
+          "opaquePixelCount": 221
+        },
+        {
+          "hex": "#BB9165",
+          "opaquePixelCount": 198
+        },
+        {
+          "hex": "#A272AC",
+          "opaquePixelCount": 159
+        },
+        {
+          "hex": "#4A2F38",
+          "opaquePixelCount": 157
+        },
+        {
+          "hex": "#AD696B",
+          "opaquePixelCount": 157
+        },
+        {
+          "hex": "#955C4B",
+          "opaquePixelCount": 143
+        }
+      ]
+    },
+    {
+      "category": "03-medical",
+      "colors": [
+        {
+          "hex": "#292234",
+          "opaquePixelCount": 980
+        },
+        {
+          "hex": "#853737",
+          "opaquePixelCount": 803
+        },
+        {
+          "hex": "#88948A",
+          "opaquePixelCount": 717
+        },
+        {
+          "hex": "#A8AEA5",
+          "opaquePixelCount": 492
+        },
+        {
+          "hex": "#C4C4B0",
+          "opaquePixelCount": 448
+        },
+        {
+          "hex": "#373541",
+          "opaquePixelCount": 292
+        },
+        {
+          "hex": "#D5D2B8",
+          "opaquePixelCount": 285
+        },
+        {
+          "hex": "#45918B",
+          "opaquePixelCount": 175
+        },
+        {
+          "hex": "#355271",
+          "opaquePixelCount": 159
+        },
+        {
+          "hex": "#74313B",
+          "opaquePixelCount": 150
+        },
+        {
+          "hex": "#64343B",
+          "opaquePixelCount": 147
+        },
+        {
+          "hex": "#273456",
+          "opaquePixelCount": 135
+        },
+        {
+          "hex": "#4A2F38",
+          "opaquePixelCount": 126
+        },
+        {
+          "hex": "#67AAA5",
+          "opaquePixelCount": 108
+        },
+        {
+          "hex": "#D998C8",
+          "opaquePixelCount": 108
+        },
+        {
+          "hex": "#C5AC96",
+          "opaquePixelCount": 107
+        }
+      ]
+    },
+    {
+      "category": "04-containers",
+      "colors": [
+        {
+          "hex": "#645355",
+          "opaquePixelCount": 5652
+        },
+        {
+          "hex": "#292234",
+          "opaquePixelCount": 3972
+        },
+        {
+          "hex": "#392E3C",
+          "opaquePixelCount": 3079
+        },
+        {
+          "hex": "#4F464B",
+          "opaquePixelCount": 2900
+        },
+        {
+          "hex": "#6B5269",
+          "opaquePixelCount": 2758
+        },
+        {
+          "hex": "#777081",
+          "opaquePixelCount": 2723
+        },
+        {
+          "hex": "#9B4A3D",
+          "opaquePixelCount": 2571
+        },
+        {
+          "hex": "#2F756F",
+          "opaquePixelCount": 2104
+        },
+        {
+          "hex": "#79746E",
+          "opaquePixelCount": 1811
+        },
+        {
+          "hex": "#A96847",
+          "opaquePixelCount": 1334
+        },
+        {
+          "hex": "#453943",
+          "opaquePixelCount": 1317
+        },
+        {
+          "hex": "#6E6361",
+          "opaquePixelCount": 1203
+        },
+        {
+          "hex": "#45918B",
+          "opaquePixelCount": 1051
+        },
+        {
+          "hex": "#64343B",
+          "opaquePixelCount": 1024
+        },
+        {
+          "hex": "#74313B",
+          "opaquePixelCount": 903
+        },
+        {
+          "hex": "#80929B",
+          "opaquePixelCount": 707
+        }
+      ]
+    },
+    {
+      "category": "05-machines",
+      "colors": [
+        {
+          "hex": "#292234",
+          "opaquePixelCount": 3725
+        },
+        {
+          "hex": "#88948A",
+          "opaquePixelCount": 2945
+        },
+        {
+          "hex": "#C4C4B0",
+          "opaquePixelCount": 1592
+        },
+        {
+          "hex": "#80929B",
+          "opaquePixelCount": 1172
+        },
+        {
+          "hex": "#A8AEA5",
+          "opaquePixelCount": 1149
+        },
+        {
+          "hex": "#303A41",
+          "opaquePixelCount": 950
+        },
+        {
+          "hex": "#6B5269",
+          "opaquePixelCount": 922
+        },
+        {
+          "hex": "#5F6868",
+          "opaquePixelCount": 890
+        },
+        {
+          "hex": "#275654",
+          "opaquePixelCount": 848
+        },
+        {
+          "hex": "#2F2B3A",
+          "opaquePixelCount": 734
+        },
+        {
+          "hex": "#373541",
+          "opaquePixelCount": 659
+        },
+        {
+          "hex": "#777081",
+          "opaquePixelCount": 644
+        },
+        {
+          "hex": "#45918B",
+          "opaquePixelCount": 550
+        },
+        {
+          "hex": "#79746E",
+          "opaquePixelCount": 500
+        },
+        {
+          "hex": "#D5D2B8",
+          "opaquePixelCount": 407
+        },
+        {
+          "hex": "#44464C",
+          "opaquePixelCount": 370
+        }
+      ]
+    },
+    {
+      "category": "06-modules-electronics",
+      "colors": [
+        {
+          "hex": "#292234",
+          "opaquePixelCount": 1476
+        },
+        {
+          "hex": "#3D823F",
+          "opaquePixelCount": 1221
+        },
+        {
+          "hex": "#84BA51",
+          "opaquePixelCount": 711
+        },
+        {
+          "hex": "#324638",
+          "opaquePixelCount": 512
+        },
+        {
+          "hex": "#303A41",
+          "opaquePixelCount": 387
+        },
+        {
+          "hex": "#273456",
+          "opaquePixelCount": 283
+        },
+        {
+          "hex": "#44464C",
+          "opaquePixelCount": 269
+        },
+        {
+          "hex": "#9C3738",
+          "opaquePixelCount": 266
+        },
+        {
+          "hex": "#CCB987",
+          "opaquePixelCount": 262
+        },
+        {
+          "hex": "#355271",
+          "opaquePixelCount": 179
+        },
+        {
+          "hex": "#3E6979",
+          "opaquePixelCount": 160
+        },
+        {
+          "hex": "#A8AEA5",
+          "opaquePixelCount": 159
+        },
+        {
+          "hex": "#D5D2B8",
+          "opaquePixelCount": 150
+        },
+        {
+          "hex": "#5E2B45",
+          "opaquePixelCount": 150
+        },
+        {
+          "hex": "#C4C4B0",
+          "opaquePixelCount": 148
+        },
+        {
+          "hex": "#BB9165",
+          "opaquePixelCount": 135
+        }
+      ]
+    },
+    {
+      "category": "07-materials-nature",
+      "colors": [
+        {
+          "hex": "#292234",
+          "opaquePixelCount": 2135
+        },
+        {
+          "hex": "#88948A",
+          "opaquePixelCount": 1112
+        },
+        {
+          "hex": "#5F6868",
+          "opaquePixelCount": 1091
+        },
+        {
+          "hex": "#44464C",
+          "opaquePixelCount": 763
+        },
+        {
+          "hex": "#D5D2B8",
+          "opaquePixelCount": 718
+        },
+        {
+          "hex": "#A8AEA5",
+          "opaquePixelCount": 587
+        },
+        {
+          "hex": "#C4C4B0",
+          "opaquePixelCount": 313
+        },
+        {
+          "hex": "#8ABFBB",
+          "opaquePixelCount": 225
+        },
+        {
+          "hex": "#64343B",
+          "opaquePixelCount": 214
+        },
+        {
+          "hex": "#853737",
+          "opaquePixelCount": 178
+        },
+        {
+          "hex": "#79746E",
+          "opaquePixelCount": 152
+        },
+        {
+          "hex": "#6B5269",
+          "opaquePixelCount": 141
+        },
+        {
+          "hex": "#7D4F4A",
+          "opaquePixelCount": 129
+        },
+        {
+          "hex": "#373541",
+          "opaquePixelCount": 128
+        },
+        {
+          "hex": "#A272AC",
+          "opaquePixelCount": 117
+        },
+        {
+          "hex": "#5A3D4C",
+          "opaquePixelCount": 115
+        }
+      ]
+    },
+    {
+      "category": "08-liquid-states",
+      "colors": [
+        {
+          "hex": "#DFE2D4",
+          "opaquePixelCount": 2181
+        },
+        {
+          "hex": "#9FB2BC",
+          "opaquePixelCount": 1744
+        },
+        {
+          "hex": "#FFFFFF",
+          "opaquePixelCount": 1504
+        },
+        {
+          "hex": "#5D919C",
+          "opaquePixelCount": 1374
+        },
+        {
+          "hex": "#496489",
+          "opaquePixelCount": 206
+        },
+        {
+          "hex": "#C2A6BA",
+          "opaquePixelCount": 161
+        },
+        {
+          "hex": "#927FB9",
+          "opaquePixelCount": 161
+        },
+        {
+          "hex": "#A66A8D",
+          "opaquePixelCount": 140
+        },
+        {
+          "hex": "#564A83",
+          "opaquePixelCount": 140
+        },
+        {
+          "hex": "#E4E0D4",
+          "opaquePixelCount": 118
+        },
+        {
+          "hex": "#DAC9D4",
+          "opaquePixelCount": 118
+        },
+        {
+          "hex": "#D5D2B8",
+          "opaquePixelCount": 85
+        },
+        {
+          "hex": "#80929B",
+          "opaquePixelCount": 17
+        },
+        {
+          "hex": "#6E4D6F",
+          "opaquePixelCount": 13
+        },
+        {
+          "hex": "#302C51",
+          "opaquePixelCount": 13
+        }
+      ]
+    }
+  ]
+}

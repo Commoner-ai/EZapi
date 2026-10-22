@@ -69,6 +69,19 @@
       "index": "departure-buttons.index.json",
       "sample": "../src/EZapi.Sample/DepartureExamples.cs",
       "boundary": "UI and guarded callback dispatch only. C# behavior required; no automatic travel, visit debit, inventory transfer or save."
+    },
+    {
+      "id": "original-style-item-art",
+      "taskZh": "生成贴近原版画风的物品图片",
+      "taskEn": "Create item artwork matching the original game",
+      "guideZh": "item-art.zh-CN.md",
+      "guideEn": "item-art.en.md",
+      "index": "item-art.index.json",
+      "referenceSet": "art-reference/art-reference.index.json",
+      "promptZh": "art-reference/AI-PROMPT.zh-CN.txt",
+      "promptEn": "art-reference/AI-PROMPT.en.txt",
+      "optional": true,
+      "boundary": "Original artwork is excluded from MIT. Pixel canvas is independent of inventory shape; no new asset-size loading restriction."
     }
   ],
   "recovery": {
@@ -87,7 +100,7 @@
   },
   "documentationContext": {
     "kind": "current-api-guide",
-    "releaseTag": "0.1.73-preview.4",
+    "releaseTag": "0.1.73-preview.5",
     "assemblyVersion": "0.1.73",
     "releaseStatus": "release-status.json",
     "nativeRuntimeVerified": false,

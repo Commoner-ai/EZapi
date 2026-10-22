@@ -1,0 +1,41 @@
+{
+  "schemaVersion": 1,
+  "version": "0.1.73",
+  "purpose": "Optional visual references for AI-assisted original-style item artwork",
+  "documentationContext": {
+    "kind": "current-api-guide",
+    "releaseTag": "0.1.73-preview.5",
+    "assemblyVersion": "0.1.73",
+    "releaseStatus": "release-status.json",
+    "nativeRuntimeVerified": false,
+    "evidencePolicy": "Old native claims are preserved only under historical* fields and do not apply to the current DLL."
+  },
+  "guideZh": "item-art.zh-CN.md",
+  "guideEn": "item-art.en.md",
+  "referenceSet": "art-reference/art-reference.index.json",
+  "overview": "art-reference/00-overview.png",
+  "promptZh": "art-reference/AI-PROMPT.zh-CN.txt",
+  "promptEn": "art-reference/AI-PROMPT.en.txt",
+  "rightsNotice": "art-reference/NOTICE.md",
+  "originalArtworkCoveredByEzapiMit": false,
+  "optional": true,
+  "includedInDeveloperPackage": true,
+  "includedInGamePackage": false,
+  "counts": {
+    "originals": 96,
+    "nearest4x": 96,
+    "categoryBoards": 8
+  },
+  "pixelConvention": {
+    "startingPixelsPerCell": 16,
+    "allSelectedSpriteDimensionsMultipleOf16": true,
+    "nativeGridOccupancyVerified": false,
+    "newRuntimeSizeRestriction": false
+  },
+  "workflow": [
+    "Pick two or three same-category examples or one category board.",
+    "Fill the prompt with item structure and target logical pixel dimensions.",
+    "Check transparency, pixel grid and readability at logical size.",
+    "Bind the new original PNG; declare shape independently."
+  ]
+}

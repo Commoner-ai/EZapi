@@ -1,0 +1,13 @@
+Create one new item sprite for a Probably Stolen Mod using the attached same-category original sprites as visual references.
+
+Item: {name}
+Category: {category}
+Structure/material/colors: {description}
+Inventory shape: {W} cells wide by {H} cells high, declared separately in the Mod.
+Target logical canvas: {width} x {height} pixels. Start with 16px/cell for ordinary items, then check comparable original dimensions.
+
+Match the references' logical pixel density, category-specific viewing angle, silhouette treatment, palette, shading and detail density. Design the new item's own structure directly on the intended low-resolution grid. Use consistent pixel size and readable color clusters. Do not add dense microtexture or shrink a detailed illustration as a substitute for pixel design.
+
+Render one complete object with real transparent alpha. Do not include the reference board captions, checkerboard, background, UI, item frames, counts, watermarks or explanatory text. Avoid blur, antialiasing, soft edges and smooth gradients. Liquid fill overlays are examples of liquid color/level only, not complete bottle shells.
+
+Deliver a transparent PNG. If delivering an enlarged view, use a uniform integer pixel-block scale and specify the logical canvas and scale. Check the final file dimensions, pixel grid, alpha edges and readability at logical size.

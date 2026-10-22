@@ -1,16 +1,16 @@
 {
-  "tag": "0.1.73-preview.4",
+  "tag": "0.1.73-preview.5",
   "passed": true,
   "assets": [
     {
-      "file": "EZapi-0.1.73-preview.4-game.zip",
-      "sha256": "EB885F1B2CB7DAA9E8F20C2ACEC807407295E0826909B02886B1F9A2E2A6F8F7",
-      "bytes": 709629
+      "file": "EZapi-0.1.73-preview.5-game.zip",
+      "sha256": "FD6C66D97ADE94C1D94B046EA6EAD1F5B0B33828E0BF49FA33B371678D4CDF2B",
+      "bytes": 709777
     },
     {
-      "file": "EZapi-0.1.73-preview.4-developer.zip",
-      "sha256": "DC02BF4C81C3ED110A9B3047BC7F25A0EB302F09D935363F17E779762EADEB3F",
-      "bytes": 1731991
+      "file": "EZapi-0.1.73-preview.5-developer.zip",
+      "sha256": "36DBD9677D38BC27E8CA33659B3738BF7420E418EBFE5C1FCB76EFBEF6AA781F",
+      "bytes": 2474633
     }
   ],
   "dllSHA256": "7E4AB675B0E3BD81C56EEC4606731A6880287549EB4E8E90A707BE18BD52BEEF",
@@ -28,6 +28,18 @@
   "fullGoalComplete": false,
   "developerAutomationIncluded": true,
   "documentationConsistencyVerified": true,
+  "optionalArtReferenceIncluded": true,
+  "artReferenceOriginalSprites": 96,
+  "artReferenceNearest4xSprites": 96,
+  "artReferenceCategoryBoards": 8,
+  "originalArtworkCoveredByEzapiMit": false,
+  "documentationVerification": {
+    "indexesChecked": 34,
+    "markdownPagesChecked": 162,
+    "localLinksChecked": 595,
+    "artReferenceSpritesChecked": 96,
+    "nativeAcceptanceRemainsPending": true
+  },
   "verification": {
     "offlineSuites": 59,
     "cliProcessChecks": 25,
@@ -56,12 +68,5 @@
   },
   "publicRepository": "https://github.com/Commoner-ai/EZapi",
   "sourcePublishedInRepository": true,
-  "oldPrivateHistoryImported": false,
-  "documentationVerification": {
-    "releaseTag": "0.1.73-preview.4",
-    "indexesChecked": 33,
-    "markdownPagesChecked": 157,
-    "localLinksChecked": 535,
-    "nativeAcceptanceRemainsPending": true
-  }
+  "oldPrivateHistoryImported": false
 }

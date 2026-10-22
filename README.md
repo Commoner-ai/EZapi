@@ -6,7 +6,7 @@
 
 An independent **Probably Stolen** Mod framework: DLL APIs, declarative JSON packs, an offline validator, buildable examples and machine-readable AI indexes. Prefer official game APIs. No Forge runtime dependency or bundled game assemblies.
 
-**0.1.73-preview.4** is a prerelease, with assembly version 0.1.73. Reference functionality has 39 implemented groups; this is not a promise of binary compatibility or complete gameplay validation.
+**0.1.73-preview.5** is a prerelease, with assembly version 0.1.73. Reference functionality has 39 implemented groups; this is not a promise of binary compatibility or complete gameplay validation.
 
 **MIT open source:** framework implementation, offline validator, tests, build tooling, documentation and examples are available here. Older private history is not imported. See [build from source](docs/build-from-source.en.md).
 
@@ -23,6 +23,8 @@ The optional panel exports diagnostics, lists IDs, inspects inventory/resources,
 
 The developer package includes [game entry and batch automation](docs/automation.en.md) in `developer-tools/automation/`: entry, guarded input, batch regression and localization scripts. After enabling tools, run `Enter-EZapiTestStore.ps1 -GameDir '<game root>' -ExpectedSlot <test slot>`. Basic entry needs no additional game DLL.
 
+Optional [original-style item art guide](docs/item-art.en.md): the developer package includes 96 original reference sprites, eight boards, transparent enlargements and AI prompts. Original artwork retains separate rights.
+
 ## Develop a Mod
 
 Framework implementation and build projects are available under MIT; see [source build instructions](docs/build-from-source.en.md). The developer package provides DLL/XML, exact public API indexes, guides, JSON schemas, a binary offline validator, consumer examples and automation scripts. See [adaptive departure buttons](docs/departure-buttons.en.md).
@@ -35,6 +37,8 @@ dotnet build docs/examples/minimal-dll/SimpleMod.csproj -c Release -p:GameDir='<
 
 Language follows game settings. Additional CSV locales remain supported with English/author fallback; Chinese/English are priority acceptance locales. Official docs: [probably-stolen-modding](https://github.com/dragonpan2/probably-stolen-modding). Build and reference-fetch scripts are available in this repository.
 
-This documentation revision keeps the runtime DLL unchanged. Earlier native language/save evidence remains tied to its historical hash. Offline verification is not native gameplay verification. See [release notes](docs/releases/0.1.73-preview.4.md).
+This documentation revision keeps the runtime DLL unchanged. Earlier native language/save evidence remains tied to its historical hash. Offline verification is not native gameplay verification. See [release notes](docs/releases/0.1.73-preview.5.md).
 
 See the MIT LICENSE for source and binary reuse, and THIRD-PARTY-NOTICES.md for dependencies. Game/runtime DLLs and private workspace data are not redistributed.
+
+Original game artwork references retain separate rights and are excluded from MIT; see [third-party notices](THIRD-PARTY-NOTICES.md). 原版美术参考不属于MIT授权。
