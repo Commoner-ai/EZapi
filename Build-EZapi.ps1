@@ -15,7 +15,7 @@ try {
     if (-not (Test-Path -LiteralPath "$GameDir/MelonLoader/Il2CppAssemblies/Assembly-CSharp.dll")) {
         throw 'Game IL2CPP assemblies missing. Install compatible MelonLoader and run the game once.'
     }
-    if (-not $OutputDir) { $OutputDir = Join-Path $PSScriptRoot 'outputs/EZapi-0.1.73-source-built' }
+    if (-not $OutputDir) { $OutputDir = Join-Path $PSScriptRoot 'outputs/EZapi-0.1.74-source-built' }
     $OutputDir = [IO.Path]::GetFullPath($OutputDir)
     if (Test-Path -LiteralPath $OutputDir) { throw 'Use a fresh OutputDir.' }
     foreach ($taskProject in @('EZapi/EZapi.csproj','EZapi.Sample/ExampleMod.csproj','EZapi.ContentValidator/EZapi.ContentValidator.csproj')) {
@@ -28,7 +28,7 @@ try {
     & "$PSScriptRoot/scripts/Test-EZapiOffline.ps1"
     dotnet build work/ezapi-inspect/Inspect.csproj -c Release
     if ($LASTEXITCODE -ne 0) { throw 'Metadata inspector build failed.' }
-    python -X utf8 work/build-public-api-index.py --version 0.1.73
+    python -X utf8 work/build-public-api-index.py --version 0.1.74
     if ($LASTEXITCODE -ne 0) { throw 'API index generation failed.' }
     foreach ($taskScript in @('sync-curated-api-types.py','verify-public-api-index.py')) {
         python -X utf8 "work/$taskScript"
@@ -47,7 +47,7 @@ try {
     dotnet src/EZapi.ContentValidator/bin/Release/net8.0/ezapi-validate.dll --packs "$OutputDir/Mods/EZapiPacks"
     if ($LASTEXITCODE -ne 0) { throw 'Sample content pack failed validation.' }
     $taskReport = [ordered]@{
-        schemaVersion=1; version='0.1.73'; kind='offline-development-candidate'
+        schemaVersion=1; version='0.1.74'; kind='offline-development-candidate'
         at=[DateTimeOffset]::Now.ToString('o'); offlineVerified=$true
         nativeRuntimeVerified=$false; fullGoalComplete=$false
         build=[ordered]@{formalProjects=3;minimalDllExampleVerified=$true;offlineSuites=59;cliProcessChecks=25;samplePackValidated=$true;publicMetadataVerified=$true;capabilityIndexVerified=$true}

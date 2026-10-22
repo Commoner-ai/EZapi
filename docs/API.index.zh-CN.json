@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "framework": "EZapi",
-  "version": "0.1.73",
+  "version": "0.1.74",
   "entries": [
     {
       "id": "EZapi.ClientVisitApi.IsAvailable",
@@ -6644,7 +6644,7 @@
         }
       ],
       "metadataSource": "public-api.index.json",
-      "metadataDllSHA256": "7E4AB675B0E3BD81C56EEC4606731A6880287549EB4E8E90A707BE18BD52BEEF"
+      "metadataDllSHA256": "FE6DE81903D1F3A1234031C193D0F5678B17D99949AB24A47DCAB52958DFCA55"
     },
     "ContainerDefinition": {
       "Width": "int 1..12 required; internal cells",
@@ -6816,7 +6816,7 @@
         }
       ],
       "metadataSource": "public-api.index.json",
-      "metadataDllSHA256": "7E4AB675B0E3BD81C56EEC4606731A6880287549EB4E8E90A707BE18BD52BEEF"
+      "metadataDllSHA256": "FE6DE81903D1F3A1234031C193D0F5678B17D99949AB24A47DCAB52958DFCA55"
     },
     "DialogueApi": {
       "name": "EZapi.DialogueApi",
@@ -7004,7 +7004,7 @@
         }
       ],
       "metadataSource": "public-api.index.json",
-      "metadataDllSHA256": "7E4AB675B0E3BD81C56EEC4606731A6880287549EB4E8E90A707BE18BD52BEEF"
+      "metadataDllSHA256": "FE6DE81903D1F3A1234031C193D0F5678B17D99949AB24A47DCAB52958DFCA55"
     },
     "DialogueChoice": {
       "name": "EZapi.DialogueChoice",
@@ -7424,7 +7424,7 @@
         }
       ],
       "metadataSource": "public-api.index.json",
-      "metadataDllSHA256": "7E4AB675B0E3BD81C56EEC4606731A6880287549EB4E8E90A707BE18BD52BEEF"
+      "metadataDllSHA256": "FE6DE81903D1F3A1234031C193D0F5678B17D99949AB24A47DCAB52958DFCA55"
     },
     "DialogueContext": {
       "name": "EZapi.DialogueContext",
@@ -7870,7 +7870,7 @@
         }
       ],
       "metadataSource": "public-api.index.json",
-      "metadataDllSHA256": "7E4AB675B0E3BD81C56EEC4606731A6880287549EB4E8E90A707BE18BD52BEEF"
+      "metadataDllSHA256": "FE6DE81903D1F3A1234031C193D0F5678B17D99949AB24A47DCAB52958DFCA55"
     },
     "DialogueDefinition": {
       "name": "EZapi.DialogueDefinition",
@@ -8550,7 +8550,7 @@
         }
       ],
       "metadataSource": "public-api.index.json",
-      "metadataDllSHA256": "7E4AB675B0E3BD81C56EEC4606731A6880287549EB4E8E90A707BE18BD52BEEF"
+      "metadataDllSHA256": "FE6DE81903D1F3A1234031C193D0F5678B17D99949AB24A47DCAB52958DFCA55"
     },
     "DialogueScript": {
       "name": "EZapi.DialogueScript",
@@ -8599,7 +8599,7 @@
         }
       ],
       "metadataSource": "public-api.index.json",
-      "metadataDllSHA256": "7E4AB675B0E3BD81C56EEC4606731A6880287549EB4E8E90A707BE18BD52BEEF"
+      "metadataDllSHA256": "FE6DE81903D1F3A1234031C193D0F5678B17D99949AB24A47DCAB52958DFCA55"
     },
     "EnergyDebitResult": {
       "Status": "Debited/Insufficient/Rejected/Restored/RecoveryFailed/Reentrant",
@@ -8944,7 +8944,7 @@
         }
       ],
       "metadataSource": "public-api.index.json",
-      "metadataDllSHA256": "7E4AB675B0E3BD81C56EEC4606731A6880287549EB4E8E90A707BE18BD52BEEF"
+      "metadataDllSHA256": "FE6DE81903D1F3A1234031C193D0F5678B17D99949AB24A47DCAB52958DFCA55"
     },
     "FoodDefinition": {
       "Calories": "int 1..100000, required in JSON",
@@ -9050,7 +9050,7 @@
         }
       ],
       "metadataSource": "public-api.index.json",
-      "metadataDllSHA256": "7E4AB675B0E3BD81C56EEC4606731A6880287549EB4E8E90A707BE18BD52BEEF"
+      "metadataDllSHA256": "FE6DE81903D1F3A1234031C193D0F5678B17D99949AB24A47DCAB52958DFCA55"
     },
     "GameEventContext": {
       "Event": "GameEvent",
@@ -9361,7 +9361,7 @@
         }
       ],
       "metadataSource": "public-api.index.json",
-      "metadataDllSHA256": "7E4AB675B0E3BD81C56EEC4606731A6880287549EB4E8E90A707BE18BD52BEEF"
+      "metadataDllSHA256": "FE6DE81903D1F3A1234031C193D0F5678B17D99949AB24A47DCAB52958DFCA55"
     },
     "GameRunIdentity": {
       "SaveSlotId": "int",
@@ -9672,7 +9672,7 @@
         }
       ],
       "metadataSource": "public-api.index.json",
-      "metadataDllSHA256": "7E4AB675B0E3BD81C56EEC4606731A6880287549EB4E8E90A707BE18BD52BEEF"
+      "metadataDllSHA256": "FE6DE81903D1F3A1234031C193D0F5678B17D99949AB24A47DCAB52958DFCA55"
     },
     "InventoryPlacement": {
       "Item": "live product; synchronous use only; caller owns cleanup",
@@ -9952,7 +9952,7 @@
         }
       ],
       "metadataSource": "public-api.index.json",
-      "metadataDllSHA256": "7E4AB675B0E3BD81C56EEC4606731A6880287549EB4E8E90A707BE18BD52BEEF"
+      "metadataDllSHA256": "FE6DE81903D1F3A1234031C193D0F5678B17D99949AB24A47DCAB52958DFCA55"
     },
     "InventoryShape": {
       "X/Y": "global grid origin",
@@ -10401,7 +10401,7 @@
         }
       ],
       "metadataSource": "public-api.index.json",
-      "metadataDllSHA256": "7E4AB675B0E3BD81C56EEC4606731A6880287549EB4E8E90A707BE18BD52BEEF"
+      "metadataDllSHA256": "FE6DE81903D1F3A1234031C193D0F5678B17D99949AB24A47DCAB52958DFCA55"
     },
     "ItemDefinition": {
       "Id": {
@@ -11296,7 +11296,7 @@
         }
       ],
       "metadataSource": "public-api.index.json",
-      "metadataDllSHA256": "7E4AB675B0E3BD81C56EEC4606731A6880287549EB4E8E90A707BE18BD52BEEF"
+      "metadataDllSHA256": "FE6DE81903D1F3A1234031C193D0F5678B17D99949AB24A47DCAB52958DFCA55"
     },
     "ItemRegistrationResult": [
       "ItemId",
@@ -11674,7 +11674,7 @@
         }
       ],
       "metadataSource": "public-api.index.json",
-      "metadataDllSHA256": "7E4AB675B0E3BD81C56EEC4606731A6880287549EB4E8E90A707BE18BD52BEEF"
+      "metadataDllSHA256": "FE6DE81903D1F3A1234031C193D0F5678B17D99949AB24A47DCAB52958DFCA55"
     },
     "LiquidContainerDefinition": {
       "Capacity": "int 1..100000 ml default 500",
@@ -11744,7 +11744,7 @@
         }
       ],
       "metadataSource": "public-api.index.json",
-      "metadataDllSHA256": "7E4AB675B0E3BD81C56EEC4606731A6880287549EB4E8E90A707BE18BD52BEEF"
+      "metadataDllSHA256": "FE6DE81903D1F3A1234031C193D0F5678B17D99949AB24A47DCAB52958DFCA55"
     },
     "LiquidSnapshot": {
       "CapacityParts": "int",
@@ -11864,7 +11864,7 @@
         }
       ],
       "metadataSource": "public-api.index.json",
-      "metadataDllSHA256": "7E4AB675B0E3BD81C56EEC4606731A6880287549EB4E8E90A707BE18BD52BEEF"
+      "metadataDllSHA256": "FE6DE81903D1F3A1234031C193D0F5678B17D99949AB24A47DCAB52958DFCA55"
     },
     "LootDefinition": {
       "Tables": "LootListDefinition[]",
@@ -11944,7 +11944,7 @@
         }
       ],
       "metadataSource": "public-api.index.json",
-      "metadataDllSHA256": "7E4AB675B0E3BD81C56EEC4606731A6880287549EB4E8E90A707BE18BD52BEEF"
+      "metadataDllSHA256": "FE6DE81903D1F3A1234031C193D0F5678B17D99949AB24A47DCAB52958DFCA55"
     },
     "LootEntrySnapshot": [
       "Id",
@@ -12011,7 +12011,7 @@
         }
       ],
       "metadataSource": "public-api.index.json",
-      "metadataDllSHA256": "7E4AB675B0E3BD81C56EEC4606731A6880287549EB4E8E90A707BE18BD52BEEF"
+      "metadataDllSHA256": "FE6DE81903D1F3A1234031C193D0F5678B17D99949AB24A47DCAB52958DFCA55"
     },
     "LootListSnapshot": {
       "Id": "string",
@@ -12374,7 +12374,7 @@
         }
       ],
       "metadataSource": "public-api.index.json",
-      "metadataDllSHA256": "7E4AB675B0E3BD81C56EEC4606731A6880287549EB4E8E90A707BE18BD52BEEF"
+      "metadataDllSHA256": "FE6DE81903D1F3A1234031C193D0F5678B17D99949AB24A47DCAB52958DFCA55"
     },
     "LootPatchDefinition": {
       "Table": "string? xor Group",
@@ -12486,7 +12486,7 @@
         }
       ],
       "metadataSource": "public-api.index.json",
-      "metadataDllSHA256": "7E4AB675B0E3BD81C56EEC4606731A6880287549EB4E8E90A707BE18BD52BEEF"
+      "metadataDllSHA256": "FE6DE81903D1F3A1234031C193D0F5678B17D99949AB24A47DCAB52958DFCA55"
     },
     "LootRegistrationResult": [
       "Accepted",
@@ -12556,7 +12556,7 @@
         }
       ],
       "metadataSource": "public-api.index.json",
-      "metadataDllSHA256": "7E4AB675B0E3BD81C56EEC4606731A6880287549EB4E8E90A707BE18BD52BEEF"
+      "metadataDllSHA256": "FE6DE81903D1F3A1234031C193D0F5678B17D99949AB24A47DCAB52958DFCA55"
     },
     "MachineAutomationContext": {
       "IsCurrent": {
@@ -12738,7 +12738,7 @@
         }
       ],
       "metadataSource": "public-api.index.json",
-      "metadataDllSHA256": "7E4AB675B0E3BD81C56EEC4606731A6880287549EB4E8E90A707BE18BD52BEEF"
+      "metadataDllSHA256": "FE6DE81903D1F3A1234031C193D0F5678B17D99949AB24A47DCAB52958DFCA55"
     },
     "MachineAutomationPhase": {
       "enumValues": {
@@ -12794,7 +12794,7 @@
         }
       ],
       "metadataSource": "public-api.index.json",
-      "metadataDllSHA256": "7E4AB675B0E3BD81C56EEC4606731A6880287549EB4E8E90A707BE18BD52BEEF"
+      "metadataDllSHA256": "FE6DE81903D1F3A1234031C193D0F5678B17D99949AB24A47DCAB52958DFCA55"
     },
     "MachineDefinition": {
       "MachineId": {
@@ -13258,7 +13258,7 @@
         }
       ],
       "metadataSource": "public-api.index.json",
-      "metadataDllSHA256": "7E4AB675B0E3BD81C56EEC4606731A6880287549EB4E8E90A707BE18BD52BEEF"
+      "metadataDllSHA256": "FE6DE81903D1F3A1234031C193D0F5678B17D99949AB24A47DCAB52958DFCA55"
     },
     "MachineRuntimeApi": {
       "RuntimeInstalled": {
@@ -13390,7 +13390,7 @@
         }
       ],
       "metadataSource": "public-api.index.json",
-      "metadataDllSHA256": "7E4AB675B0E3BD81C56EEC4606731A6880287549EB4E8E90A707BE18BD52BEEF"
+      "metadataDllSHA256": "FE6DE81903D1F3A1234031C193D0F5678B17D99949AB24A47DCAB52958DFCA55"
     },
     "MachineView": {
       "OwnerId": {
@@ -13975,7 +13975,7 @@
         }
       ],
       "metadataSource": "public-api.index.json",
-      "metadataDllSHA256": "7E4AB675B0E3BD81C56EEC4606731A6880287549EB4E8E90A707BE18BD52BEEF"
+      "metadataDllSHA256": "FE6DE81903D1F3A1234031C193D0F5678B17D99949AB24A47DCAB52958DFCA55"
     },
     "ManufacturingTerminal": {
       "OwnerId": "ezapi.machines",
@@ -14233,7 +14233,7 @@
         }
       ],
       "metadataSource": "public-api.index.json",
-      "metadataDllSHA256": "7E4AB675B0E3BD81C56EEC4606731A6880287549EB4E8E90A707BE18BD52BEEF"
+      "metadataDllSHA256": "FE6DE81903D1F3A1234031C193D0F5678B17D99949AB24A47DCAB52958DFCA55"
     },
     "ManufacturingTerminalView": {
       "Registered": {
@@ -14583,7 +14583,7 @@
         }
       ],
       "metadataSource": "public-api.index.json",
-      "metadataDllSHA256": "7E4AB675B0E3BD81C56EEC4606731A6880287549EB4E8E90A707BE18BD52BEEF"
+      "metadataDllSHA256": "FE6DE81903D1F3A1234031C193D0F5678B17D99949AB24A47DCAB52958DFCA55"
     },
     "NativeHookStatus": {
       "OwnerId": "independent hook group",
@@ -14915,7 +14915,7 @@
         }
       ],
       "metadataSource": "public-api.index.json",
-      "metadataDllSHA256": "7E4AB675B0E3BD81C56EEC4606731A6880287549EB4E8E90A707BE18BD52BEEF"
+      "metadataDllSHA256": "FE6DE81903D1F3A1234031C193D0F5678B17D99949AB24A47DCAB52958DFCA55"
     },
     "NativeInventoryItem": {
       "NativeIdentity": "process/Epoch-scoped comparison only; never reconstruct pointer",
@@ -15319,7 +15319,7 @@
         }
       ],
       "metadataSource": "public-api.index.json",
-      "metadataDllSHA256": "7E4AB675B0E3BD81C56EEC4606731A6880287549EB4E8E90A707BE18BD52BEEF"
+      "metadataDllSHA256": "FE6DE81903D1F3A1234031C193D0F5678B17D99949AB24A47DCAB52958DFCA55"
     },
     "NativeInventorySnapshot": {
       "Status": "Ready/Unavailable/Invalid",
@@ -15804,7 +15804,7 @@
         }
       ],
       "metadataSource": "public-api.index.json",
-      "metadataDllSHA256": "7E4AB675B0E3BD81C56EEC4606731A6880287549EB4E8E90A707BE18BD52BEEF"
+      "metadataDllSHA256": "FE6DE81903D1F3A1234031C193D0F5678B17D99949AB24A47DCAB52958DFCA55"
     },
     "NativeTransferPreview": {
       "Status": "Ready/Unavailable/Invalid/SourceMismatch/Locked/NoWholeSlot",
@@ -16149,7 +16149,7 @@
         }
       ],
       "metadataSource": "public-api.index.json",
-      "metadataDllSHA256": "7E4AB675B0E3BD81C56EEC4606731A6880287549EB4E8E90A707BE18BD52BEEF"
+      "metadataDllSHA256": "FE6DE81903D1F3A1234031C193D0F5678B17D99949AB24A47DCAB52958DFCA55"
     },
     "PackDependency": {
       "Id": "owner ID",
@@ -16209,7 +16209,7 @@
         }
       ],
       "metadataSource": "public-api.index.json",
-      "metadataDllSHA256": "7E4AB675B0E3BD81C56EEC4606731A6880287549EB4E8E90A707BE18BD52BEEF"
+      "metadataDllSHA256": "FE6DE81903D1F3A1234031C193D0F5678B17D99949AB24A47DCAB52958DFCA55"
     },
     "PackManifest": {
       "required": [
@@ -16344,7 +16344,7 @@
         }
       ],
       "metadataSource": "public-api.index.json",
-      "metadataDllSHA256": "7E4AB675B0E3BD81C56EEC4606731A6880287549EB4E8E90A707BE18BD52BEEF"
+      "metadataDllSHA256": "FE6DE81903D1F3A1234031C193D0F5678B17D99949AB24A47DCAB52958DFCA55"
     },
     "PhoneApi": {
       "name": "EZapi.PhoneApi",
@@ -16486,7 +16486,7 @@
         }
       ],
       "metadataSource": "public-api.index.json",
-      "metadataDllSHA256": "7E4AB675B0E3BD81C56EEC4606731A6880287549EB4E8E90A707BE18BD52BEEF"
+      "metadataDllSHA256": "FE6DE81903D1F3A1234031C193D0F5678B17D99949AB24A47DCAB52958DFCA55"
     },
     "PhoneContact": {
       "name": "EZapi.PhoneContact",
@@ -16855,7 +16855,7 @@
         }
       ],
       "metadataSource": "public-api.index.json",
-      "metadataDllSHA256": "7E4AB675B0E3BD81C56EEC4606731A6880287549EB4E8E90A707BE18BD52BEEF"
+      "metadataDllSHA256": "FE6DE81903D1F3A1234031C193D0F5678B17D99949AB24A47DCAB52958DFCA55"
     },
     "PhoneContactView": {
       "name": "EZapi.PhoneContactView",
@@ -17244,7 +17244,7 @@
         }
       ],
       "metadataSource": "public-api.index.json",
-      "metadataDllSHA256": "7E4AB675B0E3BD81C56EEC4606731A6880287549EB4E8E90A707BE18BD52BEEF"
+      "metadataDllSHA256": "FE6DE81903D1F3A1234031C193D0F5678B17D99949AB24A47DCAB52958DFCA55"
     },
     "PhoneContext": {
       "name": "EZapi.PhoneContext",
@@ -17553,7 +17553,7 @@
         }
       ],
       "metadataSource": "public-api.index.json",
-      "metadataDllSHA256": "7E4AB675B0E3BD81C56EEC4606731A6880287549EB4E8E90A707BE18BD52BEEF"
+      "metadataDllSHA256": "FE6DE81903D1F3A1234031C193D0F5678B17D99949AB24A47DCAB52958DFCA55"
     },
     "PresentationResult": {
       "name": "EZapi.PresentationResult",
@@ -17822,7 +17822,7 @@
         }
       ],
       "metadataSource": "public-api.index.json",
-      "metadataDllSHA256": "7E4AB675B0E3BD81C56EEC4606731A6880287549EB4E8E90A707BE18BD52BEEF"
+      "metadataDllSHA256": "FE6DE81903D1F3A1234031C193D0F5678B17D99949AB24A47DCAB52958DFCA55"
     },
     "PresentationStatus": {
       "name": "EZapi.PresentationStatus",
@@ -17957,7 +17957,7 @@
         }
       ],
       "metadataSource": "public-api.index.json",
-      "metadataDllSHA256": "7E4AB675B0E3BD81C56EEC4606731A6880287549EB4E8E90A707BE18BD52BEEF"
+      "metadataDllSHA256": "FE6DE81903D1F3A1234031C193D0F5678B17D99949AB24A47DCAB52958DFCA55"
     },
     "ReadingApi": {
       "name": "EZapi.ReadingApi",
@@ -18203,7 +18203,7 @@
         }
       ],
       "metadataSource": "public-api.index.json",
-      "metadataDllSHA256": "7E4AB675B0E3BD81C56EEC4606731A6880287549EB4E8E90A707BE18BD52BEEF"
+      "metadataDllSHA256": "FE6DE81903D1F3A1234031C193D0F5678B17D99949AB24A47DCAB52958DFCA55"
     },
     "RecipeGuideDisplay": {
       "properties": [
@@ -18612,7 +18612,7 @@
         }
       ],
       "metadataSource": "public-api.index.json",
-      "metadataDllSHA256": "7E4AB675B0E3BD81C56EEC4606731A6880287549EB4E8E90A707BE18BD52BEEF"
+      "metadataDllSHA256": "FE6DE81903D1F3A1234031C193D0F5678B17D99949AB24A47DCAB52958DFCA55"
     },
     "RecipeGuideOptions": {
       "properties": [
@@ -18915,7 +18915,7 @@
         }
       ],
       "metadataSource": "public-api.index.json",
-      "metadataDllSHA256": "7E4AB675B0E3BD81C56EEC4606731A6880287549EB4E8E90A707BE18BD52BEEF"
+      "metadataDllSHA256": "FE6DE81903D1F3A1234031C193D0F5678B17D99949AB24A47DCAB52958DFCA55"
     },
     "RegisteredMachineRecipe": {
       "OwnerId": {
@@ -19203,7 +19203,7 @@
         }
       ],
       "metadataSource": "public-api.index.json",
-      "metadataDllSHA256": "7E4AB675B0E3BD81C56EEC4606731A6880287549EB4E8E90A707BE18BD52BEEF"
+      "metadataDllSHA256": "FE6DE81903D1F3A1234031C193D0F5678B17D99949AB24A47DCAB52958DFCA55"
     },
     "RunDataStore": {
       "properties": [
@@ -19896,7 +19896,7 @@
         }
       ],
       "metadataSource": "public-api.index.json",
-      "metadataDllSHA256": "7E4AB675B0E3BD81C56EEC4606731A6880287549EB4E8E90A707BE18BD52BEEF"
+      "metadataDllSHA256": "FE6DE81903D1F3A1234031C193D0F5678B17D99949AB24A47DCAB52958DFCA55"
     },
     "RunPurchaseApi": {
       "name": "EZapi.RunPurchaseApi",
@@ -20006,7 +20006,7 @@
         }
       ],
       "metadataSource": "public-api.index.json",
-      "metadataDllSHA256": "7E4AB675B0E3BD81C56EEC4606731A6880287549EB4E8E90A707BE18BD52BEEF"
+      "metadataDllSHA256": "FE6DE81903D1F3A1234031C193D0F5678B17D99949AB24A47DCAB52958DFCA55"
     },
     "RuntimeCapabilities": {
       "name": "EZapi.RuntimeCapabilities",
@@ -20048,7 +20048,7 @@
         }
       ],
       "metadataSource": "public-api.index.json",
-      "metadataDllSHA256": "7E4AB675B0E3BD81C56EEC4606731A6880287549EB4E8E90A707BE18BD52BEEF"
+      "metadataDllSHA256": "FE6DE81903D1F3A1234031C193D0F5678B17D99949AB24A47DCAB52958DFCA55"
     },
     "RuntimeCapabilitySnapshot": {
       "name": "EZapi.RuntimeCapabilitySnapshot",
@@ -20867,7 +20867,7 @@
         }
       ],
       "metadataSource": "public-api.index.json",
-      "metadataDllSHA256": "7E4AB675B0E3BD81C56EEC4606731A6880287549EB4E8E90A707BE18BD52BEEF"
+      "metadataDllSHA256": "FE6DE81903D1F3A1234031C193D0F5678B17D99949AB24A47DCAB52958DFCA55"
     },
     "SaveReadResult": {
       "name": "EZapi.SaveReadResult",
@@ -20962,7 +20962,7 @@
         }
       ],
       "metadataSource": "public-api.index.json",
-      "metadataDllSHA256": "7E4AB675B0E3BD81C56EEC4606731A6880287549EB4E8E90A707BE18BD52BEEF"
+      "metadataDllSHA256": "FE6DE81903D1F3A1234031C193D0F5678B17D99949AB24A47DCAB52958DFCA55"
     },
     "SaveReadStatus": {
       "name": "EZapi.SaveReadStatus",
@@ -21075,7 +21075,7 @@
         }
       ],
       "metadataSource": "public-api.index.json",
-      "metadataDllSHA256": "7E4AB675B0E3BD81C56EEC4606731A6880287549EB4E8E90A707BE18BD52BEEF"
+      "metadataDllSHA256": "FE6DE81903D1F3A1234031C193D0F5678B17D99949AB24A47DCAB52958DFCA55"
     },
     "SaveReadbackApi": {
       "name": "EZapi.SaveReadbackApi",
@@ -21373,7 +21373,7 @@
         }
       ],
       "metadataSource": "public-api.index.json",
-      "metadataDllSHA256": "7E4AB675B0E3BD81C56EEC4606731A6880287549EB4E8E90A707BE18BD52BEEF"
+      "metadataDllSHA256": "FE6DE81903D1F3A1234031C193D0F5678B17D99949AB24A47DCAB52958DFCA55"
     },
     "SupplierApi": {
       "name": "EZapi.SupplierApi",
@@ -21537,7 +21537,7 @@
         }
       ],
       "metadataSource": "public-api.index.json",
-      "metadataDllSHA256": "7E4AB675B0E3BD81C56EEC4606731A6880287549EB4E8E90A707BE18BD52BEEF"
+      "metadataDllSHA256": "FE6DE81903D1F3A1234031C193D0F5678B17D99949AB24A47DCAB52958DFCA55"
     },
     "SupplierDefinition": {
       "name": "EZapi.SupplierDefinition",
@@ -22222,7 +22222,7 @@
         }
       ],
       "metadataSource": "public-api.index.json",
-      "metadataDllSHA256": "7E4AB675B0E3BD81C56EEC4606731A6880287549EB4E8E90A707BE18BD52BEEF"
+      "metadataDllSHA256": "FE6DE81903D1F3A1234031C193D0F5678B17D99949AB24A47DCAB52958DFCA55"
     },
     "SupplierOffer": {
       "name": "EZapi.SupplierOffer",
@@ -22642,7 +22642,7 @@
         }
       ],
       "metadataSource": "public-api.index.json",
-      "metadataDllSHA256": "7E4AB675B0E3BD81C56EEC4606731A6880287549EB4E8E90A707BE18BD52BEEF"
+      "metadataDllSHA256": "FE6DE81903D1F3A1234031C193D0F5678B17D99949AB24A47DCAB52958DFCA55"
     },
     "SupplierPage": {
       "name": "EZapi.SupplierPage",
@@ -22962,7 +22962,7 @@
         }
       ],
       "metadataSource": "public-api.index.json",
-      "metadataDllSHA256": "7E4AB675B0E3BD81C56EEC4606731A6880287549EB4E8E90A707BE18BD52BEEF"
+      "metadataDllSHA256": "FE6DE81903D1F3A1234031C193D0F5678B17D99949AB24A47DCAB52958DFCA55"
     },
     "TransactionResult": {
       "name": "EZapi.TransactionResult",
@@ -23350,7 +23350,7 @@
         }
       ],
       "metadataSource": "public-api.index.json",
-      "metadataDllSHA256": "7E4AB675B0E3BD81C56EEC4606731A6880287549EB4E8E90A707BE18BD52BEEF"
+      "metadataDllSHA256": "FE6DE81903D1F3A1234031C193D0F5678B17D99949AB24A47DCAB52958DFCA55"
     },
     "TransactionStatus": {
       "name": "EZapi.TransactionStatus",
@@ -23436,7 +23436,7 @@
         }
       ],
       "metadataSource": "public-api.index.json",
-      "metadataDllSHA256": "7E4AB675B0E3BD81C56EEC4606731A6880287549EB4E8E90A707BE18BD52BEEF"
+      "metadataDllSHA256": "FE6DE81903D1F3A1234031C193D0F5678B17D99949AB24A47DCAB52958DFCA55"
     },
     "TransactionStep": {
       "name": "EZapi.TransactionStep",
@@ -23775,7 +23775,7 @@
         }
       ],
       "metadataSource": "public-api.index.json",
-      "metadataDllSHA256": "7E4AB675B0E3BD81C56EEC4606731A6880287549EB4E8E90A707BE18BD52BEEF"
+      "metadataDllSHA256": "FE6DE81903D1F3A1234031C193D0F5678B17D99949AB24A47DCAB52958DFCA55"
     },
     "Transactions": {
       "name": "EZapi.Transactions",
@@ -23824,7 +23824,7 @@
         }
       ],
       "metadataSource": "public-api.index.json",
-      "metadataDllSHA256": "7E4AB675B0E3BD81C56EEC4606731A6880287549EB4E8E90A707BE18BD52BEEF"
+      "metadataDllSHA256": "FE6DE81903D1F3A1234031C193D0F5678B17D99949AB24A47DCAB52958DFCA55"
     },
     "SpriteAssets": {
       "name": "EZapi.SpriteAssets",
@@ -23914,7 +23914,7 @@
         }
       ],
       "metadataSource": "public-api.index.json",
-      "metadataDllSHA256": "7E4AB675B0E3BD81C56EEC4606731A6880287549EB4E8E90A707BE18BD52BEEF"
+      "metadataDllSHA256": "FE6DE81903D1F3A1234031C193D0F5678B17D99949AB24A47DCAB52958DFCA55"
     },
     "EmbeddedSpriteAtlas": {
       "name": "EZapi.EmbeddedSpriteAtlas",
@@ -24201,7 +24201,7 @@
         }
       ],
       "metadataSource": "public-api.index.json",
-      "metadataDllSHA256": "7E4AB675B0E3BD81C56EEC4606731A6880287549EB4E8E90A707BE18BD52BEEF"
+      "metadataDllSHA256": "FE6DE81903D1F3A1234031C193D0F5678B17D99949AB24A47DCAB52958DFCA55"
     },
     "SpriteDefinition": {
       "name": "EZapi.SpriteDefinition",
@@ -24591,7 +24591,7 @@
         }
       ],
       "metadataSource": "public-api.index.json",
-      "metadataDllSHA256": "7E4AB675B0E3BD81C56EEC4606731A6880287549EB4E8E90A707BE18BD52BEEF"
+      "metadataDllSHA256": "FE6DE81903D1F3A1234031C193D0F5678B17D99949AB24A47DCAB52958DFCA55"
     },
     "SpriteFilter": {
       "name": "EZapi.SpriteFilter",
@@ -24649,7 +24649,7 @@
         }
       ],
       "metadataSource": "public-api.index.json",
-      "metadataDllSHA256": "7E4AB675B0E3BD81C56EEC4606731A6880287549EB4E8E90A707BE18BD52BEEF"
+      "metadataDllSHA256": "FE6DE81903D1F3A1234031C193D0F5678B17D99949AB24A47DCAB52958DFCA55"
     },
     "EnergyDebitStatus": [
       "Debited",
@@ -24937,7 +24937,7 @@
         }
       ],
       "metadataSource": "public-api.index.json",
-      "metadataDllSHA256": "7E4AB675B0E3BD81C56EEC4606731A6880287549EB4E8E90A707BE18BD52BEEF"
+      "metadataDllSHA256": "FE6DE81903D1F3A1234031C193D0F5678B17D99949AB24A47DCAB52958DFCA55"
     },
     "PowerSourceDebit": {
       "InstanceId": "source instance ID",
@@ -25248,7 +25248,7 @@
         }
       ],
       "metadataSource": "public-api.index.json",
-      "metadataDllSHA256": "7E4AB675B0E3BD81C56EEC4606731A6880287549EB4E8E90A707BE18BD52BEEF"
+      "metadataDllSHA256": "FE6DE81903D1F3A1234031C193D0F5678B17D99949AB24A47DCAB52958DFCA55"
     },
     "PowerBatchMath": {
       "Plan": "IReadOnlyList<PowerSourceDebit> Plan(IEnumerable<PowerSourceAmount> sources, int cost); pure managed; validates IDs/energy/duplicates; uses Int64 total and ascending instance ID",
@@ -25311,7 +25311,7 @@
         }
       ],
       "metadataSource": "public-api.index.json",
-      "metadataDllSHA256": "7E4AB675B0E3BD81C56EEC4606731A6880287549EB4E8E90A707BE18BD52BEEF"
+      "metadataDllSHA256": "FE6DE81903D1F3A1234031C193D0F5678B17D99949AB24A47DCAB52958DFCA55"
     },
     "LocalizedItemText": {
       "properties": [
@@ -25738,7 +25738,7 @@
         }
       ],
       "metadataSource": "public-api.index.json",
-      "metadataDllSHA256": "7E4AB675B0E3BD81C56EEC4606731A6880287549EB4E8E90A707BE18BD52BEEF"
+      "metadataDllSHA256": "FE6DE81903D1F3A1234031C193D0F5678B17D99949AB24A47DCAB52958DFCA55"
     },
     "NativeItemOptions": {
       "Name": {
@@ -26322,7 +26322,7 @@
         }
       ],
       "metadataSource": "public-api.index.json",
-      "metadataDllSHA256": "7E4AB675B0E3BD81C56EEC4606731A6880287549EB4E8E90A707BE18BD52BEEF"
+      "metadataDllSHA256": "FE6DE81903D1F3A1234031C193D0F5678B17D99949AB24A47DCAB52958DFCA55"
     },
     "ModuleText": {
       "AdditionalEffect": {
@@ -26610,7 +26610,7 @@
         }
       ],
       "metadataSource": "public-api.index.json",
-      "metadataDllSHA256": "7E4AB675B0E3BD81C56EEC4606731A6880287549EB4E8E90A707BE18BD52BEEF"
+      "metadataDllSHA256": "FE6DE81903D1F3A1234031C193D0F5678B17D99949AB24A47DCAB52958DFCA55"
     },
     "MachineContainerOutput": {
       "name": "EZapi.MachineContainerOutput",
@@ -26871,7 +26871,7 @@
         }
       ],
       "metadataSource": "public-api.index.json",
-      "metadataDllSHA256": "7E4AB675B0E3BD81C56EEC4606731A6880287549EB4E8E90A707BE18BD52BEEF"
+      "metadataDllSHA256": "FE6DE81903D1F3A1234031C193D0F5678B17D99949AB24A47DCAB52958DFCA55"
     },
     "MachineContainerSlot": {
       "name": "EZapi.MachineContainerSlot",
@@ -27009,7 +27009,7 @@
         }
       ],
       "metadataSource": "public-api.index.json",
-      "metadataDllSHA256": "7E4AB675B0E3BD81C56EEC4606731A6880287549EB4E8E90A707BE18BD52BEEF"
+      "metadataDllSHA256": "FE6DE81903D1F3A1234031C193D0F5678B17D99949AB24A47DCAB52958DFCA55"
     },
     "MachineOutputTemplate": {
       "name": "EZapi.MachineOutputTemplate",
@@ -27111,7 +27111,7 @@
         }
       ],
       "metadataSource": "public-api.index.json",
-      "metadataDllSHA256": "7E4AB675B0E3BD81C56EEC4606731A6880287549EB4E8E90A707BE18BD52BEEF"
+      "metadataDllSHA256": "FE6DE81903D1F3A1234031C193D0F5678B17D99949AB24A47DCAB52958DFCA55"
     },
     "MachineContainerConditionApi": {
       "name": "EZapi.MachineContainerConditionApi",
@@ -27197,7 +27197,7 @@
         }
       ],
       "metadataSource": "public-api.index.json",
-      "metadataDllSHA256": "7E4AB675B0E3BD81C56EEC4606731A6880287549EB4E8E90A707BE18BD52BEEF"
+      "metadataDllSHA256": "FE6DE81903D1F3A1234031C193D0F5678B17D99949AB24A47DCAB52958DFCA55"
     },
     "MachineContainerConditionView": {
       "name": "EZapi.MachineContainerConditionView",
@@ -27566,7 +27566,7 @@
         }
       ],
       "metadataSource": "public-api.index.json",
-      "metadataDllSHA256": "7E4AB675B0E3BD81C56EEC4606731A6880287549EB4E8E90A707BE18BD52BEEF"
+      "metadataDllSHA256": "FE6DE81903D1F3A1234031C193D0F5678B17D99949AB24A47DCAB52958DFCA55"
     },
     "MachineMaterialContentsPolicy": {
       "name": "EZapi.MachineMaterialContentsPolicy",
@@ -27624,7 +27624,7 @@
         }
       ],
       "metadataSource": "public-api.index.json",
-      "metadataDllSHA256": "7E4AB675B0E3BD81C56EEC4606731A6880287549EB4E8E90A707BE18BD52BEEF"
+      "metadataDllSHA256": "FE6DE81903D1F3A1234031C193D0F5678B17D99949AB24A47DCAB52958DFCA55"
     },
     "MachineRecipe": {
       "name": "EZapi.MachineRecipe",
@@ -28039,7 +28039,7 @@
         }
       ],
       "metadataSource": "public-api.index.json",
-      "metadataDllSHA256": "7E4AB675B0E3BD81C56EEC4606731A6880287549EB4E8E90A707BE18BD52BEEF"
+      "metadataDllSHA256": "FE6DE81903D1F3A1234031C193D0F5678B17D99949AB24A47DCAB52958DFCA55"
     },
     "RecipeGuideEntry": {
       "properties": [
@@ -28580,7 +28580,7 @@
         }
       ],
       "metadataSource": "public-api.index.json",
-      "metadataDllSHA256": "7E4AB675B0E3BD81C56EEC4606731A6880287549EB4E8E90A707BE18BD52BEEF"
+      "metadataDllSHA256": "FE6DE81903D1F3A1234031C193D0F5678B17D99949AB24A47DCAB52958DFCA55"
     },
     "RecipeGuideFigure": {
       "properties": [
@@ -29025,7 +29025,7 @@
         }
       ],
       "metadataSource": "public-api.index.json",
-      "metadataDllSHA256": "7E4AB675B0E3BD81C56EEC4606731A6880287549EB4E8E90A707BE18BD52BEEF"
+      "metadataDllSHA256": "FE6DE81903D1F3A1234031C193D0F5678B17D99949AB24A47DCAB52958DFCA55"
     },
     "RecipeGuideSnapshot": {
       "properties": [
@@ -29316,12 +29316,12 @@
         }
       ],
       "metadataSource": "public-api.index.json",
-      "metadataDllSHA256": "7E4AB675B0E3BD81C56EEC4606731A6880287549EB4E8E90A707BE18BD52BEEF"
+      "metadataDllSHA256": "FE6DE81903D1F3A1234031C193D0F5678B17D99949AB24A47DCAB52958DFCA55"
     }
   },
   "propertyIndex": "item-properties.index.json",
   "officialApiMap": "official-api-map.zh-CN.md",
-  "implementationVersion": "0.1.73",
+  "implementationVersion": "0.1.74",
   "jsonProtocolVersion": "0.1",
   "activationAPI": {
     "source": "../src/EZapi/ItemActivation.cs",
@@ -31664,8 +31664,8 @@
   "itemData": "item-data.index.json",
   "documentationContext": {
     "kind": "current-api-guide",
-    "releaseTag": "0.1.73-preview.5",
-    "assemblyVersion": "0.1.73",
+    "releaseTag": "0.1.74-preview.1",
+    "assemblyVersion": "0.1.74",
     "releaseStatus": "release-status.json",
     "nativeRuntimeVerified": false,
     "evidencePolicy": "Old native claims are preserved only under historical* fields and do not apply to the current DLL."

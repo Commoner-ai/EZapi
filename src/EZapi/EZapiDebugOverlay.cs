@@ -10,7 +10,7 @@ namespace EZapi;
 /// </summary>
 internal sealed class EZapiDebugOverlay
 {
-    private enum Request { None, Persistence, Diagnostics, Spawn, SpawnEmptyLiquid, Verify, ReadRunData, IncrementRunData, ViewLoot, RollLoot, Localization, Resources, Inventory, FreezeFirst, ReleaseFreeze, SaveGraph, LifecycleTrace, Production, Batch, LiquidPreview, LiquidExecute, Modules, Factories, SpriteAssets, MachineLayouts, RecipeGuide, MachineTransactions, MachineRecipes, MachineMaterials, MachineRegistration, MachineAutomation, MachineNight, ManufacturingTerminal, TerminalFixture, ExternalPower, Power, NativeFurnace, SaveReadback, Reading, ReadingShow, ReadingClose, Dialogue, DialogueShow, DialogueClose, Supplier, SupplierStatus,Phone,PhoneShow,PhoneClear,PhoneDial,RunPurchase,Endpoint,EndpointPersist,EndpointDelete,Workshop,ItemInspection,ItemStock,NpcStock,Registration,SaveGraphRoundTrip }
+    private enum Request { None, WildStress, Persistence, Diagnostics, Spawn, SpawnEmptyLiquid, Verify, ReadRunData, IncrementRunData, ViewLoot, RollLoot, Localization, Resources, Inventory, FreezeFirst, ReleaseFreeze, SaveGraph, LifecycleTrace, Production, Batch, LiquidPreview, LiquidExecute, Modules, Factories, SpriteAssets, MachineLayouts, RecipeGuide, MachineTransactions, MachineRecipes, MachineMaterials, MachineRegistration, MachineAutomation, MachineNight, ManufacturingTerminal, TerminalFixture, ExternalPower, Power, NativeFurnace, SaveReadback, Reading, ReadingShow, ReadingClose, Dialogue, DialogueShow, DialogueClose, Supplier, SupplierStatus,Phone,PhoneShow,PhoneClear,PhoneDial,RunPurchase,Endpoint,EndpointPersist,EndpointDelete,Workshop,ItemInspection,ItemStock,NpcStock,Registration,SaveGraphRoundTrip }
     private static EZapiDebugOverlay? _current;
     private IReadOnlyList<DebugItemRow> _rows = Array.Empty<DebugItemRow>();
     private bool _open, _refresh = true;
@@ -87,6 +87,7 @@ internal sealed class EZapiDebugOverlay
         var request = _pending;
         _pending = Request.None; // 先消费，一次点击只有一次原生提交机会。
         if(DebugBatch.Running&&request!=Request.None){_message="批量检查运行中，请等待结果自动导出。";return;}
+        if (request == Request.WildStress) {_message=WildNetworkBrowser.DebugStress();_open=false;}
         if (request == Request.Diagnostics)
             _message = EZapiBootstrap.WriteDiagnostics() ? "诊断已写入 UserData/EZapi/diagnostics.json" : "诊断写入失败，请查看日志";
         if (request == Request.Spawn)
@@ -290,6 +291,7 @@ internal sealed class EZapiDebugOverlay
         Button("resources", new Rect(x+470,panel.y+70,180,30), "读取物品/资源", () => {_pendingDataRun=GameSession.Identity;_pending=Request.Resources;});
         Button("item-inspection",new Rect(x,panel.y+106,138,30),"单件估值",()=>_pending=Request.ItemInspection);
         Button("recipe-guide",new Rect(x+148,panel.y+106,180,30),"打开配方图鉴",()=>_pending=Request.RecipeGuide);
+        Button("wild-stress",new Rect(x+338,panel.y+106,196,30),"人脉滚动压力检查",()=>_pending=Request.WildStress);
         GUI.Label(new Rect(x,panel.y+144,width,48),_message,_label);
         var view=new Rect(x,panel.y+230,width,Mathf.Max(30,panel.height-242));
         var pageSize=Mathf.Max(1,(int)(view.height/184));

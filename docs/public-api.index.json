@@ -1,10 +1,10 @@
 {
   "schemaVersion": 1,
   "framework": "EZapi",
-  "version": "0.1.73",
+  "version": "0.1.74",
   "assembly": "EZapi",
-  "assemblyVersion": "0.1.73.0",
-  "dllSha256": "7E4AB675B0E3BD81C56EEC4606731A6880287549EB4E8E90A707BE18BD52BEEF",
+  "assemblyVersion": "0.1.74.0",
+  "dllSha256": "FE6DE81903D1F3A1234031C193D0F5678B17D99949AB24A47DCAB52958DFCA55",
   "source": "compiled EZapi.dll public metadata plus compiler-generated XML documentation",
   "curatedUsageIndex": "API.index.zh-CN.json",
   "typeLevelSourceIndex": "source.index.json",
@@ -6320,7 +6320,7 @@
           "isStatic": true,
           "isReadOnly": false,
           "hasConstant": true,
-          "constant": "0.1.73",
+          "constant": "0.1.74",
           "compilerGenerated": false,
           "documentation": null
         }
@@ -62562,10 +62562,10 @@
   ],
   "documentationContext": {
     "kind": "current-api-guide",
-    "releaseTag": "0.1.73-preview.5",
-    "assemblyVersion": "0.1.73",
+    "releaseTag": "0.1.74-preview.1",
+    "assemblyVersion": "0.1.74",
     "releaseStatus": "release-status.json",
     "nativeRuntimeVerified": false,
-    "evidencePolicy": "Old native claims are preserved only under historical* fields and do not apply to the current DLL."
+    "evidencePolicy": "Historical DLL evidence does not apply to this generated metadata."
   }
 }

@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "owner": "ezapi.compatibility",
-  "installation": "CompatibilityPatches.Start/Stop; InventoryRuntime.DirectoryReady/Stop; independent owner gates; LifecycleApi.DirectoryReady/Stop independent owner; ExternalPowerRuntime.DirectoryReady/Stop independent owner; exact fresh connector initialization permit; ReadingApi.DirectoryReady/Stop independent ezapi.presentation.reading group; DialogueApi.DirectoryReady/Stop independent ezapi.presentation.dialogue group; PhoneApi.DirectoryReady/Stop independent ezapi.presentation.phone group; InventoryEndpointRuntime.DirectoryReady/Stop independent ezapi.inventory.endpoints group; ClientVisitApi subscribes/unsubscribes the official ModHook.OnGenerateCustomerVeryLate event and installs no Harmony patch for customer visits",
+  "installation": "CompatibilityPatches.Start/Stop; InventoryRuntime.DirectoryReady/Stop; independent owner gates; LifecycleApi.DirectoryReady/Stop independent owner; ExternalPowerRuntime.DirectoryReady/Stop independent owner; exact fresh connector initialization permit; ReadingApi.DirectoryReady/Stop independent ezapi.presentation.reading group; DialogueApi.DirectoryReady/Stop independent ezapi.presentation.dialogue group; PhoneApi.DirectoryReady/Stop independent ezapi.presentation.phone group; InventoryEndpointRuntime.DirectoryReady/Stop independent ezapi.inventory.endpoints group; ClientVisitApi subscribes/unsubscribes the official ModHook.OnGenerateCustomerVeryLate event and installs no Harmony patch for customer visits; WildNetworkBrowser.Maintain/Stop exact two-target group after native catalog readiness",
   "targets": [
     {
       "type": "TypeHelper",
@@ -966,6 +966,28 @@
         "availability": "not-distributed",
         "currentDllEvidence": false
       }
+    },
+    {
+      "owner": "ezapi.presentation.wild-browser",
+      "type": "WildUIManager",
+      "method": "OpenUI",
+      "returnType": "System.Void",
+      "parameters": [
+        "System.Boolean"
+      ],
+      "kind": "Prefix",
+      "reason": "Restore owned presentation before native callbacks; native method always executes",
+      "scope": "Wild window only; no payment/save/upgrade changes"
+    },
+    {
+      "owner": "ezapi.presentation.wild-browser",
+      "type": "WildUIManager",
+      "method": "CloseUI",
+      "returnType": "System.Void",
+      "parameters": [],
+      "kind": "Prefix",
+      "reason": "Restore owned presentation before native callbacks; native method always executes",
+      "scope": "Wild window only; no payment/save/upgrade changes"
     }
   ],
   "noPatches": [
@@ -974,7 +996,7 @@
     "sprite",
     "stack"
   ],
-  "version": "0.1.73",
+  "version": "0.1.74",
   "nativeMetadataPolicy": "Il2CppInterop public generated metadata + version-specific UnityVersionHandler; no raw offsets or persisted addresses",
   "noSaveMutationPatches": true,
   "lifecycleSnapshotIsolation": {
@@ -1017,17 +1039,10 @@
   "previousVersionBaseline": "0.1.65",
   "documentationContext": {
     "kind": "current-api-guide",
-    "releaseTag": "0.1.73-preview.5",
-    "assemblyVersion": "0.1.73",
+    "releaseTag": "0.1.74-preview.1",
+    "assemblyVersion": "0.1.74",
     "releaseStatus": "release-status.json",
     "nativeRuntimeVerified": false,
     "evidencePolicy": "Old native claims are preserved only under historical* fields and do not apply to the current DLL."
-  },
-  "binaryPackageVerification": {
-    "dllSHA256": "7E4AB675B0E3BD81C56EEC4606731A6880287549EB4E8E90A707BE18BD52BEEF",
-    "nativeRuntimeVerified": false,
-    "frameworkSourceIncluded": false,
-    "artifactKind": "binary-SDK; not repository source contents",
-    "sourceRepositoryVisibility": "public"
   }
 }

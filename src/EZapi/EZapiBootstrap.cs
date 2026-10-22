@@ -7,7 +7,7 @@ using MelonLoader;
 using MelonLoader.Utils;
 
 
-[assembly:MelonInfo(typeof(EZapi.EZapiBootstrap),"EZapi","0.1.73","EZapi")]
+[assembly:MelonInfo(typeof(EZapi.EZapiBootstrap),"EZapi","0.1.74","EZapi")]
 
 
 [assembly:MelonGame(null,null)]
@@ -129,7 +129,7 @@ public sealed class EZapiBootstrap:MelonMod
             _debug.Stop(); DeveloperToolsSettings.Reset();
 
 
-            DebugSaveGraph.Clear();DebugRegistration.Clear();RegistrationApi.Stop();
+            WildNetworkBrowser.Stop();DebugSaveGraph.Clear();DebugRegistration.Clear();RegistrationApi.Stop();
 
 
             Errors.Add("initialize: "+e.Message);
@@ -168,7 +168,7 @@ public sealed class EZapiBootstrap:MelonMod
             File.WriteAllText(Path.Combine(folder,"diagnostics.json"),JsonSerializer.Serialize(
 
 
-                new{version="0.1.73-usability",registrations=RegistrationApi.Report(),registrationDebug=DebugRegistration.LastReport,progressionDebug=DebugProgression.LastReport,saveGraphDebug=DebugSaveGraph.LastReport,saveGraph=new{canDecode=SaveGraphApi.CanDecode,reason=SaveGraphApi.DecodeUnavailableReason},debugUi=EZapiDebugOverlay.Report(),departureButtons=DepartureApi.Snapshot(),integration=new{
+                new{version="0.1.74-usability",registrations=RegistrationApi.Report(),registrationDebug=DebugRegistration.LastReport,progressionDebug=DebugProgression.LastReport,saveGraphDebug=DebugSaveGraph.LastReport,saveGraph=new{canDecode=SaveGraphApi.CanDecode,reason=SaveGraphApi.DecodeUnavailableReason},debugUi=EZapiDebugOverlay.Report(),departureButtons=DepartureApi.Snapshot(),wildBrowser=WildNetworkBrowser.Report(),integration=new{
 
 
                     host="MelonLoader IL2CPP .NET 6",directory="ModHook.OnModItemDirectoryInit",tooltip="ModHook.OnCreateTooltipEarly/Late",
@@ -201,7 +201,7 @@ public sealed class EZapiBootstrap:MelonMod
     {
 
 
-        DebugSaveGraph.Clear();DebugRegistration.Clear();RegistrationApi.Stop();
+        WildNetworkBrowser.Stop();DebugSaveGraph.Clear();DebugRegistration.Clear();RegistrationApi.Stop();
 
 
         DepartureApi.Stop();ClientVisitApi.Stop();SupplierApi.Stop();DebugSupplier.Clear();StartApi.Stop();DebugWorkshop.Clear();WorkshopApi.Stop();PresentationApi.Stop();
@@ -231,7 +231,7 @@ public sealed class EZapiBootstrap:MelonMod
             _storeReadyPending=!GameSession.ObserveStoreReady();
 
 
-        DepartureRuntime.Maintain();ReadingApi.Maintain();DialogueApi.Maintain();ClientVisitApi.Maintain();SupplierApi.Maintain();PhoneApi.Maintain();NativeFurnacePower.Maintain();EffectApi.Maintain();RecipeGuideBrowser.Update();WorkshopBrowser.Update();
+        WildNetworkBrowser.Maintain();DepartureRuntime.Maintain();ReadingApi.Maintain();DialogueApi.Maintain();ClientVisitApi.Maintain();SupplierApi.Maintain();PhoneApi.Maintain();NativeFurnacePower.Maintain();EffectApi.Maintain();RecipeGuideBrowser.Update();WorkshopBrowser.Update();
         if(DeveloperToolsSettings.Current.Enabled){DebugInventory.Update();_debug.Update();}
         if(DeveloperToolsSettings.Current.RegressionFixtures){DebugSupplier.Maintain();DebugDialogue.Update();DebugPhone.Update();DebugReading.Update();DebugGuideLocalization.Update();DebugBatch.Update();}
         } }
@@ -258,7 +258,7 @@ public sealed class EZapiBootstrap:MelonMod
         if(!_ready)return;
 
 
-        DepartureRuntime.SceneChanged();ReadingApi.SceneChanged();SupplierApi.SceneChanged();DebugSupplier.SceneChanged();ClientVisitApi.SceneChanged();DialogueApi.SceneChanged();PhoneApi.SceneChanged();RecipeGuideBrowser.Close();WorkshopBrowser.SceneChanged();
+        WildNetworkBrowser.SceneChanged();DepartureRuntime.SceneChanged();ReadingApi.SceneChanged();SupplierApi.SceneChanged();DebugSupplier.SceneChanged();ClientVisitApi.SceneChanged();DialogueApi.SceneChanged();PhoneApi.SceneChanged();RecipeGuideBrowser.Close();WorkshopBrowser.SceneChanged();
 
 
         // 在旧场景卸载时关闭掉落入口；新场景 Awake 中的官方加载事件可能早于 OnSceneWasLoaded，不能事后抹掉它。

@@ -3,7 +3,7 @@ namespace EZapi;
 /// <summary>框架声明契约。能力表示入口已实现，不表示玩家已验证对应游戏行为。</summary>
 public static class FrameworkInfo
 {
-    public const string Version = "0.1.73";
+    public const string Version = "0.1.74";
     public const string JsonProtocolVersion = "0.1";
     private static readonly IReadOnlyList<FrameworkCapability> Capabilities = Array.AsReadOnly(new[] {
         "localization.game-language", "progression.readonly", "requirements.declarative", "logging.per-mod", "input.window-capture", "machines.terminal-id-normalization", "registration.batches", "items.register", "items.json", "items.png", "assets.embedded-sprite-atlas", "items.rectangle", "items.shape-mask", "items.text",

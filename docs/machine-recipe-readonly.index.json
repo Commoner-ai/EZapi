@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "version": "0.1.73",
+  "version": "0.1.74",
   "guide": "machine-recipe-readonly.zh-CN.md",
   "englishGuide": "machine-recipe-readonly.en.md",
   "historicalEvidence": {
@@ -103,17 +103,10 @@
   "previousVersionBaseline": "0.1.69",
   "documentationContext": {
     "kind": "current-api-guide",
-    "releaseTag": "0.1.73-preview.5",
-    "assemblyVersion": "0.1.73",
+    "releaseTag": "0.1.74-preview.1",
+    "assemblyVersion": "0.1.74",
     "releaseStatus": "release-status.json",
     "nativeRuntimeVerified": false,
     "evidencePolicy": "Old native claims are preserved only under historical* fields and do not apply to the current DLL."
-  },
-  "binaryPackageVerification": {
-    "dllSHA256": "7E4AB675B0E3BD81C56EEC4606731A6880287549EB4E8E90A707BE18BD52BEEF",
-    "nativeRuntimeVerified": false,
-    "frameworkSourceIncluded": false,
-    "artifactKind": "binary-SDK; not repository source contents",
-    "sourceRepositoryVisibility": "public"
   }
 }

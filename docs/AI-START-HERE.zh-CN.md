@@ -2,7 +2,7 @@
 
 # EZapi：开发者与AI入口
 
-当前预发布 **0.1.73-preview.5**，程序集版本0.1.73。公开发布仓库：[Commoner-ai/EZapi](https://github.com/Commoner-ai/EZapi)。框架、离线校验器、测试和构建工程已按 MIT 开源，见[源码构建](build-from-source.zh-CN.md)；开发普通 Mod 仍只需公开 DLL 接口。
+当前预发布 **0.1.74-preview.1**，程序集版本0.1.74。公开发布仓库：[Commoner-ai/EZapi](https://github.com/Commoner-ai/EZapi)。框架、离线校验器、测试和构建工程已按 MIT 开源，见[源码构建](build-from-source.zh-CN.md)；开发普通 Mod 仍只需公开 DLL 接口。
 
 ## 从任务到示例
 
@@ -46,6 +46,6 @@ dotnet build ./SimpleMod.csproj -c Release '-p:GameDir=<你的游戏目录>'
 
 ## 当前证据
 
-本DLL完成59组离线回归、25项独立CLI检查，新增外出按钮124项源码链接检查；653个直接游戏方法引用匹配，静态可达Unity包装方法未发现unstripping缺失。**本版本尚未进行实机验收**，历史语言/保存记录仅对应其当时DLL，不能作为当前二进制的实机通过证据。下载包内verification.json与package-verification.json记录范围和哈希。
+本DLL完成59组离线回归、25项独立CLI检查，外出按钮与人脉界面组共141项源码链接检查；669个直接游戏方法引用匹配，静态可达Unity包装方法未发现unstripping缺失。当前DLL已完成王尔德界面的局部实机检查，包括现有Mod条目、额外84张临时卡片、新分类、竖向滚动、搜索和关窗清理；**全框架实机验收与保存重载仍待完成**。历史语言/保存记录仅对应其当时DLL。下载包内verification.json与package-verification.json记录范围和哈希。
 
 Probably Stolen官方文档是优先参考：[probably-stolen-modding](https://github.com/dragonpan2/probably-stolen-modding)。具体游戏版本签名与接口自己的失败结果仍是准绳。EZapi不依赖Forge DLL，不承诺Forge二进制兼容。

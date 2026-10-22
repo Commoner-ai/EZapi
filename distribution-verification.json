@@ -1,19 +1,19 @@
 {
-  "tag": "0.1.73-preview.5",
+  "tag": "0.1.74-preview.1",
   "passed": true,
   "assets": [
     {
-      "file": "EZapi-0.1.73-preview.5-game.zip",
-      "sha256": "FD6C66D97ADE94C1D94B046EA6EAD1F5B0B33828E0BF49FA33B371678D4CDF2B",
-      "bytes": 709777
+      "file": "EZapi-0.1.74-preview.1-game.zip",
+      "sha256": "0D64BADF1ED6FEFDBEE0F36023C37B1483B0F6E3272A39CBC023A6C53C5B4871",
+      "bytes": 721350
     },
     {
-      "file": "EZapi-0.1.73-preview.5-developer.zip",
-      "sha256": "36DBD9677D38BC27E8CA33659B3738BF7420E418EBFE5C1FCB76EFBEF6AA781F",
-      "bytes": 2474633
+      "file": "EZapi-0.1.74-preview.1-developer.zip",
+      "sha256": "BDCAED33958642C05ED4A6BFA9448CF3986D26D060EDB088876E637718E3B612",
+      "bytes": 2493153
     }
   ],
-  "dllSHA256": "7E4AB675B0E3BD81C56EEC4606731A6880287549EB4E8E90A707BE18BD52BEEF",
+  "dllSHA256": "FE6DE81903D1F3A1234031C193D0F5678B17D99949AB24A47DCAB52958DFCA55",
   "frameworkSourceIncluded": false,
   "internalTestsIncluded": false,
   "frameworkBuildProjectsIncluded": false,
@@ -33,40 +33,41 @@
   "artReferenceNearest4xSprites": 96,
   "artReferenceCategoryBoards": 8,
   "originalArtworkCoveredByEzapiMit": false,
-  "documentationVerification": {
-    "indexesChecked": 34,
-    "markdownPagesChecked": 162,
-    "localLinksChecked": 595,
-    "artReferenceSpritesChecked": 96,
-    "nativeAcceptanceRemainsPending": true
-  },
+  "sourcePublishedInRepository": true,
+  "oldPrivateHistoryImported": false,
   "verification": {
     "offlineSuites": 59,
     "cliProcessChecks": 25,
-    "departureSourceLinkedChecks": 124,
-    "directGameMethodReferences": 653,
+    "departureAndBrowserSourceLinkedChecks": 141,
+    "directGameMethodReferences": 669,
     "missingGameMethodReferences": 0,
-    "reachableUnityWrapperMethods": 211,
     "unityUnstrippingStubs": 0,
-    "binaryOnlyIndependentCallerCompiled": true,
-    "binaryOnlySampleCompiled": true,
-    "packagedValidatorExecuted": true,
-    "archivePrivacyAndHashesVerified": true,
-    "nativeGameStarted": false
+    "archivePrivacyAndHashesVerified": true
   },
-  "sourceRebuildVerification": {
-    "fullBuildFromExportedSourcePassed": true,
-    "offlineSuites": 59,
-    "cliProcessChecks": 25,
-    "samplePackValidationPassed": true,
-    "publicApiIndexValidationPassed": true,
-    "packagingFromSourceBuiltCandidatePassed": true,
-    "nativeRuntimeVerified": false,
-    "runtimeDllUnchangedInRelease": true,
-    "releaseDllSHA256": "7E4AB675B0E3BD81C56EEC4606731A6880287549EB4E8E90A707BE18BD52BEEF",
-    "sourceFilesMatchLocal": 250
-  },
-  "publicRepository": "https://github.com/Commoner-ai/EZapi",
-  "sourcePublishedInRepository": true,
-  "oldPrivateHistoryImported": false
+  "scopedNativeObservations": [
+    {
+      "feature": "Wild network browser",
+      "source": "user feedback on current 0.1.74 build",
+      "checks": [
+        "hover/click card alignment",
+        "selected native details",
+        "visible vertical scrollbar",
+        "existing DeepSpace Mod Hacker entry"
+      ],
+      "scope": "specific UI observations; not full framework acceptance; no native save/reload or arbitrary Mod guarantee"
+    },
+    {
+      "feature": "Wild network large-catalog probe",
+      "checks": [
+        "new live category discovered after binding",
+        "84 additional native UI cards",
+        "vertical mouse wheel",
+        "draggable vertical scrollbar",
+        "viewport clipping",
+        "committed name/ID search",
+        "window close clears temporary cards, references and selection"
+      ],
+      "scope": "current DLL mixed with the existing DeepSpace Mod; UI-only fixture, not a persistent upgrade registration or purchase/save test"
+    }
+  ]
 }

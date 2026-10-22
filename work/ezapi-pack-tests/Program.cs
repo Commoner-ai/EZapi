@@ -9,12 +9,12 @@ string Json(object o)=>JsonSerializer.Serialize(o);
 Check(Parse(Json(basic)).Version=="0.0.0","legacy three-field manifest defaults content version");
 var extended=new Dictionary<string,object>(basic){{"version","1.2.3"},{"minEzapiVersion","0.1.6"},{"requires",new[]{"loot.tables"}},{"dependencies",new[]{new{id="test.base",minVersion="1.0.0"}}}};
 Check(Parse(Json(extended)).Dependencies.Single().MinVersion=="1.0.0","version capability and dependency fields accepted");
-Check(FrameworkInfo.Version=="0.1.73"&&Parse(Json(new Dictionary<string,object>(basic){{"minEzapiVersion","0.1.73"}})).MinEzapiVersion=="0.1.73","current framework and manifest boundary both report 0.1.73");
+Check(FrameworkInfo.Version=="0.1.74"&&Parse(Json(new Dictionary<string,object>(basic){{"minEzapiVersion","0.1.74"}})).MinEzapiVersion=="0.1.74","current framework and manifest boundary both report 0.1.74");
 Check(Parse(Json(new Dictionary<string,object>(basic){{"requires",new[]{"runtime.modules"}}})).Requires.Contains("runtime.modules"),"module capability accepted by shared manifest parser");
 void RejectManifest(string name,string json) {
     try {Parse(json);throw new Exception("accepted: "+name);}catch(Exception e)when(e is InvalidDataException or JsonException){Check(true,name);}
 }
-RejectManifest("next framework version is rejected",Json(new Dictionary<string,object>(basic){{"minEzapiVersion","0.1.74"}}));
+RejectManifest("next framework version is rejected",Json(new Dictionary<string,object>(basic){{"minEzapiVersion","0.1.75"}}));
 foreach(var (field,value) in new (string,object)[]{("extra",true),("version","1.2"),("version","1.2.3-beta"),("version","01.2.3"),("version","1.2.3.4"),("version","1.9999999999.0"),("minEzapiVersion","9.0.0"),("requires",new[]{"network"}),("requires",new[]{"loot.tables","loot.tables"}),("requires",Enumerable.Repeat("items.json",65).ToArray()),("id","Bad.ID"),("name"," "),("ezapiVersion","0.2")}) {
     var row=new Dictionary<string,object>(basic){[field]=value};RejectManifest("manifest rejects "+field+"="+Json(value),Json(row));
 }

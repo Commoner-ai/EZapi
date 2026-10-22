@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "framework": "EZapi",
-  "version": "0.1.73",
+  "version": "0.1.74",
   "schema": "../schemas/items.schema.json",
   "scope": "原生常用属性封装；不是所有游戏内部字段，也不是所有物品玩法",
   "properties": [
@@ -1111,7 +1111,7 @@
     "custom audio file registration",
     "localization tables"
   ],
-  "implementationVersion": "0.1.73",
+  "implementationVersion": "0.1.74",
   "localizationGuide": "item-localization.index.json",
   "localizationIndexSchema": "../schemas/localization-index.schema.json",
   "containerGuide": "containers.zh-CN.md",
@@ -1162,17 +1162,10 @@
   "previousImplementationVersionBaseline": "0.1.51",
   "documentationContext": {
     "kind": "current-api-guide",
-    "releaseTag": "0.1.73-preview.5",
-    "assemblyVersion": "0.1.73",
+    "releaseTag": "0.1.74-preview.1",
+    "assemblyVersion": "0.1.74",
     "releaseStatus": "release-status.json",
     "nativeRuntimeVerified": false,
     "evidencePolicy": "Old native claims are preserved only under historical* fields and do not apply to the current DLL."
-  },
-  "binaryPackageVerification": {
-    "dllSHA256": "7E4AB675B0E3BD81C56EEC4606731A6880287549EB4E8E90A707BE18BD52BEEF",
-    "nativeRuntimeVerified": false,
-    "frameworkSourceIncluded": false,
-    "artifactKind": "binary-SDK; not repository source contents",
-    "sourceRepositoryVisibility": "public"
   }
 }

@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "version": "0.1.73",
+  "version": "0.1.74",
   "purpose": "Short, reproducible developer workflows; exact signatures are in public-api.index.json",
   "entryPoints": {
     "zh": "AI-START-HERE.zh-CN.md",
@@ -82,6 +82,14 @@
       "promptEn": "art-reference/AI-PROMPT.en.txt",
       "optional": true,
       "boundary": "Original artwork is excluded from MIT. Pixel canvas is independent of inventory shape; no new asset-size loading restriction."
+    },
+    {
+      "id": "wild-network-browser",
+      "taskZh": "向王尔德人脉网络添加兼容条目或分类",
+      "taskEn": "Add compatible Wild network entries/categories",
+      "guide": "wild-network.zh-CN.md",
+      "guideEn": "wild-network.en.md",
+      "boundary": "Discover live NetworkElement descendants and category roots; preserve native callbacks and IDs. Private replacement canvases need explicit integration."
     }
   ],
   "recovery": {
@@ -100,17 +108,10 @@
   },
   "documentationContext": {
     "kind": "current-api-guide",
-    "releaseTag": "0.1.73-preview.5",
-    "assemblyVersion": "0.1.73",
+    "releaseTag": "0.1.74-preview.1",
+    "assemblyVersion": "0.1.74",
     "releaseStatus": "release-status.json",
     "nativeRuntimeVerified": false,
     "evidencePolicy": "Old native claims are preserved only under historical* fields and do not apply to the current DLL."
-  },
-  "binaryPackageVerification": {
-    "dllSHA256": "7E4AB675B0E3BD81C56EEC4606731A6880287549EB4E8E90A707BE18BD52BEEF",
-    "nativeRuntimeVerified": false,
-    "frameworkSourceIncluded": false,
-    "artifactKind": "binary-SDK; not repository source contents",
-    "sourceRepositoryVisibility": "public"
   }
 }

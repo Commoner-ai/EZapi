@@ -5,5 +5,6 @@
     <Compile Include="../../src/EZapi/DepartureLayout.cs" Link="Real/DepartureLayout.cs" />
     <Compile Include="../../src/EZapi/DepartureApi.cs" Link="Real/DepartureApi.cs" />
     <Compile Include="../../src/EZapi/PresentationResult.cs" Link="Real/PresentationResult.cs" />
+    <Compile Include="../../src/EZapi/WildBrowserRules.cs" Link="Real/WildBrowserRules.cs" />
   </ItemGroup>
 </Project>

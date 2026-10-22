@@ -1,3 +1,5 @@
+> 当前 API 指南。见[统一版本与验收状态]../../docs/current-status.zh-CN.md)：当前 DLL 尚未完成实机验收；旧测试数量仅适用于其历史 DLL。
+
 # 进入游戏与批量操作脚本
 
 开发包的 `developer-tools/automation` 包含既有流程：

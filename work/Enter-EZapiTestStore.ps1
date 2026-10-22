@@ -10,7 +10,7 @@ param(
  [Parameter(Mandatory=$true)][int]$ExpectedSlot,
 
 
- [string]$ExpectedVersion='0.1.73-usability',
+ [string]$ExpectedVersion='0.1.74-usability',
 
 
  [ValidateRange(30,300)][int]$StartupTimeoutSeconds=150,
@@ -227,7 +227,7 @@ try {
   )
 
 
-  Wait-EntryState 'framework loaded without internal fixture dependency' { (Read-EntryLog) -match 'EZapi 0[.]1[.]72 initialized through official hooks' }
+  Wait-EntryState 'framework loaded without internal fixture dependency' { (Read-EntryLog) -match ('EZapi '+[regex]::Escape(($ExpectedVersion -split '-')[0])+' initialized through official hooks') }
 
 
   Start-Sleep -Milliseconds 1200

@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "version": "0.1.73",
+  "version": "0.1.74",
   "startHere": "AI-START-HERE.zh-CN.md",
   "modules": [
     {
@@ -972,6 +972,16 @@
       "file": "../src/EZapi/DepartureRuntime.cs",
       "purpose": "原生模板克隆、实际占位、裁切和监听生命周期",
       "boundary": "只写自有对象；地图/读档/场景变化销毁；不保存"
+    },
+    {
+      "file": "../src/EZapi/WildNetworkBrowser.cs",
+      "purpose": "王尔德人脉网络分类、搜索、筛选、竖向滚动和原生按钮保留",
+      "boundary": "仅打开的原版窗口；关闭还原；不保存、扣钱或解锁"
+    },
+    {
+      "file": "../src/EZapi/WildBrowserRules.cs",
+      "purpose": "纯托管搜索、筛选和网格溢出规则",
+      "boundary": "离线可检验；不证明原生 UI"
     }
   ],
   "forbiddenPatterns": [
@@ -1086,8 +1096,8 @@
   "installation": "install-and-debug.zh-CN.md",
   "documentationContext": {
     "kind": "current-api-guide",
-    "releaseTag": "0.1.73-preview.5",
-    "assemblyVersion": "0.1.73",
+    "releaseTag": "0.1.74-preview.1",
+    "assemblyVersion": "0.1.74",
     "releaseStatus": "release-status.json",
     "nativeRuntimeVerified": false,
     "evidencePolicy": "Old native claims are preserved only under historical* fields and do not apply to the current DLL."

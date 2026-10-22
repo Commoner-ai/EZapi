@@ -83,4 +83,16 @@ GameBuildFingerprint.IsKnown = true;
 Check(DepartureApi.Unregister("author.trip", "author.trip.api").Status == PresentationStatus.Closed && DepartureApi.Snapshot().Count == 0, "public unregister clears declaration");
 DepartureApi.Stop();
 Check(!DepartureApi.IsAvailable && DepartureRuntime.Resets > 0, "shutdown revokes runtime bindings");
-Console.WriteLine(JsonSerializer.Serialize(new { passed, failed = 0, scope = "Source-linked registration, callback isolation, stale scope, language and adaptive layout invariants. No native UI or gameplay verification." }));
+
+var custom = new WildCard("othermod.services.custom", "自定义服务", "新分类", true, null);
+Check(WildBrowserRules.Matches(custom, WildFilter.All, "自定义 othermod"), "third-party ID and Unicode search combine");
+Check(WildBrowserRules.Matches(custom, WildFilter.Purchased, "新分类"), "custom category searchable");
+Check(!WildBrowserRules.Matches(custom, WildFilter.Affordable, ""), "unknown custom payment is not guessed affordable");
+Check(WildBrowserRules.Matches(custom with { Affordable=true }, WildFilter.Affordable, "CUSTOM"), "ordinal case independent ID matching");
+Check(!WildBrowserRules.Matches(custom, WildFilter.All, "不存在"), "search excludes unmatched entries");
+foreach(int count in new[]{0,11,28,29,84,1000}) {
+ var grid=WildBrowserRules.Grid(924,568,count);
+ Check(grid.Columns==7 && grid.Height>=568, "fixed grid width and minimum scroll viewport");
+ Check(count<=28 || grid.Height>568, "overflow creates vertical scroll range");
+}
+Console.WriteLine(JsonSerializer.Serialize(new { passed, failed=0, scope="Source-linked departure + Wild browser search/filter/overflow rules. No native UI or gameplay verification." }));

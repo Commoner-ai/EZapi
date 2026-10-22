@@ -2,7 +2,7 @@
 
 # EZapi developer and AI entry point
 
-Current prerelease: **0.1.73-preview.5**, assembly0.1.73. [Public distribution](https://github.com/Commoner-ai/EZapi). Framework implementation, offline tests and build projects are MIT open source; see [source builds](build-from-source.en.md). Use the public DLL APIs, metadata, guides and consumer examples.
+Current prerelease: **0.1.74-preview.1**, assembly 0.1.74. [Public distribution](https://github.com/Commoner-ai/EZapi). Framework implementation, offline tests and build projects are MIT open source; see [source builds](build-from-source.en.md). Use the public DLL APIs, metadata, guides and consumer examples.
 
 For artwork matching the original game, use the optional [item art guide](item-art.en.md), [asset/workflow index](item-art.index.json) and bundled same-category references.
 
@@ -43,6 +43,6 @@ Language follows game settings. Use GameLanguage.Current with inline bilingual t
 
 ## Verification scope
 
-59 offline suites and25 CLI process checks passed, including124 source-linked departure checks.653 direct game references matched and static reachable Unity wrappers had no unstripping stubs. **This binary has not been verified in native gameplay.** Historical language/save reports apply only to their recorded DLLs. Package manifests record hashes and boundaries.
+59 offline suites and 25 CLI process checks passed, including 141 source-linked departure/browser checks. 669 direct game references matched and static reachable Unity wrappers had no unstripping stubs. Scoped native checks on this DLL cover existing Mod entries, 84 additional temporary cards, a new category, vertical scrolling, search and window cleanup. **Full framework native acceptance and save/reload remain pending.** Historical language/save reports apply only to their recorded DLLs. Package manifests record hashes and boundaries.
 
 Prefer the [official Probably Stolen guide](https://github.com/dragonpan2/probably-stolen-modding), the actual game signatures and each API result. EZapi has no Forge DLL dependency and promises no Forge binary compatibility.

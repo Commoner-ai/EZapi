@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "implementationVersion": "0.1.73",
+  "implementationVersion": "0.1.74",
   "baseline": "forge-public-contract.index.json",
   "minimumGoal": "Cover every Forge API functionality independently in EZapi; no Forge runtime dependency",
   "complete": true,
@@ -2637,18 +2637,11 @@
   "previousImplementationVersionBaseline": "0.1.71",
   "documentationContext": {
     "kind": "current-api-guide",
-    "releaseTag": "0.1.73-preview.5",
-    "assemblyVersion": "0.1.73",
+    "releaseTag": "0.1.74-preview.1",
+    "assemblyVersion": "0.1.74",
     "releaseStatus": "release-status.json",
     "nativeRuntimeVerified": false,
     "evidencePolicy": "Old native claims are preserved only under historical* fields and do not apply to the current DLL."
-  },
-  "binaryPackageVerification": {
-    "dllSHA256": "7E4AB675B0E3BD81C56EEC4606731A6880287549EB4E8E90A707BE18BD52BEEF",
-    "nativeRuntimeVerified": false,
-    "frameworkSourceIncluded": false,
-    "artifactKind": "binary-SDK; not repository source contents",
-    "sourceRepositoryVisibility": "public"
   },
   "completeScope": "39 reference functionality groups only; not project completion, behavior certification or current-DLL acceptance"
 }
