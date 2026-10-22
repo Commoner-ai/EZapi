@@ -17,7 +17,7 @@ EZapi 是 Probably Stolen 的独立 Mod 前置框架，提供 DLL API、JSON 内
 
 ## 两个下载包
 
-[GitHub Releases](https://github.com/Commoner-ai/EZapi-Releases/releases) 提供：
+[GitHub Releases](https://github.com/Commoner-ai/EZapi/releases) 提供：
 
 | 包 | 用户 | 内容 |
 | --- | --- | --- |

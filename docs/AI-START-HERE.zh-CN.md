@@ -1,6 +1,6 @@
 # EZapi：开发者与AI入口
 
-当前预发布 **0.1.73-preview.1**，程序集版本0.1.73。公开发布仓库：[Commoner-ai/EZapi-Releases](https://github.com/Commoner-ai/EZapi-Releases)。框架源码、内部测试和构建工程保持私有；使用公开DLL接口开发，不需要框架源码。
+当前预发布 **0.1.73-preview.1**，程序集版本0.1.73。公开发布仓库：[Commoner-ai/EZapi](https://github.com/Commoner-ai/EZapi)。框架源码、内部测试和构建工程保持私有；使用公开DLL接口开发，不需要框架源码。
 
 ## 从任务到示例
 
@@ -12,7 +12,7 @@
 
 ## 先下载开发包
 
-从[Releases](https://github.com/Commoner-ai/EZapi-Releases/releases)下载developer.zip并解压。该包包括同一份EZapi.dll、XML注释、离线校验器、schema、文档、调用示例和自动化工具。示例不会自动安装，调试默认关闭。玩家只需game.zip的一份Mods/EZapi.dll。
+从[Releases](https://github.com/Commoner-ai/EZapi/releases)下载developer.zip并解压。该包包括同一份EZapi.dll、XML注释、离线校验器、schema、文档、调用示例和自动化工具。示例不会自动安装，调试默认关闭。玩家只需game.zip的一份Mods/EZapi.dll。
 
 最小JSON包放在 `Mods/EZapiPacks/<packId>/`，至少含pack.json和items.json。看[内容包指南](content-packs.zh-CN.md)、[清单schema](../schemas/pack.schema.json)、[物品schema](../schemas/items.schema.json)及[样例](../src/EZapi.Sample/Content/items.json)。在解压的开发包根目录执行：
 

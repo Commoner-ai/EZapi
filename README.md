@@ -8,7 +8,7 @@ An independent **Probably Stolen** Mod framework: DLL APIs, declarative JSON pac
 
 **Public distribution repository:** packages, documentation and consumer examples. Framework implementation source and internal Git history are not published here.
 
-[中文说明](README.zh-CN.md) · [Downloads](https://github.com/Commoner-ai/EZapi-Releases/releases) · [Install and debug](docs/install-and-debug.en.md) · [AI entry](docs/AI-START-HERE.en.md)
+[中文说明](README.zh-CN.md) · [Downloads](https://github.com/Commoner-ai/EZapi/releases) · [Install and debug](docs/install-and-debug.en.md) · [AI entry](docs/AI-START-HERE.en.md)
 
 | Package | For | What to install |
 | --- | --- | --- |

@@ -1,6 +1,6 @@
 # EZapi developer and AI entry point
 
-Current prerelease: **0.1.73-preview.1**, assembly0.1.73. [Public distribution](https://github.com/Commoner-ai/EZapi-Releases). Framework implementation, internal tests and build projects remain private. Use the public DLL APIs, metadata, guides and consumer examples.
+Current prerelease: **0.1.73-preview.1**, assembly0.1.73. [Public distribution](https://github.com/Commoner-ai/EZapi). Framework implementation, internal tests and build projects remain private. Use the public DLL APIs, metadata, guides and consumer examples.
 
 ## Choose a task
 
@@ -11,7 +11,7 @@ Current prerelease: **0.1.73-preview.1**, assembly0.1.73. [Public distribution](
 
 ## Download the developer package
 
-Use developer.zip from [Releases](https://github.com/Commoner-ai/EZapi-Releases/releases). It contains the same runtime DLL as game.zip, XML comments, binary validator, schemas, guides, consumer examples and automation tools. Samples are opt-in and developer tools default off. Players install one Mods/EZapi.dll. The GitHub-generated source ZIP contains distribution documentation/examples; full binary tooling is in the release assets.
+Use developer.zip from [Releases](https://github.com/Commoner-ai/EZapi/releases). It contains the same runtime DLL as game.zip, XML comments, binary validator, schemas, guides, consumer examples and automation tools. Samples are opt-in and developer tools default off. Players install one Mods/EZapi.dll. The GitHub-generated source ZIP contains distribution documentation/examples; full binary tooling is in the release assets.
 
 JSON packs go under `Mods/EZapiPacks/<packId>/` with pack.json and items.json. See [pack guide](content-packs.zh-CN.md), [manifest schema](../schemas/pack.schema.json), [item schema](../schemas/items.schema.json) and [sample](../src/EZapi.Sample/Content/items.json). From the extracted developer package:
 
