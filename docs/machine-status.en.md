@@ -1,4 +1,6 @@
-# Machine readiness (0.1.63)
+> Current API guide. See [release status](current-status.en.md): current-DLL native acceptance is pending; older test counts apply only to their historical binaries.
+
+# Machine readiness ()
 
 Call `MachineRegistrationApi.Snapshot()` on the initialized game main thread. Views capture managed state at query time; query again after state changes.
 
@@ -15,4 +17,4 @@ The original ten-argument constructor and ten-field deconstruction remain availa
 
 Evidence: 168 offline registration checks; 128 native registration checks and 867 checks across seven native suites; 19 checks reading the previous version's persistent fixture save. Full public behavior coverage remains under review.
 
-See [Chinese guide](machine-status.zh-CN.md), [AI index](machine-status.index.json), and [verification](verification/machine-status-native-0.1.63.json).
+See [Chinese guide](machine-status.zh-CN.md), [AI index](machine-status.index.json), and verification (historical identifier `verification/machine-status-native-0.1.63.json`; original artifact not distributed).

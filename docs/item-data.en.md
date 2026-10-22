@@ -1,6 +1,6 @@
-> 0.1.72-preview.1 packaging: developer tools default off. See [installation](install-and-debug.en.md). The 415-check/save-reload reports below apply to the recorded pre-packaging DLL hash4238A189…; they are historical for the new binary.
+> Current API guide. See [release status](current-status.en.md): current-DLL native acceptance is pending; older test counts apply only to their historical binaries.
 
-# Versioned item-owned JSON (0.1.72 development)
+# Versioned item-owned JSON (current API)
 
 Use `ItemDataApi` for a specific item's upgrade level, batch or author state. It uses the game's public `GetTagReadonly`, `ModifyTag` and `SyncModifiedState` methods. Run progress belongs in run data. The API stages memory only and never requests a game save.
 
@@ -30,4 +30,4 @@ Unicode data is preserved. Keep keys and schema fields stable across languages; 
 
 Native graph codec evidence is distinct from disk persistence. Confirm the correct save slot and read the same data after a fresh game load before claiming persistence. See the [current status/index](item-data.index.json), [compiled example](../src/EZapi.Sample/ItemDataExamples.cs), [full signatures](public-api.index.json) and [Chinese guide](item-data.zh-CN.md).
 
-Five fixture nodes passed 18 explicit native-save checks, 27 new-process reload checks and 37 independent disk-readback checks, preserving two owner namespaces and versions. Stage still never saves; this does not guarantee all gameplay combinations or crash recovery. [Evidence](verification/disk-supplier-native-0.1.72.json).
+Five fixture nodes passed 18 explicit native-save checks, 27 new-process reload checks and 37 independent disk-readback checks, preserving two owner namespaces and versions. Stage still never saves; this does not guarantee all gameplay combinations or crash recovery. Evidence (historical identifier `verification/disk-supplier-native-0.1.72.json`; original artifact not distributed).

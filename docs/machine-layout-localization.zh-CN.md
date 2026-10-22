@@ -1,6 +1,6 @@
-> 0.1.72-preview.1 封装变更：开发工具默认关闭，见[安装与调试](install-and-debug.zh-CN.md)。下述415项及保存重载报告属于记录哈希4238A189…的封装前DLL；新DLL不继承其实机通过状态。
+> 当前 API 指南。见[统一版本与验收状态](current-status.zh-CN.md)：当前 DLL 尚未完成实机验收；旧测试数量仅适用于其历史 DLL。
 
-# 机器窗口与槽位中英文（0.1.72 开发版）
+# 机器窗口与槽位中英文（当前接口）
 
 机器布局可以直接声明中英文标题和槽位标签。创建时按游戏当前语言显示；显示物品或重新打开窗口时通过 `ezapi.items.localization` 钩子刷新。自有常开界面在语言变更后可以调用 `MachineLayoutApi.RefreshLocalization(machine)`。完整字段与边界见 [AI 索引](machine-layout-localization.index.json)。
 
@@ -43,4 +43,6 @@ dotnet tools/ezapi-validate/ezapi-validate.dll --machine-layout docs/examples/ma
 
 刷新只调用可见标题和槽位 Tooltip 文字设置，不替换窗口或库存，不修改过滤委托、电源要求、物品身份，不写布局标记或请求保存。`TryGetInventory` 保持只读，不隐式刷新。没有新增双语字段的旧布局仍序列化成原来的 JSON；给已有已保存布局增加字段仍属于布局声明变更，现有修订检查继续要求明确迁移。
 
-48 项离线检查覆盖实际解析、完整父图校验、旧标记兼容、语言刷新、自动显示路由和错误隔离，原生对象使用带监测的替代对象。标题与 Tooltip、中英切换、重新打开及五节点测试图保存重载已有[当前DLL原生证据](verification/disk-supplier-native-0.1.72.json)。标题文本及布局属性已检查，容器标题未另做像素视觉验收；0.1.72仍是开发候选。
+> 历史验收记录（0.1.72），不作为当前 DLL 通过依据。
+> 48 项离线检查覆盖实际解析、完整父图校验、旧标记兼容、语言刷新、自动显示路由和错误隔离，原生对象使用带监测的替代对象。标题与 Tooltip、中英切换、重新打开及五节点测试图保存重载已有历史 0.1.72 DLL 记录（历史标识 `verification/disk-supplier-native-0.1.72.json`；原件未公开）。标题文本及布局属性已检查，容器标题未另做像素视觉验收；0.1.72仍是开发候选。
+> 

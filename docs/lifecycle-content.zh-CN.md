@@ -1,3 +1,5 @@
+> 当前 API 指南。见[统一版本与验收状态](current-status.zh-CN.md)：当前 DLL 尚未完成实机验收；旧测试数量仅适用于其历史 DLL。
+
 > 0.1.62：Items不再在订阅者间共享旧库存快照；同一回调内删物后仍需重新扫描。见[跨夜和重载](machine-persistence.zh-CN.md)。
 
 # 生命周期与内容应用通知

@@ -1,3 +1,5 @@
+> 当前 API 指南。见[统一版本与验收状态](current-status.zh-CN.md)：当前 DLL 尚未完成实机验收；旧测试数量仅适用于其历史 DLL。
+
 # 原生对话
 
 `DialogueApi.Create(ownerId, definition)` 校验并复制只读脚本，不持有游戏对象，可在初始化阶段创建。`Open(ownerId, requestId, runId, slotId, script)` 在当前已初始化的游戏主线程展示游戏自己的对话；`Close(ownerId, requestId)` 只关闭匹配请求。可编译示例：`../src/EZapi.Sample/DialogueExamples.cs`。精确公共签名、默认参数和 DTO 以 `API.index.zh-CN.json` 为准。

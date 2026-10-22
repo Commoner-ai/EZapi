@@ -1,4 +1,6 @@
-# 嵌入式 Sprite 图集与肖像（0.1.47）
+> 当前 API 指南。见[统一版本与验收状态](current-status.zh-CN.md)：当前 DLL 尚未完成实机验收；旧测试数量仅适用于其历史 DLL。
+
+# 嵌入式 Sprite 图集与肖像（）
 
 `SpriteAssets` 让 C# Mod 把 PNG 作为程序集资源交给 EZapi 预检，再由 EZapi 安装到自己命名空间下的 Unity 图集。当前游戏构建已核实 `RenderHandler.atlasCache` 与 `GameItem.SetSprite`；EZapi 不安装全局图片解析补丁。
 
@@ -52,12 +54,14 @@ string spriteName = atlas.RegisterPortrait("field-kit");
 
 若换场景重建了肖像字典，使用前重新调用 `RegisterPortrait`；不要把上次注册成功当成新场景已准备好。EZapi 不保留场景字典包装器。停止时只移除当前字典中仍匹配的自有映射，之后使旧图集句柄失效并释放图片；重启须重新声明图集。返回键可按稳定资源身份重建，但 Sprite 对象不可保存进周目数据。
 
-0.1.47 肖像专项离线测试覆盖 31 项；原生字典/Unity 解码在该专项中是替身。另已在仅加载 EZapi 0.1.47 的新游戏进程完成图集与肖像原生检查 9/9，包含 SpriteDict.GetSprite 指针读回与重复登记。界面显示游戏版本为 050REV5-L，包装程序集哈希仍与来源索引一致；不沿用旧报告的版本称谓。535 个 ES3 文件测试前后哈希一致。肖像视觉显示、真实场景字典重建和保存重载尚未验证；证据见 verification/native-test-0.1.47/。
+> 历史验收记录（0.1.47），不作为当前 DLL 通过依据。
+> 0.1.47 肖像专项离线测试覆盖 31 项；原生字典/Unity 解码在该专项中是替身。另已在仅加载 EZapi 0.1.47 的新游戏进程完成图集与肖像原生检查 9/9，包含 SpriteDict.GetSprite 指针读回与重复登记。界面显示游戏版本为 050REV5-L，包装程序集哈希仍与来源索引一致；不沿用旧报告的版本称谓。535 个 ES3 文件测试前后哈希一致。肖像视觉显示、真实场景字典重建和保存重载尚未验证；证据见 verification/native-test-0.1.47/。
 
 使用调试面板的“内嵌图集检查”可一次验证资源解码、隔离安装、`GetSprite`、`SetSprite` 原生读回、暂存、重复调用及 ID 冲突。0.1.47 同时检查肖像字典注册、原生 GetSprite 读回与重复注册。检查只创建并销毁两个未入库存的临时物品，肖像注册保留到停止，不请求保存。
 
 ## 原生验收
 
-2026-10-21 已在 Probably Stolen 0.46D、MelonLoader 0.7.3、仅加载 EZapi 0.1.42 的进程中，用可丢弃槽 533 运行调试按钮。7 项原生检查全部通过：嵌入 PNG 解码并安装为一个隔离图集、返回有效 Unity Sprite、通过 `GameItem.SetSprite` 设置并读回图集/精灵键、重复安装幂等、安装回调只触发一次、预暂存赋值在图集安装后解析，以及重复 owner/atlas ID 在原生修改前被拒绝。临时物品销毁；测试前后 536 个本地存档相关文件均保持相同 SHA-256，诊断 `errors` 为空。
+> 历史验收记录（0.1.42），不作为当前 DLL 通过依据。
+> 2026-10-21 已在 Probably Stolen 0.46D、MelonLoader 0.7.3、仅加载 EZapi 0.1.42 的进程中，用可丢弃槽 533 运行调试按钮。7 项原生检查全部通过：嵌入 PNG 解码并安装为一个隔离图集、返回有效 Unity Sprite、通过 `GameItem.SetSprite` 设置并读回图集/精灵键、重复安装幂等、安装回调只触发一次、预暂存赋值在图集安装后解析，以及重复 owner/atlas ID 在原生修改前被拒绝。临时物品销毁；测试前后 536 个本地存档相关文件均保持相同 SHA-256，诊断 `errors` 为空。
 
-证据包位于 [`verification/native-test-0.1.42/`](verification/native-test-0.1.42/)，包含游戏内检查截图、MelonLoader 日志、EZapi 诊断和结构化结果。当前证据证明资源和原生绑定路径成功；尚未展示带该 Sprite 的物品图标，也没有执行保存重载，因此这些行为仍需后续验证。该历史版本未验证 0.1.47 新增的肖像注册。
+证据包位于 verification/native-test-0.1.42/（历史标识 `verification/native-test-0.1.42/`；原件未公开），包含游戏内检查截图、MelonLoader 日志、EZapi 诊断和结构化结果。当前证据证明资源和原生绑定路径成功；尚未展示带该 Sprite 的物品图标，也没有执行保存重载，因此这些行为仍需后续验证。该历史版本未验证 0.1.47 新增的肖像注册。

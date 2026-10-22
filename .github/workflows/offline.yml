@@ -17,6 +17,9 @@ jobs:
       - name: Source distribution boundaries
         shell: pwsh
         run: python scripts/Check-SourceDistribution.py
+      - name: Documentation consistency
+        shell: pwsh
+        run: python scripts/Verify-Documentation.py
       - name: Offline suites and CLI process cases
         shell: pwsh
         run: ./Build-EZapi.ps1 -OfflineOnly

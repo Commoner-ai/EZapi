@@ -1,3 +1,5 @@
+> 当前 API 指南。见[统一版本与验收状态](current-status.zh-CN.md)：当前 DLL 尚未完成实机验收；旧测试数量仅适用于其历史 DLL。
+
 # 原生阅读面板
 
 `ReadingApi` 使用当前游戏的 `HandnoteUIManager`，通过 `DirectoryMaster.Item("handnote", true)` 创建游离纸条，并设置官方 `HANDNOTE_TITLE`、`HANDNOTE_BODY`、`HANDNOTE_SIGN` 标签。它不把纸条交付到背包，不保存纸条，也不更改游戏读档内容。标题、正文、署名沿用游戏字体、布局及富文本行为；长文本不会自动分页，应由作者分段。

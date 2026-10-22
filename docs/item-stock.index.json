@@ -1,5 +1,5 @@
 {
-  "version": "0.1.65",
+  "version": "0.1.73",
   "feature": "night-shop-stock",
   "chinese": "item-stock.zh-CN.md",
   "english": "item-stock.en.md",
@@ -19,11 +19,26 @@
     "disk readback",
     "new-process native restore"
   ],
-  "evidence": "verification/night-placement-native-0.1.65.json",
+  "historicalEvidence": {
+    "identifier": "verification/night-placement-native-0.1.65.json",
+    "availability": "not-distributed",
+    "currentDllEvidence": false
+  },
   "boundary": "native capacity/perk restrictions retained; no all-NPC dialogue or third-party mod combination claim",
-  "distributionVerification": {
+  "previousVersionBaseline": "0.1.65",
+  "documentationContext": {
+    "kind": "current-api-guide",
+    "releaseTag": "0.1.73-preview.3",
+    "assemblyVersion": "0.1.73",
+    "releaseStatus": "release-status.json",
+    "nativeRuntimeVerified": false,
+    "evidencePolicy": "Old native claims are preserved only under historical* fields and do not apply to the current DLL."
+  },
+  "binaryPackageVerification": {
     "dllSHA256": "7E4AB675B0E3BD81C56EEC4606731A6880287549EB4E8E90A707BE18BD52BEEF",
     "nativeRuntimeVerified": false,
-    "frameworkSourceIncluded": false
+    "frameworkSourceIncluded": false,
+    "artifactKind": "binary-SDK; not repository source contents",
+    "sourceRepositoryVisibility": "public"
   }
 }

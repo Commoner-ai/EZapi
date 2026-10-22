@@ -1,3 +1,5 @@
+> 当前 API 指南。见[统一版本与验收状态](current-status.zh-CN.md)：当前 DLL 尚未完成实机验收；旧测试数量仅适用于其历史 DLL。
+
 # Presentation API：名称、来源和动态 tooltip
 
 `PresentationApi` 为 DLL Mod 提供物品登记文本查询、owner 展示名、模块运行时附加文字和自有模块效果的双语文本。注册在 EZapi 初始化主线程完成；所有文本回调都在游戏官方 tooltip 回调期间同步执行。EZapi 不调用 `RichTextBuilder.Build`，也不保留 tooltip builder 或 `GameItem` 引用。

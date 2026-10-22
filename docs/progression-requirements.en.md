@@ -1,3 +1,5 @@
+> Current API guide. See [release status](current-status.en.md): current-DLL native acceptance is pending; older test counts apply only to their historical binaries.
+
 # Knowledge-base expansion: progression and requirements
 
 `ProgressionApi.ReadUpgrade(id)` and `ReadService(id)` capture managed snapshots from the current loaded run. Upgrade price, unlocked/ready/prerequisite/demo-lock states and cooldown are distinct. Service introduced/unlocked/using/active/cooldown states are also distinct. `Ready` is a successful observation, not payment or permission to skip the native purchase path. Invalid input, missing lookup and unavailable reads have separate statuses. Native lookup exceptions are unavailable, not proof of absence.

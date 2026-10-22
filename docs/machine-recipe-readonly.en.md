@@ -1,4 +1,6 @@
-# Read-only recipe callbacks and product preparation (EZapi0.1.69)
+> Current API guide. See [release status](current-status.en.md): current-DLL native acceptance is pending; older test counts apply only to their historical binaries.
+
+# Read-only recipe callbacks and product preparation (EZapi)
 
 Conditions, count/ID/cost/liquid resolvers, transaction factories and transaction Validate callbacks must be read-only. PrepareItem may configure the new product passed to it; it must not change existing materials, the machine, batteries, liquid containers or old products. Apply performs resource writes; verified commit notifications retain their existing contract.
 

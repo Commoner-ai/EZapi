@@ -1,8 +1,8 @@
+> 当前 API 指南。见[统一版本与验收状态](current-status.zh-CN.md)：当前 DLL 尚未完成实机验收；旧测试数量仅适用于其历史 DLL。
+
 > 0.1.62：复杂材料图、液体物品/容器产出、普通电池及外电已补充两晚真实保存和冷启动验证；下方历史边界以本条限定的矩阵更新，完整范围见[跨夜指南](machine-persistence.zh-CN.md)。不包含原版熔炉所有材料策略或崩溃恢复。
 
-# 带内部物品的机器材料
-
-0.1.57 新增 `MachineRecipe.MaterialContents`。这只控制框架标准事务；自定义 `Transaction` 仍须自己实现材料去向和失败补偿。
+# 带内部物品的机器材料新增 `MachineRecipe.MaterialContents`。这只控制框架标准事务；自定义 `Transaction` 仍须自己实现材料去向和失败补偿。
 
 | 值 | 标准事务行为 |
 | --- | --- |

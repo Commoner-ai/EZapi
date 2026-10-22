@@ -1,6 +1,6 @@
-> 0.1.72-preview.1 封装变更：开发工具默认关闭，见[安装与调试](install-and-debug.zh-CN.md)。下述415项及保存重载报告属于记录哈希4238A189…的封装前DLL；新DLL不继承其实机通过状态。
+> 当前 API 指南。见[统一版本与验收状态](current-status.zh-CN.md)：当前 DLL 尚未完成实机验收；旧测试数量仅适用于其历史 DLL。
 
-# 物品自有版本化 JSON 数据（0.1.72 开发版）
+# 物品自有版本化 JSON 数据（当前接口）
 
 `ItemDataApi` 适合记录某件物品的升级等级、制造批次或作者状态。官方指南要求物品数据保存在物品标签中；EZapi 使用 `GetTagReadonly` / `ModifyTag` 和 `SyncModifiedState`，把命名空间、格式版本、比较检查和失败状态集中处理。周目任务、余额和未来奖励应使用周目数据接口。
 
@@ -61,4 +61,6 @@ if (read.Status is ItemDataStatus.Missing or ItemDataStatus.Present)
 
 English: [Versioned item data](item-data.en.md)。完整签名见 [公开索引](public-api.index.json)，错误定位见 [错误索引](errors.index.json)。
 
-本轮五节点测试图已通过显式原生保存18项、新进程重载27项和独立磁盘回读37项检查，两套owner JSON及版本均保留。此证据不使Stage自动保存，也不保证所有游戏组合或崩溃恢复。 [Evidence](verification/disk-supplier-native-0.1.72.json).
+> 历史验收记录（0.1.72），不作为当前 DLL 通过依据。
+> 本轮五节点测试图已通过显式原生保存18项、新进程重载27项和独立磁盘回读37项检查，两套owner JSON及版本均保留。此证据不使Stage自动保存，也不保证所有游戏组合或崩溃恢复。 Evidence（历史标识 `verification/disk-supplier-native-0.1.72.json`；原件未公开）.
+> 

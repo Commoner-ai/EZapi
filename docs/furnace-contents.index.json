@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "version": "0.1.67",
+  "version": "0.1.73",
   "guide": "furnace-contents.zh-CN.md",
   "englishGuide": "furnace-contents.en.md",
   "api": [
@@ -34,16 +34,35 @@
     "nativeBatch": 1126,
     "oldMachine": 19
   },
-  "publicContractAudit": "external-power-public-contract.audit.json",
-  "evidence": "verification/furnace-contents-native-0.1.67.json",
+  "historicalPublicContractAudit": {
+    "identifier": "external-power-public-contract.audit.json",
+    "availability": "not-distributed",
+    "currentDllEvidence": false
+  },
+  "historicalEvidence": {
+    "identifier": "verification/furnace-contents-native-0.1.67.json",
+    "availability": "not-distributed",
+    "currentDllEvidence": false
+  },
   "notVerified": [
     "native furnace all-combination night/save/restart",
     "network/async/crash recovery",
     "framework-wide English UI compatibility"
   ],
-  "distributionVerification": {
+  "previousVersionBaseline": "0.1.67",
+  "documentationContext": {
+    "kind": "current-api-guide",
+    "releaseTag": "0.1.73-preview.3",
+    "assemblyVersion": "0.1.73",
+    "releaseStatus": "release-status.json",
+    "nativeRuntimeVerified": false,
+    "evidencePolicy": "Old native claims are preserved only under historical* fields and do not apply to the current DLL."
+  },
+  "binaryPackageVerification": {
     "dllSHA256": "7E4AB675B0E3BD81C56EEC4606731A6880287549EB4E8E90A707BE18BD52BEEF",
     "nativeRuntimeVerified": false,
-    "frameworkSourceIncluded": false
+    "frameworkSourceIncluded": false,
+    "artifactKind": "binary-SDK; not repository source contents",
+    "sourceRepositoryVisibility": "public"
   }
 }

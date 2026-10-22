@@ -1,8 +1,10 @@
+> 当前 API 指南。见[统一版本与验收状态](current-status.zh-CN.md)：当前 DLL 尚未完成实机验收；旧测试数量仅适用于其历史 DLL。
+
 > 0.1.62：复杂材料图、液体物品/容器产出、普通电池及外电已补充两晚真实保存和冷启动验证；下方历史边界以本条限定的矩阵更新，完整范围见[跨夜指南](machine-persistence.zh-CN.md)。不包含原版熔炉所有材料策略或崩溃恢复。
 
 > 0.1.60：独立处理器已支持 `Process(machine,inventory)`；Runtime入口复制并绑定Template，自定义窗口可借用真实子库存。原生交互委托仍由窗口作者设置，见[machine-inventory-binding.zh-CN.md](machine-inventory-binding.zh-CN.md)。
 
-# 机器自动化与夜间加工（0.1.27）
+# 机器自动化与夜间加工（）
 
 统一机器现在默认接入游戏的 `BeforeNight` 生命周期，每台每晚默认尝试一批。框架复用已核对的 `PlayerStore.EndNight` 生命周期入口，不添加第二套每帧调度，也不请求保存。基本注册见 [机器注册](machine-registration.zh-CN.md)，材料消费见 [标准事务](machine-materials.zh-CN.md)，可编译示例为 `src/EZapi.Sample/MachineAutomationExamples.cs`。
 

@@ -3,7 +3,6 @@
   "version": "0.1.73",
   "purpose": "Track concrete APIs selected after independent reference feature coverage reached39/39.",
   "referencePolicy": "Probably Stolen skill is reference; current game signatures and official public APIs decide implementation. No Forge implementation copied.",
-  "knowledgeRoot": "<local-user>/.codex/skills/probably-stolen-mod-skill",
   "reviewedScenarios": [
     "scenarios/shop-progression.md",
     "scenarios/day-events.md",
@@ -11,7 +10,7 @@
     "scenarios/custom-characters.md",
     "scenarios/item-interactions.md"
   ],
-  "officialGuide": "../references/probably-stolen-modding/ModdingGuide.zh-CN.md",
+  "officialGuide": "https://github.com/dragonpan2/probably-stolen-modding/blob/main/ModdingGuide.zh-CN.md",
   "selected": [
     {
       "api": "ProgressionApi.ReadUpgrade / ReadService",
@@ -49,7 +48,11 @@
       ],
       "guide": "item-data.zh-CN.md",
       "index": "item-data.index.json",
-      "verification": "verification/disk-supplier-native-0.1.72.json"
+      "historicalVerification": {
+        "identifier": "verification/disk-supplier-native-0.1.72.json",
+        "availability": "not-distributed",
+        "currentDllEvidence": false
+      }
     }
   ],
   "remainingCandidateWork": [
@@ -66,11 +69,25 @@
     "Complete AI signature/task/error/source indexes and examples",
     "Cross-API Chinese/English interoperability and actual game-English verification"
   ],
-  "status": "Progression0.1.71 baseline; ItemData0.1.72: 63 offline checks plus scoped native save/cold-load/disk readback and415 en/zh checks passed. Full goal remains active.",
-  "verification": "verification/progression-native-0.1.71.json",
-  "distributionVerification": {
+  "status": "Current APIs implemented; native acceptance for the current DLL remains pending. Older language/save counts are historical only.",
+  "historicalVerification": {
+    "identifier": "verification/progression-native-0.1.71.json",
+    "availability": "not-distributed",
+    "currentDllEvidence": false
+  },
+  "documentationContext": {
+    "kind": "current-api-guide",
+    "releaseTag": "0.1.73-preview.3",
+    "assemblyVersion": "0.1.73",
+    "releaseStatus": "release-status.json",
+    "nativeRuntimeVerified": false,
+    "evidencePolicy": "Old native claims are preserved only under historical* fields and do not apply to the current DLL."
+  },
+  "binaryPackageVerification": {
     "dllSHA256": "7E4AB675B0E3BD81C56EEC4606731A6880287549EB4E8E90A707BE18BD52BEEF",
     "nativeRuntimeVerified": false,
-    "frameworkSourceIncluded": false
+    "frameworkSourceIncluded": false,
+    "artifactKind": "binary-SDK; not repository source contents",
+    "sourceRepositoryVisibility": "public"
   }
 }

@@ -1,4 +1,7 @@
-> 0.1.63：机器运行时、手动加工与夜间开关分别查询；原生867/0，旧档读取19/0。参见[机器状态](machine-status.zh-CN.md)和[AI索引](machine-status.index.json)。完整覆盖仍34/39组。
+> 当前 API 指南。见[统一版本与验收状态](current-status.zh-CN.md)：当前 DLL 尚未完成实机验收；旧测试数量仅适用于其历史 DLL。
+
+> 历史验收记录（0.1.63），不作为当前 DLL 通过依据。
+> > 0.1.63：机器运行时、手动加工与夜间开关分别查询；原生867/0，旧档读取19/0。参见[机器状态](machine-status.zh-CN.md)和[AI索引](machine-status.index.json)。当前参考功能覆盖见 FORGE-PARITY.zh-CN.md；此处验收记录仅属于旧版。
 
 > 0.1.62：复杂材料图、液体物品/容器产出、普通电池及外电已补充两晚真实保存和冷启动验证；下方历史边界以本条限定的矩阵更新，完整范围见[跨夜指南](machine-persistence.zh-CN.md)。不包含原版熔炉所有材料策略或崩溃恢复。
 
@@ -6,7 +9,7 @@
 
 > 0.1.57：统一注册中的MachineRecipe可声明MaterialContents=ConsumeGraph，由标准事务处理含内部物品材料。见[machine-material-graph.zh-CN.md](machine-material-graph.zh-CN.md)。
 
-# EZapi 统一机器注册（0.1.27）
+# EZapi 统一机器注册（）
 
 一个 `MachineRegistrationApi.RegisterMachine` 声明机器物品工厂、独立原生布局、可执行配方、输入过滤和自动图鉴。代码只依赖 EZapi 和当前游戏程序集。完整可编译示例见 `../src/EZapi.Sample/MachineRegistrationExamples.cs`；标准材料消费见 [machine-materials.zh-CN.md](machine-materials.zh-CN.md)。
 

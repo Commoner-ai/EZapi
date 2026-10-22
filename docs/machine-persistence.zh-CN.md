@@ -1,3 +1,5 @@
+> 当前 API 指南。见[统一版本与验收状态](current-status.zh-CN.md)：当前 DLL 尚未完成实机验收；旧测试数量仅适用于其历史 DLL。
+
 # 机器跨夜、保存与冷启动
 
 EZapi 0.1.62 对框架标准加工补充实际跨夜和磁盘重载验收，修复生命周期订阅者之间的旧库存快照，以及夜间调度的过期机器引用。公开配方声明保持兼容。
@@ -32,7 +34,7 @@ EZapi 0.1.62 对框架标准加工补充实际跨夜和磁盘重载验收，修�
 
 `1000parts=1ml`。液体Value/QualityBasis是成分合计值，不是每ml单价。两次完整冷启动后，四个根的机器布局、实例、父子关系、数量、值、液体、电量和夜间标记与保存前逐项相等。移除关门测试工具后还会再做一次仅EZapi加载复查。
 
-磁盘读回使用真实`SaveReadbackApi`解析ES3文本；不把“文件可解析”当作机器状态完整恢复的替代。详细证据见[验证报告](verification/machine-persistence-native-0.1.62.json)。测试前备份全部536份ES3，仅允许`save_534.es3`与原生`saves_index.es3`变化。
+磁盘读回使用真实`SaveReadbackApi`解析ES3文本；不把“文件可解析”当作机器状态完整恢复的替代。详细证据见验证报告（历史标识 `verification/machine-persistence-native-0.1.62.json`；原件未公开）。测试前备份全部536份ES3，仅允许`save_534.es3`与原生`saves_index.es3`变化。
 
 ## 边界
 

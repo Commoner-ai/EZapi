@@ -10,10 +10,12 @@ import hashlib
 import json
 import re
 import shutil
+import subprocess
+import sys
 import zipfile
 
 ROOT = Path(__file__).resolve().parents[1]
-TAG = '0.1.73-preview.2'
+TAG = '0.1.73-preview.3'
 PUBLIC_REPOSITORY = 'https://github.com/Commoner-ai/EZapi'
 TEXT = {'.md', '.json', '.cs', '.csproj', '.ps1', '.xml', '.txt'}
 
@@ -135,7 +137,10 @@ for p in (developer/'docs').glob('*.json'):
     if p.name == 'API.index.zh-CN.json':
         for typ in d.get('types', {}).values():
             if isinstance(typ, dict): typ.pop('sources', None)
-    d['distributionVerification'] = {'dllSHA256': verification['dllSHA256'], 'nativeRuntimeVerified': False, 'frameworkSourceIncluded': False}
+    d['binaryPackageVerification'] = {
+        'dllSHA256': verification['dllSHA256'], 'nativeRuntimeVerified': False,
+        'frameworkSourceIncluded': False, 'sourceRepositoryVisibility': 'public',
+        'artifactKind': 'binary-SDK; source is available separately on GitHub'}
     write(p, d)
 for target in [game, developer]:
     sanitize(target)
@@ -163,6 +168,11 @@ for target in [game, developer]:
     assert not (target/'Mods/EZapiPacks').exists()
 assert not (game/'UserData').exists()
 assert sha(game/'Mods/EZapi.dll') == sha(developer/'Mods/EZapi.dll') == verification['dllSHA256']
+assert load(developer/'docs/release-status.json')['releaseTag'] == TAG
+documentation = subprocess.run(
+    [sys.executable, str(ROOT/'scripts/Verify-Documentation.py'), '--root', str(developer)],
+    capture_output=True, text=True, encoding='utf-8')
+assert documentation.returncode == 0, documentation.stdout + documentation.stderr
 assets = [archive(game), archive(developer)]
 write(output/'package-verification.json', {
     'tag': TAG, 'passed': True, 'assets': assets, 'dllSHA256': verification['dllSHA256'],
@@ -172,6 +182,7 @@ write(output/'package-verification.json', {
     'internalPluginExcluded': True, 'examplesAutoInstalled': False,
     'nativeRuntimeVerified': False, 'fullGoalComplete': False,
     'developerAutomationIncluded': True,
+    'documentationConsistencyVerified': True,
 })
 (output/'SHA256SUMS.txt').write_text(''.join(x['sha256']+'  '+x['file']+'\n' for x in assets), encoding='utf-8')
 print(json.dumps({'passed': True, 'frameworkSourceIncluded': False, 'assets': assets}, ensure_ascii=False))

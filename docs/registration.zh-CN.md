@@ -1,3 +1,5 @@
+> 当前 API 指南。见[统一版本与验收状态](current-status.zh-CN.md)：当前 DLL 尚未完成实机验收；旧测试数量仅适用于其历史 DLL。
+
 # 通用声明与依赖注册
 
 `RegistrationApi` 在 Mod 初始化时登记作者版本、内容 ID、内容签名和依赖。对应参考框架的公开 Register、Snapshot、RegistrationBatch、RegistrationView 契约，EZapi 独立实现，无 Forge 运行依赖。官方指南提供各领域目录事件；通用元数据目录是 EZapi 的服务。

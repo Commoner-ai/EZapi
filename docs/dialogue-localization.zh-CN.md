@@ -1,8 +1,8 @@
-> 0.1.72-preview.1 封装变更：开发工具默认关闭，见[安装与调试](install-and-debug.zh-CN.md)。下述415项及保存重载报告属于记录哈希4238A189…的封装前DLL；新DLL不继承其实机通过状态。
+> 当前 API 指南。见[统一版本与验收状态](current-status.zh-CN.md)：当前 DLL 尚未完成实机验收；旧测试数量仅适用于其历史 DLL。
 
 # 对话、电话与供应商的中英文字
 
-0.1.72 开发版提供可选的 `Localized*` 属性。脚本可在初始化时创建；每次真正打开原生对话图时，框架读取一次游戏语言并解析整张图。切换语言不会重建正在运行的业务回调；关闭后重新打开原脚本，或供应商选择继续交易后，新图使用新语言。字段清单见 [机器可读索引](dialogue-localization.index.json)，完整签名见 [DLL 元数据](public-api.index.json)。
+当前接口提供可选的 `Localized*` 属性。脚本可在初始化时创建；每次真正打开原生对话图时，框架读取一次游戏语言并解析整张图。切换语言不会重建正在运行的业务回调；关闭后重新打开原脚本，或供应商选择继续交易后，新图使用新语言。字段清单见 [机器可读索引](dialogue-localization.index.json)，完整签名见 [DLL 元数据](public-api.index.json)。
 
 ```csharp
 var script = DialogueApi.Create("author.example", new DialogueDefinition(
@@ -28,7 +28,8 @@ var script = DialogueApi.Create("author.example", new DialogueDefinition(
 
 供应商的 `SupplierDefinition` 提供说话人、确认、返回、继续、离开、失败、前后翻页；`SupplierPage.LocalizedBody` 提供每次捕获的正文；`SupplierOffer` 提供选项、预览与独立确认。`Capture` 上下文带捕获时语言，`Purchase` 上下文带实际图的语言；入队和到访可能不在同一语言。使用 `Localized*` 声明可在到访时正确解析。继续交易会重新捕获数据并打开新图。购买抛异常时，框架记录 `EZAPI_SUPPLIER_PURCHASE`，沿用本图失败提示，避免切换语言后混排。可编译示例见 [SupplierExamples.cs](../src/EZapi.Sample/SupplierExamples.cs)。
 
-本地化不更改 ID、当前周目许可、确认至多一次、自动报价规则或资源回收边界；不会执行支付、交付、保存，也不会自动翻译作者的返回文字。当前有链接真实生产源码的离线测试；当前 DLL 已通过415项中英原生检查，含已有及真实冷加载物品、Tooltip、容器/机器标题、阅读、工坊、对话、电话和供应商页面；本次供应商到达/离场由夹具主动触发，不代表自然到访或真实支付交付。见[当前DLL证据](verification/disk-supplier-native-0.1.72.json)。
+> 历史验收记录（0.1.72），不作为当前 DLL 通过依据。
+> 本地化不更改 ID、当前周目许可、确认至多一次、自动报价规则或资源回收边界；不会执行支付、交付、保存，也不会自动翻译作者的返回文字。当前有链接真实生产源码的离线测试；历史 0.1.72 DLL 曾记录415项中英原生检查，含已有及真实冷加载物品、Tooltip、容器/机器标题、阅读、工坊、对话、电话和供应商页面；本次供应商到达/离场由夹具主动触发，不代表自然到访或真实支付交付。见历史 DLL 记录（历史标识 `verification/disk-supplier-native-0.1.72.json`；原件未公开）。
 
 ## 阅读与工坊入口
 

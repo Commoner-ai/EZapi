@@ -1111,7 +1111,7 @@
     "custom audio file registration",
     "localization tables"
   ],
-  "implementationVersion": "0.1.51",
+  "implementationVersion": "0.1.73",
   "localizationGuide": "item-localization.index.json",
   "localizationIndexSchema": "../schemas/localization-index.schema.json",
   "containerGuide": "containers.zh-CN.md",
@@ -1159,9 +1159,20 @@
       "description": "Inline bilingual text or a key in the owning pack Localization/*.csv. CSV-backed item fields require an English key. Current locale -> en -> inline -> literal fallback; item fields take no format arguments."
     }
   },
-  "distributionVerification": {
+  "previousImplementationVersionBaseline": "0.1.51",
+  "documentationContext": {
+    "kind": "current-api-guide",
+    "releaseTag": "0.1.73-preview.3",
+    "assemblyVersion": "0.1.73",
+    "releaseStatus": "release-status.json",
+    "nativeRuntimeVerified": false,
+    "evidencePolicy": "Old native claims are preserved only under historical* fields and do not apply to the current DLL."
+  },
+  "binaryPackageVerification": {
     "dllSHA256": "7E4AB675B0E3BD81C56EEC4606731A6880287549EB4E8E90A707BE18BD52BEEF",
     "nativeRuntimeVerified": false,
-    "frameworkSourceIncluded": false
+    "frameworkSourceIncluded": false,
+    "artifactKind": "binary-SDK; not repository source contents",
+    "sourceRepositoryVisibility": "public"
   }
 }

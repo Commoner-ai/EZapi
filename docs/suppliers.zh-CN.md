@@ -1,3 +1,5 @@
+> 当前 API 指南。见[统一版本与验收状态](current-status.zh-CN.md)：当前 DLL 尚未完成实机验收；旧测试数量仅适用于其历史 DLL。
+
 # SupplierApi：供应商与动态报价
 
 `SupplierApi` 用官方 `ModHook.OnGenerateCustomerVeryLate` 把一个对话型供应商排入后续顾客队列。官方模组指南把顾客生成钩子列为首选扩展入口，并说明顾客生成顺序是 `VeryEarly → Early → Normal → Late → VeryLate`；指南没有记录独立“供应商注册”API，且将修改原生商店行为/内容列为暂不支持。本机当前游戏程序集确认 `StoreClient` 构造函数和 `StoreClientManager.AddNextClient(StoreClient)` 可用，所以 EZapi 创建独立 `DIALOGUE` 意图访客。它不会修改原生货架、供应商掉落表或采购流程。需要让原生供应商随机出售模组物品时，请使用 `LootTables`/官方 `LootRegistry` 掉落表，而非此对话供应商 API。

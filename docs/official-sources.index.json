@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "implementationVersion": "0.1.67",
+  "implementationVersion": "0.1.73",
   "officialRepository": "https://github.com/dragonpan2/probably-stolen-modding",
   "sources": [
     {
@@ -27,16 +27,32 @@
   "localGameAssemblySHA256": "E9514545697169936C98D040CF7B1F7CF5E80405F7DD3F0195A80B65DB2752CF",
   "buildDifferences": "official-api-map.zh-CN.md",
   "policy": "official guide first; current assembly decides interface availability; skill is reference only",
-  "nativeConsumablesEvidence": "../verification/current-food-contract.txt",
+  "historicalNativeConsumablesEvidence": {
+    "identifier": "../verification/current-food-contract.txt",
+    "availability": "not-distributed",
+    "currentDllEvidence": false
+  },
   "nativeItemLocalization": {
     "assemblySHA256": "E9514545697169936C98D040CF7B1F7CF5E80405F7DD3F0195A80B65DB2752CF",
     "signature": "Il2Cpp.LocHelper.GetCurrentLocaleCode():System.String",
-    "evidence": "verification/native-locale-contract.txt",
+    "historicalEvidence": {
+      "identifier": "verification/native-locale-contract.txt",
+      "availability": "not-distributed",
+      "currentDllEvidence": false
+    },
     "runtimeVerified": false,
     "boundary": "Current item factory selects Chinese for zh* and English otherwise; unknown build or getter failure falls back to English. Existing instances are not rewritten after a locale change."
   },
-  "localizationEvidence": "../verification/localization-api-contract.txt",
-  "containerEvidence": "../verification/container-api-contract.txt",
+  "historicalLocalizationEvidence": {
+    "identifier": "../verification/localization-api-contract.txt",
+    "availability": "not-distributed",
+    "currentDllEvidence": false
+  },
+  "historicalContainerEvidence": {
+    "identifier": "../verification/container-api-contract.txt",
+    "availability": "not-distributed",
+    "currentDllEvidence": false
+  },
   "inventoryEvidence": [
     "../verification/native-inventory-contract.txt",
     "../verification/native-slot-contract.txt",
@@ -87,9 +103,21 @@
       "MachineryHelper.GetMachinePowerUsage(GameItem):int",
       "ModuleHelper.ApplyModifiedPower(GameItem):void"
     ],
-    "contractEvidence": "../verification/terminal-catalog-il.txt",
-    "nativeRuntimeVerified": true,
-    "boundary": "independent EZapi ID and assets; generic existing layout save path; no Forge migration or automatic loot"
+    "historicalContractEvidence": {
+      "identifier": "../verification/terminal-catalog-il.txt",
+      "availability": "not-distributed",
+      "currentDllEvidence": false
+    },
+    "nativeRuntimeVerified": false,
+    "boundary": "independent EZapi ID and assets; generic existing layout save path; no Forge migration or automatic loot",
+    "historicalVerification": {
+      "scope": "unqualified native flags from an older index; not current-DLL verification",
+      "recordedIndexBaseline": "0.1.67",
+      "claims": {
+        "nativeRuntimeVerified": true
+      },
+      "availability": "historical reports not distributed"
+    }
   },
   "customerVisits": {
     "officialGuide": "ModdingGuide.zh-CN.md",
@@ -119,7 +147,11 @@
     "runtimeGameplayVerified": false,
     "boundary": "The official guide documents customer-generation hooks and loot-table editing, but lists native store behavior/content changes as unsupported and does not document a supplier-registration API. EZapi queues an isolated dialogue visitor; native shelves, supplier loot tables, payment and inventory delivery are outside this API."
   },
-  "presentationEvidence": "verification/native-presentation-contract.txt",
+  "historicalPresentationEvidence": {
+    "identifier": "verification/native-presentation-contract.txt",
+    "availability": "not-distributed",
+    "currentDllEvidence": false
+  },
   "localCheckout": {
     "path": "references/probably-stolen-modding",
     "commit": "f2137eb7bebeecfadca1ccabb0cae3757ea4319f",
@@ -131,18 +163,38 @@
   },
   "portraitAdapter": {
     "guide": "ModdingGuide.zh-CN.md: custom customer sprites supported; this older build lacks newer mod sprite convenience APIs",
-    "currentBuildEvidence": "verification/portrait-native-contract-0.1.47.txt",
+    "historicalCurrentBuildEvidence": {
+      "identifier": "verification/portrait-native-contract-0.1.47.txt",
+      "availability": "not-distributed",
+      "currentDllEvidence": false
+    },
     "entryPoints": [
       "SpriteDict.Instance",
       "SpriteDict.spriteDictionary",
       "SpriteDict.GetSprite(string)"
     ],
     "policy": "Narrow public adapter, no global lookup patch, never InitializeDictionary or replace dictionary",
-    "nativeRuntimeVerified": true,
-    "nativeEvidence": "verification/native-test-0.1.47/diagnostics.json"
+    "nativeRuntimeVerified": false,
+    "historicalNativeEvidence": {
+      "identifier": "verification/native-test-0.1.47/diagnostics.json",
+      "availability": "not-distributed",
+      "currentDllEvidence": false
+    },
+    "historicalVerification": {
+      "scope": "unqualified native flags from an older index; not current-DLL verification",
+      "recordedIndexBaseline": "0.1.67",
+      "claims": {
+        "nativeRuntimeVerified": true
+      },
+      "availability": "historical reports not distributed"
+    }
   },
   "workshopRenderingAdapter": {
-    "evidence": "verification/workshop-gui-contract-0.1.48.txt",
+    "historicalEvidence": {
+      "identifier": "verification/workshop-gui-contract-0.1.48.txt",
+      "availability": "not-distributed",
+      "currentDllEvidence": false
+    },
     "basis": "Current Unity public wrapper IL and official UI lifecycle guidance; no Forge implementation reused",
     "entryPoints": [
       "GUI.BeginGroup(Rect)",
@@ -150,12 +202,28 @@
       "GUI.Box(Rect,string,GUIStyle)",
       "Input.mouseScrollDelta"
     ],
-    "nativeRuntimeVerified": true,
-    "nativeEvidence": "verification/workshop-native-0.1.48.json"
+    "nativeRuntimeVerified": false,
+    "historicalNativeEvidence": {
+      "identifier": "verification/workshop-native-0.1.48.json",
+      "availability": "not-distributed",
+      "currentDllEvidence": false
+    },
+    "historicalVerification": {
+      "scope": "unqualified native flags from an older index; not current-DLL verification",
+      "recordedIndexBaseline": "0.1.67",
+      "claims": {
+        "nativeRuntimeVerified": true
+      },
+      "availability": "historical reports not distributed"
+    }
   },
   "itemInspectionAdapter": {
     "source": "Current game public GameItem.GetCurrentValue(false,true,true,false,0); official guide does not specify price semantics",
-    "nativeEvidence": "verification/item-inspection-native-0.1.49.json",
+    "historicalNativeEvidence": {
+      "identifier": "verification/item-inspection-native-0.1.49.json",
+      "availability": "not-distributed",
+      "currentDllEvidence": false
+    },
     "semantics": "Native current per-unit value independent of positive stack count; GetValue singleValue uses cached value and is not a replacement",
     "scope": "84 fixtures/425 assertions; inactive Event only, not all game event scenarios"
   },
@@ -164,7 +232,11 @@
     "event": "OnPlaceInventorInventoryItemEarly(List<GameItem>)",
     "nativeScope": "StoreClientList.PlaceInventorInventory(bool isVisitingPlayerStore=false)",
     "semantics": "isVisitingPlayerStore false selects night stock; requires full native shop acceptance test",
-    "evidence": "verification/item-stock-native-0.1.50.json"
+    "historicalEvidence": {
+      "identifier": "verification/item-stock-native-0.1.50.json",
+      "availability": "not-distributed",
+      "currentDllEvidence": false
+    }
   },
   "npcStockAdapter": {
     "officialGuide": "ModdingGuide.zh-CN.md: available hooks / loot tables; stock convenience API not documented",
@@ -214,7 +286,11 @@
       "WaterFeatureHelper.OnLiquidContainerPourOutOf(GameItem): void"
     ],
     "policy": "Exact managed signatures and known-build gate; native Remove sequencing only; no negative AddLiquid, no original vessel rebuild, no Forge implementation or raw addresses",
-    "runtimeEvidence": "verification/component-liquid-native-0.1.54.json"
+    "historicalRuntimeEvidence": {
+      "identifier": "verification/component-liquid-native-0.1.54.json",
+      "availability": "not-distributed",
+      "currentDllEvidence": false
+    }
   },
   "machineLiquidOutput": {
     "officialGuide": "ModdingGuide.zh-CN.md:554 documents GameItem.ModifyTag/GetTagReadonly; local official Markdown has no dedicated liquid processing chapter or WaterHelper guide",
@@ -223,24 +299,44 @@
     "gameAssemblySHA256": "E9514545697169936C98D040CF7B1F7CF5E80405F7DD3F0195A80B65DB2752CF",
     "signatureEvidence": "work/liquid-output-game-public-surface-0.1.55.json",
     "policy": "EZapi independently defines snapshot/freeze/audit/compensation policy. Exact managed signatures plus known build gate. No Forge body, dependency or raw address.",
-    "runtimeEvidence": "verification/liquid-output-native-0.1.55.json"
+    "historicalRuntimeEvidence": {
+      "identifier": "verification/liquid-output-native-0.1.55.json",
+      "availability": "not-distributed",
+      "currentDllEvidence": false
+    }
   },
   "machineContainerConditions": {
     "officialReference": "references/probably-stolen-modding/Modding/LearnerMod/PurpleBloodSynthesizer.cs; native machine slot setup",
     "publicContractReference": "forge-public-contract.index.json: ForgeMachineContainerSlot.Condition / ForgeMachineOutputTemplate.ContainerCondition; public shape only",
     "implementation": "Independent precise machine/type/slot managed registry, existing IL2CPP delegate receiver, no new production Harmony hook",
     "jsonPolicy": "runtime-only callbacks ignored in serialization and rejected as JSON input; definitions re-declared by mod initialization",
-    "runtimeEvidence": "verification/container-conditions-native-0.1.56.json"
+    "historicalRuntimeEvidence": {
+      "identifier": "verification/container-conditions-native-0.1.56.json",
+      "availability": "not-distributed",
+      "currentDllEvidence": false
+    }
   },
   "machineMaterialGraph": {
     "officialReference": "references/probably-stolen-modding/Modding/LearnerMod/PurpleBloodSynthesizer.cs: FinishSynthesis calls material.Destroy; does not define safe nested transactions",
     "implementation": "Independent root-preserving escrow, exact inventory freeze permits, graph audit/restore, reverse topological native Expel/Destroy; no Forge implementation or runtime dependency",
-    "evidence": "verification/material-graph-native-0.1.57.json"
+    "historicalEvidence": {
+      "identifier": "verification/material-graph-native-0.1.57.json",
+      "availability": "not-distributed",
+      "currentDllEvidence": false
+    }
   },
   "recipeGuideImages": {
     "index": "recipe-guide-images.index.json",
-    "audit": "recipe-guide-public-contract.audit.json",
-    "evidence": "verification/guide-mesh-native-0.1.66.json",
+    "historicalAudit": {
+      "identifier": "recipe-guide-public-contract.audit.json",
+      "availability": "not-distributed",
+      "currentDllEvidence": false
+    },
+    "historicalEvidence": {
+      "identifier": "verification/guide-mesh-native-0.1.66.json",
+      "availability": "not-distributed",
+      "currentDllEvidence": false
+    },
     "officialGame": "GameItemElement.ResolveItemSprite + public Unity Sprite mesh getters",
     "unityGeometryReference": "https://docs.unity3d.com/ScriptReference/Sprite.OverrideGeometry.html",
     "input": "test-only OverrideGeometry uses Sprite.rect pixel coordinates; getter returns local units",
@@ -250,30 +346,50 @@
   "machineRequiredPower": {
     "officialReference": "current MachineHelper.SetupBatterySlot, PowerHelper.CanDrawPowerSource and SetPowerSourceAt signatures",
     "implementation": "independent source eligibility and callback-boundary recheck; no Forge dependency",
-    "evidence": "verification/required-power-native-0.1.59.json"
+    "historicalEvidence": {
+      "identifier": "verification/required-power-native-0.1.59.json",
+      "availability": "not-distributed",
+      "currentDllEvidence": false
+    }
   },
   "machineInventoryBinding": {
     "officialReference": "current GameInventory.GetParentItem, GameGridInventory.inventoryShape, GameSlotInventory.defaultGridWidth/Height, PixelWindow",
     "publicReference": "Forge0.6.36 Process(machine,inventory) metadata only",
     "implementation": "independent per-call real graph and template validation; no Forge dependency",
-    "evidence": "verification/inventory-binding-native-0.1.60.json"
+    "historicalEvidence": {
+      "identifier": "verification/inventory-binding-native-0.1.60.json",
+      "availability": "not-distributed",
+      "currentDllEvidence": false
+    }
   },
   "recipeGuideLocalization": {
     "officialReference": "local official clone localization format; current LocHelper.GetCurrentLocaleCode and Unity.Localization.SelectedLocale signatures",
     "implementation": "reuse own LocalizedItemText and native locale getter; no Forge code or DLL",
-    "evidence": "verification/guide-localization-native-0.1.61.json"
+    "historicalEvidence": {
+      "identifier": "verification/guide-localization-native-0.1.61.json",
+      "availability": "not-distributed",
+      "currentDllEvidence": false
+    }
   },
   "machinePersistence": {
     "officialReference": "references/probably-stolen-modding/Modding/LearnerMod/PurpleBloodSynthesizer.cs",
     "rule": "official factory recreates windows/delegates; current wrapper signature audits and actual native game saves determine supported behavior",
     "implementation": "own live-graph dispatch, transaction and readback design; no Forge implementation or runtime dependency",
-    "evidence": "verification/machine-persistence-native-0.1.62.json"
+    "historicalEvidence": {
+      "identifier": "verification/machine-persistence-native-0.1.62.json",
+      "availability": "not-distributed",
+      "currentDllEvidence": false
+    }
   },
   "fixedMerchantStock": {
     "reference": "references/probably-stolen-modding/Modding/LearnerMod/ModEntry.cs",
     "rule": "official inventor callbacks are not generic inventory delivery; exact current game PlaceInventorInventory/thief generation/ItemSpawner/PlayerStore signatures and native behavior audited",
     "implementation": "independent scoped typed slot pool, provenance tracking, graph identity guards and deferred cleanup; no Forge body/runtime dependency",
-    "evidence": "verification/fixed-stock-native-0.1.64.json"
+    "historicalEvidence": {
+      "identifier": "verification/fixed-stock-native-0.1.64.json",
+      "availability": "not-distributed",
+      "currentDllEvidence": false
+    }
   },
   "nightShopStock": {
     "officialExample": "../references/probably-stolen-modding/Modding/LearnerMod/ModEntry.cs:25",
@@ -281,23 +397,54 @@
     "placement": "PlayerStore.AddDirectSellingItemToTable",
     "researchOnly": "../work/shop-native-calls-0.1.65.txt",
     "runtimeUsesOffsets": false,
-    "evidence": "verification/night-placement-native-0.1.65.json"
+    "historicalEvidence": {
+      "identifier": "verification/night-placement-native-0.1.65.json",
+      "availability": "not-distributed",
+      "currentDllEvidence": false
+    }
   },
   "externalPowerContents": {
     "index": "furnace-contents.index.json",
-    "audit": "external-power-public-contract.audit.json",
-    "evidence": "verification/furnace-contents-native-0.1.67.json"
+    "historicalAudit": {
+      "identifier": "external-power-public-contract.audit.json",
+      "availability": "not-distributed",
+      "currentDllEvidence": false
+    },
+    "historicalEvidence": {
+      "identifier": "verification/furnace-contents-native-0.1.67.json",
+      "availability": "not-distributed",
+      "currentDllEvidence": false
+    }
   },
   "itemData": {
     "index": "item-data.index.json",
     "guideRule": "ModdingGuide.zh-CN.md:554; item-owned state belongs on tags",
-    "signatureEvidence": "verification/item-data-native-0.1.72/game-references.json",
-    "nativeEvidence": "verification/item-data-native-0.1.72.json",
+    "historicalSignatureEvidence": {
+      "identifier": "verification/item-data-native-0.1.72/game-references.json",
+      "availability": "not-distributed",
+      "currentDllEvidence": false
+    },
+    "historicalNativeEvidence": {
+      "identifier": "verification/item-data-native-0.1.72.json",
+      "availability": "not-distributed",
+      "currentDllEvidence": false
+    },
     "missingTagBehavior": "GetTagReadonly may return an empty disabled sentinel; check actual dictionary membership"
   },
-  "distributionVerification": {
+  "previousImplementationVersionBaseline": "0.1.67",
+  "documentationContext": {
+    "kind": "current-api-guide",
+    "releaseTag": "0.1.73-preview.3",
+    "assemblyVersion": "0.1.73",
+    "releaseStatus": "release-status.json",
+    "nativeRuntimeVerified": false,
+    "evidencePolicy": "Old native claims are preserved only under historical* fields and do not apply to the current DLL."
+  },
+  "binaryPackageVerification": {
     "dllSHA256": "7E4AB675B0E3BD81C56EEC4606731A6880287549EB4E8E90A707BE18BD52BEEF",
     "nativeRuntimeVerified": false,
-    "frameworkSourceIncluded": false
+    "frameworkSourceIncluded": false,
+    "artifactKind": "binary-SDK; not repository source contents",
+    "sourceRepositoryVisibility": "public"
   }
 }

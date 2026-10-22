@@ -1,10 +1,11 @@
-> 0.1.72-preview.1 封装变更：开发工具默认关闭，见[安装与调试](install-and-debug.zh-CN.md)。下述415项及保存重载报告属于记录哈希4238A189…的封装前DLL；新DLL不继承其实机通过状态。
+> 当前 API 指南。见[统一版本与验收状态](current-status.zh-CN.md)：当前 DLL 尚未完成实机验收；旧测试数量仅适用于其历史 DLL。
 
-> 当前0.1.72：DLL作者可以使用 [GameLanguage](game-language.index.json) 按游戏设置解析这里的CSV目录；普通 JSON 物品也可以通过 `localized*` 字段绑定所属包的 CSV 键，且整包检查要求英语键完整。已登记物品会在显示/重开容器时刷新，当前DLL原生中英切换及五节点测试图读档界面已有[415项检查证据](verification/disk-supplier-native-0.1.72.json)，保留已有其它游戏语言CSV解析与缺译回退。
+> 历史验收记录（0.1.72），不作为当前 DLL 通过依据。
+> > 当前接口：DLL作者可以使用 [GameLanguage](game-language.index.json) 按游戏设置解析这里的CSV目录；普通 JSON 物品也可以通过 `localized*` 字段绑定所属包的 CSV 键，且整包检查要求英语键完整。已登记物品会在显示/重开容器时刷新，历史 0.1.72 DLL 的原生中英切换及五节点测试图读档界面记录了415项检查证据（历史标识 `verification/disk-supplier-native-0.1.72.json`；原件未公开）。保留现有其它游戏语言 CSV 解析与缺译回退。
 
 > 历史说明：本页下方记录0.1.8 CSV资源接口。当前语言读取见[游戏语言指南](game-language.zh-CN.md)；JSON物品字段绑定与其它跨API未完成项以当前版本指南和审计索引为准。
 
-# EZapi 0.1.8：本地化资源与显式语言查询
+# EZapi本地化资源与显式语言查询
 
 这一版提供 `Localization` 资源 API，DLL 作者可以读取、查询和格式化翻译，JSON 包作者可以随包提供语言文件并运行整包检查。能力 ID 是 `localization.resources`。
 
@@ -72,7 +73,7 @@ var standalone = Localization.LoadDirectory(Path.Combine(packFolder, "Localizati
 
 支持 `string.Format` 编号参数和 `{{`/`}}` 字面花括号；下标0..31、对齐绝对值不超过256、格式片段最多64字符，标准数字格式精度最多256。命名占位符和 Unity Smart Strings 不支持。翻译与英语同名键的参数下标集合必须相同，次序和重复次数可不同。占位符语法错误在加载时拒绝；缺运行参数或不适合参数类型的格式字符串在 Resolve 返回 `FormatError` 和原文本，便于记录。格式化使用 `InvariantCulture`，并限制最终文本长度65536；自定义参数对象的异常不在本 API 的吞错范围。
 
-此 API 不缓存翻译后的游戏物品或窗口引用。语言由调用者明确传入；自定义 UI 在语言改变后重新查询。自动刷新游戏物品字段需后续生命周期适配。
+LocalizationCatalog 本身是纯托管文本快照，显式 Resolve 由调用者传入语言。跟随游戏语言使用 GameLanguage；普通 JSON 物品的 localized 字段由现有物品本地化入口刷新，详见当前语言指南。
 
 ## CLI、索引与故障定位
 

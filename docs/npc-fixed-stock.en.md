@@ -1,6 +1,9 @@
-> 0.1.66: native household goods use HOUSEHOLD_GOOD (verified with actual water_filter_adv); HOUSEHOLD remains a legacy alias. A random batch containing only unclassified special goods remains unchanged. Eligible slots alone participate in substitution. Final native NPC checks 48/0; nine groups 954/0. See [verification](verification/guide-mesh-native-0.1.66.json).
+> Current API guide. See [release status](current-status.en.md): current-DLL native acceptance is pending; older test counts apply only to their historical binaries.
 
-# Fixed merchant slots and machine stock (0.1.64)
+> Historical verification note (0.1.66); not evidence for the current DLL. 
+> > 0.1.66: native household goods use HOUSEHOLD_GOOD (verified with actual water_filter_adv); HOUSEHOLD remains a legacy alias. A random batch containing only unclassified special goods remains unchanged. Eligible slots alone participate in substitution. Final native NPC checks 48/0; nine groups 954/0. See verification (historical identifier `verification/guide-mesh-native-0.1.66.json`; original artifact not distributed).
+
+# Fixed merchant slots and machine stock ()
 
 Use existing NativeItemOptions.NpcTrade or JSON npcTrade, after catalog application. A functional custom machine sets MachineDefinition.ItemOptions.NpcTrade during RegisterMachine; a JSON category alone does not add machine behavior. Content packs require minEzapiVersion 0.1.64.
 
@@ -16,4 +19,4 @@ Native prebuilt machines initialize power before assigning their ID. External-po
 
 Evidence: 71 offline adapter checks; 47 native NPC checks using actual generation callbacks and captured sale items;923/0 across nine native groups;19/0 reading the previous persistent fixture save. Actual shelf placement, purchase and saved results remain unverified by this stage.
 
-See [Chinese guide](npc-fixed-stock.zh-CN.md), [AI index](npc-fixed-stock.index.json), and [verification](verification/fixed-stock-native-0.1.64.json).
+See [Chinese guide](npc-fixed-stock.zh-CN.md), [AI index](npc-fixed-stock.index.json), and verification (historical identifier `verification/fixed-stock-native-0.1.64.json`; original artifact not distributed).

@@ -185,9 +185,17 @@
       "example": "../src/EZapi.Sample/DialogueExamples.cs",
       "stability": "Preview",
       "signatureVerified": true,
-      "runtimeGameplayVerified": true,
+      "runtimeGameplayVerified": false,
       "assembly": "EZapi.dll",
-      "memberKey": "M:EZapi.DialogueApi.Close(System.String,System.String)"
+      "memberKey": "M:EZapi.DialogueApi.Close(System.String,System.String)",
+      "historicalVerification": {
+        "scope": "unqualified native flags from an older index; not current-DLL verification",
+        "recordedIndexBaseline": "0.1.73",
+        "claims": {
+          "runtimeGameplayVerified": true
+        },
+        "availability": "historical reports not distributed"
+      }
     },
     {
       "id": "EZapi.DialogueApi.Create",
@@ -212,9 +220,17 @@
       "example": "../src/EZapi.Sample/DialogueExamples.cs",
       "stability": "Preview",
       "signatureVerified": true,
-      "runtimeGameplayVerified": true,
+      "runtimeGameplayVerified": false,
       "assembly": "EZapi.dll",
-      "memberKey": "M:EZapi.DialogueApi.Create(System.String,EZapi.DialogueDefinition)"
+      "memberKey": "M:EZapi.DialogueApi.Create(System.String,EZapi.DialogueDefinition)",
+      "historicalVerification": {
+        "scope": "unqualified native flags from an older index; not current-DLL verification",
+        "recordedIndexBaseline": "0.1.73",
+        "claims": {
+          "runtimeGameplayVerified": true
+        },
+        "availability": "historical reports not distributed"
+      }
     },
     {
       "id": "EZapi.DialogueApi.GetRuntimeStatus",
@@ -226,9 +242,17 @@
       "example": "../src/EZapi.Sample/DialogueExamples.cs",
       "stability": "Preview",
       "signatureVerified": true,
-      "runtimeGameplayVerified": true,
+      "runtimeGameplayVerified": false,
       "assembly": "EZapi.dll",
-      "memberKey": "M:EZapi.DialogueApi.GetRuntimeStatus"
+      "memberKey": "M:EZapi.DialogueApi.GetRuntimeStatus",
+      "historicalVerification": {
+        "scope": "unqualified native flags from an older index; not current-DLL verification",
+        "recordedIndexBaseline": "0.1.73",
+        "claims": {
+          "runtimeGameplayVerified": true
+        },
+        "availability": "historical reports not distributed"
+      }
     },
     {
       "id": "EZapi.DialogueApi.Open",
@@ -271,9 +295,17 @@
       "example": "../src/EZapi.Sample/DialogueExamples.cs",
       "stability": "Preview",
       "signatureVerified": true,
-      "runtimeGameplayVerified": true,
+      "runtimeGameplayVerified": false,
       "assembly": "EZapi.dll",
-      "memberKey": "M:EZapi.DialogueApi.Open(System.String,System.String,System.String,System.Int32,EZapi.DialogueScript)"
+      "memberKey": "M:EZapi.DialogueApi.Open(System.String,System.String,System.String,System.Int32,EZapi.DialogueScript)",
+      "historicalVerification": {
+        "scope": "unqualified native flags from an older index; not current-DLL verification",
+        "recordedIndexBaseline": "0.1.73",
+        "claims": {
+          "runtimeGameplayVerified": true
+        },
+        "availability": "historical reports not distributed"
+      }
     },
     {
       "id": "EZapi.EffectApi.GetRuntimeStatus",
@@ -336,9 +368,17 @@
       "example": "../src/EZapi.Sample/ExternalPowerExamples.cs",
       "stability": "Preview",
       "signatureVerified": true,
-      "runtimeGameplayVerified": true,
+      "runtimeGameplayVerified": false,
       "assembly": "EZapi.dll",
-      "memberKey": "M:EZapi.ExternalPowerApi.GetEnergy(Il2Cpp.GameItem)"
+      "memberKey": "M:EZapi.ExternalPowerApi.GetEnergy(Il2Cpp.GameItem)",
+      "historicalVerification": {
+        "scope": "unqualified native flags from an older index; not current-DLL verification",
+        "recordedIndexBaseline": "0.1.73",
+        "claims": {
+          "runtimeGameplayVerified": true
+        },
+        "availability": "historical reports not distributed"
+      }
     },
     {
       "id": "EZapi.ExternalPowerApi.InitializeConnector",
@@ -349,9 +389,17 @@
       "example": "../src/EZapi.Sample/ExternalPowerExamples.cs",
       "stability": "Preview",
       "signatureVerified": true,
-      "runtimeGameplayVerified": true,
+      "runtimeGameplayVerified": false,
       "assembly": "EZapi.dll",
-      "memberKey": "M:EZapi.ExternalPowerApi.InitializeConnector(Il2Cpp.GameItem)"
+      "memberKey": "M:EZapi.ExternalPowerApi.InitializeConnector(Il2Cpp.GameItem)",
+      "historicalVerification": {
+        "scope": "unqualified native flags from an older index; not current-DLL verification",
+        "recordedIndexBaseline": "0.1.73",
+        "claims": {
+          "runtimeGameplayVerified": true
+        },
+        "availability": "historical reports not distributed"
+      }
     },
     {
       "id": "EZapi.ExternalPowerApi.IsAvailable",
@@ -360,8 +408,16 @@
       "result": "twelve exact required hooks ready; native furnace supported within documented boundary",
       "stability": "Preview",
       "signatureVerified": true,
-      "runtimeGameplayVerified": true,
-      "assembly": "EZapi.dll"
+      "runtimeGameplayVerified": false,
+      "assembly": "EZapi.dll",
+      "historicalVerification": {
+        "scope": "unqualified native flags from an older index; not current-DLL verification",
+        "recordedIndexBaseline": "0.1.73",
+        "claims": {
+          "runtimeGameplayVerified": true
+        },
+        "availability": "historical reports not distributed"
+      }
     },
     {
       "id": "EZapi.ExternalPowerApi.IsConnected",
@@ -372,9 +428,17 @@
       "example": "../src/EZapi.Sample/ExternalPowerExamples.cs",
       "stability": "Preview",
       "signatureVerified": true,
-      "runtimeGameplayVerified": true,
+      "runtimeGameplayVerified": false,
       "assembly": "EZapi.dll",
-      "memberKey": "M:EZapi.ExternalPowerApi.IsConnected(Il2Cpp.GameItem)"
+      "memberKey": "M:EZapi.ExternalPowerApi.IsConnected(Il2Cpp.GameItem)",
+      "historicalVerification": {
+        "scope": "unqualified native flags from an older index; not current-DLL verification",
+        "recordedIndexBaseline": "0.1.73",
+        "claims": {
+          "runtimeGameplayVerified": true
+        },
+        "availability": "historical reports not distributed"
+      }
     },
     {
       "id": "EZapi.ExternalPowerApi.IsConnector",
@@ -385,9 +449,17 @@
       "example": "../src/EZapi.Sample/ExternalPowerExamples.cs",
       "stability": "Preview",
       "signatureVerified": true,
-      "runtimeGameplayVerified": true,
+      "runtimeGameplayVerified": false,
       "assembly": "EZapi.dll",
-      "memberKey": "M:EZapi.ExternalPowerApi.IsConnector(Il2Cpp.GameItem)"
+      "memberKey": "M:EZapi.ExternalPowerApi.IsConnector(Il2Cpp.GameItem)",
+      "historicalVerification": {
+        "scope": "unqualified native flags from an older index; not current-DLL verification",
+        "recordedIndexBaseline": "0.1.73",
+        "claims": {
+          "runtimeGameplayVerified": true
+        },
+        "availability": "historical reports not distributed"
+      }
     },
     {
       "id": "EZapi.ExternalPowerApi.Register",
@@ -398,7 +470,7 @@
       "example": "../src/EZapi.Sample/ExternalPowerExamples.cs",
       "stability": "Preview",
       "signatureVerified": true,
-      "runtimeGameplayVerified": true,
+      "runtimeGameplayVerified": false,
       "assembly": "EZapi.dll",
       "overloads": [
         "System.IDisposable EZapi.ExternalPowerApi::Register(System.String,System.String,System.Func`2<Il2Cpp.GameItem,System.Int32>,System.Func`4<Il2Cpp.GameItem,Il2Cpp.GameItem,System.Int32,EZapi.IPowerTransaction>)",
@@ -436,7 +508,19 @@
           "defaultValue": null
         }
       ],
-      "evidence": "verification/furnace-contents-native-0.1.67.json"
+      "historicalEvidence": {
+        "identifier": "verification/furnace-contents-native-0.1.67.json",
+        "availability": "not-distributed",
+        "currentDllEvidence": false
+      },
+      "historicalVerification": {
+        "scope": "unqualified native flags from an older index; not current-DLL verification",
+        "recordedIndexBaseline": "0.1.73",
+        "claims": {
+          "runtimeGameplayVerified": true
+        },
+        "availability": "historical reports not distributed"
+      }
     },
     {
       "id": "EZapi.FrameworkInfo.GetCapabilities",
@@ -567,9 +651,17 @@
       "example": "../src/EZapi.Sample/ExternalPowerExamples.cs",
       "stability": "Preview",
       "signatureVerified": true,
-      "runtimeGameplayVerified": true,
+      "runtimeGameplayVerified": false,
       "assembly": "EZapi.dll",
-      "memberKey": "M:EZapi.IPowerTransaction.Debit"
+      "memberKey": "M:EZapi.IPowerTransaction.Debit",
+      "historicalVerification": {
+        "scope": "unqualified native flags from an older index; not current-DLL verification",
+        "recordedIndexBaseline": "0.1.73",
+        "claims": {
+          "runtimeGameplayVerified": true
+        },
+        "availability": "historical reports not distributed"
+      }
     },
     {
       "id": "EZapi.IPowerTransaction.Fault",
@@ -580,9 +672,17 @@
       "example": "../src/EZapi.Sample/ExternalPowerExamples.cs",
       "stability": "Preview",
       "signatureVerified": true,
-      "runtimeGameplayVerified": true,
+      "runtimeGameplayVerified": false,
       "assembly": "EZapi.dll",
-      "memberKey": "M:EZapi.IPowerTransaction.Fault(System.String)"
+      "memberKey": "M:EZapi.IPowerTransaction.Fault(System.String)",
+      "historicalVerification": {
+        "scope": "unqualified native flags from an older index; not current-DLL verification",
+        "recordedIndexBaseline": "0.1.73",
+        "claims": {
+          "runtimeGameplayVerified": true
+        },
+        "availability": "historical reports not distributed"
+      }
     },
     {
       "id": "EZapi.IPowerTransaction.Restore",
@@ -593,9 +693,17 @@
       "example": "../src/EZapi.Sample/ExternalPowerExamples.cs",
       "stability": "Preview",
       "signatureVerified": true,
-      "runtimeGameplayVerified": true,
+      "runtimeGameplayVerified": false,
       "assembly": "EZapi.dll",
-      "memberKey": "M:EZapi.IPowerTransaction.Restore"
+      "memberKey": "M:EZapi.IPowerTransaction.Restore",
+      "historicalVerification": {
+        "scope": "unqualified native flags from an older index; not current-DLL verification",
+        "recordedIndexBaseline": "0.1.73",
+        "claims": {
+          "runtimeGameplayVerified": true
+        },
+        "availability": "historical reports not distributed"
+      }
     },
     {
       "id": "EZapi.IPowerTransaction.Validate",
@@ -606,9 +714,17 @@
       "example": "../src/EZapi.Sample/ExternalPowerExamples.cs",
       "stability": "Preview",
       "signatureVerified": true,
-      "runtimeGameplayVerified": true,
+      "runtimeGameplayVerified": false,
       "assembly": "EZapi.dll",
-      "memberKey": "M:EZapi.IPowerTransaction.Validate"
+      "memberKey": "M:EZapi.IPowerTransaction.Validate",
+      "historicalVerification": {
+        "scope": "unqualified native flags from an older index; not current-DLL verification",
+        "recordedIndexBaseline": "0.1.73",
+        "claims": {
+          "runtimeGameplayVerified": true
+        },
+        "availability": "historical reports not distributed"
+      }
     },
     {
       "id": "EZapi.IPowerTransaction.Verify",
@@ -619,9 +735,17 @@
       "example": "../src/EZapi.Sample/ExternalPowerExamples.cs",
       "stability": "Preview",
       "signatureVerified": true,
-      "runtimeGameplayVerified": true,
+      "runtimeGameplayVerified": false,
       "assembly": "EZapi.dll",
-      "memberKey": "M:EZapi.IPowerTransaction.Verify"
+      "memberKey": "M:EZapi.IPowerTransaction.Verify",
+      "historicalVerification": {
+        "scope": "unqualified native flags from an older index; not current-DLL verification",
+        "recordedIndexBaseline": "0.1.73",
+        "claims": {
+          "runtimeGameplayVerified": true
+        },
+        "availability": "historical reports not distributed"
+      }
     },
     {
       "id": "EZapi.InventoryAdmissionApi.IsAvailable",
@@ -735,11 +859,23 @@
       "reference": "inventory-endpoints.zh-CN.md",
       "stability": "Preview",
       "signatureVerified": true,
-      "runtimeGameplayVerified": true,
+      "runtimeGameplayVerified": false,
       "assembly": "EZapi.dll",
-      "evidence": "verification/endpoint-lifecycle-0.1.53.json",
+      "historicalEvidence": {
+        "identifier": "verification/endpoint-lifecycle-0.1.53.json",
+        "availability": "not-distributed",
+        "currentDllEvidence": false
+      },
       "verifiedScope": "050REV5-L slot534: native nightly save, new-process restore, outside commissary/return, held/released drag, Store/Take, deletion and new-process missing; native charging and isolated furniture filter. No lobby or real-raid acceptance claim.",
-      "memberKey": "M:EZapi.InventoryEndpointApi.CaptureContents(EZapi.InventoryEndpoint,System.Boolean)"
+      "memberKey": "M:EZapi.InventoryEndpointApi.CaptureContents(EZapi.InventoryEndpoint,System.Boolean)",
+      "historicalVerification": {
+        "scope": "unqualified native flags from an older index; not current-DLL verification",
+        "recordedIndexBaseline": "0.1.73",
+        "claims": {
+          "runtimeGameplayVerified": true
+        },
+        "availability": "historical reports not distributed"
+      }
     },
     {
       "id": "EZapi.InventoryEndpointApi.Delete",
@@ -751,11 +887,23 @@
       "reference": "inventory-endpoints.zh-CN.md",
       "stability": "Preview",
       "signatureVerified": true,
-      "runtimeGameplayVerified": true,
+      "runtimeGameplayVerified": false,
       "assembly": "EZapi.dll",
-      "evidence": "verification/endpoint-lifecycle-0.1.53.json",
+      "historicalEvidence": {
+        "identifier": "verification/endpoint-lifecycle-0.1.53.json",
+        "availability": "not-distributed",
+        "currentDllEvidence": false
+      },
       "verifiedScope": "050REV5-L slot534: native nightly save, new-process restore, outside commissary/return, held/released drag, Store/Take, deletion and new-process missing; native charging and isolated furniture filter. No lobby or real-raid acceptance claim.",
-      "memberKey": "M:EZapi.InventoryEndpointApi.Delete(System.String,System.String)"
+      "memberKey": "M:EZapi.InventoryEndpointApi.Delete(System.String,System.String)",
+      "historicalVerification": {
+        "scope": "unqualified native flags from an older index; not current-DLL verification",
+        "recordedIndexBaseline": "0.1.73",
+        "claims": {
+          "runtimeGameplayVerified": true
+        },
+        "availability": "historical reports not distributed"
+      }
     },
     {
       "id": "EZapi.InventoryEndpointApi.Error",
@@ -766,10 +914,22 @@
       "reference": "inventory-endpoints.zh-CN.md",
       "stability": "Preview",
       "signatureVerified": true,
-      "runtimeGameplayVerified": true,
+      "runtimeGameplayVerified": false,
       "assembly": "EZapi.dll",
-      "evidence": "verification/endpoint-lifecycle-0.1.53.json",
-      "verifiedScope": "050REV5-L slot534: native nightly save, new-process restore, outside commissary/return, held/released drag, Store/Take, deletion and new-process missing; native charging and isolated furniture filter. No lobby or real-raid acceptance claim."
+      "historicalEvidence": {
+        "identifier": "verification/endpoint-lifecycle-0.1.53.json",
+        "availability": "not-distributed",
+        "currentDllEvidence": false
+      },
+      "verifiedScope": "050REV5-L slot534: native nightly save, new-process restore, outside commissary/return, held/released drag, Store/Take, deletion and new-process missing; native charging and isolated furniture filter. No lobby or real-raid acceptance claim.",
+      "historicalVerification": {
+        "scope": "unqualified native flags from an older index; not current-DLL verification",
+        "recordedIndexBaseline": "0.1.73",
+        "claims": {
+          "runtimeGameplayVerified": true
+        },
+        "availability": "historical reports not distributed"
+      }
     },
     {
       "id": "EZapi.InventoryEndpointApi.IsAvailable",
@@ -780,10 +940,22 @@
       "reference": "inventory-endpoints.zh-CN.md",
       "stability": "Preview",
       "signatureVerified": true,
-      "runtimeGameplayVerified": true,
+      "runtimeGameplayVerified": false,
       "assembly": "EZapi.dll",
-      "evidence": "verification/endpoint-lifecycle-0.1.53.json",
-      "verifiedScope": "050REV5-L slot534: native nightly save, new-process restore, outside commissary/return, held/released drag, Store/Take, deletion and new-process missing; native charging and isolated furniture filter. No lobby or real-raid acceptance claim."
+      "historicalEvidence": {
+        "identifier": "verification/endpoint-lifecycle-0.1.53.json",
+        "availability": "not-distributed",
+        "currentDllEvidence": false
+      },
+      "verifiedScope": "050REV5-L slot534: native nightly save, new-process restore, outside commissary/return, held/released drag, Store/Take, deletion and new-process missing; native charging and isolated furniture filter. No lobby or real-raid acceptance claim.",
+      "historicalVerification": {
+        "scope": "unqualified native flags from an older index; not current-DLL verification",
+        "recordedIndexBaseline": "0.1.73",
+        "claims": {
+          "runtimeGameplayVerified": true
+        },
+        "availability": "historical reports not distributed"
+      }
     },
     {
       "id": "EZapi.InventoryEndpointApi.Open",
@@ -794,11 +966,23 @@
       "example": "../src/EZapi.Sample/InventoryExamples.cs",
       "stability": "Preview",
       "signatureVerified": true,
-      "runtimeGameplayVerified": true,
+      "runtimeGameplayVerified": false,
       "assembly": "EZapi.dll",
-      "evidence": "verification/endpoint-lifecycle-0.1.53.json",
+      "historicalEvidence": {
+        "identifier": "verification/endpoint-lifecycle-0.1.53.json",
+        "availability": "not-distributed",
+        "currentDllEvidence": false
+      },
       "verifiedScope": "050REV5-L slot534: native nightly save, new-process restore, outside commissary/return, held/released drag, Store/Take, deletion and new-process missing; native charging and isolated furniture filter. No lobby or real-raid acceptance claim.",
-      "memberKey": "M:EZapi.InventoryEndpointApi.Open(Il2Cpp.PlayerStore,System.String,System.String,System.String,System.Boolean,System.Boolean)"
+      "memberKey": "M:EZapi.InventoryEndpointApi.Open(Il2Cpp.PlayerStore,System.String,System.String,System.String,System.Boolean,System.Boolean)",
+      "historicalVerification": {
+        "scope": "unqualified native flags from an older index; not current-DLL verification",
+        "recordedIndexBaseline": "0.1.73",
+        "claims": {
+          "runtimeGameplayVerified": true
+        },
+        "availability": "historical reports not distributed"
+      }
     },
     {
       "id": "EZapi.InventoryEndpointApi.SaveError",
@@ -809,10 +993,22 @@
       "reference": "inventory-endpoints.zh-CN.md",
       "stability": "Preview",
       "signatureVerified": true,
-      "runtimeGameplayVerified": true,
+      "runtimeGameplayVerified": false,
       "assembly": "EZapi.dll",
-      "evidence": "verification/endpoint-lifecycle-0.1.53.json",
-      "verifiedScope": "050REV5-L slot534: native nightly save, new-process restore, outside commissary/return, held/released drag, Store/Take, deletion and new-process missing; native charging and isolated furniture filter. No lobby or real-raid acceptance claim."
+      "historicalEvidence": {
+        "identifier": "verification/endpoint-lifecycle-0.1.53.json",
+        "availability": "not-distributed",
+        "currentDllEvidence": false
+      },
+      "verifiedScope": "050REV5-L slot534: native nightly save, new-process restore, outside commissary/return, held/released drag, Store/Take, deletion and new-process missing; native charging and isolated furniture filter. No lobby or real-raid acceptance claim.",
+      "historicalVerification": {
+        "scope": "unqualified native flags from an older index; not current-DLL verification",
+        "recordedIndexBaseline": "0.1.73",
+        "claims": {
+          "runtimeGameplayVerified": true
+        },
+        "availability": "historical reports not distributed"
+      }
     },
     {
       "id": "EZapi.InventoryEndpointApi.Snapshot",
@@ -824,11 +1020,23 @@
       "reference": "inventory-endpoints.zh-CN.md",
       "stability": "Preview",
       "signatureVerified": true,
-      "runtimeGameplayVerified": true,
+      "runtimeGameplayVerified": false,
       "assembly": "EZapi.dll",
-      "evidence": "verification/endpoint-lifecycle-0.1.53.json",
+      "historicalEvidence": {
+        "identifier": "verification/endpoint-lifecycle-0.1.53.json",
+        "availability": "not-distributed",
+        "currentDllEvidence": false
+      },
       "verifiedScope": "050REV5-L slot534: native nightly save, new-process restore, outside commissary/return, held/released drag, Store/Take, deletion and new-process missing; native charging and isolated furniture filter. No lobby or real-raid acceptance claim.",
-      "memberKey": "M:EZapi.InventoryEndpointApi.Snapshot"
+      "memberKey": "M:EZapi.InventoryEndpointApi.Snapshot",
+      "historicalVerification": {
+        "scope": "unqualified native flags from an older index; not current-DLL verification",
+        "recordedIndexBaseline": "0.1.73",
+        "claims": {
+          "runtimeGameplayVerified": true
+        },
+        "availability": "historical reports not distributed"
+      }
     },
     {
       "id": "EZapi.InventoryEndpointApi.Store",
@@ -840,11 +1048,23 @@
       "reference": "inventory-endpoints.zh-CN.md",
       "stability": "Preview",
       "signatureVerified": true,
-      "runtimeGameplayVerified": true,
+      "runtimeGameplayVerified": false,
       "assembly": "EZapi.dll",
-      "evidence": "verification/endpoint-lifecycle-0.1.53.json",
+      "historicalEvidence": {
+        "identifier": "verification/endpoint-lifecycle-0.1.53.json",
+        "availability": "not-distributed",
+        "currentDllEvidence": false
+      },
       "verifiedScope": "050REV5-L slot534: native nightly save, new-process restore, outside commissary/return, held/released drag, Store/Take, deletion and new-process missing; native charging and isolated furniture filter. No lobby or real-raid acceptance claim.",
-      "memberKey": "M:EZapi.InventoryEndpointApi.Store(EZapi.InventoryEndpoint,Il2Cpp.GameItem,System.Int32)"
+      "memberKey": "M:EZapi.InventoryEndpointApi.Store(EZapi.InventoryEndpoint,Il2Cpp.GameItem,System.Int32)",
+      "historicalVerification": {
+        "scope": "unqualified native flags from an older index; not current-DLL verification",
+        "recordedIndexBaseline": "0.1.73",
+        "claims": {
+          "runtimeGameplayVerified": true
+        },
+        "availability": "historical reports not distributed"
+      }
     },
     {
       "id": "EZapi.InventoryEndpointApi.Take",
@@ -856,11 +1076,23 @@
       "reference": "inventory-endpoints.zh-CN.md",
       "stability": "Preview",
       "signatureVerified": true,
-      "runtimeGameplayVerified": true,
+      "runtimeGameplayVerified": false,
       "assembly": "EZapi.dll",
-      "evidence": "verification/endpoint-lifecycle-0.1.53.json",
+      "historicalEvidence": {
+        "identifier": "verification/endpoint-lifecycle-0.1.53.json",
+        "availability": "not-distributed",
+        "currentDllEvidence": false
+      },
       "verifiedScope": "050REV5-L slot534: native nightly save, new-process restore, outside commissary/return, held/released drag, Store/Take, deletion and new-process missing; native charging and isolated furniture filter. No lobby or real-raid acceptance claim.",
-      "memberKey": "M:EZapi.InventoryEndpointApi.Take(EZapi.InventoryEndpoint,Il2Cpp.GameItem,Il2Cpp.GameGridInventory,System.Int32)"
+      "memberKey": "M:EZapi.InventoryEndpointApi.Take(EZapi.InventoryEndpoint,Il2Cpp.GameItem,Il2Cpp.GameGridInventory,System.Int32)",
+      "historicalVerification": {
+        "scope": "unqualified native flags from an older index; not current-DLL verification",
+        "recordedIndexBaseline": "0.1.73",
+        "claims": {
+          "runtimeGameplayVerified": true
+        },
+        "availability": "historical reports not distributed"
+      }
     },
     {
       "id": "EZapi.InventoryEndpointApi.UnavailableReason",
@@ -871,10 +1103,22 @@
       "reference": "inventory-endpoints.zh-CN.md",
       "stability": "Preview",
       "signatureVerified": true,
-      "runtimeGameplayVerified": true,
+      "runtimeGameplayVerified": false,
       "assembly": "EZapi.dll",
-      "evidence": "verification/endpoint-lifecycle-0.1.53.json",
-      "verifiedScope": "050REV5-L slot534: native nightly save, new-process restore, outside commissary/return, held/released drag, Store/Take, deletion and new-process missing; native charging and isolated furniture filter. No lobby or real-raid acceptance claim."
+      "historicalEvidence": {
+        "identifier": "verification/endpoint-lifecycle-0.1.53.json",
+        "availability": "not-distributed",
+        "currentDllEvidence": false
+      },
+      "verifiedScope": "050REV5-L slot534: native nightly save, new-process restore, outside commissary/return, held/released drag, Store/Take, deletion and new-process missing; native charging and isolated furniture filter. No lobby or real-raid acceptance claim.",
+      "historicalVerification": {
+        "scope": "unqualified native flags from an older index; not current-DLL verification",
+        "recordedIndexBaseline": "0.1.73",
+        "claims": {
+          "runtimeGameplayVerified": true
+        },
+        "availability": "historical reports not distributed"
+      }
     },
     {
       "id": "EZapi.InventoryFreezeApi.IsAvailable",
@@ -1134,11 +1378,23 @@
       "phase": "当前周目主线程同步回调；纯托管Transactions只要求初始化主线程",
       "stability": "Preview",
       "signatureVerified": true,
-      "runtimeGameplayVerified": true,
+      "runtimeGameplayVerified": false,
       "assembly": "EZapi.dll",
       "semantics": "Positive stack count allowed; native current per-unit value includes children/features/native events; no split or count write",
-      "evidence": "verification/item-inspection-native-0.1.49.json",
-      "memberKey": "M:EZapi.ItemInspection.CurrentUnitValue(Il2Cpp.GameItem)"
+      "historicalEvidence": {
+        "identifier": "verification/item-inspection-native-0.1.49.json",
+        "availability": "not-distributed",
+        "currentDllEvidence": false
+      },
+      "memberKey": "M:EZapi.ItemInspection.CurrentUnitValue(Il2Cpp.GameItem)",
+      "historicalVerification": {
+        "scope": "unqualified native flags from an older index; not current-DLL verification",
+        "recordedIndexBaseline": "0.1.73",
+        "claims": {
+          "runtimeGameplayVerified": true
+        },
+        "availability": "historical reports not distributed"
+      }
     },
     {
       "id": "EZapi.ItemRegistry.GetStatus",
@@ -1704,10 +1960,18 @@
       "result": "See machine-automation.zh-CN.md; retain/dispose subscriptions; no auto-save.",
       "stability": "Preview",
       "signatureVerified": true,
-      "runtimeGameplayVerified": true,
+      "runtimeGameplayVerified": false,
       "assembly": "EZapi.dll",
       "guide": "machine-automation.zh-CN.md",
-      "memberKey": "M:EZapi.MachineAutomationApi.Recipes(System.String)"
+      "memberKey": "M:EZapi.MachineAutomationApi.Recipes(System.String)",
+      "historicalVerification": {
+        "scope": "unqualified native flags from an older index; not current-DLL verification",
+        "recordedIndexBaseline": "0.1.73",
+        "claims": {
+          "runtimeGameplayVerified": true
+        },
+        "availability": "historical reports not distributed"
+      }
     },
     {
       "id": "EZapi.MachineAutomationApi.RegisteredRecipes",
@@ -1716,10 +1980,18 @@
       "result": "See machine-automation.zh-CN.md; retain/dispose subscriptions; no auto-save.",
       "stability": "Preview",
       "signatureVerified": true,
-      "runtimeGameplayVerified": true,
+      "runtimeGameplayVerified": false,
       "assembly": "EZapi.dll",
       "guide": "machine-automation.zh-CN.md",
-      "memberKey": "M:EZapi.MachineAutomationApi.RegisteredRecipes(System.String)"
+      "memberKey": "M:EZapi.MachineAutomationApi.RegisteredRecipes(System.String)",
+      "historicalVerification": {
+        "scope": "unqualified native flags from an older index; not current-DLL verification",
+        "recordedIndexBaseline": "0.1.73",
+        "claims": {
+          "runtimeGameplayVerified": true
+        },
+        "availability": "historical reports not distributed"
+      }
     },
     {
       "id": "EZapi.MachineAutomationApi.Subscribe",
@@ -1728,10 +2000,18 @@
       "result": "See machine-automation.zh-CN.md; retain/dispose subscriptions; no auto-save.",
       "stability": "Preview",
       "signatureVerified": true,
-      "runtimeGameplayVerified": true,
+      "runtimeGameplayVerified": false,
       "assembly": "EZapi.dll",
       "guide": "machine-automation.zh-CN.md",
-      "memberKey": "M:EZapi.MachineAutomationApi.Subscribe(System.String,System.String,EZapi.MachineAutomationPhase,System.Action{EZapi.MachineAutomationContext},System.Int32)"
+      "memberKey": "M:EZapi.MachineAutomationApi.Subscribe(System.String,System.String,EZapi.MachineAutomationPhase,System.Action{EZapi.MachineAutomationContext},System.Int32)",
+      "historicalVerification": {
+        "scope": "unqualified native flags from an older index; not current-DLL verification",
+        "recordedIndexBaseline": "0.1.73",
+        "claims": {
+          "runtimeGameplayVerified": true
+        },
+        "availability": "historical reports not distributed"
+      }
     },
     {
       "id": "EZapi.MachineLayoutApi.Create",
@@ -1790,10 +2070,18 @@
       "result": "See machine-registration.zh-CN.md and machine-automation.zh-CN.md; unified registration uses optional bounded nightly dispatch, no auto-save.",
       "stability": "Preview",
       "signatureVerified": true,
-      "runtimeGameplayVerified": true,
+      "runtimeGameplayVerified": false,
       "assembly": "EZapi.dll",
       "guide": "machine-recipes.zh-CN.md",
-      "memberKey": "M:EZapi.MachineRecipeApi.CreateBatchProcessor(System.String,System.String,System.Collections.Generic.IReadOnlyList{EZapi.MachineRecipe},EZapi.MachinePowerRule,System.Int32)"
+      "memberKey": "M:EZapi.MachineRecipeApi.CreateBatchProcessor(System.String,System.String,System.Collections.Generic.IReadOnlyList{EZapi.MachineRecipe},EZapi.MachinePowerRule,System.Int32)",
+      "historicalVerification": {
+        "scope": "unqualified native flags from an older index; not current-DLL verification",
+        "recordedIndexBaseline": "0.1.73",
+        "claims": {
+          "runtimeGameplayVerified": true
+        },
+        "availability": "historical reports not distributed"
+      }
     },
     {
       "id": "EZapi.MachineRecipeApi.InstallInputAdmission",
@@ -1802,10 +2090,18 @@
       "result": "See machine-registration.zh-CN.md and machine-automation.zh-CN.md; unified registration uses optional bounded nightly dispatch, no auto-save.",
       "stability": "Preview",
       "signatureVerified": true,
-      "runtimeGameplayVerified": true,
+      "runtimeGameplayVerified": false,
       "assembly": "EZapi.dll",
       "guide": "machine-recipes.zh-CN.md",
-      "memberKey": "M:EZapi.MachineRecipeApi.InstallInputAdmission(System.String,System.String)"
+      "memberKey": "M:EZapi.MachineRecipeApi.InstallInputAdmission(System.String,System.String)",
+      "historicalVerification": {
+        "scope": "unqualified native flags from an older index; not current-DLL verification",
+        "recordedIndexBaseline": "0.1.73",
+        "claims": {
+          "runtimeGameplayVerified": true
+        },
+        "availability": "historical reports not distributed"
+      }
     },
     {
       "id": "EZapi.MachineRecipeApi.ProcessBatch",
@@ -1814,10 +2110,18 @@
       "result": "See machine-registration.zh-CN.md and machine-automation.zh-CN.md; unified registration uses optional bounded nightly dispatch, no auto-save.",
       "stability": "Preview",
       "signatureVerified": true,
-      "runtimeGameplayVerified": true,
+      "runtimeGameplayVerified": false,
       "assembly": "EZapi.dll",
       "guide": "machine-recipes.zh-CN.md",
-      "memberKey": "M:EZapi.MachineRecipeApi.ProcessBatch(Il2Cpp.GameItem)"
+      "memberKey": "M:EZapi.MachineRecipeApi.ProcessBatch(Il2Cpp.GameItem)",
+      "historicalVerification": {
+        "scope": "unqualified native flags from an older index; not current-DLL verification",
+        "recordedIndexBaseline": "0.1.73",
+        "claims": {
+          "runtimeGameplayVerified": true
+        },
+        "availability": "historical reports not distributed"
+      }
     },
     {
       "id": "EZapi.MachineRecipeApi.RegisterRecipes",
@@ -1826,10 +2130,18 @@
       "result": "See machine-registration.zh-CN.md and machine-automation.zh-CN.md; unified registration uses optional bounded nightly dispatch, no auto-save.",
       "stability": "Preview",
       "signatureVerified": true,
-      "runtimeGameplayVerified": true,
+      "runtimeGameplayVerified": false,
       "assembly": "EZapi.dll",
       "guide": "machine-recipes.zh-CN.md",
-      "memberKey": "M:EZapi.MachineRecipeApi.RegisterRecipes(System.String,System.String,System.Collections.Generic.IReadOnlyList{EZapi.MachineRecipe},EZapi.MachinePowerRule,System.Int32)"
+      "memberKey": "M:EZapi.MachineRecipeApi.RegisterRecipes(System.String,System.String,System.Collections.Generic.IReadOnlyList{EZapi.MachineRecipe},EZapi.MachinePowerRule,System.Int32)",
+      "historicalVerification": {
+        "scope": "unqualified native flags from an older index; not current-DLL verification",
+        "recordedIndexBaseline": "0.1.73",
+        "claims": {
+          "runtimeGameplayVerified": true
+        },
+        "availability": "historical reports not distributed"
+      }
     },
     {
       "id": "EZapi.MachineRecipeApi.Snapshot",
@@ -1838,10 +2150,18 @@
       "result": "See machine-registration.zh-CN.md and machine-automation.zh-CN.md; unified registration uses optional bounded nightly dispatch, no auto-save.",
       "stability": "Preview",
       "signatureVerified": true,
-      "runtimeGameplayVerified": true,
+      "runtimeGameplayVerified": false,
       "assembly": "EZapi.dll",
       "guide": "machine-recipes.zh-CN.md",
-      "memberKey": "M:EZapi.MachineRecipeApi.Snapshot"
+      "memberKey": "M:EZapi.MachineRecipeApi.Snapshot",
+      "historicalVerification": {
+        "scope": "unqualified native flags from an older index; not current-DLL verification",
+        "recordedIndexBaseline": "0.1.73",
+        "claims": {
+          "runtimeGameplayVerified": true
+        },
+        "availability": "historical reports not distributed"
+      }
     },
     {
       "id": "EZapi.MachineRegistrationApi.ConfigureManufacturingTerminalMarkup",
@@ -1852,9 +2172,17 @@
       "example": "var r=MachineRegistrationApi.ConfigureManufacturingTerminalMarkup(\"author.tools\",25); if(!r.Accepted) throw new InvalidOperationException(r.Reason);",
       "stability": "Preview",
       "signatureVerified": true,
-      "runtimeGameplayVerified": true,
+      "runtimeGameplayVerified": false,
       "assembly": "EZapi.dll",
-      "memberKey": "M:EZapi.MachineRegistrationApi.ConfigureManufacturingTerminalMarkup(System.String,System.Int32)"
+      "memberKey": "M:EZapi.MachineRegistrationApi.ConfigureManufacturingTerminalMarkup(System.String,System.Int32)",
+      "historicalVerification": {
+        "scope": "unqualified native flags from an older index; not current-DLL verification",
+        "recordedIndexBaseline": "0.1.73",
+        "claims": {
+          "runtimeGameplayVerified": true
+        },
+        "availability": "historical reports not distributed"
+      }
     },
     {
       "id": "EZapi.MachineRegistrationApi.GuideSnapshot",
@@ -1863,10 +2191,18 @@
       "result": "See machine-registration.zh-CN.md and machine-automation.zh-CN.md; unified registration uses optional bounded nightly dispatch, no auto-save.",
       "stability": "Preview",
       "signatureVerified": true,
-      "runtimeGameplayVerified": true,
+      "runtimeGameplayVerified": false,
       "assembly": "EZapi.dll",
       "guide": "machine-registration.zh-CN.md",
-      "memberKey": "M:EZapi.MachineRegistrationApi.GuideSnapshot"
+      "memberKey": "M:EZapi.MachineRegistrationApi.GuideSnapshot",
+      "historicalVerification": {
+        "scope": "unqualified native flags from an older index; not current-DLL verification",
+        "recordedIndexBaseline": "0.1.73",
+        "claims": {
+          "runtimeGameplayVerified": true
+        },
+        "availability": "historical reports not distributed"
+      }
     },
     {
       "id": "EZapi.MachineRegistrationApi.Recipes",
@@ -1875,10 +2211,18 @@
       "result": "See machine-registration.zh-CN.md and machine-automation.zh-CN.md; unified registration uses optional bounded nightly dispatch, no auto-save.",
       "stability": "Preview",
       "signatureVerified": true,
-      "runtimeGameplayVerified": true,
+      "runtimeGameplayVerified": false,
       "assembly": "EZapi.dll",
       "guide": "machine-registration.zh-CN.md",
-      "memberKey": "M:EZapi.MachineRegistrationApi.Recipes(System.String)"
+      "memberKey": "M:EZapi.MachineRegistrationApi.Recipes(System.String)",
+      "historicalVerification": {
+        "scope": "unqualified native flags from an older index; not current-DLL verification",
+        "recordedIndexBaseline": "0.1.73",
+        "claims": {
+          "runtimeGameplayVerified": true
+        },
+        "availability": "historical reports not distributed"
+      }
     },
     {
       "id": "EZapi.MachineRegistrationApi.RegisterAdditionalRecipes",
@@ -1887,10 +2231,18 @@
       "result": "See machine-registration.zh-CN.md and machine-automation.zh-CN.md; unified registration uses optional bounded nightly dispatch, no auto-save.",
       "stability": "Preview",
       "signatureVerified": true,
-      "runtimeGameplayVerified": true,
+      "runtimeGameplayVerified": false,
       "assembly": "EZapi.dll",
       "guide": "machine-registration.zh-CN.md",
-      "memberKey": "M:EZapi.MachineRegistrationApi.RegisterAdditionalRecipes(System.String,System.String,System.Collections.Generic.IReadOnlyList{EZapi.MachineRecipe})"
+      "memberKey": "M:EZapi.MachineRegistrationApi.RegisterAdditionalRecipes(System.String,System.String,System.Collections.Generic.IReadOnlyList{EZapi.MachineRecipe})",
+      "historicalVerification": {
+        "scope": "unqualified native flags from an older index; not current-DLL verification",
+        "recordedIndexBaseline": "0.1.73",
+        "claims": {
+          "runtimeGameplayVerified": true
+        },
+        "availability": "historical reports not distributed"
+      }
     },
     {
       "id": "EZapi.MachineRegistrationApi.RegisterMachine",
@@ -1899,10 +2251,18 @@
       "result": "See machine-registration.zh-CN.md and machine-automation.zh-CN.md; unified registration uses optional bounded nightly dispatch, no auto-save.",
       "stability": "Preview",
       "signatureVerified": true,
-      "runtimeGameplayVerified": true,
+      "runtimeGameplayVerified": false,
       "assembly": "EZapi.dll",
       "guide": "machine-registration.zh-CN.md",
-      "memberKey": "M:EZapi.MachineRegistrationApi.RegisterMachine(System.String,EZapi.MachineDefinition)"
+      "memberKey": "M:EZapi.MachineRegistrationApi.RegisterMachine(System.String,EZapi.MachineDefinition)",
+      "historicalVerification": {
+        "scope": "unqualified native flags from an older index; not current-DLL verification",
+        "recordedIndexBaseline": "0.1.73",
+        "claims": {
+          "runtimeGameplayVerified": true
+        },
+        "availability": "historical reports not distributed"
+      }
     },
     {
       "id": "EZapi.MachineRegistrationApi.RegisteredRecipes",
@@ -1911,10 +2271,18 @@
       "result": "See machine-registration.zh-CN.md and machine-automation.zh-CN.md; unified registration uses optional bounded nightly dispatch, no auto-save.",
       "stability": "Preview",
       "signatureVerified": true,
-      "runtimeGameplayVerified": true,
+      "runtimeGameplayVerified": false,
       "assembly": "EZapi.dll",
       "guide": "machine-registration.zh-CN.md",
-      "memberKey": "M:EZapi.MachineRegistrationApi.RegisteredRecipes(System.String)"
+      "memberKey": "M:EZapi.MachineRegistrationApi.RegisteredRecipes(System.String)",
+      "historicalVerification": {
+        "scope": "unqualified native flags from an older index; not current-DLL verification",
+        "recordedIndexBaseline": "0.1.73",
+        "claims": {
+          "runtimeGameplayVerified": true
+        },
+        "availability": "historical reports not distributed"
+      }
     },
     {
       "id": "EZapi.MachineRegistrationApi.Snapshot",
@@ -1923,10 +2291,18 @@
       "result": "See machine-registration.zh-CN.md and machine-automation.zh-CN.md; unified registration uses optional bounded nightly dispatch, no auto-save.",
       "stability": "Preview",
       "signatureVerified": true,
-      "runtimeGameplayVerified": true,
+      "runtimeGameplayVerified": false,
       "assembly": "EZapi.dll",
       "guide": "machine-registration.zh-CN.md",
-      "memberKey": "M:EZapi.MachineRegistrationApi.Snapshot"
+      "memberKey": "M:EZapi.MachineRegistrationApi.Snapshot",
+      "historicalVerification": {
+        "scope": "unqualified native flags from an older index; not current-DLL verification",
+        "recordedIndexBaseline": "0.1.73",
+        "claims": {
+          "runtimeGameplayVerified": true
+        },
+        "availability": "historical reports not distributed"
+      }
     },
     {
       "id": "EZapi.MachineRuntimeApi.CreateBatchProcessor",
@@ -1935,10 +2311,18 @@
       "result": "See machine-automation.zh-CN.md; retain/dispose subscriptions; no auto-save.",
       "stability": "Preview",
       "signatureVerified": true,
-      "runtimeGameplayVerified": true,
+      "runtimeGameplayVerified": false,
       "assembly": "EZapi.dll",
       "guide": "machine-automation.zh-CN.md",
-      "memberKey": "M:EZapi.MachineRuntimeApi.CreateBatchProcessor(System.String,EZapi.MachineDefinition)"
+      "memberKey": "M:EZapi.MachineRuntimeApi.CreateBatchProcessor(System.String,EZapi.MachineDefinition)",
+      "historicalVerification": {
+        "scope": "unqualified native flags from an older index; not current-DLL verification",
+        "recordedIndexBaseline": "0.1.73",
+        "claims": {
+          "runtimeGameplayVerified": true
+        },
+        "availability": "historical reports not distributed"
+      }
     },
     {
       "id": "EZapi.MachineRuntimeApi.ProcessBatch",
@@ -1947,10 +2331,18 @@
       "result": "See machine-automation.zh-CN.md; retain/dispose subscriptions; no auto-save.",
       "stability": "Preview",
       "signatureVerified": true,
-      "runtimeGameplayVerified": true,
+      "runtimeGameplayVerified": false,
       "assembly": "EZapi.dll",
       "guide": "machine-automation.zh-CN.md",
-      "memberKey": "M:EZapi.MachineRuntimeApi.ProcessBatch(Il2Cpp.GameItem)"
+      "memberKey": "M:EZapi.MachineRuntimeApi.ProcessBatch(Il2Cpp.GameItem)",
+      "historicalVerification": {
+        "scope": "unqualified native flags from an older index; not current-DLL verification",
+        "recordedIndexBaseline": "0.1.73",
+        "claims": {
+          "runtimeGameplayVerified": true
+        },
+        "availability": "historical reports not distributed"
+      }
     },
     {
       "id": "EZapi.MachineRuntimeApi.TryGetInventory",
@@ -1959,10 +2351,18 @@
       "result": "See machine-automation.zh-CN.md; retain/dispose subscriptions; no auto-save.",
       "stability": "Preview",
       "signatureVerified": true,
-      "runtimeGameplayVerified": true,
+      "runtimeGameplayVerified": false,
       "assembly": "EZapi.dll",
       "guide": "machine-automation.zh-CN.md",
-      "memberKey": "M:EZapi.MachineRuntimeApi.TryGetInventory(Il2Cpp.GameItem,EZapi.MachineInventory@)"
+      "memberKey": "M:EZapi.MachineRuntimeApi.TryGetInventory(Il2Cpp.GameItem,EZapi.MachineInventory@)",
+      "historicalVerification": {
+        "scope": "unqualified native flags from an older index; not current-DLL verification",
+        "recordedIndexBaseline": "0.1.73",
+        "claims": {
+          "runtimeGameplayVerified": true
+        },
+        "availability": "historical reports not distributed"
+      }
     },
     {
       "id": "EZapi.MachineTransactionApi.Run",
@@ -1985,10 +2385,18 @@
       "example": "var config=ManufacturingTerminal.Snapshot();",
       "stability": "Preview",
       "signatureVerified": true,
-      "runtimeGameplayVerified": true,
+      "runtimeGameplayVerified": false,
       "assembly": "EZapi.dll",
       "parameters": [],
-      "memberKey": "M:EZapi.ManufacturingTerminal.Snapshot"
+      "memberKey": "M:EZapi.ManufacturingTerminal.Snapshot",
+      "historicalVerification": {
+        "scope": "unqualified native flags from an older index; not current-DLL verification",
+        "recordedIndexBaseline": "0.1.73",
+        "claims": {
+          "runtimeGameplayVerified": true
+        },
+        "availability": "historical reports not distributed"
+      }
     },
     {
       "id": "EZapi.ModuleApi.FindInstalled",
@@ -2117,9 +2525,17 @@
       "example": "../src/EZapi.Sample/PhoneExamples.cs",
       "stability": "Preview",
       "signatureVerified": true,
-      "runtimeGameplayVerified": true,
+      "runtimeGameplayVerified": false,
       "assembly": "EZapi.dll",
-      "memberKey": "M:EZapi.PhoneApi.GetRuntimeStatus"
+      "memberKey": "M:EZapi.PhoneApi.GetRuntimeStatus",
+      "historicalVerification": {
+        "scope": "unqualified native flags from an older index; not current-DLL verification",
+        "recordedIndexBaseline": "0.1.73",
+        "claims": {
+          "runtimeGameplayVerified": true
+        },
+        "availability": "historical reports not distributed"
+      }
     },
     {
       "id": "EZapi.PhoneApi.Register",
@@ -2144,9 +2560,17 @@
       "example": "../src/EZapi.Sample/PhoneExamples.cs",
       "stability": "Preview",
       "signatureVerified": true,
-      "runtimeGameplayVerified": true,
+      "runtimeGameplayVerified": false,
       "assembly": "EZapi.dll",
-      "memberKey": "M:EZapi.PhoneApi.Register(System.String,EZapi.PhoneContact)"
+      "memberKey": "M:EZapi.PhoneApi.Register(System.String,EZapi.PhoneContact)",
+      "historicalVerification": {
+        "scope": "unqualified native flags from an older index; not current-DLL verification",
+        "recordedIndexBaseline": "0.1.73",
+        "claims": {
+          "runtimeGameplayVerified": true
+        },
+        "availability": "historical reports not distributed"
+      }
     },
     {
       "id": "EZapi.PhoneApi.Snapshot",
@@ -2158,9 +2582,17 @@
       "example": "../src/EZapi.Sample/PhoneExamples.cs",
       "stability": "Preview",
       "signatureVerified": true,
-      "runtimeGameplayVerified": true,
+      "runtimeGameplayVerified": false,
       "assembly": "EZapi.dll",
-      "memberKey": "M:EZapi.PhoneApi.Snapshot"
+      "memberKey": "M:EZapi.PhoneApi.Snapshot",
+      "historicalVerification": {
+        "scope": "unqualified native flags from an older index; not current-DLL verification",
+        "recordedIndexBaseline": "0.1.73",
+        "claims": {
+          "runtimeGameplayVerified": true
+        },
+        "availability": "historical reports not distributed"
+      }
     },
     {
       "id": "EZapi.PhoneApi.Unregister",
@@ -2185,9 +2617,17 @@
       "example": "../src/EZapi.Sample/PhoneExamples.cs",
       "stability": "Preview",
       "signatureVerified": true,
-      "runtimeGameplayVerified": true,
+      "runtimeGameplayVerified": false,
       "assembly": "EZapi.dll",
-      "memberKey": "M:EZapi.PhoneApi.Unregister(System.String,System.String)"
+      "memberKey": "M:EZapi.PhoneApi.Unregister(System.String,System.String)",
+      "historicalVerification": {
+        "scope": "unqualified native flags from an older index; not current-DLL verification",
+        "recordedIndexBaseline": "0.1.73",
+        "claims": {
+          "runtimeGameplayVerified": true
+        },
+        "availability": "historical reports not distributed"
+      }
     },
     {
       "id": "EZapi.Power.GetEnergy",
@@ -2197,10 +2637,18 @@
       "phase": "当前周目主线程同步回调；纯托管Transactions只要求初始化主线程",
       "stability": "Preview",
       "signatureVerified": true,
-      "runtimeGameplayVerified": true,
+      "runtimeGameplayVerified": false,
       "assembly": "EZapi.dll",
       "evidence": "native-power-0.1.43.zh-CN.md",
-      "memberKey": "M:EZapi.Power.GetEnergy(Il2Cpp.GameItem)"
+      "memberKey": "M:EZapi.Power.GetEnergy(Il2Cpp.GameItem)",
+      "historicalVerification": {
+        "scope": "unqualified native flags from an older index; not current-DLL verification",
+        "recordedIndexBaseline": "0.1.73",
+        "claims": {
+          "runtimeGameplayVerified": true
+        },
+        "availability": "historical reports not distributed"
+      }
     },
     {
       "id": "EZapi.Power.GetMachineCost",
@@ -2210,10 +2658,18 @@
       "phase": "当前周目主线程同步回调；纯托管Transactions只要求初始化主线程",
       "stability": "Preview",
       "signatureVerified": true,
-      "runtimeGameplayVerified": true,
+      "runtimeGameplayVerified": false,
       "assembly": "EZapi.dll",
       "evidence": "native-power-0.1.43.zh-CN.md",
-      "memberKey": "M:EZapi.Power.GetMachineCost(Il2Cpp.GameItem)"
+      "memberKey": "M:EZapi.Power.GetMachineCost(Il2Cpp.GameItem)",
+      "historicalVerification": {
+        "scope": "unqualified native flags from an older index; not current-DLL verification",
+        "recordedIndexBaseline": "0.1.73",
+        "claims": {
+          "runtimeGameplayVerified": true
+        },
+        "availability": "historical reports not distributed"
+      }
     },
     {
       "id": "EZapi.Power.TryDebit",
@@ -2223,10 +2679,18 @@
       "phase": "当前周目主线程同步回调；纯托管Transactions只要求初始化主线程",
       "stability": "Preview",
       "signatureVerified": true,
-      "runtimeGameplayVerified": true,
+      "runtimeGameplayVerified": false,
       "assembly": "EZapi.dll",
       "evidence": "native-power-0.1.43.zh-CN.md",
-      "memberKey": "M:EZapi.Power.TryDebit(Il2Cpp.GameItem,System.Int32)"
+      "memberKey": "M:EZapi.Power.TryDebit(Il2Cpp.GameItem,System.Int32)",
+      "historicalVerification": {
+        "scope": "unqualified native flags from an older index; not current-DLL verification",
+        "recordedIndexBaseline": "0.1.73",
+        "claims": {
+          "runtimeGameplayVerified": true
+        },
+        "availability": "historical reports not distributed"
+      }
     },
     {
       "id": "EZapi.ProductionValueApi.Calculate",
@@ -2329,9 +2793,17 @@
       "example": "../src/EZapi.Sample/ReadingExamples.cs",
       "stability": "Preview",
       "signatureVerified": true,
-      "runtimeGameplayVerified": true,
+      "runtimeGameplayVerified": false,
       "assembly": "EZapi.dll",
-      "memberKey": "M:EZapi.ReadingApi.Close(System.String,System.String)"
+      "memberKey": "M:EZapi.ReadingApi.Close(System.String,System.String)",
+      "historicalVerification": {
+        "scope": "unqualified native flags from an older index; not current-DLL verification",
+        "recordedIndexBaseline": "0.1.73",
+        "claims": {
+          "runtimeGameplayVerified": true
+        },
+        "availability": "historical reports not distributed"
+      }
     },
     {
       "id": "EZapi.ReadingApi.GetRuntimeStatus",
@@ -2343,9 +2815,17 @@
       "example": "../src/EZapi.Sample/ReadingExamples.cs",
       "stability": "Preview",
       "signatureVerified": true,
-      "runtimeGameplayVerified": true,
+      "runtimeGameplayVerified": false,
       "assembly": "EZapi.dll",
-      "memberKey": "M:EZapi.ReadingApi.GetRuntimeStatus"
+      "memberKey": "M:EZapi.ReadingApi.GetRuntimeStatus",
+      "historicalVerification": {
+        "scope": "unqualified native flags from an older index; not current-DLL verification",
+        "recordedIndexBaseline": "0.1.73",
+        "claims": {
+          "runtimeGameplayVerified": true
+        },
+        "availability": "historical reports not distributed"
+      }
     },
     {
       "id": "EZapi.ReadingApi.Open",
@@ -2400,9 +2880,17 @@
       "example": "../src/EZapi.Sample/ReadingExamples.cs",
       "stability": "Preview",
       "signatureVerified": true,
-      "runtimeGameplayVerified": true,
+      "runtimeGameplayVerified": false,
       "assembly": "EZapi.dll",
-      "memberKey": "M:EZapi.ReadingApi.Open(System.String,System.String,System.String,System.Int32,System.String,System.String,System.String)"
+      "memberKey": "M:EZapi.ReadingApi.Open(System.String,System.String,System.String,System.Int32,System.String,System.String,System.String)",
+      "historicalVerification": {
+        "scope": "unqualified native flags from an older index; not current-DLL verification",
+        "recordedIndexBaseline": "0.1.73",
+        "claims": {
+          "runtimeGameplayVerified": true
+        },
+        "availability": "historical reports not distributed"
+      }
     },
     {
       "id": "EZapi.RecipeGuideApi.Close",
@@ -2538,9 +3026,17 @@
       "example": "../src/EZapi.Sample/RunPurchaseExamples.cs",
       "stability": "Preview",
       "signatureVerified": true,
-      "runtimeGameplayVerified": true,
+      "runtimeGameplayVerified": false,
       "assembly": "EZapi.dll",
-      "memberKey": "M:EZapi.RunPurchaseApi.Purchase(Il2Cpp.PlayerStore,System.Int32,System.Collections.Generic.IReadOnlyList{EZapi.TransactionStep})"
+      "memberKey": "M:EZapi.RunPurchaseApi.Purchase(Il2Cpp.PlayerStore,System.Int32,System.Collections.Generic.IReadOnlyList{EZapi.TransactionStep})",
+      "historicalVerification": {
+        "scope": "unqualified native flags from an older index; not current-DLL verification",
+        "recordedIndexBaseline": "0.1.73",
+        "claims": {
+          "runtimeGameplayVerified": true
+        },
+        "availability": "historical reports not distributed"
+      }
     },
     {
       "id": "EZapi.RuntimeCapabilities.Current",
@@ -2563,10 +3059,22 @@
       "reference": "save-graph.zh-CN.md",
       "stability": "Preview",
       "signatureVerified": true,
-      "runtimeGameplayVerified": true,
+      "runtimeGameplayVerified": false,
       "assembly": "EZapi.dll",
-      "evidence": "verification/savegraph-native-0.1.53.json",
-      "verifiedScope": "050REV5-L detached native graph memory roundtrip; no disk persistence claim"
+      "historicalEvidence": {
+        "identifier": "verification/savegraph-native-0.1.53.json",
+        "availability": "not-distributed",
+        "currentDllEvidence": false
+      },
+      "verifiedScope": "050REV5-L detached native graph memory roundtrip; no disk persistence claim",
+      "historicalVerification": {
+        "scope": "unqualified native flags from an older index; not current-DLL verification",
+        "recordedIndexBaseline": "0.1.73",
+        "claims": {
+          "runtimeGameplayVerified": true
+        },
+        "availability": "historical reports not distributed"
+      }
     },
     {
       "id": "EZapi.SaveGraphApi.Decode",
@@ -2577,11 +3085,23 @@
       "example": "var root=SaveGraphApi.Decode(json,existingIds);",
       "stability": "Preview",
       "signatureVerified": true,
-      "runtimeGameplayVerified": true,
+      "runtimeGameplayVerified": false,
       "assembly": "EZapi.dll",
-      "evidence": "verification/savegraph-native-0.1.53.json",
+      "historicalEvidence": {
+        "identifier": "verification/savegraph-native-0.1.53.json",
+        "availability": "not-distributed",
+        "currentDllEvidence": false
+      },
       "verifiedScope": "050REV5-L detached native graph memory roundtrip; no disk persistence claim",
-      "memberKey": "M:EZapi.SaveGraphApi.Decode(System.String,System.Collections.Generic.IReadOnlySet{System.Int32})"
+      "memberKey": "M:EZapi.SaveGraphApi.Decode(System.String,System.Collections.Generic.IReadOnlySet{System.Int32})",
+      "historicalVerification": {
+        "scope": "unqualified native flags from an older index; not current-DLL verification",
+        "recordedIndexBaseline": "0.1.73",
+        "claims": {
+          "runtimeGameplayVerified": true
+        },
+        "availability": "historical reports not distributed"
+      }
     },
     {
       "id": "EZapi.SaveGraphApi.DecodeUnavailableReason",
@@ -2592,10 +3112,22 @@
       "reference": "save-graph.zh-CN.md",
       "stability": "Preview",
       "signatureVerified": true,
-      "runtimeGameplayVerified": true,
+      "runtimeGameplayVerified": false,
       "assembly": "EZapi.dll",
-      "evidence": "verification/savegraph-native-0.1.53.json",
-      "verifiedScope": "050REV5-L detached native graph memory roundtrip; no disk persistence claim"
+      "historicalEvidence": {
+        "identifier": "verification/savegraph-native-0.1.53.json",
+        "availability": "not-distributed",
+        "currentDllEvidence": false
+      },
+      "verifiedScope": "050REV5-L detached native graph memory roundtrip; no disk persistence claim",
+      "historicalVerification": {
+        "scope": "unqualified native flags from an older index; not current-DLL verification",
+        "recordedIndexBaseline": "0.1.73",
+        "claims": {
+          "runtimeGameplayVerified": true
+        },
+        "availability": "historical reports not distributed"
+      }
     },
     {
       "id": "EZapi.SaveGraphApi.Encode",
@@ -2606,11 +3138,23 @@
       "example": "var json=SaveGraphApi.Encode(root);",
       "stability": "Preview",
       "signatureVerified": true,
-      "runtimeGameplayVerified": true,
+      "runtimeGameplayVerified": false,
       "assembly": "EZapi.dll",
-      "evidence": "verification/savegraph-native-0.1.53.json",
+      "historicalEvidence": {
+        "identifier": "verification/savegraph-native-0.1.53.json",
+        "availability": "not-distributed",
+        "currentDllEvidence": false
+      },
       "verifiedScope": "050REV5-L detached native graph memory roundtrip; no disk persistence claim",
-      "memberKey": "M:EZapi.SaveGraphApi.Encode(Il2Cpp.GameItem)"
+      "memberKey": "M:EZapi.SaveGraphApi.Encode(Il2Cpp.GameItem)",
+      "historicalVerification": {
+        "scope": "unqualified native flags from an older index; not current-DLL verification",
+        "recordedIndexBaseline": "0.1.73",
+        "claims": {
+          "runtimeGameplayVerified": true
+        },
+        "availability": "historical reports not distributed"
+      }
     },
     {
       "id": "EZapi.SaveGraphApi.Items",
@@ -2621,11 +3165,23 @@
       "example": "var items=SaveGraphApi.Items(root);",
       "stability": "Preview",
       "signatureVerified": true,
-      "runtimeGameplayVerified": true,
+      "runtimeGameplayVerified": false,
       "assembly": "EZapi.dll",
-      "evidence": "verification/savegraph-native-0.1.53.json",
+      "historicalEvidence": {
+        "identifier": "verification/savegraph-native-0.1.53.json",
+        "availability": "not-distributed",
+        "currentDllEvidence": false
+      },
       "verifiedScope": "050REV5-L detached native graph memory roundtrip; no disk persistence claim",
-      "memberKey": "M:EZapi.SaveGraphApi.Items(Il2Cpp.GameItem)"
+      "memberKey": "M:EZapi.SaveGraphApi.Items(Il2Cpp.GameItem)",
+      "historicalVerification": {
+        "scope": "unqualified native flags from an older index; not current-DLL verification",
+        "recordedIndexBaseline": "0.1.73",
+        "claims": {
+          "runtimeGameplayVerified": true
+        },
+        "availability": "historical reports not distributed"
+      }
     },
     {
       "id": "EZapi.SaveReadbackApi.Normalize",
@@ -2646,8 +3202,16 @@
           "defaultValue": null
         }
       ],
-      "runtimeHostVerified": true,
-      "memberKey": "M:EZapi.SaveReadbackApi.Normalize(System.String)"
+      "runtimeHostVerified": false,
+      "memberKey": "M:EZapi.SaveReadbackApi.Normalize(System.String)",
+      "historicalVerification": {
+        "scope": "unqualified native flags from an older index; not current-DLL verification",
+        "recordedIndexBaseline": "0.1.73",
+        "claims": {
+          "runtimeHostVerified": true
+        },
+        "availability": "historical reports not distributed"
+      }
     },
     {
       "id": "EZapi.SaveReadbackApi.Parse",
@@ -2674,8 +3238,16 @@
           "defaultValue": 256
         }
       ],
-      "runtimeHostVerified": true,
-      "memberKey": "M:EZapi.SaveReadbackApi.Parse(System.String,System.Int32)"
+      "runtimeHostVerified": false,
+      "memberKey": "M:EZapi.SaveReadbackApi.Parse(System.String,System.Int32)",
+      "historicalVerification": {
+        "scope": "unqualified native flags from an older index; not current-DLL verification",
+        "recordedIndexBaseline": "0.1.73",
+        "claims": {
+          "runtimeHostVerified": true
+        },
+        "availability": "historical reports not distributed"
+      }
     },
     {
       "id": "EZapi.SaveReadbackApi.ReadBytes",
@@ -2708,8 +3280,16 @@
           "defaultValue": 256
         }
       ],
-      "runtimeHostVerified": true,
-      "memberKey": "M:EZapi.SaveReadbackApi.ReadBytes(System.ReadOnlyMemory{System.Byte},System.Int32,System.Int32)"
+      "runtimeHostVerified": false,
+      "memberKey": "M:EZapi.SaveReadbackApi.ReadBytes(System.ReadOnlyMemory{System.Byte},System.Int32,System.Int32)",
+      "historicalVerification": {
+        "scope": "unqualified native flags from an older index; not current-DLL verification",
+        "recordedIndexBaseline": "0.1.73",
+        "claims": {
+          "runtimeHostVerified": true
+        },
+        "availability": "historical reports not distributed"
+      }
     },
     {
       "id": "EZapi.SaveReadbackApi.ReadFile",
@@ -2742,8 +3322,16 @@
           "defaultValue": 256
         }
       ],
-      "runtimeHostVerified": true,
-      "memberKey": "M:EZapi.SaveReadbackApi.ReadFile(System.String,System.Int32,System.Int32)"
+      "runtimeHostVerified": false,
+      "memberKey": "M:EZapi.SaveReadbackApi.ReadFile(System.String,System.Int32,System.Int32)",
+      "historicalVerification": {
+        "scope": "unqualified native flags from an older index; not current-DLL verification",
+        "recordedIndexBaseline": "0.1.73",
+        "claims": {
+          "runtimeHostVerified": true
+        },
+        "availability": "historical reports not distributed"
+      }
     },
     {
       "id": "EZapi.SaveReadbackApi.RequireProperty",
@@ -2770,8 +3358,16 @@
           "defaultValue": null
         }
       ],
-      "runtimeHostVerified": true,
-      "memberKey": "M:EZapi.SaveReadbackApi.RequireProperty(System.Text.Json.JsonElement,System.String)"
+      "runtimeHostVerified": false,
+      "memberKey": "M:EZapi.SaveReadbackApi.RequireProperty(System.Text.Json.JsonElement,System.String)",
+      "historicalVerification": {
+        "scope": "unqualified native flags from an older index; not current-DLL verification",
+        "recordedIndexBaseline": "0.1.73",
+        "claims": {
+          "runtimeHostVerified": true
+        },
+        "availability": "historical reports not distributed"
+      }
     },
     {
       "id": "EZapi.SaveReadbackApi.TryGetUniqueProperty",
@@ -2810,8 +3406,16 @@
           "defaultValue": null
         }
       ],
-      "runtimeHostVerified": true,
-      "memberKey": "M:EZapi.SaveReadbackApi.TryGetUniqueProperty(System.Text.Json.JsonElement,System.String,System.Text.Json.JsonElement@,System.Boolean@)"
+      "runtimeHostVerified": false,
+      "memberKey": "M:EZapi.SaveReadbackApi.TryGetUniqueProperty(System.Text.Json.JsonElement,System.String,System.Text.Json.JsonElement@,System.Boolean@)",
+      "historicalVerification": {
+        "scope": "unqualified native flags from an older index; not current-DLL verification",
+        "recordedIndexBaseline": "0.1.73",
+        "claims": {
+          "runtimeHostVerified": true
+        },
+        "availability": "historical reports not distributed"
+      }
     },
     {
       "id": "EZapi.StartApi.RegisterStart(StartType)",
@@ -3744,9 +4348,21 @@
       "signatureVerified": true,
       "runtimeGameplayVerified": false,
       "assembly": "EZapi.dll",
-      "nativeReadbackVerified": true,
-      "nativeEvidence": "verification/native-test-0.1.47/diagnostics.json",
-      "memberKey": "M:EZapi.EmbeddedSpriteAtlas.RegisterPortrait(System.String)"
+      "nativeReadbackVerified": false,
+      "historicalNativeEvidence": {
+        "identifier": "verification/native-test-0.1.47/diagnostics.json",
+        "availability": "not-distributed",
+        "currentDllEvidence": false
+      },
+      "memberKey": "M:EZapi.EmbeddedSpriteAtlas.RegisterPortrait(System.String)",
+      "historicalVerification": {
+        "scope": "unqualified native flags from an older index; not current-DLL verification",
+        "recordedIndexBaseline": "0.1.73",
+        "claims": {
+          "nativeReadbackVerified": true
+        },
+        "availability": "historical reports not distributed"
+      }
     },
     {
       "id": "EZapi.ItemApi.StockSnapshot",
@@ -3756,11 +4372,23 @@
       "phase": "initialized game main thread",
       "stability": "Preview",
       "signatureVerified": true,
-      "runtimeGameplayVerified": true,
+      "runtimeGameplayVerified": false,
       "assembly": "EZapi.dll",
-      "evidence": "verification/night-placement-native-0.1.65.json",
+      "historicalEvidence": {
+        "identifier": "verification/night-placement-native-0.1.65.json",
+        "availability": "not-distributed",
+        "currentDllEvidence": false
+      },
       "scope": "Added counts confirmed native sale placement, not purchases",
-      "memberKey": "M:EZapi.ItemApi.StockSnapshot"
+      "memberKey": "M:EZapi.ItemApi.StockSnapshot",
+      "historicalVerification": {
+        "scope": "unqualified native flags from an older index; not current-DLL verification",
+        "recordedIndexBaseline": "0.1.73",
+        "claims": {
+          "runtimeGameplayVerified": true
+        },
+        "availability": "historical reports not distributed"
+      }
     },
     {
       "id": "EZapi.NpcStockApi.BuildPool",
@@ -3842,8 +4470,20 @@
       "signatureVerified": true,
       "runtimeGameplayVerified": false,
       "assembly": "EZapi.dll",
-      "runtimeMetadataVerified": true,
-      "evidence": "verification/registration-native-0.1.52.json"
+      "runtimeMetadataVerified": false,
+      "historicalEvidence": {
+        "identifier": "verification/registration-native-0.1.52.json",
+        "availability": "not-distributed",
+        "currentDllEvidence": false
+      },
+      "historicalVerification": {
+        "scope": "unqualified native flags from an older index; not current-DLL verification",
+        "recordedIndexBaseline": "0.1.73",
+        "claims": {
+          "runtimeMetadataVerified": true
+        },
+        "availability": "historical reports not distributed"
+      }
     },
     {
       "id": "EZapi.RegistrationApi.Register(batch)",
@@ -3855,8 +4495,20 @@
       "signatureVerified": true,
       "runtimeGameplayVerified": false,
       "assembly": "EZapi.dll",
-      "runtimeMetadataVerified": true,
-      "evidence": "verification/registration-native-0.1.52.json"
+      "runtimeMetadataVerified": false,
+      "historicalEvidence": {
+        "identifier": "verification/registration-native-0.1.52.json",
+        "availability": "not-distributed",
+        "currentDllEvidence": false
+      },
+      "historicalVerification": {
+        "scope": "unqualified native flags from an older index; not current-DLL verification",
+        "recordedIndexBaseline": "0.1.73",
+        "claims": {
+          "runtimeMetadataVerified": true
+        },
+        "availability": "historical reports not distributed"
+      }
     },
     {
       "id": "EZapi.RegistrationApi.RegisterJson",
@@ -3868,9 +4520,21 @@
       "signatureVerified": true,
       "runtimeGameplayVerified": false,
       "assembly": "EZapi.dll",
-      "runtimeMetadataVerified": true,
-      "evidence": "verification/registration-native-0.1.52.json",
-      "memberKey": "M:EZapi.RegistrationApi.RegisterJson(System.IO.Stream)"
+      "runtimeMetadataVerified": false,
+      "historicalEvidence": {
+        "identifier": "verification/registration-native-0.1.52.json",
+        "availability": "not-distributed",
+        "currentDllEvidence": false
+      },
+      "memberKey": "M:EZapi.RegistrationApi.RegisterJson(System.IO.Stream)",
+      "historicalVerification": {
+        "scope": "unqualified native flags from an older index; not current-DLL verification",
+        "recordedIndexBaseline": "0.1.73",
+        "claims": {
+          "runtimeMetadataVerified": true
+        },
+        "availability": "historical reports not distributed"
+      }
     },
     {
       "id": "EZapi.RegistrationApi.Snapshot",
@@ -3882,9 +4546,21 @@
       "signatureVerified": true,
       "runtimeGameplayVerified": false,
       "assembly": "EZapi.dll",
-      "runtimeMetadataVerified": true,
-      "evidence": "verification/registration-native-0.1.52.json",
-      "memberKey": "M:EZapi.RegistrationApi.Snapshot"
+      "runtimeMetadataVerified": false,
+      "historicalEvidence": {
+        "identifier": "verification/registration-native-0.1.52.json",
+        "availability": "not-distributed",
+        "currentDllEvidence": false
+      },
+      "memberKey": "M:EZapi.RegistrationApi.Snapshot",
+      "historicalVerification": {
+        "scope": "unqualified native flags from an older index; not current-DLL verification",
+        "recordedIndexBaseline": "0.1.73",
+        "claims": {
+          "runtimeMetadataVerified": true
+        },
+        "availability": "historical reports not distributed"
+      }
     },
     {
       "id": "EZapi.RegistrationApi.IsResolved",
@@ -3896,9 +4572,21 @@
       "signatureVerified": true,
       "runtimeGameplayVerified": false,
       "assembly": "EZapi.dll",
-      "runtimeMetadataVerified": true,
-      "evidence": "verification/registration-native-0.1.52.json",
-      "memberKey": "M:EZapi.RegistrationApi.IsResolved(System.String)"
+      "runtimeMetadataVerified": false,
+      "historicalEvidence": {
+        "identifier": "verification/registration-native-0.1.52.json",
+        "availability": "not-distributed",
+        "currentDllEvidence": false
+      },
+      "memberKey": "M:EZapi.RegistrationApi.IsResolved(System.String)",
+      "historicalVerification": {
+        "scope": "unqualified native flags from an older index; not current-DLL verification",
+        "recordedIndexBaseline": "0.1.73",
+        "claims": {
+          "runtimeMetadataVerified": true
+        },
+        "availability": "historical reports not distributed"
+      }
     },
     {
       "id": "EZapi.JsonRegistration.Parse",
@@ -3954,9 +4642,17 @@
       "result": "See machine-liquid-output.zh-CN.md; whole batch; no new item delivery",
       "stability": "Preview",
       "signatureVerified": true,
-      "runtimeGameplayVerified": true,
+      "runtimeGameplayVerified": false,
       "assembly": "EZapi.dll",
-      "guide": "machine-liquid-output.zh-CN.md"
+      "guide": "machine-liquid-output.zh-CN.md",
+      "historicalVerification": {
+        "scope": "unqualified native flags from an older index; not current-DLL verification",
+        "recordedIndexBaseline": "0.1.73",
+        "claims": {
+          "runtimeGameplayVerified": true
+        },
+        "availability": "historical reports not distributed"
+      }
     },
     {
       "id": "EZapi.MachineContainerOutput.Condition",
@@ -3965,9 +4661,17 @@
       "result": "See machine-liquid-output.zh-CN.md; whole batch; no new item delivery",
       "stability": "Preview",
       "signatureVerified": true,
-      "runtimeGameplayVerified": true,
+      "runtimeGameplayVerified": false,
       "assembly": "EZapi.dll",
-      "guide": "machine-liquid-output.zh-CN.md"
+      "guide": "machine-liquid-output.zh-CN.md",
+      "historicalVerification": {
+        "scope": "unqualified native flags from an older index; not current-DLL verification",
+        "recordedIndexBaseline": "0.1.73",
+        "claims": {
+          "runtimeGameplayVerified": true
+        },
+        "availability": "historical reports not distributed"
+      }
     },
     {
       "id": "EZapi.MachineContainerSlot.Condition",
@@ -3976,9 +4680,17 @@
       "result": "AND with native admission; checked again before processing; runtime-only C# callback",
       "stability": "Preview",
       "signatureVerified": true,
-      "runtimeGameplayVerified": true,
+      "runtimeGameplayVerified": false,
       "assembly": "EZapi.dll",
-      "guide": "machine-container-conditions.zh-CN.md"
+      "guide": "machine-container-conditions.zh-CN.md",
+      "historicalVerification": {
+        "scope": "unqualified native flags from an older index; not current-DLL verification",
+        "recordedIndexBaseline": "0.1.73",
+        "claims": {
+          "runtimeGameplayVerified": true
+        },
+        "availability": "historical reports not distributed"
+      }
     },
     {
       "id": "EZapi.MachineOutputTemplate.ContainerCondition",
@@ -3987,9 +4699,17 @@
       "result": "AND with native admission; checked again before processing; runtime-only C# callback",
       "stability": "Preview",
       "signatureVerified": true,
-      "runtimeGameplayVerified": true,
+      "runtimeGameplayVerified": false,
       "assembly": "EZapi.dll",
-      "guide": "machine-container-conditions.zh-CN.md"
+      "guide": "machine-container-conditions.zh-CN.md",
+      "historicalVerification": {
+        "scope": "unqualified native flags from an older index; not current-DLL verification",
+        "recordedIndexBaseline": "0.1.73",
+        "claims": {
+          "runtimeGameplayVerified": true
+        },
+        "availability": "historical reports not distributed"
+      }
     },
     {
       "id": "EZapi.MachineContainerConditionApi.Register",
@@ -4018,10 +4738,18 @@
       "result": "Register returns IDisposable; Snapshot returns immutable managed status",
       "stability": "Preview",
       "signatureVerified": true,
-      "runtimeGameplayVerified": true,
+      "runtimeGameplayVerified": false,
       "assembly": "EZapi.dll",
       "guide": "machine-container-conditions.zh-CN.md",
-      "memberKey": "M:EZapi.MachineContainerConditionApi.Register(System.String,System.String,EZapi.MachineLayoutDefinition)"
+      "memberKey": "M:EZapi.MachineContainerConditionApi.Register(System.String,System.String,EZapi.MachineLayoutDefinition)",
+      "historicalVerification": {
+        "scope": "unqualified native flags from an older index; not current-DLL verification",
+        "recordedIndexBaseline": "0.1.73",
+        "claims": {
+          "runtimeGameplayVerified": true
+        },
+        "availability": "historical reports not distributed"
+      }
     },
     {
       "id": "EZapi.MachineContainerConditionApi.Snapshot",
@@ -4031,10 +4759,18 @@
       "result": "Register returns IDisposable; Snapshot returns immutable managed status",
       "stability": "Preview",
       "signatureVerified": true,
-      "runtimeGameplayVerified": true,
+      "runtimeGameplayVerified": false,
       "assembly": "EZapi.dll",
       "guide": "machine-container-conditions.zh-CN.md",
-      "memberKey": "M:EZapi.MachineContainerConditionApi.Snapshot"
+      "memberKey": "M:EZapi.MachineContainerConditionApi.Snapshot",
+      "historicalVerification": {
+        "scope": "unqualified native flags from an older index; not current-DLL verification",
+        "recordedIndexBaseline": "0.1.73",
+        "claims": {
+          "runtimeGameplayVerified": true
+        },
+        "availability": "historical reports not distributed"
+      }
     },
     {
       "id": "EZapi.MachineRecipe.MaterialContents",
@@ -4043,9 +4779,17 @@
       "result": "Reject default; ConsumeGraph consumes whole root and descendants; no root stack split",
       "stability": "Preview",
       "signatureVerified": true,
-      "runtimeGameplayVerified": true,
+      "runtimeGameplayVerified": false,
       "assembly": "EZapi.dll",
-      "guide": "machine-material-graph.zh-CN.md"
+      "guide": "machine-material-graph.zh-CN.md",
+      "historicalVerification": {
+        "scope": "unqualified native flags from an older index; not current-DLL verification",
+        "recordedIndexBaseline": "0.1.73",
+        "claims": {
+          "runtimeGameplayVerified": true
+        },
+        "availability": "historical reports not distributed"
+      }
     },
     {
       "id": "EZapi.MachineBatchProcessor.Process(Il2Cpp.GameItem)",
@@ -4062,12 +4806,24 @@
       "result": "MachineBatchResult with standard/custom transaction; source and graph guards; no automatic save",
       "stability": "Preview",
       "signatureVerified": true,
-      "runtimeGameplayVerified": true,
+      "runtimeGameplayVerified": false,
       "assembly": "EZapi.dll",
       "guide": "machine-inventory-binding.zh-CN.md",
-      "evidence": "verification/inventory-binding-native-0.1.60.json",
+      "historicalEvidence": {
+        "identifier": "verification/inventory-binding-native-0.1.60.json",
+        "availability": "not-distributed",
+        "currentDllEvidence": false
+      },
       "overloadKey": "EZapi.MachineBatchProcessor.Process(Il2Cpp.GameItem)",
-      "memberKey": "M:EZapi.MachineBatchProcessor.Process(Il2Cpp.GameItem)"
+      "memberKey": "M:EZapi.MachineBatchProcessor.Process(Il2Cpp.GameItem)",
+      "historicalVerification": {
+        "scope": "unqualified native flags from an older index; not current-DLL verification",
+        "recordedIndexBaseline": "0.1.73",
+        "claims": {
+          "runtimeGameplayVerified": true
+        },
+        "availability": "historical reports not distributed"
+      }
     },
     {
       "id": "EZapi.MachineBatchProcessor.Process(Il2Cpp.GameItem,EZapi.MachineInventory)",
@@ -4090,12 +4846,24 @@
       "result": "MachineBatchResult with standard/custom transaction; source and graph guards; no automatic save",
       "stability": "Preview",
       "signatureVerified": true,
-      "runtimeGameplayVerified": true,
+      "runtimeGameplayVerified": false,
       "assembly": "EZapi.dll",
       "guide": "machine-inventory-binding.zh-CN.md",
-      "evidence": "verification/inventory-binding-native-0.1.60.json",
+      "historicalEvidence": {
+        "identifier": "verification/inventory-binding-native-0.1.60.json",
+        "availability": "not-distributed",
+        "currentDllEvidence": false
+      },
       "overloadKey": "EZapi.MachineBatchProcessor.Process(Il2Cpp.GameItem,EZapi.MachineInventory)",
-      "memberKey": "M:EZapi.MachineBatchProcessor.Process(Il2Cpp.GameItem,EZapi.MachineInventory)"
+      "memberKey": "M:EZapi.MachineBatchProcessor.Process(Il2Cpp.GameItem,EZapi.MachineInventory)",
+      "historicalVerification": {
+        "scope": "unqualified native flags from an older index; not current-DLL verification",
+        "recordedIndexBaseline": "0.1.73",
+        "claims": {
+          "runtimeGameplayVerified": true
+        },
+        "availability": "historical reports not distributed"
+      }
     },
     {
       "id": "EZapi.RecipeGuideRules.ResolveLocale",
@@ -4118,11 +4886,23 @@
       "result": "new display view; source/IDs/counts preserved",
       "stability": "Preview",
       "signatureVerified": true,
-      "runtimeGameplayVerified": true,
+      "runtimeGameplayVerified": false,
       "assembly": "EZapi.dll",
       "guide": "recipe-guide-localization.zh-CN.md",
-      "evidence": "verification/guide-localization-native-0.1.61.json",
-      "memberKey": "M:EZapi.RecipeGuideRules.ResolveLocale(EZapi.RecipeGuideEntry,System.String)"
+      "historicalEvidence": {
+        "identifier": "verification/guide-localization-native-0.1.61.json",
+        "availability": "not-distributed",
+        "currentDllEvidence": false
+      },
+      "memberKey": "M:EZapi.RecipeGuideRules.ResolveLocale(EZapi.RecipeGuideEntry,System.String)",
+      "historicalVerification": {
+        "scope": "unqualified native flags from an older index; not current-DLL verification",
+        "recordedIndexBaseline": "0.1.73",
+        "claims": {
+          "runtimeGameplayVerified": true
+        },
+        "availability": "historical reports not distributed"
+      }
     },
     {
       "id": "EZapi.ManufacturingTerminal.NormalizeItemId",
@@ -4148,7 +4928,11 @@
       "stability": "Preview",
       "signatureVerified": true,
       "runtimeGameplayVerified": false,
-      "evidence": "verification/public-helpers-native-0.1.70.json",
+      "historicalEvidence": {
+        "identifier": "verification/public-helpers-native-0.1.70.json",
+        "availability": "not-distributed",
+        "currentDllEvidence": false
+      },
       "assembly": "EZapi.dll",
       "memberKey": "M:EZapi.ManufacturingTerminal.NormalizeItemId(System.String,System.Collections.Generic.IReadOnlyList{System.String})"
     },
@@ -4176,7 +4960,11 @@
       "stability": "Preview",
       "signatureVerified": true,
       "runtimeGameplayVerified": false,
-      "evidence": "verification/public-helpers-native-0.1.70.json",
+      "historicalEvidence": {
+        "identifier": "verification/public-helpers-native-0.1.70.json",
+        "availability": "not-distributed",
+        "currentDllEvidence": false
+      },
       "assembly": "EZapi.dll",
       "memberKey": "M:EZapi.LogLevels.TryParse(System.String,EZapi.LogLevel@)"
     },
@@ -4204,7 +4992,11 @@
       "stability": "Preview",
       "signatureVerified": true,
       "runtimeGameplayVerified": false,
-      "evidence": "verification/public-helpers-native-0.1.70.json",
+      "historicalEvidence": {
+        "identifier": "verification/public-helpers-native-0.1.70.json",
+        "availability": "not-distributed",
+        "currentDllEvidence": false
+      },
       "assembly": "EZapi.dll",
       "memberKey": "M:EZapi.LogLevels.Allows(EZapi.LogLevel,EZapi.LogLevel)"
     },
@@ -4244,7 +5036,11 @@
       "stability": "Preview",
       "signatureVerified": true,
       "runtimeGameplayVerified": false,
-      "evidence": "verification/public-helpers-native-0.1.70.json",
+      "historicalEvidence": {
+        "identifier": "verification/public-helpers-native-0.1.70.json",
+        "availability": "not-distributed",
+        "currentDllEvidence": false
+      },
       "assembly": "EZapi.dll"
     },
     {
@@ -4277,7 +5073,11 @@
       "stability": "Preview",
       "signatureVerified": true,
       "runtimeGameplayVerified": false,
-      "evidence": "verification/public-helpers-native-0.1.70.json",
+      "historicalEvidence": {
+        "identifier": "verification/public-helpers-native-0.1.70.json",
+        "availability": "not-distributed",
+        "currentDllEvidence": false
+      },
       "assembly": "EZapi.dll"
     },
     {
@@ -4298,7 +5098,11 @@
       "stability": "Preview",
       "signatureVerified": true,
       "runtimeGameplayVerified": false,
-      "evidence": "verification/public-helpers-native-0.1.70.json",
+      "historicalEvidence": {
+        "identifier": "verification/public-helpers-native-0.1.70.json",
+        "availability": "not-distributed",
+        "currentDllEvidence": false
+      },
       "assembly": "EZapi.dll",
       "memberKey": "M:EZapi.ModLog.Debug(System.String)"
     },
@@ -4320,7 +5124,11 @@
       "stability": "Preview",
       "signatureVerified": true,
       "runtimeGameplayVerified": false,
-      "evidence": "verification/public-helpers-native-0.1.70.json",
+      "historicalEvidence": {
+        "identifier": "verification/public-helpers-native-0.1.70.json",
+        "availability": "not-distributed",
+        "currentDllEvidence": false
+      },
       "assembly": "EZapi.dll",
       "memberKey": "M:EZapi.ModLog.Info(System.String)"
     },
@@ -4342,7 +5150,11 @@
       "stability": "Preview",
       "signatureVerified": true,
       "runtimeGameplayVerified": false,
-      "evidence": "verification/public-helpers-native-0.1.70.json",
+      "historicalEvidence": {
+        "identifier": "verification/public-helpers-native-0.1.70.json",
+        "availability": "not-distributed",
+        "currentDllEvidence": false
+      },
       "assembly": "EZapi.dll",
       "memberKey": "M:EZapi.ModLog.Warn(System.String)"
     },
@@ -4364,7 +5176,11 @@
       "stability": "Preview",
       "signatureVerified": true,
       "runtimeGameplayVerified": false,
-      "evidence": "verification/public-helpers-native-0.1.70.json",
+      "historicalEvidence": {
+        "identifier": "verification/public-helpers-native-0.1.70.json",
+        "availability": "not-distributed",
+        "currentDllEvidence": false
+      },
       "assembly": "EZapi.dll",
       "memberKey": "M:EZapi.ModLog.Error(System.String)"
     },
@@ -4386,7 +5202,11 @@
       "stability": "Preview",
       "signatureVerified": true,
       "runtimeGameplayVerified": false,
-      "evidence": "verification/public-helpers-native-0.1.70.json",
+      "historicalEvidence": {
+        "identifier": "verification/public-helpers-native-0.1.70.json",
+        "availability": "not-distributed",
+        "currentDllEvidence": false
+      },
       "assembly": "EZapi.dll",
       "memberKey": "M:EZapi.ModLog.Callback(System.String)"
     },
@@ -4414,7 +5234,11 @@
       "stability": "Preview",
       "signatureVerified": true,
       "runtimeGameplayVerified": false,
-      "evidence": "verification/public-helpers-native-0.1.70.json",
+      "historicalEvidence": {
+        "identifier": "verification/public-helpers-native-0.1.70.json",
+        "availability": "not-distributed",
+        "currentDllEvidence": false
+      },
       "assembly": "EZapi.dll",
       "overloadKey": "EZapi.ModLog.Write(EZapi.LogLevel,System.String)",
       "memberKey": "M:EZapi.ModLog.Write(EZapi.LogLevel,System.String)"
@@ -4443,7 +5267,11 @@
       "stability": "Preview",
       "signatureVerified": true,
       "runtimeGameplayVerified": false,
-      "evidence": "verification/public-helpers-native-0.1.70.json",
+      "historicalEvidence": {
+        "identifier": "verification/public-helpers-native-0.1.70.json",
+        "availability": "not-distributed",
+        "currentDllEvidence": false
+      },
       "assembly": "EZapi.dll",
       "overloadKey": "EZapi.ModLog.Write(EZapi.LogLevel,System.Func`1<System.String>)",
       "memberKey": "M:EZapi.ModLog.Write(EZapi.LogLevel,System.Func{System.String})"
@@ -4472,7 +5300,11 @@
       "stability": "Preview",
       "signatureVerified": true,
       "runtimeGameplayVerified": false,
-      "evidence": "verification/public-helpers-native-0.1.70.json",
+      "historicalEvidence": {
+        "identifier": "verification/public-helpers-native-0.1.70.json",
+        "availability": "not-distributed",
+        "currentDllEvidence": false
+      },
       "assembly": "EZapi.dll",
       "memberKey": "M:EZapi.WindowInputCapture.Open(System.Int32,System.Boolean)"
     },
@@ -4500,7 +5332,11 @@
       "stability": "Preview",
       "signatureVerified": true,
       "runtimeGameplayVerified": false,
-      "evidence": "verification/public-helpers-native-0.1.70.json",
+      "historicalEvidence": {
+        "identifier": "verification/public-helpers-native-0.1.70.json",
+        "availability": "not-distributed",
+        "currentDllEvidence": false
+      },
       "assembly": "EZapi.dll",
       "memberKey": "M:EZapi.WindowInputCapture.Close(System.Int32,System.Boolean)"
     },
@@ -4534,7 +5370,11 @@
       "stability": "Preview",
       "signatureVerified": true,
       "runtimeGameplayVerified": false,
-      "evidence": "verification/public-helpers-native-0.1.70.json",
+      "historicalEvidence": {
+        "identifier": "verification/public-helpers-native-0.1.70.json",
+        "availability": "not-distributed",
+        "currentDllEvidence": false
+      },
       "assembly": "EZapi.dll",
       "memberKey": "M:EZapi.WindowInputCapture.BlocksPointer(System.Int32,System.Boolean,System.Boolean)"
     },
@@ -4549,7 +5389,11 @@
       "stability": "Preview",
       "signatureVerified": true,
       "runtimeGameplayVerified": false,
-      "evidence": "verification/public-helpers-native-0.1.70.json",
+      "historicalEvidence": {
+        "identifier": "verification/public-helpers-native-0.1.70.json",
+        "availability": "not-distributed",
+        "currentDllEvidence": false
+      },
       "assembly": "EZapi.dll",
       "memberKey": "M:EZapi.WindowInputCapture.Reset"
     },
@@ -4564,7 +5408,11 @@
       "stability": "Preview",
       "signatureVerified": true,
       "runtimeGameplayVerified": false,
-      "evidence": "verification/public-helpers-native-0.1.70.json",
+      "historicalEvidence": {
+        "identifier": "verification/public-helpers-native-0.1.70.json",
+        "availability": "not-distributed",
+        "currentDllEvidence": false
+      },
       "assembly": "EZapi.dll"
     },
     {
@@ -4585,10 +5433,22 @@
       "stability": "Preview",
       "signatureVerified": true,
       "runtimeGameplayVerified": false,
-      "nativeReadVerified": true,
-      "evidence": "verification/progression-native-0.1.71.json",
+      "nativeReadVerified": false,
+      "historicalEvidence": {
+        "identifier": "verification/progression-native-0.1.71.json",
+        "availability": "not-distributed",
+        "currentDllEvidence": false
+      },
       "assembly": "EZapi.dll",
-      "memberKey": "M:EZapi.ProgressionApi.ReadUpgrade(System.String)"
+      "memberKey": "M:EZapi.ProgressionApi.ReadUpgrade(System.String)",
+      "historicalVerification": {
+        "scope": "unqualified native flags from an older index; not current-DLL verification",
+        "recordedIndexBaseline": "0.1.73",
+        "claims": {
+          "nativeReadVerified": true
+        },
+        "availability": "historical reports not distributed"
+      }
     },
     {
       "id": "EZapi.ProgressionApi.ReadService",
@@ -4608,10 +5468,22 @@
       "stability": "Preview",
       "signatureVerified": true,
       "runtimeGameplayVerified": false,
-      "nativeReadVerified": true,
-      "evidence": "verification/progression-native-0.1.71.json",
+      "nativeReadVerified": false,
+      "historicalEvidence": {
+        "identifier": "verification/progression-native-0.1.71.json",
+        "availability": "not-distributed",
+        "currentDllEvidence": false
+      },
       "assembly": "EZapi.dll",
-      "memberKey": "M:EZapi.ProgressionApi.ReadService(System.String)"
+      "memberKey": "M:EZapi.ProgressionApi.ReadService(System.String)",
+      "historicalVerification": {
+        "scope": "unqualified native flags from an older index; not current-DLL verification",
+        "recordedIndexBaseline": "0.1.73",
+        "claims": {
+          "nativeReadVerified": true
+        },
+        "availability": "historical reports not distributed"
+      }
     },
     {
       "id": "EZapi.RequirementApi.Evaluate",
@@ -4631,10 +5503,22 @@
       "stability": "Preview",
       "signatureVerified": true,
       "runtimeGameplayVerified": false,
-      "nativeReadVerified": true,
-      "evidence": "verification/progression-native-0.1.71.json",
+      "nativeReadVerified": false,
+      "historicalEvidence": {
+        "identifier": "verification/progression-native-0.1.71.json",
+        "availability": "not-distributed",
+        "currentDllEvidence": false
+      },
       "assembly": "EZapi.dll",
-      "memberKey": "M:EZapi.RequirementApi.Evaluate(EZapi.RequirementDefinition)"
+      "memberKey": "M:EZapi.RequirementApi.Evaluate(EZapi.RequirementDefinition)",
+      "historicalVerification": {
+        "scope": "unqualified native flags from an older index; not current-DLL verification",
+        "recordedIndexBaseline": "0.1.73",
+        "claims": {
+          "nativeReadVerified": true
+        },
+        "availability": "historical reports not distributed"
+      }
     },
     {
       "id": "EZapi.IRequirementFacts.Read",
@@ -4667,7 +5551,11 @@
       "signatureVerified": true,
       "runtimeGameplayVerified": false,
       "nativeReadVerified": false,
-      "evidence": "verification/progression-native-0.1.71.json",
+      "historicalEvidence": {
+        "identifier": "verification/progression-native-0.1.71.json",
+        "availability": "not-distributed",
+        "currentDllEvidence": false
+      },
       "assembly": "EZapi.dll",
       "memberKey": "M:EZapi.IRequirementFacts.Read(System.String,System.String,System.Nullable{System.Int64})"
     },
@@ -4690,7 +5578,11 @@
       "signatureVerified": true,
       "runtimeGameplayVerified": false,
       "nativeReadVerified": false,
-      "evidence": "verification/progression-native-0.1.71.json",
+      "historicalEvidence": {
+        "identifier": "verification/progression-native-0.1.71.json",
+        "availability": "not-distributed",
+        "currentDllEvidence": false
+      },
       "assembly": "EZapi.dll",
       "memberKey": "M:EZapi.Requirements.Parse(System.IO.Stream)"
     },
@@ -4713,7 +5605,11 @@
       "signatureVerified": true,
       "runtimeGameplayVerified": false,
       "nativeReadVerified": false,
-      "evidence": "verification/progression-native-0.1.71.json",
+      "historicalEvidence": {
+        "identifier": "verification/progression-native-0.1.71.json",
+        "availability": "not-distributed",
+        "currentDllEvidence": false
+      },
       "assembly": "EZapi.dll",
       "memberKey": "M:EZapi.Requirements.Copy(EZapi.RequirementDefinition)"
     },
@@ -4748,7 +5644,11 @@
       "signatureVerified": true,
       "runtimeGameplayVerified": false,
       "nativeReadVerified": false,
-      "evidence": "verification/progression-native-0.1.71.json",
+      "historicalEvidence": {
+        "identifier": "verification/progression-native-0.1.71.json",
+        "availability": "not-distributed",
+        "currentDllEvidence": false
+      },
       "assembly": "EZapi.dll",
       "memberKey": "M:EZapi.Requirements.Evaluate(EZapi.RequirementDefinition,EZapi.IRequirementFacts,System.String)"
     },
@@ -5554,7 +6454,11 @@
       "signatureVerified": true,
       "runtimeGameplayVerified": false,
       "assembly": "EZapi.dll",
-      "nativeEvidence": "verification/disk-supplier-native-0.1.72.json",
+      "historicalNativeEvidence": {
+        "identifier": "verification/disk-supplier-native-0.1.72.json",
+        "availability": "not-distributed",
+        "currentDllEvidence": false
+      },
       "nativeScope": "Current DLL: temporary item-data regression plus explicit native save18/cold-load27/independent disk37 checks; five endpoint fixture nodes. No payment, automatic save or crash-recovery guarantee."
     },
     {
@@ -5569,7 +6473,11 @@
       "signatureVerified": true,
       "runtimeGameplayVerified": false,
       "assembly": "EZapi.dll",
-      "nativeEvidence": "verification/disk-supplier-native-0.1.72.json",
+      "historicalNativeEvidence": {
+        "identifier": "verification/disk-supplier-native-0.1.72.json",
+        "availability": "not-distributed",
+        "currentDllEvidence": false
+      },
       "nativeScope": "Current DLL: temporary item-data regression plus explicit native save18/cold-load27/independent disk37 checks; five endpoint fixture nodes. No payment, automatic save or crash-recovery guarantee."
     }
   ],
@@ -30391,7 +31299,15 @@
     "sceneRebuild": "Call RegisterPortrait again before use after a native dictionary rebuild",
     "shutdown": "Only matching owned mappings in current dictionary are removed before sprite resource release; released atlas handles remain inert",
     "guide": "sprite-assets.zh-CN.md",
-    "nativeRuntimeVerified": true
+    "nativeRuntimeVerified": false,
+    "historicalVerification": {
+      "scope": "unqualified native flags from an older index; not current-DLL verification",
+      "recordedIndexBaseline": "0.1.73",
+      "claims": {
+        "nativeRuntimeVerified": true
+      },
+      "availability": "historical reports not distributed"
+    }
   },
   "implementationProvenance": "SOURCE-PROVENANCE.zh-CN.md",
   "nativeTestAutomationGuide": "native-test-automation.zh-CN.md",
@@ -30476,11 +31392,19 @@
       "Condition",
       "ResolveContents"
     ],
-    "runtimeEvidence": "verification/liquid-output-native-0.1.55.json"
+    "historicalRuntimeEvidence": {
+      "identifier": "verification/liquid-output-native-0.1.55.json",
+      "availability": "not-distributed",
+      "currentDllEvidence": false
+    }
   },
   "machineContainerConditionContract": {
     "guide": "machine-container-conditions.zh-CN.md",
-    "nativeEvidence": "verification/container-conditions-native-0.1.56.json",
+    "historicalNativeEvidence": {
+      "identifier": "verification/container-conditions-native-0.1.56.json",
+      "availability": "not-distributed",
+      "currentDllEvidence": false
+    },
     "unifiedRegistration": "automatic scoped lease",
     "lowLevelRegistration": "Register before Create; retain and dispose lease",
     "jsonCallbacks": false,
@@ -30490,39 +31414,71 @@
   },
   "machineMaterialGraphContract": {
     "guide": "machine-material-graph.zh-CN.md",
-    "evidence": "verification/material-graph-native-0.1.57.json",
+    "historicalEvidence": {
+      "identifier": "verification/material-graph-native-0.1.57.json",
+      "availability": "not-distributed",
+      "currentDllEvidence": false
+    },
     "default": "Reject",
     "explicit": "ConsumeGraph",
     "wholeRootRequired": true,
     "restore": "original native identities/state/values/topology/positions",
     "cleanup": "deepest first native Expel/Destroy after commit; pure managed completion receipts",
     "persistence": true,
-    "persistenceEvidence": "verification/machine-persistence-native-0.1.62.json"
+    "historicalPersistenceEvidence": {
+      "identifier": "verification/machine-persistence-native-0.1.62.json",
+      "availability": "not-distributed",
+      "currentDllEvidence": false
+    }
   },
   "recipeGuideImagesContract": {
     "guide": "recipe-guide-images.zh-CN.md",
-    "evidence": "verification/guide-images-native-0.1.58.json",
+    "historicalEvidence": {
+      "identifier": "verification/guide-images-native-0.1.58.json",
+      "availability": "not-distributed",
+      "currentDllEvidence": false
+    },
     "entry": "RecipeGuideFigure.ItemId; MachineRecipe.GuideDisplay illustration IDs",
     "newPublicDtoFields": false,
     "cache": "128-entry LRU per window, one missing ID per Update",
-    "nativeRuntimeVerified": true,
-    "boundary": "fresh detached default instances; no custom factory side-effect guarantee; rectangular crop and flip only; localization deferred"
+    "nativeRuntimeVerified": false,
+    "boundary": "fresh detached default instances; no custom factory side-effect guarantee; rectangular crop and flip only; localization deferred",
+    "historicalVerification": {
+      "scope": "unqualified native flags from an older index; not current-DLL verification",
+      "recordedIndexBaseline": "0.1.73",
+      "claims": {
+        "nativeRuntimeVerified": true
+      },
+      "availability": "historical reports not distributed"
+    }
   },
   "machineRequiredPowerContract": {
     "guide": "machine-required-power.zh-CN.md",
-    "evidence": "verification/required-power-native-0.1.59.json",
+    "historicalEvidence": {
+      "identifier": "verification/required-power-native-0.1.59.json",
+      "availability": "not-distributed",
+      "currentDllEvidence": false
+    },
     "property": "MachineInventory.RequiresBattery { get; init; }",
     "defaultBorrowedView": false,
     "requiredZeroCost": "owned, unfrozen, native usable source; zero energy accepted",
     "optionalZeroCost": "empty battery accepted",
     "positiveCost": "sufficient drawable energy required regardless of Required",
     "configureItem": "must preserve ID, unitCount=1, detached and no prebuilt contentWindow",
-    "contractAudit": "machine-public-contract.audit.json",
+    "historicalContractAudit": {
+      "identifier": "machine-public-contract.audit.json",
+      "availability": "not-distributed",
+      "currentDllEvidence": false
+    },
     "fullGroupComplete": false
   },
   "machineInventoryBindingContract": {
     "guide": "machine-inventory-binding.zh-CN.md",
-    "evidence": "verification/inventory-binding-native-0.1.60.json",
+    "historicalEvidence": {
+      "identifier": "verification/inventory-binding-native-0.1.60.json",
+      "availability": "not-distributed",
+      "currentDllEvidence": false
+    },
     "explicitOverload": "MachineBatchProcessor.Process(GameItem, MachineInventory)",
     "customWindow": "real distinct child inventories; no EZapi marker required",
     "snapshot": "independent readonly liquid map per call",
@@ -30534,7 +31490,11 @@
     "guide": "recipe-guide-localization.zh-CN.md",
     "englishGuide": "recipe-guide-localization.en.md",
     "fieldIndex": "recipe-guide-bilingual.index.json",
-    "evidence": "verification/guide-localization-native-0.1.61.json",
+    "historicalEvidence": {
+      "identifier": "verification/guide-localization-native-0.1.61.json",
+      "availability": "not-distributed",
+      "currentDllEvidence": false
+    },
     "textType": "LocalizedItemText",
     "compatibility": "additive init properties; old positional string constructors retained",
     "locale": "current official LocHelper.GetCurrentLocaleCode; zh* Chinese otherwise English, missing side falls back",
@@ -30546,7 +31506,11 @@
     "guide": "machine-persistence.zh-CN.md",
     "englishGuide": "machine-persistence.en.md",
     "index": "machine-persistence.index.json",
-    "evidence": "verification/machine-persistence-native-0.1.62.json",
+    "historicalEvidence": {
+      "identifier": "verification/machine-persistence-native-0.1.62.json",
+      "availability": "not-distributed",
+      "currentDllEvidence": false
+    },
     "nightly": "candidate identity only; fresh live graph before each machine; persistent slot/run/day marker",
     "verified": "two actual UI nights and full process reloads; material graphs + liquid item/vessel outputs + ordinary/external power; third EZapi-only cold load",
     "notClaimed": "async/network/crash recovery or arbitrary third-party combinations"
@@ -30554,7 +31518,11 @@
   "machineStatusContract": {
     "guide": "machine-status.zh-CN.md",
     "englishGuide": "machine-status.en.md",
-    "evidence": "verification/machine-status-native-0.1.63.json",
+    "historicalEvidence": {
+      "identifier": "verification/machine-status-native-0.1.63.json",
+      "availability": "not-distributed",
+      "currentDllEvidence": false
+    },
     "thread": "initialized game main thread",
     "capture": "query-time immutable view; re-query after state changes",
     "fields": {
@@ -30574,7 +31542,11 @@
   "npcFixedStockContract": {
     "guide": "npc-fixed-stock.zh-CN.md",
     "englishGuide": "npc-fixed-stock.en.md",
-    "evidence": "verification/fixed-stock-native-0.1.64.json",
+    "historicalEvidence": {
+      "identifier": "verification/fixed-stock-native-0.1.64.json",
+      "availability": "not-distributed",
+      "currentDllEvidence": false
+    },
     "declaredBy": [
       "NativeItemOptions.NpcTrade",
       "ItemDefinition.NpcTrade",
@@ -30633,33 +31605,69 @@
     "guide": "item-stock.zh-CN.md",
     "english": "item-stock.en.md",
     "index": "item-stock.index.json",
-    "evidence": "verification/night-placement-native-0.1.65.json",
+    "historicalEvidence": {
+      "identifier": "verification/night-placement-native-0.1.65.json",
+      "availability": "not-distributed",
+      "currentDllEvidence": false
+    },
     "eventArgument": "owned snapshot, not pending goods",
     "success": "native sale inventory unowned unit delta"
   },
   "recipeGuideImages": {
     "index": "recipe-guide-images.index.json",
-    "audit": "recipe-guide-public-contract.audit.json",
-    "evidence": "verification/guide-mesh-native-0.1.66.json"
+    "historicalAudit": {
+      "identifier": "recipe-guide-public-contract.audit.json",
+      "availability": "not-distributed",
+      "currentDllEvidence": false
+    },
+    "historicalEvidence": {
+      "identifier": "verification/guide-mesh-native-0.1.66.json",
+      "availability": "not-distributed",
+      "currentDllEvidence": false
+    }
   },
   "externalPowerContents": {
     "index": "furnace-contents.index.json",
-    "audit": "external-power-public-contract.audit.json",
-    "evidence": "verification/furnace-contents-native-0.1.67.json"
+    "historicalAudit": {
+      "identifier": "external-power-public-contract.audit.json",
+      "availability": "not-distributed",
+      "currentDllEvidence": false
+    },
+    "historicalEvidence": {
+      "identifier": "verification/furnace-contents-native-0.1.67.json",
+      "availability": "not-distributed",
+      "currentDllEvidence": false
+    }
   },
   "machineNightReadOnly": {
     "index": "machine-night-readonly.index.json",
-    "evidence": "verification/night-readonly-native-0.1.68.json",
+    "historicalEvidence": {
+      "identifier": "verification/night-readonly-native-0.1.68.json",
+      "availability": "not-distributed",
+      "currentDllEvidence": false
+    },
     "scope": "night quota resolver only; full machine contract remains partial"
   },
   "machineRecipeReadOnly": {
     "index": "machine-recipe-readonly.index.json",
-    "evidence": "verification/recipe-readonly-native-0.1.69.json",
+    "historicalEvidence": {
+      "identifier": "verification/recipe-readonly-native-0.1.69.json",
+      "availability": "not-distributed",
+      "currentDllEvidence": false
+    },
     "scope": "selection/Validate/Prepare read-only guard; write/restore use independent resource journals; whole machine groups remain partial"
   },
   "fullPublicMetadataIndex": "public-api.index.json",
   "languageGuide": "game-language.index.json",
   "dialogueLocalizationGuide": "dialogue-localization.index.json",
   "embeddedTypeMetadataPolicy": "Embedded types are regenerated from the compiled full public index; domain contract prose is retained. Full index is authoritative for all declarations.",
-  "itemData": "item-data.index.json"
+  "itemData": "item-data.index.json",
+  "documentationContext": {
+    "kind": "current-api-guide",
+    "releaseTag": "0.1.73-preview.3",
+    "assemblyVersion": "0.1.73",
+    "releaseStatus": "release-status.json",
+    "nativeRuntimeVerified": false,
+    "evidencePolicy": "Old native claims are preserved only under historical* fields and do not apply to the current DLL."
+  }
 }

@@ -1,0 +1,35 @@
+{
+  "schemaVersion": 1,
+  "releaseTag": "0.1.73-preview.3",
+  "assemblyVersion": "0.1.73",
+  "status": "prerelease",
+  "license": "MIT",
+  "repository": "https://github.com/Commoner-ai/EZapi",
+  "runtimeDllSHA256": "7E4AB675B0E3BD81C56EEC4606731A6880287549EB4E8E90A707BE18BD52BEEF",
+  "runtimeChangedSince": "0.1.73-preview.1: unchanged",
+  "offlineVerification": {
+    "sourceRebuildPassed": true,
+    "offlineSuitesPassed": 59,
+    "cliProcessChecksPassed": 25,
+    "sourceBuiltPackagingPassed": true
+  },
+  "nativeRuntimeVerified": false,
+  "pendingNativeAcceptance": [
+    "Current-DLL native UI",
+    "Mixed-Mod layouts",
+    "Native save and reload"
+  ],
+  "referenceCoverage": {
+    "implementedGroups": 39,
+    "partialGroups": 0,
+    "missingGroups": 0,
+    "meaning": "reference functionality coverage; not full development or native acceptance"
+  },
+  "historicalEvidencePolicy": "Older DLL reports never establish current-DLL native acceptance. Unpublished reports are identifiers only, not downloadable evidence.",
+  "documentation": {
+    "zh": "current-status.zh-CN.md",
+    "en": "current-status.en.md",
+    "history": "history/README.md",
+    "exactApi": "public-api.index.json"
+  }
+}

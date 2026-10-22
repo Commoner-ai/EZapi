@@ -1,3 +1,5 @@
+> 当前 API 指南。见[统一版本与验收状态](current-status.zh-CN.md)：当前 DLL 尚未完成实机验收；旧测试数量仅适用于其历史 DLL。
+
 # 周目 JSON 记录与冲突检查
 
 `RunDataApi` 用于任务进度、版本化状态和待交付记录。物品自身状态继续使用物品标签。普通计数仍可使用 `RunData.Open`；该接口的原有格式、限制和行为不变。
@@ -48,4 +50,4 @@ var result = RunDataApi.Stage(owner, key, run, before.Json, next);
 
 ## 验收范围
 
-源码：[RunDataApi.cs](../src/EZapi/RunDataApi.cs)。可编译调用示例：[RunDataRecordExamples.cs](../src/EZapi.Sample/RunDataRecordExamples.cs)。离线测试链接真实 RunDataApi/RunData/GameSession，原生玩家和字典由替身提供；覆盖冲突、载入隔离、边界、异常与写后未知状态。游戏内每晚保存、重新读档和多 Mod 组合仍需单独验收；本版没有启动游戏或改动游戏存档。
+源码：[RunDataApi.cs](https://github.com/Commoner-ai/EZapi/blob/main/src/EZapi/RunDataApi.cs)。可编译调用示例：[RunDataRecordExamples.cs](../src/EZapi.Sample/RunDataRecordExamples.cs)。离线测试链接真实 RunDataApi/RunData/GameSession，原生玩家和字典由替身提供；覆盖冲突、载入隔离、边界、异常与写后未知状态。游戏内每晚保存、重新读档和多 Mod 组合仍需单独验收；本版没有启动游戏或改动游戏存档。

@@ -1,3 +1,5 @@
+> Current API guide. See [release status](current-status.en.md): current-DLL native acceptance is pending; older test counts apply only to their historical binaries.
+
 # EZapi public helpers
 
 `new ModLog("author.tools", LogLevel.Info)` creates an independent per-mod logger. `Debug`, `Info`, `Warn` and `Error` honor the instance threshold; `Callback` is Debug-level tracing and `Off` disables output. The default backend routes to MelonLoader. An optional `Action<LogEntry>` sink receives immutable structured entries for files or tests. No global preferences are changed. `Write(level, () => message)` evaluates the formatter only when enabled. Formatter and sink errors remain observable to the caller.

@@ -1,3 +1,5 @@
+> Current API guide. See [release status](current-status.en.md): current-DLL native acceptance is pending; older test counts apply only to their historical binaries.
+
 # Machine nights, saves and cold loads
 
 EZapi 0.1.62 verifies real nightly production, native saves and process restarts for material graphs, filled-item and existing-vessel liquid outputs, ordinary batteries and external power. Existing public recipe declarations remain compatible.
@@ -12,4 +14,4 @@ External providers must resolve their current source on every callback. Do not c
 
 The disposable slot534 ran two actual nights and two complete process restarts. External energy ended at86; ordinary energy at90. Both liquid source containers ended at8ml. Existing output contained2ml with total Value16 and QualityBasis6; two item outputs each contained1ml, Value8 and QualityBasis3. Default Reject preserved a three-level material graph. Replayed BeforeNight dispatches produced no duplicate effects. Loaded identities, relationships and resource snapshots matched exactly.
 
-See the [Chinese guide](machine-persistence.zh-CN.md), [machine-readable index](machine-persistence.index.json) and [verification report](verification/machine-persistence-native-0.1.62.json). The official machine factory example is `references/probably-stolen-modding/Modding/LearnerMod/PurpleBloodSynthesizer.cs`; current wrapper signatures and actual game results determine compatibility. No Forge code or DLL is required.
+See the [Chinese guide](machine-persistence.zh-CN.md), [machine-readable index](machine-persistence.index.json) and verification report (historical identifier `verification/machine-persistence-native-0.1.62.json`; original artifact not distributed). The official machine factory example is `references/probably-stolen-modding/Modding/LearnerMod/PurpleBloodSynthesizer.cs`; current wrapper signatures and actual game results determine compatibility. No Forge code or DLL is required.

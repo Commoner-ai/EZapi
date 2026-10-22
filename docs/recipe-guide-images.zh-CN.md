@@ -1,4 +1,6 @@
-# 配方图鉴的物品图片（EZapi 0.1.66）
+> 当前 API 指南。见[统一版本与验收状态](current-status.zh-CN.md)：当前 DLL 尚未完成实机验收；旧测试数量仅适用于其历史 DLL。
+
+# 配方图鉴的物品图片（EZapi）
 
 图鉴沿用 `RecipeGuideFigure.ItemId`，不需要图片路径或新增 JSON 字段。物品先由作者注册；图鉴通过当前目录创建一个临时游离实例，再用官方 `GameItemElement.ResolveItemSprite()` 读取实际 Sprite。原版、EZapi JSON 和通过该解析路径提供图片的 Mod 都能参与。
 
@@ -37,6 +39,7 @@ RecipeGuideApi.RegisterRecipes("author.tools", new[] {
 
 初次预览观察Unity公开初始化/语言/字符串预加载句柄；随后使用SelectedLocaleChanged完成事件门控，切换中不重新获取InitializationOperation。050REV5-L原生日历Update会同步取语言表，切换中精确延后此文字刷新，完成后恢复；本版实测仅2帧。等待不执行工厂、不缓存失败，也不调用WaitForCompletion。语言变化释放旧缩略图；工厂内部再次切语言的旧结果不进入缓存。诊断含localeState/localeError。
 
-本版49套离线检查通过；图片43项、目录/JSON131项、自动图鉴与注册181项。最终DLL同一进程九组原生954/0（资产60/0），图鉴界面7/0，中英实际切换8/0（含两种语言的液体容器预览），复杂机器旧状态19/0；全部536份ES3未变。见[阶段证据](verification/guide-mesh-native-0.1.66.json)、[六类型/22属性契约审计](recipe-guide-public-contract.audit.json)和[AI索引](recipe-guide-images.index.json)。
+> 历史验收记录（0.1.66），不作为当前 DLL 通过依据。
+> 本版49套离线检查通过；图片43项、目录/JSON131项、自动图鉴与注册181项。最终DLL同一进程九组原生954/0（资产60/0），图鉴界面7/0，中英实际切换8/0（含两种语言的液体容器预览），复杂机器旧状态19/0；全部536份ES3未变。见阶段证据（历史标识 `verification/guide-mesh-native-0.1.66.json`；原件未公开）、六类型/22属性契约审计（历史标识 `recipe-guide-public-contract.audit.json`；原件未公开）和[AI索引](recipe-guide-images.index.json)。
 
 测试夹具曾在不可读纹理上修改几何、并把局部单位误用于OverrideGeometry输入；两次拒绝均保留证据。按Unity官方文档修正为先建立网格、使用rect内像素坐标，再丢弃CPU副本；读取vertices才使用局部坐标。生产图片代码不调用OverrideGeometry。

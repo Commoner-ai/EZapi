@@ -1,10 +1,10 @@
 {
   "schemaVersion": 1,
-  "implementationVersion": "0.1.71",
+  "implementationVersion": "0.1.73",
   "baseline": "forge-public-contract.index.json",
   "minimumGoal": "Cover every Forge API functionality independently in EZapi; no Forge runtime dependency",
   "complete": true,
-  "localizationExpansion": "active: typed bilingual recipe guides completed in0.1.61; final cross-API English compatibility and developer usability/index review required by user",
+  "localizationExpansion": "Current language APIs are implemented; current-DLL native acceptance and ease-of-use review remain pending.",
   "groupCount": 39,
   "memberCount": 123,
   "publicTypeCount": 149,
@@ -35,7 +35,15 @@
           "ezapi": [
             "RegistrationApi.Register"
           ],
-          "nativeRuntimeVerified": true
+          "nativeRuntimeVerified": false,
+          "historicalVerification": {
+            "scope": "unqualified native flags from an older index; not current-DLL verification",
+            "recordedIndexBaseline": "0.1.71",
+            "claims": {
+              "nativeRuntimeVerified": true
+            },
+            "availability": "historical reports not distributed"
+          }
         },
         {
           "kind": "method",
@@ -45,11 +53,31 @@
           "ezapi": [
             "RegistrationApi.Snapshot"
           ],
-          "nativeRuntimeVerified": true
+          "nativeRuntimeVerified": false,
+          "historicalVerification": {
+            "scope": "unqualified native flags from an older index; not current-DLL verification",
+            "recordedIndexBaseline": "0.1.71",
+            "claims": {
+              "nativeRuntimeVerified": true
+            },
+            "availability": "historical reports not distributed"
+          }
         }
       ],
-      "nativeRuntimeVerified": true,
-      "evidence": "verification/registration-native-0.1.52.json"
+      "nativeRuntimeVerified": false,
+      "historicalEvidence": {
+        "identifier": "verification/registration-native-0.1.52.json",
+        "availability": "not-distributed",
+        "currentDllEvidence": false
+      },
+      "historicalVerification": {
+        "scope": "unqualified native flags from an older index; not current-DLL verification",
+        "recordedIndexBaseline": "0.1.71",
+        "claims": {
+          "nativeRuntimeVerified": true
+        },
+        "availability": "historical reports not distributed"
+      }
     },
     {
       "forgeType": "Nicokobo.Forge.ForgeAssetsApi",
@@ -66,11 +94,27 @@
           "ezapi": [
             "SpriteAssets.CreateEmbeddedAtlas"
           ],
-          "nativeRuntimeVerified": true
+          "nativeRuntimeVerified": false,
+          "historicalVerification": {
+            "scope": "unqualified native flags from an older index; not current-DLL verification",
+            "recordedIndexBaseline": "0.1.71",
+            "claims": {
+              "nativeRuntimeVerified": true
+            },
+            "availability": "historical reports not distributed"
+          }
         }
       ],
-      "nativeRuntimeVerified": true,
-      "evidence": "sprite-assets.zh-CN.md"
+      "nativeRuntimeVerified": false,
+      "evidence": "sprite-assets.zh-CN.md",
+      "historicalVerification": {
+        "scope": "unqualified native flags from an older index; not current-DLL verification",
+        "recordedIndexBaseline": "0.1.71",
+        "claims": {
+          "nativeRuntimeVerified": true
+        },
+        "availability": "historical reports not distributed"
+      }
     },
     {
       "forgeType": "Nicokobo.Forge.ForgeTransactionApi",
@@ -187,7 +231,15 @@
           "ezapi": [
             "DialogueApi.Create"
           ],
-          "nativeRuntimeVerified": true
+          "nativeRuntimeVerified": false,
+          "historicalVerification": {
+            "scope": "unqualified native flags from an older index; not current-DLL verification",
+            "recordedIndexBaseline": "0.1.71",
+            "claims": {
+              "nativeRuntimeVerified": true
+            },
+            "availability": "historical reports not distributed"
+          }
         },
         {
           "kind": "property",
@@ -197,11 +249,27 @@
           "ezapi": [
             "DialogueApi.IsAvailable"
           ],
-          "nativeRuntimeVerified": true
+          "nativeRuntimeVerified": false,
+          "historicalVerification": {
+            "scope": "unqualified native flags from an older index; not current-DLL verification",
+            "recordedIndexBaseline": "0.1.71",
+            "claims": {
+              "nativeRuntimeVerified": true
+            },
+            "availability": "historical reports not distributed"
+          }
         }
       ],
-      "nativeRuntimeVerified": true,
-      "evidence": "native-dialogue-0.1.33.zh-CN.md"
+      "nativeRuntimeVerified": false,
+      "evidence": "native-dialogue-0.1.33.zh-CN.md",
+      "historicalVerification": {
+        "scope": "unqualified native flags from an older index; not current-DLL verification",
+        "recordedIndexBaseline": "0.1.71",
+        "claims": {
+          "nativeRuntimeVerified": true
+        },
+        "availability": "historical reports not distributed"
+      }
     },
     {
       "forgeType": "Nicokobo.Forge.ForgeEffectApi",
@@ -258,7 +326,15 @@
           "ezapi": [
             "ExternalPowerApi.IsConnector"
           ],
-          "nativeRuntimeVerified": true
+          "nativeRuntimeVerified": false,
+          "historicalVerification": {
+            "scope": "unqualified native flags from an older index; not current-DLL verification",
+            "recordedIndexBaseline": "0.1.71",
+            "claims": {
+              "nativeRuntimeVerified": true
+            },
+            "availability": "historical reports not distributed"
+          }
         },
         {
           "kind": "method",
@@ -268,7 +344,15 @@
           "ezapi": [
             "ExternalPowerApi.Register"
           ],
-          "nativeRuntimeVerified": true
+          "nativeRuntimeVerified": false,
+          "historicalVerification": {
+            "scope": "unqualified native flags from an older index; not current-DLL verification",
+            "recordedIndexBaseline": "0.1.71",
+            "claims": {
+              "nativeRuntimeVerified": true
+            },
+            "availability": "historical reports not distributed"
+          }
         },
         {
           "kind": "method",
@@ -278,7 +362,15 @@
           "ezapi": [
             "ExternalPowerApi.GetEnergy"
           ],
-          "nativeRuntimeVerified": true
+          "nativeRuntimeVerified": false,
+          "historicalVerification": {
+            "scope": "unqualified native flags from an older index; not current-DLL verification",
+            "recordedIndexBaseline": "0.1.71",
+            "claims": {
+              "nativeRuntimeVerified": true
+            },
+            "availability": "historical reports not distributed"
+          }
         },
         {
           "kind": "property",
@@ -288,12 +380,36 @@
           "ezapi": [
             "ExternalPowerApi.IsAvailable"
           ],
-          "nativeRuntimeVerified": true
+          "nativeRuntimeVerified": false,
+          "historicalVerification": {
+            "scope": "unqualified native flags from an older index; not current-DLL verification",
+            "recordedIndexBaseline": "0.1.71",
+            "claims": {
+              "nativeRuntimeVerified": true
+            },
+            "availability": "historical reports not distributed"
+          }
         }
       ],
-      "nativeRuntimeVerified": true,
-      "evidence": "verification/furnace-contents-native-0.1.67.json",
-      "publicContractAudit": "external-power-public-contract.audit.json"
+      "nativeRuntimeVerified": false,
+      "historicalEvidence": {
+        "identifier": "verification/furnace-contents-native-0.1.67.json",
+        "availability": "not-distributed",
+        "currentDllEvidence": false
+      },
+      "historicalPublicContractAudit": {
+        "identifier": "external-power-public-contract.audit.json",
+        "availability": "not-distributed",
+        "currentDllEvidence": false
+      },
+      "historicalVerification": {
+        "scope": "unqualified native flags from an older index; not current-DLL verification",
+        "recordedIndexBaseline": "0.1.71",
+        "claims": {
+          "nativeRuntimeVerified": true
+        },
+        "availability": "historical reports not distributed"
+      }
     },
     {
       "forgeType": "Nicokobo.Forge.ForgeHookApi",
@@ -430,7 +546,15 @@
           "ezapi": [
             "InventoryEndpointApi.Open"
           ],
-          "nativeRuntimeVerified": true
+          "nativeRuntimeVerified": false,
+          "historicalVerification": {
+            "scope": "unqualified native flags from an older index; not current-DLL verification",
+            "recordedIndexBaseline": "0.1.71",
+            "claims": {
+              "nativeRuntimeVerified": true
+            },
+            "availability": "historical reports not distributed"
+          }
         },
         {
           "kind": "method",
@@ -440,7 +564,15 @@
           "ezapi": [
             "InventoryEndpointApi.Snapshot"
           ],
-          "nativeRuntimeVerified": true
+          "nativeRuntimeVerified": false,
+          "historicalVerification": {
+            "scope": "unqualified native flags from an older index; not current-DLL verification",
+            "recordedIndexBaseline": "0.1.71",
+            "claims": {
+              "nativeRuntimeVerified": true
+            },
+            "availability": "historical reports not distributed"
+          }
         },
         {
           "kind": "method",
@@ -450,7 +582,15 @@
           "ezapi": [
             "InventoryEndpointApi.Delete"
           ],
-          "nativeRuntimeVerified": true
+          "nativeRuntimeVerified": false,
+          "historicalVerification": {
+            "scope": "unqualified native flags from an older index; not current-DLL verification",
+            "recordedIndexBaseline": "0.1.71",
+            "claims": {
+              "nativeRuntimeVerified": true
+            },
+            "availability": "historical reports not distributed"
+          }
         },
         {
           "kind": "property",
@@ -460,7 +600,15 @@
           "ezapi": [
             "InventoryEndpointApi.IsAvailable"
           ],
-          "nativeRuntimeVerified": true
+          "nativeRuntimeVerified": false,
+          "historicalVerification": {
+            "scope": "unqualified native flags from an older index; not current-DLL verification",
+            "recordedIndexBaseline": "0.1.71",
+            "claims": {
+              "nativeRuntimeVerified": true
+            },
+            "availability": "historical reports not distributed"
+          }
         },
         {
           "kind": "property",
@@ -470,12 +618,32 @@
           "ezapi": [
             "InventoryEndpointApi.Error"
           ],
-          "nativeRuntimeVerified": true
+          "nativeRuntimeVerified": false,
+          "historicalVerification": {
+            "scope": "unqualified native flags from an older index; not current-DLL verification",
+            "recordedIndexBaseline": "0.1.71",
+            "claims": {
+              "nativeRuntimeVerified": true
+            },
+            "availability": "historical reports not distributed"
+          }
         }
       ],
-      "nativeRuntimeVerified": true,
-      "evidence": "verification/endpoint-lifecycle-0.1.53.json",
-      "verifiedScope": "050REV5-L slot534: native nightly save, new-process restore, outside commissary/return, held/released drag, Store/Take, deletion and new-process missing; native charging and isolated furniture filter. No lobby or real-raid acceptance claim."
+      "nativeRuntimeVerified": false,
+      "historicalEvidence": {
+        "identifier": "verification/endpoint-lifecycle-0.1.53.json",
+        "availability": "not-distributed",
+        "currentDllEvidence": false
+      },
+      "verifiedScope": "050REV5-L slot534: native nightly save, new-process restore, outside commissary/return, held/released drag, Store/Take, deletion and new-process missing; native charging and isolated furniture filter. No lobby or real-raid acceptance claim.",
+      "historicalVerification": {
+        "scope": "unqualified native flags from an older index; not current-DLL verification",
+        "recordedIndexBaseline": "0.1.71",
+        "claims": {
+          "nativeRuntimeVerified": true
+        },
+        "availability": "historical reports not distributed"
+      }
     },
     {
       "forgeType": "Nicokobo.Forge.ForgeSaveGraphApi",
@@ -492,7 +660,15 @@
           "ezapi": [
             "SaveGraphApi.Items"
           ],
-          "nativeRuntimeVerified": true
+          "nativeRuntimeVerified": false,
+          "historicalVerification": {
+            "scope": "unqualified native flags from an older index; not current-DLL verification",
+            "recordedIndexBaseline": "0.1.71",
+            "claims": {
+              "nativeRuntimeVerified": true
+            },
+            "availability": "historical reports not distributed"
+          }
         },
         {
           "kind": "method",
@@ -502,7 +678,15 @@
           "ezapi": [
             "SaveGraphApi.Encode"
           ],
-          "nativeRuntimeVerified": true
+          "nativeRuntimeVerified": false,
+          "historicalVerification": {
+            "scope": "unqualified native flags from an older index; not current-DLL verification",
+            "recordedIndexBaseline": "0.1.71",
+            "claims": {
+              "nativeRuntimeVerified": true
+            },
+            "availability": "historical reports not distributed"
+          }
         },
         {
           "kind": "method",
@@ -512,12 +696,32 @@
           "ezapi": [
             "SaveGraphApi.Decode"
           ],
-          "nativeRuntimeVerified": true
+          "nativeRuntimeVerified": false,
+          "historicalVerification": {
+            "scope": "unqualified native flags from an older index; not current-DLL verification",
+            "recordedIndexBaseline": "0.1.71",
+            "claims": {
+              "nativeRuntimeVerified": true
+            },
+            "availability": "historical reports not distributed"
+          }
         }
       ],
-      "nativeRuntimeVerified": true,
-      "evidence": "verification/savegraph-native-0.1.53.json",
-      "verifiedScope": "Current-build detached native item graphs in memory; 33 assertions. Disk save, cold restart and persistent endpoint lifecycle are separate and unverified in this stage."
+      "nativeRuntimeVerified": false,
+      "historicalEvidence": {
+        "identifier": "verification/savegraph-native-0.1.53.json",
+        "availability": "not-distributed",
+        "currentDllEvidence": false
+      },
+      "verifiedScope": "Current-build detached native item graphs in memory; 33 assertions. Disk save, cold restart and persistent endpoint lifecycle are separate and unverified in this stage.",
+      "historicalVerification": {
+        "scope": "unqualified native flags from an older index; not current-DLL verification",
+        "recordedIndexBaseline": "0.1.71",
+        "claims": {
+          "nativeRuntimeVerified": true
+        },
+        "availability": "historical reports not distributed"
+      }
     },
     {
       "forgeType": "Nicokobo.Forge.ForgeInventoryFreezeApi",
@@ -604,7 +808,15 @@
           "ezapi": [
             "ItemApi.RegisterNode"
           ],
-          "nativeRuntimeVerified": true
+          "nativeRuntimeVerified": false,
+          "historicalVerification": {
+            "scope": "unqualified native flags from an older index; not current-DLL verification",
+            "recordedIndexBaseline": "0.1.71",
+            "claims": {
+              "nativeRuntimeVerified": true
+            },
+            "availability": "historical reports not distributed"
+          }
         },
         {
           "kind": "method",
@@ -614,7 +826,15 @@
           "ezapi": [
             "ItemApi.RegisterItem"
           ],
-          "nativeRuntimeVerified": true
+          "nativeRuntimeVerified": false,
+          "historicalVerification": {
+            "scope": "unqualified native flags from an older index; not current-DLL verification",
+            "recordedIndexBaseline": "0.1.71",
+            "claims": {
+              "nativeRuntimeVerified": true
+            },
+            "availability": "historical reports not distributed"
+          }
         },
         {
           "kind": "method",
@@ -624,7 +844,15 @@
           "ezapi": [
             "ItemApi.RegisterAmenity"
           ],
-          "nativeRuntimeVerified": true
+          "nativeRuntimeVerified": false,
+          "historicalVerification": {
+            "scope": "unqualified native flags from an older index; not current-DLL verification",
+            "recordedIndexBaseline": "0.1.71",
+            "claims": {
+              "nativeRuntimeVerified": true
+            },
+            "availability": "historical reports not distributed"
+          }
         },
         {
           "kind": "method",
@@ -634,7 +862,15 @@
           "ezapi": [
             "ItemApi.RegisterModule"
           ],
-          "nativeRuntimeVerified": true
+          "nativeRuntimeVerified": false,
+          "historicalVerification": {
+            "scope": "unqualified native flags from an older index; not current-DLL verification",
+            "recordedIndexBaseline": "0.1.71",
+            "claims": {
+              "nativeRuntimeVerified": true
+            },
+            "availability": "historical reports not distributed"
+          }
         },
         {
           "kind": "method",
@@ -644,7 +880,15 @@
           "ezapi": [
             "ItemApi.RegisterModules"
           ],
-          "nativeRuntimeVerified": true
+          "nativeRuntimeVerified": false,
+          "historicalVerification": {
+            "scope": "unqualified native flags from an older index; not current-DLL verification",
+            "recordedIndexBaseline": "0.1.71",
+            "claims": {
+              "nativeRuntimeVerified": true
+            },
+            "availability": "historical reports not distributed"
+          }
         },
         {
           "kind": "method",
@@ -654,7 +898,15 @@
           "ezapi": [
             "ItemApi.Snapshot"
           ],
-          "nativeRuntimeVerified": true
+          "nativeRuntimeVerified": false,
+          "historicalVerification": {
+            "scope": "unqualified native flags from an older index; not current-DLL verification",
+            "recordedIndexBaseline": "0.1.71",
+            "claims": {
+              "nativeRuntimeVerified": true
+            },
+            "availability": "historical reports not distributed"
+          }
         },
         {
           "kind": "method",
@@ -664,7 +916,15 @@
           "ezapi": [
             "ItemApi.Exists"
           ],
-          "nativeRuntimeVerified": true
+          "nativeRuntimeVerified": false,
+          "historicalVerification": {
+            "scope": "unqualified native flags from an older index; not current-DLL verification",
+            "recordedIndexBaseline": "0.1.71",
+            "claims": {
+              "nativeRuntimeVerified": true
+            },
+            "availability": "historical reports not distributed"
+          }
         },
         {
           "kind": "method",
@@ -674,7 +934,15 @@
           "ezapi": [
             "ItemApi.Create"
           ],
-          "nativeRuntimeVerified": true
+          "nativeRuntimeVerified": false,
+          "historicalVerification": {
+            "scope": "unqualified native flags from an older index; not current-DLL verification",
+            "recordedIndexBaseline": "0.1.71",
+            "claims": {
+              "nativeRuntimeVerified": true
+            },
+            "availability": "historical reports not distributed"
+          }
         },
         {
           "kind": "method",
@@ -687,8 +955,20 @@
           "nativeRuntimeVerified": false
         }
       ],
-      "nativeRuntimeVerified": true,
-      "evidence": "verification/night-placement-native-0.1.65.json"
+      "nativeRuntimeVerified": false,
+      "historicalEvidence": {
+        "identifier": "verification/night-placement-native-0.1.65.json",
+        "availability": "not-distributed",
+        "currentDllEvidence": false
+      },
+      "historicalVerification": {
+        "scope": "unqualified native flags from an older index; not current-DLL verification",
+        "recordedIndexBaseline": "0.1.71",
+        "claims": {
+          "nativeRuntimeVerified": true
+        },
+        "availability": "historical reports not distributed"
+      }
     },
     {
       "forgeType": "Nicokobo.Forge.ForgeItemInspectionApi",
@@ -705,7 +985,15 @@
           "ezapi": [
             "ItemInspection.CurrentUnitValue"
           ],
-          "nativeRuntimeVerified": true
+          "nativeRuntimeVerified": false,
+          "historicalVerification": {
+            "scope": "unqualified native flags from an older index; not current-DLL verification",
+            "recordedIndexBaseline": "0.1.71",
+            "claims": {
+              "nativeRuntimeVerified": true
+            },
+            "availability": "historical reports not distributed"
+          }
         },
         {
           "kind": "method",
@@ -906,7 +1194,15 @@
           "ezapi": [
             "MachineAutomationApi.Recipes"
           ],
-          "nativeRuntimeVerified": true
+          "nativeRuntimeVerified": false,
+          "historicalVerification": {
+            "scope": "unqualified native flags from an older index; not current-DLL verification",
+            "recordedIndexBaseline": "0.1.71",
+            "claims": {
+              "nativeRuntimeVerified": true
+            },
+            "availability": "historical reports not distributed"
+          }
         },
         {
           "kind": "method",
@@ -916,7 +1212,15 @@
           "ezapi": [
             "MachineAutomationApi.RegisteredRecipes"
           ],
-          "nativeRuntimeVerified": true
+          "nativeRuntimeVerified": false,
+          "historicalVerification": {
+            "scope": "unqualified native flags from an older index; not current-DLL verification",
+            "recordedIndexBaseline": "0.1.71",
+            "claims": {
+              "nativeRuntimeVerified": true
+            },
+            "availability": "historical reports not distributed"
+          }
         },
         {
           "kind": "method",
@@ -926,10 +1230,26 @@
           "ezapi": [
             "MachineAutomationApi.Subscribe"
           ],
-          "nativeRuntimeVerified": true
+          "nativeRuntimeVerified": false,
+          "historicalVerification": {
+            "scope": "unqualified native flags from an older index; not current-DLL verification",
+            "recordedIndexBaseline": "0.1.71",
+            "claims": {
+              "nativeRuntimeVerified": true
+            },
+            "availability": "historical reports not distributed"
+          }
         }
       ],
-      "nativeRuntimeVerified": true
+      "nativeRuntimeVerified": false,
+      "historicalVerification": {
+        "scope": "unqualified native flags from an older index; not current-DLL verification",
+        "recordedIndexBaseline": "0.1.71",
+        "claims": {
+          "nativeRuntimeVerified": true
+        },
+        "availability": "historical reports not distributed"
+      }
     },
     {
       "forgeType": "Nicokobo.Forge.ForgeMachineRegistrationApi",
@@ -946,7 +1266,15 @@
           "ezapi": [
             "MachineRegistrationApi.Snapshot"
           ],
-          "nativeRuntimeVerified": true
+          "nativeRuntimeVerified": false,
+          "historicalVerification": {
+            "scope": "unqualified native flags from an older index; not current-DLL verification",
+            "recordedIndexBaseline": "0.1.71",
+            "claims": {
+              "nativeRuntimeVerified": true
+            },
+            "availability": "historical reports not distributed"
+          }
         },
         {
           "kind": "method",
@@ -956,7 +1284,15 @@
           "ezapi": [
             "MachineRegistrationApi.GuideSnapshot"
           ],
-          "nativeRuntimeVerified": true
+          "nativeRuntimeVerified": false,
+          "historicalVerification": {
+            "scope": "unqualified native flags from an older index; not current-DLL verification",
+            "recordedIndexBaseline": "0.1.71",
+            "claims": {
+              "nativeRuntimeVerified": true
+            },
+            "availability": "historical reports not distributed"
+          }
         },
         {
           "kind": "method",
@@ -966,7 +1302,15 @@
           "ezapi": [
             "MachineRegistrationApi.RegisterMachine"
           ],
-          "nativeRuntimeVerified": true
+          "nativeRuntimeVerified": false,
+          "historicalVerification": {
+            "scope": "unqualified native flags from an older index; not current-DLL verification",
+            "recordedIndexBaseline": "0.1.71",
+            "claims": {
+              "nativeRuntimeVerified": true
+            },
+            "availability": "historical reports not distributed"
+          }
         },
         {
           "kind": "method",
@@ -976,7 +1320,15 @@
           "ezapi": [
             "MachineRegistrationApi.RegisterAdditionalRecipes"
           ],
-          "nativeRuntimeVerified": true
+          "nativeRuntimeVerified": false,
+          "historicalVerification": {
+            "scope": "unqualified native flags from an older index; not current-DLL verification",
+            "recordedIndexBaseline": "0.1.71",
+            "claims": {
+              "nativeRuntimeVerified": true
+            },
+            "availability": "historical reports not distributed"
+          }
         },
         {
           "kind": "method",
@@ -986,11 +1338,31 @@
           "ezapi": [
             "MachineRegistrationApi.ConfigureManufacturingTerminalMarkup"
           ],
-          "nativeRuntimeVerified": true
+          "nativeRuntimeVerified": false,
+          "historicalVerification": {
+            "scope": "unqualified native flags from an older index; not current-DLL verification",
+            "recordedIndexBaseline": "0.1.71",
+            "claims": {
+              "nativeRuntimeVerified": true
+            },
+            "availability": "historical reports not distributed"
+          }
         }
       ],
-      "nativeRuntimeVerified": true,
-      "evidence": "verification/public-helpers-native-0.1.70.json"
+      "nativeRuntimeVerified": false,
+      "historicalEvidence": {
+        "identifier": "verification/public-helpers-native-0.1.70.json",
+        "availability": "not-distributed",
+        "currentDllEvidence": false
+      },
+      "historicalVerification": {
+        "scope": "unqualified native flags from an older index; not current-DLL verification",
+        "recordedIndexBaseline": "0.1.71",
+        "claims": {
+          "nativeRuntimeVerified": true
+        },
+        "availability": "historical reports not distributed"
+      }
     },
     {
       "forgeType": "Nicokobo.Forge.ForgeMachineRuntimeApi",
@@ -1007,7 +1379,15 @@
           "ezapi": [
             "MachineRuntimeApi.TryGetInventory"
           ],
-          "nativeRuntimeVerified": true
+          "nativeRuntimeVerified": false,
+          "historicalVerification": {
+            "scope": "unqualified native flags from an older index; not current-DLL verification",
+            "recordedIndexBaseline": "0.1.71",
+            "claims": {
+              "nativeRuntimeVerified": true
+            },
+            "availability": "historical reports not distributed"
+          }
         },
         {
           "kind": "method",
@@ -1017,7 +1397,15 @@
           "ezapi": [
             "MachineRuntimeApi.ProcessBatch"
           ],
-          "nativeRuntimeVerified": true
+          "nativeRuntimeVerified": false,
+          "historicalVerification": {
+            "scope": "unqualified native flags from an older index; not current-DLL verification",
+            "recordedIndexBaseline": "0.1.71",
+            "claims": {
+              "nativeRuntimeVerified": true
+            },
+            "availability": "historical reports not distributed"
+          }
         },
         {
           "kind": "method",
@@ -1027,7 +1415,15 @@
           "ezapi": [
             "MachineRuntimeApi.CreateBatchProcessor"
           ],
-          "nativeRuntimeVerified": true
+          "nativeRuntimeVerified": false,
+          "historicalVerification": {
+            "scope": "unqualified native flags from an older index; not current-DLL verification",
+            "recordedIndexBaseline": "0.1.71",
+            "claims": {
+              "nativeRuntimeVerified": true
+            },
+            "availability": "historical reports not distributed"
+          }
         },
         {
           "kind": "property",
@@ -1037,11 +1433,31 @@
           "ezapi": [
             "MachineRuntimeApi.RuntimeInstalled"
           ],
-          "nativeRuntimeVerified": true
+          "nativeRuntimeVerified": false,
+          "historicalVerification": {
+            "scope": "unqualified native flags from an older index; not current-DLL verification",
+            "recordedIndexBaseline": "0.1.71",
+            "claims": {
+              "nativeRuntimeVerified": true
+            },
+            "availability": "historical reports not distributed"
+          }
         }
       ],
-      "nativeRuntimeVerified": true,
-      "evidence": "verification/public-helpers-native-0.1.70.json"
+      "nativeRuntimeVerified": false,
+      "historicalEvidence": {
+        "identifier": "verification/public-helpers-native-0.1.70.json",
+        "availability": "not-distributed",
+        "currentDllEvidence": false
+      },
+      "historicalVerification": {
+        "scope": "unqualified native flags from an older index; not current-DLL verification",
+        "recordedIndexBaseline": "0.1.71",
+        "claims": {
+          "nativeRuntimeVerified": true
+        },
+        "availability": "historical reports not distributed"
+      }
     },
     {
       "forgeType": "Nicokobo.Forge.ForgeModuleApi",
@@ -1148,7 +1564,15 @@
           "ezapi": [
             "PhoneApi.Register"
           ],
-          "nativeRuntimeVerified": true
+          "nativeRuntimeVerified": false,
+          "historicalVerification": {
+            "scope": "unqualified native flags from an older index; not current-DLL verification",
+            "recordedIndexBaseline": "0.1.71",
+            "claims": {
+              "nativeRuntimeVerified": true
+            },
+            "availability": "historical reports not distributed"
+          }
         },
         {
           "kind": "property",
@@ -1158,11 +1582,27 @@
           "ezapi": [
             "PhoneApi.IsAvailable"
           ],
-          "nativeRuntimeVerified": true
+          "nativeRuntimeVerified": false,
+          "historicalVerification": {
+            "scope": "unqualified native flags from an older index; not current-DLL verification",
+            "recordedIndexBaseline": "0.1.71",
+            "claims": {
+              "nativeRuntimeVerified": true
+            },
+            "availability": "historical reports not distributed"
+          }
         }
       ],
-      "nativeRuntimeVerified": true,
-      "evidence": "native-phone-0.1.34.zh-CN.md"
+      "nativeRuntimeVerified": false,
+      "evidence": "native-phone-0.1.34.zh-CN.md",
+      "historicalVerification": {
+        "scope": "unqualified native flags from an older index; not current-DLL verification",
+        "recordedIndexBaseline": "0.1.71",
+        "claims": {
+          "nativeRuntimeVerified": true
+        },
+        "availability": "historical reports not distributed"
+      }
     },
     {
       "forgeType": "Nicokobo.Forge.ForgePowerApi",
@@ -1179,8 +1619,16 @@
           "ezapi": [
             "Power.GetMachineCost"
           ],
-          "nativeRuntimeVerified": true,
-          "evidence": "native-power-0.1.43.zh-CN.md"
+          "nativeRuntimeVerified": false,
+          "evidence": "native-power-0.1.43.zh-CN.md",
+          "historicalVerification": {
+            "scope": "unqualified native flags from an older index; not current-DLL verification",
+            "recordedIndexBaseline": "0.1.71",
+            "claims": {
+              "nativeRuntimeVerified": true
+            },
+            "availability": "historical reports not distributed"
+          }
         },
         {
           "kind": "method",
@@ -1190,8 +1638,16 @@
           "ezapi": [
             "Power.GetEnergy"
           ],
-          "nativeRuntimeVerified": true,
-          "evidence": "native-power-0.1.43.zh-CN.md"
+          "nativeRuntimeVerified": false,
+          "evidence": "native-power-0.1.43.zh-CN.md",
+          "historicalVerification": {
+            "scope": "unqualified native flags from an older index; not current-DLL verification",
+            "recordedIndexBaseline": "0.1.71",
+            "claims": {
+              "nativeRuntimeVerified": true
+            },
+            "availability": "historical reports not distributed"
+          }
         },
         {
           "kind": "method",
@@ -1201,12 +1657,28 @@
           "ezapi": [
             "Power.TryDebit"
           ],
-          "nativeRuntimeVerified": true,
-          "evidence": "native-power-0.1.43.zh-CN.md"
+          "nativeRuntimeVerified": false,
+          "evidence": "native-power-0.1.43.zh-CN.md",
+          "historicalVerification": {
+            "scope": "unqualified native flags from an older index; not current-DLL verification",
+            "recordedIndexBaseline": "0.1.71",
+            "claims": {
+              "nativeRuntimeVerified": true
+            },
+            "availability": "historical reports not distributed"
+          }
         }
       ],
-      "nativeRuntimeVerified": true,
-      "evidence": "native-power-0.1.43.zh-CN.md"
+      "nativeRuntimeVerified": false,
+      "evidence": "native-power-0.1.43.zh-CN.md",
+      "historicalVerification": {
+        "scope": "unqualified native flags from an older index; not current-DLL verification",
+        "recordedIndexBaseline": "0.1.71",
+        "claims": {
+          "nativeRuntimeVerified": true
+        },
+        "availability": "historical reports not distributed"
+      }
     },
     {
       "forgeType": "Nicokobo.Forge.ForgePresentationApi",
@@ -1333,7 +1805,15 @@
           "ezapi": [
             "ReadingApi.Open"
           ],
-          "nativeRuntimeVerified": true
+          "nativeRuntimeVerified": false,
+          "historicalVerification": {
+            "scope": "unqualified native flags from an older index; not current-DLL verification",
+            "recordedIndexBaseline": "0.1.71",
+            "claims": {
+              "nativeRuntimeVerified": true
+            },
+            "availability": "historical reports not distributed"
+          }
         },
         {
           "kind": "method",
@@ -1343,7 +1823,15 @@
           "ezapi": [
             "ReadingApi.Close"
           ],
-          "nativeRuntimeVerified": true
+          "nativeRuntimeVerified": false,
+          "historicalVerification": {
+            "scope": "unqualified native flags from an older index; not current-DLL verification",
+            "recordedIndexBaseline": "0.1.71",
+            "claims": {
+              "nativeRuntimeVerified": true
+            },
+            "availability": "historical reports not distributed"
+          }
         },
         {
           "kind": "property",
@@ -1353,11 +1841,27 @@
           "ezapi": [
             "ReadingApi.IsAvailable"
           ],
-          "nativeRuntimeVerified": true
+          "nativeRuntimeVerified": false,
+          "historicalVerification": {
+            "scope": "unqualified native flags from an older index; not current-DLL verification",
+            "recordedIndexBaseline": "0.1.71",
+            "claims": {
+              "nativeRuntimeVerified": true
+            },
+            "availability": "historical reports not distributed"
+          }
         }
       ],
-      "nativeRuntimeVerified": true,
-      "evidence": "native-reading-0.1.32.zh-CN.md"
+      "nativeRuntimeVerified": false,
+      "evidence": "native-reading-0.1.32.zh-CN.md",
+      "historicalVerification": {
+        "scope": "unqualified native flags from an older index; not current-DLL verification",
+        "recordedIndexBaseline": "0.1.71",
+        "claims": {
+          "nativeRuntimeVerified": true
+        },
+        "availability": "historical reports not distributed"
+      }
     },
     {
       "forgeType": "Nicokobo.Forge.ForgeRecipeGuideApi",
@@ -1374,7 +1878,15 @@
           "ezapi": [
             "RecipeGuideApi.Close"
           ],
-          "nativeRuntimeVerified": true
+          "nativeRuntimeVerified": false,
+          "historicalVerification": {
+            "scope": "unqualified native flags from an older index; not current-DLL verification",
+            "recordedIndexBaseline": "0.1.71",
+            "claims": {
+              "nativeRuntimeVerified": true
+            },
+            "availability": "historical reports not distributed"
+          }
         },
         {
           "kind": "method",
@@ -1384,7 +1896,15 @@
           "ezapi": [
             "RecipeGuideApi.RegisterRecipes"
           ],
-          "nativeRuntimeVerified": true
+          "nativeRuntimeVerified": false,
+          "historicalVerification": {
+            "scope": "unqualified native flags from an older index; not current-DLL verification",
+            "recordedIndexBaseline": "0.1.71",
+            "claims": {
+              "nativeRuntimeVerified": true
+            },
+            "availability": "historical reports not distributed"
+          }
         },
         {
           "kind": "method",
@@ -1394,7 +1914,15 @@
           "ezapi": [
             "RecipeGuideApi.Snapshot"
           ],
-          "nativeRuntimeVerified": true
+          "nativeRuntimeVerified": false,
+          "historicalVerification": {
+            "scope": "unqualified native flags from an older index; not current-DLL verification",
+            "recordedIndexBaseline": "0.1.71",
+            "claims": {
+              "nativeRuntimeVerified": true
+            },
+            "availability": "historical reports not distributed"
+          }
         },
         {
           "kind": "property",
@@ -1404,12 +1932,36 @@
           "ezapi": [
             "RecipeGuideApi.IsVisible"
           ],
-          "nativeRuntimeVerified": true
+          "nativeRuntimeVerified": false,
+          "historicalVerification": {
+            "scope": "unqualified native flags from an older index; not current-DLL verification",
+            "recordedIndexBaseline": "0.1.71",
+            "claims": {
+              "nativeRuntimeVerified": true
+            },
+            "availability": "historical reports not distributed"
+          }
         }
       ],
-      "nativeRuntimeVerified": true,
-      "evidence": "verification/guide-mesh-native-0.1.66.json",
-      "publicContractAudit": "recipe-guide-public-contract.audit.json"
+      "nativeRuntimeVerified": false,
+      "historicalEvidence": {
+        "identifier": "verification/guide-mesh-native-0.1.66.json",
+        "availability": "not-distributed",
+        "currentDllEvidence": false
+      },
+      "historicalPublicContractAudit": {
+        "identifier": "recipe-guide-public-contract.audit.json",
+        "availability": "not-distributed",
+        "currentDllEvidence": false
+      },
+      "historicalVerification": {
+        "scope": "unqualified native flags from an older index; not current-DLL verification",
+        "recordedIndexBaseline": "0.1.71",
+        "claims": {
+          "nativeRuntimeVerified": true
+        },
+        "availability": "historical reports not distributed"
+      }
     },
     {
       "forgeType": "Nicokobo.Forge.ForgeRunDataApi",
@@ -1457,11 +2009,27 @@
           "ezapi": [
             "RunPurchaseApi.Purchase"
           ],
-          "nativeRuntimeVerified": true
+          "nativeRuntimeVerified": false,
+          "historicalVerification": {
+            "scope": "unqualified native flags from an older index; not current-DLL verification",
+            "recordedIndexBaseline": "0.1.71",
+            "claims": {
+              "nativeRuntimeVerified": true
+            },
+            "availability": "historical reports not distributed"
+          }
         }
       ],
-      "nativeRuntimeVerified": true,
-      "evidence": "native-purchase-0.1.35.zh-CN.md"
+      "nativeRuntimeVerified": false,
+      "evidence": "native-purchase-0.1.35.zh-CN.md",
+      "historicalVerification": {
+        "scope": "unqualified native flags from an older index; not current-DLL verification",
+        "recordedIndexBaseline": "0.1.71",
+        "claims": {
+          "nativeRuntimeVerified": true
+        },
+        "availability": "historical reports not distributed"
+      }
     },
     {
       "forgeType": "Nicokobo.Forge.ForgeSaveReadbackApi",
@@ -1478,7 +2046,15 @@
           "ezapi": [
             "SaveReadbackApi.ReadFile"
           ],
-          "nativeRuntimeVerified": true
+          "nativeRuntimeVerified": false,
+          "historicalVerification": {
+            "scope": "unqualified native flags from an older index; not current-DLL verification",
+            "recordedIndexBaseline": "0.1.71",
+            "claims": {
+              "nativeRuntimeVerified": true
+            },
+            "availability": "historical reports not distributed"
+          }
         },
         {
           "kind": "method",
@@ -1488,7 +2064,15 @@
           "ezapi": [
             "SaveReadbackApi.ReadBytes"
           ],
-          "nativeRuntimeVerified": true
+          "nativeRuntimeVerified": false,
+          "historicalVerification": {
+            "scope": "unqualified native flags from an older index; not current-DLL verification",
+            "recordedIndexBaseline": "0.1.71",
+            "claims": {
+              "nativeRuntimeVerified": true
+            },
+            "availability": "historical reports not distributed"
+          }
         },
         {
           "kind": "method",
@@ -1531,7 +2115,15 @@
           "nativeRuntimeVerified": false
         }
       ],
-      "nativeRuntimeVerified": true
+      "nativeRuntimeVerified": false,
+      "historicalVerification": {
+        "scope": "unqualified native flags from an older index; not current-DLL verification",
+        "recordedIndexBaseline": "0.1.71",
+        "claims": {
+          "nativeRuntimeVerified": true
+        },
+        "availability": "historical reports not distributed"
+      }
     },
     {
       "forgeType": "Nicokobo.Forge.ForgeStartApi",
@@ -1578,7 +2170,15 @@
           "ezapi": [
             "EZapi.SupplierApi.Queue"
           ],
-          "nativeRuntimeVerified": true
+          "nativeRuntimeVerified": false,
+          "historicalVerification": {
+            "scope": "unqualified native flags from an older index; not current-DLL verification",
+            "recordedIndexBaseline": "0.1.71",
+            "claims": {
+              "nativeRuntimeVerified": true
+            },
+            "availability": "historical reports not distributed"
+          }
         },
         {
           "kind": "property",
@@ -1591,7 +2191,15 @@
           "nativeRuntimeVerified": false
         }
       ],
-      "nativeRuntimeVerified": true
+      "nativeRuntimeVerified": false,
+      "historicalVerification": {
+        "scope": "unqualified native flags from an older index; not current-DLL verification",
+        "recordedIndexBaseline": "0.1.71",
+        "claims": {
+          "nativeRuntimeVerified": true
+        },
+        "availability": "historical reports not distributed"
+      }
     },
     {
       "forgeType": "Nicokobo.Forge.ForgeWorkshopApi",
@@ -1608,7 +2216,15 @@
           "ezapi": [
             "WorkshopApi.RegisterTab"
           ],
-          "nativeRuntimeVerified": true
+          "nativeRuntimeVerified": false,
+          "historicalVerification": {
+            "scope": "unqualified native flags from an older index; not current-DLL verification",
+            "recordedIndexBaseline": "0.1.71",
+            "claims": {
+              "nativeRuntimeVerified": true
+            },
+            "availability": "historical reports not distributed"
+          }
         },
         {
           "kind": "method",
@@ -1628,7 +2244,15 @@
           "ezapi": [
             "WorkshopApi.OpenTab"
           ],
-          "nativeRuntimeVerified": true
+          "nativeRuntimeVerified": false,
+          "historicalVerification": {
+            "scope": "unqualified native flags from an older index; not current-DLL verification",
+            "recordedIndexBaseline": "0.1.71",
+            "claims": {
+              "nativeRuntimeVerified": true
+            },
+            "availability": "historical reports not distributed"
+          }
         },
         {
           "kind": "method",
@@ -1658,11 +2282,27 @@
           "ezapi": [
             "WorkshopApi.IsVisible"
           ],
-          "nativeRuntimeVerified": true
+          "nativeRuntimeVerified": false,
+          "historicalVerification": {
+            "scope": "unqualified native flags from an older index; not current-DLL verification",
+            "recordedIndexBaseline": "0.1.71",
+            "claims": {
+              "nativeRuntimeVerified": true
+            },
+            "availability": "historical reports not distributed"
+          }
         }
       ],
-      "nativeRuntimeVerified": true,
-      "evidence": "workshop.zh-CN.md"
+      "nativeRuntimeVerified": false,
+      "evidence": "workshop.zh-CN.md",
+      "historicalVerification": {
+        "scope": "unqualified native flags from an older index; not current-DLL verification",
+        "recordedIndexBaseline": "0.1.71",
+        "claims": {
+          "nativeRuntimeVerified": true
+        },
+        "availability": "historical reports not distributed"
+      }
     }
   ],
   "additionalPublicImplementations": [
@@ -1740,16 +2380,32 @@
       "forgeType": "Nicokobo.Forge.IForgePowerTransaction",
       "ezapi": "IPowerTransaction",
       "status": "implemented",
-      "nativeRuntimeVerified": true,
-      "source": "../src/EZapi/ExternalPower.cs"
+      "nativeRuntimeVerified": false,
+      "source": "../src/EZapi/ExternalPower.cs",
+      "historicalVerification": {
+        "scope": "unqualified native flags from an older index; not current-DLL verification",
+        "recordedIndexBaseline": "0.1.71",
+        "claims": {
+          "nativeRuntimeVerified": true
+        },
+        "availability": "historical reports not distributed"
+      }
     },
     {
       "forgeType": "Nicokobo.Forge.ForgeSpriteAtlas",
       "ezapi": "EmbeddedSpriteAtlas",
       "status": "implemented",
-      "nativeRuntimeVerified": true,
+      "nativeRuntimeVerified": false,
       "source": "../src/EZapi/SpriteAssets.cs",
-      "boundary": "GetSprite/TryInstall/Assign/RegisterPortrait covered; 0.1.47 native smoke 9/9. Portrait on-screen visual rendering, real scene dictionary rebuild and save/reload pending; stopped handles stay inert."
+      "boundary": "GetSprite/TryInstall/Assign/RegisterPortrait covered; 0.1.47 native smoke 9/9. Portrait on-screen visual rendering, real scene dictionary rebuild and save/reload pending; stopped handles stay inert.",
+      "historicalVerification": {
+        "scope": "unqualified native flags from an older index; not current-DLL verification",
+        "recordedIndexBaseline": "0.1.71",
+        "claims": {
+          "nativeRuntimeVerified": true
+        },
+        "availability": "historical reports not distributed"
+      }
     },
     {
       "forgeType": "Nicokobo.Forge.ForgeSpriteDefinition",
@@ -1772,7 +2428,11 @@
       "nativeRuntimeVerified": false,
       "source": "../src/EZapi/PowerBatchMath.cs",
       "offlineTestsPassed": 24,
-      "evidence": "verification/native-power-0.1.43/power-batch-result.json"
+      "historicalEvidence": {
+        "identifier": "verification/native-power-0.1.43/power-batch-result.json",
+        "availability": "not-distributed",
+        "currentDllEvidence": false
+      }
     },
     {
       "forgeType": "Nicokobo.Forge.ForgePowerSourceAmount",
@@ -1813,56 +2473,128 @@
       "forgeType": "Nicokobo.Forge.ForgeMachineContainerOutput",
       "ezapi": "MachineContainerOutput",
       "status": "implemented",
-      "nativeRuntimeVerified": true,
+      "nativeRuntimeVerified": false,
       "source": "../src/EZapi/MachineRecipeDefinition.cs",
-      "evidence": "verification/liquid-output-native-0.1.55.json",
-      "boundary": "Per-recipe and template container predicates both implemented; automatic/leased C# callbacks; no executable callback JSON."
+      "historicalEvidence": {
+        "identifier": "verification/liquid-output-native-0.1.55.json",
+        "availability": "not-distributed",
+        "currentDllEvidence": false
+      },
+      "boundary": "Per-recipe and template container predicates both implemented; automatic/leased C# callbacks; no executable callback JSON.",
+      "historicalVerification": {
+        "scope": "unqualified native flags from an older index; not current-DLL verification",
+        "recordedIndexBaseline": "0.1.71",
+        "claims": {
+          "nativeRuntimeVerified": true
+        },
+        "availability": "historical reports not distributed"
+      }
     },
     {
       "forgeType": "Nicokobo.Forge.ForgeMachineContainerSlot",
       "ezapi": "MachineContainerSlot.Condition",
       "status": "implemented",
-      "nativeRuntimeVerified": true,
+      "nativeRuntimeVerified": false,
       "source": "../src/EZapi/MachineLayoutCallbacks.cs",
-      "evidence": "verification/container-conditions-native-0.1.56.json",
-      "boundary": "C# predicates, automatic unified registration or explicit disposable low-level lease; no callback JSON execution"
+      "historicalEvidence": {
+        "identifier": "verification/container-conditions-native-0.1.56.json",
+        "availability": "not-distributed",
+        "currentDllEvidence": false
+      },
+      "boundary": "C# predicates, automatic unified registration or explicit disposable low-level lease; no callback JSON execution",
+      "historicalVerification": {
+        "scope": "unqualified native flags from an older index; not current-DLL verification",
+        "recordedIndexBaseline": "0.1.71",
+        "claims": {
+          "nativeRuntimeVerified": true
+        },
+        "availability": "historical reports not distributed"
+      }
     },
     {
       "forgeType": "Nicokobo.Forge.ForgeMachineOutputTemplate",
       "ezapi": "MachineOutputTemplate.ContainerCondition",
       "status": "implemented",
-      "nativeRuntimeVerified": true,
+      "nativeRuntimeVerified": false,
       "source": "../src/EZapi/MachineLayoutCallbacks.cs",
-      "evidence": "verification/container-conditions-native-0.1.56.json",
-      "boundary": "C# predicates, automatic unified registration or explicit disposable low-level lease; no callback JSON execution"
+      "historicalEvidence": {
+        "identifier": "verification/container-conditions-native-0.1.56.json",
+        "availability": "not-distributed",
+        "currentDllEvidence": false
+      },
+      "boundary": "C# predicates, automatic unified registration or explicit disposable low-level lease; no callback JSON execution",
+      "historicalVerification": {
+        "scope": "unqualified native flags from an older index; not current-DLL verification",
+        "recordedIndexBaseline": "0.1.71",
+        "claims": {
+          "nativeRuntimeVerified": true
+        },
+        "availability": "historical reports not distributed"
+      }
     },
     {
       "ezapi": "MachineRecipe.MaterialContents / MachineMaterialContentsPolicy",
       "status": "implemented",
-      "nativeRuntimeVerified": true,
+      "nativeRuntimeVerified": false,
       "source": "../src/EZapi/MachineMaterialGraph.cs",
-      "evidence": "verification/material-graph-native-0.1.57.json",
-      "boundary": "default Reject retained; explicit whole root/descendant consumption; no persistence claim"
+      "historicalEvidence": {
+        "identifier": "verification/material-graph-native-0.1.57.json",
+        "availability": "not-distributed",
+        "currentDllEvidence": false
+      },
+      "boundary": "default Reject retained; explicit whole root/descendant consumption; no persistence claim",
+      "historicalVerification": {
+        "scope": "unqualified native flags from an older index; not current-DLL verification",
+        "recordedIndexBaseline": "0.1.71",
+        "claims": {
+          "nativeRuntimeVerified": true
+        },
+        "availability": "historical reports not distributed"
+      }
     },
     {
       "ezapi": "RecipeGuideFigure.ItemId image resolution",
       "status": "implemented",
-      "nativeRuntimeVerified": true,
+      "nativeRuntimeVerified": false,
       "source": "../src/EZapi/RecipeGuideImages.cs",
-      "evidence": "verification/guide-mesh-native-0.1.66.json",
-      "boundary": "bounded public triangle/UV meshes; no new required fields"
+      "historicalEvidence": {
+        "identifier": "verification/guide-mesh-native-0.1.66.json",
+        "availability": "not-distributed",
+        "currentDllEvidence": false
+      },
+      "boundary": "bounded public triangle/UV meshes; no new required fields",
+      "historicalVerification": {
+        "scope": "unqualified native flags from an older index; not current-DLL verification",
+        "recordedIndexBaseline": "0.1.71",
+        "claims": {
+          "nativeRuntimeVerified": true
+        },
+        "availability": "historical reports not distributed"
+      }
     }
   ],
   "designPrinciples": "design-principles.zh-CN.md",
-  "machinePublicContractAudit": "machine-public-contract.audit.json",
+  "historicalMachinePublicContractAudit": {
+    "identifier": "machine-public-contract.audit.json",
+    "availability": "not-distributed",
+    "currentDllEvidence": false
+  },
   "machineNightReadOnly": {
     "index": "machine-night-readonly.index.json",
-    "evidence": "verification/night-readonly-native-0.1.68.json",
+    "historicalEvidence": {
+      "identifier": "verification/night-readonly-native-0.1.68.json",
+      "availability": "not-distributed",
+      "currentDllEvidence": false
+    },
     "fullMachineGroupComplete": true
   },
   "machineRecipeReadOnly": {
     "index": "machine-recipe-readonly.index.json",
-    "evidence": "verification/recipe-readonly-native-0.1.69.json",
+    "historicalEvidence": {
+      "identifier": "verification/recipe-readonly-native-0.1.69.json",
+      "availability": "not-distributed",
+      "currentDllEvidence": false
+    },
     "behaviorProgress": {
       "reviewedTypes": 34,
       "reviewedProperties": 114,
@@ -1875,7 +2607,11 @@
   "machineContractReview": {
     "complete": true,
     "index": "machine-contract.index.json",
-    "audit": "machine-public-contract.audit.json",
+    "historicalAudit": {
+      "identifier": "machine-public-contract.audit.json",
+      "availability": "not-distributed",
+      "currentDllEvidence": false
+    },
     "behaviorProgress": {
       "reviewedTypes": 34,
       "reviewedProperties": 114,
@@ -1898,9 +2634,21 @@
     "Developer ease of use and complete AI-readable index/example review",
     "Cross-API Chinese/English interoperability with real game English"
   ],
-  "distributionVerification": {
+  "previousImplementationVersionBaseline": "0.1.71",
+  "documentationContext": {
+    "kind": "current-api-guide",
+    "releaseTag": "0.1.73-preview.3",
+    "assemblyVersion": "0.1.73",
+    "releaseStatus": "release-status.json",
+    "nativeRuntimeVerified": false,
+    "evidencePolicy": "Old native claims are preserved only under historical* fields and do not apply to the current DLL."
+  },
+  "binaryPackageVerification": {
     "dllSHA256": "7E4AB675B0E3BD81C56EEC4606731A6880287549EB4E8E90A707BE18BD52BEEF",
     "nativeRuntimeVerified": false,
-    "frameworkSourceIncluded": false
-  }
+    "frameworkSourceIncluded": false,
+    "artifactKind": "binary-SDK; not repository source contents",
+    "sourceRepositoryVisibility": "public"
+  },
+  "completeScope": "39 reference functionality groups only; not project completion, behavior certification or current-DLL acceptance"
 }

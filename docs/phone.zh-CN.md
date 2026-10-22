@@ -1,3 +1,5 @@
+> 当前 API 指南。见[统一版本与验收状态](current-status.zh-CN.md)：当前 DLL 尚未完成实机验收；旧测试数量仅适用于其历史 DLL。
+
 # 电话联系人
 
 使用 `PhoneApi.Register(ownerId, contact)` 登记联系人；EZapi 负责将当前可见的联系人放入游戏自己的通讯录、接入原生拨号，并用 `DialogueScript` 展示通话。可编译示例见 `../src/EZapi.Sample/PhoneExamples.cs`；精确签名及 DTO 见 `API.index.zh-CN.json`。本接口不需要依赖 Forge。

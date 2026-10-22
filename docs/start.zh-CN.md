@@ -1,3 +1,5 @@
+> 当前 API 指南。见[统一版本与验收状态](current-status.zh-CN.md)：当前 DLL 尚未完成实机验收；旧测试数量仅适用于其历史 DLL。
+
 # Start API：开局身份映射
 
 `StartApi` 为 Mod 提供一个带 owner 和稳定 ID 的登记表，将 Mod 的开局身份 ID 映射到游戏官方的 `Il2Cpp.NewGameData.StartType`。它对齐 Forge `ForgeStartApi.RegisterStart/Snapshot` 的公共注册能力。

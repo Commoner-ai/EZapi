@@ -1,4 +1,6 @@
-# EZapi 0.1.54：标准材料与指定成分消费
+> 当前 API 指南。见[统一版本与验收状态](current-status.zh-CN.md)：当前 DLL 尚未完成实机验收；旧测试数量仅适用于其历史 DLL。
+
+# EZapi标准材料与指定成分消费
 
 先读本页，再读配方指南。本版保留自定义Transaction，并允许省略它：框架会创建真正的同步资源事务。旧版文档中“Transaction必填”仅适用于0.1.24。
 
@@ -44,4 +46,6 @@ var recipe = new MachineRecipe("author.tools.recipe",
 }; // 不写Transaction，由框架消费指定成分1ml。
 ```
 
-可编译示例为`MachineRecipeExamples.RegisterComponentLiquid`。0.1.54在槽534同一进程通过156项材料断言：混合液保留其他成分、同成分连续扣取、先指定再混合、扣空、交付拒绝和部分交付失败补偿。完整容器/状态字典/父库存身份保持，失败后液体全部标签、材料和电量恢复；冻结均释放。五组合计403/0，全部536份ES3哈希不变。证据见`verification/component-liquid-native-0.1.54.json`。这里只验证同步事务，不承诺跨进程崩溃恢复或其他Mod组合。
+> 历史验收记录（0.1.54），不作为当前 DLL 通过依据。
+> 可编译示例为`MachineRecipeExamples.RegisterComponentLiquid`。0.1.54在槽534同一进程通过156项材料断言：混合液保留其他成分、同成分连续扣取、先指定再混合、扣空、交付拒绝和部分交付失败补偿。完整容器/状态字典/父库存身份保持，失败后液体全部标签、材料和电量恢复；冻结均释放。五组合计403/0，全部536份ES3哈希不变。证据见`verification/component-liquid-native-0.1.54.json`。这里只验证同步事务，不承诺跨进程崩溃恢复或其他Mod组合。
+> 

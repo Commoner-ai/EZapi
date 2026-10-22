@@ -1,4 +1,6 @@
-# EZapi 0.1.10：事务与原生运行时服务
+> 当前 API 指南。见[统一版本与验收状态](current-status.zh-CN.md)：当前 DLL 尚未完成实机验收；旧测试数量仅适用于其历史 DLL。
+
+# EZapi事务与原生运行时服务
 
 这些接口为库存和机器功能提供基础，独立于 Forge。它们有实际原生调用和离线失败路径检查；原生扣电、液体单位、窗口显示与保存结果仍待游戏验证。全量最低范围与差距见 `FORGE-PARITY.zh-CN.md`。
 
@@ -78,7 +80,8 @@ GetMachineCost 读取 MachineryHelper；GetEnergy 读取 PowerHelper，单位为
 
 `PowerBatchMath.Plan` 是纯托管规划器：验证每个实例 ID 为正且唯一、电量非负，使用 64 位总量检查溢出，并按实例 ID 升序分配费用。费用为零或总电量不足时返回空列表；负费用、无效快照或重复实例会抛出带 `EZAPI_POWER_BATCH_*` 标识的参数异常。它只规划，不扣电。需要从多个电源实际扣费时，把每项 `Power.TryDebit` 放进 `Transactions.Run`，每步重新核对身份与 Before 值，并提供原生读回恢复；不能把规划结果当成锁定或提交凭证。
 
-0.1.43 已在 Probably Stolen 0.46D 的店铺测试档运行“电力接口检查”：单件和 5 件堆叠电源共 20 项原生检查通过，0 项失败；两种夹具均实际扣除 7 电并读回 93，恢复为 100 后销毁，且身份、数量和电池库存位置未改变。完整范围、存档校验和测试限制见 [0.1.43 原生验收记录](native-power-0.1.43.zh-CN.md)。`PowerBatchMath.Plan` 的 24 项纯托管回归另列于同一记录，不代表游戏内多源事务已验收。
+> 历史验收记录（0.1.43），不作为当前 DLL 通过依据。
+> 0.1.43 已在 Probably Stolen 0.46D 的店铺测试档运行“电力接口检查”：单件和 5 件堆叠电源共 20 项原生检查通过，0 项失败；两种夹具均实际扣除 7 电并读回 93，恢复为 100 后销毁，且身份、数量和电池库存位置未改变。完整范围、存档校验和测试限制见 [0.1.43 原生验收记录](native-power-0.1.43.zh-CN.md)。`PowerBatchMath.Plan` 的 24 项纯托管回归另列于同一记录，不代表游戏内多源事务已验收。
 
 独立调用不支持外部电源连接器，因为缺少机器上下文；连接器应使用机器批次事务。TryDebit 不执行原生带宽分摊或机器调度。不要在原生已经扣电的处理回调中再次调用，避免重复消耗。
 
@@ -97,7 +100,7 @@ Capture 扫描已经就绪的原生 Liquid.Liquids（最多4096种），通过�
 
 返回纯托管不可变快照，不保留物品/液体包装对象；之后原生内容变化不会改写旧快照。Parts 保留原生单位；当前对照契约按1000 parts=1ml计算 Millilitres，实际游戏读数仍待玩家核对。Purity 是原生整数，不直接叫作百分比；ConditionId 和 WaterQuality 使用原生水质条件。
 
-本版没有提供倒液或成分写入，不会把等量的不同液体当作恢复成功。液体转移与混合事务在全量覆盖清单中继续待开发。
+当前液体转移及双容器差额核对见[LiquidTransferApi](liquid-transfer.zh-CN.md)，成分材料与生产事务见[机器材料](machine-materials.zh-CN.md)。这些入口已实现，不再沿用早期“尚未提供倒液”的状态；未知反应和不明确恢复结果仍会停止并报告。
 
 ## 调试和错误定位
 
@@ -105,4 +108,6 @@ Capture 扫描已经就绪的原生 Liquid.Liquids（最多4096种），通过�
 
 常见错误：`EZAPI_NATIVE_NOT_READY`（等待当前周目）、`EZAPI_NATIVE_ITEM`（重新取得有效实例）、`EZAPI_TRANSACTION_STEPS`（检查步骤声明）、`EZAPI_LIQUID_CATALOG/STATE`（目录或真实成分不一致）。完整入口和错误见 API.index.zh-CN.json 与 errors.index.json。
 
-0.1.49 实机估值验收：84组临时夹具、425项断言通过。覆盖数量1/2/5、0/1/137/10000000001价值、使用次数、Innate/Market/Final修正、未生效Event、容器子物品。未生效Event只验证保留原生结果，不声称覆盖所有活动事件。535个ES3文件哈希不变。参见 verification/item-inspection-native-0.1.49.json。
+> 历史验收记录（0.1.49），不作为当前 DLL 通过依据。
+> 0.1.49 实机估值验收：84组临时夹具、425项断言通过。覆盖数量1/2/5、0/1/137/10000000001价值、使用次数、Innate/Market/Final修正、未生效Event、容器子物品。未生效Event只验证保留原生结果，不声称覆盖所有活动事件。535个ES3文件哈希不变。参见 verification/item-inspection-native-0.1.49.json。
+> 

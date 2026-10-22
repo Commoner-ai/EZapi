@@ -24,7 +24,7 @@ work_files = {'build-public-api-index.py', 'sync-curated-api-types.py',
               'Invoke-EZapiNativeTest.ps1', 'Invoke-EZapiTestBatch.ps1',
               'Invoke-EZapiGuideLocalization.ps1'}
 script_files = {'Package-EZapi.py', 'Fetch-OfficialDocs.ps1',
-                'Test-EZapiOffline.ps1', 'Check-SourceDistribution.py'}
+                'Test-EZapiOffline.ps1', 'Check-SourceDistribution.py', 'Verify-Documentation.py'}
 patterns = {
     'private key': r'-----BEGIN (?:OPENSSH |RSA |EC |DSA )?PRIVATE KEY-----',
     'access token': r'\b(?:gh[pousr]_[A-Za-z0-9]{20,}|github_pat_[A-Za-z0-9_]{20,}|sk-[A-Za-z0-9_-]{20,})',

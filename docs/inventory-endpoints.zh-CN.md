@@ -1,4 +1,6 @@
-# 持久库存端点（0.1.36）
+> 当前 API 指南。见[统一版本与验收状态](current-status.zh-CN.md)：当前 DLL 尚未完成实机验收；旧测试数量仅适用于其历史 DLL。
+
+# 持久库存端点（）
 
 库存端点把一件由当前 Mod 拥有的根物品放进 EZapi 管理的隐藏 `PlayerStore.saveBags` 槽位，并将整张原生物品图以有版本的 JSON 保存在 `PlayerStore.modData`。它适合机器缓存、任务奖励柜等不需要直接显示在店铺主库存中的状态。物品创建、库存准入、存档落盘和后续加载仍由游戏原生流程负责。
 
@@ -60,7 +62,8 @@ EZapi 不会调用 `SaveGame`，也不会主动触发保存。游戏调用原生
 
 `HookApi.GetRuntimeStatus()` 会列出 `ezapi.inventory.endpoints` 独立钩子组的完整目标及安装错误。端点 API 的 `IsAvailable` 还要求 `SaveGraphApi.CanDecode` 为 `true`，这样只有确认当前构建能恢复完整物品图后才允许创建或打开端点。不可用时查看 `InventoryEndpointApi.UnavailableReason` 和钩子状态；不要把未就绪解释成端点不存在。
 
-加载后，第一次 `Open`、`Snapshot` 或保存会读取当前槽位和周目对应的 JSON，使用 `SaveGraphApi.Decode` 重建完整图，核对实例 ID、根物品、所有子图别名，并在全部记录准备完成后才发布到原生 `saveBags`。任一记录失败时会封锁端点操作和保存，不会只发布一部分端点，也不会静默创建空库存。0.1.53已按当前构建真实加载序列恢复CanDecode，临时端点创建/查询/编码/删除验证14项通过；同版本补充验收已通过原生保存/新进程恢复/删除后冷启动，详细范围见下方新验收记录。原生加载回调失败时应查看 `UserData/EZapi/diagnostics.json` 的 `inventoryEndpoints` 和 `inventoryEndpointDebug`。
+> 历史验收记录（0.1.53），不作为当前 DLL 通过依据。
+> 加载后，第一次 `Open`、`Snapshot` 或保存会读取当前槽位和周目对应的 JSON，使用 `SaveGraphApi.Decode` 重建完整图，核对实例 ID、根物品、所有子图别名，并在全部记录准备完成后才发布到原生 `saveBags`。任一记录失败时会封锁端点操作和保存，不会只发布一部分端点，也不会静默创建空库存。0.1.53已按当前构建真实加载序列恢复CanDecode，临时端点创建/查询/编码/删除验证14项通过；同版本补充验收已通过原生保存/新进程恢复/删除后冷启动，详细范围见下方新验收记录。原生加载回调失败时应查看 `UserData/EZapi/diagnostics.json` 的 `inventoryEndpoints` 和 `inventoryEndpointDebug`。
 
 有界契约：每个存档最多 128 个端点；端点 JSON 总计最多 8 MiB；原生 `saveBags` 最多 4096 个键；每张原生图遵守 `SaveGraphApi` 的 4096 个物品、8192 个节点/边限制。超出时整次操作失败，不返回截断快照。
 

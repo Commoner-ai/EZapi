@@ -1,4 +1,4 @@
-> 0.1.72-preview.1 packaging: developer tools default off. See [installation](install-and-debug.en.md). The 415-check/save-reload reports below apply to the recorded pre-packaging DLL hash4238A189…; they are historical for the new binary.
+> Current API guide. See [release status](current-status.en.md): current-DLL native acceptance is pending; older test counts apply only to their historical binaries.
 
 # Current game language and Chinese/English text
 
@@ -8,7 +8,8 @@ This milestone prioritizes Chinese (`zh`) and English (`en`) translations and ve
 
 Automatic CSV resolution supports all official locale codes: use an available translation for the current game locale, then English, then readable author fallback text. Complete translations and native verification for other languages are outside this milestone's delivery requirements.
 
-The current DLL passed 415 native en/zh checks, including existing and disk-loaded items, tooltips, container/machine titles, reading, workshop, dialogue, phone and supplier pages. Supplier arrival/departure callbacks were fixture-dispatched; natural visits, payment and delivery were not tested in this run. See [scoped save/supplier evidence](verification/disk-supplier-native-0.1.72.json).
+> Historical verification note (0.1.72); not evidence for the current DLL. 
+> The historical 0.1.72 DLL recorded 415 native en/zh checks, including existing and disk-loaded items, tooltips, container/machine titles, reading, workshop, dialogue, phone and supplier pages. Supplier arrival/departure callbacks were fixture-dispatched; natural visits, payment and delivery were not tested in this run. See scoped save/supplier evidence (historical identifier `verification/disk-supplier-native-0.1.72.json`; original artifact not distributed).
 
 DLL Mods can read the current language through `GameLanguage.Current`, then resolve bilingual text or a content-pack CSV catalog through `GameLanguage.Resolve`. EZapi reads the native locale getter for the verified game build. Since EZapi 0.1.72, ordinary JSON item display fields can bind directly to keys in their own pack's CSV files; every referenced key must have an English entry before the pack is queued.
 

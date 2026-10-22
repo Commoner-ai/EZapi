@@ -1,4 +1,6 @@
-# EZapi 0.1.56：液体输入与输出容器条件
+> 当前 API 指南。见[统一版本与验收状态](current-status.zh-CN.md)：当前 DLL 尚未完成实机验收；旧测试数量仅适用于其历史 DLL。
+
+# EZapi液体输入与输出容器条件
 
 `MachineContainerSlot.Condition` 限制某个液体输入槽中的容器；`MachineOutputTemplate.ContainerCondition` 限制已有液体输出容器，要求 `Kind="container"`。两者均为 `Func<GameItem,bool>`，与原生规则、固定 ID/标签和配方条件取交集，不能放宽原生拒绝。
 

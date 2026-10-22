@@ -1,0 +1,638 @@
+{
+  "schemaVersion": 1,
+  "kind": "historical-unpublished-artifact-catalog",
+  "currentDllEvidence": false,
+  "records": [
+    {
+      "identifier": "verification/furnace-contents-native-0.1.67.json",
+      "availability": "not-distributed",
+      "kind": "historical-private-artifact",
+      "currentDllEvidence": false,
+      "referencedBy": [
+        "API.index.zh-CN.json",
+        "capabilities.json",
+        "forge-parity.index.json",
+        "furnace-contents.en.md",
+        "furnace-contents.index.json",
+        "furnace-contents.zh-CN.md",
+        "official-sources.index.json",
+        "patches.index.json",
+        "source.index.json"
+      ]
+    },
+    {
+      "identifier": "verification/endpoint-lifecycle-0.1.53.json",
+      "availability": "not-distributed",
+      "kind": "historical-private-artifact",
+      "currentDllEvidence": false,
+      "referencedBy": [
+        "API.index.zh-CN.json",
+        "capabilities.json",
+        "forge-parity.index.json"
+      ]
+    },
+    {
+      "identifier": "verification/item-inspection-native-0.1.49.json",
+      "availability": "not-distributed",
+      "kind": "historical-private-artifact",
+      "currentDllEvidence": false,
+      "referencedBy": [
+        "API.index.zh-CN.json",
+        "capabilities.json",
+        "official-sources.index.json"
+      ]
+    },
+    {
+      "identifier": "verification/savegraph-native-0.1.53.json",
+      "availability": "not-distributed",
+      "kind": "historical-private-artifact",
+      "currentDllEvidence": false,
+      "referencedBy": [
+        "API.index.zh-CN.json",
+        "capabilities.json",
+        "forge-parity.index.json"
+      ]
+    },
+    {
+      "identifier": "verification/native-test-0.1.47/diagnostics.json",
+      "availability": "not-distributed",
+      "kind": "historical-private-artifact",
+      "currentDllEvidence": false,
+      "referencedBy": [
+        "API.index.zh-CN.json",
+        "capabilities.json",
+        "official-sources.index.json"
+      ]
+    },
+    {
+      "identifier": "verification/night-placement-native-0.1.65.json",
+      "availability": "not-distributed",
+      "kind": "historical-private-artifact",
+      "currentDllEvidence": false,
+      "referencedBy": [
+        "API.index.zh-CN.json",
+        "capabilities.json",
+        "forge-parity.index.json",
+        "item-stock.index.json",
+        "item-stock.zh-CN.md",
+        "official-sources.index.json",
+        "patches.index.json"
+      ]
+    },
+    {
+      "identifier": "verification/registration-native-0.1.52.json",
+      "availability": "not-distributed",
+      "kind": "historical-private-artifact",
+      "currentDllEvidence": false,
+      "referencedBy": [
+        "API.index.zh-CN.json",
+        "capabilities.json",
+        "forge-parity.index.json"
+      ]
+    },
+    {
+      "identifier": "verification/inventory-binding-native-0.1.60.json",
+      "availability": "not-distributed",
+      "kind": "historical-private-artifact",
+      "currentDllEvidence": false,
+      "referencedBy": [
+        "API.index.zh-CN.json",
+        "capabilities.json",
+        "machine-inventory-binding.zh-CN.md",
+        "official-sources.index.json"
+      ]
+    },
+    {
+      "identifier": "verification/guide-localization-native-0.1.61.json",
+      "availability": "not-distributed",
+      "kind": "historical-private-artifact",
+      "currentDllEvidence": false,
+      "referencedBy": [
+        "API.index.zh-CN.json",
+        "capabilities.json",
+        "official-sources.index.json",
+        "recipe-guide-localization.zh-CN.md"
+      ]
+    },
+    {
+      "identifier": "verification/public-helpers-native-0.1.70.json",
+      "availability": "not-distributed",
+      "kind": "historical-private-artifact",
+      "currentDllEvidence": false,
+      "referencedBy": [
+        "API.index.zh-CN.json",
+        "forge-parity.index.json",
+        "public-helpers.index.json"
+      ]
+    },
+    {
+      "identifier": "verification/progression-native-0.1.71.json",
+      "availability": "not-distributed",
+      "kind": "historical-private-artifact",
+      "currentDllEvidence": false,
+      "referencedBy": [
+        "API.index.zh-CN.json",
+        "knowledge-expansion.index.json",
+        "progression-requirements.index.json"
+      ]
+    },
+    {
+      "identifier": "verification/disk-supplier-native-0.1.72.json",
+      "availability": "not-distributed",
+      "kind": "historical-private-artifact",
+      "currentDllEvidence": false,
+      "referencedBy": [
+        "API.index.zh-CN.json",
+        "capabilities.json",
+        "dialogue-localization.en.md",
+        "dialogue-localization.index.json",
+        "dialogue-localization.zh-CN.md",
+        "game-language.en.md",
+        "game-language.index.json",
+        "game-language.zh-CN.md",
+        "item-data.en.md",
+        "item-data.index.json",
+        "item-data.zh-CN.md",
+        "item-localization.index.json",
+        "knowledge-expansion.index.json",
+        "localization.zh-CN.md",
+        "machine-layout-localization.en.md",
+        "machine-layout-localization.index.json",
+        "machine-layout-localization.zh-CN.md"
+      ]
+    },
+    {
+      "identifier": "verification/liquid-output-native-0.1.55.json",
+      "availability": "not-distributed",
+      "kind": "historical-private-artifact",
+      "currentDllEvidence": false,
+      "referencedBy": [
+        "API.index.zh-CN.json",
+        "capabilities.json",
+        "forge-parity.index.json",
+        "official-sources.index.json"
+      ]
+    },
+    {
+      "identifier": "verification/container-conditions-native-0.1.56.json",
+      "availability": "not-distributed",
+      "kind": "historical-private-artifact",
+      "currentDllEvidence": false,
+      "referencedBy": [
+        "API.index.zh-CN.json",
+        "capabilities.json",
+        "forge-parity.index.json",
+        "official-sources.index.json"
+      ]
+    },
+    {
+      "identifier": "verification/material-graph-native-0.1.57.json",
+      "availability": "not-distributed",
+      "kind": "historical-private-artifact",
+      "currentDllEvidence": false,
+      "referencedBy": [
+        "API.index.zh-CN.json",
+        "capabilities.json",
+        "forge-parity.index.json",
+        "official-sources.index.json"
+      ]
+    },
+    {
+      "identifier": "verification/machine-persistence-native-0.1.62.json",
+      "availability": "not-distributed",
+      "kind": "historical-private-artifact",
+      "currentDllEvidence": false,
+      "referencedBy": [
+        "API.index.zh-CN.json",
+        "capabilities.json",
+        "machine-persistence.en.md",
+        "machine-persistence.index.json",
+        "machine-persistence.zh-CN.md",
+        "official-sources.index.json",
+        "patches.index.json"
+      ]
+    },
+    {
+      "identifier": "verification/guide-images-native-0.1.58.json",
+      "availability": "not-distributed",
+      "kind": "historical-private-artifact",
+      "currentDllEvidence": false,
+      "referencedBy": [
+        "API.index.zh-CN.json"
+      ]
+    },
+    {
+      "identifier": "verification/required-power-native-0.1.59.json",
+      "availability": "not-distributed",
+      "kind": "historical-private-artifact",
+      "currentDllEvidence": false,
+      "referencedBy": [
+        "API.index.zh-CN.json",
+        "capabilities.json",
+        "machine-required-power.zh-CN.md",
+        "official-sources.index.json"
+      ]
+    },
+    {
+      "identifier": "machine-public-contract.audit.json",
+      "availability": "not-distributed",
+      "kind": "historical-private-artifact",
+      "currentDllEvidence": false,
+      "referencedBy": [
+        "API.index.zh-CN.json",
+        "forge-parity.index.json",
+        "machine-contract.index.json",
+        "machine-recipe-readonly.index.json",
+        "source.index.json"
+      ]
+    },
+    {
+      "identifier": "verification/machine-status-native-0.1.63.json",
+      "availability": "not-distributed",
+      "kind": "historical-private-artifact",
+      "currentDllEvidence": false,
+      "referencedBy": [
+        "API.index.zh-CN.json",
+        "capabilities.json",
+        "machine-status.en.md",
+        "machine-status.index.json",
+        "machine-status.zh-CN.md"
+      ]
+    },
+    {
+      "identifier": "verification/fixed-stock-native-0.1.64.json",
+      "availability": "not-distributed",
+      "kind": "historical-private-artifact",
+      "currentDllEvidence": false,
+      "referencedBy": [
+        "API.index.zh-CN.json",
+        "capabilities.json",
+        "npc-fixed-stock.en.md",
+        "npc-fixed-stock.index.json",
+        "official-sources.index.json",
+        "patches.index.json"
+      ]
+    },
+    {
+      "identifier": "recipe-guide-public-contract.audit.json",
+      "availability": "not-distributed",
+      "kind": "historical-private-artifact",
+      "currentDllEvidence": false,
+      "referencedBy": [
+        "API.index.zh-CN.json",
+        "capabilities.json",
+        "forge-parity.index.json",
+        "official-sources.index.json",
+        "recipe-guide-images.en.md",
+        "recipe-guide-images.index.json",
+        "recipe-guide-images.zh-CN.md",
+        "source.index.json"
+      ]
+    },
+    {
+      "identifier": "verification/guide-mesh-native-0.1.66.json",
+      "availability": "not-distributed",
+      "kind": "historical-private-artifact",
+      "currentDllEvidence": false,
+      "referencedBy": [
+        "API.index.zh-CN.json",
+        "capabilities.json",
+        "forge-parity.index.json",
+        "npc-fixed-stock.en.md",
+        "npc-fixed-stock.zh-CN.md",
+        "official-sources.index.json",
+        "patches.index.json",
+        "recipe-guide-images.en.md",
+        "recipe-guide-images.index.json",
+        "recipe-guide-images.zh-CN.md",
+        "source.index.json"
+      ]
+    },
+    {
+      "identifier": "external-power-public-contract.audit.json",
+      "availability": "not-distributed",
+      "kind": "historical-private-artifact",
+      "currentDllEvidence": false,
+      "referencedBy": [
+        "API.index.zh-CN.json",
+        "capabilities.json",
+        "forge-parity.index.json",
+        "furnace-contents.en.md",
+        "furnace-contents.index.json",
+        "furnace-contents.zh-CN.md",
+        "official-sources.index.json",
+        "source.index.json"
+      ]
+    },
+    {
+      "identifier": "verification/night-readonly-native-0.1.68.json",
+      "availability": "not-distributed",
+      "kind": "historical-private-artifact",
+      "currentDllEvidence": false,
+      "referencedBy": [
+        "API.index.zh-CN.json",
+        "capabilities.json",
+        "forge-parity.index.json",
+        "machine-night-readonly.index.json",
+        "source.index.json"
+      ]
+    },
+    {
+      "identifier": "verification/recipe-readonly-native-0.1.69.json",
+      "availability": "not-distributed",
+      "kind": "historical-private-artifact",
+      "currentDllEvidence": false,
+      "referencedBy": [
+        "API.index.zh-CN.json",
+        "capabilities.json",
+        "forge-parity.index.json",
+        "machine-recipe-readonly.index.json",
+        "source.index.json"
+      ]
+    },
+    {
+      "identifier": "verification/workshop-native-0.1.48.json",
+      "availability": "not-distributed",
+      "kind": "historical-private-artifact",
+      "currentDllEvidence": false,
+      "referencedBy": [
+        "capabilities.json",
+        "official-sources.index.json"
+      ]
+    },
+    {
+      "identifier": "verification/native-power-0.1.43/power-batch-result.json",
+      "availability": "not-distributed",
+      "kind": "historical-private-artifact",
+      "currentDllEvidence": false,
+      "referencedBy": [
+        "capabilities.json",
+        "forge-parity.index.json"
+      ]
+    },
+    {
+      "identifier": "verification/native-presentation-contract.txt",
+      "availability": "not-distributed",
+      "kind": "historical-private-artifact",
+      "currentDllEvidence": false,
+      "referencedBy": [
+        "capabilities.json",
+        "official-sources.index.json"
+      ]
+    },
+    {
+      "identifier": "verification/run-data-records-0.1.46.json",
+      "availability": "not-distributed",
+      "kind": "historical-private-artifact",
+      "currentDllEvidence": false,
+      "referencedBy": [
+        "capabilities.json"
+      ]
+    },
+    {
+      "identifier": "public-shape-adaptations.audit.json",
+      "availability": "not-distributed",
+      "kind": "historical-private-artifact",
+      "currentDllEvidence": false,
+      "referencedBy": [
+        "forge-parity.index.json",
+        "public-contract-coverage.index.json"
+      ]
+    },
+    {
+      "identifier": "verification/item-data-offline-0.1.72.json",
+      "availability": "not-distributed",
+      "kind": "historical-private-artifact",
+      "currentDllEvidence": false,
+      "referencedBy": [
+        "item-data.index.json"
+      ]
+    },
+    {
+      "identifier": "verification/item-data-native-0.1.72.json",
+      "availability": "not-distributed",
+      "kind": "historical-private-artifact",
+      "currentDllEvidence": false,
+      "referencedBy": [
+        "item-data.index.json",
+        "official-sources.index.json"
+      ]
+    },
+    {
+      "identifier": "verification/machine-contract-native-0.1.69",
+      "availability": "not-distributed",
+      "kind": "historical-private-artifact",
+      "currentDllEvidence": false,
+      "referencedBy": [
+        "machine-contract.index.json"
+      ]
+    },
+    {
+      "identifier": "verification/guide-mesh-native-0.1.66/validated-batch",
+      "availability": "not-distributed",
+      "kind": "historical-private-artifact",
+      "currentDllEvidence": false,
+      "referencedBy": [
+        "npc-fixed-stock.index.json"
+      ]
+    },
+    {
+      "identifier": "../verification/current-food-contract.txt",
+      "availability": "not-distributed",
+      "kind": "historical-private-artifact",
+      "currentDllEvidence": false,
+      "referencedBy": [
+        "official-sources.index.json"
+      ]
+    },
+    {
+      "identifier": "verification/native-locale-contract.txt",
+      "availability": "not-distributed",
+      "kind": "historical-private-artifact",
+      "currentDllEvidence": false,
+      "referencedBy": [
+        "official-sources.index.json"
+      ]
+    },
+    {
+      "identifier": "../verification/localization-api-contract.txt",
+      "availability": "not-distributed",
+      "kind": "historical-private-artifact",
+      "currentDllEvidence": false,
+      "referencedBy": [
+        "official-sources.index.json"
+      ]
+    },
+    {
+      "identifier": "../verification/container-api-contract.txt",
+      "availability": "not-distributed",
+      "kind": "historical-private-artifact",
+      "currentDllEvidence": false,
+      "referencedBy": [
+        "official-sources.index.json"
+      ]
+    },
+    {
+      "identifier": "../verification/native-reference-check.json",
+      "availability": "not-distributed",
+      "kind": "historical-private-artifact",
+      "currentDllEvidence": false,
+      "referencedBy": [
+        "official-sources.index.json"
+      ]
+    },
+    {
+      "identifier": "../verification/current-liquid-module-contract.txt",
+      "availability": "not-distributed",
+      "kind": "historical-private-artifact",
+      "currentDllEvidence": false,
+      "referencedBy": [
+        "official-sources.index.json"
+      ]
+    },
+    {
+      "identifier": "../verification/terminal-catalog-il.txt",
+      "availability": "not-distributed",
+      "kind": "historical-private-artifact",
+      "currentDllEvidence": false,
+      "referencedBy": [
+        "official-sources.index.json"
+      ]
+    },
+    {
+      "identifier": "verification/portrait-native-contract-0.1.47.txt",
+      "availability": "not-distributed",
+      "kind": "historical-private-artifact",
+      "currentDllEvidence": false,
+      "referencedBy": [
+        "official-sources.index.json"
+      ]
+    },
+    {
+      "identifier": "verification/workshop-gui-contract-0.1.48.txt",
+      "availability": "not-distributed",
+      "kind": "historical-private-artifact",
+      "currentDllEvidence": false,
+      "referencedBy": [
+        "official-sources.index.json"
+      ]
+    },
+    {
+      "identifier": "verification/item-stock-native-0.1.50.json",
+      "availability": "not-distributed",
+      "kind": "historical-private-artifact",
+      "currentDllEvidence": false,
+      "referencedBy": [
+        "official-sources.index.json"
+      ]
+    },
+    {
+      "identifier": "verification/component-liquid-native-0.1.54.json",
+      "availability": "not-distributed",
+      "kind": "historical-private-artifact",
+      "currentDllEvidence": false,
+      "referencedBy": [
+        "official-sources.index.json"
+      ]
+    },
+    {
+      "identifier": "verification/item-data-native-0.1.72/game-references.json",
+      "availability": "not-distributed",
+      "kind": "historical-private-artifact",
+      "currentDllEvidence": false,
+      "referencedBy": [
+        "official-sources.index.json"
+      ]
+    },
+    {
+      "identifier": "machine-public-contract.audit.json and domain-specific verification reports",
+      "availability": "not-distributed",
+      "kind": "historical-private-artifact",
+      "currentDllEvidence": false,
+      "referencedBy": [
+        "public-contract-coverage.index.json"
+      ]
+    },
+    {
+      "identifier": "evidence-catalog.json",
+      "availability": "not-distributed",
+      "kind": "historical-private-artifact",
+      "currentDllEvidence": false,
+      "referencedBy": [
+        "history\\README.md"
+      ]
+    },
+    {
+      "identifier": "../verification/native-power-0.1.43/native-test-result.json",
+      "availability": "not-distributed",
+      "kind": "historical-private-artifact",
+      "currentDllEvidence": false,
+      "referencedBy": [
+        "history/native-power-0.1.43.zh-CN.md"
+      ]
+    },
+    {
+      "identifier": "../verification/native-power-0.1.43/power-batch-result.json",
+      "availability": "not-distributed",
+      "kind": "historical-private-artifact",
+      "currentDllEvidence": false,
+      "referencedBy": [
+        "history/native-power-0.1.43.zh-CN.md"
+      ]
+    },
+    {
+      "identifier": "../verification/native-power-0.1.43/power-check-result.png",
+      "availability": "not-distributed",
+      "kind": "historical-private-artifact",
+      "currentDllEvidence": false,
+      "referencedBy": [
+        "history/native-power-0.1.43.zh-CN.md"
+      ]
+    },
+    {
+      "identifier": "../verification/native-power-0.1.43/debug-panel-open.png",
+      "availability": "not-distributed",
+      "kind": "historical-private-artifact",
+      "currentDllEvidence": false,
+      "referencedBy": [
+        "history/native-power-0.1.43.zh-CN.md"
+      ]
+    },
+    {
+      "identifier": "../../outputs/EZapi-0.1.37-start-api/",
+      "availability": "not-distributed",
+      "kind": "historical-private-artifact",
+      "currentDllEvidence": false,
+      "referencedBy": [
+        "history/start-0.1.37.zh-CN.md"
+      ]
+    },
+    {
+      "identifier": "../../outputs/EZapi-0.1.37-start-api/Mods/EZapi.dll",
+      "availability": "not-distributed",
+      "kind": "historical-private-artifact",
+      "currentDllEvidence": false,
+      "referencedBy": [
+        "history/start-0.1.37.zh-CN.md"
+      ]
+    },
+    {
+      "identifier": "verification/native-item-localization-0.1.44.json",
+      "availability": "not-distributed",
+      "kind": "historical-private-artifact",
+      "currentDllEvidence": false,
+      "referencedBy": [
+        "native-items.zh-CN.md"
+      ]
+    },
+    {
+      "identifier": "verification/native-test-0.1.42/",
+      "availability": "not-distributed",
+      "kind": "historical-private-artifact",
+      "currentDllEvidence": false,
+      "referencedBy": [
+        "sprite-assets.zh-CN.md"
+      ]
+    }
+  ]
+}

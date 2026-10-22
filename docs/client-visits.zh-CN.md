@@ -1,3 +1,5 @@
+> 当前 API 指南。见[统一版本与验收状态](current-status.zh-CN.md)：当前 DLL 尚未完成实机验收；旧测试数量仅适用于其历史 DLL。
+
 # ClientVisitApi：访客排队与状态
 
 `ClientVisitApi` 使用官方 `ModHook.OnGenerateCustomerVeryLate` 生成钩子排入一位原生顾客，并在顾客到访时显示 EZapi 对话。官方指南说明客户生成钩子按 `VeryEarly → Early → Normal → Late → VeryLate` 顺序运行；EZapi 在 `VeryLate` 阶段通过游戏的 `StoreClientManager.AddNextClient(StoreClient)` 添加访客。

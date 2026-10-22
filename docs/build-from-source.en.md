@@ -1,3 +1,5 @@
+> Current API guide. See [release status](current-status.en.md): current-DLL native acceptance is pending; older test counts apply only to their historical binaries.
+
 # Build EZapi from source
 
 Current framework, validator, tests and tooling are published under the [MIT license](../LICENSE) starting with 0.1.73-preview.2. Older private repository history is not imported.

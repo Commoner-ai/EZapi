@@ -1,4 +1,6 @@
-# 未来访客排程研究（0.1.72，未公开为 API）
+> 当前 API 指南。见[统一版本与验收状态](current-status.zh-CN.md)：当前 DLL 尚未完成实机验收；旧测试数量仅适用于其历史 DLL。
+
+# 未来访客排程研究（，未公开为 API）
 
 这是一份实现前契约记录，不是可调用的 FutureVisitApi。现有 `ClientVisitApi.Queue` 是当前进程下一次顾客生成时排队；`SupplierApi.Queue` 提供独立对话型供应商，两者均不承诺未来日期的磁盘持久化。
 

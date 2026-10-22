@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "version": "0.1.71",
+  "version": "0.1.73",
   "baseline": "forge-public-contract.index.json",
   "scope": "Public metadata inventory, not source ABI compatibility or a behavior audit. Every reference type retained, including helpers outside39 API groups.",
   "typeCount": 149,
@@ -5703,13 +5703,28 @@
       "fields": []
     }
   ],
-  "behaviorEvidence": "machine-public-contract.audit.json and domain-specific verification reports",
+  "historicalBehaviorEvidence": {
+    "identifier": "machine-public-contract.audit.json and domain-specific verification reports",
+    "availability": "not-distributed",
+    "currentDllEvidence": false
+  },
   "functionalCoverageAccounted": true,
   "behaviorAdaptations": "public-shape-adaptations.audit.json",
   "allNativeGameplayCombinationsVerified": false,
-  "distributionVerification": {
+  "previousVersionBaseline": "0.1.71",
+  "documentationContext": {
+    "kind": "current-api-guide",
+    "releaseTag": "0.1.73-preview.3",
+    "assemblyVersion": "0.1.73",
+    "releaseStatus": "release-status.json",
+    "nativeRuntimeVerified": false,
+    "evidencePolicy": "Old native claims are preserved only under historical* fields and do not apply to the current DLL."
+  },
+  "binaryPackageVerification": {
     "dllSHA256": "7E4AB675B0E3BD81C56EEC4606731A6880287549EB4E8E90A707BE18BD52BEEF",
     "nativeRuntimeVerified": false,
-    "frameworkSourceIncluded": false
+    "frameworkSourceIncluded": false,
+    "artifactKind": "binary-SDK; not repository source contents",
+    "sourceRepositoryVisibility": "public"
   }
 }

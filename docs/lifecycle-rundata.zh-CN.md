@@ -1,4 +1,6 @@
-# EZapi 0.1.4：游戏事件与周目数据
+> 当前 API 指南。见[统一版本与验收状态](current-status.zh-CN.md)：当前 DLL 尚未完成实机验收；旧测试数量仅适用于其历史 DLL。
+
+# EZapi游戏事件与周目数据
 
 这两个入口供 C# 内容 Mod 使用。JSON 物品包仍可独立使用，不需要为了读取配置执行 C#。官方 ModHelper 的 SetModData/GetModData 系列在本机包装程序集中缺失；当前通过公开的 PlayerStore.modData 做单点兼容适配，不把不存在的方法标成已接入。
 

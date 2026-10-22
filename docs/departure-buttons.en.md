@@ -1,3 +1,5 @@
+> Current API guide. See [release status](current-status.en.md): current-DLL native acceptance is pending; older test counts apply only to their historical binaries.
+
 # Adaptive departure buttons
 
 `DepartureApi` extracts the user's DeepSpace RaidEntry/MapButtonLayout into an independent EZapi service. Register after EZapi initialization on the game thread:

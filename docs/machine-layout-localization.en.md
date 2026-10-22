@@ -1,6 +1,6 @@
-> 0.1.72-preview.1 packaging: developer tools default off. See [installation](install-and-debug.en.md). The 415-check/save-reload reports below apply to the recorded pre-packaging DLL hash4238A189…; they are historical for the new binary.
+> Current API guide. See [release status](current-status.en.md): current-DLL native acceptance is pending; older test counts apply only to their historical binaries.
 
-# Machine window and slot localization (0.1.72 development)
+# Machine window and slot localization (current API)
 
 Declare Chinese and English text directly on a machine layout. The factory resolves the current game locale; display-name reads and reopening a window refresh text through the `ezapi.items.localization` hook group. For a custom window that stays open, call `MachineLayoutApi.RefreshLocalization(machine)` after changing the game language. See the [AI index](machine-layout-localization.index.json).
 
@@ -42,4 +42,4 @@ Refresh requires the initialized game main thread. It returns `false` for an unm
 
 Refresh updates only window titles and slot tooltip text. It preserves window and inventory instances, admission delegates, stable IDs, power requirements and the persistent layout marker. It neither requests a save nor synchronizes item state. `TryGetInventory` remains a pure layout read. Old layouts without localized fields serialize identically; adding declarations to an existing saved layout still changes the specification and requires an explicit migration.
 
-48 offline checks link production parsing, graph validation and refresh sources to instrumented native stubs. Current-DLL English/Chinese text, native title/tooltip, reopening and five-node save/reload checks passed; see [scoped evidence](verification/disk-supplier-native-0.1.72.json). Title strings/layout properties were checked; container-title pixel appearance was not separately reviewed. This is still a development candidate.
+48 offline checks link production parsing, graph validation and refresh sources to instrumented native stubs. Historical 0.1.72 DLL English/Chinese text, native title/tooltip, reopening and five-node save/reload checks passed; see scoped evidence (historical identifier `verification/disk-supplier-native-0.1.72.json`; original artifact not distributed). Title strings/layout properties were checked; container-title pixel appearance was not separately reviewed. This is still a development candidate.

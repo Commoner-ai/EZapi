@@ -1,3 +1,5 @@
+> 当前 API 指南。见[统一版本与验收状态](current-status.zh-CN.md)：当前 DLL 尚未完成实机验收；旧测试数量仅适用于其历史 DLL。
+
 > 0.1.60：独立处理器已支持 `Process(machine,inventory)`；Runtime入口复制并绑定Template，自定义窗口可借用真实子库存。原生交互委托仍由窗口作者设置，见[machine-inventory-binding.zh-CN.md](machine-inventory-binding.zh-CN.md)。
 
 > 当前0.1.57：Transaction省略即可用标准同步事务；MaterialContents默认Reject，可显式ConsumeGraph处理整个材料图。先读[machine-material-graph.zh-CN.md](machine-material-graph.zh-CN.md)。下文版本化历史说明不能作为当前缺口清单。
@@ -6,7 +8,7 @@
 
 > 0.1.25更新：请先读[machine-materials.zh-CN.md](machine-materials.zh-CN.md)。省略Transaction现使用标准消费与冻结事务；自定义分支保持下文契约。以下0.1.24内容为历史行为。
 
-# EZapi 0.1.24：配方选择与同步批次
+# EZapi配方选择与同步批次
 
 这是独立EZapi的C#接口，能力ID为`machines.recipes`。先有已注册的机器物品及`MachineLayoutApi`布局，再登记配方、提供真实资源事务、按需调用一次处理器。现有物品JSON、布局JSON、图鉴JSON各有独立用途；本版没有可执行配方JSON导入器。`machine-batch-result.schema.json`只描述结果输出。
 

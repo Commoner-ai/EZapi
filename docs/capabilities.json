@@ -7,7 +7,7 @@
       "status": "Preview",
       "implemented": true,
       "compileVerified": true,
-      "evidence": "../verification.json",
+      "evidence": "release-status.json",
       "runtimeVerified": false,
       "declaredByFrameworkInfo": true
     },
@@ -16,7 +16,7 @@
       "status": "Preview",
       "implemented": true,
       "compileVerified": true,
-      "evidence": "../verification.json",
+      "evidence": "release-status.json",
       "runtimeVerified": false,
       "declaredByFrameworkInfo": true
     },
@@ -25,7 +25,7 @@
       "status": "Preview",
       "implemented": true,
       "compileVerified": true,
-      "evidence": "../verification.json",
+      "evidence": "release-status.json",
       "runtimeVerified": false,
       "declaredByFrameworkInfo": true
     },
@@ -34,7 +34,7 @@
       "status": "Preview",
       "implemented": true,
       "compileVerified": true,
-      "evidence": "../verification.json",
+      "evidence": "release-status.json",
       "runtimeVerified": false,
       "declaredByFrameworkInfo": true
     },
@@ -43,7 +43,7 @@
       "status": "Preview",
       "implemented": true,
       "compileVerified": true,
-      "evidence": "../verification.json",
+      "evidence": "release-status.json",
       "runtimeVerified": false,
       "declaredByFrameworkInfo": true
     },
@@ -52,7 +52,7 @@
       "status": "Preview",
       "implemented": true,
       "compileVerified": true,
-      "evidence": "../verification.json",
+      "evidence": "release-status.json",
       "runtimeVerified": false,
       "declaredByFrameworkInfo": true
     },
@@ -61,7 +61,7 @@
       "status": "Preview",
       "implemented": true,
       "compileVerified": true,
-      "evidence": "../verification.json",
+      "evidence": "release-status.json",
       "runtimeVerified": false,
       "declaredByFrameworkInfo": true
     },
@@ -70,7 +70,7 @@
       "status": "Preview",
       "implemented": true,
       "compileVerified": true,
-      "evidence": "../verification.json",
+      "evidence": "release-status.json",
       "runtimeVerified": false,
       "declaredByFrameworkInfo": true
     },
@@ -79,7 +79,7 @@
       "status": "Preview",
       "implemented": true,
       "compileVerified": true,
-      "evidence": "../verification.json",
+      "evidence": "release-status.json",
       "runtimeVerified": false,
       "declaredByFrameworkInfo": true
     },
@@ -88,7 +88,7 @@
       "status": "Preview",
       "implemented": true,
       "compileVerified": true,
-      "evidence": "../verification.json",
+      "evidence": "release-status.json",
       "runtimeVerified": false,
       "declaredByFrameworkInfo": true
     },
@@ -97,7 +97,7 @@
       "status": "Preview",
       "implemented": true,
       "compileVerified": true,
-      "evidence": "../verification.json",
+      "evidence": "release-status.json",
       "runtimeVerified": false,
       "declaredByFrameworkInfo": true
     },
@@ -106,7 +106,7 @@
       "status": "Preview",
       "implemented": true,
       "compileVerified": true,
-      "evidence": "../verification.json",
+      "evidence": "release-status.json",
       "runtimeVerified": false,
       "declaredByFrameworkInfo": true
     },
@@ -115,7 +115,7 @@
       "status": "Preview",
       "implemented": true,
       "compileVerified": true,
-      "evidence": "../verification.json",
+      "evidence": "release-status.json",
       "runtimeVerified": false,
       "declaredByFrameworkInfo": true
     },
@@ -124,7 +124,7 @@
       "status": "Preview",
       "implemented": true,
       "compileVerified": true,
-      "evidence": "../verification.json",
+      "evidence": "release-status.json",
       "runtimeVerified": false,
       "declaredByFrameworkInfo": true
     },
@@ -133,7 +133,7 @@
       "status": "Preview",
       "implemented": true,
       "compileVerified": true,
-      "evidence": "../verification.json",
+      "evidence": "release-status.json",
       "runtimeVerified": false,
       "declaredByFrameworkInfo": true
     },
@@ -142,7 +142,7 @@
       "status": "Preview",
       "implemented": true,
       "compileVerified": true,
-      "evidence": "../verification.json",
+      "evidence": "release-status.json",
       "runtimeVerified": false,
       "note": "官方 Late 阶段追加一次；热修复运行结果待玩家验证",
       "declaredByFrameworkInfo": true
@@ -152,7 +152,7 @@
       "status": "Preview",
       "implemented": true,
       "compileVerified": true,
-      "evidence": "../verification.json",
+      "evidence": "release-status.json",
       "runtimeVerified": false,
       "declaredByFrameworkInfo": true
     },
@@ -161,7 +161,7 @@
       "status": "Preview",
       "implemented": true,
       "compileVerified": true,
-      "evidence": "../verification.json",
+      "evidence": "release-status.json",
       "runtimeVerified": false,
       "declaredByFrameworkInfo": true
     },
@@ -170,7 +170,7 @@
       "status": "Preview",
       "implemented": true,
       "compileVerified": true,
-      "evidence": "../verification.json",
+      "evidence": "release-status.json",
       "runtimeVerified": false,
       "declaredByFrameworkInfo": true
     },
@@ -187,7 +187,11 @@
         "localization.resources",
         "localization.game-language"
       ],
-      "nativeEvidence": "verification/disk-supplier-native-0.1.72.json"
+      "historicalNativeEvidence": {
+        "identifier": "verification/disk-supplier-native-0.1.72.json",
+        "availability": "not-distributed",
+        "currentDllEvidence": false
+      }
     },
     {
       "id": "save.mod-data",
@@ -195,7 +199,7 @@
       "implemented": true,
       "compileVerified": true,
       "runtimeVerified": false,
-      "evidence": "../verification.json",
+      "evidence": "release-status.json",
       "note": "公开 PlayerStore.modData 兼容桥；Set 只暂存内存；存档落盘/重载待玩家验证",
       "declaredByFrameworkInfo": true
     },
@@ -205,7 +209,7 @@
       "implemented": true,
       "compileVerified": true,
       "runtimeVerified": false,
-      "evidence": "../verification.json",
+      "evidence": "release-status.json",
       "version": "0.1.5",
       "note": "官方 LootRegistry 声明/patch/快照/试抽 ID；实际掉落投放、原生 journal 回放和库存发放待游戏验证",
       "declaredByFrameworkInfo": true
@@ -258,10 +262,22 @@
       "status": "Partial",
       "implemented": true,
       "compileVerified": true,
-      "runtimeVerified": true,
-      "evidence": "verification/machine-status-native-0.1.63.json",
+      "runtimeVerified": false,
+      "historicalEvidence": {
+        "identifier": "verification/machine-status-native-0.1.63.json",
+        "availability": "not-distributed",
+        "currentDllEvidence": false
+      },
       "boundary": "Machine registration/runtime public behavior audits remain incomplete. Native furnace contents policies completed in0.1.67; see specific capabilities and parity index.",
-      "declaredByFrameworkInfo": false
+      "declaredByFrameworkInfo": false,
+      "historicalVerification": {
+        "scope": "unqualified native flags from an older index; not current-DLL verification",
+        "recordedIndexBaseline": "0.1.73",
+        "claims": {
+          "runtimeVerified": true
+        },
+        "availability": "historical reports not distributed"
+      }
     },
     {
       "id": "items.activation.json",
@@ -269,7 +285,7 @@
       "implemented": true,
       "compileVerified": true,
       "runtimeVerified": false,
-      "evidence": "../verification.json",
+      "evidence": "release-status.json",
       "note": "healWounds；destroy/useCount；原生实例委托，无新补丁",
       "declaredByFrameworkInfo": true
     },
@@ -279,7 +295,7 @@
       "implemented": true,
       "compileVerified": true,
       "runtimeVerified": false,
-      "evidence": "../verification.json",
+      "evidence": "release-status.json",
       "note": "同步 canActivate/activate；初始化登记；异常按 ID 停用",
       "declaredByFrameworkInfo": true
     },
@@ -289,7 +305,7 @@
       "implemented": true,
       "compileVerified": true,
       "runtimeVerified": false,
-      "evidence": "../verification.json",
+      "evidence": "release-status.json",
       "note": "18 个官方阶段；同步订阅/释放；异常移除单个订阅；没有每日一次或保存完成保证",
       "declaredByFrameworkInfo": true
     },
@@ -299,7 +315,7 @@
       "implemented": true,
       "compileVerified": true,
       "runtimeVerified": false,
-      "evidence": "../verification.json",
+      "evidence": "release-status.json",
       "version": "0.1.6",
       "note": "共享整包/PNG/掉落预检和 CLI；不代替原生运行",
       "declaredByFrameworkInfo": true
@@ -310,7 +326,7 @@
       "implemented": true,
       "compileVerified": true,
       "runtimeVerified": false,
-      "evidence": "../verification.json",
+      "evidence": "release-status.json",
       "version": "0.1.6",
       "note": "内容包版本、能力和拓扑依赖门控；仅 JSON 包",
       "declaredByFrameworkInfo": true
@@ -321,7 +337,7 @@
       "implemented": true,
       "compileVerified": true,
       "runtimeVerified": false,
-      "evidence": "../verification.json",
+      "evidence": "release-status.json",
       "version": "0.1.7",
       "note": "原生 FoodItemHelper 热量/罐装/保鲜初始化；食用、进度、保存待原生验证",
       "declaredByFrameworkInfo": true
@@ -332,7 +348,7 @@
       "implemented": true,
       "compileVerified": true,
       "runtimeVerified": false,
-      "evidence": "../verification.json",
+      "evidence": "release-status.json",
       "version": "0.1.7",
       "note": "原生 LiquidContainerHelper 容量/初始满空；饮用、转移、组成和保存待原生验证",
       "declaredByFrameworkInfo": true
@@ -343,7 +359,7 @@
       "implemented": true,
       "compileVerified": true,
       "runtimeVerified": false,
-      "evidence": "../verification.json",
+      "evidence": "release-status.json",
       "version": "0.1.8",
       "note": "官方CSV格式解析、显式语言/英语/可读文案回退、格式校验和资源索引；不自动探测游戏语言或翻译物品",
       "declaredByFrameworkInfo": true
@@ -355,7 +371,7 @@
       "compileVerified": true,
       "runtimeVerified": false,
       "version": "0.1.9",
-      "evidence": "../verification.json",
+      "evidence": "release-status.json",
       "note": "独立原生网格/窗口、内部形状与过滤参数；实际界面、准入、所有权、嵌套和保存恢复待玩家验证。",
       "declaredByFrameworkInfo": true
     },
@@ -366,7 +382,7 @@
       "compileVerified": true,
       "runtimeVerified": false,
       "version": "0.1.10",
-      "evidence": "../verification.json",
+      "evidence": "release-status.json",
       "note": "同步补偿事务，反向恢复部分失败步骤，不自动保存/重试",
       "declaredByFrameworkInfo": true
     },
@@ -377,7 +393,7 @@
       "compileVerified": true,
       "runtimeVerified": false,
       "version": "0.1.10",
-      "evidence": "../verification.json",
+      "evidence": "release-status.json",
       "note": "当前周目原生目录Exists/Create/GetDisplayName；创建不发放",
       "declaredByFrameworkInfo": true
     },
@@ -388,22 +404,42 @@
       "compileVerified": true,
       "runtimeVerified": false,
       "version": "0.1.10",
-      "evidence": "verification/item-inspection-native-0.1.49.json",
+      "historicalEvidence": {
+        "identifier": "verification/item-inspection-native-0.1.49.json",
+        "availability": "not-distributed",
+        "currentDllEvidence": false
+      },
       "note": "正数堆叠原生当前单价和原生普通/高级提示",
       "scope": "425 native valuation assertions passed; tooltip unchanged, not visually reaccepted this stage",
-      "valuationRuntimeVerified": true,
-      "declaredByFrameworkInfo": true
+      "valuationRuntimeVerified": false,
+      "declaredByFrameworkInfo": true,
+      "historicalVerification": {
+        "scope": "unqualified native flags from an older index; not current-DLL verification",
+        "recordedIndexBaseline": "0.1.73",
+        "claims": {
+          "valuationRuntimeVerified": true
+        },
+        "availability": "historical reports not distributed"
+      }
     },
     {
       "id": "runtime.power",
       "status": "Preview",
       "implemented": true,
       "compileVerified": true,
-      "runtimeVerified": true,
+      "runtimeVerified": false,
       "version": "0.1.44",
       "evidence": "native-power-0.1.43.zh-CN.md",
       "note": "原生读电、机器电耗、单件与5件堆叠TryDebit；20项通过，边界见验收报告",
-      "declaredByFrameworkInfo": true
+      "declaredByFrameworkInfo": true,
+      "historicalVerification": {
+        "scope": "unqualified native flags from an older index; not current-DLL verification",
+        "recordedIndexBaseline": "0.1.73",
+        "claims": {
+          "runtimeVerified": true
+        },
+        "availability": "historical reports not distributed"
+      }
     },
     {
       "id": "runtime.liquids",
@@ -412,7 +448,7 @@
       "compileVerified": true,
       "runtimeVerified": false,
       "version": "0.1.10",
-      "evidence": "../verification.json",
+      "evidence": "release-status.json",
       "note": "原生液体成分/容量/水质只读快照，无转移写入",
       "declaredByFrameworkInfo": true
     },
@@ -421,7 +457,7 @@
       "status": "Preview",
       "implemented": true,
       "compileVerified": true,
-      "evidence": "../verification.json",
+      "evidence": "release-status.json",
       "runtimeVerified": false,
       "declaredByFrameworkInfo": true
     },
@@ -430,7 +466,7 @@
       "status": "Preview",
       "implemented": true,
       "compileVerified": true,
-      "evidence": "../verification.json",
+      "evidence": "release-status.json",
       "runtimeVerified": false,
       "declaredByFrameworkInfo": true
     },
@@ -439,7 +475,7 @@
       "status": "Preview",
       "implemented": true,
       "compileVerified": true,
-      "evidence": "../verification.json",
+      "evidence": "release-status.json",
       "runtimeVerified": false,
       "declaredByFrameworkInfo": true
     },
@@ -448,7 +484,7 @@
       "status": "Preview",
       "implemented": true,
       "compileVerified": true,
-      "evidence": "../verification.json",
+      "evidence": "release-status.json",
       "runtimeVerified": false,
       "declaredByFrameworkInfo": true
     },
@@ -457,7 +493,7 @@
       "status": "Preview",
       "implemented": true,
       "compileVerified": true,
-      "evidence": "../verification.json",
+      "evidence": "release-status.json",
       "runtimeVerified": false,
       "declaredByFrameworkInfo": true
     },
@@ -466,7 +502,7 @@
       "status": "Preview",
       "implemented": true,
       "compileVerified": true,
-      "evidence": "../verification.json",
+      "evidence": "release-status.json",
       "runtimeVerified": false,
       "declaredByFrameworkInfo": true
     },
@@ -475,7 +511,7 @@
       "status": "Preview",
       "implemented": true,
       "compileVerified": true,
-      "evidence": "../verification.json",
+      "evidence": "release-status.json",
       "runtimeVerified": false,
       "declaredByFrameworkInfo": true
     },
@@ -484,20 +520,32 @@
       "status": "Preview",
       "implemented": true,
       "compileVerified": true,
-      "evidence": "verification/savegraph-native-0.1.53.json",
-      "runtimeVerified": true,
+      "historicalEvidence": {
+        "identifier": "verification/savegraph-native-0.1.53.json",
+        "availability": "not-distributed",
+        "currentDllEvidence": false
+      },
+      "runtimeVerified": false,
       "note": "当前050REV5-L的完整11步后处理已核对；物品图33项内存检查通过，端点磁盘/冷启动另见端点生命周期证据。",
       "runtimeDecodeAvailable": true,
       "guide": "save-graph.zh-CN.md",
       "scope": "current game native graph encoding/restoration and11 post-load fixups; unknown builds fail before decode",
-      "declaredByFrameworkInfo": true
+      "declaredByFrameworkInfo": true,
+      "historicalVerification": {
+        "scope": "unqualified native flags from an older index; not current-DLL verification",
+        "recordedIndexBaseline": "0.1.73",
+        "claims": {
+          "runtimeVerified": true
+        },
+        "availability": "historical reports not distributed"
+      }
     },
     {
       "id": "lifecycle.ordered",
       "status": "Preview",
       "implemented": true,
       "compileVerified": true,
-      "evidence": "../verification.json",
+      "evidence": "release-status.json",
       "runtimeVerified": false,
       "declaredByFrameworkInfo": true
     },
@@ -506,7 +554,7 @@
       "status": "Preview",
       "implemented": true,
       "compileVerified": true,
-      "evidence": "../verification.json",
+      "evidence": "release-status.json",
       "runtimeVerified": false,
       "declaredByFrameworkInfo": true
     },
@@ -516,7 +564,7 @@
       "implemented": true,
       "compileVerified": true,
       "runtimeVerified": false,
-      "evidence": "../verification.json",
+      "evidence": "release-status.json",
       "note": "独立原生效果目录/随机排除/真实应用通知；游戏待验",
       "declaredByFrameworkInfo": true
     },
@@ -526,7 +574,7 @@
       "implemented": true,
       "compileVerified": true,
       "runtimeVerified": false,
-      "evidence": "../verification.json",
+      "evidence": "release-status.json",
       "note": "批次投入/取整/基础价值标签读回与失败恢复；保存待验",
       "declaredByFrameworkInfo": true
     },
@@ -536,7 +584,7 @@
       "implemented": true,
       "compileVerified": true,
       "runtimeVerified": false,
-      "evidence": "../verification.json",
+      "evidence": "release-status.json",
       "note": "纯批次功耗计算；不扣电不加工",
       "declaredByFrameworkInfo": true
     },
@@ -546,7 +594,7 @@
       "implemented": true,
       "compileVerified": true,
       "runtimeVerified": false,
-      "evidence": "../verification.json",
+      "evidence": "release-status.json",
       "note": "原生整次及冻结双容器限量倒液；过滤反应/补偿失败报告Indeterminate，不自动重试或保存",
       "declaredByFrameworkInfo": true
     },
@@ -556,7 +604,7 @@
       "implemented": true,
       "compileVerified": true,
       "runtimeVerified": false,
-      "evidence": "../verification.json",
+      "evidence": "release-status.json",
       "note": "成分消费/差量/转换/合并及合计价值纯计算",
       "declaredByFrameworkInfo": true
     },
@@ -566,7 +614,7 @@
       "implemented": true,
       "compileVerified": true,
       "runtimeVerified": false,
-      "evidence": "../verification.json",
+      "evidence": "release-status.json",
       "note": "显式价值/品质独立保存标签、实际数量核对及显式迁移；保存重载待验",
       "declaredByFrameworkInfo": true
     },
@@ -641,12 +689,28 @@
       "status": "Preview",
       "implemented": true,
       "compileVerified": true,
-      "runtimeVerified": true,
-      "evidence": "verification/liquid-output-native-0.1.55.json",
+      "runtimeVerified": false,
+      "historicalEvidence": {
+        "identifier": "verification/liquid-output-native-0.1.55.json",
+        "availability": "not-distributed",
+        "currentDllEvidence": false
+      },
       "boundary": "0.1.62 verifies two normal UI nights and actual cold loads for nested material consumption/rejection, liquid item/existing-vessel output, ordinary and external native power. Full public behavior audit remains; asynchronous/network/crash recovery not provided.",
-      "persistenceEvidence": "verification/machine-persistence-native-0.1.62.json",
+      "historicalPersistenceEvidence": {
+        "identifier": "verification/machine-persistence-native-0.1.62.json",
+        "availability": "not-distributed",
+        "currentDllEvidence": false
+      },
       "persistenceVerified": true,
-      "declaredByFrameworkInfo": true
+      "declaredByFrameworkInfo": true,
+      "historicalVerification": {
+        "scope": "unqualified native flags from an older index; not current-DLL verification",
+        "recordedIndexBaseline": "0.1.73",
+        "claims": {
+          "runtimeVerified": true
+        },
+        "availability": "historical reports not distributed"
+      }
     },
     {
       "id": "machines.registration",
@@ -654,12 +718,20 @@
       "implemented": true,
       "evidence": "machine-automation-0.1.27.zh-CN.md",
       "boundary": "0.1.62 verifies two normal UI nights and actual cold loads for nested material consumption/rejection, liquid item/existing-vessel output, ordinary and external native power. Full public behavior audit remains; asynchronous/network/crash recovery not provided.",
-      "persistenceEvidence": "verification/machine-persistence-native-0.1.62.json",
+      "historicalPersistenceEvidence": {
+        "identifier": "verification/machine-persistence-native-0.1.62.json",
+        "availability": "not-distributed",
+        "currentDllEvidence": false
+      },
       "persistenceVerified": true,
       "readinessContract": {
         "guide": "machine-status.zh-CN.md",
         "englishGuide": "machine-status.en.md",
-        "evidence": "verification/machine-status-native-0.1.63.json",
+        "historicalEvidence": {
+          "identifier": "verification/machine-status-native-0.1.63.json",
+          "availability": "not-distributed",
+          "currentDllEvidence": false
+        },
         "thread": "initialized game main thread",
         "capture": "query-time immutable view; re-query after state changes",
         "fields": {
@@ -684,113 +756,221 @@
       "status": "Preview",
       "implemented": true,
       "compileVerified": true,
-      "runtimeVerified": true,
+      "runtimeVerified": false,
       "evidence": "machine-automation-0.1.27.zh-CN.md",
       "boundary": "0.1.62 verifies two normal UI nights and actual cold loads for nested material consumption/rejection, liquid item/existing-vessel output, ordinary and external native power. Full public behavior audit remains; asynchronous/network/crash recovery not provided.",
-      "persistenceEvidence": "verification/machine-persistence-native-0.1.62.json",
+      "historicalPersistenceEvidence": {
+        "identifier": "verification/machine-persistence-native-0.1.62.json",
+        "availability": "not-distributed",
+        "currentDllEvidence": false
+      },
       "persistenceVerified": true,
-      "declaredByFrameworkInfo": true
+      "declaredByFrameworkInfo": true,
+      "historicalVerification": {
+        "scope": "unqualified native flags from an older index; not current-DLL verification",
+        "recordedIndexBaseline": "0.1.73",
+        "claims": {
+          "runtimeVerified": true
+        },
+        "availability": "historical reports not distributed"
+      }
     },
     {
       "id": "machines.nightly",
       "status": "Preview",
       "implemented": true,
       "compileVerified": true,
-      "runtimeVerified": true,
+      "runtimeVerified": false,
       "evidence": "machine-automation-0.1.27.zh-CN.md",
       "boundary": "synchronous callbacks and persistent nightly attempt labels; shared terminal and synchronous external power integrated; complex material/crash recovery and new liquid-output nightly/save lifecycle remain unverified",
-      "declaredByFrameworkInfo": true
+      "declaredByFrameworkInfo": true,
+      "historicalVerification": {
+        "scope": "unqualified native flags from an older index; not current-DLL verification",
+        "recordedIndexBaseline": "0.1.73",
+        "claims": {
+          "runtimeVerified": true
+        },
+        "availability": "historical reports not distributed"
+      }
     },
     {
       "id": "machines.manufacturing-terminal",
       "status": "Preview",
       "implemented": true,
       "compileVerified": true,
-      "runtimeVerified": true,
-      "evidence": "../verification.json",
-      "declaredByFrameworkInfo": true
+      "runtimeVerified": false,
+      "evidence": "release-status.json",
+      "declaredByFrameworkInfo": true,
+      "historicalVerification": {
+        "scope": "unqualified native flags from an older index; not current-DLL verification",
+        "recordedIndexBaseline": "0.1.73",
+        "claims": {
+          "runtimeVerified": true
+        },
+        "availability": "historical reports not distributed"
+      }
     },
     {
       "id": "runtime.external-power",
       "status": "Preview",
       "implemented": true,
       "compileVerified": true,
-      "runtimeVerified": true,
-      "evidence": "verification/furnace-contents-native-0.1.67.json",
+      "runtimeVerified": false,
+      "historicalEvidence": {
+        "identifier": "verification/furnace-contents-native-0.1.67.json",
+        "availability": "not-distributed",
+        "currentDllEvidence": false
+      },
       "scope": "two types,one property,eight methods behavior audited; native furnace233/0 with explicit input contents consumption and old-output preservation; synchronous only; prior EZapi persistence evidence separately retained",
-      "persistenceEvidence": "verification/machine-persistence-native-0.1.62.json",
+      "historicalPersistenceEvidence": {
+        "identifier": "verification/machine-persistence-native-0.1.62.json",
+        "availability": "not-distributed",
+        "currentDllEvidence": false
+      },
       "version": "0.1.67",
-      "declaredByFrameworkInfo": true
+      "declaredByFrameworkInfo": true,
+      "historicalVerification": {
+        "scope": "unqualified native flags from an older index; not current-DLL verification",
+        "recordedIndexBaseline": "0.1.73",
+        "claims": {
+          "runtimeVerified": true
+        },
+        "availability": "historical reports not distributed"
+      }
     },
     {
       "id": "save.readback",
       "status": "Preview",
       "implemented": true,
       "compileVerified": true,
-      "runtimeVerified": true,
+      "runtimeVerified": false,
       "evidence": "save-readback-0.1.31.zh-CN.md",
       "scope": "bounded read-only file/bytes snapshots; no writes or restore",
-      "declaredByFrameworkInfo": true
+      "declaredByFrameworkInfo": true,
+      "historicalVerification": {
+        "scope": "unqualified native flags from an older index; not current-DLL verification",
+        "recordedIndexBaseline": "0.1.73",
+        "claims": {
+          "runtimeVerified": true
+        },
+        "availability": "historical reports not distributed"
+      }
     },
     {
       "id": "presentation.reading",
       "status": "Preview",
       "implemented": true,
       "compileVerified": true,
-      "runtimeVerified": true,
+      "runtimeVerified": false,
       "evidence": "native-reading-0.1.32.zh-CN.md",
       "scope": "real handnote panel; bounded synchronous owned lease; direct native foreign takeover tested; real third-party patch combinations not verified",
-      "declaredByFrameworkInfo": true
+      "declaredByFrameworkInfo": true,
+      "historicalVerification": {
+        "scope": "unqualified native flags from an older index; not current-DLL verification",
+        "recordedIndexBaseline": "0.1.73",
+        "claims": {
+          "runtimeVerified": true
+        },
+        "availability": "historical reports not distributed"
+      }
     },
     {
       "id": "presentation.dialogue",
       "status": "Preview",
       "implemented": true,
       "compileVerified": true,
-      "runtimeVerified": true,
+      "runtimeVerified": false,
       "evidence": "native-dialogue-0.1.33.zh-CN.md",
       "scope": "native graph and choice buttons; owner/request/run/epoch isolation; single-use confirmation; exact hooks; direct external takeover and rejected takeover verified; no real third-party patch-combination claim",
-      "declaredByFrameworkInfo": true
+      "declaredByFrameworkInfo": true,
+      "historicalVerification": {
+        "scope": "unqualified native flags from an older index; not current-DLL verification",
+        "recordedIndexBaseline": "0.1.73",
+        "claims": {
+          "runtimeVerified": true
+        },
+        "availability": "historical reports not distributed"
+      }
     },
     {
       "id": "presentation.phone",
       "status": "Preview",
       "implemented": true,
       "compileVerified": true,
-      "runtimeVerified": true,
+      "runtimeVerified": false,
       "evidence": "native-phone-0.1.34.zh-CN.md",
       "scope": "native phone book, actual dial, owned phone graph, single-use confirmation, identity-safe cleanup; saved-contact serialization and real third-party patch combinations not verified",
-      "declaredByFrameworkInfo": true
+      "declaredByFrameworkInfo": true,
+      "historicalVerification": {
+        "scope": "unqualified native flags from an older index; not current-DLL verification",
+        "recordedIndexBaseline": "0.1.73",
+        "claims": {
+          "runtimeVerified": true
+        },
+        "availability": "historical reports not distributed"
+      }
     },
     {
       "id": "transactions.run-purchase",
       "status": "Preview",
       "implemented": true,
       "compileVerified": true,
-      "runtimeVerified": true,
+      "runtimeVerified": false,
       "evidence": "native-purchase-0.1.35.zh-CN.md",
       "scope": "native current-run cash debit/refund, bounded synchronous delivery compensation, shared transaction exclusion; no persistence/crash/network atomicity",
-      "declaredByFrameworkInfo": true
+      "declaredByFrameworkInfo": true,
+      "historicalVerification": {
+        "scope": "unqualified native flags from an older index; not current-DLL verification",
+        "recordedIndexBaseline": "0.1.73",
+        "claims": {
+          "runtimeVerified": true
+        },
+        "availability": "historical reports not distributed"
+      }
     },
     {
       "id": "runtime.inventory-endpoint",
       "status": "Preview",
       "implemented": true,
       "compileVerified": true,
-      "runtimeVerified": true,
-      "evidence": "verification/endpoint-lifecycle-0.1.53.json",
+      "runtimeVerified": false,
+      "historicalEvidence": {
+        "identifier": "verification/endpoint-lifecycle-0.1.53.json",
+        "availability": "not-distributed",
+        "currentDllEvidence": false
+      },
       "scope": "050REV5-L slot534: native nightly save, new-process restore, outside commissary/return, held/released drag, Store/Take, deletion and new-process missing; native charging and isolated furniture filter. No lobby or real-raid acceptance claim.",
-      "declaredByFrameworkInfo": true
+      "declaredByFrameworkInfo": true,
+      "historicalVerification": {
+        "scope": "unqualified native flags from an older index; not current-DLL verification",
+        "recordedIndexBaseline": "0.1.73",
+        "claims": {
+          "runtimeVerified": true
+        },
+        "availability": "historical reports not distributed"
+      }
     },
     {
       "id": "presentation.workshop",
       "status": "Preview",
       "implemented": true,
       "compileVerified": true,
-      "runtimeVerified": true,
-      "evidence": "verification/workshop-native-0.1.48.json",
+      "runtimeVerified": false,
+      "historicalEvidence": {
+        "identifier": "verification/workshop-native-0.1.48.json",
+        "availability": "not-distributed",
+        "currentDllEvidence": false
+      },
       "scope": "0.1.48 native tab fixture: 23/23 for independent list/graph rendering, detail arrows/wheel/reverse wheel, node detail, managed callback and close cleanup. No resource transactions, chain opening or persistence tested; no native game workshop screen integration.",
-      "declaredByFrameworkInfo": true
+      "declaredByFrameworkInfo": true,
+      "historicalVerification": {
+        "scope": "unqualified native flags from an older index; not current-DLL verification",
+        "recordedIndexBaseline": "0.1.73",
+        "claims": {
+          "runtimeVerified": true
+        },
+        "availability": "historical reports not distributed"
+      }
     },
     {
       "id": "runtime.capability-snapshot",
@@ -817,10 +997,18 @@
       "status": "Preview",
       "implemented": true,
       "compileVerified": true,
-      "runtimeVerified": true,
+      "runtimeVerified": false,
       "evidence": "suppliers.zh-CN.md",
       "scope": "0.46D native test verified visitor arrival, portrait, quote preview/back/confirm, refresh to page 2 and dismissal on disposable slot 533 with EZapi 0.1.41 only. Confirmation callback only counted; no real payment, delivery, inventory mutation or save write. Official VeryLate customer hook; isolated dialogue-only StoreClient; bounded dynamic offers, pagination and visible-choice auto-selection; author owns transactions; no native shelf integration.",
-      "declaredByFrameworkInfo": true
+      "declaredByFrameworkInfo": true,
+      "historicalVerification": {
+        "scope": "unqualified native flags from an older index; not current-DLL verification",
+        "recordedIndexBaseline": "0.1.73",
+        "claims": {
+          "runtimeVerified": true
+        },
+        "availability": "historical reports not distributed"
+      }
     },
     {
       "id": "assets.embedded-sprite-atlas",
@@ -828,9 +1016,17 @@
       "implemented": true,
       "compileVerified": true,
       "evidence": "sprite-assets.zh-CN.md",
-      "runtimeVerified": true,
+      "runtimeVerified": false,
       "scope": "0.46D native smoke check on disposable slot 533, EZapi 0.1.42 only: 7/7 passed for embedded PNG decode, isolated atlas install, Sprite lookup, GameItem.SetSprite key readback, idempotence, staging and duplicate rejection. No on-screen item rendering, save/reload or custom portrait claim.",
-      "declaredByFrameworkInfo": true
+      "declaredByFrameworkInfo": true,
+      "historicalVerification": {
+        "scope": "unqualified native flags from an older index; not current-DLL verification",
+        "recordedIndexBaseline": "0.1.73",
+        "claims": {
+          "runtimeVerified": true
+        },
+        "availability": "historical reports not distributed"
+      }
     },
     {
       "id": "production.power-batch-planning",
@@ -839,7 +1035,11 @@
       "compileVerified": true,
       "runtimeVerified": false,
       "version": "0.1.44",
-      "evidence": "verification/native-power-0.1.43/power-batch-result.json",
+      "historicalEvidence": {
+        "identifier": "verification/native-power-0.1.43/power-batch-result.json",
+        "availability": "not-distributed",
+        "currentDllEvidence": false
+      },
       "note": "纯托管多电源稳定规划，不实际扣电",
       "declaredByFrameworkInfo": false
     },
@@ -869,7 +1069,11 @@
       "implemented": true,
       "compileVerified": true,
       "runtimeVerified": false,
-      "evidence": "verification/native-presentation-contract.txt",
+      "historicalEvidence": {
+        "identifier": "verification/native-presentation-contract.txt",
+        "availability": "not-distributed",
+        "currentDllEvidence": false
+      },
       "scope": "writable current-build displayName/description; exact owner/object and field-value ownership checks; locale refresh and shutdown restore tested offline only",
       "declaredByFrameworkInfo": true
     },
@@ -879,7 +1083,11 @@
       "implemented": true,
       "compileVerified": true,
       "runtimeVerified": false,
-      "evidence": "verification/run-data-records-0.1.46.json",
+      "historicalEvidence": {
+        "identifier": "verification/run-data-records-0.1.46.json",
+        "availability": "not-distributed",
+        "currentDllEvidence": false
+      },
       "guide": "run-data-records.zh-CN.md",
       "note": "All eight states and current-event identity overload; StagedInMemory is not disk persistence",
       "declaredByFrameworkInfo": false
@@ -889,21 +1097,45 @@
       "status": "Preview",
       "implemented": true,
       "compileVerified": true,
-      "runtimeVerified": true,
-      "evidence": "verification/native-test-0.1.47/diagnostics.json",
+      "runtimeVerified": false,
+      "historicalEvidence": {
+        "identifier": "verification/native-test-0.1.47/diagnostics.json",
+        "availability": "not-distributed",
+        "currentDllEvidence": false
+      },
       "guide": "sprite-assets.zh-CN.md",
       "note": "0.1.47 native smoke verified current SpriteDict registration/GetSprite readback and idempotence; portrait visual appearance, real scene rebuild and save/reload unverified. 535 ES3 files unchanged.",
-      "declaredByFrameworkInfo": false
+      "declaredByFrameworkInfo": false,
+      "historicalVerification": {
+        "scope": "unqualified native flags from an older index; not current-DLL verification",
+        "recordedIndexBaseline": "0.1.73",
+        "claims": {
+          "runtimeVerified": true
+        },
+        "availability": "historical reports not distributed"
+      }
     },
     {
       "id": "items.night-stock",
       "status": "Preview",
       "implemented": true,
       "compileVerified": true,
-      "runtimeVerified": true,
-      "evidence": "verification/night-placement-native-0.1.65.json",
+      "runtimeVerified": false,
+      "historicalEvidence": {
+        "identifier": "verification/night-placement-native-0.1.65.json",
+        "availability": "not-distributed",
+        "currentDllEvidence": false
+      },
       "scope": "official Late scoped native sale placement, full native generation, real BuyItem payment, current-day SaveGame disk readback and cold load; native capacity/perk rejection retained",
-      "declaredByFrameworkInfo": true
+      "declaredByFrameworkInfo": true,
+      "historicalVerification": {
+        "scope": "unqualified native flags from an older index; not current-DLL verification",
+        "recordedIndexBaseline": "0.1.73",
+        "claims": {
+          "runtimeVerified": true
+        },
+        "availability": "historical reports not distributed"
+      }
     },
     {
       "id": "items.npc-stock",
@@ -913,7 +1145,11 @@
       "runtimeVerified": false,
       "guide": "npc-stock.zh-CN.md",
       "scope": "All planner options; automatic scoped named tables and miner Ore. Machine/hardcoded routes remain incomplete; captured native callback fixture is not full arrival/payment/save verification.",
-      "evidence": "verification/fixed-stock-native-0.1.64.json",
+      "historicalEvidence": {
+        "identifier": "verification/fixed-stock-native-0.1.64.json",
+        "availability": "not-distributed",
+        "currentDllEvidence": false
+      },
       "boundary": "Named tables, miner and fixed typed inventor/thief slots native verified with temporary captured sale items. Actual shelf/purchase/save remain pending.",
       "declaredByFrameworkInfo": true
     },
@@ -922,88 +1158,184 @@
       "status": "Preview",
       "implemented": true,
       "compileVerified": true,
-      "runtimeVerified": true,
+      "runtimeVerified": false,
       "guide": "registration.zh-CN.md",
       "scope": "real runtime initialization/post-load metadata semantics, no domain factory or save claims",
-      "evidence": "verification/registration-native-0.1.52.json",
-      "declaredByFrameworkInfo": true
+      "historicalEvidence": {
+        "identifier": "verification/registration-native-0.1.52.json",
+        "availability": "not-distributed",
+        "currentDllEvidence": false
+      },
+      "declaredByFrameworkInfo": true,
+      "historicalVerification": {
+        "scope": "unqualified native flags from an older index; not current-DLL verification",
+        "recordedIndexBaseline": "0.1.73",
+        "claims": {
+          "runtimeVerified": true
+        },
+        "availability": "historical reports not distributed"
+      }
     },
     {
       "id": "machines.liquid-output",
       "status": "Preview",
       "implemented": true,
       "compileVerified": true,
-      "runtimeVerified": true,
+      "runtimeVerified": false,
       "guide": "machine-liquid-output.zh-CN.md",
-      "evidence": "verification/liquid-output-native-0.1.55.json",
+      "historicalEvidence": {
+        "identifier": "verification/liquid-output-native-0.1.55.json",
+        "availability": "not-distributed",
+        "currentDllEvidence": false
+      },
       "boundary": "same-process temporary fixtures, existing vessel, complete synchronous compensation; not cross-process crash or native nightly save lifecycle evidence",
-      "declaredByFrameworkInfo": true
+      "declaredByFrameworkInfo": true,
+      "historicalVerification": {
+        "scope": "unqualified native flags from an older index; not current-DLL verification",
+        "recordedIndexBaseline": "0.1.73",
+        "claims": {
+          "runtimeVerified": true
+        },
+        "availability": "historical reports not distributed"
+      }
     },
     {
       "id": "machines.container-conditions",
       "status": "Preview",
       "implemented": true,
       "compileVerified": true,
-      "runtimeVerified": true,
+      "runtimeVerified": false,
       "guide": "machine-container-conditions.zh-CN.md",
-      "evidence": "verification/container-conditions-native-0.1.56.json",
+      "historicalEvidence": {
+        "identifier": "verification/container-conditions-native-0.1.56.json",
+        "availability": "not-distributed",
+        "currentDllEvidence": false
+      },
       "boundary": "input/output admission, stored-container processing rechecks, AND/fault/disposal in same-process native fixtures; actual disk save/cold reload of condition machine not tested",
-      "declaredByFrameworkInfo": true
+      "declaredByFrameworkInfo": true,
+      "historicalVerification": {
+        "scope": "unqualified native flags from an older index; not current-DLL verification",
+        "recordedIndexBaseline": "0.1.73",
+        "claims": {
+          "runtimeVerified": true
+        },
+        "availability": "historical reports not distributed"
+      }
     },
     {
       "id": "machines.material-graph",
       "status": "Preview",
       "implemented": true,
       "compileVerified": true,
-      "runtimeVerified": true,
+      "runtimeVerified": false,
       "guide": "machine-material-graph.zh-CN.md",
-      "evidence": "verification/material-graph-native-0.1.57.json",
+      "historicalEvidence": {
+        "identifier": "verification/material-graph-native-0.1.57.json",
+        "availability": "not-distributed",
+        "currentDllEvidence": false
+      },
       "boundary": "explicit whole-root ConsumeGraph; 12 native same-process scenarios; no asynchronous, disk-save or crash recovery",
-      "declaredByFrameworkInfo": true
+      "declaredByFrameworkInfo": true,
+      "historicalVerification": {
+        "scope": "unqualified native flags from an older index; not current-DLL verification",
+        "recordedIndexBaseline": "0.1.73",
+        "claims": {
+          "runtimeVerified": true
+        },
+        "availability": "historical reports not distributed"
+      }
     },
     {
       "id": "recipes.guide-images",
       "status": "Preview",
       "implemented": true,
       "compileVerified": true,
-      "runtimeVerified": true,
+      "runtimeVerified": false,
       "guide": "recipe-guide-images.zh-CN.md",
-      "evidence": "verification/guide-mesh-native-0.1.66.json",
+      "historicalEvidence": {
+        "identifier": "verification/guide-mesh-native-0.1.66.json",
+        "availability": "not-distributed",
+        "currentDllEvidence": false
+      },
       "boundary": "bounded triangle/UV thumbnails including tight/rotated sprites; locale-ready gate; UI7 and en/zh8; no live state/material tint/animation",
-      "declaredByFrameworkInfo": true
+      "declaredByFrameworkInfo": true,
+      "historicalVerification": {
+        "scope": "unqualified native flags from an older index; not current-DLL verification",
+        "recordedIndexBaseline": "0.1.73",
+        "claims": {
+          "runtimeVerified": true
+        },
+        "availability": "historical reports not distributed"
+      }
     },
     {
       "id": "machines.required-power",
       "status": "Preview",
       "implemented": true,
       "compileVerified": true,
-      "runtimeVerified": true,
+      "runtimeVerified": false,
       "guide": "machine-required-power.zh-CN.md",
-      "evidence": "verification/required-power-native-0.1.59.json",
+      "historicalEvidence": {
+        "identifier": "verification/required-power-native-0.1.59.json",
+        "availability": "not-distributed",
+        "currentDllEvidence": false
+      },
       "boundary": "required source even zero cost; 8 native modes; lifecycle persistence not yet verified",
-      "declaredByFrameworkInfo": true
+      "declaredByFrameworkInfo": true,
+      "historicalVerification": {
+        "scope": "unqualified native flags from an older index; not current-DLL verification",
+        "recordedIndexBaseline": "0.1.73",
+        "claims": {
+          "runtimeVerified": true
+        },
+        "availability": "historical reports not distributed"
+      }
     },
     {
       "id": "machines.borrowed-inventory",
       "status": "Preview",
       "implemented": true,
       "compileVerified": true,
-      "runtimeVerified": true,
+      "runtimeVerified": false,
       "guide": "machine-inventory-binding.zh-CN.md",
-      "evidence": "verification/inventory-binding-native-0.1.60.json",
+      "historicalEvidence": {
+        "identifier": "verification/inventory-binding-native-0.1.60.json",
+        "availability": "not-distributed",
+        "currentDllEvidence": false
+      },
       "boundary": "explicit custom/canonical inventory; template binding; native UI delegate setup remains author responsibility; lifecycle persistence separate",
-      "declaredByFrameworkInfo": true
+      "declaredByFrameworkInfo": true,
+      "historicalVerification": {
+        "scope": "unqualified native flags from an older index; not current-DLL verification",
+        "recordedIndexBaseline": "0.1.73",
+        "claims": {
+          "runtimeVerified": true
+        },
+        "availability": "historical reports not distributed"
+      }
     },
     {
       "id": "recipes.guide-localization",
       "status": "Preview",
       "implemented": true,
       "compileVerified": true,
-      "runtimeVerified": true,
+      "runtimeVerified": false,
       "guide": "recipe-guide-localization.zh-CN.md",
-      "evidence": "verification/guide-localization-native-0.1.61.json",
+      "historicalEvidence": {
+        "identifier": "verification/guide-localization-native-0.1.61.json",
+        "availability": "not-distributed",
+        "currentDllEvidence": false
+      },
       "boundary": "bilingual typed fields and live game locale; authors supply translations; tight/unknown sprite packing still text fallback",
-      "declaredByFrameworkInfo": true
+      "declaredByFrameworkInfo": true,
+      "historicalVerification": {
+        "scope": "unqualified native flags from an older index; not current-DLL verification",
+        "recordedIndexBaseline": "0.1.73",
+        "claims": {
+          "runtimeVerified": true
+        },
+        "availability": "historical reports not distributed"
+      }
     },
     {
       "id": "localization.game-language",
@@ -1011,7 +1343,7 @@
       "implemented": true,
       "compileVerified": true,
       "runtimeVerified": false,
-      "evidence": "../verification.json",
+      "evidence": "release-status.json",
       "scope": "Entry implemented; runtime evidence is scoped to the recorded build/hash and specific test.",
       "declaredByFrameworkInfo": true
     },
@@ -1021,7 +1353,7 @@
       "implemented": true,
       "compileVerified": true,
       "runtimeVerified": false,
-      "evidence": "../verification.json",
+      "evidence": "release-status.json",
       "scope": "Entry implemented; runtime evidence is scoped to the recorded build/hash and specific test.",
       "declaredByFrameworkInfo": true
     },
@@ -1031,7 +1363,7 @@
       "implemented": true,
       "compileVerified": true,
       "runtimeVerified": false,
-      "evidence": "../verification.json",
+      "evidence": "release-status.json",
       "scope": "Entry implemented; runtime evidence is scoped to the recorded build/hash and specific test.",
       "declaredByFrameworkInfo": true
     },
@@ -1041,7 +1373,7 @@
       "implemented": true,
       "compileVerified": true,
       "runtimeVerified": false,
-      "evidence": "../verification.json",
+      "evidence": "release-status.json",
       "scope": "Entry implemented; runtime evidence is scoped to the recorded build/hash and specific test.",
       "declaredByFrameworkInfo": true
     },
@@ -1051,7 +1383,7 @@
       "implemented": true,
       "compileVerified": true,
       "runtimeVerified": false,
-      "evidence": "../verification.json",
+      "evidence": "release-status.json",
       "scope": "Entry implemented; runtime evidence is scoped to the recorded build/hash and specific test.",
       "declaredByFrameworkInfo": true
     },
@@ -1061,7 +1393,7 @@
       "implemented": true,
       "compileVerified": true,
       "runtimeVerified": false,
-      "evidence": "../verification.json",
+      "evidence": "release-status.json",
       "scope": "Entry implemented; runtime evidence is scoped to the recorded build/hash and specific test.",
       "declaredByFrameworkInfo": true
     },
@@ -1071,10 +1403,14 @@
       "implemented": true,
       "compileVerified": true,
       "runtimeVerified": false,
-      "evidence": "../verification.json",
+      "evidence": "release-status.json",
       "scope": "Entry implemented; runtime evidence is scoped to the recorded build/hash and specific test.",
       "declaredByFrameworkInfo": true,
-      "nativeEvidence": "verification/disk-supplier-native-0.1.72.json",
+      "historicalNativeEvidence": {
+        "identifier": "verification/disk-supplier-native-0.1.72.json",
+        "availability": "not-distributed",
+        "currentDllEvidence": false
+      },
       "nativeScope": "Explicit fixture native save18/cold-load27/independent disk37 checks; Stage never saves."
     },
     {
@@ -1083,7 +1419,7 @@
       "implemented": true,
       "compileVerified": true,
       "runtimeVerified": false,
-      "evidence": "../verification.json",
+      "evidence": "release-status.json",
       "scope": "Entry implemented; runtime evidence is scoped to the recorded build/hash and specific test.",
       "declaredByFrameworkInfo": true
     },
@@ -1100,27 +1436,63 @@
   ],
   "implementationVersion": "0.1.73",
   "nativeEvidence": "0.1.43: 2026-10-21, Probably Stolen 0.46D / MelonLoader 0.7.3, only EZapi 0.1.43 on disposable slot 533. Power native smoke test passed 20/20 for single and 5-unit stacked fixtures; all 533 save_*.es3 hashes were unchanged after exit. Game startup rewrote SaveFile.es3 settings metadata; the fixture made no save API call. PowerBatchMath.Plan passed 24/24 pure-managed tests and does not commit native power. Evidence: native-power-0.1.43.zh-CN.md. 0.1.42: on 2026-10-21, Probably Stolen 0.46D / MelonLoader 0.7.3 with only EZapi 0.1.42 on disposable slot 533 passed all 7 embedded sprite checks; diagnostics errors=[], and all 536 local save-related files matched their pre-test SHA-256. The item icon was not rendered on screen and save/reload was not tested. 0.1.41: official guide hashes and current Assembly-CSharp fingerprint match the recorded source index. On 2026-10-21, Probably Stolen 0.46D with only EZapi 0.1.41 on disposable slot 533 verified SupplierApi visitor arrival, portrait, quote preview/back/confirm, page refresh and dismissal; diagnostics ended Closed with queued=0, arrived=1, active=0, captureCalls=2, purchaseCalls=1, dismissCalls=1, errors=[]. The confirmation callback only counted and caused no payment, delivery, inventory mutation or save write; real transactions and LootRegistry supplier drops remain unverified. 0.1.36 inventory endpoint restore remains unavailable in the current game assembly. 0.1.55: five scripted groups485/0 on slot534; all536 ES3 unchanged. Endpoint restore limitation above describes historical0.1.36 only;0.1.53 completed native save/cold restore lifecycle.",
-  "machinePersistenceEvidence": "verification/machine-persistence-native-0.1.62.json",
-  "npcFixedStockEvidence": "verification/fixed-stock-native-0.1.64.json",
-  "nightShopStockEvidence": "verification/night-placement-native-0.1.65.json",
+  "historicalMachinePersistenceEvidence": {
+    "identifier": "verification/machine-persistence-native-0.1.62.json",
+    "availability": "not-distributed",
+    "currentDllEvidence": false
+  },
+  "historicalNpcFixedStockEvidence": {
+    "identifier": "verification/fixed-stock-native-0.1.64.json",
+    "availability": "not-distributed",
+    "currentDllEvidence": false
+  },
+  "historicalNightShopStockEvidence": {
+    "identifier": "verification/night-placement-native-0.1.65.json",
+    "availability": "not-distributed",
+    "currentDllEvidence": false
+  },
   "recipeGuideImages": {
     "index": "recipe-guide-images.index.json",
-    "audit": "recipe-guide-public-contract.audit.json",
-    "evidence": "verification/guide-mesh-native-0.1.66.json"
+    "historicalAudit": {
+      "identifier": "recipe-guide-public-contract.audit.json",
+      "availability": "not-distributed",
+      "currentDllEvidence": false
+    },
+    "historicalEvidence": {
+      "identifier": "verification/guide-mesh-native-0.1.66.json",
+      "availability": "not-distributed",
+      "currentDllEvidence": false
+    }
   },
   "externalPowerContents": {
     "index": "furnace-contents.index.json",
-    "audit": "external-power-public-contract.audit.json",
-    "evidence": "verification/furnace-contents-native-0.1.67.json"
+    "historicalAudit": {
+      "identifier": "external-power-public-contract.audit.json",
+      "availability": "not-distributed",
+      "currentDllEvidence": false
+    },
+    "historicalEvidence": {
+      "identifier": "verification/furnace-contents-native-0.1.67.json",
+      "availability": "not-distributed",
+      "currentDllEvidence": false
+    }
   },
   "machineNightReadOnly": {
     "index": "machine-night-readonly.index.json",
-    "evidence": "verification/night-readonly-native-0.1.68.json",
+    "historicalEvidence": {
+      "identifier": "verification/night-readonly-native-0.1.68.json",
+      "availability": "not-distributed",
+      "currentDllEvidence": false
+    },
     "scope": "night quota resolver only; full machine contract remains partial"
   },
   "machineRecipeReadOnly": {
     "index": "machine-recipe-readonly.index.json",
-    "evidence": "verification/recipe-readonly-native-0.1.69.json",
+    "historicalEvidence": {
+      "identifier": "verification/recipe-readonly-native-0.1.69.json",
+      "availability": "not-distributed",
+      "currentDllEvidence": false
+    },
     "scope": "selection/Validate/Prepare read-only guard; write/restore use independent resource journals; whole machine groups remain partial"
   },
   "entryPoint": {
@@ -1128,9 +1500,19 @@
     "meaning": "declaredByFrameworkInfo identifies IDs returned by GetCapabilities. Legacy roadmap categories and descriptive aliases are retained separately.",
     "count": 97
   },
-  "distributionVerification": {
+  "documentationContext": {
+    "kind": "current-api-guide",
+    "releaseTag": "0.1.73-preview.3",
+    "assemblyVersion": "0.1.73",
+    "releaseStatus": "release-status.json",
+    "nativeRuntimeVerified": false,
+    "evidencePolicy": "Old native claims are preserved only under historical* fields and do not apply to the current DLL."
+  },
+  "binaryPackageVerification": {
     "dllSHA256": "7E4AB675B0E3BD81C56EEC4606731A6880287549EB4E8E90A707BE18BD52BEEF",
     "nativeRuntimeVerified": false,
-    "frameworkSourceIncluded": false
+    "frameworkSourceIncluded": false,
+    "artifactKind": "binary-SDK; not repository source contents",
+    "sourceRepositoryVisibility": "public"
   }
 }

@@ -1,3 +1,5 @@
+> 当前 API 指南。见[统一版本与验收状态](current-status.zh-CN.md)：当前 DLL 尚未完成实机验收；旧测试数量仅适用于其历史 DLL。
+
 # 从源码构建 EZapi
 
 EZapi 自 0.1.73-preview.2 起公开当前源码，采用 [MIT 许可证](../LICENSE)。框架位于 `src/EZapi`，离线校验器位于 `src/EZapi.ContentValidator`，调用示例位于 `src/EZapi.Sample`。旧私有仓库历史不包含在此仓库中。

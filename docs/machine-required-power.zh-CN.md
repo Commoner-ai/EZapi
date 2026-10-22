@@ -1,3 +1,5 @@
+> 当前 API 指南。见[统一版本与验收状态](current-status.zh-CN.md)：当前 DLL 尚未完成实机验收；旧测试数量仅适用于其历史 DLL。
+
 # 机器的必需电源与工厂配置边界
 
 适用 EZapi 0.1.59。此阶段补齐 `MachineBatteryTemplate.Required` 的执行行为；此前它只进入布局元数据，加工没有执行该条件。
@@ -44,4 +46,6 @@ if (!result.Accepted) throw new InvalidOperationException(result.Reason);
 
 完整机器注册契约仍保留在总目标内。图片、液体、容器材料及外电的已有独立验收不等于全部 DTO、边界与跨夜存档生命周期都已完成。
 
-最终六组实机回归793/0，其中机器注册88/0；三种零能源模式均用SetPowerSourceAt(0)设置并读取原生值验证。49套离线检查、正式3工程零警告零错误。退出后536份ES3未变，不声称真实跨夜或保存重载通过。见[证据](verification/required-power-native-0.1.59.json)。
+> 历史验收记录（0.1.59），不作为当前 DLL 通过依据。
+> 最终六组实机回归793/0，其中机器注册88/0；三种零能源模式均用SetPowerSourceAt(0)设置并读取原生值验证。49套离线检查、正式3工程零警告零错误。退出后536份ES3未变，不声称真实跨夜或保存重载通过。见证据（历史标识 `verification/required-power-native-0.1.59.json`；原件未公开）。
+> 

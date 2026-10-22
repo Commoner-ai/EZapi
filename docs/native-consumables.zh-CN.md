@@ -1,4 +1,6 @@
-# EZapi 0.1.7：原生食品与液体容器
+> 当前 API 指南。见[统一版本与验收状态](current-status.zh-CN.md)：当前 DLL 尚未完成实机验收；旧测试数量仅适用于其历史 DLL。
+
+# EZapi原生食品与液体容器
 
 这两个入口把声明映射到当前游戏构建公开的 `FoodItemHelper` 和 `WaterHelper`。官方指南的通用注册流程继续适用，但官方 LearnerMod 的治疗示例不是食品/液体实现依据；这两个 helper 的证据来自当前 `Assembly-CSharp.dll` 签名和编译结果，详见随包 verification/current-food-contract.txt。它们没有新增 Harmony 补丁。
 

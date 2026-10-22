@@ -1,4 +1,6 @@
-# EZapi 0.1.69 machine contract review
+> Current API guide. See [release status](current-status.en.md): current-DLL native acceptance is pending; older test counts apply only to their historical binaries.
+
+# EZapimachine contract review
 
 The machine review covers **34 types, 114 properties and 20 methods**. Each entry in `machine-public-contract.audit.json` states EZapi behavior, source and bounded evidence. This is independent functional coverage, not Forge binary compatibility. Output kinds are the strings `items` and `container`; processing returns `MachineBatchResult`.
 

@@ -1,4 +1,6 @@
-# EZapi 0.1.61: bilingual recipe guides
+> Current API guide. See [release status](current-status.en.md): current-DLL native acceptance is pending; older test counts apply only to their historical binaries.
+
+# EZapi bilingual recipe guides
 
 Recipe guides reuse `LocalizedItemText(Chinese, English)`. Existing constructors and fixed text remain supported. Add optional properties to provide translations:
 

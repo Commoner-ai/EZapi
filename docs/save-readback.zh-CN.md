@@ -1,3 +1,5 @@
+> 当前 API 指南。见[统一版本与验收状态](current-status.zh-CN.md)：当前 DLL 尚未完成实机验收；旧测试数量仅适用于其历史 DLL。
+
 # EZapi 只读存档回读
 
 `SaveReadbackApi` 是 Forge SaveReadback 的独立 EZapi 实现。它只读取文本快照，不调用游戏保存、不写文件、不恢复原生物品，也不把 `Readable` 当成“存档结构正确”或“事务已完成”。需要写入或恢复物品图时，分别使用 `RunData`、`SaveGraphApi` 并遵守它们更严格的边界。

@@ -1,6 +1,8 @@
+> 当前 API 指南。见[统一版本与验收状态](current-status.zh-CN.md)：当前 DLL 尚未完成实机验收；旧测试数量仅适用于其历史 DLL。
+
 > 0.1.62：复杂材料图、液体物品/容器产出、普通电池及外电已补充两晚真实保存和冷启动验证；下方历史边界以本条限定的矩阵更新，完整范围见[跨夜指南](machine-persistence.zh-CN.md)。不包含原版熔炉所有材料策略或崩溃恢复。
 
-# EZapi 0.1.55：向已有容器输出液体
+# EZapi向已有容器输出液体
 
 机器模板的 `Output.Kind="container"` 表示玩家放入一个现有液体容器。配方使用 `MachineContainerOutput`，框架直接向该容器加入整批液体，保留原有成分和容器身份，不创建新物品。需要生成一瓶新产品时继续使用 `MachineItemOutput.Contents`。
 

@@ -1,3 +1,5 @@
+> 当前 API 指南。见[统一版本与验收状态](current-status.zh-CN.md)：当前 DLL 尚未完成实机验收；旧测试数量仅适用于其历史 DLL。
+
 # RuntimeCapabilities：运行时能力快照
 
 `FrameworkInfo.GetCapabilities()` 是编译期能力清单：它说明 EZapi 声明了哪些入口。`RuntimeCapabilities.Current` 则在读取时重新检查 EZapi 自身的运行门控，不保留 Unity/IL2CPP 对象，也不把编译清单当成运行就绪状态。

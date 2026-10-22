@@ -137,7 +137,7 @@
       "id": "power",
       "taskZh": "电量",
       "taskEn": "Power",
-      "guide": "native-power-0.1.43.zh-CN.md",
+      "guide": "power.zh-CN.md",
       "example": "../src/EZapi.Sample/PowerExamples.cs"
     },
     {
@@ -62559,5 +62559,13 @@
         }
       ]
     }
-  ]
+  ],
+  "documentationContext": {
+    "kind": "current-api-guide",
+    "releaseTag": "0.1.73-preview.3",
+    "assemblyVersion": "0.1.73",
+    "releaseStatus": "release-status.json",
+    "nativeRuntimeVerified": false,
+    "evidencePolicy": "Old native claims are preserved only under historical* fields and do not apply to the current DLL."
+  }
 }

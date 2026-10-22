@@ -1,8 +1,8 @@
-> 0.1.72-preview.1 packaging: developer tools default off. See [installation](install-and-debug.en.md). The 415-check/save-reload reports below apply to the recorded pre-packaging DLL hash4238A189…; they are historical for the new binary.
+> Current API guide. See [release status](current-status.en.md): current-DLL native acceptance is pending; older test counts apply only to their historical binaries.
 
 # Bilingual dialogue, phone calls and suppliers
 
-The 0.1.72 development build adds optional `Localized*` init properties. Create a reusable script during initialization; EZapi reads the game locale once when a native dialogue graph opens. An active graph retains its opening locale. Reopen the original script, or continue a supplier menu, to use the next locale. See the [field/task index](dialogue-localization.index.json), [full signatures](public-api.index.json), and compiled [dialogue](../src/EZapi.Sample/DialogueExamples.cs) / [supplier](../src/EZapi.Sample/SupplierExamples.cs) examples.
+The current API build adds optional `Localized*` init properties. Create a reusable script during initialization; EZapi reads the game locale once when a native dialogue graph opens. An active graph retains its opening locale. Reopen the original script, or continue a supplier menu, to use the next locale. See the [field/task index](dialogue-localization.index.json), [full signatures](public-api.index.json), and compiled [dialogue](../src/EZapi.Sample/DialogueExamples.cs) / [supplier](../src/EZapi.Sample/SupplierExamples.cs) examples.
 
 `zh*` selects Chinese; all other locales select English. A missing side uses the supplied side. `DialogueDefinition` covers speaker, body, confirmation, back, leave, later, failure and pagination. `DialogueChoice` covers the option, preview and per-choice confirmation. Supplied localized text must be readable and nonblank; labels are bounded to 512 UTF-16 characters, body/preview/failure to 131072. Only newline, carriage return and tab control characters are accepted. A corresponding literal may be empty when a localized override is supplied, but never null.
 
@@ -20,7 +20,8 @@ Phone calls share the same graph behavior. Contact names remain `PhoneContact.Di
 
 `SupplierDefinition` covers speaker, confirmation, back, continue, leave, failure and pagination; `SupplierPage.LocalizedBody` covers captured menu text; `SupplierOffer` covers option, preview and per-offer confirmation. Capture callbacks receive capture-time locale, while purchase callbacks receive the opened graph locale. A visit may arrive in a different locale from the one used when queued. Continue captures a new menu and opens a new graph. Purchase exceptions are diagnosed once through `EZAPI_SUPPLIER_PURCHASE`, with the failure text resolved in the opening locale.
 
-Localization preserves stable IDs, run/epoch checks, at-most-once confirmation, automatic-offer rules and owned-resource cleanup. It does not translate author prose, make payments, deliver items or save. Linked production-source tests cover the managed/native-adapter paths. Current-DLL English/Chinese pages, native choice labels and cleanup are included in the [415 scoped native checks](verification/disk-supplier-native-0.1.72.json). Supplier arrival/departure callbacks were fixture-dispatched; this run did not test natural arrival, payment or delivery.
+> Historical verification note (0.1.72); not evidence for the current DLL. 
+> Localization preserves stable IDs, run/epoch checks, at-most-once confirmation, automatic-offer rules and owned-resource cleanup. It does not translate author prose, make payments, deliver items or save. Linked production-source tests cover the managed/native-adapter paths. Historical 0.1.72 DLL English/Chinese pages, native choice labels and cleanup are included in the 415 scoped native checks (historical identifier `verification/disk-supplier-native-0.1.72.json`; original artifact not distributed). Supplier arrival/departure callbacks were fixture-dispatched; this run did not test natural arrival, payment or delivery.
 
 ## Reading and workshop entry points
 

@@ -1,3 +1,5 @@
+> Current API guide. See [release status](current-status.en.md): current-DLL native acceptance is pending; older test counts apply only to their historical binaries.
+
 # Game entry automation
 
 The developer package includes `developer-tools/automation/Enter-EZapiTestStore.ps1` and its `Invoke-EZapiNativeTest.ps1` dependency. They launch/bind one game process, load the most recent save, open the developer panel, export fresh diagnostics and check the expected slot. No extra game DLL is required.

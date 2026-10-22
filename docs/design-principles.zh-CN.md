@@ -1,3 +1,5 @@
+> 当前 API 指南。见[统一版本与验收状态](current-status.zh-CN.md)：当前 DLL 尚未完成实机验收；旧测试数量仅适用于其历史 DLL。
+
 # EZapi 的目标与开发顺序
 
 EZapi 是 Probably Stolen 的独立 Mod 前置。最终目标是让作者和 AI 通过清楚的 JSON、少量 DLL 调用和完整模板，做出稳定、互相兼容的 Mod。

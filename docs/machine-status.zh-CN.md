@@ -1,4 +1,6 @@
-# 机器状态查询（0.1.63）
+> 当前 API 指南。见[统一版本与验收状态](current-status.zh-CN.md)：当前 DLL 尚未完成实机验收；旧测试数量仅适用于其历史 DLL。
+
+# 机器状态查询（）
 
 `MachineRegistrationApi.Snapshot()` 仅在游戏主线程调用。返回的是调用时的托管快照；状态变化后重新查询。
 
@@ -21,4 +23,4 @@ foreach (var view in MachineRegistrationApi.Snapshot())
 
 实际证据：四种目录状态、全局运行时与夜间开关组合、准入/冻结/配方编辑门控、快照不变性、旧构造/解构、JSON和线程边界，共168项离线检查。游戏内机器注册128项通过，七组总计867项通过；旧测试存档读取19项通过。完整公共行为审计仍在继续，不能据此宣布整组完成。
 
-参见 [AI索引](machine-status.index.json)、[English](machine-status.en.md)、[验证报告](verification/machine-status-native-0.1.63.json)。
+参见 [AI索引](machine-status.index.json)、[English](machine-status.en.md)、验证报告（历史标识 `verification/machine-status-native-0.1.63.json`；原件未公开）。

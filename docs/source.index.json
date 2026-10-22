@@ -1026,27 +1026,55 @@
   "forgeParity": "forge-parity.index.json",
   "recipeGuideImages": {
     "index": "recipe-guide-images.index.json",
-    "audit": "recipe-guide-public-contract.audit.json",
-    "evidence": "verification/guide-mesh-native-0.1.66.json"
+    "historicalAudit": {
+      "identifier": "recipe-guide-public-contract.audit.json",
+      "availability": "not-distributed",
+      "currentDllEvidence": false
+    },
+    "historicalEvidence": {
+      "identifier": "verification/guide-mesh-native-0.1.66.json",
+      "availability": "not-distributed",
+      "currentDllEvidence": false
+    }
   },
   "externalPowerContents": {
     "index": "furnace-contents.index.json",
-    "audit": "external-power-public-contract.audit.json",
-    "evidence": "verification/furnace-contents-native-0.1.67.json"
+    "historicalAudit": {
+      "identifier": "external-power-public-contract.audit.json",
+      "availability": "not-distributed",
+      "currentDllEvidence": false
+    },
+    "historicalEvidence": {
+      "identifier": "verification/furnace-contents-native-0.1.67.json",
+      "availability": "not-distributed",
+      "currentDllEvidence": false
+    }
   },
   "machineNightReadOnly": {
     "index": "machine-night-readonly.index.json",
-    "evidence": "verification/night-readonly-native-0.1.68.json",
+    "historicalEvidence": {
+      "identifier": "verification/night-readonly-native-0.1.68.json",
+      "availability": "not-distributed",
+      "currentDllEvidence": false
+    },
     "scope": "night quota resolver only; full machine contract remains partial"
   },
   "machineRecipeReadOnly": {
     "index": "machine-recipe-readonly.index.json",
-    "evidence": "verification/recipe-readonly-native-0.1.69.json",
+    "historicalEvidence": {
+      "identifier": "verification/recipe-readonly-native-0.1.69.json",
+      "availability": "not-distributed",
+      "currentDllEvidence": false
+    },
     "scope": "selection/Validate/Prepare read-only guard; write/restore use independent resource journals; whole machine groups remain partial"
   },
   "machineContract": {
     "index": "machine-contract.index.json",
-    "audit": "machine-public-contract.audit.json",
+    "historicalAudit": {
+      "identifier": "machine-public-contract.audit.json",
+      "availability": "not-distributed",
+      "currentDllEvidence": false
+    },
     "publicHelpers": "public-contract-coverage.index.json"
   },
   "publicHelpers": "public-helpers.index.json",
@@ -1055,5 +1083,13 @@
   "language": "game-language.index.json",
   "dialogueLocalization": "dialogue-localization.index.json",
   "itemData": "item-data.index.json",
-  "installation": "install-and-debug.zh-CN.md"
+  "installation": "install-and-debug.zh-CN.md",
+  "documentationContext": {
+    "kind": "current-api-guide",
+    "releaseTag": "0.1.73-preview.3",
+    "assemblyVersion": "0.1.73",
+    "releaseStatus": "release-status.json",
+    "nativeRuntimeVerified": false,
+    "evidencePolicy": "Old native claims are preserved only under historical* fields and do not apply to the current DLL."
+  }
 }

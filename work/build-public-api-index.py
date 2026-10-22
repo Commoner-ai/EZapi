@@ -34,7 +34,7 @@ routes=[
  ('sprites','嵌入图像与肖像','Embedded sprites and portraits','sprite-assets.zh-CN.md','SpriteAssetExamples','EmbeddedSpriteDefinition SpriteAssets'),
  ('effects','效果与生产数值','Effects and production values','production-effects.zh-CN.md','ProductionEffectExamples','Effects ProductionValue LiquidComposition'),
  ('modules','模块与节点','Modules and nodes','modules.zh-CN.md','ModuleExamples','Modules'),
- ('power','电量','Power','native-power-0.1.43.zh-CN.md','PowerExamples','Power PowerBatchMath'),
+ ('power','电量','Power','power.zh-CN.md','PowerExamples','Power PowerBatchMath'),
  ('external-power','外接电源','External power','external-power.zh-CN.md','ExternalPowerExamples','ExternalPower'),
  ('liquids','液体组成与转移','Liquid composition and transfer','liquid-transfer.zh-CN.md','LiquidTransferExamples','Liquids LiquidMetadata LiquidTransfer'),
  ('inventory','库存观察与移动','Inventory observation and movement','inventory-services.zh-CN.md','InventoryExamples','InventoryServices InventoryPlacement ItemTransfer'),
@@ -119,6 +119,15 @@ document={
  'metadataLimits':['C# nullable annotations are not inferred from IL2CPP metadata.','Compiler-generated record members are retained and flagged; ordinary examples should use constructors, init properties and named APIs.','A signature inventory is not behavior evidence; follow curatedEntryIds and the linked guides/evidence.'],
  'domains':domain_rows,'types':rows
 }
+release_status=root/'docs/release-status.json'
+if release_status.is_file():
+    release=json.loads(release_status.read_text(encoding='utf-8-sig'))
+    document['documentationContext']={
+        'kind':'current-api-guide','releaseTag':release['releaseTag'],
+        'assemblyVersion':a.version,'releaseStatus':'release-status.json',
+        'nativeRuntimeVerified':False,
+        'evidencePolicy':'Historical DLL evidence does not apply to this generated metadata.'}
+
 a.output.parent.mkdir(parents=True,exist_ok=True)
 a.output.write_text(json.dumps(document,ensure_ascii=False,indent=2)+'\n',encoding='utf-8')
 print(json.dumps({'version':a.version,'dllSha256':document['dllSha256'],'counts':document['counts'],'complete':document['complete']},ensure_ascii=False))

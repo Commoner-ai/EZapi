@@ -1,3 +1,5 @@
+> 当前 API 指南。见[统一版本与验收状态](current-status.zh-CN.md)：当前 DLL 尚未完成实机验收；旧测试数量仅适用于其历史 DLL。
+
 # EZapi 共享制造终端
 
 EZapi 0.1.28 提供自己的共享机器，物品 ID 是 `ezapi.machines.universal_manufacturing_terminal`。内容 Mod 调用 `MachineRegistrationApi.RegisterAdditionalRecipes(ownerId, ManufacturingTerminal.ItemId, recipes)` 追加自己的配方，即可复用官方目录工厂、独立窗口、投料准入、图鉴、标准材料事务和夜间调度。没有内置生产配方；正常运行不自动发放、不请求保存。

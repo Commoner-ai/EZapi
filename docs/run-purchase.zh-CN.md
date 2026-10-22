@@ -1,3 +1,5 @@
+> 当前 API 指南。见[统一版本与验收状态](current-status.zh-CN.md)：当前 DLL 尚未完成实机验收；旧测试数量仅适用于其历史 DLL。
+
 # 周目购买事务
 
 `RunPurchaseApi.Purchase(cost, steps)` 在当前已载入周目扣除现金，并执行同步交付步骤；另一个重载接受 `PlayerStore`，必须与当前周目的原生实例完全相同。可编译的单件库存交付示例见 `../src/EZapi.Sample/RunPurchaseExamples.cs`。精确重载见 `API.index.zh-CN.json`。

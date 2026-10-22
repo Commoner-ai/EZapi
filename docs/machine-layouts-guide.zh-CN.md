@@ -1,8 +1,10 @@
+> 当前 API 指南。见[统一版本与验收状态](current-status.zh-CN.md)：当前 DLL 尚未完成实机验收；旧测试数量仅适用于其历史 DLL。
+
 > 0.1.61：图鉴支持可选LocalizedItemText，游戏语言切换自动刷新；旧固定文本保留。见[中英指南](recipe-guide-localization.zh-CN.md)。
 
 > 0.1.56：输入槽Condition/输出ContainerCondition仅C#使用。统一注册自动安装，低层Create前先Register并持有条件句柄；JSON不接受回调字段。详见[machine-container-conditions.zh-CN.md](machine-container-conditions.zh-CN.md)。
 
-# EZapi 0.1.21：机器布局与配方图鉴
+# EZapi机器布局与配方图鉴
 
 0.1.72 新增机器窗口/槽位中英文声明及显示刷新，字段、Schema 和验证边界见 [机器布局中英指南](machine-layout-localization.zh-CN.md)。旧固定标题/槽标签保持原样。
 

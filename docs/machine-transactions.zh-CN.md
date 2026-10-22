@@ -1,4 +1,6 @@
-# 机器自定义资源事务（0.1.23）
+> 当前 API 指南。见[统一版本与验收状态](current-status.zh-CN.md)：当前 DLL 尚未完成实机验收；旧测试数量仅适用于其历史 DLL。
+
+# 机器自定义资源事务（）
 
 `MachineTransactionApi.Run` 执行一次同步的自定义加工资源事务。它补齐 Forge `IForgeBatchTransaction` 对应的 Validate/Apply/Verify/Restore/Fault 契约，并统一管理新产物的创建与失败清理。复用 `MachineBatchContext`，不重新定义批次价值或液体单位。此入口尚未提供标准配方匹配、机器注册、自动冻结、跨夜调度或外部电网。
 
@@ -67,4 +69,4 @@ Validate（完整只读预检）
 - 原生故障注入示例：`src/EZapi/DebugMachineTransactions.cs`，只操作临时自定义目录物品；不是常规配方处理器。
 - 调试“加工检查”按钮：`(634,372)`，同次执行无写入拒绝、成功、部分写入失败、Verify失败、完成通知异常、源/目标限量倒液失败恢复。
 
-开发者不要复制调试事务当作通用冻结加工实现。跨夜去重、保存先后顺序、原版机器加工、标准配方和完整Forge API覆盖仍需后续实现与证据。版本实机验收边界见 `machine-transactions-0.1.23.zh-CN.md`。
+开发者不要复制调试事务当作通用冻结加工实现。当前标准配方、材料消费、跨夜去重和持久状态已有独立入口，见[配方](machine-recipes.zh-CN.md)、[机器自动化](machine-automation.zh-CN.md)与[机器持久化](machine-persistence.zh-CN.md)。功能实现不表示当前 DLL 已完成实机验收；0.1.23 的阶段记录已归档。

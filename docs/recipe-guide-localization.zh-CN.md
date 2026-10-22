@@ -1,4 +1,6 @@
-# EZapi 0.1.61：图鉴中英文本与游戏语言切换
+> 当前 API 指南。见[统一版本与验收状态](current-status.zh-CN.md)：当前 DLL 尚未完成实机验收；旧测试数量仅适用于其历史 DLL。
+
+# EZapi图鉴中英文本与游戏语言切换
 
 图鉴使用已有 `LocalizedItemText(Chinese, English)`，与原生物品名称的语言规则一致。旧字符串字段和位置构造参数保留；新增可选属性，不要求旧 Mod 修改代码。
 
@@ -58,4 +60,6 @@ if (!result.Accepted) throw new InvalidOperationException(result.Reason);
 
 调试面板“图鉴中英检查”只允许固定可丢弃测试档：使用 Unity 官方 `LocalizationSettings.SelectedLocale` 临时切英语、中文，检查实际图鉴渲染文本，最后恢复原语言。该入口不请求保存，不能把回归成功解释为整个 Mod 的所有文案已经翻译。
 
-最终同一DLL：图鉴离线131/0、注册104/0，49套离线通过，正式3工程零警告零错误；实机七组863/0、中英实际切换6/0、图片界面7/0。原语言zh已恢复，4张截图已核对；退出后536份ES3未变。见[验证报告](verification/guide-localization-native-0.1.61.json)。
+> 历史验收记录（0.1.61），不作为当前 DLL 通过依据。
+> 历史阶段所用 DLL：图鉴离线131/0、注册104/0，49套离线通过，正式3工程零警告零错误；实机七组863/0、中英实际切换6/0、图片界面7/0。原语言zh已恢复，4张截图已核对；退出后536份ES3未变。见验证报告（历史标识 `verification/guide-localization-native-0.1.61.json`；原件未公开）。
+> 

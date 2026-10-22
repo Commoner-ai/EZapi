@@ -1,3 +1,5 @@
+> 当前 API 指南。见[统一版本与验收状态](current-status.zh-CN.md)：当前 DLL 尚未完成实机验收；旧测试数量仅适用于其历史 DLL。
+
 # EZapi 公共帮助器
 
 这些接口用于简化内容 Mod 的诊断、独立窗口输入和旧 ID 适配。实现独立，不依赖 Forge。完整可编译用法在 `src/EZapi.Sample/PublicHelperExamples.cs`。
