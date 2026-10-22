@@ -7,6 +7,11 @@
   "repository": "https://github.com/Commoner-ai/EZapi",
   "runtimeDllSHA256": "FE6DE81903D1F3A1234031C193D0F5678B17D99949AB24A47DCAB52958DFCA55",
   "runtimeChangedSince": "0.1.74-preview.1: Wild network browser layout adapter added",
+  "sdkRevision": {
+    "runtimeIdenticalTo": "0.1.74-preview.1",
+    "changes": ["Optional native Tooltip guidelines and examples", "Offline bilingual Mod generator with Tooltip style option", "Offline exact API/task/error search", "Documentation evidence-boundary corrections"],
+    "newTooltipNativeAcceptance": false
+  },
   "offlineVerification": {
     "sourceRebuildPassed": true,
     "offlineSuitesPassed": 59,

@@ -23,7 +23,6 @@ if (ownerText.Accepted && item.Accepted)
 {
     var moduleText = PresentationApi.RegisterModuleText(owner, moduleId, (instance, english) =>
         new ModuleText(
-            AdditionalEffect: english ? "Reads the current device state" : "读取当前设备状态",
             Lines: new[] { (english ? "Item ID: " : "物品 ID：") + instance.identifier }));
 }
 ```

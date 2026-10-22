@@ -71,7 +71,7 @@
     },
     {
       "path": "distribution-verification.json",
-      "sha256": "80E2C4D2EBDAA24098FB1C01986774B8DD61B470AE444D3B684BF151B5401F6A"
+      "sha256": "65F060ACE55A951E1AB50F06974A5C773F84AF92D3E7E3A522B44EF3AF5C3ACC"
     },
     {
       "path": "distribution/Find-EZapiApi.ps1",
@@ -991,11 +991,11 @@
     },
     {
       "path": "docs/current-status.en.md",
-      "sha256": "1F5A4D930E4FA1344CB14872CA85F9A5DCBA0771456ED146CE27C0EEBE3FEA6B"
+      "sha256": "FDEC6D7259ECDA2D3B375471A277F9C0C3047A3AF79F0DE76A8B402F3C6F3584"
     },
     {
       "path": "docs/current-status.zh-CN.md",
-      "sha256": "172FAA05DD973CD30FC7CD55C38054976347AF57FCF092B9A23806D7A8FC4B67"
+      "sha256": "4F6656F87DC1B48766815C6B0771D9BC4F1A1399DC304DCB9B3347642DD882B5"
     },
     {
       "path": "docs/departure-buttons.en.md",
@@ -1627,7 +1627,7 @@
     },
     {
       "path": "docs/presentation.zh-CN.md",
-      "sha256": "E462B1D4C67537340A3AB3378389EE911C2B8904DDD762ECB03B7F2DC6B827B2"
+      "sha256": "BAA8182343B8E6D45FE15F9D1B65043EDD05139A9A1445DDD43DB1B0D0FE4FA7"
     },
     {
       "path": "docs/production-effects.zh-CN.md",
@@ -1699,7 +1699,7 @@
     },
     {
       "path": "docs/release-status.json",
-      "sha256": "E1B887510FFCD2D03B644A3EB7E4E2058E7E7F309A2E981257975C19F613DB22"
+      "sha256": "45F087CFB2CDF2F64A78B297B0C738FEF6BA21F4306890090C56E50A8ABB777C"
     },
     {
       "path": "docs/releases/0.1.72-preview.1.md",
@@ -1803,11 +1803,11 @@
     },
     {
       "path": "docs/wild-network.en.md",
-      "sha256": "CE76B437506F27D07CA463F0A3D377947C1D9FD5E74A0E542537AD5B8F54BF2A"
+      "sha256": "42A1662CD6908E7CBDE98C5CB4E061061AA4ED3DD1C9FCCC74BC1EAA07B86A7D"
     },
     {
       "path": "docs/wild-network.zh-CN.md",
-      "sha256": "77C36E7F019A0A815AAA148E265229A78307EEABB54817AB723FD59951D735B8"
+      "sha256": "C3FBA3965BBC1D0526A7593D4460538D55E675F5D1321DDE933A0F4B78677214"
     },
     {
       "path": "docs/workshop-0.1.38.zh-CN.md",
