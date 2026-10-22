@@ -1,0 +1,113 @@
+{
+  "schemaVersion": 1,
+  "version": "0.1.61",
+  "guide": "recipe-guide-localization.zh-CN.md",
+  "englishGuide": "recipe-guide-localization.en.md",
+  "fields": [
+    {
+      "type": "EZapi.RecipeGuideDisplay",
+      "property": "LocalizedName",
+      "json": "localizedName",
+      "valueType": "EZapi.LocalizedItemText",
+      "english": "English",
+      "chinese": "Chinese",
+      "jsonEnglish": "english",
+      "jsonChinese": "chinese",
+      "fallback": "zh*: Chinese -> English; otherwise English -> Chinese; fixed text if descriptor omitted"
+    },
+    {
+      "type": "EZapi.RecipeGuideDisplay",
+      "property": "LocalizedRequirement",
+      "json": "localizedRequirement",
+      "valueType": "EZapi.LocalizedItemText",
+      "english": "English",
+      "chinese": "Chinese",
+      "jsonEnglish": "english",
+      "jsonChinese": "chinese",
+      "fallback": "zh*: Chinese -> English; otherwise English -> Chinese; fixed text if descriptor omitted"
+    },
+    {
+      "type": "EZapi.RecipeGuideDisplay",
+      "property": "LocalizedQuantity",
+      "json": "localizedQuantity",
+      "valueType": "EZapi.LocalizedItemText",
+      "english": "English",
+      "chinese": "Chinese",
+      "jsonEnglish": "english",
+      "jsonChinese": "chinese",
+      "fallback": "zh*: Chinese -> English; otherwise English -> Chinese; fixed text if descriptor omitted"
+    },
+    {
+      "type": "EZapi.RecipeGuideOptions",
+      "property": "LocalizedNote",
+      "json": "localizedNote",
+      "valueType": "EZapi.LocalizedItemText",
+      "english": "English",
+      "chinese": "Chinese",
+      "jsonEnglish": "english",
+      "jsonChinese": "chinese",
+      "fallback": "zh*: Chinese -> English; otherwise English -> Chinese; fixed text if descriptor omitted"
+    },
+    {
+      "type": "EZapi.RecipeGuideFigure",
+      "property": "LocalizedName",
+      "json": "localizedName",
+      "valueType": "EZapi.LocalizedItemText",
+      "english": "English",
+      "chinese": "Chinese",
+      "jsonEnglish": "english",
+      "jsonChinese": "chinese",
+      "fallback": "zh*: Chinese -> English; otherwise English -> Chinese; fixed text if descriptor omitted"
+    },
+    {
+      "type": "EZapi.RecipeGuideFigure",
+      "property": "LocalizedRequirement",
+      "json": "localizedRequirement",
+      "valueType": "EZapi.LocalizedItemText",
+      "english": "English",
+      "chinese": "Chinese",
+      "jsonEnglish": "english",
+      "jsonChinese": "chinese",
+      "fallback": "zh*: Chinese -> English; otherwise English -> Chinese; fixed text if descriptor omitted"
+    },
+    {
+      "type": "EZapi.RecipeGuideFigure",
+      "property": "LocalizedQuantity",
+      "json": "localizedQuantity",
+      "valueType": "EZapi.LocalizedItemText",
+      "english": "English",
+      "chinese": "Chinese",
+      "jsonEnglish": "english",
+      "jsonChinese": "chinese",
+      "fallback": "zh*: Chinese -> English; otherwise English -> Chinese; fixed text if descriptor omitted"
+    },
+    {
+      "type": "EZapi.RecipeGuideEntry",
+      "property": "LocalizedMachineName",
+      "json": "localizedMachineName",
+      "valueType": "EZapi.LocalizedItemText",
+      "english": "English",
+      "chinese": "Chinese",
+      "jsonEnglish": "english",
+      "jsonChinese": "chinese",
+      "fallback": "zh*: Chinese -> English; otherwise English -> Chinese; fixed text if descriptor omitted"
+    },
+    {
+      "type": "EZapi.RecipeGuideEntry",
+      "property": "LocalizedNote",
+      "json": "localizedNote",
+      "valueType": "EZapi.LocalizedItemText",
+      "english": "English",
+      "chinese": "Chinese",
+      "jsonEnglish": "english",
+      "jsonChinese": "chinese",
+      "fallback": "zh*: Chinese -> English; otherwise English -> Chinese; fixed text if descriptor omitted"
+    }
+  ],
+  "example": "examples/recipe-guide-bilingual.json",
+  "distributionVerification": {
+    "dllSHA256": "7E4AB675B0E3BD81C56EEC4606731A6880287549EB4E8E90A707BE18BD52BEEF",
+    "nativeRuntimeVerified": false,
+    "frameworkSourceIncluded": false
+  }
+}

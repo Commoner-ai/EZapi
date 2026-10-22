@@ -1,0 +1,16 @@
+{
+  "id": "ezapi.sample",
+  "name": "EZapi 标杆物品包",
+  "ezapiVersion": "0.1",
+  "version": "0.1.72",
+  "minEzapiVersion": "0.1.72",
+  "requires": [
+    "items.json",
+    "items.png",
+    "loot.tables",
+    "items.food",
+    "items.liquid-container",
+    "localization.resources",
+    "items.container"
+  ]
+}

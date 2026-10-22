@@ -1,0 +1,100 @@
+{
+  "schemaVersion": 1,
+  "version": "0.1.69",
+  "guide": "machine-recipe-readonly.zh-CN.md",
+  "englishGuide": "machine-recipe-readonly.en.md",
+  "evidence": "verification/recipe-readonly-native-0.1.69.json",
+  "callbacks": {
+    "readOnly": [
+      "MachineCondition",
+      "MachineIngredient.Condition",
+      "MachineLiquidIngredient.Condition",
+      "ResolveMillilitres",
+      "ResolveCount",
+      "ResolveItemId",
+      "ResolveCost",
+      "ResolveValue",
+      "ResolveQualityBasis",
+      "MachineContainerOutput.Condition",
+      "MachineContainerOutput.ResolveContents",
+      "Transaction factory",
+      "IMachineBatchTransaction.Validate",
+      "BeforeBatch"
+    ],
+    "newProductOnly": [
+      "PrepareItem"
+    ],
+    "writes": [
+      "IMachineBatchTransaction.Apply"
+    ],
+    "afterCommit": [
+      "AfterCommitted",
+      "AfterBatch"
+    ]
+  },
+  "capture": "complete synchronous machine graph plus strict input state, including plain material tags",
+  "limits": {
+    "items": 4096,
+    "nodes": 8192,
+    "edges": 8192,
+    "totalTags": 16384,
+    "tagsPerItem": 4096
+  },
+  "detectionDoesNotUndoAuthorWrites": true,
+  "publicSaveGraphStillRejectsUnassignedIDs": true,
+  "nativeScenarios": [
+    "readonly-recipe-readonly",
+    "readonly-recipe-machine-condition",
+    "readonly-recipe-false-condition",
+    "readonly-recipe-item-condition",
+    "readonly-recipe-false-item-condition",
+    "readonly-recipe-liquid-condition",
+    "readonly-recipe-false-liquid-condition",
+    "readonly-recipe-liquid-amount",
+    "readonly-recipe-output-count",
+    "readonly-recipe-output-id",
+    "readonly-recipe-power-cost",
+    "readonly-recipe-liquid-output-amount",
+    "readonly-recipe-liquid-output-value",
+    "readonly-recipe-liquid-output-quality",
+    "readonly-recipe-transaction-factory",
+    "readonly-recipe-transaction-validate",
+    "readonly-recipe-prepare-input-tag",
+    "readonly-recipe-prepare-machine-tag",
+    "readonly-recipe-prepare-battery-tag",
+    "readonly-recipe-prepare-water-tag",
+    "readonly-recipe-prepare-output-tag",
+    "readonly-recipe-container-condition",
+    "readonly-recipe-container-contents"
+  ],
+  "evidenceCounts": {
+    "offlineSuites": 49,
+    "recipe": 480,
+    "automation": 281,
+    "saveGraph": 54,
+    "nativeReadOnly": 138,
+    "nativeRecipe": 256,
+    "nativeAutomation": 135,
+    "nativeBatch": 1375,
+    "oldMachine": 19
+  },
+  "behaviorAudit": "machine-public-contract.audit.json",
+  "behaviorProgress": {
+    "reviewedTypes": 7,
+    "reviewedProperties": 30,
+    "reviewedMethods": 1,
+    "allProperties": 114,
+    "allTypes": 34
+  },
+  "fullMachineGroupComplete": false,
+  "next": [
+    "remaining27 types require integration/review,including2 guide types with separate prior behavior audits",
+    "machine DTO/helpers/states/disposal full behavior audit",
+    "after100percent:knowledge-base APIs,ease of use,AI indexes,game-English interoperability"
+  ],
+  "distributionVerification": {
+    "dllSHA256": "7E4AB675B0E3BD81C56EEC4606731A6880287549EB4E8E90A707BE18BD52BEEF",
+    "nativeRuntimeVerified": false,
+    "frameworkSourceIncluded": false
+  }
+}

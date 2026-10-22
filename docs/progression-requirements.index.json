@@ -1,0 +1,68 @@
+{
+  "schemaVersion": 1,
+  "version": "0.1.71",
+  "guideZh": "progression-requirements.zh-CN.md",
+  "guideEn": "progression-requirements.en.md",
+  "exampleCSharp": "../src/EZapi.Sample/ProgressionExamples.cs",
+  "exampleJson": "examples/requirements.json",
+  "schema": "../schemas/ezapi-requirements.schema.json",
+  "evidence": "verification/progression-native-0.1.71.json",
+  "entryPoints": [
+    {
+      "api": "ProgressionApi.ReadUpgrade",
+      "taskZh": "查询网络升级真实状态",
+      "taskEn": "Observe native upgrade state",
+      "result": "ProgressionReadResult<UpgradeSnapshot>",
+      "phase": "known-build loaded-run main thread",
+      "sideEffects": "no payment/unlock/save"
+    },
+    {
+      "api": "ProgressionApi.ReadService",
+      "taskZh": "查询商店服务独立状态",
+      "taskEn": "Observe independent service states",
+      "result": "ProgressionReadResult<ServiceSnapshot>",
+      "phase": "known-build loaded-run main thread",
+      "sideEffects": "no UpdateCost/repair/save"
+    },
+    {
+      "api": "RequirementApi.Evaluate",
+      "taskZh": "按当前游戏状态判断前置条件",
+      "taskEn": "Evaluate current-run requirements",
+      "result": "RequirementEvaluation; check Satisfied",
+      "phase": "current-run main thread",
+      "sideEffects": "readonly facts only"
+    },
+    {
+      "api": "Requirements.Parse / Copy / Evaluate",
+      "taskZh": "JSON校验与自定义事实源",
+      "taskEn": "Strict JSON and custom fact providers",
+      "phase": "pure managed",
+      "failure": "invalid declaration throws before any facts execute"
+    }
+  ],
+  "limits": {
+    "jsonBytes": 65536,
+    "nodes": 128,
+    "depth": 8,
+    "childrenPerGroup": 32,
+    "nativePrerequisites": 128
+  },
+  "states": {
+    "Satisfied": "known true",
+    "Unsatisfied": "known false",
+    "Unavailable": "unknown, failed or stale; NOT remains unavailable"
+  },
+  "scopeRules": [
+    "no retained native objects",
+    "no cross-evaluation cache",
+    "raw cooldown counters keep native meaning",
+    "service native display value may be untranslated",
+    "current-run snapshot does not authorize or perform payment",
+    "Message is typed Chinese/English; Reason is developer diagnostic"
+  ],
+  "distributionVerification": {
+    "dllSHA256": "7E4AB675B0E3BD81C56EEC4606731A6880287549EB4E8E90A707BE18BD52BEEF",
+    "nativeRuntimeVerified": false,
+    "frameworkSourceIncluded": false
+  }
+}

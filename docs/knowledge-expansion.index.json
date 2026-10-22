@@ -1,0 +1,76 @@
+{
+  "schemaVersion": 1,
+  "version": "0.1.73",
+  "purpose": "Track concrete APIs selected after independent reference feature coverage reached39/39.",
+  "referencePolicy": "Probably Stolen skill is reference; current game signatures and official public APIs decide implementation. No Forge implementation copied.",
+  "knowledgeRoot": "<local-user>/.codex/skills/probably-stolen-mod-skill",
+  "reviewedScenarios": [
+    "scenarios/shop-progression.md",
+    "scenarios/day-events.md",
+    "scenarios/save-state.md",
+    "scenarios/custom-characters.md",
+    "scenarios/item-interactions.md"
+  ],
+  "officialGuide": "../references/probably-stolen-modding/ModdingGuide.zh-CN.md",
+  "selected": [
+    {
+      "api": "ProgressionApi.ReadUpgrade / ReadService",
+      "problemZh": "内容Mod反复接触原生升级/服务对象，容易把已介绍、已解锁、实际生效或付款混为一谈。",
+      "problemEn": "Mods otherwise repeat native progression lookups and confuse introduced, unlocked, active and paid states.",
+      "behavior": "Current-run managed snapshots from exact native predicates; no purchase/unlock/cost update.",
+      "source": [
+        "../src/EZapi/Progression.cs"
+      ],
+      "nativeTypes": [
+        "Il2Cpp.NetworkUpgrade",
+        "Il2Cpp.StoreService"
+      ],
+      "guide": "progression-requirements.zh-CN.md"
+    },
+    {
+      "api": "Requirements / RequirementApi",
+      "problemZh": "机器、对话、工坊和事件各写一套前置判断，未知状态取反会错误放行，JSON和C#规则也容易不一致。",
+      "problemEn": "Machines, dialogue, workshops and events duplicate gates; negating unknown facts can incorrectly allow actions.",
+      "behavior": "Shared strict C#/JSON bounded condition tree and three-valued evaluation; typed bilingual reasons; actual current-run fact adapter.",
+      "source": [
+        "../src/EZapi/Requirements.cs",
+        "../src/EZapi/RequirementApi.cs"
+      ],
+      "schema": "../schemas/ezapi-requirements.schema.json",
+      "example": "examples/requirements.json"
+    },
+    {
+      "api": "ItemDataApi.Read / Stage",
+      "problemZh": "每个物品升级Mod重复处理标签、损坏JSON、版本迁移和交易冻结。",
+      "problemEn": "Item upgrades otherwise duplicate tag ownership, malformed JSON, migration and freeze checks.",
+      "behavior": "Official versioned item JSON; compare revision, bounded data, native freeze, readback and graph restoration checked; no auto-save. Explicit native save and new-process restoration verified on five namespaced endpoint fixture items; Stage never saves.",
+      "source": [
+        "../src/EZapi/ItemDataApi.cs"
+      ],
+      "guide": "item-data.zh-CN.md",
+      "index": "item-data.index.json",
+      "verification": "verification/disk-supplier-native-0.1.72.json"
+    }
+  ],
+  "remainingCandidateWork": [
+    {
+      "idea": "Persistent future visitor/calendar scheduling",
+      "status": "Research only; no public FutureVisitApi implemented",
+      "research": "future-visits-research.zh-CN.md",
+      "basis": "custom-characters/day-events",
+      "reason": "Requires verified date mapping, stable per-run identity and actual future queue/calendar/save evidence; not equivalent to current ClientVisitApi.Queue."
+    }
+  ],
+  "finalGoalStillActive": [
+    "Full developer ease-of-use pass",
+    "Complete AI signature/task/error/source indexes and examples",
+    "Cross-API Chinese/English interoperability and actual game-English verification"
+  ],
+  "status": "Progression0.1.71 baseline; ItemData0.1.72: 63 offline checks plus scoped native save/cold-load/disk readback and415 en/zh checks passed. Full goal remains active.",
+  "verification": "verification/progression-native-0.1.71.json",
+  "distributionVerification": {
+    "dllSHA256": "7E4AB675B0E3BD81C56EEC4606731A6880287549EB4E8E90A707BE18BD52BEEF",
+    "nativeRuntimeVerified": false,
+    "frameworkSourceIncluded": false
+  }
+}

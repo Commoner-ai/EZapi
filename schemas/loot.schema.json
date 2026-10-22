@@ -1,0 +1,201 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://ezapi.local/schemas/loot.schema.json",
+  "title": "EZapi LootTables definition",
+  "type": "object",
+  "additionalProperties": false,
+  "properties": {
+    "tables": {
+      "type": "array",
+      "maxItems": 64,
+      "items": {
+        "$ref": "#/$defs/list"
+      }
+    },
+    "groups": {
+      "type": "array",
+      "maxItems": 64,
+      "items": {
+        "$ref": "#/$defs/list"
+      }
+    },
+    "patches": {
+      "type": "array",
+      "maxItems": 128,
+      "items": {
+        "$ref": "#/$defs/patch"
+      }
+    }
+  },
+  "$defs": {
+    "id": {
+      "type": "string",
+      "pattern": "^[A-Za-z0-9_-]+(?:\\.[A-Za-z0-9_-]+)*$",
+      "minLength": 1,
+      "maxLength": 160
+    },
+    "weight": {
+      "type": "number",
+      "exclusiveMinimum": 0,
+      "maximum": 1000000000
+    },
+    "nonNegativeWeight": {
+      "type": "number",
+      "minimum": 0,
+      "maximum": 1000000000
+    },
+    "entry": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "id",
+        "weight"
+      ],
+      "properties": {
+        "id": {
+          "$ref": "#/$defs/id"
+        },
+        "weight": {
+          "$ref": "#/$defs/weight"
+        }
+      }
+    },
+    "setEntry": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "id",
+        "weight"
+      ],
+      "properties": {
+        "id": {
+          "$ref": "#/$defs/id"
+        },
+        "weight": {
+          "$ref": "#/$defs/nonNegativeWeight"
+        }
+      }
+    },
+    "list": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "id"
+      ],
+      "properties": {
+        "id": {
+          "$ref": "#/$defs/id"
+        },
+        "entries": {
+          "type": "array",
+          "maxItems": 512,
+          "items": {
+            "$ref": "#/$defs/entry"
+          }
+        }
+      }
+    },
+    "patch": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "table": {
+          "$ref": "#/$defs/id"
+        },
+        "group": {
+          "$ref": "#/$defs/id"
+        },
+        "clear": {
+          "type": "boolean"
+        },
+        "add": {
+          "type": "array",
+          "maxItems": 512,
+          "items": {
+            "$ref": "#/$defs/entry"
+          }
+        },
+        "remove": {
+          "type": "array",
+          "maxItems": 512,
+          "items": {
+            "$ref": "#/$defs/id"
+          },
+          "uniqueItems": true
+        },
+        "setWeight": {
+          "type": "array",
+          "maxItems": 512,
+          "items": {
+            "$ref": "#/$defs/setEntry"
+          }
+        }
+      },
+      "oneOf": [
+        {
+          "required": [
+            "table"
+          ],
+          "not": {
+            "required": [
+              "group"
+            ]
+          }
+        },
+        {
+          "required": [
+            "group"
+          ],
+          "not": {
+            "required": [
+              "table"
+            ]
+          }
+        }
+      ],
+      "anyOf": [
+        {
+          "required": [
+            "clear"
+          ],
+          "properties": {
+            "clear": {
+              "const": true
+            }
+          }
+        },
+        {
+          "required": [
+            "add"
+          ],
+          "properties": {
+            "add": {
+              "minItems": 1
+            }
+          }
+        },
+        {
+          "required": [
+            "remove"
+          ],
+          "properties": {
+            "remove": {
+              "minItems": 1
+            }
+          }
+        },
+        {
+          "required": [
+            "setWeight"
+          ],
+          "properties": {
+            "setWeight": {
+              "minItems": 1
+            }
+          }
+        }
+      ]
+    }
+  },
+  "description": "Additional semantic checks: duplicate IDs, owner prefix, file/depth/operation limits, and native references are checked by CLI/runtime. Duplicate JSON keys are rejected by parser."
+}

@@ -1,0 +1,13 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <AssemblyName>EZapi.DepartureExample</AssemblyName>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+    <EZapiDll Condition="'$(EZapiDll)' == ''">$(MSBuildThisFileDirectory)../../../Mods/EZapi.dll</EZapiDll>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EZapi"><HintPath>$(EZapiDll)</HintPath><Private>false</Private></Reference>
+    <Reference Include="MelonLoader"><HintPath>$(GameDir)/MelonLoader/net6/MelonLoader.dll</HintPath><Private>false</Private></Reference>
+  </ItemGroup>
+</Project>

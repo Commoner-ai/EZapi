@@ -1,0 +1,65 @@
+{
+  "schemaVersion": 1,
+  "version": "0.1.73",
+  "taskZh": "在离开店铺的地图上添加自适应地点按钮",
+  "taskEn": "Adaptive destination buttons on the native departure map",
+  "guideZh": "departure-buttons.zh-CN.md",
+  "guideEn": "departure-buttons.en.md",
+  "source": "../src/EZapi/DepartureApi.cs",
+  "example": "../src/EZapi.Sample/DepartureExamples.cs",
+  "minimalCall": "DepartureApi.Register(ownerId, buttonId, label, Action onClick)",
+  "fullCall": "DepartureApi.Register(ownerId, DepartureButton definition)",
+  "unregister": "DepartureApi.Unregister(ownerId, buttonId)",
+  "query": "DepartureApi.Snapshot()",
+  "fields": [
+    "Id",
+    "Label",
+    "OnClick",
+    "Order",
+    "Visible",
+    "CanEnter",
+    "DisplayName",
+    "RequireVisit",
+    "ReserveLegacySlots"
+  ],
+  "phase": "Initialize on game main thread; native UI is attached lazily while map is visible.",
+  "defaults": {
+    "requireVisit": true,
+    "reserveLegacySlots": true,
+    "order": 0,
+    "maxEntries": 64,
+    "refreshSeconds": 0.25,
+    "clickCooldownSeconds": 0.35,
+    "maxGridProbes": 4096
+  },
+  "boundaries": [
+    "Does not bypass native departure eligibility",
+    "C# callbacks required; JSON index is metadata, not executable content",
+    "Queries must be read-only; mutations/reentry rejected",
+    "Caller owns travel, visit debit, inventory and save transactions",
+    "Other Mods and original buttons are observed, not moved",
+    "Unknown build disables native adapter",
+    "Queued is not Placed; no free slot means hidden",
+    "Scene/map/run changes revoke owned native objects and stale click callbacks"
+  ],
+  "provenance": {
+    "project": "User-owned DeepSpace expeditions/lobby",
+    "sources": [
+      "RaidEntry.cs",
+      "MapButtonLayout.cs"
+    ],
+    "dependencyOnSourceDll": false,
+    "forgeCodeCopied": false
+  },
+  "verification": {
+    "offlineProject": "../work/ezapi-departure-tests/DepartureTests.csproj",
+    "nativeRuntimeVerified": false,
+    "offlineChecks": 124
+  },
+  "independentCaller": "examples/departure-dll/DepartureMod.csproj",
+  "distributionVerification": {
+    "dllSHA256": "7E4AB675B0E3BD81C56EEC4606731A6880287549EB4E8E90A707BE18BD52BEEF",
+    "nativeRuntimeVerified": false,
+    "frameworkSourceIncluded": false
+  }
+}

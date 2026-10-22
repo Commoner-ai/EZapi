@@ -1,0 +1,68 @@
+{
+  "schemaVersion": 1,
+  "version": "0.1.66",
+  "guide": "npc-fixed-stock.zh-CN.md",
+  "englishGuide": "npc-fixed-stock.en.md",
+  "evidence": "verification/fixed-stock-native-0.1.64.json",
+  "declaredBy": [
+    "NativeItemOptions.NpcTrade",
+    "ItemDefinition.NpcTrade",
+    "MachineDefinition.ItemOptions.NpcTrade"
+  ],
+  "nativeScopes": [
+    "StoreClientList.PlaceInventorInventory(false)",
+    "StoreClientList.PlaceInventorInventory(true)",
+    "_CreateThief_b__47_0",
+    "_CreatePettyThief_b__48_0",
+    "_CreateFoodThief_b__49_0"
+  ],
+  "classification": [
+    "MACHINE",
+    "MODULE",
+    "ORE",
+    "FOOD",
+    "MEDICAL",
+    "MATERIAL",
+    "HOUSEHOLD_GOOD",
+    "HOUSEHOLD"
+  ],
+  "baselineWeight": 1,
+  "filters": [
+    "Applied",
+    "supplier",
+    "IncludeInNightShop",
+    "MinimumDay",
+    "SkipWhenOwned"
+  ],
+  "preserved": [
+    "native slot count/unlock and pre-generation probability",
+    "existing player graph identities",
+    "attached items",
+    "registered EZapi goods",
+    "unclassified keys/tools/documents",
+    "named-table provenance"
+  ],
+  "eventTables": [
+    "ezapi.npc.inventor.fixed",
+    "ezapi.npc.thief.fixed"
+  ],
+  "lifetime": "sync generation scope; retired original cleanup after native method and Late event; run+generation guarded",
+  "limits": {
+    "playerItems": 16384,
+    "tableItems": 4096,
+    "retiredBaseline": 4096
+  },
+  "verified": "actual generation callbacks with intercepted temporary sale items; native prebuilt machines, medical and food candidates",
+  "notYetVerified": [
+    "real shelf acceptance",
+    "purchase",
+    "saving merchant purchases"
+  ],
+  "classificationNotes": "HOUSEHOLD_GOOD is the current native type (water_filter_adv); HOUSEHOLD is a legacy alias. Unclassified-only random results are retained unchanged.",
+  "classificationEvidence": "verification/guide-mesh-native-0.1.66/validated-batch",
+  "distributionVerification": {
+    "dllSHA256": "7E4AB675B0E3BD81C56EEC4606731A6880287549EB4E8E90A707BE18BD52BEEF",
+    "nativeRuntimeVerified": false,
+    "frameworkSourceIncluded": false
+  }
+}

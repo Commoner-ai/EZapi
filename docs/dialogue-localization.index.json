@@ -1,0 +1,101 @@
+{
+  "schemaVersion": 1,
+  "version": "0.1.73",
+  "topic": "Bilingual dialogue, phone calls and supplier menus",
+  "guides": {
+    "zh-CN": "dialogue-localization.zh-CN.md",
+    "en": "dialogue-localization.en.md"
+  },
+  "fields": {
+    "DialogueDefinition": [
+      "LocalizedSpeaker",
+      "LocalizedBody",
+      "LocalizedConfirmLabel",
+      "LocalizedBackLabel",
+      "LocalizedLeaveLabel",
+      "LocalizedLaterLabel",
+      "LocalizedFailureText",
+      "LocalizedNextPageLabel",
+      "LocalizedPreviousPageLabel"
+    ],
+    "DialogueChoice": [
+      "LocalizedLabel",
+      "LocalizedPreview",
+      "LocalizedConfirmLabel"
+    ],
+    "SupplierDefinition": [
+      "LocalizedSpeaker",
+      "LocalizedConfirmLabel",
+      "LocalizedBackLabel",
+      "LocalizedContinueLabel",
+      "LocalizedLeaveLabel",
+      "LocalizedFailureText",
+      "LocalizedNextPageLabel",
+      "LocalizedPreviousPageLabel"
+    ],
+    "SupplierPage": [
+      "LocalizedBody"
+    ],
+    "SupplierOffer": [
+      "LocalizedLabel",
+      "LocalizedPreview",
+      "LocalizedConfirmLabel"
+    ]
+  },
+  "callbackLocale": "DialogueContext.LocaleCode",
+  "examples": [
+    "../src/EZapi.Sample/DialogueExamples.cs",
+    "../src/EZapi.Sample/SupplierExamples.cs"
+  ],
+  "resolution": {
+    "timing": "exactly once per new native dialogue graph; queued visits resolve at dialogue opening",
+    "fallback": "zh* uses Chinese; other locale codes use English; missing side uses the provided side; absent Localized field preserves literal except recognized built-in defaults",
+    "defaults": "original Chinese default button/failure values follow game locale; use explicit LocalizedItemText(same,same) to preserve an intentional literal equal to a built-in default",
+    "dynamicReplies": "use LocalizedItemText.ForLocale(context.LocaleCode) or catalog.Resolve(context.LocaleCode,key,fallback,args); no automatic translation of author prose",
+    "csv": "no owning content-pack catalog; inline only. Resolve a catalog explicitly in callbacks or create a fresh script at display time",
+    "reopen": "opening the original retained script observes the new locale; active graph keeps its opening locale; supplier Continue opens a fresh graph"
+  },
+  "boundaries": [
+    "IDs, requests, business callbacks and confirmation consumption do not change with locale",
+    "Phone contact names remain DisplayName callbacks; resolve on refresh/open using GameLanguage",
+    "Supplier Capture uses current capture locale; Purchase uses graph locale; no implicit payment, delivery or save",
+    "No JSON dialogue importer; these are DLL record init properties"
+  ],
+  "evidence": {
+    "offline": [
+      "../work/ezapi-dialogue-tests/DialogueTests.csproj",
+      "../work/ezapi-dialogue-native-tests/DialogueNativeTests.csproj",
+      "../work/ezapi-phone-tests/PhoneTests.csproj",
+      "../work/ezapi-supplier-localization-tests/SupplierLocalizationTests.csproj"
+    ],
+    "nativeRuntimeVerified": true,
+    "nativeScope": "415 en/zh checks include existing and disk-loaded items, tooltips, reopened container/machine titles, reading, workshop, dialogue, phone and fixture-dispatched supplier pages. See report boundaries. Supplier fixture does not test natural arrival/payment/delivery."
+  },
+  "reading": {
+    "api": "ReadingApi.Open",
+    "texts": [
+      "title",
+      "body",
+      "signature"
+    ],
+    "guide": "reading.zh-CN.md",
+    "example": "../src/EZapi.Sample/ReadingExamples.cs"
+  },
+  "workshop": {
+    "factory": "WorkshopSnapshot.ForGameLanguage",
+    "optIn": "WorkshopSnapshot.FollowGameLanguage",
+    "guide": "workshop.zh-CN.md",
+    "example": "../src/EZapi.Sample/WorkshopExamples.cs",
+    "refresh": "open or explicit refresh; active snapshot stable"
+  },
+  "historicalNativeEvidence": {
+    "path": "verification/disk-supplier-native-0.1.72.json",
+    "dllSHA256": "4238A189B36CEC4C55E88CC70E05E9086EC935412B13CF701671405A12E63274",
+    "scope": "415 en/zh checks include existing and disk-loaded items, tooltips, reopened container/machine titles, reading, workshop, dialogue, phone and fixture-dispatched supplier pages. See report boundaries."
+  },
+  "distributionVerification": {
+    "dllSHA256": "7E4AB675B0E3BD81C56EEC4606731A6880287549EB4E8E90A707BE18BD52BEEF",
+    "nativeRuntimeVerified": false,
+    "frameworkSourceIncluded": false
+  }
+}

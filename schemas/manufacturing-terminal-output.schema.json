@@ -1,0 +1,36 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "manufacturing-terminal-output.schema.json",
+  "title": "ManufacturingTerminalView default JSON output (not a recipe importer)",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "Registered",
+    "MarkupOwner",
+    "ProductionMarkupPercent",
+    "RecipeCount"
+  ],
+  "properties": {
+    "Registered": {
+      "type": "boolean"
+    },
+    "MarkupOwner": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "maxLength": 160,
+      "pattern": "^[a-z0-9_-]+(?:\\.[a-z0-9_-]+)*(?![\\s\\S])"
+    },
+    "ProductionMarkupPercent": {
+      "type": "integer",
+      "minimum": 0,
+      "maximum": 1000
+    },
+    "RecipeCount": {
+      "type": "integer",
+      "minimum": 0,
+      "maximum": 64
+    }
+  }
+}

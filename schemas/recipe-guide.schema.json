@@ -1,0 +1,200 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "EZapi standalone recipe guide with optional Chinese/English text",
+  "type": "array",
+  "maxItems": 512,
+  "items": {
+    "type": "object",
+    "additionalProperties": false,
+    "required": [
+      "ownerId",
+      "recipeId",
+      "machineId",
+      "machineName",
+      "categoryId",
+      "inputs",
+      "output"
+    ],
+    "properties": {
+      "ownerId": {
+        "type": "string",
+        "pattern": "^[a-z0-9_-]+(?:\\.[a-z0-9_-]+)*$",
+        "maxLength": 160
+      },
+      "recipeId": {
+        "type": "string",
+        "pattern": "^[A-Za-z0-9_-]+(?:\\.[A-Za-z0-9_-]+)*$",
+        "maxLength": 160
+      },
+      "machineId": {
+        "type": "string",
+        "pattern": "^[A-Za-z0-9_-]+(?:\\.[A-Za-z0-9_-]+)*$",
+        "maxLength": 160
+      },
+      "categoryId": {
+        "type": "string",
+        "pattern": "^[A-Za-z0-9_-]+(?:\\.[A-Za-z0-9_-]+)*$",
+        "maxLength": 160
+      },
+      "machineName": {
+        "type": "string",
+        "minLength": 1,
+        "maxLength": 200
+      },
+      "inputs": {
+        "type": "array",
+        "maxItems": 64,
+        "items": {
+          "$ref": "#/$defs/figure"
+        }
+      },
+      "output": {
+        "$ref": "#/$defs/figure"
+      },
+      "note": {
+        "type": "string",
+        "minLength": 1,
+        "maxLength": 4000
+      },
+      "localizedMachineName": {
+        "type": "object",
+        "additionalProperties": false,
+        "minProperties": 1,
+        "properties": {
+          "chinese": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 200,
+            "pattern": "\\S"
+          },
+          "english": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 200,
+            "pattern": "\\S"
+          }
+        }
+      },
+      "localizedNote": {
+        "type": "object",
+        "additionalProperties": false,
+        "minProperties": 1,
+        "properties": {
+          "chinese": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 4000,
+            "pattern": "\\S"
+          },
+          "english": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 4000,
+            "pattern": "\\S"
+          }
+        }
+      }
+    }
+  },
+  "$defs": {
+    "figure": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "itemId",
+        "amount"
+      ],
+      "properties": {
+        "itemId": {
+          "type": "string",
+          "pattern": "^[A-Za-z0-9_-]+(?:\\.[A-Za-z0-9_-]+)*$",
+          "maxLength": 160
+        },
+        "amount": {
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 1000000000
+        },
+        "name": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 200
+        },
+        "requirement": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 1000
+        },
+        "quantity": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 200
+        },
+        "localizedName": {
+          "type": "object",
+          "additionalProperties": false,
+          "minProperties": 1,
+          "properties": {
+            "chinese": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 200,
+              "pattern": "\\S"
+            },
+            "english": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 200,
+              "pattern": "\\S"
+            }
+          }
+        },
+        "localizedRequirement": {
+          "type": "object",
+          "additionalProperties": false,
+          "minProperties": 1,
+          "properties": {
+            "chinese": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 1000,
+              "pattern": "\\S"
+            },
+            "english": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 1000,
+              "pattern": "\\S"
+            }
+          }
+        },
+        "localizedQuantity": {
+          "type": "object",
+          "additionalProperties": false,
+          "minProperties": 1,
+          "properties": {
+            "chinese": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 200,
+              "pattern": "\\S"
+            },
+            "english": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 200,
+              "pattern": "\\S"
+            }
+          }
+        }
+      }
+    }
+  },
+  "x-semantic-validation": [
+    "strict full-string keys",
+    "owner matches caller; unique owner-prefixed recipe IDs",
+    "nonblank display text; controls only CR/LF/TAB",
+    "max2MiB source; max2048 entries globally"
+  ],
+  "description": "Display only. Does not register any executable recipe or automatically import from EZapiPacks."
+}

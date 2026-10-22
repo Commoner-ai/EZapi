@@ -1,0 +1,23 @@
+[
+  {
+    "ownerId": "author.tools",
+    "recipeId": "author.tools.assembly",
+    "machineId": "author.tools.assembler",
+    "machineName": "示例装配台",
+    "categoryId": "synthesis",
+    "inputs": [
+      {
+        "itemId": "author.tools.scrap",
+        "amount": 2,
+        "name": "废料",
+        "requirement": "品质满足加工要求"
+      }
+    ],
+    "output": {
+      "itemId": "author.tools.part",
+      "amount": 1,
+      "name": "零件"
+    },
+    "note": "说明条目独立于真正的生产配方。"
+  }
+]

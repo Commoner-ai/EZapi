@@ -1,0 +1,19 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <AssemblyName>EZapi.SimpleMod</AssemblyName>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+    <EnableDefaultCompileItems>false</EnableDefaultCompileItems>
+    <EZapiDll Condition="'$(EZapiDll)' == ''">$(GameDir)/Mods/EZapi.dll</EZapiDll>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="Mod.cs" />
+    <Reference Include="EZapi"><HintPath>$(EZapiDll)</HintPath><Private>false</Private></Reference>
+    <Reference Include="MelonLoader"><HintPath>$(GameDir)/MelonLoader/net6/MelonLoader.dll</HintPath><Private>false</Private></Reference>
+  </ItemGroup>
+  <Target Name="CheckLocalDependencies" BeforeTargets="ResolveReferences">
+    <Error Condition="!Exists('$(EZapiDll)')" Text="Set GameDir to the game installation with EZapi installed, or set EZapiDll to the framework DLL path." />
+    <Error Condition="!Exists('$(GameDir)/MelonLoader/net6/MelonLoader.dll')" Text="GameDir must contain the MelonLoader net6 runtime." />
+  </Target>
+</Project>

@@ -1,0 +1,52 @@
+{
+  "schemaVersion": 1,
+  "version": "0.1.68",
+  "guide": "machine-night-readonly.zh-CN.md",
+  "englishGuide": "machine-night-readonly.en.md",
+  "evidence": "verification/night-readonly-native-0.1.68.json",
+  "api": "MachineDefinition.ResolveNightlyBatchCount",
+  "thread": "initialized game main thread; synchronous only",
+  "default": 1,
+  "minimum": 1,
+  "maximum": 64,
+  "disable": "MachineDefinition.EnableNightly=false",
+  "sideEffects": "read-only; no mutation, destruction, save/load or scene changes",
+  "mutationResult": "callback-error: nightly count resolver changed resources; no processing; attempt marker retained",
+  "doesNotRestoreAuthorWrites": true,
+  "manualProcessing": "one batch; does not invoke nightly resolver",
+  "nativeScenarios": [
+    "readonly",
+    "machine-tag",
+    "input-tag",
+    "nested-tag",
+    "nested-value",
+    "nested-state",
+    "machine-shape",
+    "nested-shape",
+    "nested-topology",
+    "nested-lock",
+    "input-quantity",
+    "binding-swap"
+  ],
+  "nativeScope": "temporary graph observation, no actual BeforeNight event",
+  "offlineScope": "production scheduler and graph journal with explicit native/session/graph stubs",
+  "evidenceCounts": {
+    "offlineSuites": 49,
+    "automation": 263,
+    "materialGraph": 47,
+    "nativeObservation": 36,
+    "nativeRegistration": 164,
+    "nativeBatch": 1102,
+    "oldMachine": 19
+  },
+  "remaining": [
+    "machine registration/runtime property and callback audit",
+    "ordinary recipe callbacks: plain input tags require further audit",
+    "after100percent: knowledge-base API expansion, ease of use, AI indexes and game-English interoperability"
+  ],
+  "distributionVerification": {
+    "dllSHA256": "7E4AB675B0E3BD81C56EEC4606731A6880287549EB4E8E90A707BE18BD52BEEF",
+    "nativeRuntimeVerified": false,
+    "frameworkSourceIncluded": false
+  }
+}

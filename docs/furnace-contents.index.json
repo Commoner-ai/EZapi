@@ -1,0 +1,49 @@
+{
+  "schemaVersion": 1,
+  "version": "0.1.67",
+  "guide": "furnace-contents.zh-CN.md",
+  "englishGuide": "furnace-contents.en.md",
+  "api": [
+    "ExternalPowerApi.Register",
+    "ExternalPowerApi.InitializeConnector",
+    "ExternalPowerApi.IsAvailable",
+    "IPowerTransaction"
+  ],
+  "defaultMaterialContents": "Reject",
+  "optIn": "fifth Register argument: MachineMaterialContentsPolicy.ConsumeGraph",
+  "oldOutputs": "contents preserved independently of input policy",
+  "lifetime": "current-run synchronous journal; registration lease independently disposed",
+  "limits": {
+    "originalRoots": 128,
+    "totalItems": 4096,
+    "nodesPerGraph": 8192,
+    "edgesPerGraph": 8192,
+    "tagsPerGraph": 16384,
+    "modules": 128,
+    "pendingCleanups": 128
+  },
+  "source": [
+    "../src/EZapi/NativeFurnacePower.cs",
+    "../src/EZapi/MachineMaterialGraph.cs",
+    "../src/EZapi/ExternalPower.cs"
+  ],
+  "tests": {
+    "offlineGraph": 42,
+    "offlinePower": 66,
+    "nativeFurnace": 233,
+    "nativeBatch": 1126,
+    "oldMachine": 19
+  },
+  "publicContractAudit": "external-power-public-contract.audit.json",
+  "evidence": "verification/furnace-contents-native-0.1.67.json",
+  "notVerified": [
+    "native furnace all-combination night/save/restart",
+    "network/async/crash recovery",
+    "framework-wide English UI compatibility"
+  ],
+  "distributionVerification": {
+    "dllSHA256": "7E4AB675B0E3BD81C56EEC4606731A6880287549EB4E8E90A707BE18BD52BEEF",
+    "nativeRuntimeVerified": false,
+    "frameworkSourceIncluded": false
+  }
+}

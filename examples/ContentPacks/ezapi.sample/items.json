@@ -1,0 +1,403 @@
+[
+  {
+    "id": "ezapi.sample.field_kit",
+    "modId": "ezapi.sample",
+    "name": "EZapi 属性示例工具包",
+    "shortDescription": "短简介：验证物品属性和标签，不提供治疗效果。",
+    "longDescription": "长简介：这是独立注册的普通物品；分类与标签不会自动创造治疗、容器或战斗行为。",
+    "flavorText": "风味文本：让每个人都能简单做好自己的 Mod。",
+    "customText": "自定义文本：EZapi 原生属性示例。",
+    "descriptionPlacement": "native",
+    "sprite": "field_kit",
+    "width": 1,
+    "height": 1,
+    "value": 100,
+    "types": [
+      "TOOL",
+      "ezapi.sample.demonstration"
+    ],
+    "typeNames": [
+      {
+        "id": "ezapi.sample.demonstration",
+        "name": "框架示例",
+        "localizedName": {
+          "key": "item_ezapi_sample_field_kit_type_0_name"
+        }
+      }
+    ],
+    "tags": [
+      {
+        "id": "ezapi.sample.quality",
+        "intValue": 3
+      },
+      {
+        "id": "ezapi.sample.owner",
+        "stringValue": "EZapi"
+      },
+      {
+        "id": "ezapi.sample.serial",
+        "longValue": 9007199254740993
+      },
+      {
+        "id": "ezapi.sample.ratio",
+        "floatValue": 1.25,
+        "doubleValue": 2.5
+      },
+      {
+        "id": "ezapi.sample.certified",
+        "boolValue": true
+      },
+      {
+        "id": "ezapi.sample.hidden",
+        "enabled": false,
+        "intValue": 99
+      }
+    ],
+    "forceDisableUse": true,
+    "forceDisableActivate": true,
+    "activateDefault": false,
+    "bonusAccuracy": 0,
+    "triggerOverwatch": false,
+    "canUseOutsideCombat": false,
+    "tooltip": {
+      "labels": [
+        {
+          "text": "品质",
+          "tagId": "ezapi.sample.quality",
+          "valueKind": "int",
+          "color": "LightGreen",
+          "bold": true,
+          "localizedText": {
+            "key": "item_ezapi_sample_field_kit_tooltip_label_0_text"
+          }
+        },
+        {
+          "text": "作者",
+          "tagId": "ezapi.sample.owner",
+          "valueKind": "string",
+          "color": "LightTurquoise",
+          "localizedText": {
+            "key": "item_ezapi_sample_field_kit_tooltip_label_1_text"
+          }
+        },
+        {
+          "text": "禁用标签不应显示",
+          "tagId": "ezapi.sample.hidden",
+          "valueKind": "int",
+          "color": "Red",
+          "localizedText": {
+            "key": "item_ezapi_sample_field_kit_tooltip_label_2_text"
+          }
+        }
+      ],
+      "lines": [
+        {
+          "text": "前置提示：这是原生物品属性测试。",
+          "position": "early",
+          "color": "LightYellow",
+          "bold": true,
+          "localizedText": {
+            "key": "item_ezapi_sample_field_kit_tooltip_line_0_text"
+          }
+        },
+        {
+          "text": "后置提示：标签数值随物品实时状态刷新。",
+          "position": "late",
+          "color": "LightBlue",
+          "italic": true,
+          "localizedText": {
+            "key": "item_ezapi_sample_field_kit_tooltip_line_1_text"
+          }
+        }
+      ]
+    },
+    "localizedName": {
+      "key": "item_ezapi_sample_field_kit_name"
+    },
+    "localizedShortDescription": {
+      "key": "item_ezapi_sample_field_kit_shortDescription"
+    },
+    "localizedLongDescription": {
+      "key": "item_ezapi_sample_field_kit_longDescription"
+    },
+    "localizedFlavorText": {
+      "key": "item_ezapi_sample_field_kit_flavorText"
+    },
+    "localizedCustomText": {
+      "key": "item_ezapi_sample_field_kit_customText"
+    }
+  },
+  {
+    "id": "ezapi.sample.early_shape",
+    "modId": "ezapi.sample",
+    "name": "EZapi 前置简介与异形占格",
+    "shortDescription": "前置短简介：此行位于官方 early 阶段。",
+    "longDescription": "前置长简介：占格为 2×2 的 L 形。",
+    "flavorText": "前置风味文本：缺一格，也有自己的位置。",
+    "customText": "前置自定义文本。",
+    "descriptionPlacement": "early",
+    "width": 2,
+    "height": 2,
+    "shapeRows": [
+      "10",
+      "11"
+    ],
+    "value": 25,
+    "types": [
+      "MATERIAL"
+    ],
+    "forceDisableUse": true,
+    "tooltip": {
+      "sourceName": "EZapi 示例内容包",
+      "lines": [
+        {
+          "text": "下划线样式示例",
+          "underline": true,
+          "color": "LightOrange",
+          "localizedText": {
+            "key": "item_ezapi_sample_early_shape_tooltip_line_0_text"
+          }
+        },
+        {
+          "text": "删除线样式示例",
+          "strikethrough": true,
+          "color": "LightGray",
+          "localizedText": {
+            "key": "item_ezapi_sample_early_shape_tooltip_line_1_text"
+          }
+        }
+      ],
+      "localizedSourceName": {
+        "key": "item_ezapi_sample_early_shape_tooltip_source_name"
+      }
+    },
+    "localizedName": {
+      "key": "item_ezapi_sample_early_shape_name"
+    },
+    "localizedShortDescription": {
+      "key": "item_ezapi_sample_early_shape_shortDescription"
+    },
+    "localizedLongDescription": {
+      "key": "item_ezapi_sample_early_shape_longDescription"
+    },
+    "localizedFlavorText": {
+      "key": "item_ezapi_sample_early_shape_flavorText"
+    },
+    "localizedCustomText": {
+      "key": "item_ezapi_sample_early_shape_customText"
+    }
+  },
+  {
+    "id": "ezapi.sample.late_uses",
+    "modId": "ezapi.sample",
+    "name": "EZapi 后置简介与次数",
+    "shortDescription": "后置短简介：配置了使用次数；具体使用行为需要内容 Mod 实现。",
+    "longDescription": "后置长简介：初始剩余 3 次，上限 5 次。",
+    "flavorText": "后置风味文本。",
+    "customText": "后置自定义文本。",
+    "descriptionPlacement": "late",
+    "value": 30,
+    "width": 1,
+    "height": 1,
+    "useCount": {
+      "maximum": 5,
+      "current": 3,
+      "transferable": true,
+      "destroyOnEmpty": true,
+      "autoValue": true,
+      "baseValue": 10,
+      "valuePerUse": 5
+    },
+    "forceDisableUse": true,
+    "localizedName": {
+      "key": "item_ezapi_sample_late_uses_name"
+    },
+    "localizedShortDescription": {
+      "key": "item_ezapi_sample_late_uses_shortDescription"
+    },
+    "localizedLongDescription": {
+      "key": "item_ezapi_sample_late_uses_longDescription"
+    },
+    "localizedFlavorText": {
+      "key": "item_ezapi_sample_late_uses_flavorText"
+    },
+    "localizedCustomText": {
+      "key": "item_ezapi_sample_late_uses_customText"
+    }
+  },
+  {
+    "id": "ezapi.sample.restricted",
+    "modId": "ezapi.sample",
+    "name": "EZapi 违禁等级示例",
+    "description": "原生违禁等级为 1；用于验证游戏规则，不包含自定义使用行为。",
+    "contrabandLevel": 1,
+    "width": 1,
+    "height": 1,
+    "value": 20,
+    "tooltip": {
+      "showSource": false,
+      "labels": [
+        {
+          "text": "纯展示标签",
+          "color": "LightPurple",
+          "localizedText": {
+            "key": "item_ezapi_sample_restricted_tooltip_label_0_text"
+          }
+        }
+      ]
+    },
+    "localizedName": {
+      "key": "item_ezapi_sample_restricted_name"
+    },
+    "localizedDescription": {
+      "key": "item_ezapi_sample_restricted_description"
+    }
+  },
+  {
+    "id": "ezapi.sample.wound_dressing",
+    "modId": "ezapi.sample",
+    "name": "EZapi 一次性伤口敷料",
+    "sprite": "field_kit",
+    "width": 1,
+    "height": 1,
+    "value": 40,
+    "types": [
+      "MEDICAL"
+    ],
+    "activateDefault": true,
+    "shortDescription": "玩家拥有此物品且存在伤势时可激活；清除伤势后消耗整件物品。",
+    "longDescription": "按官方治疗物品示例处理伤势。健康时不会消耗；不治疗成瘾，不是通用生命值恢复。",
+    "activation": {
+      "kind": "healWounds",
+      "consumption": "destroy"
+    },
+    "localizedName": {
+      "key": "item_ezapi_sample_wound_dressing_name"
+    },
+    "localizedShortDescription": {
+      "key": "item_ezapi_sample_wound_dressing_shortDescription"
+    },
+    "localizedLongDescription": {
+      "key": "item_ezapi_sample_wound_dressing_longDescription"
+    }
+  },
+  {
+    "id": "ezapi.sample.reusable_dressing",
+    "modId": "ezapi.sample",
+    "name": "EZapi 三次伤口敷料",
+    "sprite": "field_kit",
+    "width": 1,
+    "height": 1,
+    "value": 60,
+    "types": [
+      "MEDICAL"
+    ],
+    "activateDefault": true,
+    "shortDescription": "玩家拥有且有伤势时治疗，每次消耗 1 次；初始 3 次，用尽由游戏销毁。",
+    "useCount": {
+      "maximum": 3,
+      "current": 3,
+      "destroyOnEmpty": true
+    },
+    "activation": {
+      "kind": "healWounds",
+      "consumption": "useCount",
+      "charge": 1
+    },
+    "localizedName": {
+      "key": "item_ezapi_sample_reusable_dressing_name"
+    },
+    "localizedShortDescription": {
+      "key": "item_ezapi_sample_reusable_dressing_shortDescription"
+    }
+  },
+  {
+    "id": "ezapi.sample.field_ration",
+    "modId": "ezapi.sample",
+    "name": "EZapi 原生食品",
+    "value": 20,
+    "width": 1,
+    "height": 1,
+    "shortDescription": "400 热量的食品。用于测试游戏原生食用、保鲜与保存。",
+    "food": {
+      "calories": 400,
+      "canned": false,
+      "freshness": 10
+    },
+    "localizedName": {
+      "key": "item_ezapi_sample_field_ration_name"
+    },
+    "localizedShortDescription": {
+      "key": "item_ezapi_sample_field_ration_shortDescription"
+    }
+  },
+  {
+    "id": "ezapi.sample.water_container",
+    "modId": "ezapi.sample",
+    "name": "EZapi 500ml 液体容器",
+    "value": 15,
+    "width": 1,
+    "height": 2,
+    "shortDescription": "容量 500 毫升，初始装满。用于测试原生饮用、转移与保存。",
+    "liquidContainer": {
+      "capacity": 500,
+      "startFull": true
+    },
+    "localizedName": {
+      "key": "item_ezapi_sample_water_container_name"
+    },
+    "localizedShortDescription": {
+      "key": "item_ezapi_sample_water_container_shortDescription"
+    }
+  },
+  {
+    "id": "ezapi.sample.storage_box",
+    "modId": "ezapi.sample",
+    "name": "EZapi 储物箱",
+    "width": 2,
+    "height": 2,
+    "value": 80,
+    "shortDescription": "内部 4×3 格。通过游戏原生容器入口打开，拖放和嵌套沿用原生规则。",
+    "container": {
+      "width": 4,
+      "height": 3,
+      "title": "EZapi 储物箱",
+      "localizedTitle": {
+        "key": "item_ezapi_sample_storage_box_container_title"
+      }
+    },
+    "localizedName": {
+      "key": "item_ezapi_sample_storage_box_name"
+    },
+    "localizedShortDescription": {
+      "key": "item_ezapi_sample_storage_box_shortDescription"
+    }
+  },
+  {
+    "id": "ezapi.sample.dressing_case",
+    "modId": "ezapi.sample",
+    "name": "EZapi 敷料收纳盒",
+    "width": 2,
+    "height": 1,
+    "value": 40,
+    "shortDescription": "内部异形网格，只向原生准入传入两种示例敷料 ID，用于检查过滤与存档。",
+    "container": {
+      "width": 3,
+      "height": 2,
+      "shapeRows": [
+        "111",
+        "110"
+      ],
+      "allowedIds": [
+        "ezapi.sample.wound_dressing",
+        "ezapi.sample.reusable_dressing"
+      ]
+    },
+    "localizedName": {
+      "key": "item_ezapi_sample_dressing_case_name"
+    },
+    "localizedShortDescription": {
+      "key": "item_ezapi_sample_dressing_case_shortDescription"
+    }
+  }
+]

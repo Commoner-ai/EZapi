@@ -1,0 +1,2556 @@
+{
+  "schemaVersion": 1,
+  "errors": [
+    {
+      "code": "EZAPI_ACTIVATION_BIND",
+      "fix": "IL2CPP 委托绑定失败；查看实际游戏接口/依赖，不要补装全局激活补丁"
+    },
+    {
+      "code": "EZAPI_ACTIVATION_CONFLICT",
+      "fix": "同一物品在 JSON activation、food、liquidContainer 与 C# 回调之间只选一种行为入口"
+    },
+    {
+      "code": "EZAPI_ACTIVATION_DUPLICATE",
+      "fix": "每个物品只登记一组 C# 激活回调"
+    },
+    {
+      "code": "EZAPI_ACTIVATION_FAILED",
+      "fix": "查看 predicate/action 异常。该 ID 的激活已停用到重启，不会自动重试；副作用可能已部分执行，修复内容回调后再测试"
+    },
+    {
+      "code": "EZAPI_ACTIVATION_ITEM",
+      "fix": "先成功提交物品定义，再注册 C# 激活回调"
+    },
+    {
+      "code": "EZAPI_ADMISSION_CALLBACK",
+      "fix": "准入规则异常已锁拒绝；修复只读回调后Dispose并重新注册"
+    },
+    {
+      "code": "EZAPI_ADMISSION_DUPLICATE",
+      "fix": "查看inventory-guards.zh-CN.md和inventoryGuards；核对线程、目录、实例身份、钩子Ready和参数"
+    },
+    {
+      "code": "EZAPI_ADMISSION_ID",
+      "fix": "查看inventory-guards.zh-CN.md和inventoryGuards；核对线程、目录、实例身份、钩子Ready和参数"
+    },
+    {
+      "code": "EZAPI_ADMISSION_LIMIT",
+      "fix": "查看inventory-guards.zh-CN.md和inventoryGuards；核对线程、目录、实例身份、钩子Ready和参数"
+    },
+    {
+      "code": "EZAPI_ADMISSION_MUTATION",
+      "fix": "准入规则异常已锁拒绝；修复只读回调后Dispose并重新注册"
+    },
+    {
+      "code": "EZAPI_ADMISSION_NOT_READY",
+      "fix": "查看inventory-guards.zh-CN.md和inventoryGuards；核对线程、目录、实例身份、钩子Ready和参数"
+    },
+    {
+      "code": "EZAPI_ASSET",
+      "fix": "检查PNG存在、大小、尺寸"
+    },
+    {
+      "code": "EZAPI_ASSET_COLLISION",
+      "fix": "EZapi.Content/<包ID> 被其它所有者占用；不要覆盖，检查冲突"
+    },
+    {
+      "code": "EZAPI_ASSET_NOT_READY",
+      "fix": "本机原生图集缓存尚未就绪，不要在初始化时创建物品"
+    },
+    {
+      "code": "EZAPI_BATCH_CALLBACK",
+      "fix": "见Error、RecoveryFailures及Status；Committed的CompletionError不能导致重跑"
+    },
+    {
+      "code": "EZAPI_BATCH_CONTEXT",
+      "fix": "批次资源不能为null；只同步引用当前实例"
+    },
+    {
+      "code": "EZAPI_BATCH_MACHINE",
+      "fix": "玩家拥有的单件机器且没有拖拽物品"
+    },
+    {
+      "code": "EZAPI_BATCH_NOT_READY",
+      "fix": "初始化后调用；停止时不可生产"
+    },
+    {
+      "code": "EZAPI_BATCH_OWNER",
+      "fix": "owner由执行器严格全文校验，拒绝尾部换行/非法前缀，不依赖RunData旧正则"
+    },
+    {
+      "code": "EZAPI_BATCH_PRECHECK",
+      "fix": "完整只读资源资格/输出空间检查失败，不自动补发"
+    },
+    {
+      "code": "EZAPI_BATCH_PREPARE",
+      "fix": "只能配置本次新产品，不交付、不消费资源"
+    },
+    {
+      "code": "EZAPI_BATCH_PRODUCT",
+      "fix": "工厂须返回新独立单件；不能返回借入资源"
+    },
+    {
+      "code": "EZAPI_BATCH_PRODUCTS",
+      "fix": "最多64个新单件，非空产品总数与OutputCount一致"
+    },
+    {
+      "code": "EZAPI_BATCH_RECHECK",
+      "fix": "准备产物后资源/空间变动，重新计划"
+    },
+    {
+      "code": "EZAPI_BATCH_REENTRANT",
+      "fix": "不能在Validate/Apply/Verify/Restore/完成通知中再次生产"
+    },
+    {
+      "code": "EZAPI_BATCH_STALE",
+      "fix": "周目或机器身份变化，停止操作旧库存"
+    },
+    {
+      "code": "EZAPI_BATCH_VERIFY",
+      "fix": "核对材料/液体/电力/产物实际差额；无法恢复则停止重试"
+    },
+    {
+      "code": "EZAPI_CLIENT_VISIT_ACTOR",
+      "fix": "Use an actor ID that StoreClientListDict.CreateStoreClient accepts in this game build."
+    },
+    {
+      "code": "EZAPI_CLIENT_VISIT_ADD",
+      "fix": "The native AddNextClient call failed; inspect diagnostics and do not retry the same request."
+    },
+    {
+      "code": "EZAPI_CLIENT_VISIT_ADD_READBACK",
+      "fix": "The native manager did not expose the queued client after AddNextClient; the result is indeterminate and will not be retried."
+    },
+    {
+      "code": "EZAPI_CLIENT_VISIT_DIALOGUE",
+      "fix": "Dialogue opening did not succeed; inspect the returned PresentationResult and native dialogue status."
+    },
+    {
+      "code": "EZAPI_CLIENT_VISIT_DIALOGUE_CLOSE",
+      "fix": "The owned visit dialogue did not close cleanly; inspect the DialogueApi status."
+    },
+    {
+      "code": "EZAPI_CLIENT_VISIT_DIALOGUE_TIMEOUT",
+      "fix": "The dialogue UI stayed occupied for 30 seconds; schedule a new request if appropriate."
+    },
+    {
+      "code": "EZAPI_CLIENT_VISIT_DUPLICATE",
+      "fix": "Use a new owner-scoped request ID for each visit."
+    },
+    {
+      "code": "EZAPI_CLIENT_VISIT_FACTORY",
+      "fix": "Check that the current game actor factory is initialized; the native factory threw."
+    },
+    {
+      "code": "EZAPI_CLIENT_VISIT_LIMIT",
+      "fix": "Keep at most 128 visit requests in one process/run."
+    },
+    {
+      "code": "EZAPI_CLIENT_VISIT_PREPARE",
+      "fix": "The sprite or native callback setup could not be read back; inspect EZapi diagnostics."
+    },
+    {
+      "code": "EZAPI_CLIENT_VISIT_REENTRY",
+      "fix": "Do not queue recursively from a customer-generation or visit callback."
+    },
+    {
+      "code": "EZAPI_CLIENT_VISIT_RELEASE_BLOCKED",
+      "fix": "Native callback cleanup partially failed and is not retried against a stale client; restart the game before reusing the feature."
+    },
+    {
+      "code": "EZAPI_CLIENT_VISIT_REQUEST",
+      "fix": "Use an owner-scoped request ID, matching DialogueScript owner, valid run/slot, native actor ID, and sprite key."
+    },
+    {
+      "code": "EZAPI_CLIENT_VISIT_RUN",
+      "fix": "Wait for a current loaded run before queuing."
+    },
+    {
+      "code": "EZAPI_CLIENT_VISIT_SCOPE",
+      "fix": "Pass the current save slot and run ID."
+    },
+    {
+      "code": "EZAPI_CLIENT_VISIT_SCOPE_ENDED",
+      "fix": "The run, load epoch, or scene ended; queue a new request in the current scope."
+    },
+    {
+      "code": "EZAPI_CLIENT_VISIT_SCRIPT_RELEASED",
+      "fix": "The visit script lifetime ended before the arrival dialogue opened; create a new request."
+    },
+    {
+      "code": "EZAPI_CLIENT_VISIT_UNAVAILABLE",
+      "fix": "Wait for the known build, official customer hook, and dialogue gates to become ready."
+    },
+    {
+      "code": "EZAPI_CONTAINER_GRAPH",
+      "fix": "检查本机PixelElement转换和窗口Attach；失败工厂销毁当前物品，不回退到共享窗口"
+    },
+    {
+      "code": "EZAPI_CONTENT_CALLBACK_FAILED",
+      "fix": "查看lifecycle-content.zh-CN.md与forgeLifecycle/contentApplication；核对主线程、初始化、owner/ID、作用域及真实原生异常；不自动重试夜间结算"
+    },
+    {
+      "code": "EZAPI_CONTENT_CALLBACK_ID",
+      "fix": "查看lifecycle-content.zh-CN.md与forgeLifecycle/contentApplication；核对主线程、初始化、owner/ID、作用域及真实原生异常；不自动重试夜间结算"
+    },
+    {
+      "code": "EZAPI_CONTENT_DUPLICATE",
+      "fix": "查看lifecycle-content.zh-CN.md与forgeLifecycle/contentApplication；核对主线程、初始化、owner/ID、作用域及真实原生异常；不自动重试夜间结算"
+    },
+    {
+      "code": "EZAPI_CONTENT_LIMIT",
+      "fix": "查看lifecycle-content.zh-CN.md与forgeLifecycle/contentApplication；核对主线程、初始化、owner/ID、作用域及真实原生异常；不自动重试夜间结算"
+    },
+    {
+      "code": "EZAPI_CONTENT_NOT_READY",
+      "fix": "查看lifecycle-content.zh-CN.md与forgeLifecycle/contentApplication；核对主线程、初始化、owner/ID、作用域及真实原生异常；不自动重试夜间结算"
+    },
+    {
+      "code": "EZAPI_CONTENT_OVERFLOW",
+      "fix": "查看lifecycle-content.zh-CN.md与forgeLifecycle/contentApplication；核对主线程、初始化、owner/ID、作用域及真实原生异常；不自动重试夜间结算"
+    },
+    {
+      "code": "EZAPI_CONTENT_RESTART",
+      "fix": "查看lifecycle-content.zh-CN.md与forgeLifecycle/contentApplication；核对主线程、初始化、owner/ID、作用域及真实原生异常；不自动重试夜间结算"
+    },
+    {
+      "code": "EZAPI_DIALOGUE_ATTACHED_ITEM",
+      "fix": "临时令牌获得库存归属；保留并停止新分配，不销毁库存物品。"
+    },
+    {
+      "code": "EZAPI_DIALOGUE_BUTTONS",
+      "fix": "当前原生按钮池须为3..128，不克隆共享按钮。"
+    },
+    {
+      "code": "EZAPI_DIALOGUE_CALLBACK",
+      "fix": "作者异常已消费确认权；自行处理业务恢复，框架不重放。"
+    },
+    {
+      "code": "EZAPI_DIALOGUE_CHOICE",
+      "fix": "每个选项须有唯一合法ID和非空Confirm回调。"
+    },
+    {
+      "code": "EZAPI_DIALOGUE_CLOSE",
+      "fix": "关闭异常，查看仍被持有的资源。"
+    },
+    {
+      "code": "EZAPI_DIALOGUE_CONFIRM",
+      "fix": "确认异常，撤销此图业务许可。"
+    },
+    {
+      "code": "EZAPI_DIALOGUE_DEFINITION",
+      "fix": "校验有命名空间ID、非NUL有界文本及1..128个唯一选项。"
+    },
+    {
+      "code": "EZAPI_DIALOGUE_DELEGATE",
+      "fix": "原生委托转换失败，停止此图。"
+    },
+    {
+      "code": "EZAPI_DIALOGUE_FAILURE_TEXT",
+      "fix": "失败文本非空、无NUL、最多131072字符。"
+    },
+    {
+      "code": "EZAPI_DIALOGUE_INSPECT_RETAINED",
+      "fix": "原生检查异常，保守保留资源。"
+    },
+    {
+      "code": "EZAPI_DIALOGUE_INTERRUPTED",
+      "fix": "构建中身份失效，旧图停止展示。"
+    },
+    {
+      "code": "EZAPI_DIALOGUE_LABEL",
+      "fix": "说话人和按钮文本非空、无NUL、最多512字符。"
+    },
+    {
+      "code": "EZAPI_DIALOGUE_OCCUPIED",
+      "fix": "尊重原版/外部对话、原生独白、拖拽与尚待释放的图。"
+    },
+    {
+      "code": "EZAPI_DIALOGUE_OPEN",
+      "fix": "原生打开异常，Indeterminate不可自动重放业务。"
+    },
+    {
+      "code": "EZAPI_DIALOGUE_OWNER",
+      "fix": "只关闭相同作者和request。"
+    },
+    {
+      "code": "EZAPI_DIALOGUE_REENTRY",
+      "fix": "Open/Close不可从创建或选择回调栈重入；由作者下一帧显式请求。"
+    },
+    {
+      "code": "EZAPI_DIALOGUE_REFERENCE_LIMIT",
+      "fix": "外部链超过4096节点；保留图，等待外部解除引用。"
+    },
+    {
+      "code": "EZAPI_DIALOGUE_RELEASE_BLOCKED",
+      "fix": "Destroy部分失败，停用新分配；不自动重试。"
+    },
+    {
+      "code": "EZAPI_DIALOGUE_REPLY",
+      "fix": "回复不可null/NUL或超过131072字符。"
+    },
+    {
+      "code": "EZAPI_DIALOGUE_REQUEST",
+      "fix": "owner/request命名空间、有效run/slot和脚本作者必须一致。"
+    },
+    {
+      "code": "EZAPI_DIALOGUE_RESET_RETAINED",
+      "fix": "重置检查异常，继续持有并查看日志。"
+    },
+    {
+      "code": "EZAPI_DIALOGUE_RETAINED",
+      "fix": "图仍被原生引用，不能报告Closed，也不能再分配新图。"
+    },
+    {
+      "code": "EZAPI_DIALOGUE_RUN",
+      "fix": "等待有效周目。"
+    },
+    {
+      "code": "EZAPI_DIALOGUE_SCOPE",
+      "fix": "使用当前回调中的run/slot，读档后重新读取身份。"
+    },
+    {
+      "code": "EZAPI_DIALOGUE_SELECT",
+      "fix": "原生选择许可检查异常，本次不给业务许可。"
+    },
+    {
+      "code": "EZAPI_DIALOGUE_SPEAKER",
+      "fix": "自有说话人UI同步异常。"
+    },
+    {
+      "code": "EZAPI_DIALOGUE_START_READBACK",
+      "fix": "StartDialogue返回或当前图身份未核对成功。"
+    },
+    {
+      "code": "EZAPI_DIALOGUE_STOP_RETAINED",
+      "fix": "停用仍有原生引用，保留至进程结束。"
+    },
+    {
+      "code": "EZAPI_DIALOGUE_TAKEOVER",
+      "fix": "外部请求结束后的身份/模式复核异常，撤销旧图。"
+    },
+    {
+      "code": "EZAPI_DIALOGUE_TEMPLATE",
+      "fix": "当前handnote工厂不可用。"
+    },
+    {
+      "code": "EZAPI_DIALOGUE_THREAD",
+      "fix": "仅在初始化后的游戏主线程调用。"
+    },
+    {
+      "code": "EZAPI_DIALOGUE_UI",
+      "fix": "等待当前DialogUIManager和原生按钮池就绪。"
+    },
+    {
+      "code": "EZAPI_DIALOGUE_UNAVAILABLE",
+      "fix": "等待框架、主线程、必需钩子完整；释放故障后停止新分配。"
+    },
+    {
+      "code": "EZAPI_EFFECT_APPLY_FAILED",
+      "fix": "查看production-effects.zh-CN.md及effects/productionDebug；核对初始化/owner/目录/钩子/当前身份；恢复失败停止本批，不盲目重试。"
+    },
+    {
+      "code": "EZAPI_EFFECT_APPLY_READBACK",
+      "fix": "查看production-effects.zh-CN.md及effects/productionDebug；核对初始化/owner/目录/钩子/当前身份；恢复失败停止本批，不盲目重试。"
+    },
+    {
+      "code": "EZAPI_EFFECT_CLEANUP",
+      "fix": "查看production-effects.zh-CN.md及effects/productionDebug；核对初始化/owner/目录/钩子/当前身份；恢复失败停止本批，不盲目重试。"
+    },
+    {
+      "code": "EZAPI_EFFECT_DIRECTORY",
+      "fix": "查看production-effects.zh-CN.md及effects/productionDebug；核对初始化/owner/目录/钩子/当前身份；恢复失败停止本批，不盲目重试。"
+    },
+    {
+      "code": "EZAPI_EFFECT_DUPLICATE",
+      "fix": "查看production-effects.zh-CN.md及effects/productionDebug；核对初始化/owner/目录/钩子/当前身份；恢复失败停止本批，不盲目重试。"
+    },
+    {
+      "code": "EZAPI_EFFECT_FACTORY",
+      "fix": "查看production-effects.zh-CN.md及effects/productionDebug；核对初始化/owner/目录/钩子/当前身份；恢复失败停止本批，不盲目重试。"
+    },
+    {
+      "code": "EZAPI_EFFECT_ID",
+      "fix": "查看production-effects.zh-CN.md及effects/productionDebug；核对初始化/owner/目录/钩子/当前身份；恢复失败停止本批，不盲目重试。"
+    },
+    {
+      "code": "EZAPI_EFFECT_LIMIT",
+      "fix": "查看production-effects.zh-CN.md及effects/productionDebug；核对初始化/owner/目录/钩子/当前身份；恢复失败停止本批，不盲目重试。"
+    },
+    {
+      "code": "EZAPI_EFFECT_NOT_READY",
+      "fix": "查看production-effects.zh-CN.md及effects/productionDebug；核对初始化/owner/目录/钩子/当前身份；恢复失败停止本批，不盲目重试。"
+    },
+    {
+      "code": "EZAPI_EFFECT_RANDOM_LOST",
+      "fix": "查看production-effects.zh-CN.md及effects/productionDebug；核对初始化/owner/目录/钩子/当前身份；恢复失败停止本批，不盲目重试。"
+    },
+    {
+      "code": "EZAPI_EFFECT_RANDOM_RESTORE",
+      "fix": "查看production-effects.zh-CN.md及effects/productionDebug；核对初始化/owner/目录/钩子/当前身份；恢复失败停止本批，不盲目重试。"
+    },
+    {
+      "code": "EZAPI_EFFECT_RANDOM_SCOPE",
+      "fix": "查看production-effects.zh-CN.md及effects/productionDebug；核对初始化/owner/目录/钩子/当前身份；恢复失败停止本批，不盲目重试。"
+    },
+    {
+      "code": "EZAPI_EFFECT_RANDOM_UNAVAILABLE",
+      "fix": "查看production-effects.zh-CN.md及effects/productionDebug；核对初始化/owner/目录/钩子/当前身份；恢复失败停止本批，不盲目重试。"
+    },
+    {
+      "code": "EZAPI_EFFECT_STALE",
+      "fix": "查看production-effects.zh-CN.md及effects/productionDebug；核对初始化/owner/目录/钩子/当前身份；恢复失败停止本批，不盲目重试。"
+    },
+    {
+      "code": "EZAPI_EFFECT_TOO_LATE",
+      "fix": "查看production-effects.zh-CN.md及effects/productionDebug；核对初始化/owner/目录/钩子/当前身份；恢复失败停止本批，不盲目重试。"
+    },
+    {
+      "code": "EZAPI_ENDPOINT_ALIAS",
+      "fix": "检查不同端点和玩家主库存间是否重复引用同一物品实例。"
+    },
+    {
+      "code": "EZAPI_ENDPOINT_CONFLICT",
+      "fix": "检查重复ID、根物品配置与原生saveBags键，不覆盖已有根。"
+    },
+    {
+      "code": "EZAPI_ENDPOINT_CONTAINER",
+      "fix": "端点根物品必须提供有效原生GameGridInventory；注册带container的物品后重开端点。"
+    },
+    {
+      "code": "EZAPI_ENDPOINT_DELETE",
+      "fix": "删除结果不确定；不要重试或保存，先核对根键及原生引用。"
+    },
+    {
+      "code": "EZAPI_ENDPOINT_ID",
+      "fix": "ownerId和endpointId使用有效的小写命名空间ID。"
+    },
+    {
+      "code": "EZAPI_ENDPOINT_IDENTITY",
+      "fix": "当前句柄与原生存档键身份不一致；停止写入并检查诊断。"
+    },
+    {
+      "code": "EZAPI_ENDPOINT_ITEM",
+      "fix": "itemId必须以ownerId命名空间开头。"
+    },
+    {
+      "code": "EZAPI_ENDPOINT_LIMIT",
+      "fix": "减少端点或图规模并保持JSON/原生容器在文档上限内。"
+    },
+    {
+      "code": "EZAPI_ENDPOINT_NOT_READY",
+      "fix": "等待端点钩子、物品目录和当前周目就绪；查看运行时钩子状态。"
+    },
+    {
+      "code": "EZAPI_ENDPOINT_OPEN_INDETERMINATE",
+      "fix": "创建回滚状态不确定；不要重试或保存，先核对原生引用。"
+    },
+    {
+      "code": "EZAPI_ENDPOINT_REENTRANT",
+      "fix": "退出当前原生接纳/搬运回调后，再调用端点打开、读取、删除或保存操作。"
+    },
+    {
+      "code": "EZAPI_ENDPOINT_RESTORE",
+      "fix": "恢复任一端点失败后整组操作封锁；保留现场并查看诊断。"
+    },
+    {
+      "code": "EZAPI_ENDPOINT_RUNTIME",
+      "fix": "原生端点枚举失败后停止变更，查看对应钩子和诊断。"
+    },
+    {
+      "code": "EZAPI_ENDPOINT_SAVE_BLOCKED",
+      "fix": "本次原生保存已被取消；处理错误并核对库存后再决定如何保存。"
+    },
+    {
+      "code": "EZAPI_ENDPOINT_SOURCE",
+      "fix": "Take只接受该端点网格的直接子物品；重新读取当前内容快照。"
+    },
+    {
+      "code": "EZAPI_ENDPOINT_STALE",
+      "fix": "丢弃旧句柄/物品/网格，在当前周目重新Open和读取。"
+    },
+    {
+      "code": "EZAPI_ENDPOINT_STORE",
+      "fix": "传入当前精确PlayerStore；不可缓存旧场景包装对象。"
+    },
+    {
+      "code": "EZAPI_ENDPOINT_TARGET",
+      "fix": "传入当前有效的目标GameGridInventory。"
+    },
+    {
+      "code": "EZAPI_EVENT_CALLBACK_FAILED",
+      "fix": "该订阅回调已移除；查看所属 Mod 和阶段异常，不自动重试副作用"
+    },
+    {
+      "code": "EZAPI_EVENT_DISPATCH_FAILED",
+      "fix": "查看官方事件派发阶段；不要在工作线程手动派发"
+    },
+    {
+      "code": "EZAPI_EVENT_LIMIT",
+      "fix": "最多256个活跃订阅；不需要时 Dispose，不在每帧重复 Subscribe"
+    },
+    {
+      "code": "EZAPI_EVENT_NOT_READY",
+      "fix": "必须在 EZapi 初始化后订阅"
+    },
+    {
+      "code": "EZAPI_EVENT_UNSUBSCRIBE_FAILED",
+      "fix": "同一原生委托保留强引用且停用；记录依赖异常，不能重复安装"
+    },
+    {
+      "code": "EZAPI_EXTERNAL_POWER_CALLBACK",
+      "fix": "查看阶段和异常；查询失败关闭，不每帧刷同种日志"
+    },
+    {
+      "code": "EZAPI_EXTERNAL_POWER_CONTEXT",
+      "fix": "Power.TryDebit不支持无机器上下文外电；使用EZapi标准机器批次"
+    },
+    {
+      "code": "EZAPI_EXTERNAL_POWER_DUPLICATE",
+      "fix": "释放旧提供方句柄后再登记同一ID"
+    },
+    {
+      "code": "EZAPI_EXTERNAL_POWER_ID",
+      "fix": "连接器使用owner加点号的精确ID，不能有空白"
+    },
+    {
+      "code": "EZAPI_EXTERNAL_POWER_INITIALIZE",
+      "fix": "只在工厂里初始化新游离、未拥有、无子窗口、未初始化的已登记单件；失败销毁实例"
+    },
+    {
+      "code": "EZAPI_EXTERNAL_POWER_INSUFFICIENT",
+      "fix": "连接器未连接或真实外部电量不足"
+    },
+    {
+      "code": "EZAPI_EXTERNAL_POWER_LIMIT",
+      "fix": "最多128个活动提供方"
+    },
+    {
+      "code": "EZAPI_EXTERNAL_POWER_NOT_READY",
+      "fix": "在EZapi初始化后主线程登记，原生目录可尚未就绪"
+    },
+    {
+      "code": "EZAPI_EXTERNAL_POWER_PLAN",
+      "fix": "plan只创建新事务，不写资源，不能返回null"
+    },
+    {
+      "code": "EZAPI_EXTERNAL_POWER_PROVIDER",
+      "fix": "当前连接器没有活动提供方"
+    },
+    {
+      "code": "EZAPI_EXTERNAL_POWER_REENTRANT",
+      "fix": "查询、plan及事务同步回调内不能递归查询自身或新增登记"
+    },
+    {
+      "code": "EZAPI_EXTERNAL_POWER_STALE",
+      "fix": "不要重复Debit，复核周目、机器、连接器及提供方"
+    },
+    {
+      "code": "EZAPI_EXTERNAL_POWER_VERIFY",
+      "fix": "真实外电差额或提供方Verify失败，检查Restore"
+    },
+    {
+      "code": "EZAPI_FACTORY_ID",
+      "fix": "owner前缀小写ID和非null独立工厂；目录初始化前提交"
+    },
+    {
+      "code": "EZAPI_FACTORY_KIND",
+      "fix": "Node/Module工厂调用对应官方InitNode/InitModuleItem"
+    },
+    {
+      "code": "EZAPI_FACTORY_LIMIT",
+      "fix": "每批1..500，最多4096自定义工厂"
+    },
+    {
+      "code": "EZAPI_FACTORY_REENTRANT",
+      "fix": "禁止递归调用自身工厂；LastError与Failures保留诊断"
+    },
+    {
+      "code": "EZAPI_FACTORY_RESULT",
+      "fix": "每次返回注册ID匹配的独立有效未入库存实例；错误返回清理由作者负责"
+    },
+    {
+      "code": "EZAPI_FACTORY_REUSED",
+      "fix": "禁止缓存和重复返回同一原生实例"
+    },
+    {
+      "code": "EZAPI_FACTORY_TEXT",
+      "fix": "Name/SourceName非空最多200字符，说明最多4000字符"
+    },
+    {
+      "code": "EZAPI_FREEZE_GRAPH",
+      "fix": "查看inventory-guards.zh-CN.md和inventoryGuards；核对线程、目录、实例身份、钩子Ready和参数"
+    },
+    {
+      "code": "EZAPI_FREEZE_GROUP",
+      "fix": "查看inventory-guards.zh-CN.md和inventoryGuards；核对线程、目录、实例身份、钩子Ready和参数"
+    },
+    {
+      "code": "EZAPI_FREEZE_INPUT",
+      "fix": "查看inventory-guards.zh-CN.md和inventoryGuards；核对线程、目录、实例身份、钩子Ready和参数"
+    },
+    {
+      "code": "EZAPI_FREEZE_LIMIT",
+      "fix": "查看inventory-guards.zh-CN.md和inventoryGuards；核对线程、目录、实例身份、钩子Ready和参数"
+    },
+    {
+      "code": "EZAPI_FREEZE_PERMIT",
+      "fix": "仅内部当前有效句柄、精确源/目的/槽位/数量，一次接纳或移出；不得绕过其他组冻结"
+    },
+    {
+      "code": "EZAPI_GUIDE",
+      "fix": "检查owner前缀、图鉴ID/数量/文本，整组失败不替换"
+    },
+    {
+      "code": "EZAPI_GUIDE_DUPLICATE",
+      "fix": "手写与自动图鉴不能使用同作者同配方ID；此次修改整批拒绝"
+    },
+    {
+      "code": "EZAPI_GUIDE_LIMIT",
+      "fix": "每owner<=512，总数<=2048，JSON<=2MiB"
+    },
+    {
+      "code": "EZAPI_GUIDE_RENDER",
+      "fix": "渲染异常自动关闭窗口并释放输入；检查日志和Unity unstripping诊断"
+    },
+    {
+      "code": "EZAPI_HOOK_FAILED",
+      "fix": "看官方回调阶段和异常；不会重试执行库存交易"
+    },
+    {
+      "code": "EZAPI_HOOK_GROUP_DISABLED",
+      "fix": "必需钩子不完整，对应组关闭；查看Error，不继续依赖该能力"
+    },
+    {
+      "code": "EZAPI_HOOK_LOST",
+      "fix": "必需钩子不完整，对应组关闭；查看Error，不继续依赖该能力"
+    },
+    {
+      "code": "EZAPI_HOOK_NOT_READY",
+      "fix": "查看inventory-guards.zh-CN.md和inventoryGuards；核对线程、目录、实例身份、钩子Ready和参数"
+    },
+    {
+      "code": "EZAPI_HOOK_TARGET",
+      "fix": "查看inventory-guards.zh-CN.md和inventoryGuards；核对线程、目录、实例身份、钩子Ready和参数"
+    },
+    {
+      "code": "EZAPI_HOOK_THREAD",
+      "fix": "查看inventory-guards.zh-CN.md和inventoryGuards；核对线程、目录、实例身份、钩子Ready和参数"
+    },
+    {
+      "code": "EZAPI_HOOK_UNPATCH",
+      "fix": "查看inventory-guards.zh-CN.md和inventoryGuards；核对线程、目录、实例身份、钩子Ready和参数"
+    },
+    {
+      "code": "EZAPI_INIT_FAILED",
+      "fix": "依赖/事件/兼容补丁启动失败，已撤销本框架初始化"
+    },
+    {
+      "code": "EZAPI_INSPECTION_ELEMENT",
+      "fix": "当前实例无GameItemElement提示入口"
+    },
+    {
+      "code": "EZAPI_INVENTORY_GRAPH",
+      "fix": "核对当前周目、原生身份、数量、锁定/准入与错误详情；见inventory-services.zh-CN.md"
+    },
+    {
+      "code": "EZAPI_INVENTORY_GUARD",
+      "fix": "查看inventory-guards.zh-CN.md和inventoryGuards；核对线程、目录、实例身份、钩子Ready和参数"
+    },
+    {
+      "code": "EZAPI_INVENTORY_ID",
+      "fix": "核对当前周目、原生身份、数量、锁定/准入与错误详情；见inventory-services.zh-CN.md"
+    },
+    {
+      "code": "EZAPI_INVENTORY_IDENTITY",
+      "fix": "核对当前周目、原生身份、数量、锁定/准入与错误详情；见inventory-services.zh-CN.md"
+    },
+    {
+      "code": "EZAPI_INVENTORY_LIMIT",
+      "fix": "超出有界读取/搜索预算，缩小批次；不要每帧重复搜索"
+    },
+    {
+      "code": "EZAPI_INVENTORY_SHAPE",
+      "fix": "核对当前周目、原生身份、数量、锁定/准入与错误详情；见inventory-services.zh-CN.md"
+    },
+    {
+      "code": "EZAPI_INVENTORY_STALE",
+      "fix": "丢弃旧快照和原生对象，在当前场景重新获取；不可跨读档恢复"
+    },
+    {
+      "code": "EZAPI_INVENTORY_STORE",
+      "fix": "核对当前周目、原生身份、数量、锁定/准入与错误详情；见inventory-services.zh-CN.md"
+    },
+    {
+      "code": "EZAPI_INVENTORY_TARGET",
+      "fix": "核对当前周目、原生身份、数量、锁定/准入与错误详情；见inventory-services.zh-CN.md"
+    },
+    {
+      "code": "EZAPI_INVENTORY_UNAVAILABLE",
+      "fix": "核对当前周目、原生身份、数量、锁定/准入与错误详情；见inventory-services.zh-CN.md"
+    },
+    {
+      "code": "EZAPI_ITEM_ACCURACY",
+      "fix": "命中整数值为 -100..100"
+    },
+    {
+      "code": "EZAPI_ITEM_ACTIVATION",
+      "fix": "kind 只允许 healWounds；destroy 不配 useCount 且 charge=1；useCount 模式需要次数配置，charge<=maximum；禁止与 forceDisableUse/Activate=true 同用"
+    },
+    {
+      "code": "EZAPI_ITEM_APPLY_FAILED",
+      "fix": "看Add结果和目录冲突"
+    },
+    {
+      "code": "EZAPI_ITEM_COLOR",
+      "fix": "从 item-properties.index.json 的 colorPalette 复制名称，区分大小写"
+    },
+    {
+      "code": "EZAPI_ITEM_CONSUMABLE",
+      "fix": "food/liquidContainer 两者选一个；不能叠加 activation/useCount 或 C#激活"
+    },
+    {
+      "code": "EZAPI_ITEM_CONTAINER",
+      "fix": "按container字段范围检查内部宽高/mask/标题/过滤列表；不能混合食品/液体/激活/次数或同时使用两种非空过滤列表"
+    },
+    {
+      "code": "EZAPI_ITEM_CONTRABAND",
+      "fix": "违禁品等级为 0..4"
+    },
+    {
+      "code": "EZAPI_ITEM_DESCRIPTION",
+      "fix": "description 与 shortDescription 只能填写一个"
+    },
+    {
+      "code": "EZAPI_ITEM_DUPLICATE",
+      "fix": "使用唯一ID"
+    },
+    {
+      "code": "EZAPI_ITEM_FACTORY",
+      "fix": "Create拒绝null、无效/错误ID及已知工厂失败产生的同ID占位物；查FactorySnapshot"
+    },
+    {
+      "code": "EZAPI_ITEM_FOOD",
+      "fix": "food.calories 必填整数1..100000；freshness 可省略，否则0..100原生初值"
+    },
+    {
+      "code": "EZAPI_ITEM_ID",
+      "fix": "小写有命名空间ID"
+    },
+    {
+      "code": "EZAPI_ITEM_LIQUID",
+      "fix": "liquidContainer.capacity 为整数1..100000毫升；默认500"
+    },
+    {
+      "code": "EZAPI_ITEM_MISSING",
+      "fix": "核对原生目录ID及注册应用时机"
+    },
+    {
+      "code": "EZAPI_ITEM_MODULE",
+      "fix": "module/node互斥，不混用消耗品/容器/激活行为，不覆盖helper管理的标签"
+    },
+    {
+      "code": "EZAPI_ITEM_NAME",
+      "fix": "非空名称，最多200字符"
+    },
+    {
+      "code": "EZAPI_ITEM_PLACEMENT",
+      "fix": "只用 native/early/late"
+    },
+    {
+      "code": "EZAPI_ITEM_SHAPE",
+      "fix": "宽高同时提供1..8"
+    },
+    {
+      "code": "EZAPI_ITEM_SOUND",
+      "fix": "填写现有音效 ID，不能含控制字符"
+    },
+    {
+      "code": "EZAPI_ITEM_STACK",
+      "fix": "检查堆叠参数范围"
+    },
+    {
+      "code": "EZAPI_ITEM_STACK_UNSUPPORTED",
+      "fix": "当前仅支持单件，initialCount/maxStackSize 都保持 1"
+    },
+    {
+      "code": "EZAPI_ITEM_TAG",
+      "fix": "标签键使用 UPPER_CASE 或命名空间 ID，不能重复，数值必须有限"
+    },
+    {
+      "code": "EZAPI_ITEM_TEXT",
+      "fix": "描述长度超出 Schema 限制"
+    },
+    {
+      "code": "EZAPI_ITEM_TOOLTIP",
+      "fix": "检查 labels/lines 数量、文本、位置和 tagId 引用"
+    },
+    {
+      "code": "EZAPI_ITEM_TYPE",
+      "fix": "使用原生大写分类；自定义命名空间分类必须配 typeNames，不能重名异义"
+    },
+    {
+      "code": "EZAPI_ITEM_USE_COUNT",
+      "fix": "检查 1<=current<=maximum<=9999、autoValue 和总价上限"
+    },
+    {
+      "code": "EZAPI_ITEM_VALUE",
+      "fix": "0..1000000000基础货币价值"
+    },
+    {
+      "code": "EZAPI_JSON_FIELD",
+      "fix": "未知字段或重复键；按 Schema 修正"
+    },
+    {
+      "code": "EZAPI_JSON_LIMIT",
+      "fix": "最多2MiB/500件"
+    },
+    {
+      "code": "EZAPI_JSON_NULL",
+      "fix": "省略可选字段，不能写 null"
+    },
+    {
+      "code": "EZAPI_JSON_TYPE",
+      "fix": "字段类型不正确"
+    },
+    {
+      "code": "EZAPI_LIFECYCLE_CALLBACK_FAILED",
+      "fix": "查看lifecycle-content.zh-CN.md与forgeLifecycle/contentApplication；核对主线程、初始化、owner/ID、作用域及真实原生异常；不自动重试夜间结算"
+    },
+    {
+      "code": "EZAPI_LIFECYCLE_CALLBACK_ID",
+      "fix": "查看lifecycle-content.zh-CN.md与forgeLifecycle/contentApplication；核对主线程、初始化、owner/ID、作用域及真实原生异常；不自动重试夜间结算"
+    },
+    {
+      "code": "EZAPI_LIFECYCLE_CAPTURE_FAILED",
+      "fix": "查看lifecycle-content.zh-CN.md与forgeLifecycle/contentApplication；核对主线程、初始化、owner/ID、作用域及真实原生异常；不自动重试夜间结算"
+    },
+    {
+      "code": "EZAPI_LIFECYCLE_DUPLICATE",
+      "fix": "查看lifecycle-content.zh-CN.md与forgeLifecycle/contentApplication；核对主线程、初始化、owner/ID、作用域及真实原生异常；不自动重试夜间结算"
+    },
+    {
+      "code": "EZAPI_LIFECYCLE_LIMIT",
+      "fix": "查看lifecycle-content.zh-CN.md与forgeLifecycle/contentApplication；核对主线程、初始化、owner/ID、作用域及真实原生异常；不自动重试夜间结算"
+    },
+    {
+      "code": "EZAPI_LIFECYCLE_NIGHT_EXCEPTION",
+      "fix": "查看lifecycle-content.zh-CN.md与forgeLifecycle/contentApplication；核对主线程、初始化、owner/ID、作用域及真实原生异常；不自动重试夜间结算"
+    },
+    {
+      "code": "EZAPI_LIFECYCLE_NOT_READY",
+      "fix": "查看lifecycle-content.zh-CN.md与forgeLifecycle/contentApplication；核对主线程、初始化、owner/ID、作用域及真实原生异常；不自动重试夜间结算"
+    },
+    {
+      "code": "EZAPI_LIFECYCLE_STALE",
+      "fix": "查看lifecycle-content.zh-CN.md与forgeLifecycle/contentApplication；核对主线程、初始化、owner/ID、作用域及真实原生异常；不自动重试夜间结算"
+    },
+    {
+      "code": "EZAPI_LIQUID_AMOUNT",
+      "fix": "见liquid-transfer.zh-CN.md与liquidTransferDebug；检查当前周目/归属/拖动/冻结和前后成分。Indeterminate或RecoveryFailed停止，不重试；损坏元数据只由作者显式设置迁移。"
+    },
+    {
+      "code": "EZAPI_LIQUID_BACKUP",
+      "fix": "见liquid-transfer.zh-CN.md与liquidTransferDebug；检查当前周目/归属/拖动/冻结和前后成分。Indeterminate或RecoveryFailed停止，不重试；损坏元数据只由作者显式设置迁移。"
+    },
+    {
+      "code": "EZAPI_LIQUID_CATALOG",
+      "fix": "液体目录未就绪或存在重复ID/体积标签"
+    },
+    {
+      "code": "EZAPI_LIQUID_CONTAINER",
+      "fix": "要求原生单件液体容器"
+    },
+    {
+      "code": "EZAPI_LIQUID_FILTER",
+      "fix": "见liquid-transfer.zh-CN.md与liquidTransferDebug；检查当前周目/归属/拖动/冻结和前后成分。Indeterminate或RecoveryFailed停止，不重试；损坏元数据只由作者显式设置迁移。"
+    },
+    {
+      "code": "EZAPI_LIQUID_FREEZE",
+      "fix": "见liquid-transfer.zh-CN.md与liquidTransferDebug；检查当前周目/归属/拖动/冻结和前后成分。Indeterminate或RecoveryFailed停止，不重试；损坏元数据只由作者显式设置迁移。"
+    },
+    {
+      "code": "EZAPI_LIQUID_MATH",
+      "fix": "见liquid-transfer.zh-CN.md与liquidTransferDebug；检查当前周目/归属/拖动/冻结和前后成分。Indeterminate或RecoveryFailed停止，不重试；损坏元数据只由作者显式设置迁移。"
+    },
+    {
+      "code": "EZAPI_LIQUID_METADATA",
+      "fix": "见liquid-transfer.zh-CN.md与liquidTransferDebug；检查当前周目/归属/拖动/冻结和前后成分。Indeterminate或RecoveryFailed停止，不重试；损坏元数据只由作者显式设置迁移。"
+    },
+    {
+      "code": "EZAPI_LIQUID_NO_MOVE",
+      "fix": "见liquid-transfer.zh-CN.md与liquidTransferDebug；检查当前周目/归属/拖动/冻结和前后成分。Indeterminate或RecoveryFailed停止，不重试；损坏元数据只由作者显式设置迁移。"
+    },
+    {
+      "code": "EZAPI_LIQUID_OWNERSHIP_OR_LOCK",
+      "fix": "见liquid-transfer.zh-CN.md与liquidTransferDebug；检查当前周目/归属/拖动/冻结和前后成分。Indeterminate或RecoveryFailed停止，不重试；损坏元数据只由作者显式设置迁移。"
+    },
+    {
+      "code": "EZAPI_LIQUID_PREDICATE_MUTATION",
+      "fix": "见liquid-transfer.zh-CN.md与liquidTransferDebug；检查当前周目/归属/拖动/冻结和前后成分。Indeterminate或RecoveryFailed停止，不重试；损坏元数据只由作者显式设置迁移。"
+    },
+    {
+      "code": "EZAPI_LIQUID_READBACK",
+      "fix": "见liquid-transfer.zh-CN.md与liquidTransferDebug；检查当前周目/归属/拖动/冻结和前后成分。Indeterminate或RecoveryFailed停止，不重试；损坏元数据只由作者显式设置迁移。"
+    },
+    {
+      "code": "EZAPI_LIQUID_REENTRANT",
+      "fix": "见liquid-transfer.zh-CN.md与liquidTransferDebug；检查当前周目/归属/拖动/冻结和前后成分。Indeterminate或RecoveryFailed停止，不重试；损坏元数据只由作者显式设置迁移。"
+    },
+    {
+      "code": "EZAPI_LIQUID_SAME_CONTAINER",
+      "fix": "见liquid-transfer.zh-CN.md与liquidTransferDebug；检查当前周目/归属/拖动/冻结和前后成分。Indeterminate或RecoveryFailed停止，不重试；损坏元数据只由作者显式设置迁移。"
+    },
+    {
+      "code": "EZAPI_LIQUID_SPLIT",
+      "fix": "见liquid-transfer.zh-CN.md与liquidTransferDebug；检查当前周目/归属/拖动/冻结和前后成分。Indeterminate或RecoveryFailed停止，不重试；损坏元数据只由作者显式设置迁移。"
+    },
+    {
+      "code": "EZAPI_LIQUID_STALE",
+      "fix": "见liquid-transfer.zh-CN.md与liquidTransferDebug；检查当前周目/归属/拖动/冻结和前后成分。Indeterminate或RecoveryFailed停止，不重试；损坏元数据只由作者显式设置迁移。"
+    },
+    {
+      "code": "EZAPI_LIQUID_STATE",
+      "fix": "成分总和/容量/整数边界与原生状态不一致"
+    },
+    {
+      "code": "EZAPI_LIST_ADMISSION",
+      "fix": "查看inventory-guards.zh-CN.md和inventoryGuards；核对线程、目录、实例身份、钩子Ready和参数"
+    },
+    {
+      "code": "EZAPI_LIST_ATTACH",
+      "fix": "查看inventory-guards.zh-CN.md和inventoryGuards；核对线程、目录、实例身份、钩子Ready和参数"
+    },
+    {
+      "code": "EZAPI_LIST_DIMENSIONS",
+      "fix": "列表尺寸标签不完整/越界/会缩小；停止批次人工核对，不自动缩容或补发"
+    },
+    {
+      "code": "EZAPI_LIST_FILTER",
+      "fix": "查看inventory-guards.zh-CN.md和inventoryGuards；核对线程、目录、实例身份、钩子Ready和参数"
+    },
+    {
+      "code": "EZAPI_LIST_HEIGHT",
+      "fix": "查看inventory-guards.zh-CN.md和inventoryGuards；核对线程、目录、实例身份、钩子Ready和参数"
+    },
+    {
+      "code": "EZAPI_LIST_ID",
+      "fix": "查看inventory-guards.zh-CN.md和inventoryGuards；核对线程、目录、实例身份、钩子Ready和参数"
+    },
+    {
+      "code": "EZAPI_LIST_NOT_READY",
+      "fix": "查看inventory-guards.zh-CN.md和inventoryGuards；核对线程、目录、实例身份、钩子Ready和参数"
+    },
+    {
+      "code": "EZAPI_LIST_OPERATION",
+      "fix": "查看inventory-guards.zh-CN.md和inventoryGuards；核对线程、目录、实例身份、钩子Ready和参数"
+    },
+    {
+      "code": "EZAPI_LIST_OWNER",
+      "fix": "查看inventory-guards.zh-CN.md和inventoryGuards；核对线程、目录、实例身份、钩子Ready和参数"
+    },
+    {
+      "code": "EZAPI_LIST_REENTRANT",
+      "fix": "查看inventory-guards.zh-CN.md和inventoryGuards；核对线程、目录、实例身份、钩子Ready和参数"
+    },
+    {
+      "code": "EZAPI_LIST_REJECTED",
+      "fix": "查看inventory-guards.zh-CN.md和inventoryGuards；核对线程、目录、实例身份、钩子Ready和参数"
+    },
+    {
+      "code": "EZAPI_LIST_RESIZE",
+      "fix": "列表尺寸标签不完整/越界/会缩小；停止批次人工核对，不自动缩容或补发"
+    },
+    {
+      "code": "EZAPI_LIST_TARGET",
+      "fix": "查看inventory-guards.zh-CN.md和inventoryGuards；核对线程、目录、实例身份、钩子Ready和参数"
+    },
+    {
+      "code": "EZAPI_LIST_WIDTH",
+      "fix": "查看inventory-guards.zh-CN.md和inventoryGuards；核对线程、目录、实例身份、钩子Ready和参数"
+    },
+    {
+      "code": "EZAPI_LOCALIZATION_COVERAGE",
+      "fix": "警告：补齐缺失翻译或英语回退，检查资源索引"
+    },
+    {
+      "code": "EZAPI_LOCALIZATION_DUPLICATE",
+      "fix": "删除同语言中的重复键"
+    },
+    {
+      "code": "EZAPI_LOCALIZATION_ENCODING",
+      "fix": "保存成UTF-8，可带BOM"
+    },
+    {
+      "code": "EZAPI_LOCALIZATION_FALLBACK",
+      "fix": "提供非空白、最多8192字符的可读纯文本"
+    },
+    {
+      "code": "EZAPI_LOCALIZATION_FORMAT",
+      "fix": "只使用编号string.Format；核对参数、格式、括号、下标和输出长度"
+    },
+    {
+      "code": "EZAPI_LOCALIZATION_KEY",
+      "fix": "使用1..160个ASCII字母/数字/下划线"
+    },
+    {
+      "code": "EZAPI_LOCALIZATION_LIMIT",
+      "fix": "文件<=1MiB，单语言<=4096键，值<=8192字符，目录<=10语言"
+    },
+    {
+      "code": "EZAPI_LOCALIZATION_LOCALE",
+      "fix": "使用官方精确代码en/fr/de/ru/zh/ja/es/ptBR/ko/it和.csv"
+    },
+    {
+      "code": "EZAPI_LOCALIZATION_PATH",
+      "fix": "提供正确Localization目录"
+    },
+    {
+      "code": "EZAPI_LOCALIZATION_PLACEHOLDERS",
+      "fix": "翻译与英语同名键使用相同参数下标集合"
+    },
+    {
+      "code": "EZAPI_LOCALIZATION_QUOTE",
+      "fix": "配对外部双引号，内部引号写双份，换行用字面\\n"
+    },
+    {
+      "code": "EZAPI_LOCALIZATION_ROW",
+      "fix": "每行 key,text；无表头，不能真实跨行"
+    },
+    {
+      "code": "EZAPI_LOCALIZATION_TEXT",
+      "fix": "提供非空白文本，去掉不支持的控制字符"
+    },
+    {
+      "code": "EZAPI_LOOT_APPLY_FAILED",
+      "fix": "查看 attempted/completed；原生部分失败不自动重试，修复后重启"
+    },
+    {
+      "code": "EZAPI_LOOT_COLLISION",
+      "fix": "不要覆盖原生或其它 Mod 已有表/组"
+    },
+    {
+      "code": "EZAPI_LOOT_DEBUG_FAILED",
+      "fix": "确认在当前主线程/场景点击，查看 loot 诊断"
+    },
+    {
+      "code": "EZAPI_LOOT_DUPLICATE",
+      "fix": "owner、列表和同一动作内 ID 不要重复"
+    },
+    {
+      "code": "EZAPI_LOOT_FIELD",
+      "fix": "Loot JSON 对象/列表/条目不能为空，字段必须匹配 schema"
+    },
+    {
+      "code": "EZAPI_LOOT_HOOK",
+      "fix": "官方事件订阅失败或遗留委托尚未解除；检查依赖后重启"
+    },
+    {
+      "code": "EZAPI_LOOT_HOOK_FAILED",
+      "fix": "掉落就绪回调失败；查看完整异常与 batches 状态，不手动重复写入 journal"
+    },
+    {
+      "code": "EZAPI_LOOT_ID",
+      "fix": "使用 ASCII 分段 ID；新表/组必须以 owner. 开头"
+    },
+    {
+      "code": "EZAPI_LOOT_LIMIT",
+      "fix": "遵守 1MiB、64/64/128、512 条目和 4096 操作限制"
+    },
+    {
+      "code": "EZAPI_LOOT_NOT_READY",
+      "fix": "等待 EZapi 初始化、物品目录和 OnLootTablesLoaded"
+    },
+    {
+      "code": "EZAPI_LOOT_OWNER",
+      "fix": "新表/组 ID 使用当前 owner 前缀"
+    },
+    {
+      "code": "EZAPI_LOOT_PATCH",
+      "fix": "patch 只能指定 table 或 group 一个，并至少有一个动作"
+    },
+    {
+      "code": "EZAPI_LOOT_REFERENCE",
+      "fix": "组条目引用已有表；物品条目等待 EZapi item Applied"
+    },
+    {
+      "code": "EZAPI_LOOT_TARGET",
+      "fix": "先声明目标列表，再 patch；确认目标存在"
+    },
+    {
+      "code": "EZAPI_LOOT_UNSUBSCRIBE_FAILED",
+      "fix": "保持旧委托惰性；重启进程后恢复"
+    },
+    {
+      "code": "EZAPI_LOOT_WEIGHT",
+      "fix": "register/add 为有限正数；setWeight 可为0且必须显式填写"
+    },
+    {
+      "code": "EZAPI_MACHINE_ADDITIONAL",
+      "fix": "整批非空追加，ID归作者，禁止重复/超出64条合并上限"
+    },
+    {
+      "code": "EZAPI_MACHINE_AUTOMATION_BLOCKED",
+      "fix": "Before已阻止或选择冲突；不重试本夜"
+    },
+    {
+      "code": "EZAPI_MACHINE_AUTOMATION_CALLBACK",
+      "fix": "此订阅已因异常禁用；Before阻止本批，After保留结果"
+    },
+    {
+      "code": "EZAPI_MACHINE_AUTOMATION_DUPLICATE",
+      "fix": "同owner/machine/phase只能一条；先释放旧句柄"
+    },
+    {
+      "code": "EZAPI_MACHINE_AUTOMATION_LIMIT",
+      "fix": "全局最多256条；释放不再需要的订阅"
+    },
+    {
+      "code": "EZAPI_MACHINE_AUTOMATION_NOT_READY",
+      "fix": "等待EZapi初始化主线程"
+    },
+    {
+      "code": "EZAPI_MACHINE_AUTOMATION_PHASE",
+      "fix": "SelectRecipe/Block仅Before可调用"
+    },
+    {
+      "code": "EZAPI_MACHINE_AUTOMATION_STALE",
+      "fix": "同步上下文已过期或资源改变；不要缓存上下文/原生对象，不要在Before写资源"
+    },
+    {
+      "code": "EZAPI_MACHINE_DEFAULT",
+      "fix": "默认策略不消费带内装物材料或指定液体成分；检查容量、原生接纳和实际差额"
+    },
+    {
+      "code": "EZAPI_MACHINE_DEFAULT_RECOVERY",
+      "fix": "补偿失败，保留未恢复物品并停止自动重试"
+    },
+    {
+      "code": "EZAPI_MACHINE_DEFINITION",
+      "fix": "核对输出网格、电池、电耗、加价与液体槽引用"
+    },
+    {
+      "code": "EZAPI_MACHINE_DUPLICATE",
+      "fix": "不要重复声明同ID，或与已有物品/低层配方目录抢占"
+    },
+    {
+      "code": "EZAPI_MACHINE_FACTORY",
+      "fix": "返回新的ID匹配、单件、游离、无窗口实例；ConfigureItem不应附着玩家库存"
+    },
+    {
+      "code": "EZAPI_MACHINE_GUIDE",
+      "fix": "仅标签/混合液体提供Guide.IllustrationItemId，或停用自动图鉴"
+    },
+    {
+      "code": "EZAPI_MACHINE_ID",
+      "fix": "完整owner前缀、小写ID，并给子库存后缀留出160字符上限"
+    },
+    {
+      "code": "EZAPI_MACHINE_LAYOUT",
+      "fix": "检查格数1..12、唯一液体槽、过滤二选一和64KiB总大小"
+    },
+    {
+      "code": "EZAPI_MACHINE_LAYOUT_ADMISSION",
+      "fix": "检查液体容器/过滤/父图；不绕过原生拒绝"
+    },
+    {
+      "code": "EZAPI_MACHINE_LAYOUT_GRAPH",
+      "fix": "图或保存标记已损坏；不自动迁移、重建或清空玩家库存"
+    },
+    {
+      "code": "EZAPI_MACHINE_LAYOUT_OWNER",
+      "fix": "仅对本次独立未放置、无contentWindow的单件工厂结果建立布局；失败由工厂清理"
+    },
+    {
+      "code": "EZAPI_MACHINE_LAYOUT_REVISION",
+      "fix": "保存布局与新声明不同；显式设计迁移，不覆盖"
+    },
+    {
+      "code": "EZAPI_MACHINE_LIMIT",
+      "fix": "统一机器最多128台；还受全局工厂与准入数量限制"
+    },
+    {
+      "code": "EZAPI_MACHINE_MANAGED",
+      "fix": "使用RegisterAdditionalRecipes追加，不能用低层RegisterRecipes抹掉合并目录"
+    },
+    {
+      "code": "EZAPI_MACHINE_MATERIAL",
+      "fix": "核对原生可接纳数量、材料身份/位置与保管库存；RecoveryFailed不可自动重试"
+    },
+    {
+      "code": "EZAPI_MACHINE_MISSING",
+      "fix": "目标必须已通过统一机器入口注册"
+    },
+    {
+      "code": "EZAPI_MACHINE_NIGHT",
+      "fix": "检查夜间解析器只读/额度1..64/身份；本夜attempt已保留"
+    },
+    {
+      "code": "EZAPI_MACHINE_NOT_READY",
+      "fix": "在初始化主线程或空闲主线程追加；不要在加工、注册拷贝过程中重入"
+    },
+    {
+      "code": "EZAPI_MACHINE_QUARANTINE",
+      "fix": "持久故障标签失败，内存隔离保留；检查游戏日志"
+    },
+    {
+      "code": "EZAPI_MACHINE_QUARANTINED",
+      "fix": "先人工核对RecoveryFailed遗留资源；禁止自动清标签和重产"
+    },
+    {
+      "code": "EZAPI_MACHINE_STALE",
+      "fix": "旧工厂代际失效；退出并重新启动游戏"
+    },
+    {
+      "code": "EZAPI_NATIVE_FURNACE",
+      "fix": "查看preflight/debit/recovery阶段；身份、布局、原实例或恢复读回不确定时停止。Unity销毁到帧末完成；pendingCleanups归零才表示清理核对完成。隔离机器不得直接清标记后重试。"
+    },
+    {
+      "code": "EZAPI_NATIVE_ITEM",
+      "fix": "当前有效实例且数量为正，不使用旧场景缓存"
+    },
+    {
+      "code": "EZAPI_NATIVE_NOT_READY",
+      "fix": "等待当前周目主线程事件，切场景后重新获取对象"
+    },
+    {
+      "code": "EZAPI_NOT_READY",
+      "fix": "在EZapi初始化之后主线程提交"
+    },
+    {
+      "code": "EZAPI_OWNER",
+      "fix": "物品ID前缀和modId必须属于内容包"
+    },
+    {
+      "code": "EZAPI_PACK",
+      "fix": "清单按 pack.schema.json 填写；基础字段 id/name/ezapiVersion，加可选版本、能力、依赖；拒绝未知/重复/null 字段"
+    },
+    {
+      "code": "EZAPI_PACK_CAPABILITY",
+      "fix": "requires 只填写 capabilities.json 中已实现能力"
+    },
+    {
+      "code": "EZAPI_PACK_DEPENDENCY",
+      "fix": "检查依赖包 ID、最低版本、循环和重复；修复后重新扫描"
+    },
+    {
+      "code": "EZAPI_PACK_DUPLICATE",
+      "fix": "相同包 ID 只能提交一次；失败整包不入队，可修复后重试"
+    },
+    {
+      "code": "EZAPI_PACK_FAILED",
+      "fix": "看完整异常，内容包载入失败"
+    },
+    {
+      "code": "EZAPI_PACK_FRAMEWORK",
+      "fix": "升级 EZapi 或降低清单 minEzapiVersion"
+    },
+    {
+      "code": "EZAPI_PACK_LIMIT",
+      "fix": "目录最多256包，清单依赖/能力最多64项"
+    },
+    {
+      "code": "EZAPI_PACK_NAME",
+      "fix": "pack.json.name 使用非空显示名称"
+    },
+    {
+      "code": "EZAPI_PACK_PATH",
+      "fix": "DLL 的 RegisterPack 必须传绝对目录"
+    },
+    {
+      "code": "EZAPI_PACK_VERSION",
+      "fix": "使用 major.minor.patch 三段非负版本"
+    },
+    {
+      "code": "EZAPI_PHONE_APPLY_READBACK",
+      "fix": "原生字典插入后身份不符；查看当前目录和外部修改。"
+    },
+    {
+      "code": "EZAPI_PHONE_CHANGED_DURING_FACTORY",
+      "fix": "工厂期间电话/对话manager、可见面板或界面占用改变；不分配旧图。"
+    },
+    {
+      "code": "EZAPI_PHONE_CONFIRM",
+      "fix": "原生电话确认异常，撤销此图。"
+    },
+    {
+      "code": "EZAPI_PHONE_CONTACT",
+      "fix": "有命名空间的owner/contact ID、100000..9999999999号码及三个非空回调。"
+    },
+    {
+      "code": "EZAPI_PHONE_DIAL",
+      "fix": "实际拨号入口复核异常，拒绝本次自有呼叫。"
+    },
+    {
+      "code": "EZAPI_PHONE_DUPLICATE",
+      "fix": "号码和联系人ID必须唯一，先显式释放旧声明。"
+    },
+    {
+      "code": "EZAPI_PHONE_END",
+      "fix": "同步原生挂断失败；不自动排程延时挂断。"
+    },
+    {
+      "code": "EZAPI_PHONE_FACTORY",
+      "fix": "通话脚本工厂异常，不自动重放业务或创建。"
+    },
+    {
+      "code": "EZAPI_PHONE_LIMIT",
+      "fix": "最多128个进程声明。"
+    },
+    {
+      "code": "EZAPI_PHONE_NAME",
+      "fix": "名称非空、无NUL、最多512个UTF-16字符。"
+    },
+    {
+      "code": "EZAPI_PHONE_NUMBER_CONFLICT",
+      "fix": "保留原版/外部对象和原生拨号；换用空闲号码。"
+    },
+    {
+      "code": "EZAPI_PHONE_QUERY",
+      "fix": "作者只读查询异常，条目隐藏；查看详细日志。"
+    },
+    {
+      "code": "EZAPI_PHONE_REENTRY",
+      "fix": "不可在查询、工厂或选择调用栈内登记/释放。"
+    },
+    {
+      "code": "EZAPI_PHONE_REFRESH",
+      "fix": "目录同步异常；其它原生对象不被覆盖。"
+    },
+    {
+      "code": "EZAPI_PHONE_RELEASE_BLOCKED",
+      "fix": "Destroy部分失败，停用新分配，不自动重试。"
+    },
+    {
+      "code": "EZAPI_PHONE_RETAINED",
+      "fix": "仍有原生引用/中断被拒/检查异常，保留自有图。"
+    },
+    {
+      "code": "EZAPI_PHONE_SCOPE",
+      "fix": "构建期间周目或联系人绑定失效。"
+    },
+    {
+      "code": "EZAPI_PHONE_SCRIPT",
+      "fix": "Call必须返回同owner脚本，当前周目/原生绑定不能变化。"
+    },
+    {
+      "code": "EZAPI_PHONE_SELECT",
+      "fix": "原生选择许可检查异常，不执行业务。"
+    },
+    {
+      "code": "EZAPI_PHONE_SHOWN",
+      "fix": "原生绑定或可见性检查异常，隐藏本条目。"
+    },
+    {
+      "code": "EZAPI_PHONE_SPEAKER",
+      "fix": "自有原生电话姓名同步异常。"
+    },
+    {
+      "code": "EZAPI_PHONE_STOP",
+      "fix": "停止时移除自有目录条目失败。"
+    },
+    {
+      "code": "EZAPI_PHONE_STOP_RETAINED",
+      "fix": "停用仍有自有图原生引用，保留到进程退出。"
+    },
+    {
+      "code": "EZAPI_PHONE_THREAD",
+      "fix": "使用初始化后的游戏主线程。"
+    },
+    {
+      "code": "EZAPI_PHONE_UI",
+      "fix": "等待当前电话和对话管理器就绪。"
+    },
+    {
+      "code": "EZAPI_PHONE_UNREGISTER",
+      "fix": "释放声明或当前自有目录对象时检查异常，结果不确定。"
+    },
+    {
+      "code": "EZAPI_PLACEMENT_BUDGET",
+      "fix": "超出有界读取/搜索预算，缩小批次；不要每帧重复搜索"
+    },
+    {
+      "code": "EZAPI_PLACEMENT_GRID",
+      "fix": "核对当前周目、原生身份、数量、锁定/准入与错误详情；见inventory-services.zh-CN.md"
+    },
+    {
+      "code": "EZAPI_PLACEMENT_INPUT",
+      "fix": "核对当前周目、原生身份、数量、锁定/准入与错误详情；见inventory-services.zh-CN.md"
+    },
+    {
+      "code": "EZAPI_PLACEMENT_LOCKED",
+      "fix": "核对当前周目、原生身份、数量、锁定/准入与错误详情；见inventory-services.zh-CN.md"
+    },
+    {
+      "code": "EZAPI_PLACEMENT_NO_PLAN",
+      "fix": "核对当前周目、原生身份、数量、锁定/准入与错误详情；见inventory-services.zh-CN.md"
+    },
+    {
+      "code": "EZAPI_PLACEMENT_REJECTED",
+      "fix": "核对当前周目、原生身份、数量、锁定/准入与错误详情；见inventory-services.zh-CN.md"
+    },
+    {
+      "code": "EZAPI_POWER_AMOUNT",
+      "fix": "扣电量是非负原生整数"
+    },
+    {
+      "code": "EZAPI_POWER_IDENTITY",
+      "fix": "周目、实例ID、物品ID、父库或堆叠数量改变；停止写入并核对恢复状态"
+    },
+    {
+      "code": "EZAPI_POWER_REENTRANT",
+      "fix": "不要在同一电源扣电期间递归扣电"
+    },
+    {
+      "code": "EZAPI_POWER_SOURCE",
+      "fix": "当前周目内使用拥有且已入库的原生电源；堆叠数量保持不变"
+    },
+    {
+      "code": "EZAPI_POWER_STATE",
+      "fix": "原生电量无效，停止写入并检查状态"
+    },
+    {
+      "code": "EZAPI_POWER_VERIFY",
+      "fix": "原生扣电实际差额异常；检查结果是否已恢复"
+    },
+    {
+      "code": "EZAPI_PRODUCTION_BASIS_CORRUPT",
+      "fix": "查看production-effects.zh-CN.md及effects/productionDebug；核对初始化/owner/目录/钩子/当前身份；恢复失败停止本批，不盲目重试。"
+    },
+    {
+      "code": "EZAPI_PRODUCTION_BASIS_V",
+      "fix": "查看production-effects.zh-CN.md及effects/productionDebug；核对初始化/owner/目录/钩子/当前身份；恢复失败停止本批，不盲目重试。"
+    },
+    {
+      "code": "EZAPI_PRODUCTION_COUNT",
+      "fix": "查看production-effects.zh-CN.md及effects/productionDebug；核对初始化/owner/目录/钩子/当前身份；恢复失败停止本批，不盲目重试。"
+    },
+    {
+      "code": "EZAPI_PRODUCTION_LIMIT",
+      "fix": "查看production-effects.zh-CN.md及effects/productionDebug；核对初始化/owner/目录/钩子/当前身份；恢复失败停止本批，不盲目重试。"
+    },
+    {
+      "code": "EZAPI_PRODUCTION_LIQUID",
+      "fix": "查看production-effects.zh-CN.md及effects/productionDebug；核对初始化/owner/目录/钩子/当前身份；恢复失败停止本批，不盲目重试。"
+    },
+    {
+      "code": "EZAPI_PRODUCTION_RECOVERY_FAILED",
+      "fix": "查看production-effects.zh-CN.md及effects/productionDebug；核对初始化/owner/目录/钩子/当前身份；恢复失败停止本批，不盲目重试。"
+    },
+    {
+      "code": "EZAPI_PRODUCTION_REENTRANT",
+      "fix": "查看production-effects.zh-CN.md及effects/productionDebug；核对初始化/owner/目录/钩子/当前身份；恢复失败停止本批，不盲目重试。"
+    },
+    {
+      "code": "EZAPI_PRODUCTION_STATE",
+      "fix": "查看production-effects.zh-CN.md及effects/productionDebug；核对初始化/owner/目录/钩子/当前身份；恢复失败停止本批，不盲目重试。"
+    },
+    {
+      "code": "EZAPI_PRODUCTION_TAKE",
+      "fix": "查看production-effects.zh-CN.md及effects/productionDebug；核对初始化/owner/目录/钩子/当前身份；恢复失败停止本批，不盲目重试。"
+    },
+    {
+      "code": "EZAPI_PRODUCTION_WRITE_RESTORED",
+      "fix": "查看production-effects.zh-CN.md及effects/productionDebug；核对初始化/owner/目录/钩子/当前身份；恢复失败停止本批，不盲目重试。"
+    },
+    {
+      "code": "EZAPI_PURCHASE_CASH_INTERFERENCE",
+      "fix": "查询或业务步骤改变现金，停止自动退款/重试并核对实际结果。"
+    },
+    {
+      "code": "EZAPI_PURCHASE_CASH_READBACK",
+      "fix": "原生现金读回不一致或部分扣款，不自动猜测补偿。"
+    },
+    {
+      "code": "EZAPI_PURCHASE_COST",
+      "fix": "非负整数现金单位。"
+    },
+    {
+      "code": "EZAPI_PURCHASE_FUNDS",
+      "fix": "余额不足或负余额；尚未执行业务。"
+    },
+    {
+      "code": "EZAPI_PURCHASE_NOT_READY",
+      "fix": "等待当前周目载入完成；只在初始化主线程调用。"
+    },
+    {
+      "code": "EZAPI_PURCHASE_REENTRANT",
+      "fix": "同步购买/通用事务内不可开启另一笔事务。"
+    },
+    {
+      "code": "EZAPI_PURCHASE_SCOPE",
+      "fix": "周目或实例已改变，停止旧回调与退款，人工核对。"
+    },
+    {
+      "code": "EZAPI_PURCHASE_STEPS",
+      "fix": "0..128唯一有效步骤，cash/verify框架名称保留。"
+    },
+    {
+      "code": "EZAPI_PURCHASE_STORE",
+      "fix": "显式PlayerStore必须与当前周目原生实例相同。"
+    },
+    {
+      "code": "EZAPI_READING_ARGUMENT",
+      "fix": "使用小写有命名空间的owner/document ID、当前run/slot和有界非NUL文本。"
+    },
+    {
+      "code": "EZAPI_READING_ATTACHED",
+      "fix": "临时纸条意外获得库存归属，为保护库存停止销毁。"
+    },
+    {
+      "code": "EZAPI_READING_CHANGED_DURING_CREATE",
+      "fix": "创建过程中身份、拖拽或面板发生变化；尊重当前状态。"
+    },
+    {
+      "code": "EZAPI_READING_CLEANUP_FAULT",
+      "fix": "销毁异常已停止后续分配；查看releaseFailures，重启前不要重试Destroy。"
+    },
+    {
+      "code": "EZAPI_READING_CLOSE",
+      "fix": "原生关闭或检查异常，结果不确定；查看详细异常。"
+    },
+    {
+      "code": "EZAPI_READING_CLOSE_READBACK",
+      "fix": "原生拒绝关闭，继续持有正在展示的纸条；不要提前销毁。"
+    },
+    {
+      "code": "EZAPI_READING_DRAGGING",
+      "fix": "放下拖拽物品后由用户再次触发。"
+    },
+    {
+      "code": "EZAPI_READING_FOREIGN_PANEL",
+      "fix": "原版/其他作者阅读优先；不可强开或关闭对方。"
+    },
+    {
+      "code": "EZAPI_READING_IDENTITY",
+      "fix": "每次读取当前回调身份；不要复用读档前run/slot。"
+    },
+    {
+      "code": "EZAPI_READING_MAINTAIN",
+      "fix": "维护检查失败时继续持有对象并记录日志。"
+    },
+    {
+      "code": "EZAPI_READING_NOT_READY",
+      "fix": "等待原生钩子、有效周目与真实面板就绪。"
+    },
+    {
+      "code": "EZAPI_READING_OPEN",
+      "fix": "原生打开或检查异常，结果不确定；查看详细异常。"
+    },
+    {
+      "code": "EZAPI_READING_OPEN_READBACK",
+      "fix": "面板/身份/纸条或TMP文本未核对成功；Indeterminate不能自动重放。"
+    },
+    {
+      "code": "EZAPI_READING_OWNER",
+      "fix": "仅允许关闭本作者本document ID。"
+    },
+    {
+      "code": "EZAPI_READING_PANEL_CHANGED",
+      "fix": "原生manager已替换，不触碰旧指针。"
+    },
+    {
+      "code": "EZAPI_READING_READBACK_PENDING",
+      "fix": "新旧两份临时实例有界保留；等待成功检查，不重复分配。"
+    },
+    {
+      "code": "EZAPI_READING_REENTRANT",
+      "fix": "原生/销毁回调期间不得递归调用展示。"
+    },
+    {
+      "code": "EZAPI_READING_RELEASE",
+      "fix": "销毁异常，不自动重试可能已部分完成的Destroy。"
+    },
+    {
+      "code": "EZAPI_READING_RESET",
+      "fix": "重置检查失败时保留句柄，不能宣称释放完成。"
+    },
+    {
+      "code": "EZAPI_READING_RESET_DURING_CREATE",
+      "fix": "创建中读档/重置，停止展示旧身份内容。"
+    },
+    {
+      "code": "EZAPI_READING_STOP_RETAINED",
+      "fix": "停用仍有可见实例时保留到进程退出，不能宣称释放成功。"
+    },
+    {
+      "code": "EZAPI_READING_TEMPLATE",
+      "fix": "当前游戏handnote工厂不可用或返回附属对象。"
+    },
+    {
+      "code": "EZAPI_READING_THREAD",
+      "fix": "在初始化后的游戏主线程调用。"
+    },
+    {
+      "code": "EZAPI_RECIPE_BUDGET",
+      "fix": "整堆8192搜索及最大流262144边检查预算耗尽，整批拒绝且不写入"
+    },
+    {
+      "code": "EZAPI_RECIPE_CALLBACK",
+      "fix": "检查顶层Error或Transaction.Error；提交后通知异常只填CompletionError，禁止退款重试"
+    },
+    {
+      "code": "EZAPI_RECIPE_DEFINITION",
+      "fix": "核对owner全文、配方命名空间、数组上限、数量与动态解析结果；Transaction省略选默认事务"
+    },
+    {
+      "code": "EZAPI_RECIPE_LIMIT",
+      "fix": "每组64配方/总2048/单机输入64堆"
+    },
+    {
+      "code": "EZAPI_RECIPE_MACHINE",
+      "fix": "匹配机器ID、玩家拥有单件、当前无拖拽、完整EZapi布局"
+    },
+    {
+      "code": "EZAPI_RECIPE_MISSING",
+      "fix": "先为该机器登记可执行配方，图鉴登记不会启用加工"
+    },
+    {
+      "code": "EZAPI_RECIPE_NOT_READY",
+      "fix": "初始化后登记，不能在生产回调里改目录"
+    },
+    {
+      "code": "EZAPI_RECIPE_NO_MATCH",
+      "fix": "材料/Condition/液体/电力未满足，不调用Apply也不创建产物"
+    },
+    {
+      "code": "EZAPI_RECIPE_OUTPUT",
+      "fix": "本处理器只支持物品网格产物；液体输出槽专用策略继续开发"
+    },
+    {
+      "code": "EZAPI_RECIPE_OWNER",
+      "fix": "目录属于同一owner；InstallInputAdmission须先登记自己的机器目录"
+    },
+    {
+      "code": "EZAPI_RECIPE_REENTRANT_OR_STALE",
+      "fix": "不能在回调内再次加工，Stop/Start后重建处理器"
+    },
+    {
+      "code": "EZAPI_RECIPE_SLOT",
+      "fix": "液体/电池资源槽只允许一个容器/电源实例"
+    },
+    {
+      "code": "EZAPI_RECIPE_STALE",
+      "fix": "只读回调违规修改资源，停止旧计划；不能依赖框架恢复任意违规回调写入"
+    },
+    {
+      "code": "EZAPI_RECIPE_VALUE",
+      "fix": "原生unitValue不能为负，Value按本次选取数量合计"
+    },
+    {
+      "code": "EZAPI_RUN_KEY",
+      "fix": "键仅 ASCII 字母数字/下划线/点/短横线，长度1..120"
+    },
+    {
+      "code": "EZAPI_RUN_LIMIT",
+      "fix": "每值16KiB、每Mod128键/64KiB，先减小内容再提交；旧值保留"
+    },
+    {
+      "code": "EZAPI_RUN_MOD_ID",
+      "fix": "Mod ID 使用小写字母数字/下划线/短横线/点，最长160，不含路径分隔符"
+    },
+    {
+      "code": "EZAPI_RUN_NOT_READY",
+      "fix": "等待官方读档或玩法事件；主菜单/场景未就绪时 TryOpen=false"
+    },
+    {
+      "code": "EZAPI_RUN_NUMBER",
+      "fix": "只允许有限浮点数；损坏文本读取显式 fallback"
+    },
+    {
+      "code": "EZAPI_RUN_STALE",
+      "fix": "读档/换槽/切场景使句柄失效；在当前事件重新 Open，不复用旧句柄"
+    },
+    {
+      "code": "EZAPI_RUN_THREAD",
+      "fix": "只在初始化后的游戏主线程访问；不要后台读取原生对象"
+    },
+    {
+      "code": "EZAPI_SAVEGRAPH_CONFLICT",
+      "fix": "实例ID已存在；不要重复恢复，先核对当前存档"
+    },
+    {
+      "code": "EZAPI_SAVEGRAPH_GRAPH",
+      "fix": "检查root图节点、父子关系、环和8192节点边上限"
+    },
+    {
+      "code": "EZAPI_SAVEGRAPH_INDETERMINATE",
+      "fix": "原生恢复或onLoaded回调结果不确定，停止批次并人工核对"
+    },
+    {
+      "code": "EZAPI_SAVEGRAPH_JSON",
+      "fix": "使用Unity SaveState JSON，检查saveItems和大小限制"
+    },
+    {
+      "code": "EZAPI_SAVEGRAPH_UNSUPPORTED",
+      "fix": "查看production-effects.zh-CN.md及effects/productionDebug；核对初始化/owner/目录/钩子/当前身份；恢复失败停止本批，不盲目重试。"
+    },
+    {
+      "code": "EZAPI_SAVE_READ_ARGUMENT",
+      "fix": "提供非空路径、正maxBytes/maxDepth；结果Invalid时不要继续读取Root。"
+    },
+    {
+      "code": "EZAPI_SAVE_READ_CHANGED",
+      "fix": "保存正在写入或文件被替换；丢弃结果，等待保存完成后重新读取并重新核对槽位/周目。"
+    },
+    {
+      "code": "EZAPI_SAVE_READ_FORMAT",
+      "fix": "UTF-8/ES3文本或JSON格式无效；不要用半份结果覆盖状态。"
+    },
+    {
+      "code": "EZAPI_SAVE_READ_IO",
+      "fix": "文件锁、权限或系统读取错误；等待保存完成后再主动读取，不反复阻塞重试。"
+    },
+    {
+      "code": "EZAPI_SAVE_READ_LIMIT",
+      "fix": "原始文件/字节超过 maxBytes（默认16MiB）；嵌套超过 maxDepth（默认256）属于 FORMAT/Malformed。提高限制前先确认输入可信。"
+    },
+    {
+      "code": "EZAPI_SAVE_READ_PROPERTY",
+      "fix": "属性缺失、重复或父节点不是对象；使用TryGetUniqueProperty区分缺失和重复。"
+    },
+    {
+      "code": "EZAPI_SAVE_READ_ROOT",
+      "fix": "仅在 Readable 且结果未 Dispose 时访问 Root；跨生命周期保留节点时先 Clone。"
+    },
+    {
+      "code": "EZAPI_SUPPLIER_AUTO_DELAY",
+      "fix": "仅在设置 AutomaticOfferId 时设置 0..3600 秒的有限延时。"
+    },
+    {
+      "code": "EZAPI_SUPPLIER_AUTO_OFFER",
+      "fix": "AutomaticOfferId 必须匹配本页中唯一存在的报价 ID。"
+    },
+    {
+      "code": "EZAPI_SUPPLIER_CAN_CONTINUE",
+      "fix": "检查 CanContinue 回调；异常会被隔离，并隐藏继续按钮。"
+    },
+    {
+      "code": "EZAPI_SUPPLIER_CAPTURE",
+      "fix": "检查 Capture 返回值、报价内容与对话图字段；失败不会入队。"
+    },
+    {
+      "code": "EZAPI_SUPPLIER_DEFINITION",
+      "fix": "定义需要 owner 前缀 ID、可读发言者、Capture 回调及有界非空按钮标签。"
+    },
+    {
+      "code": "EZAPI_SUPPLIER_DISMISS",
+      "fix": "检查离场回调；异常已隔离，不会重新调用。"
+    },
+    {
+      "code": "EZAPI_SUPPLIER_DUPLICATE",
+      "fix": "当前进程中 ownerId/requestId 唯一；关闭/清理旧访问后使用新请求 ID。"
+    },
+    {
+      "code": "EZAPI_SUPPLIER_LIMIT",
+      "fix": "每进程最多保留128个访问请求；结束旧请求后队列会回收历史状态。"
+    },
+    {
+      "code": "EZAPI_SUPPLIER_MAINTAIN",
+      "fix": "查看供应商调度的具体警告；保持在当前游戏主线程，并检查当前周目/对话状态。"
+    },
+    {
+      "code": "EZAPI_SUPPLIER_OFFER",
+      "fix": "报价需要 owner 前缀的唯一 ID、非空标签、预览文字和 Purchase 回调。"
+    },
+    {
+      "code": "EZAPI_SUPPLIER_PAGE",
+      "fix": "报价页正文应有界，每页最多128项，自动报价延时必须为有限的0..3600秒。"
+    },
+    {
+      "code": "EZAPI_SUPPLIER_PURCHASE",
+      "fix": "检查 Purchase 回调和扣款/交付补偿；未知结果不会自动重放。"
+    },
+    {
+      "code": "EZAPI_SUPPLIER_QUEUE",
+      "fix": "检查访客请求、回调及原生客户入队日志；Indeterminate 后不要复用请求 ID。"
+    },
+    {
+      "code": "EZAPI_SUPPLIER_REENTRY",
+      "fix": "不要在同一供应商 Capture、购买或维护回调中递归调用 SupplierApi。"
+    },
+    {
+      "code": "EZAPI_SUPPLIER_REFRESH_CLOSE",
+      "fix": "所属对话无法安全关闭，供应商访问已结束；检查 DialogueApi 状态。"
+    },
+    {
+      "code": "EZAPI_SUPPLIER_REFRESH_OPEN",
+      "fix": "继续交易后无法重新打开报价菜单；检查对话占用和当前周目状态。"
+    },
+    {
+      "code": "EZAPI_SUPPLIER_REFRESH_TIMEOUT",
+      "fix": "对话界面连续占用超过30秒；稍后使用新请求重新排队。"
+    },
+    {
+      "code": "EZAPI_SUPPLIER_REQUEST",
+      "fix": "ownerId/requestId 必须有效且 requestId 属于 ownerId；actorId/spriteName 只能使用短 token，不能包含路径。"
+    },
+    {
+      "code": "EZAPI_SUPPLIER_RUN",
+      "fix": "需要有效的已载入周目和当前主线程。"
+    },
+    {
+      "code": "EZAPI_SUPPLIER_SCOPE",
+      "fix": "传入的 runId/slotId 与当前载入存档不匹配；从当前 LifecycleContext 读取身份。"
+    },
+    {
+      "code": "EZAPI_SUPPLIER_SCOPE_ENDED",
+      "fix": "读档、换槽或场景切换已结束此访问；旧上下文不可继续使用。"
+    },
+    {
+      "code": "EZAPI_SUPPLIER_UNAVAILABLE",
+      "fix": "等待 EZapi 初始化、已知 Assembly-CSharp 构建、官方 VeryLate 客户钩子和对话运行门控就绪。"
+    },
+    {
+      "code": "EZAPI_SUPPLIER_UNKNOWN",
+      "fix": "当前进程/载入 epoch 中没有该请求；检查 owner/request ID，旧请求不会持久化。"
+    },
+    {
+      "code": "EZAPI_TAG_BACKUP",
+      "fix": "逐个TagState.Clone须独立；最多4096标签，不把TagSystem.Clone当深拷贝"
+    },
+    {
+      "code": "EZAPI_TERMINAL_ASSET",
+      "fix": "发行DLL缺失内嵌资源；按原工程重建，不借用Forge资源"
+    },
+    {
+      "code": "EZAPI_TERMINAL_MARKUP",
+      "fix": "加价整数0..1000；拒绝不取得配置权"
+    },
+    {
+      "code": "EZAPI_TERMINAL_MISSING",
+      "fix": "先初始化EZapi共享终端；停止后不配置"
+    },
+    {
+      "code": "EZAPI_TERMINAL_NATIVE",
+      "fix": "原生机器类型/基础电耗读回失败；拒绝本次新工厂实例"
+    },
+    {
+      "code": "EZAPI_TERMINAL_OWNER",
+      "fix": "共享加价由首个有效作者控制，保留当前配置；相同值也拒绝其他作者"
+    },
+    {
+      "code": "EZAPI_TOO_LATE",
+      "fix": "初始化阶段提交，重启生效"
+    },
+    {
+      "code": "EZAPI_TRANSACTION_REENTRANT",
+      "fix": "不要在事务步骤中启动嵌套事务"
+    },
+    {
+      "code": "EZAPI_TRANSACTION_STEPS",
+      "fix": "1..128个唯一可读名称步骤，提供Check/Apply/Restore"
+    },
+    {
+      "code": "EZAPI_TRANSFER_AMOUNT",
+      "fix": "核对当前周目、原生身份、数量、锁定/准入与错误详情；见inventory-services.zh-CN.md"
+    },
+    {
+      "code": "EZAPI_TRANSFER_LOCKED",
+      "fix": "核对当前周目、原生身份、数量、锁定/准入与错误详情；见inventory-services.zh-CN.md"
+    },
+    {
+      "code": "EZAPI_TRANSFER_NO_WHOLE_SLOT",
+      "fix": "核对当前周目、原生身份、数量、锁定/准入与错误详情；见inventory-services.zh-CN.md"
+    },
+    {
+      "code": "EZAPI_TRANSFER_REENTRANT",
+      "fix": "核对当前周目、原生身份、数量、锁定/准入与错误详情；见inventory-services.zh-CN.md"
+    },
+    {
+      "code": "EZAPI_TRANSFER_REJECTED",
+      "fix": "核对当前周目、原生身份、数量、锁定/准入与错误详情；见inventory-services.zh-CN.md"
+    },
+    {
+      "code": "EZAPI_TRANSFER_SOURCE",
+      "fix": "核对当前周目、原生身份、数量、锁定/准入与错误详情；见inventory-services.zh-CN.md"
+    },
+    {
+      "code": "EZAPI_TRANSFER_VERIFY",
+      "fix": "立即停止整批并记录全部结果，人工核对源/目标；不可自动重试或补发"
+    },
+    {
+      "code": "EZAPI_WORKSHOP_ACTION_UNAVAILABLE",
+      "fix": "重新生成快照；仅未解锁、前置满足且 ActionEnabled 的条目可调用。"
+    },
+    {
+      "code": "EZAPI_WORKSHOP_ACTION_USED",
+      "fix": "该条目本窗口已经尝试过；检查结果后关闭并重新打开才能再尝试。"
+    },
+    {
+      "code": "EZAPI_WORKSHOP_CALLBACK",
+      "fix": "RegisterTab/RegisterChain 必须提供 snapshot 和 unlock 委托。"
+    },
+    {
+      "code": "EZAPI_WORKSHOP_CONDITION",
+      "fix": "检查资源类别、资源 ID 和 0..1000000000 数量范围。"
+    },
+    {
+      "code": "EZAPI_WORKSHOP_CONDITIONS",
+      "fix": "每个条目最多 64 个资源条件。"
+    },
+    {
+      "code": "EZAPI_WORKSHOP_CONFLICT",
+      "fix": "检查 owner、ID、类型、标题和委托；同一 ID 不可重复占用。"
+    },
+    {
+      "code": "EZAPI_WORKSHOP_CREDITS",
+      "fix": "展示资金必须为非负整数；框架不会读取或扣除资金。"
+    },
+    {
+      "code": "EZAPI_WORKSHOP_DEPENDENCIES",
+      "fix": "Dependencies 最多 256 个可读 ID，每项长度不超过 160。"
+    },
+    {
+      "code": "EZAPI_WORKSHOP_ENTRIES",
+      "fix": "Entries 必须非空且不超过 2048 项。"
+    },
+    {
+      "code": "EZAPI_WORKSHOP_ENTRY_ID",
+      "fix": "每个 entry ID 必须唯一并以 ownerId 加点号开头。"
+    },
+    {
+      "code": "EZAPI_WORKSHOP_GRAPH",
+      "fix": "GraphX/GraphY 必须是有限数值，不能是 NaN 或无穷。"
+    },
+    {
+      "code": "EZAPI_WORKSHOP_GROUP",
+      "fix": "每组需要非空中英文标题，EntryCount 为 0..2048。"
+    },
+    {
+      "code": "EZAPI_WORKSHOP_GROUPS",
+      "fix": "Groups 必须非空且不超过 128 项。"
+    },
+    {
+      "code": "EZAPI_WORKSHOP_ID",
+      "fix": "使用小写 owner 命名空间 ID，确保 tabId/chainId 属于 ownerId。"
+    },
+    {
+      "code": "EZAPI_WORKSHOP_LIMIT",
+      "fix": "每个进程最多注册 128 个页签和进度链。"
+    },
+    {
+      "code": "EZAPI_WORKSHOP_NOT_READY",
+      "fix": "先等待 EZapi 初始化完成，再注册工坊页或进度链。"
+    },
+    {
+      "code": "EZAPI_WORKSHOP_OWNER",
+      "fix": "ownerId 必须是小写命名空间 ID。"
+    },
+    {
+      "code": "EZAPI_WORKSHOP_REFRESH",
+      "fix": "修复 snapshot provider；刷新失败时保留旧快照且不调用动作。"
+    },
+    {
+      "code": "EZAPI_WORKSHOP_RENDER",
+      "fix": "检查工坊 UI 渲染异常及快照文本/图谱数据。"
+    },
+    {
+      "code": "EZAPI_WORKSHOP_RESOURCE_ID",
+      "fix": "资源 ID 应为可读游戏原生键或命名空间键；Credits 可为空。"
+    },
+    {
+      "code": "EZAPI_WORKSHOP_REWARD",
+      "fix": "检查资源类别、资源 ID 和 0..1000000000 数量范围。"
+    },
+    {
+      "code": "EZAPI_WORKSHOP_REWARDS",
+      "fix": "每个条目最多 64 个资源奖励。"
+    },
+    {
+      "code": "EZAPI_WORKSHOP_SNAPSHOT",
+      "fix": "检查快照非空，并从 provider 返回有效 WorkshopSnapshot。"
+    },
+    {
+      "code": "EZAPI_WORKSHOP_STALE",
+      "fix": "关闭或重新打开当前页面后，使用仍有效的注册回调。"
+    },
+    {
+      "code": "EZAPI_WORKSHOP_TEXT",
+      "fix": "检查标题/说明非空要求、长度上限和 NUL 字符。"
+    },
+    {
+      "code": "EZAPI_WORKSHOP_THREAD",
+      "fix": "注册/显示/回调必须在 EZapi 初始化的游戏主线程执行。"
+    },
+    {
+      "code": "EZAPI_WORKSHOP_TITLE",
+      "fix": "提供非空且不超过 256 字符的中英文标题。"
+    },
+    {
+      "code": "EZAPI_WORKSHOP_UNLOCK",
+      "fix": "检查作者 Unlock 回调日志和业务事务；回调失败不会自动重放。"
+    },
+    {
+      "code": "EZAPI_WORKSHOP_VISUALLINKS",
+      "fix": "VisualLinks 最多 256 个可读 ID，每项长度不超过 160。"
+    },
+    {
+      "code": "EZAPI_ASSET_ASSIGN_READBACK",
+      "fix": "GameItem.SetSprite did not retain both requested IDs; confirm the item is live and the atlas key is exact."
+    },
+    {
+      "code": "EZAPI_ASSET_DUPLICATE",
+      "fix": "This ownerId/atlasKey is already registered in the current process; reuse the existing EmbeddedSpriteAtlas handle."
+    },
+    {
+      "code": "EZAPI_ASSET_FAILED",
+      "fix": "This atlas handle has a permanent resource or namespace failure; inspect Failure and create a corrected atlas under a new key."
+    },
+    {
+      "code": "EZAPI_ASSET_SPRITE_COLLISION",
+      "fix": "An EZapi-owned atlas already has a different sprite under this key; use a unique owner/atlas/sprite key."
+    },
+    {
+      "code": "EZAPI_POWER_BATCH_COST",
+      "fix": "成本使用非负原生整数"
+    },
+    {
+      "code": "EZAPI_POWER_BATCH_SOURCE",
+      "fix": "电源快照需有效的正实例ID和非负能量"
+    },
+    {
+      "code": "EZAPI_POWER_BATCH_DUPLICATE",
+      "fix": "同一实例只能出现一次；重新取样后再规划"
+    },
+    {
+      "code": "EZAPI_PRESENTATION_NOT_READY",
+      "fix": "确认 EZapi 已初始化且在目录初始化前注册。"
+    },
+    {
+      "code": "EZAPI_PRESENTATION_TOO_LATE",
+      "fix": "在 Mod 初始化阶段注册；目录初始化后需重启游戏再提交。"
+    },
+    {
+      "code": "EZAPI_OWNER_DISPLAY_TEXT",
+      "fix": "中英文 owner 名称都需非空、无控制字符且不超过 200 字符。"
+    },
+    {
+      "code": "EZAPI_OWNER_DISPLAY_LIMIT",
+      "fix": "减少 owner 展示名登记数量，最多 1024 个。"
+    },
+    {
+      "code": "EZAPI_OWNER_DISPLAY_DUPLICATE",
+      "fix": "每个 owner 只登记一次来源展示名。"
+    },
+    {
+      "code": "EZAPI_MODULE_TEXT_ID",
+      "fix": "使用 owner 前缀物品 ID，并确保先登记该 owner 的模块。"
+    },
+    {
+      "code": "EZAPI_MODULE_TEXT_OWNER",
+      "fix": "先用 ItemApi 或 ItemRegistry 登记同 owner 的模块。"
+    },
+    {
+      "code": "EZAPI_MODULE_TEXT_LIMIT",
+      "fix": "最多登记 4096 个模块 tooltip 回调。"
+    },
+    {
+      "code": "EZAPI_MODULE_TEXT_DUPLICATE",
+      "fix": "每个物品 ID 只登记一个模块 tooltip 回调。"
+    },
+    {
+      "code": "EZAPI_MODULE_TEXT_CALLBACK",
+      "fix": "检查回调异常和返回文本；每次最多 128 行、单行 2048 字符、附加效果 4000 字符。"
+    },
+    {
+      "code": "EZAPI_EFFECT_TEXT",
+      "fix": "效果名需至少提供一种有效语言文本，说明文本长度不超过 4000 字符。"
+    },
+    {
+      "code": "EZAPI_EFFECT_TEXT_OWNER",
+      "fix": "先用同 owner 的 EffectApi 登记效果。"
+    },
+    {
+      "code": "EZAPI_EFFECT_TEXT_LIMIT",
+      "fix": "最多登记 4096 个效果文本。"
+    },
+    {
+      "code": "EZAPI_EFFECT_TEXT_DUPLICATE",
+      "fix": "每个效果 ID 只登记一个文本定义。"
+    },
+    {
+      "code": "EZAPI_EFFECT_TEXT_APPLY",
+      "fix": "检查当前游戏效果对象是否仍可写；只更新自有已应用的效果。"
+    },
+    {
+      "code": "EZAPI_EFFECT_TEXT_RESTORE",
+      "fix": "停用时只恢复仍由 EZapi 控制的字段；检查原生异常和效果生命周期。"
+    },
+    {
+      "code": "EZAPI_RUN_RECORD_KEY",
+      "fix": "使用 ownerId 加点号开头的完整键；只能访问作者明确拥有的键"
+    },
+    {
+      "code": "EZAPI_RUN_RECORD_JSON",
+      "fix": "已有 JSON 损坏或超限；保留原值并显式处理迁移，不覆盖默认值"
+    },
+    {
+      "code": "EZAPI_RUN_RECORD_INPUT",
+      "fix": "检查 owner/完整键、周目快照和 JSON 对象；1Mi字符/深度64上限"
+    },
+    {
+      "code": "EZAPI_RUN_RECORD_THREAD",
+      "fix": "在 EZapi 已初始化的游戏主线程事件中调用"
+    },
+    {
+      "code": "EZAPI_RUN_RECORD_UNAVAILABLE",
+      "fix": "等待有效载入事件，不沿用旧玩家或创建替代字典"
+    },
+    {
+      "code": "EZAPI_RUN_RECORD_IDENTITY",
+      "fix": "载入/槽/周目变化；在当前事件内重新读取后复核业务"
+    },
+    {
+      "code": "EZAPI_RUN_RECORD_REVISION",
+      "fix": "旧原文不匹配；重新读取，不自动重复发奖扣款"
+    },
+    {
+      "code": "EZAPI_RUN_RECORD_PREFLIGHT",
+      "fix": "预检状态变化，本次未写入；重新检查当前记录"
+    },
+    {
+      "code": "EZAPI_RUN_RECORD_UNCONFIRMED",
+      "fix": "已经尝试写入；核对记录与业务结果，禁止盲目重试"
+    },
+    {
+      "code": "EZAPI_PORTRAIT_KEY",
+      "fix": "使用图集中已声明的精灵键"
+    },
+    {
+      "code": "EZAPI_PORTRAIT_SPRITE",
+      "fix": "先安装图集并确认 Sprite 仍有效"
+    },
+    {
+      "code": "EZAPI_PORTRAIT_NOT_READY",
+      "fix": "等待当前 SpriteDict 字典就绪，在游戏主线程有限重试"
+    },
+    {
+      "code": "EZAPI_PORTRAIT_COLLISION",
+      "fix": "当前键已由别处占用；不要覆盖，检查资源身份/其他 Mod"
+    },
+    {
+      "code": "EZAPI_PORTRAIT_CONTEXT",
+      "fix": "场景字典变化；待新场景就绪后重新注册"
+    },
+    {
+      "code": "EZAPI_PORTRAIT_READBACK",
+      "fix": "原生解析不匹配；新插入项仅在仍匹配时回滚，检查日志后重试"
+    },
+    {
+      "code": "EZAPI_PORTRAIT_CLEANUP",
+      "fix": "原生清理失败；已记录，停止时再次核对当前拥有项"
+    },
+    {
+      "code": "EZAPI_ASSET_RELEASED",
+      "fix": "运行时已释放图集；重新初始化时声明新句柄，不复用旧句柄"
+    },
+    {
+      "code": "EZAPI_STOCK_POLICY",
+      "fix": "使用none/repeatable/unique或有效NightShopStockPolicy"
+    },
+    {
+      "code": "EZAPI_STOCK_HOOK",
+      "fix": "核对当前构建的官方事件及PlaceInventorInventory(bool)入口"
+    },
+    {
+      "code": "EZAPI_STOCK_APPLY",
+      "fix": "查看本次日志，当前补货事件未完成"
+    },
+    {
+      "code": "EZAPI_STOCK_ITEM",
+      "fix": "查看ItemApi.StockSnapshot最近错误；只排除本候选"
+    },
+    {
+      "code": "EZAPI_STOCK_REENTRY",
+      "fix": "作者条件只读，不得再次补货"
+    },
+    {
+      "code": "EZAPI_STOCK_STALE",
+      "fix": "条件/工厂执行后周目变化或框架停止，重新在新事件取得状态"
+    },
+    {
+      "code": "EZAPI_STOCK_LIMIT",
+      "fix": "销售柜台最多4096项；拥有快照和实时玩家扫描最多16384项"
+    },
+    {
+      "code": "EZAPI_STOCK_PLACEMENT",
+      "fix": "原生上架未完整增加未拥有数量；检查柜台空间、perk和原生规则。原生接管后不得再次Destroy；下次合法补货才能重试"
+    },
+    {
+      "code": "EZAPI_STOCK_UNSUBSCRIBE",
+      "fix": "官方事件取消订阅失败，回调已停用；重启游戏"
+    },
+    {
+      "code": "EZAPI_NPC_STOCK_OPTIONS",
+      "fix": "核对分类/供应商标志、正有限权重、非负矿工权重和天数"
+    },
+    {
+      "code": "EZAPI_NPC_STOCK_CONTEXT",
+      "fix": "使用非None分类、单一供应商与非负真实天数"
+    },
+    {
+      "code": "EZAPI_NPC_STOCK_LIMIT",
+      "fix": "基础表/候选最多4096，玩家扫描最多16384"
+    },
+    {
+      "code": "EZAPI_NPC_STOCK_ENTRY",
+      "fix": "基础条目需可读ID与非负有限权重"
+    },
+    {
+      "code": "EZAPI_NPC_STOCK_CANDIDATE",
+      "fix": "候选ID必须唯一并以owner加点开头"
+    },
+    {
+      "code": "EZAPI_NPC_STOCK_WEIGHT",
+      "fix": "重复项或总权重超出原生Single范围；降低权重"
+    },
+    {
+      "code": "EZAPI_NPC_STOCK_SAMPLE",
+      "fix": "随机样本必须在[0,1)"
+    },
+    {
+      "code": "EZAPI_NPC_STOCK_FLAGS",
+      "fix": "JSON只接受已声明名称，禁止数字/重复/未知/零值混用"
+    },
+    {
+      "code": "EZAPI_NPC_STOCK_TABLE",
+      "fix": "命名掉落表不存在；核对当前构建，或用基础列表重载"
+    },
+    {
+      "code": "EZAPI_NPC_STOCK_REENTRY",
+      "fix": "官方掉落事件不可嵌套抽取"
+    },
+    {
+      "code": "EZAPI_NPC_STOCK_STALE",
+      "fix": "当前周目改变，丢弃旧结果"
+    },
+    {
+      "code": "EZAPI_NPC_STOCK_HOOK",
+      "fix": "本构建缺少精确NPC钩子；停用适配器"
+    },
+    {
+      "code": "EZAPI_NPC_STOCK_ROLL",
+      "fix": "原生路由失败；不重新抽取，查看最近错误"
+    },
+    {
+      "code": "EZAPI_NPC_STOCK_MINER",
+      "fix": "矿工候选/工厂失败，查看当前目录与事件回调"
+    },
+    {
+      "code": "EZAPI_NPC_STOCK_PROBE",
+      "fix": "仅用于调试隔离；不得在正常玩法开启临时交付捕获"
+    },
+    {
+      "code": "EZAPI_REGISTRATION_OWNER",
+      "fix": "使用有效小写作者ID，最长160字符"
+    },
+    {
+      "code": "EZAPI_REGISTRATION_ID",
+      "fix": "使用小写点分ID，含owner前缀后最长160字符"
+    },
+    {
+      "code": "EZAPI_REGISTRATION_VERSION",
+      "fix": "使用无前导零的major.minor.patch；每段<=2147483647"
+    },
+    {
+      "code": "EZAPI_REGISTRATION_DEPENDENCY",
+      "fix": "不能重复依赖作者或依赖自身"
+    },
+    {
+      "code": "EZAPI_REGISTRATION_LIMIT",
+      "fix": "核对单批500定义/64依赖、目录256作者/8192定义和JSON2MiB限制"
+    },
+    {
+      "code": "EZAPI_REGISTRATION_KIND",
+      "fix": "只使用七个已声明DefinitionKind名称"
+    },
+    {
+      "code": "EZAPI_REGISTRATION_SIGNATURE",
+      "fix": "使用非空无控制字符签名，最长4096字符"
+    },
+    {
+      "code": "EZAPI_REGISTRATION_REFERENCE",
+      "fix": "使用不重复且不引用自身的完整ID"
+    },
+    {
+      "code": "EZAPI_REGISTRATION_DEFINITION",
+      "fix": "同批定义ID不能重复"
+    },
+    {
+      "code": "EZAPI_REGISTRATION_SEALED",
+      "fix": "回调返回或提交后不可继续修改batch"
+    },
+    {
+      "code": "EZAPI_REGISTRATION_THREAD",
+      "fix": "在已启动框架主线程调用；batch构造/修改/提交须同线程"
+    },
+    {
+      "code": "EZAPI_REGISTRATION_CONFLICT",
+      "fix": "已有作者或ID对应不同声明；不要尝试覆盖，修改后重启"
+    },
+    {
+      "code": "EZAPI_REGISTRATION_WAITING",
+      "fix": "核对缺失作者、最低版本、requiredIds与循环依赖"
+    },
+    {
+      "code": "EZAPI_REGISTRATION_STALE",
+      "fix": "框架在回调内已停止重启，丢弃旧批次"
+    },
+    {
+      "code": "EZAPI_REGISTRATION_REENTRY",
+      "fix": "不要在Register声明回调内嵌套提交"
+    },
+    {
+      "code": "EZAPI_REGISTRATION_DECLARE",
+      "fix": "修复回调异常；通用元数据本批未提交"
+    },
+    {
+      "code": "EZAPI_REGISTRATION_BATCH",
+      "fix": "提交非null批次"
+    },
+    {
+      "code": "EZAPI_REGISTRATION_JSON",
+      "fix": "修复严格JSON字段、类型、重复键及大小限制"
+    },
+    {
+      "code": "EZAPI_MACHINE_LIQUID_OUTPUT",
+      "fix": "核对当前游戏构建与AddLiquid(GameItem,string,int):void完整签名、已有输出容器、容量和写后读回。失败先检查Transaction.Status及RecoveryFailures；RecoveryFailed不可自动重试。见machine-liquid-output.zh-CN.md。"
+    },
+    {
+      "code": "EZAPI_MACHINE_CONDITION_NOT_READY",
+      "fix": "在初始化主线程声明，不能在条件求值中登记；确认框架已启动；见machine-container-conditions.zh-CN.md"
+    },
+    {
+      "code": "EZAPI_MACHINE_CONDITION_LIMIT",
+      "fix": "释放不再使用的句柄，非空条件规则最多256个；见machine-container-conditions.zh-CN.md"
+    },
+    {
+      "code": "EZAPI_MACHINE_CONDITION_DUPLICATE",
+      "fix": "同owner/机器只保留一个条件句柄，替换前Dispose旧句柄；见machine-container-conditions.zh-CN.md"
+    },
+    {
+      "code": "EZAPI_MACHINE_CONDITION_LAYOUT",
+      "fix": "同机器多个规则必须使用相同的声明布局；不要误用另一台机器的模板；见machine-container-conditions.zh-CN.md"
+    },
+    {
+      "code": "EZAPI_MACHINE_CONDITION_MISSING",
+      "fix": "低层Create前先Register含委托的模板并持有句柄，统一注册会自动安装；见machine-container-conditions.zh-CN.md"
+    },
+    {
+      "code": "EZAPI_MACHINE_CONDITION_CALLBACK",
+      "fix": "回调必须只读且不抛异常；查看Snapshot.Error，修正后释放旧句柄并重新登记；见machine-container-conditions.zh-CN.md"
+    },
+    {
+      "code": "EZAPI_MACHINE_MATERIAL_GRAPH",
+      "fix": "检查内部身份、拓扑、所有权、锁和原生移除资格；Restore失败保留资源并隔离，提交后CompletionError禁止退款/重试；见machine-material-graph.zh-CN.md"
+    },
+    {
+      "code": "EZAPI_GUIDE_IMAGE",
+      "fix": "检查图鉴ItemId、目录工厂、ResolveItemSprite和矩形图集；错误按ID缓存至关闭/修订；见recipe-guide-images.zh-CN.md"
+    },
+    {
+      "code": "EZAPI_GUIDE_IMAGE_ITEM_CLEANUP",
+      "fix": "临时物品销毁失败，图鉴隔离错误并释放缩略图；检查作者工厂是否只创建游离实例"
+    },
+    {
+      "code": "EZAPI_GUIDE_IMAGE_CLEANUP",
+      "fix": "自有Unity缩略图清理失败；检查当前构建和日志；绝不销毁共享源纹理"
+    },
+    {
+      "code": "EZAPI_RECIPE_BATTERY_REQUIRED",
+      "fix": "Required=true时放入属于玩家、未冻结且原生认可的电源；零电耗允许零电量，正电耗仍需足量。见machine-required-power.zh-CN.md"
+    },
+    {
+      "code": "EZAPI_MACHINE_CONFIGURE",
+      "fix": "ConfigureItem不得改变机器ID/数量、提前附加库存或创建contentWindow；仅设置外形、图像和数值。"
+    },
+    {
+      "code": "EZAPI_RECIPE_INVENTORY",
+      "fix": "传入同台机器当前窗口真实且互不重复的子库存；匹配Template尺寸/角色/液体ID；自有布局不可省略或交换槽位。见machine-inventory-binding.zh-CN.md"
+    },
+    {
+      "code": "EZAPI_LOCALIZED_TEXT",
+      "fix": "双语对象至少一侧有值；已提供文本不得空白、超限或含无效控制字符。图鉴名称/数量200、要求1000、说明4000。见recipe-guide-localization.zh-CN.md"
+    },
+    {
+      "code": "EZAPI_STOCK_TABLE",
+      "fix": "等待真实店铺销售柜台就绪"
+    },
+    {
+      "code": "EZAPI_STOCK_SCOPE",
+      "fix": "仅在当前夜间补货Late范围供货；普通作者不直接调用内部供应器"
+    },
+    {
+      "code": "EZAPI_GUIDE_IMAGE_MESH",
+      "fix": "检查公开顶点/UV/索引、rect/pivot/ppu；无效网格仅回退文字。OverrideGeometry是测试夹具入口，输入rect内像素坐标。"
+    },
+    {
+      "code": "EZAPI_GUIDE_IMAGE_MESH_LIMIT",
+      "fix": "减少三角形或重叠几何，限制为4096顶点/24576索引/200万栅格候选；不扩大限制绕过。"
+    },
+    {
+      "code": "EZAPI_GUIDE_IMAGE_READBACK",
+      "fix": "GPU读回数量不匹配；保留源纹理，关闭重开图鉴，提供诊断及构建指纹。"
+    },
+    {
+      "code": "EZAPI_GUIDE_IMAGE_LOCALE_PENDING",
+      "fix": "语言初始化或切换尚未完成；临时状态，不缓存为图片失败，不调用物品工厂；完成事件后自动重试。查看 images.localeState/localeError。"
+    },
+    {
+      "code": "EZAPI_CLI_ARGUMENTS",
+      "fix": "命令或参数数量错误；先运行 ezapi-validate --help，使用 --requirements <file>；退出码2表示命令用法错误。"
+    },
+    {
+      "code": "EZAPI_LANGUAGE_THREAD",
+      "fix": "当前语言只能在EZapi初始化后的游戏主线程读取；其它线程返回英文快照，不调用原生getter。"
+    },
+    {
+      "code": "EZAPI_LANGUAGE_BUILD",
+      "fix": "当前游戏构建未核对；使用明确英文回退，等待适配更新。"
+    },
+    {
+      "code": "EZAPI_LANGUAGE_LOCALE",
+      "fix": "原生locale为空或非法；查看游戏语言设置；返回英文且IsFallback=true。"
+    },
+    {
+      "code": "EZAPI_LANGUAGE_READ",
+      "fix": "原生locale读取异常；查看Reason异常类型，不循环重试原生调用。"
+    },
+    {
+      "code": "EZAPI_ITEM_DATA_THREAD",
+      "fix": "在已初始化游戏主线程调用；不要从后台任务触碰物品。 见item-data.zh-CN.md。"
+    },
+    {
+      "code": "EZAPI_ITEM_DATA_INPUT",
+      "fix": "检查owner小写ID、key1–120允许字符、正版本、非null数据和Read提供的令牌。 见item-data.zh-CN.md。"
+    },
+    {
+      "code": "EZAPI_ITEM_DATA_BUILD",
+      "fix": "等待已核对构建/库存冻结能力就绪；不要绕过构建门控。 见item-data.zh-CN.md。"
+    },
+    {
+      "code": "EZAPI_ITEM_DATA_UNAVAILABLE",
+      "fix": "等待当前周目活物品/原生状态；检查异常类型；不要初始化或替换整个state。 见item-data.zh-CN.md。"
+    },
+    {
+      "code": "EZAPI_ITEM_DATA_STALE",
+      "fix": "物品、周目、父库存、数量或原始数据变化；从当前玩法重新读取。 见item-data.zh-CN.md。"
+    },
+    {
+      "code": "EZAPI_ITEM_DATA_TAG",
+      "fix": "标签禁用、对象不可用或委托转换失败；保留现有数据并检查当前构建。 见item-data.zh-CN.md。"
+    },
+    {
+      "code": "EZAPI_ITEM_DATA_VERSION",
+      "fix": "只迁移作者认识的旧版本；保留Json与Revision，未知未来版本不覆盖。 见item-data.zh-CN.md。"
+    },
+    {
+      "code": "EZAPI_ITEM_DATA_TYPE",
+      "fix": "按原属性名和可反序列化类型读取；原Json/Version已保留，不用默认值覆盖。 见item-data.zh-CN.md。"
+    },
+    {
+      "code": "EZAPI_ITEM_DATA_JSON",
+      "fix": "检查version/data envelope、唯一字段、JSON深度和序列化类型；原数据保持。 见item-data.zh-CN.md。"
+    },
+    {
+      "code": "EZAPI_ITEM_DATA_BUSY",
+      "fix": "结束拖拽或重入后重新观察；序列化getter不得改游戏。 见item-data.zh-CN.md。"
+    },
+    {
+      "code": "EZAPI_ITEM_DATA_FROZEN",
+      "fix": "等待持有物品的交易/事务完成，不越权写标签。 见item-data.zh-CN.md。"
+    },
+    {
+      "code": "EZAPI_ITEM_DATA_LIMIT",
+      "fix": "遵守16KiB/深度16、每owner128键/64KiB及4096总标签限制；不要扩大限制绕过。 见item-data.zh-CN.md。"
+    },
+    {
+      "code": "EZAPI_ITEM_DATA_PREFLIGHT",
+      "fix": "序列化后或提交前上下文改变；重新读取，不直接重放消耗。 见item-data.zh-CN.md。"
+    },
+    {
+      "code": "EZAPI_ITEM_DATA_REVISION",
+      "fix": "原始JSON与Read令牌不符；重新观察当前状态，不覆盖其它动作的结果。 见item-data.zh-CN.md。"
+    },
+    {
+      "code": "EZAPI_ITEM_DATA_UNCONFIRMED",
+      "fix": "已尝试原生写入；可能有部分标签。读取物品对账，禁止盲目重试、扣款或回滚。 见item-data.zh-CN.md。"
+    },
+    {
+      "code": "EZAPI_DEPARTURE_NO_SPACE",
+      "fix": "可见地图没有合法空位；减少入口、检查其它Mod布局/裁切；入口隐藏而非覆盖他人。"
+    },
+    {
+      "code": "EZAPI_DEPARTURE_DUPLICATE",
+      "fix": "每个命名空间ID只注册一次；先注销自己的旧声明再更换。"
+    },
+    {
+      "code": "EZAPI_DEPARTURE_OWNER",
+      "fix": "owner必须与原始登记完全一致，ID须以owner加点号开头；父命名空间不能注销子作者。"
+    },
+    {
+      "code": "EZAPI_DEPARTURE_DEFINITION",
+      "fix": "提供命名空间ID、非空200字符内Label与非空OnClick。"
+    },
+    {
+      "code": "EZAPI_DEPARTURE_REENTRY",
+      "fix": "不要从Visible/CanEnter/DisplayName/OnClick回调内注册、注销或递归点击。"
+    },
+    {
+      "code": "EZAPI_DEPARTURE_THREAD",
+      "fix": "在EZapi初始化后的游戏主线程调用。"
+    },
+    {
+      "code": "EZAPI_DEPARTURE_QUERY",
+      "fix": "修复只读条件/名称回调异常；只影响本入口，后续刷新可重试。"
+    },
+    {
+      "code": "EZAPI_DEPARTURE_CLICK",
+      "fix": "作者点击业务异常；框架不自动重试，也不自动回滚业务，请自行确认资源状态。"
+    },
+    {
+      "code": "EZAPI_DEPARTURE_CREATE",
+      "fix": "模板或原生对象缺失；查看日志和当前游戏构建，失败仅停用自有入口。"
+    },
+    {
+      "code": "EZAPI_DEPARTURE_LAYOUT",
+      "fix": "查看视口/裁切/原生对象异常；本轮自有入口已隐藏。"
+    },
+    {
+      "code": "EZAPI_DEPARTURE_CLEANUP",
+      "fix": "销毁原生UI时异常；监听受代次校验，检查日志。"
+    },
+    {
+      "code": "EZAPI_DEPARTURE_TEMPLATE",
+      "fix": "模板应恰好包含一个Button；未知模板停止适配。"
+    },
+    {
+      "code": "EZAPI_DEPARTURE_LABEL",
+      "fix": "动态名称必须非空、无控制字符且不超200字符。"
+    },
+    {
+      "code": "EZAPI_DEPARTURE_VIEWPORT",
+      "fix": "无法把屏幕投影到地图父节点；检查Canvas相机/父节点。"
+    },
+    {
+      "code": "EZAPI_DEPARTURE_DELEGATE",
+      "fix": "IL2CPP点击委托转换失败；检查当前加载器与游戏构建。"
+    },
+    {
+      "code": "EZAPI_DEPARTURE_STALE",
+      "fix": "存档身份已失效；在当前游戏回调重新取得身份。"
+    },
+    {
+      "code": "EZAPI_DEPARTURE_LIMIT",
+      "fix": "最多64个外出按钮声明。"
+    }
+  ],
+  "version": "0.1.73",
+  "languageGuide": "game-language.index.json",
+  "distributionVerification": {
+    "dllSHA256": "7E4AB675B0E3BD81C56EEC4606731A6880287549EB4E8E90A707BE18BD52BEEF",
+    "nativeRuntimeVerified": false,
+    "frameworkSourceIncluded": false
+  }
+}

@@ -1,0 +1,170 @@
+{
+  "outputOnly": true,
+  "version": "0.1.27",
+  "scope": "actual first night in disposable test slot530; default serialization output, not a machine definition importer",
+  "machineRuntime": {
+    "ready": true,
+    "scanning": false,
+    "generation": 1,
+    "run": {
+      "SaveSlotId": 530,
+      "RunId": "d03f074c-5043-4834-8344-7523491ce2a0",
+      "Epoch": 8
+    },
+    "day": 1,
+    "attempted": 3,
+    "history": [
+      {
+        "machineId": "ezapi.debug.night_default",
+        "instanceId": 55,
+        "day": 1,
+        "committed": 1,
+        "status": "produced:ezapi.debug.night_recipe_default"
+      },
+      {
+        "machineId": "ezapi.debug.night_dynamic",
+        "instanceId": 58,
+        "day": 1,
+        "committed": 2,
+        "status": "produced:ezapi.debug.night_recipe_dynamic"
+      },
+      {
+        "machineId": "ezapi.debug.night_invalid",
+        "instanceId": 64,
+        "day": 1,
+        "committed": 0,
+        "status": "nightly-count-invalid: expected1..64"
+      }
+    ],
+    "scope": "BeforeNight; persistent per-instance attempt marker; synchronous max64 batches; no automatic saving"
+  },
+  "machineAutomation": {
+    "ready": true,
+    "generation": 1,
+    "subscriptions": [],
+    "errors": [
+      {
+        "Owner": "ezapi.automation",
+        "Machine": "ezapi.debug.machine_layout_probe",
+        "phase": 0,
+        "error": "InvalidOperationException: expected native before automation error"
+      },
+      {
+        "Owner": "ezapi.automation",
+        "Machine": "ezapi.debug.machine_layout_probe",
+        "phase": 1,
+        "error": "InvalidOperationException: expected native after automation error"
+      }
+    ]
+  },
+  "machineNightDebug": {
+    "at": "2026-10-20T07:10:05.8885929+08:00",
+    "kind": "actual-before-night-replay",
+    "run": {
+      "RunId": "d03f074c-5043-4834-8344-7523491ce2a0",
+      "SlotId": 530,
+      "Day": 1
+    },
+    "passed": true,
+    "before": [
+      {
+        "ItemId": "ezapi.debug.night_default",
+        "InstanceId": 55,
+        "Input": 1,
+        "Output": 1,
+        "Layout": true,
+        "NightMarker": "530/d03f074c-5043-4834-8344-7523491ce2a0/1",
+        "Owned": true,
+        "InputIdentity": 291338191360,
+        "OutputIdentity": 291340430848,
+        "WindowIdentity": 291460604736
+      },
+      {
+        "ItemId": "ezapi.debug.night_disabled",
+        "InstanceId": 62,
+        "Input": 1,
+        "Output": 0,
+        "Layout": true,
+        "NightMarker": "",
+        "Owned": true,
+        "InputIdentity": 291340427776,
+        "OutputIdentity": 291340427264,
+        "WindowIdentity": 291460604320
+      },
+      {
+        "ItemId": "ezapi.debug.night_dynamic",
+        "InstanceId": 58,
+        "Input": 1,
+        "Output": 2,
+        "Layout": true,
+        "NightMarker": "530/d03f074c-5043-4834-8344-7523491ce2a0/1",
+        "Owned": true,
+        "InputIdentity": 291340430336,
+        "OutputIdentity": 291340428288,
+        "WindowIdentity": 291460604528
+      },
+      {
+        "ItemId": "ezapi.debug.night_invalid",
+        "InstanceId": 64,
+        "Input": 1,
+        "Output": 0,
+        "Layout": true,
+        "NightMarker": "530/d03f074c-5043-4834-8344-7523491ce2a0/1",
+        "Owned": true,
+        "InputIdentity": 291314748928,
+        "OutputIdentity": 291314748416,
+        "WindowIdentity": 291460604112
+      }
+    ],
+    "after": [
+      {
+        "ItemId": "ezapi.debug.night_default",
+        "InstanceId": 55,
+        "Input": 1,
+        "Output": 1,
+        "Layout": true,
+        "NightMarker": "530/d03f074c-5043-4834-8344-7523491ce2a0/1",
+        "Owned": true,
+        "InputIdentity": 291338191360,
+        "OutputIdentity": 291340430848,
+        "WindowIdentity": 291460604736
+      },
+      {
+        "ItemId": "ezapi.debug.night_disabled",
+        "InstanceId": 62,
+        "Input": 1,
+        "Output": 0,
+        "Layout": true,
+        "NightMarker": "",
+        "Owned": true,
+        "InputIdentity": 291340427776,
+        "OutputIdentity": 291340427264,
+        "WindowIdentity": 291460604320
+      },
+      {
+        "ItemId": "ezapi.debug.night_dynamic",
+        "InstanceId": 58,
+        "Input": 1,
+        "Output": 2,
+        "Layout": true,
+        "NightMarker": "530/d03f074c-5043-4834-8344-7523491ce2a0/1",
+        "Owned": true,
+        "InputIdentity": 291340430336,
+        "OutputIdentity": 291340428288,
+        "WindowIdentity": 291460604528
+      },
+      {
+        "ItemId": "ezapi.debug.night_invalid",
+        "InstanceId": 64,
+        "Input": 1,
+        "Output": 0,
+        "Layout": true,
+        "NightMarker": "530/d03f074c-5043-4834-8344-7523491ce2a0/1",
+        "Owned": true,
+        "InputIdentity": 291314748928,
+        "OutputIdentity": 291314748416,
+        "WindowIdentity": 291460604112
+      }
+    ]
+  }
+}

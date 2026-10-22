@@ -1,0 +1,38 @@
+{
+  "available": true,
+  "openTransactions": 0,
+  "providers": [
+    {
+      "ownerId": "ezapi.debug",
+      "itemId": "ezapi.debug.persist_connector"
+    }
+  ],
+  "native": {
+    "OwnerId": "ezapi.power.external",
+    "Ready": true,
+    "Targets": [
+      "Il2Cpp.PowerHelper::Int32 GetAvailableEnergyFromItem(Il2Cpp.GameItem, Boolean)",
+      "Il2Cpp.PowerHelper::Boolean CanDrawPowerSource(Il2Cpp.GameItem, Int32)",
+      "Il2Cpp.PowerHelper::Boolean DrawPowerSource(Il2Cpp.GameItem, Int32)",
+      "Il2Cpp.PowerHelper::Void ChargeBattery(Il2Cpp.GameItem)",
+      "Il2Cpp.PowerHelper::Void ChargeBattery(Il2Cpp.GameItem, Int32, Boolean)",
+      "Il2Cpp.PowerHelper::Void SetPowerSourceAt(Il2Cpp.GameItem, Int32)",
+      "Il2Cpp.PowerHelper::Void InitPowerSourceItem(Il2Cpp.GameItem, Int32, Int32)",
+      "Il2Cpp.PowerHelper::Boolean IsPowerSourceFull(Il2Cpp.GameItem)",
+      "Il2Cpp.PowerHelper::Int32 TryRemoveEnergy(Il2Cpp.GameItem, Int32, Boolean)",
+      "Il2Cpp.PowerHelper::Void CreatePowerSourceItemTooltip(Il2Cpp.RichTextBuilder, Il2Cpp.GameItem)",
+      "Il2Cpp.MachineFurnace+__c__DisplayClass0_0::Void _Furnace_b__5(Il2Cpp.GameItem, Il2Cpp.GameInventory, Il2Cpp.SlotMarker)",
+      "Il2Cpp.GameItemElement::Void Destroy()"
+    ],
+    "Error": null
+  },
+  "furnace": {
+    "active": false,
+    "pendingCleanups": 0,
+    "committed": 8,
+    "restored": 14,
+    "recoveryFailed": 1,
+    "lastDestroyedContents": []
+  },
+  "scope": "EZapi synchronous batches and exact vanilla furnace callback; no asynchronous or crash recovery"
+}

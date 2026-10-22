@@ -1,0 +1,9 @@
+# External dependencies and references
+
+- Probably Stolen and Unity/IL2CPP assemblies belong to their owners. Supply them from your own installation; no game/runtime assemblies are distributed here.
+- MelonLoader, Il2CppInterop and Harmony are external prerequisites. Install appropriate versions separately; their licenses are not replaced by EZapi's distribution terms.
+- The metadata inspector uses Mono.Cecil 0.11.6 from NuGet (MIT): https://github.com/jbevain/cecil. It restores during development; the game runtime does not depend on it.
+- Official docs: https://github.com/dragonpan2/probably-stolen-modding at commit f2137eb7bebeecfadca1ccabb0cae3757ea4319f. They can be fetched locally but are not republished under EZapi's license.
+- Forge is a public functionality reference. EZapi has independent implementation and does not distribute or depend on Forge DLLs. Mappings do not promise ABI compatibility.
+
+Framework implementation source remains private. Consumer documentation, examples and automation helpers are provided under the permissions in LICENSE. Historical verification records are scoped evidence, not game assets or a license to third-party content.

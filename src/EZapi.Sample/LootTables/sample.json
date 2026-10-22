@@ -1,0 +1,17 @@
+{
+  "tables": [
+    {
+      "id": "ezapi.sample.medical_demo",
+      "entries": [
+        { "id": "ezapi.sample.wound_dressing", "weight": 3 },
+        { "id": "ezapi.sample.reusable_dressing", "weight": 1 }
+      ]
+    }
+  ],
+  "groups": [
+    {
+      "id": "ezapi.sample.demo_group",
+      "entries": [ { "id": "ezapi.sample.medical_demo", "weight": 1 } ]
+    }
+  ]
+}

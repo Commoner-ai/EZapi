@@ -1,0 +1,21 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "EZapi 0.1.23 MachineTransactionResult output",
+  "description": "System.Text.Json default PascalCase/numeric-enum output. Receipt only; not a recipe importer or proof that a failed batch delivered products.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["Status", "Created", "Error", "RecoveryFailures", "CompletionError", "Committed", "MayRetry"],
+  "properties": {
+    "Status": {"type": "integer", "enum": [0, 1, 2, 3, 4], "x-enum-names": ["Committed", "Rejected", "Restored", "RecoveryFailed", "Reentrant"]},
+    "Created": {"type": "array", "maxItems": 64, "items": {"type": "object", "additionalProperties": false, "required": ["ItemId", "InstanceId"], "properties": {"ItemId": {"type": "string", "minLength": 1, "maxLength": 160}, "InstanceId": {"type": "integer", "minimum": -2147483648, "maximum": 2147483647}}}},
+    "Error": {"type": ["string", "null"]},
+    "RecoveryFailures": {"type": "array", "items": {"type": "string"}},
+    "CompletionError": {"type": ["string", "null"]},
+    "Committed": {"type": "boolean"},
+    "MayRetry": {"type": "boolean"}
+  },
+  "allOf": [
+    {"if": {"properties": {"Status": {"const": 0}}}, "then": {"properties": {"Committed": {"const": true}, "MayRetry": {"const": false}}}, "else": {"properties": {"Committed": {"const": false}, "CompletionError": {"type": "null"}}}},
+    {"if": {"properties": {"Status": {"enum": [1, 2]}}}, "then": {"properties": {"MayRetry": {"const": true}}}, "else": {"properties": {"MayRetry": {"const": false}}}}
+  ]
+}

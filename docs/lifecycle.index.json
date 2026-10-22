@@ -1,0 +1,104 @@
+{
+  "schemaVersion": 1,
+  "events": [
+    {
+      "entry": "OnInitializeMelon",
+      "does": "安装显式兼容补丁、订阅官方事件、加载/预检并入队定义；订阅 18 个官方生命周期阶段",
+      "avoid": "不创建库存物品、不写存档"
+    },
+    {
+      "entry": "EZapiBootstrap.ContentPackLoader.LoadAll",
+      "does": "先检查整目录并解析依赖，按拓扑顺序逐包提交；不满足依赖的包和其消费者不入队",
+      "avoid": "不能只按文件夹名加载，不能把单包检查当作依赖已安装"
+    },
+    {
+      "entry": "ContentPackLoader loot preparation",
+      "does": "按排序读取全部 LootTables/*.json，先完整解析/预检，再与 items/PNG 一起入队",
+      "avoid": "后续文件或资源失败时不留下先前掉落声明"
+    },
+    {
+      "entry": "ModHook.OnLootTablesLoaded + OnModItemDirectoryInit",
+      "does": "两个条件均满足后每 owner 只提交一次 LootRegistry journal；原生接口失败记录尝试/完成数且停止自动重试",
+      "avoid": "不在场景/读档中重复追加；无事务回滚"
+    },
+    {
+      "entry": "ModHook.OnModItemDirectoryInit",
+      "does": "Has/Add(ID,factory)，逐项 Applied/Rejected/Failed；同一目录重复事件幂等",
+      "avoid": "不覆盖既有 ID"
+    },
+    {
+      "entry": "NativeItemFactory.Create",
+      "does": "CreateEmptyItem + 原生字段/helpers + 实例级不堆叠 + 图集绑定",
+      "avoid": "不触碰玩家/库存/UI"
+    },
+    {
+      "entry": "ModHook.OnCreateTooltipEarly/Late",
+      "does": "读取有效标签并追加显示；游戏负责最终 Build",
+      "avoid": "不缓存 builder、不包裹 tooltip"
+    },
+    {
+      "entry": "OnGUI",
+      "does": "只绘制调试界面",
+      "avoid": "不写文件/库存"
+    },
+    {
+      "entry": "OnUpdate",
+      "does": "处理一次调试请求，获取当前 EmporiumEntry.invElement 并核对落点",
+      "avoid": "不缓存库存、不自动保存"
+    },
+    {
+      "entry": "OnSceneWasLoaded",
+      "does": "清除调试待执行请求和会话快照；关闭周目数据入口并使旧句柄失效；掉落就绪由卸载阶段失效，避免新场景事件先于 loaded 回调",
+      "avoid": "不修改店铺或大厅状态"
+    },
+    {
+      "entry": "OnDeinitializeMelon",
+      "does": "移除自己安装的补丁、取消同一官方委托、释放自有图集与资源；取消托管订阅和生命周期委托",
+      "avoid": "不清空游戏全局目录"
+    },
+    {
+      "entry": "ModHook.OnGameLoadedInit + subsequent gameplay hooks",
+      "does": "建立 SaveSlotId/RunId/Epoch 快照；同一存档重新载入也使旧句柄失效",
+      "avoid": "事件不等于每天一次或保存落盘完成"
+    },
+    {
+      "entry": "NativeItemFactory.Create consumables",
+      "does": "在实例形状/数量初始化后调用 FoodItemHelper 或 LiquidContainerHelper；之后只对显式提供的标记做覆盖",
+      "avoid": "不对原版物品安装补丁，不叠加 C#激活/通用次数行为；原生 helper 异常则销毁失败实例"
+    },
+    {
+      "entry": "LifecycleApi",
+      "does": "目录就绪安装7独立原生入口，提供10阶段；与18个官方GameEvents分开；见lifecycle-content.zh-CN.md",
+      "avoid": "不能用名称近似的官方事件代替LoadGame/EndNight/EndDay时序"
+    },
+    {
+      "entry": "ContentApi",
+      "does": "整批声明完成后Staged；目录应用后Applied/Conflict/Failed",
+      "avoid": "不把Accepted或Staged当作已进入目录；不重播历史通知"
+    },
+    {
+      "entry": "ModHook.OnGenerateCustomerVeryLate",
+      "does": "Processes at most one current-run ClientVisitApi request; creates the native actor blueprint, queues it with AddNextClient, and verifies the customer stack readback. Arrival dialogue runs later outside the native callback stack.",
+      "avoid": "Do not infer arbitrary trade behavior from actorId; do not queue for another save slot/run or retain client wrappers across an epoch."
+    }
+  ],
+  "implementationVersion": "0.1.7",
+  "activation": {
+    "initialization": "C# 注册同步托管回调；JSON 配置在注册时预检",
+    "factory": "按 ID 绑定共享无实例状态的原生委托；每个读档重建实例重新绑定",
+    "callback": "每次获取当前 PlayerStore，核对所有权/库存/门控，再查询和执行；上下文不外泄",
+    "shutdown": "清除回调/委托/停用状态；执行中的指针防重入键在 finally 移除",
+    "persistence": "行为由定义和 DLL 重建；健康、次数和销毁使用原生状态；存档结果待玩家验证"
+  },
+  "runData": {
+    "readiness": "官方游戏事件观察到有效 PlayerStore；场景切换立即失效",
+    "scope": "一次载入句柄 + modId 命名空间；不缓存原生玩家或数据值",
+    "write": "主线程预检后更新 modData 内存；不发出 SaveGame 请求",
+    "readback": "真实保存重载/换槽/新局验证仍需玩家操作"
+  },
+  "distributionVerification": {
+    "dllSHA256": "7E4AB675B0E3BD81C56EEC4606731A6880287549EB4E8E90A707BE18BD52BEEF",
+    "nativeRuntimeVerified": false,
+    "frameworkSourceIncluded": false
+  }
+}

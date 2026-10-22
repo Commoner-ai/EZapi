@@ -1,0 +1,93 @@
+{
+  "schemaVersion": 1,
+  "version": "0.1.73",
+  "purpose": "Short, reproducible developer workflows; exact signatures are in public-api.index.json",
+  "entryPoints": {
+    "zh": "AI-START-HERE.zh-CN.md",
+    "en": "AI-START-HERE.en.md"
+  },
+  "workflows": [
+    {
+      "id": "json-item",
+      "taskZh": "不用 C# 添加物品",
+      "taskEn": "Add an item without C#",
+      "guide": "content-packs.zh-CN.md",
+      "schema": "../schemas/items.schema.json",
+      "manifestSchema": "../schemas/pack.schema.json",
+      "sample": "../src/EZapi.Sample/Content/items.json",
+      "command": "dotnet tools/ezapi-validate/ezapi-validate.dll --pack Mods/EZapiPacks/author.example",
+      "next": "Validate dependencies with --packs on the complete root; then inspect directory Applied state in the game.",
+      "boundary": "Validation and Accepted are not player delivery or gameplay verification."
+    },
+    {
+      "id": "minimal-dll",
+      "taskZh": "独立编译一个最小 DLL Mod",
+      "taskEn": "Build a minimal independent DLL Mod",
+      "project": "examples/minimal-dll/SimpleMod.csproj",
+      "sample": "examples/minimal-dll/Mod.cs",
+      "command": "dotnet build ./SimpleMod.csproj -c Release -p:GameDir=<actual game directory>",
+      "output": "bin/Release/net6.0/EZapi.SimpleMod.dll",
+      "install": "Copy only the caller DLL into Mods while the game is closed. EZapi and MelonLoader remain separately installed.",
+      "boundary": "Change the author namespace and stable item ID before publishing; do not copy a second framework/runtime DLL."
+    },
+    {
+      "id": "follow-game-language",
+      "taskZh": "跟随游戏设置显示名称、Tooltip、对话和机器标签",
+      "taskEn": "Follow game language for names, tooltips, dialogue and machine labels",
+      "guideZh": "game-language.zh-CN.md",
+      "guideEn": "game-language.en.md",
+      "index": "game-language.index.json",
+      "sample": "../src/EZapi.Sample/LanguageExamples.cs",
+      "boundary": "CSV can use additional official locales. Resolve again on refresh/reopen. Reply with context.LocaleCode; no independent language setting."
+    },
+    {
+      "id": "owned-item-state",
+      "taskZh": "保存物品升级或自定义状态",
+      "taskEn": "Store item upgrades or custom state",
+      "guideZh": "item-data.zh-CN.md",
+      "guideEn": "item-data.en.md",
+      "index": "item-data.index.json",
+      "sample": "../src/EZapi.Sample/ItemDataExamples.cs",
+      "boundary": "Read then Stage with the returned revision. StagedInMemory is not disk persistence; preserve unknown versions and reconcile Indeterminate."
+    },
+    {
+      "id": "shared-requirements",
+      "taskZh": "为机器、对话和奖励复用资格判断",
+      "taskEn": "Reuse eligibility checks across machines, dialogue and rewards",
+      "guide": "progression-requirements.zh-CN.md",
+      "schema": "../schemas/ezapi-requirements.schema.json",
+      "sample": "examples/requirements.json",
+      "command": "dotnet tools/ezapi-validate/ezapi-validate.dll --requirements docs/examples/requirements.json",
+      "boundary": "CLI validates declarations; RequirementApi.Evaluate reads current-run facts without purchase or unlock. Unknown does not become false under negation."
+    },
+    {
+      "id": "departure-buttons",
+      "taskZh": "给原生离店地图增加自适应外出地点按钮",
+      "taskEn": "Add adaptive native departure destination buttons",
+      "guideZh": "departure-buttons.zh-CN.md",
+      "guideEn": "departure-buttons.en.md",
+      "index": "departure-buttons.index.json",
+      "sample": "../src/EZapi.Sample/DepartureExamples.cs",
+      "boundary": "UI and guarded callback dispatch only. C# behavior required; no automatic travel, visit debit, inventory transfer or save."
+    }
+  ],
+  "recovery": {
+    "errors": "errors.index.json",
+    "source": "source.index.json",
+    "signatures": "public-api.index.json"
+  },
+  "verificationPolicy": "Compile caller against the exact framework DLL. Build verifies the minimal DLL and examples; runtime reports require their own hash/build/process/scope.",
+  "automation": {
+    "guideZh": "automation.zh-CN.md",
+    "guideEn": "automation.en.md",
+    "entry": "../developer-tools/automation/Enter-EZapiTestStore.ps1",
+    "helper": "../developer-tools/automation/Invoke-EZapiNativeTest.ps1",
+    "requiresExtraGameDll": false,
+    "expectedSlotRequired": true
+  },
+  "distributionVerification": {
+    "dllSHA256": "7E4AB675B0E3BD81C56EEC4606731A6880287549EB4E8E90A707BE18BD52BEEF",
+    "nativeRuntimeVerified": false,
+    "frameworkSourceIncluded": false
+  }
+}

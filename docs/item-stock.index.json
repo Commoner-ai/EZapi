@@ -1,0 +1,29 @@
+{
+  "version": "0.1.65",
+  "feature": "night-shop-stock",
+  "chinese": "item-stock.zh-CN.md",
+  "english": "item-stock.en.md",
+  "runtime": "../src/EZapi/ItemStockRuntime.cs",
+  "publicContract": "../src/EZapi/ItemStockContract.cs",
+  "officialExample": "../references/probably-stolen-modding/Modding/LearnerMod/ModEntry.cs",
+  "event": "OnPlaceInventorInventoryItemLate",
+  "eventArgument": "owned snapshot; never mutate",
+  "placement": "PlayerStore.AddDirectSellingItemToTable",
+  "success": "actual sale inventory unowned unit delta equals supplied quantity",
+  "pending": [],
+  "verified": [
+    "scoped actual sale placement",
+    "full native stock generation",
+    "actual BuyItem payment and ownership",
+    "current-day SaveGame",
+    "disk readback",
+    "new-process native restore"
+  ],
+  "evidence": "verification/night-placement-native-0.1.65.json",
+  "boundary": "native capacity/perk restrictions retained; no all-NPC dialogue or third-party mod combination claim",
+  "distributionVerification": {
+    "dllSHA256": "7E4AB675B0E3BD81C56EEC4606731A6880287549EB4E8E90A707BE18BD52BEEF",
+    "nativeRuntimeVerified": false,
+    "frameworkSourceIncluded": false
+  }
+}

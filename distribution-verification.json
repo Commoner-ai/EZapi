@@ -1,0 +1,44 @@
+{
+  "tag": "0.1.73-preview.1",
+  "passed": true,
+  "assets": [
+    {
+      "file": "EZapi-0.1.73-preview.1-game.zip",
+      "sha256": "3FF78C18F89ECC0857F2EF702639D4CC98E225BBCE379A2C3C36893F9502F096",
+      "bytes": 709322
+    },
+    {
+      "file": "EZapi-0.1.73-preview.1-developer.zip",
+      "sha256": "C1A16DABFE0BFC2BB91A205CE2336C68E4E9DFA5045EFDB0FAE9D399EF9F9FD0",
+      "bytes": 1680778
+    }
+  ],
+  "dllSHA256": "7E4AB675B0E3BD81C56EEC4606731A6880287549EB4E8E90A707BE18BD52BEEF",
+  "frameworkSourceIncluded": false,
+  "internalTestsIncluded": false,
+  "frameworkBuildProjectsIncluded": false,
+  "sourceRepositoryVisibility": "private",
+  "oneGameDllPerPackage": true,
+  "debugDefaultOff": true,
+  "internalPluginExcluded": true,
+  "examplesAutoInstalled": false,
+  "nativeRuntimeVerified": false,
+  "fullGoalComplete": false,
+  "developerAutomationIncluded": true,
+  "verification": {
+    "offlineSuites": 59,
+    "cliProcessChecks": 25,
+    "departureSourceLinkedChecks": 124,
+    "directGameMethodReferences": 653,
+    "missingGameMethodReferences": 0,
+    "reachableUnityWrapperMethods": 211,
+    "unityUnstrippingStubs": 0,
+    "binaryOnlyIndependentCallerCompiled": true,
+    "binaryOnlySampleCompiled": true,
+    "packagedValidatorExecuted": true,
+    "archivePrivacyAndHashesVerified": true,
+    "nativeGameStarted": false
+  },
+  "publicRepository": "https://github.com/Commoner-ai/EZapi-Releases",
+  "sourceRepositoryKeptPrivate": true
+}

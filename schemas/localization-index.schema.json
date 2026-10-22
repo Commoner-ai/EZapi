@@ -1,0 +1,29 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://ezapi.local/schemas/localization-index.schema.json",
+  "title": "EZapi 0.1.8 LocalizationIndex (CLI index / pack.Localization)",
+  "description": "Read-only output schema. Source translations use the official headerless Localization/<locale>.csv syntax, not JSON. Does not imply native localization support.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["Files", "Entries", "Resources", "Warnings"],
+  "properties": {
+    "Files": {"type": "integer", "minimum": 0, "maximum": 10},
+    "Entries": {"type": "integer", "minimum": 0, "maximum": 40960},
+    "Warnings": {"type": "array", "items": {"type": "string"}},
+    "Resources": {
+      "type": "array", "maxItems": 10,
+      "items": {
+        "type": "object", "additionalProperties": false,
+        "required": ["Locale", "File", "Entries", "Keys", "MissingEnglishKeys"],
+        "properties": {
+          "Locale": {"enum": ["en", "fr", "de", "ru", "zh", "ja", "es", "ptBR", "ko", "it"]},
+          "File": {"type": "string", "pattern": "^Localization/(en|fr|de|ru|zh|ja|es|ptBR|ko|it)\\.csv$"},
+          "Entries": {"type": "integer", "minimum": 0, "maximum": 4096},
+          "Keys": {"$ref": "#/$defs/keys"},
+          "MissingEnglishKeys": {"$ref": "#/$defs/keys"}
+        }
+      }
+    }
+  },
+  "$defs": {"keys": {"type": "array", "maxItems": 4096, "uniqueItems": true, "items": {"type": "string", "pattern": "^[A-Za-z0-9_]+$", "maxLength": 160}}}
+}

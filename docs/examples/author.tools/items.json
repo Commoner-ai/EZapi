@@ -1,0 +1,25 @@
+[
+  {
+    "id": "author.tools.sensor",
+    "modId": "author.tools",
+    "name": "检测模块",
+    "width": 1,
+    "height": 1,
+    "value": 100,
+    "module": {
+      "type": "MODULE_TYPE_UNIVERSAL",
+      "performance": 10,
+      "efficiency": 5,
+      "quality": 3,
+      "isShipModule": false,
+      "tier": 2
+    }
+  },
+  {
+    "id": "author.tools.node",
+    "modId": "author.tools",
+    "name": "效果节点",
+    "value": 50,
+    "node": true
+  }
+]

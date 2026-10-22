@@ -1,0 +1,215 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "EZapi 0.1.72 standalone machine layout",
+  "type": "object",
+  "additionalProperties": false,
+  "properties": {
+    "title": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 200
+    },
+    "draggable": {
+      "type": "boolean",
+      "default": true
+    },
+    "itemInput": {
+      "$ref": "#/$defs/grid"
+    },
+    "output": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "kind": {
+          "enum": [
+            "items",
+            "container"
+          ],
+          "default": "items"
+        },
+        "size": {
+          "$ref": "#/$defs/grid"
+        },
+        "localizedLabel": {
+          "$ref": "#/$defs/localizedText"
+        }
+      }
+    },
+    "battery": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "size"
+      ],
+      "properties": {
+        "size": {
+          "$ref": "#/$defs/grid"
+        },
+        "required": {
+          "type": "boolean",
+          "default": true
+        }
+      }
+    },
+    "modules": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "size": {
+          "$ref": "#/$defs/grid"
+        },
+        "allowedTypes": {
+          "type": "array",
+          "maxItems": 64,
+          "uniqueItems": true,
+          "items": {
+            "type": "string",
+            "maxLength": 160,
+            "pattern": "^[A-Za-z0-9_-]+(?:\\.[A-Za-z0-9_-]+)*$"
+          }
+        }
+      }
+    },
+    "manualSlot": {
+      "type": "boolean",
+      "default": false
+    },
+    "liquidInputs": {
+      "type": "array",
+      "maxItems": 8,
+      "items": {
+        "$ref": "#/$defs/liquidSlot"
+      }
+    },
+    "localizedTitle": {
+      "$ref": "#/$defs/localizedText"
+    },
+    "localizedBatteryLabel": {
+      "$ref": "#/$defs/localizedText"
+    },
+    "localizedManualLabel": {
+      "$ref": "#/$defs/localizedText"
+    }
+  },
+  "$defs": {
+    "grid": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "width",
+        "height"
+      ],
+      "properties": {
+        "width": {
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 12
+        },
+        "height": {
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 12
+        }
+      }
+    },
+    "liquidSlot": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "slotId"
+      ],
+      "properties": {
+        "slotId": {
+          "type": "string",
+          "pattern": "^[a-z][a-z0-9_-]{0,39}$"
+        },
+        "size": {
+          "$ref": "#/$defs/grid"
+        },
+        "label": {
+          "type": "string",
+          "maxLength": 200
+        },
+        "allowedIds": {
+          "type": "array",
+          "maxItems": 64,
+          "uniqueItems": true,
+          "items": {
+            "type": "string",
+            "maxLength": 160,
+            "pattern": "^[A-Za-z0-9_-]+(?:\\.[A-Za-z0-9_-]+)*$"
+          }
+        },
+        "allowedTags": {
+          "type": "array",
+          "maxItems": 64,
+          "uniqueItems": true,
+          "items": {
+            "type": "string",
+            "maxLength": 160,
+            "pattern": "^[A-Za-z0-9_-]+(?:\\.[A-Za-z0-9_-]+)*$"
+          }
+        },
+        "localizedLabel": {
+          "$ref": "#/$defs/localizedText"
+        }
+      },
+      "allOf": [
+        {
+          "not": {
+            "required": [
+              "allowedIds",
+              "allowedTags"
+            ],
+            "properties": {
+              "allowedIds": {
+                "minItems": 1
+              },
+              "allowedTags": {
+                "minItems": 1
+              }
+            }
+          }
+        }
+      ]
+    },
+    "localizedText": {
+      "type": "object",
+      "additionalProperties": false,
+      "description": "Inline bilingual title/label. Standalone layouts have no owning CSV catalog; key is rejected. At least one readable translation is required.",
+      "anyOf": [
+        {
+          "required": [
+            "chinese"
+          ]
+        },
+        {
+          "required": [
+            "english"
+          ]
+        }
+      ],
+      "properties": {
+        "chinese": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 200,
+          "pattern": "^(?!\\s*$)[^\\u0000-\\u001F\\u007F-\\u009F]+$"
+        },
+        "english": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 200,
+          "pattern": "^(?!\\s*$)[^\\u0000-\\u001F\\u007F-\\u009F]+$"
+        }
+      }
+    }
+  },
+  "x-semantic-validation": [
+    "strict full-string key match (no trailing newline)",
+    "liquid slot IDs unique",
+    "readable control-free title/labels",
+    "UTF-8 serialized size<=65536 bytes; CLI/runtime authoritative"
+  ],
+  "description": "Only layout. No executable recipe, power debit, nightly scheduling or automatic items.json import."
+}

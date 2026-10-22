@@ -1,0 +1,59 @@
+{
+  "schemaVersion": 1,
+  "version": "0.1.66",
+  "guide": "recipe-guide-images.zh-CN.md",
+  "englishGuide": "recipe-guide-images.en.md",
+  "api": [
+    "RecipeGuideFigure.ItemId",
+    "RecipeGuideDisplay.IllustrationItemId"
+  ],
+  "newRequiredFields": false,
+  "source": [
+    "../src/EZapi/RecipeGuideImages.cs",
+    "../src/EZapi/RecipeGuideImageMesh.cs"
+  ],
+  "supported": [
+    "rectangles",
+    "tight triangles",
+    "quarter rotations",
+    "valid UV layouts",
+    "pivot/ppu conversion",
+    "transparent margins",
+    "non-readable source textures"
+  ],
+  "limits": {
+    "thumbnailLongestSide": 128,
+    "readbackLongestSide": 512,
+    "cachedIds": 128,
+    "vertices": 4096,
+    "triangleIndices": 24576,
+    "rasterCandidates": 2000000
+  },
+  "ownership": "only temporary detached items and owned thumbnails/readback targets; shared source untouched",
+  "failure": "text placeholder plus diagnostics.recipeGuide.images.entries.Error; negative cached until invalidation",
+  "tests": {
+    "offlineImages": 43,
+    "catalog": 131,
+    "registration": 181,
+    "nativeBatch": 954,
+    "nativeAssets": 60,
+    "ui": 7,
+    "locale": 8,
+    "oldMachine": 19
+  },
+  "evidence": "verification/guide-mesh-native-0.1.66.json",
+  "contractAudit": "recipe-guide-public-contract.audit.json",
+  "bilingualIndex": "recipe-guide-bilingual.index.json",
+  "boundary": "default instance images; no live state/material tint/animation; valid bounded public meshes required",
+  "transientFailure": {
+    "code": "EZAPI_GUIDE_IMAGE_LOCALE_PENDING",
+    "negativeCached": false,
+    "factoryCalled": false,
+    "retry": "after public locale completion"
+  },
+  "distributionVerification": {
+    "dllSHA256": "7E4AB675B0E3BD81C56EEC4606731A6880287549EB4E8E90A707BE18BD52BEEF",
+    "nativeRuntimeVerified": false,
+    "frameworkSourceIncluded": false
+  }
+}

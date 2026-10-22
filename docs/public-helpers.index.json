@@ -1,0 +1,45 @@
+{
+  "schemaVersion": 1,
+  "version": "0.1.70",
+  "guideZh": "public-helpers.zh-CN.md",
+  "guideEn": "public-helpers.en.md",
+  "example": "../src/EZapi.Sample/PublicHelperExamples.cs",
+  "evidence": "verification/public-helpers-native-0.1.70.json",
+  "entries": [
+    {
+      "api": "ModLog",
+      "taskZh": "每Mod独立日志",
+      "taskEn": "Independent per-mod logging",
+      "phase": "managed synchronous; default backend needs MelonLoader",
+      "lifetime": "instance-owned threshold/sink; no global mutation"
+    },
+    {
+      "api": "LogLevels.TryParse/Allows",
+      "taskZh": "中英日志级别解析",
+      "taskEn": "Bilingual level parsing",
+      "phase": "pure managed"
+    },
+    {
+      "api": "WindowInputCapture",
+      "taskZh": "窗口指针捕获",
+      "taskEn": "Per-window pointer capture",
+      "phase": "one input thread, nonnegative monotonic frame",
+      "cleanup": "Reset on focus loss, load, scene teardown",
+      "boundary": "state utility; caller owns input routing and original denial"
+    },
+    {
+      "api": "ManufacturingTerminal.NormalizeItemId",
+      "taskZh": "终端ID显式别名",
+      "taskEn": "Explicit terminal aliases",
+      "phase": "pure managed",
+      "boundary": "no global alias registry, vendor ownership or save mutation"
+    }
+  ],
+  "offlineChecks": 83,
+  "nativeHelperChecks": 13,
+  "distributionVerification": {
+    "dllSHA256": "7E4AB675B0E3BD81C56EEC4606731A6880287549EB4E8E90A707BE18BD52BEEF",
+    "nativeRuntimeVerified": false,
+    "frameworkSourceIncluded": false
+  }
+}

@@ -1,0 +1,72 @@
+{
+  "schemaVersion": 1,
+  "version": "0.1.62",
+  "purpose": "AI-readable native lifecycle, persistence and external-source lookup contract",
+  "guideZh": "machine-persistence.zh-CN.md",
+  "guideEn": "machine-persistence.en.md",
+  "evidence": "verification/machine-persistence-native-0.1.62.json",
+  "fields": [
+    {
+      "api": "LifecycleContext.Items",
+      "zh": "每个订阅回调内惰性快照",
+      "en": "lazy snapshot per subscriber callback",
+      "rule": "fresh for next subscriber; recapture after destructive mutation within the same callback",
+      "source": "../src/EZapi/Lifecycle.cs"
+    },
+    {
+      "api": "MachineRuntimeApi",
+      "zh": "夜间只保留身份并逐台重新解析",
+      "en": "resolve each nightly candidate from the live graph",
+      "rule": "slot/run/day attempt marker persists; consumed candidates are skipped",
+      "source": "../src/EZapi/MachineRuntime.cs"
+    },
+    {
+      "api": "MachineRecipe.MaterialContents",
+      "zh": "默认拒绝含内部物品材料；显式整图消费",
+      "en": "Reject by default; explicit ConsumeGraph for nested materials",
+      "rule": "whole-root consumption; failed preflight has no debit",
+      "source": "../src/EZapi/MachineRecipeDefinition.cs"
+    },
+    {
+      "api": "ExternalPowerApi.Register",
+      "zh": "按当前周目解析电源",
+      "en": "resolve current-run source on every callback",
+      "rule": "static delegates retain resolver rules, never loaded native wrappers",
+      "example": "../src/EZapi.Sample/ExternalPowerExamples.cs"
+    },
+    {
+      "api": "IPowerTransaction",
+      "zh": "仅同步批次内借用源对象",
+      "en": "borrow source only inside synchronous transaction",
+      "rule": "Validate/Verify read-only; Debit at most once; Restore actual source idempotently",
+      "source": "../src/EZapi/ExternalPower.cs"
+    },
+    {
+      "api": "SaveReadbackApi",
+      "zh": "只读ES3文本，不等于原生对象恢复",
+      "en": "read-only ES3 parsing is not object restoration",
+      "rule": "separately compare actual saved fields and a true new-process load",
+      "source": "../src/EZapi/SaveReadback.cs"
+    }
+  ],
+  "test": {
+    "slot": 534,
+    "run": "e39e848c-36b7-40e9-ab7e-b6adcb9881b8",
+    "script": "../work/Invoke-EZapiMachinePersistence.ps1",
+    "preparedBatches": 2,
+    "realSavedNights": 2,
+    "coldLoads": 3,
+    "testTools": "temporary native observation/close helper; removed before final cold load; excluded from release"
+  },
+  "limitations": [
+    "synchronous normal saves only",
+    "no asynchronous/network/crash recovery",
+    "vanilla furnace nested material/old-output policy still incomplete",
+    "no arbitrary third-party combination claim"
+  ],
+  "distributionVerification": {
+    "dllSHA256": "7E4AB675B0E3BD81C56EEC4606731A6880287549EB4E8E90A707BE18BD52BEEF",
+    "nativeRuntimeVerified": false,
+    "frameworkSourceIncluded": false
+  }
+}

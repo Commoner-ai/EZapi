@@ -1,0 +1,1167 @@
+{
+  "schemaVersion": 1,
+  "framework": "EZapi",
+  "version": "0.1.73",
+  "schema": "../schemas/items.schema.json",
+  "scope": "原生常用属性封装；不是所有游戏内部字段，也不是所有物品玩法",
+  "properties": [
+    {
+      "json": "id",
+      "csharp": "Id",
+      "native": "ItemDirectory.CreateEmptyItem(id), GameItem.identifier",
+      "type": "string",
+      "maxLength": 160,
+      "description": "永久唯一物品 ID；已保存的 ID 不随意更改",
+      "pattern": "^[a-z0-9_-]+(?:\\.[a-z0-9_-]+)+$"
+    },
+    {
+      "json": "name",
+      "csharp": "Name",
+      "native": "GameItem.name",
+      "type": "string",
+      "maxLength": 200,
+      "description": "Literal name and fallback; supply name or localizedName.",
+      "minLength": 1,
+      "pattern": "\\S"
+    },
+    {
+      "json": "description",
+      "csharp": "Description",
+      "native": "GameItem.shortDescription (legacy)",
+      "type": "string",
+      "maxLength": 4000,
+      "description": "兼容旧版的短简介；与 shortDescription 二选一"
+    },
+    {
+      "json": "shortDescription",
+      "csharp": "ShortDescription",
+      "native": "GameItem.shortDescription",
+      "type": "string",
+      "maxLength": 4000,
+      "description": "短简介。native 交给游戏；early/late 由官方回调显示"
+    },
+    {
+      "json": "longDescription",
+      "csharp": "LongDescription",
+      "native": "GameItem.longDescription",
+      "type": "string",
+      "maxLength": 8000,
+      "description": "长简介。native 交给游戏的详细说明逻辑；不能保证普通 tooltip 显示"
+    },
+    {
+      "json": "flavorText",
+      "csharp": "FlavorText",
+      "native": "GameItem.flavorText",
+      "type": "string",
+      "maxLength": 4000,
+      "description": "风味文本；early/late 模式为灰色斜体"
+    },
+    {
+      "json": "customText",
+      "csharp": "CustomText",
+      "native": "GameItem.customText",
+      "type": "string",
+      "maxLength": 4000,
+      "description": "native模式写入原生自定义文字字段，当前构建会在库存物品上显示文字，可能替代图标表现；不是普通tooltip行。只想追加提示应使用tooltip.lines或early/late。"
+    },
+    {
+      "json": "descriptionPlacement",
+      "csharp": "DescriptionPlacement",
+      "native": "ModHook.OnCreateTooltipEarly/Late",
+      "type": "string",
+      "enum": [
+        "native",
+        "early",
+        "late"
+      ],
+      "default": "native",
+      "description": "native 保留原生文本字段；early/late 清空这些原生字段并在对应回调显示四段文本，避免重复"
+    },
+    {
+      "json": "sprite",
+      "csharp": "Sprite",
+      "native": "LegacySpriteAdapter -> public RenderHandler.atlasCache + GameItem.SetSprite",
+      "type": "string",
+      "maxLength": 80,
+      "description": "所属包 Textures/Items 下 PNG 文件名，不含路径和扩展名",
+      "pattern": "^[a-z0-9_-]+$"
+    },
+    {
+      "json": "modId",
+      "csharp": "ModId",
+      "native": "EZapi pack owner",
+      "type": "string",
+      "maxLength": 160,
+      "description": "内容包 pack.json.id；自动扫描内容包时必填",
+      "pattern": "^[a-z0-9_-]+(?:\\.[a-z0-9_-]+)*$"
+    },
+    {
+      "json": "width",
+      "csharp": "Width",
+      "native": "GridShapeBuilder(width,height)",
+      "type": "integer",
+      "minimum": 1,
+      "maximum": 8,
+      "description": "占格宽度，必须与 height 同时提供"
+    },
+    {
+      "json": "height",
+      "csharp": "Height",
+      "native": "GridShapeBuilder(width,height)",
+      "type": "integer",
+      "minimum": 1,
+      "maximum": 8,
+      "description": "占格高度，必须与 width 同时提供"
+    },
+    {
+      "json": "shapeRows",
+      "csharp": "ShapeRows",
+      "native": "GridShapeBuilder.SetData(string,width)",
+      "type": "array",
+      "items": {
+        "type": "string",
+        "maxLength": 8,
+        "description": "每行从左到右，0 为空、1 为占格",
+        "pattern": "^[01]+$",
+        "minLength": 1
+      },
+      "maxItems": 8,
+      "minItems": 1,
+      "description": "从上到下的行；行长/行数分别匹配 width/height，至少一个 1"
+    },
+    {
+      "json": "value",
+      "csharp": "Value",
+      "native": "GameItem.SetValue(long)",
+      "type": "integer",
+      "minimum": 0,
+      "maximum": 1000000000,
+      "description": "每件基础价值，货币单位；自动次数计价会覆盖；不是最终成交价"
+    },
+    {
+      "json": "types",
+      "csharp": "Types",
+      "native": "GameItem.SetGameItemType(string)",
+      "type": "array",
+      "items": {
+        "type": "string",
+        "maxLength": 160,
+        "description": "原生大写分类或自定义命名空间分类",
+        "pattern": "^(?:[A-Z][A-Z0-9_]*|[a-z0-9_-]+(?:\\.[a-z0-9_-]+)+)$"
+      },
+      "maxItems": 32,
+      "uniqueItems": true,
+      "default": []
+    },
+    {
+      "json": "typeNames",
+      "csharp": "TypeNames",
+      "native": "TypeHelper.GetTypeDisplayName(string) scoped custom-key adapter",
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "id": {
+            "type": "string",
+            "maxLength": 160,
+            "description": "必须出现在 types 中的自定义分类",
+            "pattern": "^[a-z0-9_-]+(?:\\.[a-z0-9_-]+)+$"
+          },
+          "name": {
+            "type": "string",
+            "maxLength": 200,
+            "description": "自定义分类显示名称",
+            "minLength": 1,
+            "pattern": "\\S"
+          },
+          "localizedName": {
+            "$ref": "#/$defs/localizedItemText",
+            "properties": {
+              "chinese": {
+                "maxLength": 200
+              },
+              "english": {
+                "maxLength": 200
+              }
+            },
+            "description": "Current-locale custom type name. Native uppercase types use game translations."
+          }
+        },
+        "required": [
+          "id"
+        ],
+        "allOf": [
+          {
+            "anyOf": [
+              {
+                "required": [
+                  "name"
+                ]
+              },
+              {
+                "required": [
+                  "localizedName"
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      "maxItems": 32,
+      "default": [],
+      "description": "每个自定义分类必须提供名称，避免原生缺少翻译；原生大写分类无需填写"
+    },
+    {
+      "json": "tags",
+      "csharp": "Tags",
+      "native": "TagSystem.InitTagString/GetTag; TagState.SetEnabled/SetString/SetInt/SetFloat/SetDouble/SetBool; valueLong",
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "id": {
+            "type": "string",
+            "maxLength": 160,
+            "description": "原生 UPPER_CASE 键，或 author.mod.key；自定义键必须用命名空间",
+            "pattern": "^(?:[A-Z][A-Z0-9_]*|[a-z0-9_-]+(?:\\.[a-z0-9_-]+)+)$"
+          },
+          "enabled": {
+            "type": "boolean",
+            "default": true,
+            "description": "标签启用状态，与 boolValue 独立"
+          },
+          "stringValue": {
+            "type": "string",
+            "maxLength": 4000,
+            "description": "独立字符串值"
+          },
+          "intValue": {
+            "type": "integer",
+            "minimum": -2147483648,
+            "maximum": 2147483647,
+            "description": "32 位带符号整数"
+          },
+          "longValue": {
+            "type": "integer",
+            "minimum": -9223372036854775808,
+            "maximum": 9223372036854775807,
+            "description": "64 位带符号整数；JSON 工具必须保留整数精度"
+          },
+          "floatValue": {
+            "type": "number",
+            "minimum": -3.4028234663852886e+38,
+            "maximum": 3.4028234663852886e+38,
+            "description": "有限 32 位浮点数"
+          },
+          "doubleValue": {
+            "type": "number",
+            "minimum": -1.7976931348623157e+308,
+            "maximum": 1.7976931348623157e+308,
+            "description": "有限 64 位浮点数"
+          },
+          "boolValue": {
+            "type": "boolean",
+            "description": "独立布尔值，不代替 enabled"
+          }
+        },
+        "required": [
+          "id"
+        ]
+      },
+      "maxItems": 64,
+      "default": [],
+      "description": "实例独立状态；同标签可同时保存不同类型的值，标签 ID 不重复"
+    },
+    {
+      "json": "initialCount",
+      "csharp": "InitialCount",
+      "native": "GameItem.SetUnitCount(int); single item only",
+      "type": "integer",
+      "const": 1,
+      "default": 1,
+      "description": "当前版本仅单件。多件堆叠尚未开放"
+    },
+    {
+      "json": "maxStackSize",
+      "csharp": "MaxStackSize",
+      "native": "GameItem.mayStackItemFunc (per instance; no global patch)",
+      "type": "integer",
+      "const": 1,
+      "default": 1,
+      "description": "保留字段，仅支持 1；大于 1 明确报 EZAPI_ITEM_STACK_UNSUPPORTED"
+    },
+    {
+      "json": "forceDisableUse",
+      "csharp": "ForceDisableUse",
+      "native": "GameItem.forceDisableUse",
+      "type": "boolean",
+      "default": false,
+      "description": "原生使用门控；false 不会创建使用行为"
+    },
+    {
+      "json": "forceDisableActivate",
+      "csharp": "ForceDisableActivate",
+      "native": "GameItem.forceDisableActivate",
+      "type": "boolean",
+      "default": false,
+      "description": "原生激活门控；false 不会创建激活行为"
+    },
+    {
+      "json": "activateDefault",
+      "csharp": "ActivateDefault",
+      "native": "GameItem.activateDefault",
+      "type": "boolean",
+      "default": false,
+      "description": "原生默认激活标记，需要内容 Mod 自己的行为"
+    },
+    {
+      "json": "bonusAccuracy",
+      "csharp": "BonusAccuracy",
+      "native": "GameItem.bonusAccuracy",
+      "type": "integer",
+      "minimum": -100,
+      "maximum": 100,
+      "description": "原生额外命中整数值；仅设置字段，未添加武器效果"
+    },
+    {
+      "json": "triggerOverwatch",
+      "csharp": "TriggerOverwatch",
+      "native": "GameItem.triggerOverwatch",
+      "type": "boolean",
+      "default": false,
+      "description": "原生监视触发标记；不会添加战斗技能"
+    },
+    {
+      "json": "canUseOutsideCombat",
+      "csharp": "CanUseOutsideCombat",
+      "native": "GameItem.canUseOutsideCombat",
+      "type": "boolean",
+      "default": false,
+      "description": "原生战斗外使用标记；不会添加使用行为"
+    },
+    {
+      "json": "contrabandLevel",
+      "csharp": "ContrabandLevel",
+      "native": "ContrabandHelper.InitContrabandItem(GameItem,int)",
+      "type": "integer",
+      "minimum": 0,
+      "maximum": 4,
+      "description": "0 不附加违禁规则；1..4 调用 ContrabandHelper.InitContrabandItem",
+      "default": 0
+    },
+    {
+      "json": "useCount",
+      "csharp": "UseCount",
+      "native": "UseCountHelper.InitUseCountItem / SetCurrentUseCount",
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "maximum": {
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 9999,
+          "description": "最大使用次数；不会自动创建使用效果"
+        },
+        "current": {
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 9999,
+          "description": "初始剩余次数，省略时等于 maximum；不能为 0"
+        },
+        "transferable": {
+          "type": "boolean",
+          "default": true,
+          "description": "官方次数转移规则"
+        },
+        "destroyOnEmpty": {
+          "type": "boolean",
+          "default": true,
+          "description": "耗尽时使用原生销毁规则"
+        },
+        "autoValue": {
+          "type": "boolean",
+          "default": false,
+          "description": "按 baseValue + valuePerUse × 剩余次数计价"
+        },
+        "baseValue": {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 1000000000,
+          "description": "自动计价固定基础价值",
+          "default": 0
+        },
+        "valuePerUse": {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 1000000000,
+          "description": "每次剩余次数的价值",
+          "default": 0
+        }
+      },
+      "required": [
+        "maximum"
+      ]
+    },
+    {
+      "json": "sounds",
+      "csharp": "Sounds",
+      "native": "GameItem.soundDragStart/.../soundUse",
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "dragStart": {
+          "type": "string",
+          "maxLength": 160,
+          "description": "现有游戏音效 ID；已由其它加载器注册的模组声音 ID 也可引用。EZapi 不加载 WAV/OGG",
+          "minLength": 1,
+          "pattern": "^[^\\x00-\\x1f\\x7f]+$"
+        },
+        "dragEnd": {
+          "type": "string",
+          "maxLength": 160,
+          "description": "现有游戏音效 ID；已由其它加载器注册的模组声音 ID 也可引用。EZapi 不加载 WAV/OGG",
+          "minLength": 1,
+          "pattern": "^[^\\x00-\\x1f\\x7f]+$"
+        },
+        "containerOpen": {
+          "type": "string",
+          "maxLength": 160,
+          "description": "现有游戏音效 ID；已由其它加载器注册的模组声音 ID 也可引用。EZapi 不加载 WAV/OGG",
+          "minLength": 1,
+          "pattern": "^[^\\x00-\\x1f\\x7f]+$"
+        },
+        "containerClose": {
+          "type": "string",
+          "maxLength": 160,
+          "description": "现有游戏音效 ID；已由其它加载器注册的模组声音 ID 也可引用。EZapi 不加载 WAV/OGG",
+          "minLength": 1,
+          "pattern": "^[^\\x00-\\x1f\\x7f]+$"
+        },
+        "select": {
+          "type": "string",
+          "maxLength": 160,
+          "description": "现有游戏音效 ID；已由其它加载器注册的模组声音 ID 也可引用。EZapi 不加载 WAV/OGG",
+          "minLength": 1,
+          "pattern": "^[^\\x00-\\x1f\\x7f]+$"
+        },
+        "examineOpen": {
+          "type": "string",
+          "maxLength": 160,
+          "description": "现有游戏音效 ID；已由其它加载器注册的模组声音 ID 也可引用。EZapi 不加载 WAV/OGG",
+          "minLength": 1,
+          "pattern": "^[^\\x00-\\x1f\\x7f]+$"
+        },
+        "toggle": {
+          "type": "string",
+          "maxLength": 160,
+          "description": "现有游戏音效 ID；已由其它加载器注册的模组声音 ID 也可引用。EZapi 不加载 WAV/OGG",
+          "minLength": 1,
+          "pattern": "^[^\\x00-\\x1f\\x7f]+$"
+        },
+        "activate": {
+          "type": "string",
+          "maxLength": 160,
+          "description": "现有游戏音效 ID；已由其它加载器注册的模组声音 ID 也可引用。EZapi 不加载 WAV/OGG",
+          "minLength": 1,
+          "pattern": "^[^\\x00-\\x1f\\x7f]+$"
+        },
+        "use": {
+          "type": "string",
+          "maxLength": 160,
+          "description": "现有游戏音效 ID；已由其它加载器注册的模组声音 ID 也可引用。EZapi 不加载 WAV/OGG",
+          "minLength": 1,
+          "pattern": "^[^\\x00-\\x1f\\x7f]+$"
+        }
+      },
+      "required": []
+    },
+    {
+      "json": "tooltip",
+      "csharp": "Tooltip",
+      "native": "ModHook.OnCreateTooltipEarly/Late; RichTextBuilder; official Early/Late callback",
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "showSource": {
+          "type": "boolean",
+          "default": true,
+          "description": "在官方 Late 阶段追加一次灰色斜体来源行；不保证整个提示框末尾"
+        },
+        "sourceName": {
+          "type": "string",
+          "maxLength": 200,
+          "description": "来源显示名；省略时取 pack.json.name",
+          "minLength": 1,
+          "pattern": "\\S"
+        },
+        "labels": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+              "text": {
+                "type": "string",
+                "maxLength": 200,
+                "description": "标签显示文本",
+                "minLength": 1,
+                "pattern": "\\S"
+              },
+              "tagId": {
+                "type": "string",
+                "maxLength": 160,
+                "description": "绑定 tags 中已声明的 ID；省略时为纯展示标签",
+                "pattern": "^(?:[A-Z][A-Z0-9_]*|[a-z0-9_-]+(?:\\.[a-z0-9_-]+)+)$"
+              },
+              "valueKind": {
+                "type": "string",
+                "enum": [
+                  "none",
+                  "string",
+                  "int",
+                  "long",
+                  "float",
+                  "double",
+                  "bool"
+                ],
+                "default": "none",
+                "description": "读取当前有效状态；非 none 必须绑定 tagId"
+              },
+              "color": {
+                "type": "string",
+                "enum": [
+                  "None",
+                  "White",
+                  "VeryLightGray",
+                  "LightGray",
+                  "Gray",
+                  "DarkGray",
+                  "VeryDarkGray",
+                  "Black",
+                  "LightPurple",
+                  "Purple",
+                  "DarkPurple",
+                  "VeryLightRed",
+                  "LightRed",
+                  "Red",
+                  "DarkRed",
+                  "VeryDarkRed",
+                  "LightOrange",
+                  "Orange",
+                  "DarkOrange",
+                  "LightYellow",
+                  "Yellow",
+                  "DarkYellow",
+                  "VeryLightGreen",
+                  "LightGreen",
+                  "Green",
+                  "DarkGreen",
+                  "VeryDarkGreen",
+                  "LightTurquoise",
+                  "Turquoise",
+                  "DarkTurquoise",
+                  "VeryLightCyan",
+                  "LightCyan",
+                  "Cyan",
+                  "DarkCyan",
+                  "VeryDarkCyan",
+                  "LightBlue",
+                  "Blue",
+                  "DarkBlue",
+                  "EGreen",
+                  "ERed"
+                ],
+                "default": "LightTurquoise",
+                "description": "游戏 ColorPalette 名称，区分大小写"
+              },
+              "bold": {
+                "type": "boolean",
+                "default": false,
+                "description": "粗体"
+              },
+              "italic": {
+                "type": "boolean",
+                "default": false,
+                "description": "斜体"
+              },
+              "localizedText": {
+                "$ref": "#/$defs/localizedItemText",
+                "properties": {
+                  "chinese": {
+                    "maxLength": 200
+                  },
+                  "english": {
+                    "maxLength": 200
+                  }
+                },
+                "description": "Current-locale display text; the live tag value is appended independently."
+              }
+            },
+            "required": [],
+            "allOf": [
+              {
+                "if": {
+                  "required": [
+                    "valueKind"
+                  ],
+                  "properties": {
+                    "valueKind": {
+                      "not": {
+                        "const": "none"
+                      }
+                    }
+                  }
+                },
+                "then": {
+                  "required": [
+                    "tagId"
+                  ]
+                }
+              },
+              {
+                "anyOf": [
+                  {
+                    "required": [
+                      "text"
+                    ]
+                  },
+                  {
+                    "required": [
+                      "localizedText"
+                    ]
+                  }
+                ]
+              }
+            ]
+          },
+          "maxItems": 32,
+          "default": []
+        },
+        "lines": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+              "text": {
+                "type": "string",
+                "maxLength": 2000,
+                "description": "追加一行文本",
+                "minLength": 1,
+                "pattern": "\\S"
+              },
+              "position": {
+                "type": "string",
+                "enum": [
+                  "early",
+                  "late"
+                ],
+                "default": "late",
+                "description": "官方回调阶段；late 仍在原生短简介之前"
+              },
+              "color": {
+                "type": "string",
+                "enum": [
+                  "None",
+                  "White",
+                  "VeryLightGray",
+                  "LightGray",
+                  "Gray",
+                  "DarkGray",
+                  "VeryDarkGray",
+                  "Black",
+                  "LightPurple",
+                  "Purple",
+                  "DarkPurple",
+                  "VeryLightRed",
+                  "LightRed",
+                  "Red",
+                  "DarkRed",
+                  "VeryDarkRed",
+                  "LightOrange",
+                  "Orange",
+                  "DarkOrange",
+                  "LightYellow",
+                  "Yellow",
+                  "DarkYellow",
+                  "VeryLightGreen",
+                  "LightGreen",
+                  "Green",
+                  "DarkGreen",
+                  "VeryDarkGreen",
+                  "LightTurquoise",
+                  "Turquoise",
+                  "DarkTurquoise",
+                  "VeryLightCyan",
+                  "LightCyan",
+                  "Cyan",
+                  "DarkCyan",
+                  "VeryDarkCyan",
+                  "LightBlue",
+                  "Blue",
+                  "DarkBlue",
+                  "EGreen",
+                  "ERed"
+                ],
+                "default": "None",
+                "description": "游戏 ColorPalette 名称，区分大小写"
+              },
+              "bold": {
+                "type": "boolean",
+                "default": false,
+                "description": "粗体"
+              },
+              "italic": {
+                "type": "boolean",
+                "default": false,
+                "description": "斜体"
+              },
+              "underline": {
+                "type": "boolean",
+                "default": false,
+                "description": "下划线"
+              },
+              "strikethrough": {
+                "type": "boolean",
+                "default": false,
+                "description": "删除线"
+              },
+              "localizedText": {
+                "$ref": "#/$defs/localizedItemText",
+                "properties": {
+                  "chinese": {
+                    "maxLength": 2000
+                  },
+                  "english": {
+                    "maxLength": 2000
+                  }
+                },
+                "description": "Current-locale display text; the live tag value is appended independently."
+              }
+            },
+            "required": [],
+            "allOf": [
+              {
+                "anyOf": [
+                  {
+                    "required": [
+                      "text"
+                    ]
+                  },
+                  {
+                    "required": [
+                      "localizedText"
+                    ]
+                  }
+                ]
+              }
+            ]
+          },
+          "maxItems": 32,
+          "default": []
+        },
+        "localizedSourceName": {
+          "$ref": "#/$defs/localizedItemText",
+          "properties": {
+            "chinese": {
+              "maxLength": 200
+            },
+            "english": {
+              "maxLength": 200
+            }
+          },
+          "description": "Current-locale source display name; prefer a translated name for the content pack."
+        }
+      },
+      "required": []
+    },
+    {
+      "json": "activation",
+      "csharp": "Activation",
+      "type": "object",
+      "native": "GameItem.mayActivateSlotItemFunc/canActivateSlotItemFunc/onActivateSlotItemFunc; HealthData; UseCountHelper.Use/Destroy",
+      "description": "显式激活行为；与分类分开；当前只支持 healWounds；详细字段见 Schema 与 item-activation.zh-CN.md",
+      "minimumEZapiVersion": "0.1.3"
+    },
+    {
+      "json": "food",
+      "csharp": "Food",
+      "native": "FoodItemHelper.InitFoodItem(item,calories,canned,meat); optional InitFreshFood(item,freshness)",
+      "type": "FoodDefinition",
+      "schema": "../schemas/items.schema.json#/items/properties/food",
+      "description": "热量1..100000；罐装bool；可选保鲜0..100，原生数值不定义为天数或百分比。不能混 activation/useCount/liquidContainer。"
+    },
+    {
+      "json": "liquidContainer",
+      "csharp": "LiquidContainer",
+      "native": "WaterHelper.InitLiquidContainerItem(item,capacity,value,false,false,false,false,3); startFull => WaterHelper.FillWithBaseWater(item)",
+      "type": "LiquidContainerDefinition",
+      "schema": "../schemas/items.schema.json#/items/properties/liquidContainer",
+      "description": "容量1..100000毫升，默认500；默认装满。组成与饮用由游戏处理；不能混 food/activation/useCount。"
+    },
+    {
+      "json": "container",
+      "csharp": "ItemDefinition.Container",
+      "type": "ContainerDefinition",
+      "default": null,
+      "description": "内部储物网格与窗口，宽高1..12、mask、标题、draggable、allowedTags或allowedIds；与消耗行为互斥",
+      "native": "GameGridInventory/PixelWindow/SetContentWindow/ContainerHelper.InitContainerItem",
+      "minEzapiVersion": "0.1.9",
+      "properties": {
+        "width": {
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 12
+        },
+        "height": {
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 12
+        },
+        "title": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 200,
+          "pattern": "\\S",
+          "not": {
+            "pattern": "[\\u0000-\\u001f\\u007f-\\u009f]"
+          }
+        },
+        "draggable": {
+          "type": "boolean",
+          "default": true
+        },
+        "shapeRows": {
+          "type": "array",
+          "minItems": 1,
+          "maxItems": 12,
+          "items": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 12,
+            "pattern": "^[01]+$"
+          }
+        },
+        "allowedTags": {
+          "type": "array",
+          "maxItems": 64,
+          "uniqueItems": true,
+          "items": {
+            "type": "string",
+            "maxLength": 160,
+            "pattern": "^[A-Za-z0-9_-]+(?:\\.[A-Za-z0-9_-]+)*$",
+            "not": {
+              "pattern": "\\s"
+            }
+          }
+        },
+        "allowedIds": {
+          "type": "array",
+          "maxItems": 64,
+          "uniqueItems": true,
+          "items": {
+            "type": "string",
+            "maxLength": 160,
+            "pattern": "^[A-Za-z0-9_-]+(?:\\.[A-Za-z0-9_-]+)*$",
+            "not": {
+              "pattern": "\\s"
+            }
+          }
+        },
+        "localizedTitle": {
+          "$ref": "#/$defs/localizedItemText",
+          "properties": {
+            "chinese": {
+              "maxLength": 200
+            },
+            "english": {
+              "maxLength": 200
+            }
+          },
+          "description": "Current-locale display text. Requires EZapi 0.1.72."
+        }
+      },
+      "required": [
+        "width",
+        "height"
+      ]
+    },
+    {
+      "json": "module",
+      "csharp": "Module",
+      "native": "ModuleHelper.InitModuleItem(GameItem,string,int,int,int,bool,string,int)",
+      "type": "object",
+      "description": "三个百分比基础属性、类型、舰载标记、效果显示与tier；完整字段见schema",
+      "properties": {
+        "type": {
+          "type": "string",
+          "pattern": "^(?:[A-Z][A-Z0-9_]*|[a-z0-9_-]+(?:\\.[a-z0-9_-]+)+)$",
+          "maxLength": 160,
+          "default": "MODULE_TYPE_UNIVERSAL"
+        },
+        "performance": {
+          "type": "integer",
+          "minimum": -100000,
+          "maximum": 100000,
+          "default": 0
+        },
+        "efficiency": {
+          "type": "integer",
+          "minimum": -100000,
+          "maximum": 100000,
+          "default": 0
+        },
+        "quality": {
+          "type": "integer",
+          "minimum": -100000,
+          "maximum": 100000,
+          "default": 0
+        },
+        "isShipModule": {
+          "type": "boolean",
+          "default": true
+        },
+        "additionalEffectDisplay": {
+          "type": "string",
+          "maxLength": 4000,
+          "default": ""
+        },
+        "tier": {
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 100,
+          "default": 1
+        },
+        "localizedAdditionalEffectDisplay": {
+          "$ref": "#/$defs/localizedItemText",
+          "properties": {
+            "chinese": {
+              "maxLength": 4000
+            },
+            "english": {
+              "maxLength": 4000
+            }
+          },
+          "description": "Current-locale display text. Requires EZapi 0.1.72."
+        }
+      }
+    },
+    {
+      "json": "node",
+      "csharp": "Node",
+      "native": "ModuleEffectHelper.InitNode(GameItem)",
+      "type": "boolean",
+      "description": "节点基础状态；不创建具体效果"
+    },
+    {
+      "json": "npcTrade",
+      "csharp": "NpcTrade",
+      "native": "scoped native LootRegistry.Pick and miner DirectoryMaster.Item",
+      "type": "NpcTradeStockOptions",
+      "description": "供应候选条件；自动路径与未实现部分见npc-stock.zh-CN.md"
+    },
+    {
+      "json": "localizedName",
+      "csharp": "LocalizedName",
+      "native": "ItemText + current game locale + official tooltip/factory paths",
+      "minEzapiVersion": "0.1.72",
+      "$ref": "#/$defs/localizedItemText",
+      "properties": {
+        "chinese": {
+          "maxLength": 200
+        },
+        "english": {
+          "maxLength": 200
+        }
+      },
+      "description": "Current-locale name; overrides the literal name when supplied. Requires EZapi 0.1.72."
+    },
+    {
+      "json": "localizedDescription",
+      "csharp": "LocalizedDescription",
+      "native": "ItemText + current game locale + official tooltip/factory paths",
+      "minEzapiVersion": "0.1.72",
+      "$ref": "#/$defs/localizedItemText",
+      "properties": {
+        "chinese": {
+          "maxLength": 4000
+        },
+        "english": {
+          "maxLength": 4000
+        }
+      },
+      "description": "Current-locale description; overrides the literal description when supplied. Requires EZapi 0.1.72."
+    },
+    {
+      "json": "localizedShortDescription",
+      "csharp": "LocalizedShortDescription",
+      "native": "ItemText + current game locale + official tooltip/factory paths",
+      "minEzapiVersion": "0.1.72",
+      "$ref": "#/$defs/localizedItemText",
+      "properties": {
+        "chinese": {
+          "maxLength": 4000
+        },
+        "english": {
+          "maxLength": 4000
+        }
+      },
+      "description": "Current-locale shortDescription; overrides the literal shortDescription when supplied. Requires EZapi 0.1.72."
+    },
+    {
+      "json": "localizedLongDescription",
+      "csharp": "LocalizedLongDescription",
+      "native": "ItemText + current game locale + official tooltip/factory paths",
+      "minEzapiVersion": "0.1.72",
+      "$ref": "#/$defs/localizedItemText",
+      "properties": {
+        "chinese": {
+          "maxLength": 8000
+        },
+        "english": {
+          "maxLength": 8000
+        }
+      },
+      "description": "Current-locale longDescription; overrides the literal longDescription when supplied. Requires EZapi 0.1.72."
+    },
+    {
+      "json": "localizedFlavorText",
+      "csharp": "LocalizedFlavorText",
+      "native": "ItemText + current game locale + official tooltip/factory paths",
+      "minEzapiVersion": "0.1.72",
+      "$ref": "#/$defs/localizedItemText",
+      "properties": {
+        "chinese": {
+          "maxLength": 4000
+        },
+        "english": {
+          "maxLength": 4000
+        }
+      },
+      "description": "Current-locale flavorText; overrides the literal flavorText when supplied. Requires EZapi 0.1.72."
+    },
+    {
+      "json": "localizedCustomText",
+      "csharp": "LocalizedCustomText",
+      "native": "ItemText + current game locale + official tooltip/factory paths",
+      "minEzapiVersion": "0.1.72",
+      "$ref": "#/$defs/localizedItemText",
+      "properties": {
+        "chinese": {
+          "maxLength": 4000
+        },
+        "english": {
+          "maxLength": 4000
+        }
+      },
+      "description": "Current-locale customText; overrides the literal customText when supplied. Requires EZapi 0.1.72."
+    }
+  ],
+  "colorPalette": [
+    "None",
+    "White",
+    "VeryLightGray",
+    "LightGray",
+    "Gray",
+    "DarkGray",
+    "VeryDarkGray",
+    "Black",
+    "LightPurple",
+    "Purple",
+    "DarkPurple",
+    "VeryLightRed",
+    "LightRed",
+    "Red",
+    "DarkRed",
+    "VeryDarkRed",
+    "LightOrange",
+    "Orange",
+    "DarkOrange",
+    "LightYellow",
+    "Yellow",
+    "DarkYellow",
+    "VeryLightGreen",
+    "LightGreen",
+    "Green",
+    "DarkGreen",
+    "VeryDarkGreen",
+    "LightTurquoise",
+    "Turquoise",
+    "DarkTurquoise",
+    "VeryLightCyan",
+    "LightCyan",
+    "Cyan",
+    "DarkCyan",
+    "VeryDarkCyan",
+    "LightBlue",
+    "Blue",
+    "DarkBlue",
+    "EGreen",
+    "ERed"
+  ],
+  "nativeTypes": "native-item-types.json",
+  "unsupported": [
+    "multi-item stacking",
+    "advanced container windows, alternate nesting policies; basic native storage via container is available",
+    "weapon ability/effects registration",
+    "machine recipes",
+    "food/liquid native gameplay not yet verified; custom composition and behavior combinations are not exposed",
+    "custom audio file registration",
+    "localization tables"
+  ],
+  "implementationVersion": "0.1.51",
+  "localizationGuide": "item-localization.index.json",
+  "localizationIndexSchema": "../schemas/localization-index.schema.json",
+  "containerGuide": "containers.zh-CN.md",
+  "nativeItemsGuide": "native-items.zh-CN.md",
+  "definitions": {
+    "localizedItemText": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "chinese": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 8192,
+          "pattern": "\\S"
+        },
+        "english": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 8192,
+          "pattern": "\\S"
+        },
+        "key": {
+          "type": "string",
+          "maxLength": 160,
+          "pattern": "^[A-Za-z0-9_]+$"
+        }
+      },
+      "anyOf": [
+        {
+          "required": [
+            "chinese"
+          ]
+        },
+        {
+          "required": [
+            "english"
+          ]
+        },
+        {
+          "required": [
+            "key"
+          ]
+        }
+      ],
+      "description": "Inline bilingual text or a key in the owning pack Localization/*.csv. CSV-backed item fields require an English key. Current locale -> en -> inline -> literal fallback; item fields take no format arguments."
+    }
+  },
+  "distributionVerification": {
+    "dllSHA256": "7E4AB675B0E3BD81C56EEC4606731A6880287549EB4E8E90A707BE18BD52BEEF",
+    "nativeRuntimeVerified": false,
+    "frameworkSourceIncluded": false
+  }
+}

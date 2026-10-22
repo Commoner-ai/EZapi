@@ -1,0 +1,73 @@
+{
+  "schemaVersion": 1,
+  "version": "0.1.73",
+  "topic": "Follow current game language in DLL and JSON Mods",
+  "languagePolicy": {
+    "confirmedAt": "2026-10-22",
+    "priorityTranslationAndVerificationLocales": [
+      "zh",
+      "en"
+    ],
+    "restrictAutomaticLookupToPriorityLocales": false,
+    "source": "current game language setting",
+    "refresh": "resolve again on next UI refresh or reopen; existing and disk-reloaded items are in acceptance scope",
+    "authorResponsibility": "samples and milestone text provide Chinese and English; authors may supply other official-locale translations; literal strings are not automatically translated",
+    "separateEzapiLanguageSetting": false,
+    "otherLocales": "automatic game-locale CSV lookup uses available translations for all official locales, then English and readable author fallback; complete additional translations and native verification deferred",
+    "pendingNativeAcceptance": [],
+    "nativeAcceptanceBoundary": "Current scoped en/zh surfaces passed; no all-languages or all-gameplay-combinations claim."
+  },
+  "guides": {
+    "zh-CN": "game-language.zh-CN.md",
+    "en": "game-language.en.md"
+  },
+  "sample": "../src/EZapi.Sample/LanguageExamples.cs",
+  "apiIndex": "API.index.zh-CN.json",
+  "fullMetadataIndex": "public-api.index.json",
+  "entryPoints": [
+    {
+      "api": "GameLanguage.Current",
+      "taskZh": "读取当前游戏语言快照",
+      "taskEn": "Read the current game locale snapshot",
+      "phase": "initialized game main thread",
+      "failure": "returns English with IsFallback=true and Reason; never throws for native locale read failures",
+      "sideEffects": "read only; does not switch language"
+    },
+    {
+      "api": "GameLanguage.Resolve(LocalizedItemText)",
+      "taskZh": "在显示时解析中英动态文字",
+      "taskEn": "Resolve bilingual dynamic text when displayed",
+      "phase": "initialized game main thread",
+      "fallback": "zh* selects Chinese; other locales select English; missing side falls back to the other side"
+    },
+    {
+      "api": "GameLanguage.Resolve(LocalizationCatalog,key,fallback,args)",
+      "taskZh": "读取当前语言的CSV文字",
+      "taskEn": "Resolve current-locale CSV text",
+      "phase": "initialized game main thread; catalog is an in-memory snapshot",
+      "fallback": "requested locale → en → caller readable fallback"
+    },
+    {
+      "api": "GameLanguageSnapshot.Resolve",
+      "taskZh": "一页界面统一使用一次语言快照",
+      "taskEn": "Resolve one UI page with a consistent locale snapshot",
+      "phase": "pure managed",
+      "boundary": "does not refresh after the game language changes"
+    }
+  ],
+  "jsonItemFields": "0.1.72: localizedName, localized descriptions/flavor/custom text, custom type names, module display prose, tooltip source/labels/lines, and container title bind to their owning accepted content pack CSV catalog. Every referenced key requires an en.csv entry.",
+  "itemLocalizationIndex": "item-localization.index.json",
+  "nativeVerification": "415 en/zh checks on DLL 4238A189B36CEC4C55E88CC70E05E9086EC935412B13CF701671405A12E63274; includes fixture-dispatched supplier pages and actual disk-loaded item/container/machine display. See scoped evidence.",
+  "scope": "Does not modify the game's locale or Unity string tables. GameLanguage is a DLL API; ordinary JSON item text uses its content-pack CSV catalog. Other framework UI surfaces still require a cross-API English audit.",
+  "machineLayoutLocalizationIndex": "machine-layout-localization.index.json",
+  "machineLayoutFields": "Standalone layout localizedTitle, liquidInputs[].localizedLabel, output.localizedLabel, localizedBatteryLabel and localizedManualLabel; inline bilingual text, no implicit pack CSV. Default output/battery/manual labels follow game language.",
+  "dialogueLocalizationIndex": "dialogue-localization.index.json",
+  "readingLocalization": "ReadingApi.Open accepts bilingual title/body/signature; one locale read before native note allocation.",
+  "workshopLocalization": "WorkshopSnapshot.ForGameLanguage plus optional Localized* fields; legacy English flag retained unless FollowGameLanguage=true.",
+  "nativeEvidence": "verification/disk-supplier-native-0.1.72.json",
+  "distributionVerification": {
+    "dllSHA256": "7E4AB675B0E3BD81C56EEC4606731A6880287549EB4E8E90A707BE18BD52BEEF",
+    "nativeRuntimeVerified": false,
+    "frameworkSourceIncluded": false
+  }
+}

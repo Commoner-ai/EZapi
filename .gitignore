@@ -1,0 +1,10 @@
+**/bin/
+**/obj/
+*.dll
+*.exe
+*.pdb
+*.zip
+*.log
+*.es3
+UserData/
+outputs/

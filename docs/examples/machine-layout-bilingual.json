@@ -1,0 +1,60 @@
+{
+  "title": "示例装配台",
+  "itemInput": {
+    "width": 4,
+    "height": 4
+  },
+  "output": {
+    "kind": "container",
+    "size": {
+      "width": 3,
+      "height": 3
+    },
+    "localizedLabel": {
+      "chinese": "产物容器",
+      "english": "Output container"
+    }
+  },
+  "battery": {
+    "size": {
+      "width": 2,
+      "height": 2
+    }
+  },
+  "modules": {
+    "size": {
+      "width": 4,
+      "height": 4
+    },
+    "allowedTypes": [
+      "MODULE_TYPE_UNIVERSAL"
+    ]
+  },
+  "liquidInputs": [
+    {
+      "slotId": "water",
+      "size": {
+        "width": 2,
+        "height": 3
+      },
+      "label": "原料容器",
+      "localizedLabel": {
+        "chinese": "原料容器",
+        "english": "Ingredient container"
+      }
+    }
+  ],
+  "manualSlot": true,
+  "localizedTitle": {
+    "chinese": "示例装配台",
+    "english": "Example assembler"
+  },
+  "localizedBatteryLabel": {
+    "chinese": "动力槽",
+    "english": "Power source"
+  },
+  "localizedManualLabel": {
+    "chinese": "工艺说明",
+    "english": "Instructions"
+  }
+}

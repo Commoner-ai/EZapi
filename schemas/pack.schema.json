@@ -1,0 +1,146 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://ezapi.local/schemas/pack.schema.json",
+  "title": "EZapi 0.1.17 content pack manifest",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "id",
+    "name",
+    "ezapiVersion"
+  ],
+  "properties": {
+    "id": {
+      "$ref": "#/$defs/owner"
+    },
+    "name": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 200,
+      "pattern": "\\S"
+    },
+    "ezapiVersion": {
+      "const": "0.1"
+    },
+    "version": {
+      "$ref": "#/$defs/version",
+      "default": "0.0.0"
+    },
+    "minEzapiVersion": {
+      "$ref": "#/$defs/version"
+    },
+    "requires": {
+      "type": "array",
+      "maxItems": 64,
+      "uniqueItems": true,
+      "items": {
+        "type": "string",
+        "enum": [
+          "items.register",
+          "items.json",
+          "items.png",
+          "items.rectangle",
+          "items.shape-mask",
+          "items.text",
+          "items.types",
+          "items.custom-type-names",
+          "items.tags",
+          "items.use-count",
+          "items.contraband",
+          "items.native-flags",
+          "items.sound-ids",
+          "tooltip.lines",
+          "tooltip.labels",
+          "tooltip.source-once",
+          "debug.overlay",
+          "debug.native-check",
+          "diagnostics",
+          "save.mod-data",
+          "loot.tables",
+          "items.activation.json",
+          "items.activation.csharp",
+          "lifecycle.events",
+          "packs.validation",
+          "packs.dependencies",
+          "items.food",
+          "items.liquid-container",
+          "localization.resources",
+          "items.container",
+          "transactions",
+          "runtime.items",
+          "runtime.item-inspection",
+          "runtime.power",
+          "runtime.liquids",
+          "runtime.inventory-observation",
+          "runtime.inventory-placement-preview",
+          "runtime.inventory-transfer",
+          "runtime.inventory-freeze",
+          "runtime.inventory-admission",
+          "runtime.list-inventory",
+          "runtime.hook-validation",
+          "runtime.save-graph",
+          "lifecycle.ordered",
+          "content.notifications",
+          "effects.register",
+          "production.value",
+          "production.power-math",
+          "runtime.liquid-transfer",
+          "production.liquid-composition",
+          "production.liquid-metadata",
+          "runtime.modules",
+          "items.native-factories",
+          "items.module",
+          "items.node",
+          "machines.layout",
+          "recipes.guide",
+          "machines.transactions",
+          "machines.recipes",
+          "machines.registration",
+          "machines.automation",
+          "machines.nightly",
+          "machines.manufacturing-terminal",
+          "runtime.external-power"
+        ]
+      }
+    },
+    "dependencies": {
+      "type": "array",
+      "maxItems": 64,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "id"
+        ],
+        "properties": {
+          "id": {
+            "$ref": "#/$defs/owner"
+          },
+          "minVersion": {
+            "$ref": "#/$defs/version",
+            "default": "0.0.0"
+          }
+        }
+      }
+    }
+  },
+  "$defs": {
+    "owner": {
+      "type": "string",
+      "maxLength": 160,
+      "minLength": 1,
+      "pattern": "^[a-z0-9_-]+(?:\\.[a-z0-9_-]+)*$",
+      "not": {
+        "pattern": "\\s"
+      }
+    },
+    "version": {
+      "type": "string",
+      "pattern": "^(0|[1-9][0-9]{0,8})\\.(0|[1-9][0-9]{0,8})\\.(0|[1-9][0-9]{0,8})$",
+      "not": {
+        "pattern": "\\s"
+      }
+    }
+  },
+  "description": "Semantic checks also reject duplicate keys, self/duplicate dependencies, unmet framework versions/capabilities. Directory checks resolve installed JSON packs only, not DLL Mods. PNG checks validate header/dimensions, not decode or gameplay."
+}

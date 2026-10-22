@@ -1,0 +1,500 @@
+{
+  "outputOnly": true,
+  "version": "0.1.63",
+  "scope": "actual native Snapshot; no author callbacks serialized; see machine-status.index.json",
+  "machines": [
+    {
+      "OwnerId": "ezapi.debug",
+      "MachineId": "ezapi.debug.condition_machine",
+      "Template": {
+        "Title": "EZapi容器条件临时检查",
+        "Draggable": true,
+        "ItemInput": {
+          "Width": 3,
+          "Height": 3
+        },
+        "Output": {
+          "Kind": "container",
+          "Size": {
+            "Width": 3,
+            "Height": 3
+          }
+        },
+        "LiquidInputs": [
+          {
+            "SlotId": "water",
+            "Size": {
+              "Width": 3,
+              "Height": 3
+            },
+            "Label": "",
+            "AllowedIds": [],
+            "AllowedTags": []
+          }
+        ],
+        "Battery": {
+          "Size": {
+            "Width": 2,
+            "Height": 2
+          },
+          "Required": true
+        },
+        "Modules": null,
+        "ManualSlot": false
+      },
+      "RecipeCount": 1,
+      "Status": 1,
+      "ProcessingAvailable": true,
+      "NightlyInstalled": false,
+      "Created": 9,
+      "Failures": 0,
+      "LastError": null,
+      "RuntimeInstalled": true
+    },
+    {
+      "OwnerId": "ezapi.debug",
+      "MachineId": "ezapi.debug.night_default",
+      "Template": {
+        "Title": null,
+        "Draggable": true,
+        "ItemInput": {
+          "Width": 3,
+          "Height": 3
+        },
+        "Output": {
+          "Kind": "items",
+          "Size": {
+            "Width": 3,
+            "Height": 3
+          }
+        },
+        "LiquidInputs": [],
+        "Battery": null,
+        "Modules": null,
+        "ManualSlot": false
+      },
+      "RecipeCount": 1,
+      "Status": 1,
+      "ProcessingAvailable": true,
+      "NightlyInstalled": true,
+      "Created": 0,
+      "Failures": 0,
+      "LastError": null,
+      "RuntimeInstalled": true
+    },
+    {
+      "OwnerId": "ezapi.debug",
+      "MachineId": "ezapi.debug.night_disabled",
+      "Template": {
+        "Title": null,
+        "Draggable": true,
+        "ItemInput": {
+          "Width": 3,
+          "Height": 3
+        },
+        "Output": {
+          "Kind": "items",
+          "Size": {
+            "Width": 3,
+            "Height": 3
+          }
+        },
+        "LiquidInputs": [],
+        "Battery": null,
+        "Modules": null,
+        "ManualSlot": false
+      },
+      "RecipeCount": 1,
+      "Status": 1,
+      "ProcessingAvailable": true,
+      "NightlyInstalled": false,
+      "Created": 0,
+      "Failures": 0,
+      "LastError": null,
+      "RuntimeInstalled": true
+    },
+    {
+      "OwnerId": "ezapi.debug",
+      "MachineId": "ezapi.debug.night_dynamic",
+      "Template": {
+        "Title": null,
+        "Draggable": true,
+        "ItemInput": {
+          "Width": 3,
+          "Height": 3
+        },
+        "Output": {
+          "Kind": "items",
+          "Size": {
+            "Width": 3,
+            "Height": 3
+          }
+        },
+        "LiquidInputs": [],
+        "Battery": null,
+        "Modules": null,
+        "ManualSlot": false
+      },
+      "RecipeCount": 1,
+      "Status": 1,
+      "ProcessingAvailable": true,
+      "NightlyInstalled": true,
+      "Created": 0,
+      "Failures": 0,
+      "LastError": null,
+      "RuntimeInstalled": true
+    },
+    {
+      "OwnerId": "ezapi.debug",
+      "MachineId": "ezapi.debug.night_invalid",
+      "Template": {
+        "Title": null,
+        "Draggable": true,
+        "ItemInput": {
+          "Width": 3,
+          "Height": 3
+        },
+        "Output": {
+          "Kind": "items",
+          "Size": {
+            "Width": 3,
+            "Height": 3
+          }
+        },
+        "LiquidInputs": [],
+        "Battery": null,
+        "Modules": null,
+        "ManualSlot": false
+      },
+      "RecipeCount": 1,
+      "Status": 1,
+      "ProcessingAvailable": true,
+      "NightlyInstalled": true,
+      "Created": 0,
+      "Failures": 0,
+      "LastError": null,
+      "RuntimeInstalled": true
+    },
+    {
+      "OwnerId": "ezapi.debug",
+      "MachineId": "ezapi.debug.persist_blocked",
+      "Template": {
+        "Title": null,
+        "Draggable": true,
+        "ItemInput": {
+          "Width": 6,
+          "Height": 4
+        },
+        "Output": {
+          "Kind": "items",
+          "Size": {
+            "Width": 3,
+            "Height": 3
+          }
+        },
+        "LiquidInputs": [],
+        "Battery": {
+          "Size": {
+            "Width": 2,
+            "Height": 2
+          },
+          "Required": false
+        },
+        "Modules": null,
+        "ManualSlot": false
+      },
+      "RecipeCount": 1,
+      "Status": 1,
+      "ProcessingAvailable": true,
+      "NightlyInstalled": true,
+      "Created": 1,
+      "Failures": 0,
+      "LastError": null,
+      "RuntimeInstalled": true
+    },
+    {
+      "OwnerId": "ezapi.debug",
+      "MachineId": "ezapi.debug.persist_external",
+      "Template": {
+        "Title": null,
+        "Draggable": true,
+        "ItemInput": {
+          "Width": 6,
+          "Height": 4
+        },
+        "Output": {
+          "Kind": "container",
+          "Size": {
+            "Width": 3,
+            "Height": 3
+          }
+        },
+        "LiquidInputs": [
+          {
+            "SlotId": "water",
+            "Size": {
+              "Width": 3,
+              "Height": 3
+            },
+            "Label": "",
+            "AllowedIds": [],
+            "AllowedTags": []
+          }
+        ],
+        "Battery": {
+          "Size": {
+            "Width": 2,
+            "Height": 2
+          },
+          "Required": true
+        },
+        "Modules": null,
+        "ManualSlot": false
+      },
+      "RecipeCount": 1,
+      "Status": 1,
+      "ProcessingAvailable": true,
+      "NightlyInstalled": true,
+      "Created": 1,
+      "Failures": 0,
+      "LastError": null,
+      "RuntimeInstalled": true
+    },
+    {
+      "OwnerId": "ezapi.debug",
+      "MachineId": "ezapi.debug.persist_filled",
+      "Template": {
+        "Title": null,
+        "Draggable": true,
+        "ItemInput": {
+          "Width": 6,
+          "Height": 4
+        },
+        "Output": {
+          "Kind": "items",
+          "Size": {
+            "Width": 3,
+            "Height": 3
+          }
+        },
+        "LiquidInputs": [
+          {
+            "SlotId": "water",
+            "Size": {
+              "Width": 3,
+              "Height": 3
+            },
+            "Label": "",
+            "AllowedIds": [],
+            "AllowedTags": []
+          }
+        ],
+        "Battery": {
+          "Size": {
+            "Width": 2,
+            "Height": 2
+          },
+          "Required": true
+        },
+        "Modules": null,
+        "ManualSlot": false
+      },
+      "RecipeCount": 1,
+      "Status": 1,
+      "ProcessingAvailable": true,
+      "NightlyInstalled": true,
+      "Created": 1,
+      "Failures": 0,
+      "LastError": null,
+      "RuntimeInstalled": true
+    },
+    {
+      "OwnerId": "ezapi.debug",
+      "MachineId": "ezapi.debug.persist_station",
+      "Template": {
+        "Title": null,
+        "Draggable": true,
+        "ItemInput": {
+          "Width": 6,
+          "Height": 4
+        },
+        "Output": {
+          "Kind": "items",
+          "Size": {
+            "Width": 3,
+            "Height": 3
+          }
+        },
+        "LiquidInputs": [],
+        "Battery": {
+          "Size": {
+            "Width": 2,
+            "Height": 2
+          },
+          "Required": true
+        },
+        "Modules": null,
+        "ManualSlot": false
+      },
+      "RecipeCount": 0,
+      "Status": 1,
+      "ProcessingAvailable": true,
+      "NightlyInstalled": false,
+      "Created": 1,
+      "Failures": 0,
+      "LastError": null,
+      "RuntimeInstalled": true
+    },
+    {
+      "OwnerId": "ezapi.debug",
+      "MachineId": "ezapi.debug.power_optional_probe",
+      "Template": {
+        "Title": null,
+        "Draggable": true,
+        "ItemInput": {
+          "Width": 2,
+          "Height": 2
+        },
+        "Output": {
+          "Kind": "items",
+          "Size": {
+            "Width": 2,
+            "Height": 2
+          }
+        },
+        "LiquidInputs": [],
+        "Battery": {
+          "Size": {
+            "Width": 2,
+            "Height": 2
+          },
+          "Required": false
+        },
+        "Modules": null,
+        "ManualSlot": false
+      },
+      "RecipeCount": 1,
+      "Status": 1,
+      "ProcessingAvailable": true,
+      "NightlyInstalled": false,
+      "Created": 4,
+      "Failures": 0,
+      "LastError": null,
+      "RuntimeInstalled": true
+    },
+    {
+      "OwnerId": "ezapi.debug",
+      "MachineId": "ezapi.debug.power_required_probe",
+      "Template": {
+        "Title": null,
+        "Draggable": true,
+        "ItemInput": {
+          "Width": 2,
+          "Height": 2
+        },
+        "Output": {
+          "Kind": "items",
+          "Size": {
+            "Width": 2,
+            "Height": 2
+          }
+        },
+        "LiquidInputs": [],
+        "Battery": {
+          "Size": {
+            "Width": 2,
+            "Height": 2
+          },
+          "Required": true
+        },
+        "Modules": null,
+        "ManualSlot": false
+      },
+      "RecipeCount": 1,
+      "Status": 1,
+      "ProcessingAvailable": true,
+      "NightlyInstalled": false,
+      "Created": 6,
+      "Failures": 0,
+      "LastError": null,
+      "RuntimeInstalled": true
+    },
+    {
+      "OwnerId": "ezapi.debug",
+      "MachineId": "ezapi.debug.registered_machine",
+      "Template": {
+        "Title": null,
+        "Draggable": true,
+        "ItemInput": {
+          "Width": 3,
+          "Height": 3
+        },
+        "Output": {
+          "Kind": "items",
+          "Size": {
+            "Width": 3,
+            "Height": 3
+          }
+        },
+        "LiquidInputs": [],
+        "Battery": null,
+        "Modules": null,
+        "ManualSlot": false
+      },
+      "RecipeCount": 3,
+      "Status": 1,
+      "ProcessingAvailable": true,
+      "NightlyInstalled": true,
+      "Created": 4,
+      "Failures": 0,
+      "LastError": null,
+      "RuntimeInstalled": true
+    },
+    {
+      "OwnerId": "ezapi.machines",
+      "MachineId": "ezapi.machines.universal_manufacturing_terminal",
+      "Template": {
+        "Title": "EZapi 全域制造终端",
+        "Draggable": true,
+        "ItemInput": {
+          "Width": 9,
+          "Height": 6
+        },
+        "Output": {
+          "Kind": "items",
+          "Size": {
+            "Width": 9,
+            "Height": 6
+          }
+        },
+        "LiquidInputs": [],
+        "Battery": {
+          "Size": {
+            "Width": 2,
+            "Height": 2
+          },
+          "Required": true
+        },
+        "Modules": {
+          "Size": {
+            "Width": 7,
+            "Height": 5
+          },
+          "AllowedTypes": [
+            "MODULE_TYPE_FURNACE",
+            "MODULE_TYPE_UNIVERSAL"
+          ]
+        },
+        "ManualSlot": false
+      },
+      "RecipeCount": 0,
+      "Status": 1,
+      "ProcessingAvailable": true,
+      "NightlyInstalled": true,
+      "Created": 0,
+      "Failures": 0,
+      "LastError": null,
+      "RuntimeInstalled": true
+    }
+  ]
+}

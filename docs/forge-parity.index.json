@@ -1,0 +1,1906 @@
+{
+  "schemaVersion": 1,
+  "implementationVersion": "0.1.71",
+  "baseline": "forge-public-contract.index.json",
+  "minimumGoal": "Cover every Forge API functionality independently in EZapi; no Forge runtime dependency",
+  "complete": true,
+  "localizationExpansion": "active: typed bilingual recipe guides completed in0.1.61; final cross-API English compatibility and developer usability/index review required by user",
+  "groupCount": 39,
+  "memberCount": 123,
+  "publicTypeCount": 149,
+  "summary": {
+    "implemented": 39,
+    "partial": 0,
+    "missing": 0
+  },
+  "statusMeaning": {
+    "implemented": "public functionality implemented; compile/offline evidence only until runtimeVerified",
+    "partial": "some behavior or supported inputs are missing, or the source draft is awaiting compile verification; not counted as full coverage",
+    "missing": "no public equivalent; internal debug code does not count"
+  },
+  "additionalPublicContracts": "All other types, DTOs, helper methods and interfaces are retained in forge-public-contract.index.json and remain part of the minimum scope.",
+  "groups": [
+    {
+      "forgeType": "Nicokobo.Forge.ForgeApi",
+      "feature": "通用批量注册与依赖状态",
+      "status": "implemented",
+      "ezapi": "RegistrationApi.Register/Snapshot; RegistrationBatch.Require/Define",
+      "gapOrBoundary": "七类定义元数据、整批提交/拒绝、幂等/冲突、最低版本与定义依赖、循环等待、不可变快照、生命周期已实现。DependenciesResolved不等于原生内容Applied。",
+      "members": [
+        {
+          "kind": "method",
+          "name": "Register",
+          "signature": "Nicokobo.Forge.Registration.SubmitResult Nicokobo.Forge.ForgeApi::Register(System.String,System.String,System.Action`1<Nicokobo.Forge.Registration.RegistrationBatch>)",
+          "status": "implemented",
+          "ezapi": [
+            "RegistrationApi.Register"
+          ],
+          "nativeRuntimeVerified": true
+        },
+        {
+          "kind": "method",
+          "name": "Snapshot",
+          "signature": "System.Collections.Generic.IReadOnlyList`1<Nicokobo.Forge.Registration.RegistrationView> Nicokobo.Forge.ForgeApi::Snapshot()",
+          "status": "implemented",
+          "ezapi": [
+            "RegistrationApi.Snapshot"
+          ],
+          "nativeRuntimeVerified": true
+        }
+      ],
+      "nativeRuntimeVerified": true,
+      "evidence": "verification/registration-native-0.1.52.json"
+    },
+    {
+      "forgeType": "Nicokobo.Forge.ForgeAssetsApi",
+      "feature": "嵌入图片与图集",
+      "status": "implemented",
+      "ezapi": "SpriteAssets.CreateEmbeddedAtlas / EmbeddedSpriteAtlas.GetSprite, TryInstall, Assign, RegisterPortrait",
+      "gapOrBoundary": "All embedded atlas public contracts implemented independently. EZapi 0.1.47 native smoke test passed 9/9 including current SpriteDict portrait registration, native GetSprite readback and idempotence; rejects foreign mappings and invalidates stopped handles. Portrait visual display, scene re-registration inside the real game, and save/reload remain unverified; offline tests cover scene replacement and cleanup failures.",
+      "members": [
+        {
+          "kind": "method",
+          "name": "CreateEmbeddedSpriteAtlas",
+          "signature": "Nicokobo.Forge.ForgeSpriteAtlas Nicokobo.Forge.ForgeAssetsApi::CreateEmbeddedSpriteAtlas(System.String,System.String,System.Reflection.Assembly,System.Collections.Generic.IReadOnlyList`1<Nicokobo.Forge.ForgeSpriteDefinition>,Nicokobo.Forge.ForgeSpriteFilter)",
+          "status": "implemented",
+          "ezapi": [
+            "SpriteAssets.CreateEmbeddedAtlas"
+          ],
+          "nativeRuntimeVerified": true
+        }
+      ],
+      "nativeRuntimeVerified": true,
+      "evidence": "sprite-assets.zh-CN.md"
+    },
+    {
+      "forgeType": "Nicokobo.Forge.ForgeTransactionApi",
+      "feature": "补偿事务",
+      "status": "implemented",
+      "ezapi": "Transactions.Run",
+      "gapOrBoundary": "同步Check/Apply/Restore，包含部分失败步骤的反向补偿；无存档事务保证",
+      "members": [
+        {
+          "kind": "method",
+          "name": "Run",
+          "signature": "Nicokobo.Forge.ForgeTransactionResult Nicokobo.Forge.ForgeTransactionApi::Run(System.Collections.Generic.IReadOnlyList`1<Nicokobo.Forge.ForgeTransactionStep>)",
+          "status": "implemented",
+          "ezapi": [
+            "Transactions.Run"
+          ],
+          "nativeRuntimeVerified": false
+        }
+      ],
+      "nativeRuntimeVerified": false
+    },
+    {
+      "forgeType": "Nicokobo.Forge.ForgeCapabilities",
+      "feature": "运行时能力门控",
+      "status": "implemented",
+      "ezapi": "RuntimeCapabilities.Current",
+      "gapOrBoundary": "覆盖20项同名运行时快照字段；快照只报告EZapi门控，具体操作结果和游戏行为仍须单独验证",
+      "members": [
+        {
+          "kind": "property",
+          "name": "Current",
+          "signature": "Nicokobo.Forge.ForgeCapabilitySnapshot Current",
+          "status": "implemented",
+          "ezapi": [
+            "RuntimeCapabilities.Current"
+          ],
+          "nativeRuntimeVerified": false
+        }
+      ],
+      "nativeRuntimeVerified": false
+    },
+    {
+      "forgeType": "Nicokobo.Forge.ForgeClientVisitApi",
+      "feature": "访客排队与状态",
+      "status": "implemented",
+      "ezapi": "ClientVisitApi.Queue / ClientVisitApi.Status / ClientVisitApi.IsAvailable",
+      "gapOrBoundary": "Uses official OnGenerateCustomerVeryLate and the current build public StoreClientListDict.CreateStoreClient/AddNextClient path; reuses native trade behavior and only overrides sprite plus visit callbacks. Queue/readback logic has offline tests; in-game arrival, sprite rendering, dialogue and third-party patch combinations remain unverified.",
+      "members": [
+        {
+          "kind": "method",
+          "name": "Queue",
+          "signature": "Nicokobo.Forge.ForgePresentationResult Nicokobo.Forge.ForgeClientVisitApi::Queue(System.String,System.String,System.String,System.Int32,System.String,System.String,Nicokobo.Forge.ForgeDialogueScript)",
+          "status": "implemented",
+          "ezapi": [
+            "EZapi.ClientVisitApi.Queue"
+          ],
+          "nativeRuntimeVerified": false
+        },
+        {
+          "kind": "method",
+          "name": "Status",
+          "signature": "Nicokobo.Forge.ForgePresentationResult Nicokobo.Forge.ForgeClientVisitApi::Status(System.String,System.String)",
+          "status": "implemented",
+          "ezapi": [
+            "EZapi.ClientVisitApi.Status"
+          ],
+          "nativeRuntimeVerified": false
+        },
+        {
+          "kind": "property",
+          "name": "IsAvailable",
+          "signature": "System.Boolean IsAvailable",
+          "status": "implemented",
+          "ezapi": [
+            "EZapi.ClientVisitApi.IsAvailable"
+          ],
+          "nativeRuntimeVerified": false
+        }
+      ],
+      "nativeRuntimeVerified": false
+    },
+    {
+      "forgeType": "Nicokobo.Forge.ForgeContentApi",
+      "feature": "内容应用事件",
+      "status": "implemented",
+      "ezapi": "ContentApi.Subscribe",
+      "gapOrBoundary": "全局通知/订阅者owner/唯一ID/释放/异常隔离；当前item/effect均发布真实转换，后续目录继续统一",
+      "members": [
+        {
+          "kind": "method",
+          "name": "Subscribe",
+          "signature": "System.IDisposable Nicokobo.Forge.ForgeContentApi::Subscribe(System.String,System.String,System.Action`1<Nicokobo.Forge.NativeApplicationView>)",
+          "status": "implemented",
+          "ezapi": [
+            "ContentApi.Subscribe"
+          ],
+          "nativeRuntimeVerified": false
+        }
+      ],
+      "nativeRuntimeVerified": false
+    },
+    {
+      "forgeType": "Nicokobo.Forge.ForgeDialogueApi",
+      "feature": "分支对话",
+      "status": "implemented",
+      "ezapi": "DialogueApi.Create/Open/Close/IsAvailable/GetRuntimeStatus",
+      "gapOrBoundary": "Independent native choice graph and immutable script; no JSON dialogue importer; Phone/ClientVisit remain separate; no real third-party patch combination claim",
+      "members": [
+        {
+          "kind": "method",
+          "name": "Create",
+          "signature": "Nicokobo.Forge.ForgeDialogueScript Nicokobo.Forge.ForgeDialogueApi::Create(System.String,Nicokobo.Forge.ForgeDialogueDefinition)",
+          "status": "implemented",
+          "ezapi": [
+            "DialogueApi.Create"
+          ],
+          "nativeRuntimeVerified": true
+        },
+        {
+          "kind": "property",
+          "name": "IsAvailable",
+          "signature": "System.Boolean IsAvailable",
+          "status": "implemented",
+          "ezapi": [
+            "DialogueApi.IsAvailable"
+          ],
+          "nativeRuntimeVerified": true
+        }
+      ],
+      "nativeRuntimeVerified": true,
+      "evidence": "native-dialogue-0.1.33.zh-CN.md"
+    },
+    {
+      "forgeType": "Nicokobo.Forge.ForgeEffectApi",
+      "feature": "效果注册与快照",
+      "status": "implemented",
+      "ezapi": "EffectApi",
+      "gapOrBoundary": "整批暂存、真实效果目录与随机排除/嵌套finalizer/确切对象清理；原生行为待验",
+      "members": [
+        {
+          "kind": "method",
+          "name": "RegisterEffect",
+          "signature": "Nicokobo.Forge.Registration.SubmitResult Nicokobo.Forge.ForgeEffectApi::RegisterEffect(System.String,System.String,System.Func`1<Il2Cpp.ModuleEffectHelper/ModuleEffect>,System.Boolean)",
+          "status": "implemented",
+          "ezapi": [
+            "EffectApi.RegisterEffect"
+          ],
+          "nativeRuntimeVerified": false
+        },
+        {
+          "kind": "method",
+          "name": "RegisterEffects",
+          "signature": "Nicokobo.Forge.Registration.SubmitResult Nicokobo.Forge.ForgeEffectApi::RegisterEffects(System.String,System.Collections.Generic.IReadOnlyList`1<Nicokobo.Forge.NativeEffectRegistration>)",
+          "status": "implemented",
+          "ezapi": [
+            "EffectApi.RegisterEffects"
+          ],
+          "nativeRuntimeVerified": false
+        },
+        {
+          "kind": "method",
+          "name": "Snapshot",
+          "signature": "System.Collections.Generic.IReadOnlyList`1<Nicokobo.Forge.NativeApplicationView> Nicokobo.Forge.ForgeEffectApi::Snapshot()",
+          "status": "implemented",
+          "ezapi": [
+            "EffectApi.Snapshot"
+          ],
+          "nativeRuntimeVerified": false
+        }
+      ],
+      "nativeRuntimeVerified": false
+    },
+    {
+      "forgeType": "Nicokobo.Forge.ForgeExternalPowerApi",
+      "feature": "外部电力事务",
+      "status": "implemented",
+      "ezapi": "ExternalPowerApi / IPowerTransaction",
+      "gapOrBoundary": "外电两类型一属性八方法行为已审计；原版熔炉含材料子图显式ConsumeGraph、旧输出子图保留及失败恢复233/0，默认四参数ABI保留。EZapi外电两晚保存/冷启动有独立证据；本轮熔炉不覆盖所有跨夜组合，无异步/网络/崩溃恢复。",
+      "members": [
+        {
+          "kind": "method",
+          "name": "IsConnector",
+          "signature": "System.Boolean Nicokobo.Forge.ForgeExternalPowerApi::IsConnector(Il2Cpp.GameItem)",
+          "status": "implemented",
+          "ezapi": [
+            "ExternalPowerApi.IsConnector"
+          ],
+          "nativeRuntimeVerified": true
+        },
+        {
+          "kind": "method",
+          "name": "Register",
+          "signature": "System.IDisposable Nicokobo.Forge.ForgeExternalPowerApi::Register(System.String,System.String,System.Func`2<Il2Cpp.GameItem,System.Int32>,System.Func`4<Il2Cpp.GameItem,Il2Cpp.GameItem,System.Int32,Nicokobo.Forge.IForgePowerTransaction>)",
+          "status": "implemented",
+          "ezapi": [
+            "ExternalPowerApi.Register"
+          ],
+          "nativeRuntimeVerified": true
+        },
+        {
+          "kind": "method",
+          "name": "GetEnergy",
+          "signature": "System.Int32 Nicokobo.Forge.ForgeExternalPowerApi::GetEnergy(Il2Cpp.GameItem)",
+          "status": "implemented",
+          "ezapi": [
+            "ExternalPowerApi.GetEnergy"
+          ],
+          "nativeRuntimeVerified": true
+        },
+        {
+          "kind": "property",
+          "name": "IsAvailable",
+          "signature": "System.Boolean IsAvailable",
+          "status": "implemented",
+          "ezapi": [
+            "ExternalPowerApi.IsAvailable"
+          ],
+          "nativeRuntimeVerified": true
+        }
+      ],
+      "nativeRuntimeVerified": true,
+      "evidence": "verification/furnace-contents-native-0.1.67.json",
+      "publicContractAudit": "external-power-public-contract.audit.json"
+    },
+    {
+      "forgeType": "Nicokobo.Forge.ForgeHookApi",
+      "feature": "原生补丁目标检查",
+      "status": "implemented",
+      "ezapi": "HookApi",
+      "gapOrBoundary": "Interop生成元数据和入口检查；不安装用户补丁",
+      "members": [
+        {
+          "kind": "method",
+          "name": "TryValidateNativeTarget",
+          "signature": "System.Boolean Nicokobo.Forge.ForgeHookApi::TryValidateNativeTarget(System.Reflection.MethodInfo,System.String&)",
+          "status": "implemented",
+          "ezapi": [
+            "HookApi.TryValidateNativeTarget"
+          ],
+          "nativeRuntimeVerified": false
+        }
+      ],
+      "nativeRuntimeVerified": false
+    },
+    {
+      "forgeType": "Nicokobo.Forge.ForgeInventoryAdmissionApi",
+      "feature": "库存准入扩展",
+      "status": "implemented",
+      "ezapi": "InventoryAdmissionApi",
+      "gapOrBoundary": "指定容器/子库存AND准入；原生拒绝优先，游戏待验",
+      "members": [
+        {
+          "kind": "method",
+          "name": "Register",
+          "signature": "System.IDisposable Nicokobo.Forge.ForgeInventoryAdmissionApi::Register(System.String,System.String,System.String,System.Func`3<Il2Cpp.GameItem,Il2Cpp.GameGridInventory,System.Boolean>)",
+          "status": "implemented",
+          "ezapi": [
+            "InventoryAdmissionApi.Register"
+          ],
+          "nativeRuntimeVerified": false
+        },
+        {
+          "kind": "property",
+          "name": "IsAvailable",
+          "signature": "System.Boolean IsAvailable",
+          "status": "implemented",
+          "ezapi": [
+            "InventoryAdmissionApi.IsAvailable"
+          ],
+          "nativeRuntimeVerified": false
+        }
+      ],
+      "nativeRuntimeVerified": false
+    },
+    {
+      "forgeType": "Nicokobo.Forge.ForgeInventoryApi",
+      "feature": "库存观察与搬运预检",
+      "status": "implemented",
+      "ezapi": "InventoryApi",
+      "gapOrBoundary": "原生观察、拥有量统计、直接快照、整件转移预检；游戏待验",
+      "members": [
+        {
+          "kind": "method",
+          "name": "CaptureRunItems",
+          "signature": "System.Collections.Generic.IReadOnlyList`1<Il2Cpp.GameItem> Nicokobo.Forge.ForgeInventoryApi::CaptureRunItems(Il2Cpp.PlayerStore)",
+          "status": "implemented",
+          "ezapi": [
+            "InventoryApi.CaptureRunItems"
+          ],
+          "nativeRuntimeVerified": false
+        },
+        {
+          "kind": "method",
+          "name": "IsPlayerOwned",
+          "signature": "System.Boolean Nicokobo.Forge.ForgeInventoryApi::IsPlayerOwned(Il2Cpp.GameItem)",
+          "status": "implemented",
+          "ezapi": [
+            "InventoryApi.IsPlayerOwned"
+          ],
+          "nativeRuntimeVerified": false
+        },
+        {
+          "kind": "method",
+          "name": "CaptureOwnedItemCounts",
+          "signature": "System.Collections.Generic.IReadOnlyDictionary`2<System.String,System.Int32> Nicokobo.Forge.ForgeInventoryApi::CaptureOwnedItemCounts(Il2Cpp.PlayerStore,System.Collections.Generic.IReadOnlyCollection`1<System.String>)",
+          "status": "implemented",
+          "ezapi": [
+            "InventoryApi.CaptureOwnedItemCounts"
+          ],
+          "nativeRuntimeVerified": false
+        },
+        {
+          "kind": "method",
+          "name": "CaptureDirect",
+          "signature": "Nicokobo.Forge.NativeInventorySnapshot Nicokobo.Forge.ForgeInventoryApi::CaptureDirect(Il2Cpp.GameInventory)",
+          "status": "implemented",
+          "ezapi": [
+            "InventoryApi.CaptureDirect"
+          ],
+          "nativeRuntimeVerified": false
+        },
+        {
+          "kind": "method",
+          "name": "PreviewWholeGridTransfer",
+          "signature": "Nicokobo.Forge.NativeTransferPreview Nicokobo.Forge.ForgeInventoryApi::PreviewWholeGridTransfer(Il2Cpp.GameItem,Il2Cpp.GameGridInventory,Il2Cpp.GameGridInventory)",
+          "status": "implemented",
+          "ezapi": [
+            "InventoryApi.PreviewWholeGridTransfer"
+          ],
+          "nativeRuntimeVerified": false
+        },
+        {
+          "kind": "property",
+          "name": "IsItemDragActive",
+          "signature": "System.Boolean IsItemDragActive",
+          "status": "implemented",
+          "ezapi": [
+            "InventoryApi.IsItemDragActive"
+          ],
+          "nativeRuntimeVerified": false
+        }
+      ],
+      "nativeRuntimeVerified": false
+    },
+    {
+      "forgeType": "Nicokobo.Forge.ForgeInventoryEndpointApi",
+      "feature": "持久库存端点",
+      "status": "implemented",
+      "ezapi": "InventoryEndpointApi.Open/Snapshot/CaptureContents/Store/Take/Delete",
+      "gapOrBoundary": "当前构建原生保存、新进程恢复、删除后冷启动、外出返回和存取守恒已验证；充电14项含隔离家具过滤器，未验证真实突袭/联机组合。",
+      "members": [
+        {
+          "kind": "method",
+          "name": "Open",
+          "signature": "Nicokobo.Forge.ForgeInventoryEndpoint Nicokobo.Forge.ForgeInventoryEndpointApi::Open(Il2Cpp.PlayerStore,System.String,System.String,System.String,System.Boolean,System.Boolean)",
+          "status": "implemented",
+          "ezapi": [
+            "InventoryEndpointApi.Open"
+          ],
+          "nativeRuntimeVerified": true
+        },
+        {
+          "kind": "method",
+          "name": "Snapshot",
+          "signature": "System.Collections.Generic.IReadOnlyList`1<Nicokobo.Forge.ForgeInventoryEndpoint> Nicokobo.Forge.ForgeInventoryEndpointApi::Snapshot()",
+          "status": "implemented",
+          "ezapi": [
+            "InventoryEndpointApi.Snapshot"
+          ],
+          "nativeRuntimeVerified": true
+        },
+        {
+          "kind": "method",
+          "name": "Delete",
+          "signature": "System.Boolean Nicokobo.Forge.ForgeInventoryEndpointApi::Delete(System.String,System.String)",
+          "status": "implemented",
+          "ezapi": [
+            "InventoryEndpointApi.Delete"
+          ],
+          "nativeRuntimeVerified": true
+        },
+        {
+          "kind": "property",
+          "name": "IsAvailable",
+          "signature": "System.Boolean IsAvailable",
+          "status": "implemented",
+          "ezapi": [
+            "InventoryEndpointApi.IsAvailable"
+          ],
+          "nativeRuntimeVerified": true
+        },
+        {
+          "kind": "property",
+          "name": "Error",
+          "signature": "System.String Error",
+          "status": "implemented",
+          "ezapi": [
+            "InventoryEndpointApi.Error"
+          ],
+          "nativeRuntimeVerified": true
+        }
+      ],
+      "nativeRuntimeVerified": true,
+      "evidence": "verification/endpoint-lifecycle-0.1.53.json",
+      "verifiedScope": "050REV5-L slot534: native nightly save, new-process restore, outside commissary/return, held/released drag, Store/Take, deletion and new-process missing; native charging and isolated furniture filter. No lobby or real-raid acceptance claim."
+    },
+    {
+      "forgeType": "Nicokobo.Forge.ForgeSaveGraphApi",
+      "feature": "嵌套物品图编码与恢复",
+      "status": "implemented",
+      "ezapi": "SaveGraphApi.Items/Encode/Decode",
+      "gapOrBoundary": "已按050REV5-L真实DecodeSaveItem序列接入11步后处理，未知构建或精确签名缺失时写前拒绝。独立图内存往返与磁盘保存/冷启动是分别验收的行为。",
+      "members": [
+        {
+          "kind": "method",
+          "name": "Items",
+          "signature": "System.Collections.Generic.IReadOnlyList`1<Il2Cpp.GameItem> Nicokobo.Forge.ForgeSaveGraphApi::Items(Il2Cpp.GameItem)",
+          "status": "implemented",
+          "ezapi": [
+            "SaveGraphApi.Items"
+          ],
+          "nativeRuntimeVerified": true
+        },
+        {
+          "kind": "method",
+          "name": "Encode",
+          "signature": "System.String Nicokobo.Forge.ForgeSaveGraphApi::Encode(Il2Cpp.GameItem)",
+          "status": "implemented",
+          "ezapi": [
+            "SaveGraphApi.Encode"
+          ],
+          "nativeRuntimeVerified": true
+        },
+        {
+          "kind": "method",
+          "name": "Decode",
+          "signature": "Il2Cpp.GameItem Nicokobo.Forge.ForgeSaveGraphApi::Decode(System.String,System.Collections.Generic.IReadOnlySet`1<System.Int32>)",
+          "status": "implemented",
+          "ezapi": [
+            "SaveGraphApi.Decode"
+          ],
+          "nativeRuntimeVerified": true
+        }
+      ],
+      "nativeRuntimeVerified": true,
+      "evidence": "verification/savegraph-native-0.1.53.json",
+      "verifiedScope": "Current-build detached native item graphs in memory; 33 assertions. Disk save, cold restart and persistent endpoint lifecycle are separate and unverified in this stage."
+    },
+    {
+      "forgeType": "Nicokobo.Forge.ForgeInventoryFreezeApi",
+      "feature": "物品冻结与释放",
+      "status": "implemented",
+      "ezapi": "InventoryFreezeApi",
+      "gapOrBoundary": "原生移除/接纳门控，Epoch与句柄释放；游戏待验",
+      "members": [
+        {
+          "kind": "method",
+          "name": "IsFrozen",
+          "signature": "System.Boolean Nicokobo.Forge.ForgeInventoryFreezeApi::IsFrozen(Il2Cpp.GameItem)",
+          "status": "implemented",
+          "ezapi": [
+            "InventoryFreezeApi.IsFrozen"
+          ],
+          "nativeRuntimeVerified": false
+        },
+        {
+          "kind": "method",
+          "name": "TryAcquire",
+          "signature": "System.IDisposable Nicokobo.Forge.ForgeInventoryFreezeApi::TryAcquire(System.Collections.Generic.IEnumerable`1<Il2Cpp.GameItem>,System.String)",
+          "status": "implemented",
+          "ezapi": [
+            "InventoryFreezeApi.TryAcquire"
+          ],
+          "nativeRuntimeVerified": false
+        },
+        {
+          "kind": "property",
+          "name": "IsAvailable",
+          "signature": "System.Boolean IsAvailable",
+          "status": "implemented",
+          "ezapi": [
+            "InventoryFreezeApi.IsAvailable"
+          ],
+          "nativeRuntimeVerified": false
+        }
+      ],
+      "nativeRuntimeVerified": false
+    },
+    {
+      "forgeType": "Nicokobo.Forge.ForgeInventoryPlacementApi",
+      "feature": "整组网格布局规划",
+      "status": "implemented",
+      "ezapi": "InventoryPlacementApi",
+      "gapOrBoundary": "有界原生准入规划；不提交移动，游戏待验",
+      "members": [
+        {
+          "kind": "method",
+          "name": "PlanWholeGrid",
+          "signature": "System.Collections.Generic.IReadOnlyList`1<Nicokobo.Forge.ForgeInventoryPlacement> Nicokobo.Forge.ForgeInventoryPlacementApi::PlanWholeGrid(Il2Cpp.GameGridInventory,System.Collections.Generic.IReadOnlyList`1<Il2Cpp.GameItem>)",
+          "status": "implemented",
+          "ezapi": [
+            "InventoryPlacementApi.PlanWholeGrid"
+          ],
+          "nativeRuntimeVerified": false
+        },
+        {
+          "kind": "property",
+          "name": "IsAvailable",
+          "signature": "System.Boolean IsAvailable",
+          "status": "implemented",
+          "ezapi": [
+            "InventoryPlacementApi.IsAvailable"
+          ],
+          "nativeRuntimeVerified": false
+        }
+      ],
+      "nativeRuntimeVerified": false
+    },
+    {
+      "forgeType": "Nicokobo.Forge.ForgeItemApi",
+      "feature": "物品/节点/生活用品/模块注册及目录访问",
+      "status": "implemented",
+      "ezapi": "ItemRegistry / ItemApi / Items",
+      "gapOrBoundary": "独立物品/节点/设施/模块工厂及目录已验证；夜间供应改用官方Late显式上架，保留原生容量/perk规则。0.1.65完成原生完整补货、真实购买扣款、磁盘读回和新进程恢复；NPC命名表/矿工/固定货位有0.1.64证据。特定NPC对话购买及其它Mod组合不是本轮验收范围。",
+      "members": [
+        {
+          "kind": "method",
+          "name": "RegisterNode",
+          "signature": "Nicokobo.Forge.Registration.SubmitResult Nicokobo.Forge.ForgeItemApi::RegisterNode(System.String,System.String,System.Func`1<Il2Cpp.GameItem>,Nicokobo.Forge.Registration.NativeItemOptions)",
+          "status": "implemented",
+          "ezapi": [
+            "ItemApi.RegisterNode"
+          ],
+          "nativeRuntimeVerified": true
+        },
+        {
+          "kind": "method",
+          "name": "RegisterItem",
+          "signature": "Nicokobo.Forge.Registration.SubmitResult Nicokobo.Forge.ForgeItemApi::RegisterItem(System.String,System.String,System.Func`1<Il2Cpp.GameItem>,Nicokobo.Forge.Registration.NativeItemOptions)",
+          "status": "implemented",
+          "ezapi": [
+            "ItemApi.RegisterItem"
+          ],
+          "nativeRuntimeVerified": true
+        },
+        {
+          "kind": "method",
+          "name": "RegisterAmenity",
+          "signature": "Nicokobo.Forge.Registration.SubmitResult Nicokobo.Forge.ForgeItemApi::RegisterAmenity(System.String,System.String,System.Func`1<Il2Cpp.GameItem>,Nicokobo.Forge.Registration.NativeItemOptions)",
+          "status": "implemented",
+          "ezapi": [
+            "ItemApi.RegisterAmenity"
+          ],
+          "nativeRuntimeVerified": true
+        },
+        {
+          "kind": "method",
+          "name": "RegisterModule",
+          "signature": "Nicokobo.Forge.Registration.SubmitResult Nicokobo.Forge.ForgeItemApi::RegisterModule(System.String,System.String,System.Func`1<Il2Cpp.GameItem>,Nicokobo.Forge.Registration.NativeItemOptions)",
+          "status": "implemented",
+          "ezapi": [
+            "ItemApi.RegisterModule"
+          ],
+          "nativeRuntimeVerified": true
+        },
+        {
+          "kind": "method",
+          "name": "RegisterModules",
+          "signature": "Nicokobo.Forge.Registration.SubmitResult Nicokobo.Forge.ForgeItemApi::RegisterModules(System.String,System.Collections.Generic.IReadOnlyList`1<Nicokobo.Forge.NativeModuleRegistration>)",
+          "status": "implemented",
+          "ezapi": [
+            "ItemApi.RegisterModules"
+          ],
+          "nativeRuntimeVerified": true
+        },
+        {
+          "kind": "method",
+          "name": "Snapshot",
+          "signature": "System.Collections.Generic.IReadOnlyList`1<Nicokobo.Forge.NativeApplicationView> Nicokobo.Forge.ForgeItemApi::Snapshot()",
+          "status": "implemented",
+          "ezapi": [
+            "ItemApi.Snapshot"
+          ],
+          "nativeRuntimeVerified": true
+        },
+        {
+          "kind": "method",
+          "name": "Exists",
+          "signature": "System.Boolean Nicokobo.Forge.ForgeItemApi::Exists(System.String)",
+          "status": "implemented",
+          "ezapi": [
+            "ItemApi.Exists"
+          ],
+          "nativeRuntimeVerified": true
+        },
+        {
+          "kind": "method",
+          "name": "Create",
+          "signature": "Il2Cpp.GameItem Nicokobo.Forge.ForgeItemApi::Create(System.String,System.Boolean)",
+          "status": "implemented",
+          "ezapi": [
+            "ItemApi.Create"
+          ],
+          "nativeRuntimeVerified": true
+        },
+        {
+          "kind": "method",
+          "name": "GetDisplayName",
+          "signature": "System.String Nicokobo.Forge.ForgeItemApi::GetDisplayName(System.String)",
+          "status": "implemented",
+          "ezapi": [
+            "ItemApi.GetDisplayName"
+          ],
+          "nativeRuntimeVerified": false
+        }
+      ],
+      "nativeRuntimeVerified": true,
+      "evidence": "verification/night-placement-native-0.1.65.json"
+    },
+    {
+      "forgeType": "Nicokobo.Forge.ForgeItemInspectionApi",
+      "feature": "实例价格与提示",
+      "status": "implemented",
+      "ezapi": "ItemInspection",
+      "gapOrBoundary": "支持正数堆叠的原生当前单件价值，无拆分/数量修改；0.1.49估值425项实机断言通过。普通/高级提示沿用原生完成结果，未在本轮重新做视觉验收。",
+      "members": [
+        {
+          "kind": "method",
+          "name": "CurrentUnitValue",
+          "signature": "System.Nullable`1<System.Int64> Nicokobo.Forge.ForgeItemInspectionApi::CurrentUnitValue(Il2Cpp.GameItem)",
+          "status": "implemented",
+          "ezapi": [
+            "ItemInspection.CurrentUnitValue"
+          ],
+          "nativeRuntimeVerified": true
+        },
+        {
+          "kind": "method",
+          "name": "BuildTooltip",
+          "signature": "Il2Cpp.RichText Nicokobo.Forge.ForgeItemInspectionApi::BuildTooltip(Il2Cpp.GameItem)",
+          "status": "implemented",
+          "ezapi": [
+            "ItemInspection.BuildTooltip"
+          ],
+          "nativeRuntimeVerified": false
+        }
+      ],
+      "nativeRuntimeVerified": false,
+      "evidence": "native-services.zh-CN.md"
+    },
+    {
+      "forgeType": "Nicokobo.Forge.ForgeItemTransferApi",
+      "feature": "实际物品搬运",
+      "status": "implemented",
+      "ezapi": "ItemTransferApi",
+      "gapOrBoundary": "单次原生接纳及写后差额核对；不自动重试/保存，游戏待验",
+      "members": [
+        {
+          "kind": "method",
+          "name": "Move",
+          "signature": "Nicokobo.Forge.ForgeItemTransferResult Nicokobo.Forge.ForgeItemTransferApi::Move(Il2Cpp.GameItem,Il2Cpp.GameGridInventory,System.Int32)",
+          "status": "implemented",
+          "ezapi": [
+            "ItemTransferApi.Move"
+          ],
+          "nativeRuntimeVerified": false
+        }
+      ],
+      "nativeRuntimeVerified": false
+    },
+    {
+      "forgeType": "Nicokobo.Forge.ForgeLifecycleApi",
+      "feature": "生命周期订阅",
+      "status": "implemented",
+      "ezapi": "LifecycleApi.Subscribe",
+      "gapOrBoundary": "10阶段精确7原生入口；全int优先级/owner/ID/释放/周目日快照；独立钩子门控，游戏待验",
+      "members": [
+        {
+          "kind": "method",
+          "name": "Subscribe",
+          "signature": "System.IDisposable Nicokobo.Forge.ForgeLifecycleApi::Subscribe(System.String,System.String,Nicokobo.Forge.ForgeLifecyclePhase,System.Action`1<Nicokobo.Forge.ForgeLifecycleContext>,System.Int32)",
+          "status": "implemented",
+          "ezapi": [
+            "LifecycleApi.Subscribe"
+          ],
+          "nativeRuntimeVerified": false
+        }
+      ],
+      "nativeRuntimeVerified": false
+    },
+    {
+      "forgeType": "Nicokobo.Forge.ForgeLiquidApi",
+      "feature": "液体容器与成分快照",
+      "status": "implemented",
+      "ezapi": "Liquids.IsContainer/Capture/WaterQuality",
+      "gapOrBoundary": "原生成分/容量/纯度只读快照；游戏内单位与行为仍待验证",
+      "members": [
+        {
+          "kind": "method",
+          "name": "IsContainer",
+          "signature": "System.Boolean Nicokobo.Forge.ForgeLiquidApi::IsContainer(Il2Cpp.GameItem)",
+          "status": "implemented",
+          "ezapi": [
+            "Liquids.IsContainer"
+          ],
+          "nativeRuntimeVerified": false
+        },
+        {
+          "kind": "method",
+          "name": "Capture",
+          "signature": "Nicokobo.Forge.ForgeMachineLiquidSnapshot Nicokobo.Forge.ForgeLiquidApi::Capture(Il2Cpp.GameItem)",
+          "status": "implemented",
+          "ezapi": [
+            "Liquids.Capture"
+          ],
+          "nativeRuntimeVerified": false
+        },
+        {
+          "kind": "method",
+          "name": "WaterQuality",
+          "signature": "System.Int32 Nicokobo.Forge.ForgeLiquidApi::WaterQuality(Il2Cpp.GameItem)",
+          "status": "implemented",
+          "ezapi": [
+            "Liquids.WaterQuality"
+          ],
+          "nativeRuntimeVerified": false
+        }
+      ],
+      "nativeRuntimeVerified": false
+    },
+    {
+      "forgeType": "Nicokobo.Forge.ForgeLiquidTransferApi",
+      "feature": "液体转移与核对",
+      "status": "implemented",
+      "ezapi": "LiquidTransferApi.Pour",
+      "gapOrBoundary": "原生整次/限量双容器冻结与同步补偿；过滤反应及状态未知时停止，游戏待验",
+      "members": [
+        {
+          "kind": "method",
+          "name": "Pour",
+          "signature": "Nicokobo.Forge.ForgeLiquidTransferResult Nicokobo.Forge.ForgeLiquidTransferApi::Pour(Il2Cpp.GameItem,Il2Cpp.GameItem,System.Int32,System.Func`1<System.Boolean>)",
+          "status": "implemented",
+          "ezapi": [
+            "LiquidTransferApi.Pour"
+          ],
+          "nativeRuntimeVerified": false
+        },
+        {
+          "kind": "method",
+          "name": "Pour",
+          "signature": "Nicokobo.Forge.ForgeLiquidTransferResult Nicokobo.Forge.ForgeLiquidTransferApi::Pour(Il2Cpp.GameItem,Il2Cpp.GameItem)",
+          "status": "implemented",
+          "ezapi": [
+            "LiquidTransferApi.Pour"
+          ],
+          "nativeRuntimeVerified": false
+        }
+      ],
+      "nativeRuntimeVerified": false
+    },
+    {
+      "forgeType": "Nicokobo.Forge.ForgeListInventoryApi",
+      "feature": "列表库存创建与搬运",
+      "status": "implemented",
+      "ezapi": "ListInventoryApi",
+      "gapOrBoundary": "独立原生窗口/网格、尺寸标签恢复/有限扩容、审计转移；保存待验",
+      "members": [
+        {
+          "kind": "method",
+          "name": "Create",
+          "signature": "Il2Cpp.GameGridInventory Nicokobo.Forge.ForgeListInventoryApi::Create(Il2Cpp.GameItem,System.String)",
+          "status": "implemented",
+          "ezapi": [
+            "ListInventoryApi.Create"
+          ],
+          "nativeRuntimeVerified": false
+        },
+        {
+          "kind": "method",
+          "name": "Find",
+          "signature": "Il2Cpp.GameGridInventory Nicokobo.Forge.ForgeListInventoryApi::Find(Il2Cpp.GameItem,System.String)",
+          "status": "implemented",
+          "ezapi": [
+            "ListInventoryApi.Find"
+          ],
+          "nativeRuntimeVerified": false
+        },
+        {
+          "kind": "method",
+          "name": "IsList",
+          "signature": "System.Boolean Nicokobo.Forge.ForgeListInventoryApi::IsList(Il2Cpp.GameGridInventory)",
+          "status": "implemented",
+          "ezapi": [
+            "ListInventoryApi.IsList"
+          ],
+          "nativeRuntimeVerified": false
+        },
+        {
+          "kind": "method",
+          "name": "Move",
+          "signature": "Nicokobo.Forge.ForgeItemTransferResult Nicokobo.Forge.ForgeListInventoryApi::Move(Il2Cpp.GameItem,Il2Cpp.GameInventory,System.Int32,System.Func`3<Il2Cpp.GameItem,System.Int32,System.Boolean>)",
+          "status": "implemented",
+          "ezapi": [
+            "ListInventoryApi.Move"
+          ],
+          "nativeRuntimeVerified": false
+        },
+        {
+          "kind": "property",
+          "name": "IsAvailable",
+          "signature": "System.Boolean IsAvailable",
+          "status": "implemented",
+          "ezapi": [
+            "ListInventoryApi.IsAvailable"
+          ],
+          "nativeRuntimeVerified": false
+        }
+      ],
+      "nativeRuntimeVerified": false
+    },
+    {
+      "forgeType": "Nicokobo.Forge.ForgeMachineAutomationApi",
+      "feature": "机器配方自动化事件",
+      "status": "implemented",
+      "ezapi": "MachineAutomationApi / MachineAutomationContext",
+      "gapOrBoundary": "synchronous ordered Before/After callbacks, selection/conflict/block, disposal and errors; exact DTO documented",
+      "members": [
+        {
+          "kind": "method",
+          "name": "Recipes",
+          "signature": "System.Collections.Generic.IReadOnlyList`1<Nicokobo.Forge.ForgeMachineRecipe> Nicokobo.Forge.ForgeMachineAutomationApi::Recipes(System.String)",
+          "status": "implemented",
+          "ezapi": [
+            "MachineAutomationApi.Recipes"
+          ],
+          "nativeRuntimeVerified": true
+        },
+        {
+          "kind": "method",
+          "name": "RegisteredRecipes",
+          "signature": "System.Collections.Generic.IReadOnlyList`1<Nicokobo.Forge.ForgeRegisteredMachineRecipe> Nicokobo.Forge.ForgeMachineAutomationApi::RegisteredRecipes(System.String)",
+          "status": "implemented",
+          "ezapi": [
+            "MachineAutomationApi.RegisteredRecipes"
+          ],
+          "nativeRuntimeVerified": true
+        },
+        {
+          "kind": "method",
+          "name": "Subscribe",
+          "signature": "System.IDisposable Nicokobo.Forge.ForgeMachineAutomationApi::Subscribe(System.String,System.String,Nicokobo.Forge.ForgeMachineAutomationPhase,System.Action`1<Nicokobo.Forge.ForgeMachineAutomationContext>,System.Int32)",
+          "status": "implemented",
+          "ezapi": [
+            "MachineAutomationApi.Subscribe"
+          ],
+          "nativeRuntimeVerified": true
+        }
+      ],
+      "nativeRuntimeVerified": true
+    },
+    {
+      "forgeType": "Nicokobo.Forge.ForgeMachineRegistrationApi",
+      "feature": "机器注册与追加配方",
+      "status": "implemented",
+      "ezapi": "MachineRegistrationApi",
+      "gapOrBoundary": "34类型114属性20方法行为审查完成；0.1.70补齐独立日志、窗口捕获和终端规范化辅助入口。12组1587项实机通过，普通两晚保存重载证据复用。无Forge二进制兼容或所有第三方组合验证承诺。",
+      "members": [
+        {
+          "kind": "method",
+          "name": "Snapshot",
+          "signature": "System.Collections.Generic.IReadOnlyList`1<Nicokobo.Forge.ForgeMachineView> Nicokobo.Forge.ForgeMachineRegistrationApi::Snapshot()",
+          "status": "implemented",
+          "ezapi": [
+            "MachineRegistrationApi.Snapshot"
+          ],
+          "nativeRuntimeVerified": true
+        },
+        {
+          "kind": "method",
+          "name": "GuideSnapshot",
+          "signature": "Nicokobo.Forge.ForgeRecipeGuideSnapshot Nicokobo.Forge.ForgeMachineRegistrationApi::GuideSnapshot()",
+          "status": "implemented",
+          "ezapi": [
+            "MachineRegistrationApi.GuideSnapshot"
+          ],
+          "nativeRuntimeVerified": true
+        },
+        {
+          "kind": "method",
+          "name": "RegisterMachine",
+          "signature": "Nicokobo.Forge.Registration.SubmitResult Nicokobo.Forge.ForgeMachineRegistrationApi::RegisterMachine(System.String,Nicokobo.Forge.ForgeMachineDefinition)",
+          "status": "implemented",
+          "ezapi": [
+            "MachineRegistrationApi.RegisterMachine"
+          ],
+          "nativeRuntimeVerified": true
+        },
+        {
+          "kind": "method",
+          "name": "RegisterAdditionalRecipes",
+          "signature": "Nicokobo.Forge.Registration.SubmitResult Nicokobo.Forge.ForgeMachineRegistrationApi::RegisterAdditionalRecipes(System.String,System.String,System.Collections.Generic.IReadOnlyList`1<Nicokobo.Forge.ForgeMachineRecipe>)",
+          "status": "implemented",
+          "ezapi": [
+            "MachineRegistrationApi.RegisterAdditionalRecipes"
+          ],
+          "nativeRuntimeVerified": true
+        },
+        {
+          "kind": "method",
+          "name": "ConfigureManufacturingTerminalMarkup",
+          "signature": "Nicokobo.Forge.Registration.SubmitResult Nicokobo.Forge.ForgeMachineRegistrationApi::ConfigureManufacturingTerminalMarkup(System.String,System.Int32)",
+          "status": "implemented",
+          "ezapi": [
+            "MachineRegistrationApi.ConfigureManufacturingTerminalMarkup"
+          ],
+          "nativeRuntimeVerified": true
+        }
+      ],
+      "nativeRuntimeVerified": true,
+      "evidence": "verification/public-helpers-native-0.1.70.json"
+    },
+    {
+      "forgeType": "Nicokobo.Forge.ForgeMachineRuntimeApi",
+      "feature": "机器槽位与批次执行",
+      "status": "implemented",
+      "ezapi": "MachineRuntimeApi / MachineRecipeApi / MachineLayoutApi",
+      "gapOrBoundary": "34类型114属性20方法行为审查完成；0.1.70补齐独立日志、窗口捕获和终端规范化辅助入口。12组1587项实机通过，普通两晚保存重载证据复用。无Forge二进制兼容或所有第三方组合验证承诺。",
+      "members": [
+        {
+          "kind": "method",
+          "name": "TryGetInventory",
+          "signature": "System.Boolean Nicokobo.Forge.ForgeMachineRuntimeApi::TryGetInventory(Il2Cpp.GameItem,Nicokobo.Forge.ForgeMachineInventory&)",
+          "status": "implemented",
+          "ezapi": [
+            "MachineRuntimeApi.TryGetInventory"
+          ],
+          "nativeRuntimeVerified": true
+        },
+        {
+          "kind": "method",
+          "name": "ProcessBatch",
+          "signature": "System.String Nicokobo.Forge.ForgeMachineRuntimeApi::ProcessBatch(Il2Cpp.GameItem)",
+          "status": "implemented",
+          "ezapi": [
+            "MachineRuntimeApi.ProcessBatch"
+          ],
+          "nativeRuntimeVerified": true
+        },
+        {
+          "kind": "method",
+          "name": "CreateBatchProcessor",
+          "signature": "Nicokobo.Forge.ForgeMachineBatchProcessor Nicokobo.Forge.ForgeMachineRuntimeApi::CreateBatchProcessor(System.String,Nicokobo.Forge.ForgeMachineDefinition)",
+          "status": "implemented",
+          "ezapi": [
+            "MachineRuntimeApi.CreateBatchProcessor"
+          ],
+          "nativeRuntimeVerified": true
+        },
+        {
+          "kind": "property",
+          "name": "RuntimeInstalled",
+          "signature": "System.Boolean RuntimeInstalled",
+          "status": "implemented",
+          "ezapi": [
+            "MachineRuntimeApi.RuntimeInstalled"
+          ],
+          "nativeRuntimeVerified": true
+        }
+      ],
+      "nativeRuntimeVerified": true,
+      "evidence": "verification/public-helpers-native-0.1.70.json"
+    },
+    {
+      "forgeType": "Nicokobo.Forge.ForgeModuleApi",
+      "feature": "模块准入/重算/动作/成长",
+      "status": "implemented",
+      "ezapi": "ModuleApi",
+      "gapOrBoundary": "八入口/四组钩子/同步上下文/逐调用成长；临时实机验收通过，原版生产与持久化待验",
+      "members": [
+        {
+          "kind": "method",
+          "name": "RegisterAdmission",
+          "signature": "Nicokobo.Forge.Registration.SubmitResult Nicokobo.Forge.ForgeModuleApi::RegisterAdmission(System.String,System.Collections.Generic.IReadOnlyList`1<Nicokobo.Forge.Registration.ForgeModuleAdmission>)",
+          "status": "implemented",
+          "ezapi": [
+            "ModuleApi.RegisterAdmission"
+          ],
+          "nativeRuntimeVerified": false
+        },
+        {
+          "kind": "method",
+          "name": "RemoveAdmission",
+          "signature": "System.Void Nicokobo.Forge.ForgeModuleApi::RemoveAdmission(System.String)",
+          "status": "implemented",
+          "ezapi": [
+            "ModuleApi.RemoveAdmission"
+          ],
+          "nativeRuntimeVerified": false
+        },
+        {
+          "kind": "method",
+          "name": "SubscribeAction",
+          "signature": "System.IDisposable Nicokobo.Forge.ForgeModuleApi::SubscribeAction(System.String,System.String,System.String,System.Action`1<Nicokobo.Forge.ForgeModuleActionContext>)",
+          "status": "implemented",
+          "ezapi": [
+            "ModuleApi.SubscribeAction"
+          ],
+          "nativeRuntimeVerified": false
+        },
+        {
+          "kind": "method",
+          "name": "GetInventory",
+          "signature": "Il2Cpp.GameGridInventory Nicokobo.Forge.ForgeModuleApi::GetInventory(Il2Cpp.GameItem)",
+          "status": "implemented",
+          "ezapi": [
+            "ModuleApi.GetInventory"
+          ],
+          "nativeRuntimeVerified": false
+        },
+        {
+          "kind": "method",
+          "name": "FindInstalled",
+          "signature": "System.Collections.Generic.IReadOnlyList`1<Il2Cpp.GameItem> Nicokobo.Forge.ForgeModuleApi::FindInstalled(Il2Cpp.GameItem,System.String,System.String)",
+          "status": "implemented",
+          "ezapi": [
+            "ModuleApi.FindInstalled"
+          ],
+          "nativeRuntimeVerified": false
+        },
+        {
+          "kind": "method",
+          "name": "Recompute",
+          "signature": "System.Void Nicokobo.Forge.ForgeModuleApi::Recompute(Il2Cpp.GameItem)",
+          "status": "implemented",
+          "ezapi": [
+            "ModuleApi.Recompute"
+          ],
+          "nativeRuntimeVerified": false
+        },
+        {
+          "kind": "method",
+          "name": "Subscribe",
+          "signature": "System.IDisposable Nicokobo.Forge.ForgeModuleApi::Subscribe(System.String,System.String,Nicokobo.Forge.ForgeModulePhase,System.Action`1<Nicokobo.Forge.ForgeModuleContext>,System.Int32)",
+          "status": "implemented",
+          "ezapi": [
+            "ModuleApi.Subscribe"
+          ],
+          "nativeRuntimeVerified": false
+        },
+        {
+          "kind": "method",
+          "name": "SubscribeLearning",
+          "signature": "System.IDisposable Nicokobo.Forge.ForgeModuleApi::SubscribeLearning(System.String,System.String,System.Func`2<Il2Cpp.GameItem,T>,System.Action`2<Il2Cpp.GameItem,T>)",
+          "status": "implemented",
+          "ezapi": [
+            "ModuleApi.SubscribeLearning"
+          ],
+          "nativeRuntimeVerified": false
+        }
+      ],
+      "nativeRuntimeVerified": false
+    },
+    {
+      "forgeType": "Nicokobo.Forge.ForgePhoneApi",
+      "feature": "电话联系人",
+      "status": "implemented",
+      "ezapi": "PhoneApi.Register/Unregister/Snapshot/IsAvailable/GetRuntimeStatus",
+      "gapOrBoundary": "Native phone book and dial with current epoch; independent immutable script; C# only; native saved-contact serialization and real third-party combinations not verified",
+      "members": [
+        {
+          "kind": "method",
+          "name": "Register",
+          "signature": "Nicokobo.Forge.ForgePresentationResult Nicokobo.Forge.ForgePhoneApi::Register(System.String,Nicokobo.Forge.ForgePhoneContact)",
+          "status": "implemented",
+          "ezapi": [
+            "PhoneApi.Register"
+          ],
+          "nativeRuntimeVerified": true
+        },
+        {
+          "kind": "property",
+          "name": "IsAvailable",
+          "signature": "System.Boolean IsAvailable",
+          "status": "implemented",
+          "ezapi": [
+            "PhoneApi.IsAvailable"
+          ],
+          "nativeRuntimeVerified": true
+        }
+      ],
+      "nativeRuntimeVerified": true,
+      "evidence": "native-phone-0.1.34.zh-CN.md"
+    },
+    {
+      "forgeType": "Nicokobo.Forge.ForgePowerApi",
+      "feature": "电力读取与扣电",
+      "status": "implemented",
+      "ezapi": "Power.GetMachineCost/GetEnergy/TryDebit",
+      "gapOrBoundary": "独立外电需机器上下文，使用外电与批次事务接口",
+      "members": [
+        {
+          "kind": "method",
+          "name": "GetMachineCost",
+          "signature": "System.Int32 Nicokobo.Forge.ForgePowerApi::GetMachineCost(Il2Cpp.GameItem)",
+          "status": "implemented",
+          "ezapi": [
+            "Power.GetMachineCost"
+          ],
+          "nativeRuntimeVerified": true,
+          "evidence": "native-power-0.1.43.zh-CN.md"
+        },
+        {
+          "kind": "method",
+          "name": "GetEnergy",
+          "signature": "System.Int32 Nicokobo.Forge.ForgePowerApi::GetEnergy(Il2Cpp.GameItem)",
+          "status": "implemented",
+          "ezapi": [
+            "Power.GetEnergy"
+          ],
+          "nativeRuntimeVerified": true,
+          "evidence": "native-power-0.1.43.zh-CN.md"
+        },
+        {
+          "kind": "method",
+          "name": "TryDebit",
+          "signature": "Nicokobo.Forge.Runtime.ForgeEnergyDebitResult Nicokobo.Forge.ForgePowerApi::TryDebit(Il2Cpp.GameItem,System.Int32)",
+          "status": "implemented",
+          "ezapi": [
+            "Power.TryDebit"
+          ],
+          "nativeRuntimeVerified": true,
+          "evidence": "native-power-0.1.43.zh-CN.md"
+        }
+      ],
+      "nativeRuntimeVerified": true,
+      "evidence": "native-power-0.1.43.zh-CN.md"
+    },
+    {
+      "forgeType": "Nicokobo.Forge.ForgePresentationApi",
+      "feature": "名称/说明/效果显示",
+      "status": "implemented",
+      "ezapi": "PresentationApi",
+      "gapOrBoundary": "双语 owner 来源名与登记文本查询；模块 Late tooltip 动态文字；只本地化同 owner 且仍应用的效果对象，并按字段所有权恢复；UI顺序与实机语言切换待验",
+      "members": [
+        {
+          "kind": "method",
+          "name": "RegisterOwnerDisplayName",
+          "signature": "System.Void Nicokobo.Forge.ForgePresentationApi::RegisterOwnerDisplayName(System.String,System.String,System.String)",
+          "status": "implemented",
+          "ezapi": [
+            "PresentationApi.RegisterOwnerDisplayName"
+          ],
+          "nativeRuntimeVerified": false
+        },
+        {
+          "kind": "method",
+          "name": "GetRegisteredItemName",
+          "signature": "System.String Nicokobo.Forge.ForgePresentationApi::GetRegisteredItemName(System.String,System.Boolean)",
+          "status": "implemented",
+          "ezapi": [
+            "PresentationApi.GetRegisteredItemName"
+          ],
+          "nativeRuntimeVerified": false
+        },
+        {
+          "kind": "method",
+          "name": "GetRegisteredItemDescription",
+          "signature": "System.String Nicokobo.Forge.ForgePresentationApi::GetRegisteredItemDescription(System.String,System.Boolean)",
+          "status": "implemented",
+          "ezapi": [
+            "PresentationApi.GetRegisteredItemDescription"
+          ],
+          "nativeRuntimeVerified": false
+        },
+        {
+          "kind": "method",
+          "name": "RegisterModuleText",
+          "signature": "System.Void Nicokobo.Forge.ForgePresentationApi::RegisterModuleText(System.String,System.String,System.Func`3<Il2Cpp.GameItem,System.Boolean,Nicokobo.Forge.ForgeModuleText>)",
+          "status": "implemented",
+          "ezapi": [
+            "PresentationApi.RegisterModuleText"
+          ],
+          "nativeRuntimeVerified": false
+        },
+        {
+          "kind": "method",
+          "name": "RegisterEffectText",
+          "signature": "System.Void Nicokobo.Forge.ForgePresentationApi::RegisterEffectText(System.String,System.String,Nicokobo.Forge.Registration.LocalizedItemText,Nicokobo.Forge.Registration.LocalizedItemText)",
+          "status": "implemented",
+          "ezapi": [
+            "PresentationApi.RegisterEffectText"
+          ],
+          "nativeRuntimeVerified": false
+        }
+      ],
+      "nativeRuntimeVerified": false
+    },
+    {
+      "forgeType": "Nicokobo.Forge.ForgeProductionValueApi",
+      "feature": "批次投入价值与产出计价",
+      "status": "implemented",
+      "ezapi": "ProductionValueApi / ProductionValueMath / MachinePowerMath",
+      "gapOrBoundary": "合计投入/选择器/decimal向上取整/独立基础价值标签与失败恢复；保存重载待验",
+      "members": [
+        {
+          "kind": "method",
+          "name": "InputValue",
+          "signature": "System.Decimal Nicokobo.Forge.ForgeProductionValueApi::InputValue(Nicokobo.Forge.ForgeMachineBatchContext,System.Func`2<Nicokobo.Forge.ForgeMachineItemTake,System.Decimal>,System.Func`2<Nicokobo.Forge.ForgeMachineLiquidTake,System.Decimal>)",
+          "status": "implemented",
+          "ezapi": [
+            "ProductionValueApi.InputValue"
+          ],
+          "nativeRuntimeVerified": false
+        },
+        {
+          "kind": "method",
+          "name": "Calculate",
+          "signature": "System.Int64 Nicokobo.Forge.ForgeProductionValueApi::Calculate(Nicokobo.Forge.ForgeMachineBatchContext,System.Int32,System.Func`2<Nicokobo.Forge.ForgeMachineItemTake,System.Decimal>,System.Func`2<Nicokobo.Forge.ForgeMachineLiquidTake,System.Decimal>)",
+          "status": "implemented",
+          "ezapi": [
+            "ProductionValueApi.Calculate"
+          ],
+          "nativeRuntimeVerified": false
+        },
+        {
+          "kind": "method",
+          "name": "SetBasis",
+          "signature": "System.Void Nicokobo.Forge.ForgeProductionValueApi::SetBasis(Il2Cpp.GameItem,System.Int64)",
+          "status": "implemented",
+          "ezapi": [
+            "ProductionValueApi.SetBasis"
+          ],
+          "nativeRuntimeVerified": false
+        },
+        {
+          "kind": "method",
+          "name": "ReadBasis",
+          "signature": "System.Int64 Nicokobo.Forge.ForgeProductionValueApi::ReadBasis(Il2Cpp.GameItem,System.Int64)",
+          "status": "implemented",
+          "ezapi": [
+            "ProductionValueApi.ReadBasis"
+          ],
+          "nativeRuntimeVerified": false
+        }
+      ],
+      "nativeRuntimeVerified": false
+    },
+    {
+      "forgeType": "Nicokobo.Forge.ForgeReadingApi",
+      "feature": "阅读窗口",
+      "status": "implemented",
+      "ezapi": "ReadingApi.Open/Close/IsAvailable",
+      "gapOrBoundary": "C# actual native handnote panel; no reading JSON; owner/document/run scope; real third-party patch ordering not verified",
+      "members": [
+        {
+          "kind": "method",
+          "name": "Open",
+          "signature": "Nicokobo.Forge.ForgePresentationResult Nicokobo.Forge.ForgeReadingApi::Open(System.String,System.String,System.String,System.Int32,System.String,System.String,System.String)",
+          "status": "implemented",
+          "ezapi": [
+            "ReadingApi.Open"
+          ],
+          "nativeRuntimeVerified": true
+        },
+        {
+          "kind": "method",
+          "name": "Close",
+          "signature": "Nicokobo.Forge.ForgePresentationResult Nicokobo.Forge.ForgeReadingApi::Close(System.String,System.String)",
+          "status": "implemented",
+          "ezapi": [
+            "ReadingApi.Close"
+          ],
+          "nativeRuntimeVerified": true
+        },
+        {
+          "kind": "property",
+          "name": "IsAvailable",
+          "signature": "System.Boolean IsAvailable",
+          "status": "implemented",
+          "ezapi": [
+            "ReadingApi.IsAvailable"
+          ],
+          "nativeRuntimeVerified": true
+        }
+      ],
+      "nativeRuntimeVerified": true,
+      "evidence": "native-reading-0.1.32.zh-CN.md"
+    },
+    {
+      "forgeType": "Nicokobo.Forge.ForgeRecipeGuideApi",
+      "feature": "配方图鉴",
+      "status": "implemented",
+      "ezapi": "RecipeGuideApi / JsonRecipeGuide",
+      "gapOrBoundary": "六公开类型22属性及三个方法已审计；手动/自动图鉴、双语字段、原生语言切换、分页、紧密/旋转网格图片和资源释放有证据。0.1.66九组954/0、图片界面7/0、中英8/0；等语言资源就绪后才建预览。默认实例图像，不覆盖实时材质/动画或第三方工厂副作用。",
+      "members": [
+        {
+          "kind": "method",
+          "name": "Close",
+          "signature": "System.Void Nicokobo.Forge.ForgeRecipeGuideApi::Close()",
+          "status": "implemented",
+          "ezapi": [
+            "RecipeGuideApi.Close"
+          ],
+          "nativeRuntimeVerified": true
+        },
+        {
+          "kind": "method",
+          "name": "RegisterRecipes",
+          "signature": "Nicokobo.Forge.Registration.SubmitResult Nicokobo.Forge.ForgeRecipeGuideApi::RegisterRecipes(System.String,System.Collections.Generic.IReadOnlyList`1<Nicokobo.Forge.ForgeRecipeGuideEntry>)",
+          "status": "implemented",
+          "ezapi": [
+            "RecipeGuideApi.RegisterRecipes"
+          ],
+          "nativeRuntimeVerified": true
+        },
+        {
+          "kind": "method",
+          "name": "Snapshot",
+          "signature": "Nicokobo.Forge.ForgeRecipeGuideSnapshot Nicokobo.Forge.ForgeRecipeGuideApi::Snapshot()",
+          "status": "implemented",
+          "ezapi": [
+            "RecipeGuideApi.Snapshot"
+          ],
+          "nativeRuntimeVerified": true
+        },
+        {
+          "kind": "property",
+          "name": "IsVisible",
+          "signature": "System.Boolean IsVisible",
+          "status": "implemented",
+          "ezapi": [
+            "RecipeGuideApi.IsVisible"
+          ],
+          "nativeRuntimeVerified": true
+        }
+      ],
+      "nativeRuntimeVerified": true,
+      "evidence": "verification/guide-mesh-native-0.1.66.json",
+      "publicContractAudit": "recipe-guide-public-contract.audit.json"
+    },
+    {
+      "forgeType": "Nicokobo.Forge.ForgeRunDataApi",
+      "feature": "周目数据读取与暂存",
+      "status": "implemented",
+      "ezapi": "RunDataApi.Read/Stage + RunDataStatus/RunDataResult; RunData.Open preserved",
+      "gapOrBoundary": "JSON object records, exact-text compare-and-stage, all eight result states, owner keys, slot/run checks and readback; easy overload also checks event epoch. Native persistence unverified; no automatic Forge/ModHelper/legacy-key migration.",
+      "members": [
+        {
+          "kind": "method",
+          "name": "Read",
+          "signature": "Nicokobo.Forge.RunDataResult Nicokobo.Forge.ForgeRunDataApi::Read(Il2Cpp.PlayerStore,System.String,System.String)",
+          "status": "implemented",
+          "ezapi": [
+            "RunDataApi.Read"
+          ],
+          "nativeRuntimeVerified": false
+        },
+        {
+          "kind": "method",
+          "name": "Stage",
+          "signature": "Nicokobo.Forge.RunDataResult Nicokobo.Forge.ForgeRunDataApi::Stage(Il2Cpp.PlayerStore,System.String,System.String,System.String,System.Int32,System.String,System.String)",
+          "status": "implemented",
+          "ezapi": [
+            "RunDataApi.Stage"
+          ],
+          "nativeRuntimeVerified": false
+        }
+      ],
+      "nativeRuntimeVerified": false,
+      "evidence": "run-data-records.zh-CN.md"
+    },
+    {
+      "forgeType": "Nicokobo.Forge.ForgeRunPurchaseApi",
+      "feature": "周目资金与购买事务",
+      "status": "implemented",
+      "ezapi": "RunPurchaseApi.Purchase",
+      "gapOrBoundary": "native GetCash/PayMoney/ModCash; current identity, 0..128 author steps, shared Transactions exclusion; unknown cash or failed delivery compensation retains payment and reports RecoveryFailed; no save/crash atomicity",
+      "members": [
+        {
+          "kind": "method",
+          "name": "Purchase",
+          "signature": "Nicokobo.Forge.ForgeTransactionResult Nicokobo.Forge.ForgeRunPurchaseApi::Purchase(Il2Cpp.PlayerStore,System.Int32,System.Collections.Generic.IReadOnlyList`1<Nicokobo.Forge.ForgeTransactionStep>)",
+          "status": "implemented",
+          "ezapi": [
+            "RunPurchaseApi.Purchase"
+          ],
+          "nativeRuntimeVerified": true
+        }
+      ],
+      "nativeRuntimeVerified": true,
+      "evidence": "native-purchase-0.1.35.zh-CN.md"
+    },
+    {
+      "forgeType": "Nicokobo.Forge.ForgeSaveReadbackApi",
+      "feature": "存档文件只读解析",
+      "status": "implemented",
+      "ezapi": "SaveReadbackApi / SaveReadStatus / SaveReadResult",
+      "gapOrBoundary": "只读有界文本快照、UTF-8/ES3规范化、文件变化/锁检测和唯一属性读取；不写存档、不恢复物品、不证明保存事务。",
+      "members": [
+        {
+          "kind": "method",
+          "name": "ReadFile",
+          "signature": "Nicokobo.Forge.ForgeSaveReadResult Nicokobo.Forge.ForgeSaveReadbackApi::ReadFile(System.String,System.Int32,System.Int32)",
+          "status": "implemented",
+          "ezapi": [
+            "SaveReadbackApi.ReadFile"
+          ],
+          "nativeRuntimeVerified": true
+        },
+        {
+          "kind": "method",
+          "name": "ReadBytes",
+          "signature": "Nicokobo.Forge.ForgeSaveReadResult Nicokobo.Forge.ForgeSaveReadbackApi::ReadBytes(System.ReadOnlyMemory`1<System.Byte>,System.Int32,System.Int32)",
+          "status": "implemented",
+          "ezapi": [
+            "SaveReadbackApi.ReadBytes"
+          ],
+          "nativeRuntimeVerified": true
+        },
+        {
+          "kind": "method",
+          "name": "Parse",
+          "signature": "System.Text.Json.JsonDocument Nicokobo.Forge.ForgeSaveReadbackApi::Parse(System.String,System.Int32)",
+          "status": "implemented",
+          "ezapi": [
+            "SaveReadbackApi.Parse"
+          ],
+          "nativeRuntimeVerified": false
+        },
+        {
+          "kind": "method",
+          "name": "TryGetUniqueProperty",
+          "signature": "System.Boolean Nicokobo.Forge.ForgeSaveReadbackApi::TryGetUniqueProperty(System.Text.Json.JsonElement,System.String,System.Text.Json.JsonElement&,System.Boolean&)",
+          "status": "implemented",
+          "ezapi": [
+            "SaveReadbackApi.TryGetUniqueProperty"
+          ],
+          "nativeRuntimeVerified": false
+        },
+        {
+          "kind": "method",
+          "name": "RequireProperty",
+          "signature": "System.Text.Json.JsonElement Nicokobo.Forge.ForgeSaveReadbackApi::RequireProperty(System.Text.Json.JsonElement,System.String)",
+          "status": "implemented",
+          "ezapi": [
+            "SaveReadbackApi.RequireProperty"
+          ],
+          "nativeRuntimeVerified": false
+        },
+        {
+          "kind": "method",
+          "name": "Normalize",
+          "signature": "System.String Nicokobo.Forge.ForgeSaveReadbackApi::Normalize(System.String)",
+          "status": "implemented",
+          "ezapi": [
+            "SaveReadbackApi.Normalize"
+          ],
+          "nativeRuntimeVerified": false
+        }
+      ],
+      "nativeRuntimeVerified": true
+    },
+    {
+      "forgeType": "Nicokobo.Forge.ForgeStartApi",
+      "feature": "开局身份注册",
+      "status": "implemented",
+      "ezapi": "StartApi",
+      "gapOrBoundary": "Owner/ID validation, enum validation, initialization-window/thread checks, idempotent duplicate/conflict handling and immutable sorted snapshot are implemented. This stores a mapping only; menu integration and changes to starting gameplay are outside this API and remain unimplemented.",
+      "members": [
+        {
+          "kind": "method",
+          "name": "RegisterStart",
+          "signature": "Nicokobo.Forge.Registration.SubmitResult Nicokobo.Forge.ForgeStartApi::RegisterStart(System.String,System.String,System.Int32)",
+          "status": "implemented",
+          "ezapi": [
+            "StartApi.RegisterStart"
+          ],
+          "nativeRuntimeVerified": false
+        },
+        {
+          "kind": "method",
+          "name": "Snapshot",
+          "signature": "System.Collections.Generic.IReadOnlyList`1<Nicokobo.Forge.Registration.StartRegistrationView> Nicokobo.Forge.ForgeStartApi::Snapshot()",
+          "status": "implemented",
+          "ezapi": [
+            "StartApi.Snapshot"
+          ],
+          "nativeRuntimeVerified": false
+        }
+      ],
+      "nativeRuntimeVerified": false
+    },
+    {
+      "forgeType": "Nicokobo.Forge.ForgeSupplierApi",
+      "feature": "供应商排程与商品",
+      "status": "implemented",
+      "ezapi": "SupplierApi / SupplierDefinition / SupplierPage / SupplierOffer",
+      "gapOrBoundary": "Native test on Probably Stolen 0.46D with EZapi 0.1.41 verified visitor arrival, portrait, quote preview/back/confirm, page refresh and dismissal on disposable slot 533. The callback only counted; real payment, stock mutation, delivery, compensation and saving were not exercised and remain author-owned. Uses the official customer-generation hook and known-build StoreClient/AddNextClient surface to queue an isolated DIALOGUE visitor; does not change native store shelves or LootRegistry. EZapi adds a process-only Status query.",
+      "members": [
+        {
+          "kind": "method",
+          "name": "Queue",
+          "signature": "Nicokobo.Forge.ForgePresentationResult Nicokobo.Forge.ForgeSupplierApi::Queue(System.String,System.String,System.String,System.Int32,System.String,System.String,Nicokobo.Forge.ForgeSupplierDefinition)",
+          "status": "implemented",
+          "ezapi": [
+            "EZapi.SupplierApi.Queue"
+          ],
+          "nativeRuntimeVerified": true
+        },
+        {
+          "kind": "property",
+          "name": "IsAvailable",
+          "signature": "System.Boolean IsAvailable",
+          "status": "implemented",
+          "ezapi": [
+            "EZapi.SupplierApi.IsAvailable"
+          ],
+          "nativeRuntimeVerified": false
+        }
+      ],
+      "nativeRuntimeVerified": true
+    },
+    {
+      "forgeType": "Nicokobo.Forge.ForgeWorkshopApi",
+      "feature": "工坊页/进度链/解锁",
+      "status": "implemented",
+      "ezapi": "WorkshopApi / WorkshopSnapshot / WorkshopEntry",
+      "gapOrBoundary": "All six public API members and workshop DTOs implemented independently. 0.1.48 real-game automated checks passed 23/23 for list rendering, long-text arrows/wheel/reverse wheel, progress graph links/node details, managed action callback and close cleanup. Native test exercised a registered tab; RegisterChain/OpenChain remain compile/offline verified only. Qualification, payment, delivery, compensation, idempotence and persistence remain author-owned; no claim of integration into the native game workshop screen.",
+      "members": [
+        {
+          "kind": "method",
+          "name": "RegisterTab",
+          "signature": "Nicokobo.Forge.Registration.SubmitResult Nicokobo.Forge.ForgeWorkshopApi::RegisterTab(System.String,System.String,System.String,System.String,System.Func`1<Nicokobo.Forge.ForgeWorkshopSnapshot>,System.Action`1<System.String>)",
+          "status": "implemented",
+          "ezapi": [
+            "WorkshopApi.RegisterTab"
+          ],
+          "nativeRuntimeVerified": true
+        },
+        {
+          "kind": "method",
+          "name": "RegisterChain",
+          "signature": "Nicokobo.Forge.Registration.SubmitResult Nicokobo.Forge.ForgeWorkshopApi::RegisterChain(System.String,System.String,System.String,System.String,System.Func`1<Nicokobo.Forge.ForgeWorkshopSnapshot>,System.Action`1<System.String>)",
+          "status": "implemented",
+          "ezapi": [
+            "WorkshopApi.RegisterChain"
+          ],
+          "nativeRuntimeVerified": false
+        },
+        {
+          "kind": "method",
+          "name": "OpenTab",
+          "signature": "System.Boolean Nicokobo.Forge.ForgeWorkshopApi::OpenTab(System.String)",
+          "status": "implemented",
+          "ezapi": [
+            "WorkshopApi.OpenTab"
+          ],
+          "nativeRuntimeVerified": true
+        },
+        {
+          "kind": "method",
+          "name": "CloseWindow",
+          "signature": "System.Void Nicokobo.Forge.ForgeWorkshopApi::CloseWindow()",
+          "status": "implemented",
+          "ezapi": [
+            "WorkshopApi.CloseWindow"
+          ],
+          "nativeRuntimeVerified": false
+        },
+        {
+          "kind": "method",
+          "name": "OpenChain",
+          "signature": "System.Boolean Nicokobo.Forge.ForgeWorkshopApi::OpenChain(System.String)",
+          "status": "implemented",
+          "ezapi": [
+            "WorkshopApi.OpenChain"
+          ],
+          "nativeRuntimeVerified": false
+        },
+        {
+          "kind": "property",
+          "name": "IsVisible",
+          "signature": "System.Boolean IsVisible",
+          "status": "implemented",
+          "ezapi": [
+            "WorkshopApi.IsVisible"
+          ],
+          "nativeRuntimeVerified": true
+        }
+      ],
+      "nativeRuntimeVerified": true,
+      "evidence": "workshop.zh-CN.md"
+    }
+  ],
+  "additionalPublicImplementations": [
+    {
+      "forgeType": "Nicokobo.Forge.ForgeMachinePowerMath",
+      "ezapi": "MachinePowerMath",
+      "status": "implemented",
+      "nativeRuntimeVerified": false,
+      "source": "../src/EZapi/ProductionValue.cs"
+    },
+    {
+      "forgeType": "Nicokobo.Forge.ForgeProductionValueMath",
+      "ezapi": "ProductionValueMath",
+      "status": "implemented",
+      "nativeRuntimeVerified": false,
+      "source": "../src/EZapi/ProductionValue.cs"
+    },
+    {
+      "forgeType": "Nicokobo.Forge.ForgeMachineBatchContext",
+      "ezapi": "MachineBatchContext",
+      "status": "implemented",
+      "nativeRuntimeVerified": false,
+      "source": "../src/EZapi/ProductionValue.cs"
+    },
+    {
+      "forgeType": "Nicokobo.Forge.ForgeMachineItemTake",
+      "ezapi": "MachineItemTake",
+      "status": "implemented",
+      "nativeRuntimeVerified": false,
+      "source": "../src/EZapi/ProductionValue.cs"
+    },
+    {
+      "forgeType": "Nicokobo.Forge.ForgeMachineLiquidPart",
+      "ezapi": "MachineLiquidPart",
+      "status": "implemented",
+      "nativeRuntimeVerified": false,
+      "source": "../src/EZapi/ProductionValue.cs"
+    },
+    {
+      "forgeType": "Nicokobo.Forge.ForgeMachineLiquidSnapshot",
+      "ezapi": "MachineLiquidSnapshot",
+      "status": "implemented",
+      "nativeRuntimeVerified": false,
+      "source": "../src/EZapi/ProductionValue.cs"
+    },
+    {
+      "forgeType": "Nicokobo.Forge.ForgeMachineLiquidTake",
+      "ezapi": "MachineLiquidTake",
+      "status": "implemented",
+      "nativeRuntimeVerified": false,
+      "source": "../src/EZapi/ProductionValue.cs"
+    },
+    {
+      "forgeType": "Nicokobo.Forge.NativeEffectRegistration",
+      "ezapi": "NativeEffectRegistration",
+      "status": "implemented",
+      "nativeRuntimeVerified": false,
+      "source": "../src/EZapi/Effects.cs"
+    },
+    {
+      "forgeType": "Nicokobo.Forge.ForgeLiquidCompositionMath",
+      "ezapi": "LiquidCompositionMath",
+      "status": "implemented",
+      "nativeRuntimeVerified": false,
+      "source": "../src/EZapi/LiquidComposition.cs"
+    },
+    {
+      "forgeType": "Nicokobo.Forge.ForgeLiquidTransferResult",
+      "ezapi": "LiquidTransferResult",
+      "status": "implemented",
+      "nativeRuntimeVerified": false,
+      "source": "../src/EZapi/LiquidTransfer.cs"
+    },
+    {
+      "forgeType": "Nicokobo.Forge.IForgePowerTransaction",
+      "ezapi": "IPowerTransaction",
+      "status": "implemented",
+      "nativeRuntimeVerified": true,
+      "source": "../src/EZapi/ExternalPower.cs"
+    },
+    {
+      "forgeType": "Nicokobo.Forge.ForgeSpriteAtlas",
+      "ezapi": "EmbeddedSpriteAtlas",
+      "status": "implemented",
+      "nativeRuntimeVerified": true,
+      "source": "../src/EZapi/SpriteAssets.cs",
+      "boundary": "GetSprite/TryInstall/Assign/RegisterPortrait covered; 0.1.47 native smoke 9/9. Portrait on-screen visual rendering, real scene dictionary rebuild and save/reload pending; stopped handles stay inert."
+    },
+    {
+      "forgeType": "Nicokobo.Forge.ForgeSpriteDefinition",
+      "ezapi": "SpriteDefinition",
+      "status": "implemented",
+      "nativeRuntimeVerified": false,
+      "source": "../src/EZapi/EmbeddedSpriteDefinition.cs"
+    },
+    {
+      "forgeType": "Nicokobo.Forge.ForgeSpriteFilter",
+      "ezapi": "SpriteFilter",
+      "status": "implemented",
+      "nativeRuntimeVerified": false,
+      "source": "../src/EZapi/EmbeddedSpriteDefinition.cs"
+    },
+    {
+      "forgeType": "Nicokobo.Forge.ForgePowerBatchMath",
+      "ezapi": "PowerBatchMath",
+      "status": "implemented",
+      "nativeRuntimeVerified": false,
+      "source": "../src/EZapi/PowerBatchMath.cs",
+      "offlineTestsPassed": 24,
+      "evidence": "verification/native-power-0.1.43/power-batch-result.json"
+    },
+    {
+      "forgeType": "Nicokobo.Forge.ForgePowerSourceAmount",
+      "ezapi": "PowerSourceAmount",
+      "status": "implemented",
+      "nativeRuntimeVerified": false,
+      "source": "../src/EZapi/PowerBatchMath.cs"
+    },
+    {
+      "forgeType": "Nicokobo.Forge.ForgePowerSourceDebit",
+      "ezapi": "PowerSourceDebit",
+      "status": "implemented",
+      "nativeRuntimeVerified": false,
+      "source": "../src/EZapi/PowerBatchMath.cs"
+    },
+    {
+      "forgeType": "Nicokobo.Forge.ForgeModuleText",
+      "ezapi": "ModuleText",
+      "status": "implemented",
+      "nativeRuntimeVerified": false,
+      "source": "../src/EZapi/PresentationApi.cs"
+    },
+    {
+      "forgeType": "Nicokobo.Forge.RunDataStatus",
+      "ezapi": "RunDataStatus",
+      "status": "implemented",
+      "nativeRuntimeVerified": false,
+      "source": "../src/EZapi/RunDataApi.cs"
+    },
+    {
+      "forgeType": "Nicokobo.Forge.RunDataResult",
+      "ezapi": "RunDataResult",
+      "status": "implemented",
+      "nativeRuntimeVerified": false,
+      "source": "../src/EZapi/RunDataApi.cs"
+    },
+    {
+      "forgeType": "Nicokobo.Forge.ForgeMachineContainerOutput",
+      "ezapi": "MachineContainerOutput",
+      "status": "implemented",
+      "nativeRuntimeVerified": true,
+      "source": "../src/EZapi/MachineRecipeDefinition.cs",
+      "evidence": "verification/liquid-output-native-0.1.55.json",
+      "boundary": "Per-recipe and template container predicates both implemented; automatic/leased C# callbacks; no executable callback JSON."
+    },
+    {
+      "forgeType": "Nicokobo.Forge.ForgeMachineContainerSlot",
+      "ezapi": "MachineContainerSlot.Condition",
+      "status": "implemented",
+      "nativeRuntimeVerified": true,
+      "source": "../src/EZapi/MachineLayoutCallbacks.cs",
+      "evidence": "verification/container-conditions-native-0.1.56.json",
+      "boundary": "C# predicates, automatic unified registration or explicit disposable low-level lease; no callback JSON execution"
+    },
+    {
+      "forgeType": "Nicokobo.Forge.ForgeMachineOutputTemplate",
+      "ezapi": "MachineOutputTemplate.ContainerCondition",
+      "status": "implemented",
+      "nativeRuntimeVerified": true,
+      "source": "../src/EZapi/MachineLayoutCallbacks.cs",
+      "evidence": "verification/container-conditions-native-0.1.56.json",
+      "boundary": "C# predicates, automatic unified registration or explicit disposable low-level lease; no callback JSON execution"
+    },
+    {
+      "ezapi": "MachineRecipe.MaterialContents / MachineMaterialContentsPolicy",
+      "status": "implemented",
+      "nativeRuntimeVerified": true,
+      "source": "../src/EZapi/MachineMaterialGraph.cs",
+      "evidence": "verification/material-graph-native-0.1.57.json",
+      "boundary": "default Reject retained; explicit whole root/descendant consumption; no persistence claim"
+    },
+    {
+      "ezapi": "RecipeGuideFigure.ItemId image resolution",
+      "status": "implemented",
+      "nativeRuntimeVerified": true,
+      "source": "../src/EZapi/RecipeGuideImages.cs",
+      "evidence": "verification/guide-mesh-native-0.1.66.json",
+      "boundary": "bounded public triangle/UV meshes; no new required fields"
+    }
+  ],
+  "designPrinciples": "design-principles.zh-CN.md",
+  "machinePublicContractAudit": "machine-public-contract.audit.json",
+  "machineNightReadOnly": {
+    "index": "machine-night-readonly.index.json",
+    "evidence": "verification/night-readonly-native-0.1.68.json",
+    "fullMachineGroupComplete": true
+  },
+  "machineRecipeReadOnly": {
+    "index": "machine-recipe-readonly.index.json",
+    "evidence": "verification/recipe-readonly-native-0.1.69.json",
+    "behaviorProgress": {
+      "reviewedTypes": 34,
+      "reviewedProperties": 114,
+      "reviewedMethods": 20,
+      "allProperties": 114,
+      "allTypes": 34
+    },
+    "fullMachineGroupComplete": true
+  },
+  "machineContractReview": {
+    "complete": true,
+    "index": "machine-contract.index.json",
+    "audit": "machine-public-contract.audit.json",
+    "behaviorProgress": {
+      "reviewedTypes": 34,
+      "reviewedProperties": 114,
+      "reviewedMethods": 20,
+      "allProperties": 114,
+      "allTypes": 34
+    }
+  },
+  "publicHelperCoverage": {
+    "index": "public-contract-coverage.index.json",
+    "complete": true,
+    "mappedTypes": 149,
+    "allTypes": 149,
+    "unresolved": [],
+    "adaptations": "public-shape-adaptations.audit.json"
+  },
+  "fullUserGoalComplete": false,
+  "remainingUserGoal": [
+    "Inspect user knowledge base and implement useful additional APIs",
+    "Developer ease of use and complete AI-readable index/example review",
+    "Cross-API Chinese/English interoperability with real game English"
+  ],
+  "distributionVerification": {
+    "dllSHA256": "7E4AB675B0E3BD81C56EEC4606731A6880287549EB4E8E90A707BE18BD52BEEF",
+    "nativeRuntimeVerified": false,
+    "frameworkSourceIncluded": false
+  }
+}

@@ -1,0 +1,171 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "external-power-status.schema.json",
+  "title": "EZapi external power diagnostic output (not a provider importer)",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "available",
+    "openTransactions",
+    "providers",
+    "native",
+    "furnace",
+    "scope"
+  ],
+  "properties": {
+    "available": {
+      "type": "boolean"
+    },
+    "openTransactions": {
+      "type": "integer",
+      "minimum": 0,
+      "maximum": 1
+    },
+    "providers": {
+      "type": "array",
+      "maxItems": 128,
+      "uniqueItems": true,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "ownerId",
+          "itemId"
+        ],
+        "properties": {
+          "ownerId": {
+            "type": "string",
+            "maxLength": 160,
+            "pattern": "^[a-z0-9_-]+(?:\\.[a-z0-9_-]+)*(?![\\s\\S])"
+          },
+          "itemId": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 160,
+            "pattern": "^[^\\s\\u0000-\\u001f\\u007f]+(?![\\s\\S])"
+          }
+        }
+      }
+    },
+    "native": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "OwnerId",
+        "Ready",
+        "Targets",
+        "Error"
+      ],
+      "properties": {
+        "OwnerId": {
+          "const": "ezapi.power.external"
+        },
+        "Ready": {
+          "type": "boolean"
+        },
+        "Targets": {
+          "type": "array",
+          "maxItems": 12,
+          "uniqueItems": true,
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "Error": {
+          "type": [
+            "string",
+            "null"
+          ]
+        }
+      },
+      "allOf": [
+        {
+          "if": {
+            "properties": {
+              "Ready": {
+                "const": true
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "Targets": {
+                "minItems": 12
+              },
+              "Error": {
+                "type": "null"
+              }
+            }
+          }
+        }
+      ]
+    },
+    "scope": {
+      "const": "EZapi synchronous batches and exact vanilla furnace callback; no asynchronous or crash recovery"
+    },
+    "furnace": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "active",
+        "committed",
+        "restored",
+        "recoveryFailed",
+        "pendingCleanups"
+      ],
+      "properties": {
+        "active": {
+          "type": "boolean"
+        },
+        "committed": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "restored": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "recoveryFailed": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "pendingCleanups": {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 128
+        },
+        "lastDestroyedContents": {
+          "type": "array",
+          "maxItems": 4096,
+          "items": {
+            "type": "integer",
+            "minimum": 0
+          }
+        }
+      }
+    }
+  },
+  "allOf": [
+    {
+      "if": {
+        "properties": {
+          "available": {
+            "const": true
+          }
+        }
+      },
+      "then": {
+        "properties": {
+          "native": {
+            "properties": {
+              "Ready": {
+                "const": true
+              }
+            }
+          }
+        }
+      }
+    }
+  ]
+}

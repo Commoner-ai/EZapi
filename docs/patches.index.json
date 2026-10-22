@@ -1,0 +1,1002 @@
+{
+  "schemaVersion": 1,
+  "owner": "ezapi.compatibility",
+  "installation": "CompatibilityPatches.Start/Stop; InventoryRuntime.DirectoryReady/Stop; independent owner gates; LifecycleApi.DirectoryReady/Stop independent owner; ExternalPowerRuntime.DirectoryReady/Stop independent owner; exact fresh connector initialization permit; ReadingApi.DirectoryReady/Stop independent ezapi.presentation.reading group; DialogueApi.DirectoryReady/Stop independent ezapi.presentation.dialogue group; PhoneApi.DirectoryReady/Stop independent ezapi.presentation.phone group; InventoryEndpointRuntime.DirectoryReady/Stop independent ezapi.inventory.endpoints group; ClientVisitApi subscribes/unsubscribes the official ModHook.OnGenerateCustomerVeryLate event and installs no Harmony patch for customer visits",
+  "targets": [
+    {
+      "type": "TypeHelper",
+      "method": "GetTypeDisplayName",
+      "parameters": [
+        "System.String"
+      ],
+      "kind": "Prefix",
+      "reason": "current build lacks public custom type display-name registration",
+      "scope": "Applied EZapi custom type keys",
+      "owner": "ezapi.compatibility"
+    },
+    {
+      "type": "ItemMouseHandler",
+      "method": "OnEventPress",
+      "parameters": [
+        "Il2CppSystem.Collections.Generic.ISet<UnityEngine.KeyCode>"
+      ],
+      "kind": "Prefix",
+      "reason": "inventory input bypasses Unity UI raycasts",
+      "scope": "only pointer inside EZapi debug controls",
+      "owner": "ezapi.compatibility"
+    },
+    {
+      "type": "ItemMouseDragHandler",
+      "method": "OnEventPress",
+      "parameters": [
+        "Il2CppSystem.Collections.Generic.ISet<UnityEngine.KeyCode>"
+      ],
+      "kind": "Prefix",
+      "reason": "inventory input bypasses Unity UI raycasts",
+      "scope": "only pointer inside EZapi debug controls",
+      "owner": "ezapi.compatibility"
+    },
+    {
+      "type": "ItemMouseDoubleClickHandler",
+      "method": "OnEventPress",
+      "parameters": [
+        "Il2CppSystem.Collections.Generic.ISet<UnityEngine.KeyCode>"
+      ],
+      "kind": "Prefix",
+      "reason": "inventory input bypasses Unity UI raycasts",
+      "scope": "only pointer inside EZapi debug controls",
+      "owner": "ezapi.compatibility"
+    },
+    {
+      "owner": "ezapi.inventory.freeze",
+      "type": "GameItem",
+      "method": "MayRemove",
+      "returnType": "System.Boolean",
+      "parameters": [],
+      "kind": "Prefix",
+      "reason": "explicit native inventory guard; see inventory-guards.zh-CN.md",
+      "scope": "matching EZapi leases, rules or list tags only"
+    },
+    {
+      "owner": "ezapi.inventory.freeze",
+      "type": "GameItem",
+      "method": "MaxNumRemove",
+      "returnType": "System.Int32",
+      "parameters": [],
+      "kind": "Postfix",
+      "reason": "explicit native inventory guard; see inventory-guards.zh-CN.md",
+      "scope": "matching EZapi leases, rules or list tags only"
+    },
+    {
+      "owner": "ezapi.inventory.freeze",
+      "type": "GameGridInventory",
+      "method": "Expel",
+      "returnType": "System.Boolean",
+      "parameters": [
+        "Il2Cpp.GameItem"
+      ],
+      "kind": "Prefix",
+      "reason": "explicit native inventory guard; see inventory-guards.zh-CN.md",
+      "scope": "matching EZapi leases, rules or list tags only"
+    },
+    {
+      "owner": "ezapi.inventory.freeze",
+      "type": "GameGridScrollableInventory",
+      "method": "Expel",
+      "returnType": "System.Boolean",
+      "parameters": [
+        "Il2Cpp.GameItem"
+      ],
+      "kind": "Prefix",
+      "reason": "explicit native inventory guard; see inventory-guards.zh-CN.md",
+      "scope": "matching EZapi leases, rules or list tags only"
+    },
+    {
+      "owner": "ezapi.inventory.freeze",
+      "type": "GameSlotInventory",
+      "method": "Expel",
+      "returnType": "System.Boolean",
+      "parameters": [
+        "Il2Cpp.GameItem"
+      ],
+      "kind": "Prefix",
+      "reason": "explicit native inventory guard; see inventory-guards.zh-CN.md",
+      "scope": "matching EZapi leases, rules or list tags only"
+    },
+    {
+      "owner": "ezapi.inventory.freeze",
+      "type": "SlotMarker",
+      "method": "TryAcceptOnce",
+      "returnType": "System.Int32",
+      "parameters": [
+        "System.Int32"
+      ],
+      "kind": "Prefix",
+      "reason": "explicit native inventory guard; see inventory-guards.zh-CN.md",
+      "scope": "matching EZapi leases, rules or list tags only"
+    },
+    {
+      "owner": "ezapi.inventory.admission",
+      "type": "GameGridInventory",
+      "method": "MayHaveValidInventorySlot",
+      "returnType": "System.Boolean",
+      "parameters": [
+        "Il2Cpp.GameItem"
+      ],
+      "kind": "Postfix",
+      "reason": "explicit native inventory guard; see inventory-guards.zh-CN.md",
+      "scope": "matching EZapi leases, rules or list tags only"
+    },
+    {
+      "owner": "ezapi.inventory.admission",
+      "type": "GameGridInventory",
+      "method": "CheckInventorySlotStillValid",
+      "returnType": "System.Boolean",
+      "parameters": [
+        "Il2Cpp.GameItem",
+        "Il2Cpp.GridShape",
+        "Il2Cpp.TagSystem"
+      ],
+      "kind": "Postfix",
+      "reason": "explicit native inventory guard; see inventory-guards.zh-CN.md",
+      "scope": "matching EZapi leases, rules or list tags only"
+    },
+    {
+      "owner": "ezapi.inventory.admission",
+      "type": "GameGridInventory",
+      "method": "TryInventorySlot",
+      "returnType": "Il2Cpp.SlotMarker",
+      "parameters": [
+        "Il2Cpp.GameItem",
+        "System.Int32",
+        "UnityEngine.Vector2",
+        "Il2Cpp.GridShape",
+        "Il2Cpp.TagSystem"
+      ],
+      "kind": "Postfix",
+      "reason": "explicit native inventory guard; see inventory-guards.zh-CN.md",
+      "scope": "matching EZapi leases, rules or list tags only"
+    },
+    {
+      "owner": "ezapi.inventory.admission",
+      "type": "SlotMarker",
+      "method": "TryAcceptOnce",
+      "returnType": "System.Int32",
+      "parameters": [
+        "System.Int32"
+      ],
+      "kind": "Prefix",
+      "reason": "explicit native inventory guard; see inventory-guards.zh-CN.md",
+      "scope": "matching EZapi leases, rules or list tags only"
+    },
+    {
+      "owner": "ezapi.inventory.lists",
+      "type": "GameGridInventory",
+      "method": "UncheckedAccept",
+      "returnType": "System.Boolean",
+      "parameters": [
+        "Il2Cpp.GameItem"
+      ],
+      "kind": "Prefix",
+      "reason": "explicit native inventory guard; see inventory-guards.zh-CN.md",
+      "scope": "matching EZapi leases, rules or list tags only"
+    },
+    {
+      "type": "PlayerStore",
+      "method": "LoadGame",
+      "parameters": [],
+      "returns": "System.Void",
+      "kind": "Prefix+Postfix",
+      "owner": "ezapi.lifecycle",
+      "reason": "exact public lifecycle phase timing cannot be replaced by nearby event names",
+      "scope": "all seven targets required; directory ready; callbacks require live synchronous context",
+      "failure": "gate false and unpatch only ezapi.lifecycle; preserve original night exception"
+    },
+    {
+      "type": "PlayerStore",
+      "method": "EndNight",
+      "parameters": [],
+      "returns": "System.Void",
+      "kind": "Prefix+Postfix+Finalizer",
+      "owner": "ezapi.lifecycle",
+      "reason": "exact public lifecycle phase timing cannot be replaced by nearby event names",
+      "scope": "all seven targets required; directory ready; callbacks require live synchronous context",
+      "failure": "gate false and unpatch only ezapi.lifecycle; preserve original night exception"
+    },
+    {
+      "type": "PlayerStore",
+      "method": "EndDay",
+      "parameters": [],
+      "returns": "System.Void",
+      "kind": "Postfix",
+      "owner": "ezapi.lifecycle",
+      "reason": "exact public lifecycle phase timing cannot be replaced by nearby event names",
+      "scope": "all seven targets required; directory ready; callbacks require live synchronous context",
+      "failure": "gate false and unpatch only ezapi.lifecycle; preserve original night exception"
+    },
+    {
+      "type": "ModHook",
+      "method": "FireOnHandlingNightlyServicesEarly",
+      "parameters": [],
+      "returns": "System.Void",
+      "kind": "Prefix",
+      "owner": "ezapi.lifecycle",
+      "reason": "exact public lifecycle phase timing cannot be replaced by nearby event names",
+      "scope": "all seven targets required; directory ready; callbacks require live synchronous context",
+      "failure": "gate false and unpatch only ezapi.lifecycle; preserve original night exception"
+    },
+    {
+      "type": "ModHook",
+      "method": "FireOnHandlingNightlyServicesLate",
+      "parameters": [],
+      "returns": "System.Void",
+      "kind": "Postfix",
+      "owner": "ezapi.lifecycle",
+      "reason": "exact public lifecycle phase timing cannot be replaced by nearby event names",
+      "scope": "all seven targets required; directory ready; callbacks require live synchronous context",
+      "failure": "gate false and unpatch only ezapi.lifecycle; preserve original night exception"
+    },
+    {
+      "type": "ModHook",
+      "method": "FireOnGoingSleepLate",
+      "parameters": [],
+      "returns": "System.Void",
+      "kind": "Postfix",
+      "owner": "ezapi.lifecycle",
+      "reason": "exact public lifecycle phase timing cannot be replaced by nearby event names",
+      "scope": "all seven targets required; directory ready; callbacks require live synchronous context",
+      "failure": "gate false and unpatch only ezapi.lifecycle; preserve original night exception"
+    },
+    {
+      "type": "ModHook",
+      "method": "FireOnGameLoadedLate",
+      "parameters": [],
+      "returns": "System.Void",
+      "kind": "Postfix",
+      "owner": "ezapi.lifecycle",
+      "reason": "exact public lifecycle phase timing cannot be replaced by nearby event names",
+      "scope": "all seven targets required; directory ready; callbacks require live synchronous context",
+      "failure": "gate false and unpatch only ezapi.lifecycle; preserve original night exception"
+    },
+    {
+      "owner": "ezapi.effect-random",
+      "target": "Il2Cpp.ModuleEffectHelper.InitRandomEffect(Il2Cpp.GameItem,System.Int32):System.Void",
+      "prefix": "EffectApi.RandomPrefix",
+      "finalizer": "EffectApi.RandomFinalizer",
+      "required": "only when excluded effects declared; install before native insertion",
+      "readiness": "exact signature+Interop executable entry+Harmony owner; missing disables excluded definitions",
+      "cleanup": "per invocation original table and exact effect identity, finalizer preserves native exception",
+      "runtimeVerified": false
+    },
+    {
+      "owner": "ezapi.modules.admission",
+      "type": "MachineHelper",
+      "method": "SetupModuleBay",
+      "returnType": "System.Void",
+      "parameters": [
+        "GameInventory",
+        "GameItem",
+        "Il2CppSystem.Action",
+        "Il2CppStringArray"
+      ],
+      "kind": "Prefix",
+      "reason": "module public API exact phase/admission/action/learning adapter",
+      "scope": "opt-in declaration/subscription; group ready gate; no original replacement; postfix requires original; learning finalizer preserves exception"
+    },
+    {
+      "owner": "ezapi.modules.phases",
+      "type": "ModuleHelper",
+      "method": "ComputeModuleEffect",
+      "returnType": "System.Void",
+      "parameters": [
+        "List<GameItem>",
+        "GameItem"
+      ],
+      "kind": "Prefix/Postfix",
+      "reason": "module public API exact phase/admission/action/learning adapter",
+      "scope": "opt-in declaration/subscription; group ready gate; no original replacement; postfix requires original; learning finalizer preserves exception"
+    },
+    {
+      "owner": "ezapi.modules.phases",
+      "type": "ModuleEffectHelper",
+      "method": "ComputeAllModuleTempStat",
+      "returnType": "System.Void",
+      "parameters": [
+        "List<GameItem>"
+      ],
+      "kind": "Postfix",
+      "reason": "module public API exact phase/admission/action/learning adapter",
+      "scope": "opt-in declaration/subscription; group ready gate; no original replacement; postfix requires original; learning finalizer preserves exception"
+    },
+    {
+      "owner": "ezapi.modules.phases",
+      "type": "ModuleEffectHelper",
+      "method": "OnAddedModuleToGrid",
+      "returnType": "System.Void",
+      "parameters": [
+        "GameItem",
+        "GameItem",
+        "List<GameItem>"
+      ],
+      "kind": "Prefix",
+      "reason": "module public API exact phase/admission/action/learning adapter",
+      "scope": "opt-in declaration/subscription; group ready gate; no original replacement; postfix requires original; learning finalizer preserves exception"
+    },
+    {
+      "owner": "ezapi.modules.phases",
+      "type": "ModuleEffectHelper",
+      "method": "OnRemovedModuleFromGrid",
+      "returnType": "System.Void",
+      "parameters": [
+        "GameItem",
+        "GameItem",
+        "List<GameItem>"
+      ],
+      "kind": "Postfix",
+      "reason": "module public API exact phase/admission/action/learning adapter",
+      "scope": "opt-in declaration/subscription; group ready gate; no original replacement; postfix requires original; learning finalizer preserves exception"
+    },
+    {
+      "owner": "ezapi.modules.actions",
+      "type": "ModuleEffectHelper",
+      "method": "ActivateOnUseAction",
+      "returnType": "System.Void",
+      "parameters": [
+        "GameItem",
+        "GameInventory",
+        "GameItem"
+      ],
+      "kind": "Prefix",
+      "reason": "module public API exact phase/admission/action/learning adapter",
+      "scope": "opt-in declaration/subscription; group ready gate; no original replacement; postfix requires original; learning finalizer preserves exception"
+    },
+    {
+      "owner": "ezapi.modules.learning",
+      "type": "ModuleEffectHelper",
+      "method": "OnUsedLearningAlgo",
+      "returnType": "System.Void",
+      "parameters": [
+        "GameItem"
+      ],
+      "kind": "Prefix/Postfix/Finalizer",
+      "reason": "module public API exact phase/admission/action/learning adapter",
+      "scope": "opt-in declaration/subscription; group ready gate; no original replacement; postfix requires original; learning finalizer preserves exception"
+    },
+    {
+      "owner": "ezapi.power.external",
+      "type": "PowerHelper",
+      "method": "GetAvailableEnergyFromItem",
+      "returnType": "System.Int32",
+      "parameters": [
+        "Il2Cpp.GameItem",
+        "System.Boolean"
+      ],
+      "kind": "Prefix",
+      "reason": "external connector query/write isolation; no official external source transaction hook",
+      "scope": "exact active connector ID; frozen ordinary sources also reject recharge"
+    },
+    {
+      "owner": "ezapi.power.external",
+      "type": "PowerHelper",
+      "method": "CanDrawPowerSource",
+      "returnType": "System.Boolean",
+      "parameters": [
+        "Il2Cpp.GameItem",
+        "System.Int32"
+      ],
+      "kind": "Prefix",
+      "reason": "external connector query/write isolation; no official external source transaction hook",
+      "scope": "exact active connector ID; frozen ordinary sources also reject recharge"
+    },
+    {
+      "owner": "ezapi.power.external",
+      "type": "PowerHelper",
+      "method": "DrawPowerSource",
+      "returnType": "System.Boolean",
+      "parameters": [
+        "Il2Cpp.GameItem",
+        "System.Int32"
+      ],
+      "kind": "Prefix",
+      "reason": "external connector query/write isolation; no official external source transaction hook",
+      "scope": "exact active connector ID; frozen ordinary sources also reject recharge"
+    },
+    {
+      "owner": "ezapi.power.external",
+      "type": "PowerHelper",
+      "method": "ChargeBattery",
+      "returnType": "System.Void",
+      "parameters": [
+        "Il2Cpp.GameItem"
+      ],
+      "kind": "Prefix",
+      "reason": "external connector query/write isolation; no official external source transaction hook",
+      "scope": "exact active connector ID; frozen ordinary sources also reject recharge"
+    },
+    {
+      "owner": "ezapi.power.external",
+      "type": "PowerHelper",
+      "method": "ChargeBattery",
+      "returnType": "System.Void",
+      "parameters": [
+        "Il2Cpp.GameItem",
+        "System.Int32",
+        "System.Boolean"
+      ],
+      "kind": "Prefix",
+      "reason": "external connector query/write isolation; no official external source transaction hook",
+      "scope": "exact active connector ID; frozen ordinary sources also reject recharge"
+    },
+    {
+      "owner": "ezapi.power.external",
+      "type": "PowerHelper",
+      "method": "SetPowerSourceAt",
+      "returnType": "System.Void",
+      "parameters": [
+        "Il2Cpp.GameItem",
+        "System.Int32"
+      ],
+      "kind": "Prefix",
+      "reason": "external connector query/write isolation; no official external source transaction hook",
+      "scope": "exact active connector ID; frozen ordinary sources also reject recharge"
+    },
+    {
+      "owner": "ezapi.power.external",
+      "type": "PowerHelper",
+      "method": "InitPowerSourceItem",
+      "returnType": "System.Void",
+      "parameters": [
+        "Il2Cpp.GameItem",
+        "System.Int32",
+        "System.Int32"
+      ],
+      "kind": "Prefix",
+      "reason": "external connector query/write isolation; no official external source transaction hook",
+      "scope": "exact active connector ID; frozen ordinary sources also reject recharge"
+    },
+    {
+      "owner": "ezapi.power.external",
+      "type": "PowerHelper",
+      "method": "IsPowerSourceFull",
+      "returnType": "System.Boolean",
+      "parameters": [
+        "Il2Cpp.GameItem"
+      ],
+      "kind": "Prefix",
+      "reason": "external connector query/write isolation; no official external source transaction hook",
+      "scope": "exact active connector ID; frozen ordinary sources also reject recharge"
+    },
+    {
+      "owner": "ezapi.power.external",
+      "type": "PowerHelper",
+      "method": "TryRemoveEnergy",
+      "returnType": "System.Int32",
+      "parameters": [
+        "Il2Cpp.GameItem",
+        "System.Int32",
+        "System.Boolean"
+      ],
+      "kind": "Prefix",
+      "reason": "external connector query/write isolation; no official external source transaction hook",
+      "scope": "exact active connector ID; frozen ordinary sources also reject recharge"
+    },
+    {
+      "owner": "ezapi.power.external",
+      "type": "PowerHelper",
+      "method": "CreatePowerSourceItemTooltip",
+      "returnType": "System.Void",
+      "parameters": [
+        "Il2Cpp.RichTextBuilder",
+        "Il2Cpp.GameItem"
+      ],
+      "kind": "Prefix",
+      "reason": "external connector query/write isolation; no official external source transaction hook",
+      "scope": "exact active connector ID; frozen ordinary sources also reject recharge"
+    },
+    {
+      "owner": "ezapi.power.external",
+      "type": "MachineFurnace.__c__DisplayClass0_0",
+      "method": "_Furnace_b__5",
+      "returnType": "System.Void",
+      "parameters": [
+        "Il2Cpp.GameItem",
+        "Il2Cpp.GameInventory",
+        "Il2Cpp.SlotMarker"
+      ],
+      "kind": "Prefix/Postfix/Finalizer",
+      "reason": "complete native furnace external source batch boundary",
+      "scope": "exact current furnace with registered external connector; native processing algorithm retained"
+    },
+    {
+      "owner": "ezapi.power.external",
+      "type": "GameItemElement",
+      "method": "Destroy",
+      "returnType": "System.Void",
+      "parameters": [],
+      "kind": "Prefix",
+      "reason": "defer destruction of original input/output instances until batch resource commit",
+      "scope": "captured root destruction deferred; captured descendant early destruction rejects batch without destroying it; committed deepest-first cleanup uses original method",
+      "evidence": "verification/furnace-contents-native-0.1.67.json"
+    },
+    {
+      "owner": "ezapi.presentation.reading",
+      "type": "HandnoteUIManager",
+      "method": "OpenPanel",
+      "returnType": "System.Void",
+      "parameters": [
+        "Il2Cpp.GameItem"
+      ],
+      "kind": "Postfix",
+      "reason": "track displayed document identity and reset owned temporary handnotes",
+      "scope": "observe original UI calls; cleanup own detached temporary documents only; never skip original load/new/menu"
+    },
+    {
+      "owner": "ezapi.presentation.reading",
+      "type": "HandnoteUIManager",
+      "method": "ClosePanel",
+      "returnType": "System.Void",
+      "parameters": [],
+      "kind": "Postfix",
+      "reason": "track displayed document identity and reset owned temporary handnotes",
+      "scope": "observe original UI calls; cleanup own detached temporary documents only; never skip original load/new/menu"
+    },
+    {
+      "owner": "ezapi.presentation.reading",
+      "type": "PlayerStore",
+      "method": "LoadGame",
+      "returnType": "System.Void",
+      "parameters": [],
+      "kind": "Prefix",
+      "reason": "track displayed document identity and reset owned temporary handnotes",
+      "scope": "observe original UI calls; cleanup own detached temporary documents only; never skip original load/new/menu"
+    },
+    {
+      "owner": "ezapi.presentation.reading",
+      "type": "PlayerStore",
+      "method": "StartNewGame",
+      "returnType": "System.Void",
+      "parameters": [],
+      "kind": "Prefix",
+      "reason": "track displayed document identity and reset owned temporary handnotes",
+      "scope": "observe original UI calls; cleanup own detached temporary documents only; never skip original load/new/menu"
+    },
+    {
+      "owner": "ezapi.presentation.reading",
+      "type": "MainMenuUIController",
+      "method": "Awake",
+      "returnType": "System.Void",
+      "parameters": [],
+      "kind": "Prefix",
+      "reason": "track displayed document identity and reset owned temporary handnotes",
+      "scope": "observe original UI calls; cleanup own detached temporary documents only; never skip original load/new/menu"
+    },
+    {
+      "owner": "ezapi.presentation.dialogue",
+      "type": "DialogUIManager",
+      "method": "StartDialogue",
+      "returnType": "System.Boolean",
+      "parameters": [
+        "Il2Cpp.Dialogue",
+        "System.Boolean"
+      ],
+      "kind": "Prefix+Finalizer",
+      "reason": "owned native dialogue lifecycle and callback validity",
+      "scope": "foreign priority preserved; rejected start restores owned mode; external replacement returns false only during owned selection stack"
+    },
+    {
+      "owner": "ezapi.presentation.dialogue",
+      "type": "DialogUIManager",
+      "method": "DisplayClientText",
+      "returnType": "System.Void",
+      "parameters": [
+        "Il2Cpp.Dialogue"
+      ],
+      "kind": "Postfix",
+      "reason": "owned native dialogue lifecycle and callback validity",
+      "scope": "speaker TMP synchronization for owned graph only"
+    },
+    {
+      "owner": "ezapi.presentation.dialogue",
+      "type": "DialogUIManager",
+      "method": "SelectChoice",
+      "returnType": "System.Void",
+      "parameters": [
+        "System.Int32"
+      ],
+      "kind": "Prefix+Finalizer",
+      "reason": "owned native dialogue lifecycle and callback validity",
+      "scope": "single-use exact source/index/scope callback permit; original selection always executes"
+    },
+    {
+      "owner": "ezapi.presentation.dialogue",
+      "type": "PlayerStore",
+      "method": "LoadGame",
+      "returnType": "System.Void",
+      "parameters": [],
+      "kind": "Prefix",
+      "reason": "owned native dialogue lifecycle and callback validity",
+      "scope": "invalidate owned callbacks before original load"
+    },
+    {
+      "owner": "ezapi.presentation.dialogue",
+      "type": "PlayerStore",
+      "method": "StartNewGame",
+      "returnType": "System.Void",
+      "parameters": [],
+      "kind": "Prefix",
+      "reason": "owned native dialogue lifecycle and callback validity",
+      "scope": "invalidate owned callbacks before original new game"
+    },
+    {
+      "owner": "ezapi.presentation.dialogue",
+      "type": "MainMenuUIController",
+      "method": "Awake",
+      "returnType": "System.Void",
+      "parameters": [],
+      "kind": "Prefix",
+      "reason": "owned native dialogue lifecycle and callback validity",
+      "scope": "invalidate and release owned graph; preserve shared external graph"
+    },
+    {
+      "owner": "ezapi.presentation.phone",
+      "type": "StorePhoneClient",
+      "method": "GetLocalizedDisplayName",
+      "returnType": "System.String",
+      "parameters": [],
+      "kind": "Prefix",
+      "reason": "native phone contact binding and call lifecycle",
+      "scope": "cached name only for exact owned native contact"
+    },
+    {
+      "owner": "ezapi.presentation.phone",
+      "type": "StorePhoneClient",
+      "method": "ShownInPhoneBook",
+      "returnType": "System.Boolean",
+      "parameters": [],
+      "kind": "Prefix",
+      "reason": "native phone contact binding and call lifecycle",
+      "scope": "exact bound native contact and current visibility only"
+    },
+    {
+      "owner": "ezapi.presentation.phone",
+      "type": "StorePhoneClient",
+      "method": "GetCallDialog",
+      "returnType": "Il2Cpp.Dialogue",
+      "parameters": [],
+      "kind": "Prefix",
+      "reason": "native phone contact binding and call lifecycle",
+      "scope": "actual owned dial stack permits one factory execution; direct query returns no custom graph"
+    },
+    {
+      "owner": "ezapi.presentation.phone",
+      "type": "PhoneBookUIManager",
+      "method": "OpenUI",
+      "returnType": "System.Void",
+      "parameters": [],
+      "kind": "Prefix",
+      "reason": "native phone contact binding and call lifecycle",
+      "scope": "refresh only owned contacts before original phone book render"
+    },
+    {
+      "owner": "ezapi.presentation.phone",
+      "type": "PhoneUIManager",
+      "method": "OpenUI",
+      "returnType": "System.Void",
+      "parameters": [],
+      "kind": "Prefix",
+      "reason": "native phone contact binding and call lifecycle",
+      "scope": "refresh owned declarations; original UI open retained"
+    },
+    {
+      "owner": "ezapi.presentation.phone",
+      "type": "PhoneUIManager",
+      "method": "StartPhoneDialog",
+      "returnType": "System.Void",
+      "parameters": [
+        "System.Int64"
+      ],
+      "kind": "Prefix+Finalizer",
+      "reason": "native phone contact binding and call lifecycle",
+      "scope": "owned number validates current manager/scope/occupancy; foreign number preserves native dial"
+    },
+    {
+      "owner": "ezapi.presentation.phone",
+      "type": "PhoneUIManager",
+      "method": "OnPhoneDialogEnd",
+      "returnType": "System.Void",
+      "parameters": [
+        "System.Boolean"
+      ],
+      "kind": "Prefix",
+      "reason": "native phone contact binding and call lifecycle",
+      "scope": "revoke only exact current owned phone manager callback"
+    },
+    {
+      "owner": "ezapi.presentation.phone",
+      "type": "PhoneUIManager",
+      "method": "CloseUI",
+      "returnType": "System.Void",
+      "parameters": [],
+      "kind": "Prefix",
+      "reason": "native phone contact binding and call lifecycle",
+      "scope": "revoke only exact current owned phone manager callback"
+    },
+    {
+      "owner": "ezapi.presentation.phone",
+      "type": "DialoguePhoneUIManager",
+      "method": "StartDialogue",
+      "returnType": "System.Void",
+      "parameters": [
+        "Il2Cpp.Dialogue"
+      ],
+      "kind": "Prefix",
+      "reason": "native phone contact binding and call lifecycle",
+      "scope": "external graph takes priority; only in-stack replacement of owned choices denied"
+    },
+    {
+      "owner": "ezapi.presentation.phone",
+      "type": "DialoguePhoneUIManager",
+      "method": "DisplayClientText",
+      "returnType": "System.Void",
+      "parameters": [
+        "Il2Cpp.Dialogue"
+      ],
+      "kind": "Postfix",
+      "reason": "native phone contact binding and call lifecycle",
+      "scope": "owned graph speaker TMP synchronization"
+    },
+    {
+      "owner": "ezapi.presentation.phone",
+      "type": "DialoguePhoneUIManager",
+      "method": "SelectChoice",
+      "returnType": "System.Void",
+      "parameters": [
+        "System.Int32"
+      ],
+      "kind": "Prefix+Finalizer",
+      "reason": "native phone contact binding and call lifecycle",
+      "scope": "exact graph/manager/source/index/scope single-use permit; original native selection retained"
+    },
+    {
+      "owner": "ezapi.presentation.phone",
+      "type": "PlayerStore",
+      "method": "LoadGame",
+      "returnType": "System.Void",
+      "parameters": [],
+      "kind": "Prefix",
+      "reason": "native phone contact binding and call lifecycle",
+      "scope": "invalidate own callbacks before original load"
+    },
+    {
+      "owner": "ezapi.presentation.phone",
+      "type": "PlayerStore",
+      "method": "StartNewGame",
+      "returnType": "System.Void",
+      "parameters": [],
+      "kind": "Prefix",
+      "reason": "native phone contact binding and call lifecycle",
+      "scope": "invalidate own callbacks before original new"
+    },
+    {
+      "owner": "ezapi.presentation.phone",
+      "type": "MainMenuUIController",
+      "method": "Awake",
+      "returnType": "System.Void",
+      "parameters": [],
+      "kind": "Prefix",
+      "reason": "native phone contact binding and call lifecycle",
+      "scope": "invalidate/release own native graph; no shared lists cleared"
+    },
+    {
+      "owner": "ezapi.inventory.endpoints",
+      "type": "PlayerStore",
+      "method": "SaveGame",
+      "returnType": "System.Void",
+      "parameters": [],
+      "kind": "Prefix",
+      "reason": "encode current endpoint graphs and stage versioned modData before native save",
+      "scope": "cancel only this save when endpoint staging fails; never call SaveGame or auto-retry"
+    },
+    {
+      "owner": "ezapi.inventory.endpoints",
+      "type": "PlayerStore",
+      "method": "LoadGame",
+      "returnType": "System.Void",
+      "parameters": [],
+      "kind": "Prefix",
+      "reason": "unbind exact prior endpoint roots before native load",
+      "scope": "preserve old object graphs; never destroy displayed or externally referenced roots"
+    },
+    {
+      "owner": "ezapi.inventory.endpoints",
+      "type": "PlayerStore",
+      "method": "StartNewGame",
+      "returnType": "System.Void",
+      "parameters": [],
+      "kind": "Prefix",
+      "reason": "invalidate endpoint bindings before native new run",
+      "scope": "preserve old object graphs; never destroy displayed or externally referenced roots"
+    },
+    {
+      "owner": "ezapi.inventory.endpoints",
+      "type": "PlayerStore",
+      "method": "FindAllItem",
+      "returnType": "Il2CppSystem.Collections.Generic.List<Il2Cpp.GameItem>",
+      "parameters": [
+        "System.Boolean"
+      ],
+      "kind": "Postfix",
+      "reason": "merge restored endpoint graph items into a copied native result",
+      "scope": "preserve original and other-mod list instances; merge only exact current endpoint roots"
+    },
+    {
+      "owner": "ezapi.inventory.endpoints",
+      "type": "PowerHelper",
+      "method": "GetAllPowerSourceFourniture",
+      "returnType": "Il2CppSystem.Collections.Generic.List<Il2Cpp.GameItem>",
+      "parameters": [
+        "System.Boolean"
+      ],
+      "kind": "Postfix",
+      "reason": "exclude charging-only endpoint roots from furniture power enumeration",
+      "scope": "copy result; preserve native list and other mods"
+    },
+    {
+      "owner": "ezapi.inventory.endpoints",
+      "type": "PowerHelper",
+      "method": "ChargeAllRechargable",
+      "returnType": "System.Void",
+      "parameters": [
+        "Il2CppSystem.Collections.Generic.List<Il2Cpp.GameItem>"
+      ],
+      "kind": "Prefix",
+      "reason": "include owned power_source_item children from charging-only endpoint graphs",
+      "scope": "copy argument list and deduplicate by native pointer"
+    },
+    {
+      "owner": "ezapi.items.npc-stock",
+      "type": "StoreClientList",
+      "method": "PlaceInventorInventory",
+      "returnType": "System.Void",
+      "parameters": [
+        "System.Boolean"
+      ],
+      "kind": "Prefix+Finalizer",
+      "reason": "NPC scope/roll/miner candidate routing; delivery hook only intercepts isolated debug fixture",
+      "scope": "known build, exact signature, current run, managed scope token/finalizer"
+    },
+    {
+      "owner": "ezapi.items.npc-stock",
+      "type": "StoreClientList.__c",
+      "method": "_CreateThief_b__47_0",
+      "returnType": "System.Void",
+      "parameters": [],
+      "kind": "Prefix+Finalizer",
+      "reason": "NPC scope/roll/miner candidate routing; delivery hook only intercepts isolated debug fixture",
+      "scope": "known build, exact signature, current run, managed scope token/finalizer"
+    },
+    {
+      "owner": "ezapi.items.npc-stock",
+      "type": "StoreClientList.__c",
+      "method": "_CreatePettyThief_b__48_0",
+      "returnType": "System.Void",
+      "parameters": [],
+      "kind": "Prefix+Finalizer",
+      "reason": "NPC scope/roll/miner candidate routing; delivery hook only intercepts isolated debug fixture",
+      "scope": "known build, exact signature, current run, managed scope token/finalizer"
+    },
+    {
+      "owner": "ezapi.items.npc-stock",
+      "type": "StoreClientList.__c",
+      "method": "_CreateFoodThief_b__49_0",
+      "returnType": "System.Void",
+      "parameters": [],
+      "kind": "Prefix+Finalizer",
+      "reason": "NPC scope/roll/miner candidate routing; delivery hook only intercepts isolated debug fixture",
+      "scope": "known build, exact signature, current run, managed scope token/finalizer"
+    },
+    {
+      "owner": "ezapi.items.npc-stock",
+      "type": "StoreClientList.__c",
+      "method": "_CreateMiner_b__38_0",
+      "returnType": "System.Void",
+      "parameters": [],
+      "kind": "Prefix+Finalizer",
+      "reason": "NPC scope/roll/miner candidate routing; delivery hook only intercepts isolated debug fixture",
+      "scope": "known build, exact signature, current run, managed scope token/finalizer"
+    },
+    {
+      "owner": "ezapi.items.npc-stock",
+      "type": "LootRegistry",
+      "method": "RollInternal",
+      "returnType": "System.String",
+      "parameters": [
+        "System.String",
+        "System.String"
+      ],
+      "kind": "Prefix",
+      "reason": "NPC scope/roll/miner candidate routing; delivery hook only intercepts isolated debug fixture",
+      "scope": "known build, exact signature, current run, managed scope token/finalizer"
+    },
+    {
+      "owner": "ezapi.items.npc-stock",
+      "type": "DirectoryMaster",
+      "method": "Item",
+      "returnType": "Il2Cpp.GameItem",
+      "parameters": [
+        "System.String",
+        "System.Boolean"
+      ],
+      "kind": "Prefix",
+      "reason": "NPC scope/roll/miner candidate routing; delivery hook only intercepts isolated debug fixture",
+      "scope": "known build, exact signature, current run, managed scope token/finalizer"
+    },
+    {
+      "owner": "ezapi.items.npc-stock",
+      "type": "PlayerStore",
+      "method": "AddDirectSellingItemToTable",
+      "returnType": "System.Void",
+      "parameters": [
+        "Il2Cpp.GameItem",
+        "System.Boolean",
+        "System.Boolean",
+        "System.Boolean",
+        "System.Int32"
+      ],
+      "kind": "Prefix",
+      "reason": "NPC scope/roll/miner candidate routing; delivery hook only intercepts isolated debug fixture",
+      "scope": "known build, exact signature, current run, managed scope token/finalizer"
+    },
+    {
+      "owner": "ezapi.guide.locale-calendar",
+      "type": "StoreCalendar",
+      "method": "Update",
+      "returnType": "System.Void",
+      "parameters": [],
+      "kind": "Prefix",
+      "reason": "050REV5-L calendar display synchronously requests localized tables during native asynchronous locale switching",
+      "scope": "known fingerprint and exact signature only; defer display Update until public SelectedLocaleChanged completion; no game-day/save mutation",
+      "lifetime": "first guide preview initializes gate; framework Stop unsubscribes and removes owner",
+      "evidence": "verification/guide-mesh-native-0.1.66.json"
+    }
+  ],
+  "noPatches": [
+    "directory",
+    "tooltip",
+    "sprite",
+    "stack"
+  ],
+  "version": "0.1.65",
+  "nativeMetadataPolicy": "Il2CppInterop public generated metadata + version-specific UnityVersionHandler; no raw offsets or persisted addresses",
+  "noSaveMutationPatches": true,
+  "lifecycleSnapshotIsolation": {
+    "version": "0.1.62",
+    "behavior": "reset lazy inventory capture per subscriber; exact existing hook targets unchanged",
+    "evidence": "verification/machine-persistence-native-0.1.62.json"
+  },
+  "fixedNpcStock": {
+    "owner": "ezapi.items.npc-stock",
+    "requiredTargets": 11,
+    "addedTargets": [
+      "ItemSpawner.Spawn(string)",
+      "ItemSpawner.SpawnFromTable(string)",
+      "ItemSpawner.SpawnFromTableGroup(string)"
+    ],
+    "sale": "PlayerStore.AddDirectSellingItemToTable(GameItem,bool,bool,bool,int): scoped prefix/ref argument and finalizer",
+    "scope": "exact fingerprint; active current run+generation merchant scope only",
+    "evidence": "verification/fixed-stock-native-0.1.64.json"
+  },
+  "nightShopStock": {
+    "scopeHook": "StoreClientList.PlaceInventorInventory(bool): Prefix + Finalizer",
+    "officialEvent": "OnPlaceInventorInventoryItemLate; subscribed delegate held strongly",
+    "noInventoryRulePatch": true,
+    "placement": "public native AddDirectSellingItemToTable",
+    "cleanup": "native method owns handed-off instances; no double Destroy",
+    "evidence": "verification/night-placement-native-0.1.65.json"
+  },
+  "distributionVerification": {
+    "dllSHA256": "7E4AB675B0E3BD81C56EEC4606731A6880287549EB4E8E90A707BE18BD52BEEF",
+    "nativeRuntimeVerified": false,
+    "frameworkSourceIncluded": false
+  }
+}

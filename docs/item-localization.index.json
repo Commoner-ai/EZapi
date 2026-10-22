@@ -1,0 +1,117 @@
+{
+  "schemaVersion": 1,
+  "version": "0.1.73",
+  "status": "implemented_scoped_native_verified",
+  "purpose": "Declare ordinary JSON item text once and display it using the current game locale without changing stable item IDs or player-authored names.",
+  "resolver": {
+    "order": "current locale CSV key -> English CSV key -> inline LocalizedItemText -> existing literal field",
+    "acceptedLocales": "Official locale files: en, fr, de, ru, zh, ja, es, ptBR, ko, it. Runtime codes zh-CN/zh-TW select Chinese; pt-BR and pt_BR resolve the ptBR table.",
+    "keyRule": "Every referenced content-pack key must exist in Localization/en.csv. Fixed item fields do not accept format placeholders.",
+    "ownership": "A CSV-bound item field needs modId and resolves only through that owner's accepted content-pack catalog."
+  },
+  "fields": [
+    {
+      "json": "localizedName",
+      "csharp": "ItemDefinition.LocalizedName",
+      "native": "GameItem.identifierName/name refresh",
+      "limit": 200
+    },
+    {
+      "json": "localizedDescription | localizedShortDescription",
+      "csharp": "ItemDefinition.LocalizedDescription / LocalizedShortDescription",
+      "native": "GameItem.shortDescription",
+      "limit": 4000,
+      "constraint": "Choose one alias."
+    },
+    {
+      "json": "localizedLongDescription",
+      "csharp": "ItemDefinition.LocalizedLongDescription",
+      "native": "GameItem.longDescription",
+      "limit": 8000
+    },
+    {
+      "json": "localizedFlavorText",
+      "csharp": "ItemDefinition.LocalizedFlavorText",
+      "native": "GameItem.flavorText",
+      "limit": 4000
+    },
+    {
+      "json": "localizedCustomText",
+      "csharp": "ItemDefinition.LocalizedCustomText",
+      "native": "GameItem.customText",
+      "limit": 4000
+    },
+    {
+      "json": "typeNames[].localizedName",
+      "csharp": "ItemTypeNameDefinition.LocalizedName",
+      "native": "TypeHelper.GetTypeDisplayName custom-key adapter",
+      "limit": 200
+    },
+    {
+      "json": "module.localizedAdditionalEffectDisplay",
+      "csharp": "ModuleDefinition.LocalizedAdditionalEffectDisplay",
+      "native": "official late tooltip callback; avoids storing creation-language text",
+      "limit": 4000
+    },
+    {
+      "json": "tooltip.localizedSourceName",
+      "csharp": "ItemTooltipDefinition.LocalizedSourceName",
+      "native": "official tooltip source row",
+      "limit": 200
+    },
+    {
+      "json": "tooltip.labels[].localizedText",
+      "csharp": "TooltipLabelDefinition.LocalizedText",
+      "native": "official tooltip label; live tag value stays separate",
+      "limit": 200
+    },
+    {
+      "json": "tooltip.lines[].localizedText",
+      "csharp": "TooltipLineDefinition.LocalizedText",
+      "native": "official early/late tooltip callback",
+      "limit": 2000
+    },
+    {
+      "json": "container.localizedTitle",
+      "csharp": "ContainerDefinition.LocalizedTitle",
+      "native": "PixelWindow title at creation and reopen refresh",
+      "limit": 200
+    }
+  ],
+  "lifecycle": {
+    "refreshTargets": [
+      "GameItem.GetDisplayName(bool)",
+      "GameItem.RestoreContentWindowPosition()",
+      "official tooltip callbacks"
+    ],
+    "refreshScope": "Only EZapi JSON/DLL items whose directory application state is Applied. No global inventory scan or native object cache.",
+    "nameOwnership": "Updates a framework-generated name only; custom player names, item identifiers, tags and foreign item objects are preserved.",
+    "buildGate": "Harmony display/container hooks require the exact supported game build and independently report readiness."
+  },
+  "examples": {
+    "json": "../src/EZapi.Sample/Content/items.json",
+    "englishCsv": "../src/EZapi.Sample/Localization/en.csv",
+    "chineseCsv": "../src/EZapi.Sample/Localization/zh.csv",
+    "schema": "../schemas/items.schema.json",
+    "guideZh": "game-language.zh-CN.md",
+    "guideEn": "game-language.en.md"
+  },
+  "verification": {
+    "offline": [
+      "../work/ezapi-item-localization-tests/ItemLocalizationTests.csproj: 45 focused source-level checks",
+      "../work/ezapi-pack-tests/PackTests.csproj: 71 checks including all JSON binding paths",
+      "../work/sample-pack-0.1.72: complete 10-item pack accepted with 94 CSV entries and no missing English keys"
+    ],
+    "native": "415 en/zh checks include existing and disk-loaded items, tooltips, reopened container/machine titles, reading, workshop, dialogue, phone and fixture-dispatched supplier pages. See report boundaries."
+  },
+  "historicalNativeEvidence": {
+    "path": "verification/disk-supplier-native-0.1.72.json",
+    "dllSHA256": "4238A189B36CEC4C55E88CC70E05E9086EC935412B13CF701671405A12E63274",
+    "scope": "415 en/zh checks include existing and disk-loaded items, tooltips, reopened container/machine titles, reading, workshop, dialogue, phone and fixture-dispatched supplier pages. See report boundaries."
+  },
+  "distributionVerification": {
+    "dllSHA256": "7E4AB675B0E3BD81C56EEC4606731A6880287549EB4E8E90A707BE18BD52BEEF",
+    "nativeRuntimeVerified": false,
+    "frameworkSourceIncluded": false
+  }
+}

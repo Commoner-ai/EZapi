@@ -1,0 +1,51 @@
+{
+  "schemaVersion": 1,
+  "version": "0.1.69",
+  "auditRevision": "machine-contract",
+  "guideZh": "machine-contract.zh-CN.md",
+  "guideEn": "machine-contract.en.md",
+  "audit": "machine-public-contract.audit.json",
+  "publicCoverage": "public-contract-coverage.index.json",
+  "behaviorProgress": {
+    "reviewedTypes": 34,
+    "reviewedProperties": 114,
+    "reviewedMethods": 20,
+    "allProperties": 114,
+    "allTypes": 34
+  },
+  "evidenceRoot": "verification/machine-contract-native-0.1.69",
+  "nativeChecks": 1557,
+  "scope": "Complete machine behavior review; full149-type scope remains pending public helper implementations",
+  "entryPoints": [
+    {
+      "taskZh": "新机器一条龙",
+      "taskEn": "Register a new machine",
+      "api": "MachineRegistrationApi.RegisterMachine"
+    },
+    {
+      "taskZh": "已有自定义窗口",
+      "taskEn": "Process an existing custom window",
+      "api": "MachineRuntimeApi.CreateBatchProcessor -> MachineBatchProcessor.Process(machine, inventory)"
+    },
+    {
+      "taskZh": "加工前后事件",
+      "taskEn": "Before/after processing",
+      "api": "MachineAutomationApi.Subscribe",
+      "lifetime": "Dispose lease; context valid only during callback"
+    }
+  ],
+  "invariants": [
+    "Native references synchronous only",
+    "Readonly callback mutation is detected, not arbitrary undo",
+    "Standard transaction journals resources separately",
+    "Night attempt slot/run/day/instance scoped",
+    "No automatic save or async/network/crash recovery",
+    "RecoveryFailed never automatic retry"
+  ],
+  "binaryChanged": false,
+  "distributionVerification": {
+    "dllSHA256": "7E4AB675B0E3BD81C56EEC4606731A6880287549EB4E8E90A707BE18BD52BEEF",
+    "nativeRuntimeVerified": false,
+    "frameworkSourceIncluded": false
+  }
+}

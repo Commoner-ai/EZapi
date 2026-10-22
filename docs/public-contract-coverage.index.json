@@ -1,0 +1,5715 @@
+{
+  "schemaVersion": 1,
+  "version": "0.1.71",
+  "baseline": "forge-public-contract.index.json",
+  "scope": "Public metadata inventory, not source ABI compatibility or a behavior audit. Every reference type retained, including helpers outside39 API groups.",
+  "typeCount": 149,
+  "mappedTypes": 149,
+  "unmappedTypes": 0,
+  "complete": true,
+  "metadataMappingComplete": true,
+  "unresolved": [],
+  "types": [
+    {
+      "reference": "Nicokobo.Forge.ForgeApi",
+      "ezapi": "EZapi.RegistrationApi",
+      "mapped": true,
+      "semanticsVerifiedByInventory": false,
+      "behaviorAudits": [],
+      "properties": [],
+      "methods": [
+        {
+          "reference": "Nicokobo.Forge.Registration.SubmitResult Nicokobo.Forge.ForgeApi::Register(System.String,System.String,System.Action`1<Nicokobo.Forge.Registration.RegistrationBatch>)",
+          "ezapi": [
+            "EZapi.Registration.SubmitResult EZapi.RegistrationApi::Register(System.String,System.String,System.Action`1<EZapi.Registration.RegistrationBatch>)",
+            "EZapi.Registration.SubmitResult EZapi.RegistrationApi::Register(EZapi.Registration.RegistrationBatch)"
+          ],
+          "mapped": true,
+          "boundary": null
+        },
+        {
+          "reference": "System.Collections.Generic.IReadOnlyList`1<Nicokobo.Forge.Registration.RegistrationView> Nicokobo.Forge.ForgeApi::Snapshot()",
+          "ezapi": [
+            "System.Collections.Generic.IReadOnlyList`1<EZapi.Registration.RegistrationView> EZapi.RegistrationApi::Snapshot()"
+          ],
+          "mapped": true,
+          "boundary": null
+        }
+      ],
+      "fields": []
+    },
+    {
+      "reference": "Nicokobo.Forge.ForgeAssetsApi",
+      "ezapi": "EZapi.SpriteAssets",
+      "mapped": true,
+      "semanticsVerifiedByInventory": false,
+      "behaviorAudits": [],
+      "properties": [],
+      "methods": [
+        {
+          "reference": "Nicokobo.Forge.ForgeSpriteAtlas Nicokobo.Forge.ForgeAssetsApi::CreateEmbeddedSpriteAtlas(System.String,System.String,System.Reflection.Assembly,System.Collections.Generic.IReadOnlyList`1<Nicokobo.Forge.ForgeSpriteDefinition>,Nicokobo.Forge.ForgeSpriteFilter)",
+          "ezapi": [
+            "EZapi.EmbeddedSpriteAtlas EZapi.SpriteAssets::CreateEmbeddedAtlas(System.String,System.String,System.Reflection.Assembly,System.Collections.Generic.IReadOnlyList`1<EZapi.SpriteDefinition>,EZapi.SpriteFilter)"
+          ],
+          "mapped": true,
+          "boundary": null
+        }
+      ],
+      "fields": []
+    },
+    {
+      "reference": "Nicokobo.Forge.ForgeSpriteAtlas",
+      "ezapi": "EZapi.EmbeddedSpriteAtlas",
+      "mapped": true,
+      "semanticsVerifiedByInventory": false,
+      "behaviorAudits": [],
+      "properties": [
+        {
+          "reference": "OwnerId",
+          "ezapi": "EZapi.EmbeddedSpriteAtlas.OwnerId",
+          "mapped": true
+        },
+        {
+          "reference": "AtlasKey",
+          "ezapi": "EZapi.EmbeddedSpriteAtlas.AtlasKey",
+          "mapped": true
+        },
+        {
+          "reference": "Installed",
+          "ezapi": "EZapi.EmbeddedSpriteAtlas.Installed",
+          "mapped": true
+        },
+        {
+          "reference": "Failed",
+          "ezapi": "EZapi.EmbeddedSpriteAtlas.Failed",
+          "mapped": true
+        },
+        {
+          "reference": "Count",
+          "ezapi": "EZapi.EmbeddedSpriteAtlas.Count",
+          "mapped": true
+        }
+      ],
+      "methods": [
+        {
+          "reference": "UnityEngine.Sprite Nicokobo.Forge.ForgeSpriteAtlas::GetSprite(System.String)",
+          "ezapi": [
+            "UnityEngine.Sprite EZapi.EmbeddedSpriteAtlas::GetSprite(System.String)"
+          ],
+          "mapped": true,
+          "boundary": null
+        },
+        {
+          "reference": "System.String Nicokobo.Forge.ForgeSpriteAtlas::RegisterPortrait(System.String)",
+          "ezapi": [
+            "System.String EZapi.EmbeddedSpriteAtlas::RegisterPortrait(System.String)"
+          ],
+          "mapped": true,
+          "boundary": null
+        },
+        {
+          "reference": "System.Boolean Nicokobo.Forge.ForgeSpriteAtlas::TryInstall(System.Action,System.Action`1<System.Exception>)",
+          "ezapi": [
+            "System.Boolean EZapi.EmbeddedSpriteAtlas::TryInstall(System.Action,System.Action`1<System.Exception>)"
+          ],
+          "mapped": true,
+          "boundary": null
+        },
+        {
+          "reference": "System.Void Nicokobo.Forge.ForgeSpriteAtlas::Assign(Il2Cpp.GameItem,System.String,System.Boolean)",
+          "ezapi": [
+            "System.Void EZapi.EmbeddedSpriteAtlas::Assign(Il2Cpp.GameItem,System.String,System.Boolean)"
+          ],
+          "mapped": true,
+          "boundary": null
+        }
+      ],
+      "fields": []
+    },
+    {
+      "reference": "Nicokobo.Forge.IForgeBatchTransaction",
+      "ezapi": "EZapi.IMachineBatchTransaction",
+      "mapped": true,
+      "semanticsVerifiedByInventory": false,
+      "behaviorAudits": [
+        "machine-public-contract.audit.json"
+      ],
+      "properties": [],
+      "methods": [
+        {
+          "reference": "System.Boolean Nicokobo.Forge.IForgeBatchTransaction::Validate()",
+          "ezapi": [
+            "System.Boolean EZapi.IMachineBatchTransaction::Validate()"
+          ],
+          "mapped": true,
+          "boundary": null
+        },
+        {
+          "reference": "System.Void Nicokobo.Forge.IForgeBatchTransaction::Apply(System.Collections.Generic.IReadOnlyList`1<Il2Cpp.GameItem>)",
+          "ezapi": [
+            "System.Void EZapi.IMachineBatchTransaction::Apply(System.Collections.Generic.IReadOnlyList`1<Il2Cpp.GameItem>)"
+          ],
+          "mapped": true,
+          "boundary": null
+        },
+        {
+          "reference": "System.Boolean Nicokobo.Forge.IForgeBatchTransaction::Verify()",
+          "ezapi": [
+            "System.Boolean EZapi.IMachineBatchTransaction::Verify()"
+          ],
+          "mapped": true,
+          "boundary": null
+        },
+        {
+          "reference": "System.Boolean Nicokobo.Forge.IForgeBatchTransaction::Restore()",
+          "ezapi": [
+            "System.Boolean EZapi.IMachineBatchTransaction::Restore()"
+          ],
+          "mapped": true,
+          "boundary": null
+        },
+        {
+          "reference": "System.Void Nicokobo.Forge.IForgeBatchTransaction::Fault(System.String)",
+          "ezapi": [
+            "System.Void EZapi.IMachineBatchTransaction::Fault(System.String)"
+          ],
+          "mapped": true,
+          "boundary": null
+        }
+      ],
+      "fields": []
+    },
+    {
+      "reference": "Nicokobo.Forge.IForgePowerTransaction",
+      "ezapi": "EZapi.IPowerTransaction",
+      "mapped": true,
+      "semanticsVerifiedByInventory": false,
+      "behaviorAudits": [
+        "external-power-public-contract.audit.json"
+      ],
+      "properties": [],
+      "methods": [
+        {
+          "reference": "System.Boolean Nicokobo.Forge.IForgePowerTransaction::Validate()",
+          "ezapi": [
+            "System.Boolean EZapi.IPowerTransaction::Validate()"
+          ],
+          "mapped": true,
+          "boundary": null
+        },
+        {
+          "reference": "System.Void Nicokobo.Forge.IForgePowerTransaction::Debit()",
+          "ezapi": [
+            "System.Void EZapi.IPowerTransaction::Debit()"
+          ],
+          "mapped": true,
+          "boundary": null
+        },
+        {
+          "reference": "System.Boolean Nicokobo.Forge.IForgePowerTransaction::Verify()",
+          "ezapi": [
+            "System.Boolean EZapi.IPowerTransaction::Verify()"
+          ],
+          "mapped": true,
+          "boundary": null
+        },
+        {
+          "reference": "System.Boolean Nicokobo.Forge.IForgePowerTransaction::Restore()",
+          "ezapi": [
+            "System.Boolean EZapi.IPowerTransaction::Restore()"
+          ],
+          "mapped": true,
+          "boundary": null
+        },
+        {
+          "reference": "System.Void Nicokobo.Forge.IForgePowerTransaction::Fault(System.String)",
+          "ezapi": [
+            "System.Void EZapi.IPowerTransaction::Fault(System.String)"
+          ],
+          "mapped": true,
+          "boundary": null
+        }
+      ],
+      "fields": []
+    },
+    {
+      "reference": "Nicokobo.Forge.ForgeTransactionStep",
+      "ezapi": "EZapi.TransactionStep",
+      "mapped": true,
+      "semanticsVerifiedByInventory": false,
+      "behaviorAudits": [],
+      "properties": [
+        {
+          "reference": "Name",
+          "ezapi": "EZapi.TransactionStep.Name",
+          "mapped": true
+        },
+        {
+          "reference": "Apply",
+          "ezapi": "EZapi.TransactionStep.Apply",
+          "mapped": true
+        },
+        {
+          "reference": "Restore",
+          "ezapi": "EZapi.TransactionStep.Restore",
+          "mapped": true
+        }
+      ],
+      "methods": [],
+      "fields": []
+    },
+    {
+      "reference": "Nicokobo.Forge.ForgeTransactionResult",
+      "ezapi": "EZapi.TransactionResult",
+      "mapped": true,
+      "semanticsVerifiedByInventory": false,
+      "behaviorAudits": [],
+      "properties": [
+        {
+          "reference": "Committed",
+          "ezapi": "EZapi.TransactionResult.Committed",
+          "mapped": true
+        },
+        {
+          "reference": "Restored",
+          "ezapi": "EZapi.TransactionResult.Restored",
+          "mapped": true
+        },
+        {
+          "reference": "Status",
+          "ezapi": "EZapi.TransactionResult.Status",
+          "mapped": true
+        }
+      ],
+      "methods": [],
+      "fields": []
+    },
+    {
+      "reference": "Nicokobo.Forge.ForgeTransactionApi",
+      "ezapi": "EZapi.Transactions",
+      "mapped": true,
+      "semanticsVerifiedByInventory": false,
+      "behaviorAudits": [],
+      "properties": [],
+      "methods": [
+        {
+          "reference": "Nicokobo.Forge.ForgeTransactionResult Nicokobo.Forge.ForgeTransactionApi::Run(System.Collections.Generic.IReadOnlyList`1<Nicokobo.Forge.ForgeTransactionStep>)",
+          "ezapi": [
+            "EZapi.TransactionResult EZapi.Transactions::Run(System.Collections.Generic.IReadOnlyList`1<EZapi.TransactionStep>)"
+          ],
+          "mapped": true,
+          "boundary": null
+        }
+      ],
+      "fields": []
+    },
+    {
+      "reference": "Nicokobo.Forge.ForgePowerSourceAmount",
+      "ezapi": "EZapi.PowerSourceAmount",
+      "mapped": true,
+      "semanticsVerifiedByInventory": false,
+      "behaviorAudits": [],
+      "properties": [
+        {
+          "reference": "InstanceId",
+          "ezapi": "EZapi.PowerSourceAmount.InstanceId",
+          "mapped": true
+        },
+        {
+          "reference": "Energy",
+          "ezapi": "EZapi.PowerSourceAmount.Energy",
+          "mapped": true
+        }
+      ],
+      "methods": [],
+      "fields": []
+    },
+    {
+      "reference": "Nicokobo.Forge.ForgePowerSourceDebit",
+      "ezapi": "EZapi.PowerSourceDebit",
+      "mapped": true,
+      "semanticsVerifiedByInventory": false,
+      "behaviorAudits": [],
+      "properties": [
+        {
+          "reference": "InstanceId",
+          "ezapi": "EZapi.PowerSourceDebit.InstanceId",
+          "mapped": true
+        },
+        {
+          "reference": "Before",
+          "ezapi": "EZapi.PowerSourceDebit.Before",
+          "mapped": true
+        },
+        {
+          "reference": "Debit",
+          "ezapi": "EZapi.PowerSourceDebit.Debit",
+          "mapped": true
+        }
+      ],
+      "methods": [],
+      "fields": []
+    },
+    {
+      "reference": "Nicokobo.Forge.ForgePowerBatchMath",
+      "ezapi": "EZapi.PowerBatchMath",
+      "mapped": true,
+      "semanticsVerifiedByInventory": false,
+      "behaviorAudits": [],
+      "properties": [],
+      "methods": [
+        {
+          "reference": "System.Collections.Generic.IReadOnlyList`1<Nicokobo.Forge.ForgePowerSourceDebit> Nicokobo.Forge.ForgePowerBatchMath::Plan(System.Collections.Generic.IEnumerable`1<Nicokobo.Forge.ForgePowerSourceAmount>,System.Int32)",
+          "ezapi": [
+            "System.Collections.Generic.IReadOnlyList`1<EZapi.PowerSourceDebit> EZapi.PowerBatchMath::Plan(System.Collections.Generic.IEnumerable`1<EZapi.PowerSourceAmount>,System.Int32)"
+          ],
+          "mapped": true,
+          "boundary": null
+        }
+      ],
+      "fields": []
+    },
+    {
+      "reference": "Nicokobo.Forge.ForgeCapabilitySnapshot",
+      "ezapi": "EZapi.RuntimeCapabilitySnapshot",
+      "mapped": true,
+      "semanticsVerifiedByInventory": false,
+      "behaviorAudits": [],
+      "properties": [
+        {
+          "reference": "KnownGameBuild",
+          "ezapi": "EZapi.RuntimeCapabilitySnapshot.KnownGameBuild",
+          "mapped": true
+        },
+        {
+          "reference": "NativeItemDirectoryHook",
+          "ezapi": "EZapi.RuntimeCapabilitySnapshot.NativeItemDirectoryHook",
+          "mapped": true
+        },
+        {
+          "reference": "NativeModuleDirectoryHook",
+          "ezapi": "EZapi.RuntimeCapabilitySnapshot.NativeModuleDirectoryHook",
+          "mapped": true
+        },
+        {
+          "reference": "NativeAmenityDirectoryHook",
+          "ezapi": "EZapi.RuntimeCapabilitySnapshot.NativeAmenityDirectoryHook",
+          "mapped": true
+        },
+        {
+          "reference": "NightShopStock",
+          "ezapi": "EZapi.RuntimeCapabilitySnapshot.NightShopStock",
+          "mapped": true
+        },
+        {
+          "reference": "RunDataStaging",
+          "ezapi": "EZapi.RuntimeCapabilitySnapshot.RunDataStaging",
+          "mapped": true
+        },
+        {
+          "reference": "DirectInventoryRead",
+          "ezapi": "EZapi.RuntimeCapabilitySnapshot.DirectInventoryRead",
+          "mapped": true
+        },
+        {
+          "reference": "WholeTransferPreview",
+          "ezapi": "EZapi.RuntimeCapabilitySnapshot.WholeTransferPreview",
+          "mapped": true
+        },
+        {
+          "reference": "NativeEffectRegistration",
+          "ezapi": "EZapi.RuntimeCapabilitySnapshot.NativeEffectRegistration",
+          "mapped": true
+        },
+        {
+          "reference": "InventoryTransfer",
+          "ezapi": "EZapi.RuntimeCapabilitySnapshot.InventoryTransfer",
+          "mapped": true
+        },
+        {
+          "reference": "MachineNightProcessing",
+          "ezapi": "EZapi.RuntimeCapabilitySnapshot.MachineNightProcessing",
+          "mapped": true
+        },
+        {
+          "reference": "NpcTradeStock",
+          "ezapi": "EZapi.RuntimeCapabilitySnapshot.NpcTradeStock",
+          "mapped": true
+        },
+        {
+          "reference": "DossierExpansion",
+          "ezapi": "EZapi.RuntimeCapabilitySnapshot.DossierExpansion",
+          "mapped": true
+        },
+        {
+          "reference": "PersistentInventoryEndpoints",
+          "ezapi": "EZapi.RuntimeCapabilitySnapshot.PersistentInventoryEndpoints",
+          "mapped": true
+        },
+        {
+          "reference": "ExternalPowerTransactions",
+          "ezapi": "EZapi.RuntimeCapabilitySnapshot.ExternalPowerTransactions",
+          "mapped": true
+        },
+        {
+          "reference": "BranchingDialogue",
+          "ezapi": "EZapi.RuntimeCapabilitySnapshot.BranchingDialogue",
+          "mapped": true
+        },
+        {
+          "reference": "ClientVisits",
+          "ezapi": "EZapi.RuntimeCapabilitySnapshot.ClientVisits",
+          "mapped": true
+        },
+        {
+          "reference": "ReadingWindow",
+          "ezapi": "EZapi.RuntimeCapabilitySnapshot.ReadingWindow",
+          "mapped": true
+        },
+        {
+          "reference": "PhoneContacts",
+          "ezapi": "EZapi.RuntimeCapabilitySnapshot.PhoneContacts",
+          "mapped": true
+        },
+        {
+          "reference": "SupplierVisits",
+          "ezapi": "EZapi.RuntimeCapabilitySnapshot.SupplierVisits",
+          "mapped": true
+        }
+      ],
+      "methods": [],
+      "fields": []
+    },
+    {
+      "reference": "Nicokobo.Forge.ForgeCapabilities",
+      "ezapi": "EZapi.RuntimeCapabilities",
+      "mapped": true,
+      "semanticsVerifiedByInventory": false,
+      "behaviorAudits": [],
+      "properties": [
+        {
+          "reference": "Current",
+          "ezapi": "EZapi.RuntimeCapabilities.Current",
+          "mapped": true
+        }
+      ],
+      "methods": [],
+      "fields": []
+    },
+    {
+      "reference": "Nicokobo.Forge.ForgeClientVisitApi",
+      "ezapi": "EZapi.ClientVisitApi",
+      "mapped": true,
+      "semanticsVerifiedByInventory": false,
+      "behaviorAudits": [],
+      "properties": [
+        {
+          "reference": "IsAvailable",
+          "ezapi": "EZapi.ClientVisitApi.IsAvailable",
+          "mapped": true
+        }
+      ],
+      "methods": [
+        {
+          "reference": "Nicokobo.Forge.ForgePresentationResult Nicokobo.Forge.ForgeClientVisitApi::Queue(System.String,System.String,System.String,System.Int32,System.String,System.String,Nicokobo.Forge.ForgeDialogueScript)",
+          "ezapi": [
+            "EZapi.PresentationResult EZapi.ClientVisitApi::Queue(System.String,System.String,System.String,System.Int32,System.String,System.String,EZapi.DialogueScript)"
+          ],
+          "mapped": true,
+          "boundary": null
+        },
+        {
+          "reference": "Nicokobo.Forge.ForgePresentationResult Nicokobo.Forge.ForgeClientVisitApi::Status(System.String,System.String)",
+          "ezapi": [
+            "EZapi.PresentationResult EZapi.ClientVisitApi::Status(System.String,System.String)"
+          ],
+          "mapped": true,
+          "boundary": null
+        }
+      ],
+      "fields": []
+    },
+    {
+      "reference": "Nicokobo.Forge.ForgeContentApi",
+      "ezapi": "EZapi.ContentApi",
+      "mapped": true,
+      "semanticsVerifiedByInventory": false,
+      "behaviorAudits": [],
+      "properties": [],
+      "methods": [
+        {
+          "reference": "System.IDisposable Nicokobo.Forge.ForgeContentApi::Subscribe(System.String,System.String,System.Action`1<Nicokobo.Forge.NativeApplicationView>)",
+          "ezapi": [
+            "System.IDisposable EZapi.ContentApi::Subscribe(System.String,System.String,System.Action`1<EZapi.NativeApplicationView>)"
+          ],
+          "mapped": true,
+          "boundary": null
+        }
+      ],
+      "fields": []
+    },
+    {
+      "reference": "Nicokobo.Forge.ForgePresentationStatus",
+      "ezapi": "EZapi.PresentationStatus",
+      "mapped": true,
+      "semanticsVerifiedByInventory": false,
+      "behaviorAudits": [],
+      "properties": [],
+      "methods": [],
+      "fields": [
+        {
+          "reference": "Unavailable",
+          "referenceConstant": 0,
+          "ezapi": "EZapi.PresentationStatus.Unavailable",
+          "mapped": true,
+          "boundary": null
+        },
+        {
+          "reference": "Invalid",
+          "referenceConstant": 1,
+          "ezapi": "EZapi.PresentationStatus.Invalid",
+          "mapped": true,
+          "boundary": null
+        },
+        {
+          "reference": "Conflict",
+          "referenceConstant": 2,
+          "ezapi": "EZapi.PresentationStatus.Conflict",
+          "mapped": true,
+          "boundary": null
+        },
+        {
+          "reference": "Indeterminate",
+          "referenceConstant": 3,
+          "ezapi": "EZapi.PresentationStatus.Indeterminate",
+          "mapped": true,
+          "boundary": null
+        },
+        {
+          "reference": "Queued",
+          "referenceConstant": 4,
+          "ezapi": "EZapi.PresentationStatus.Queued",
+          "mapped": true,
+          "boundary": null
+        },
+        {
+          "reference": "Arrived",
+          "referenceConstant": 5,
+          "ezapi": "EZapi.PresentationStatus.Arrived",
+          "mapped": true,
+          "boundary": null
+        },
+        {
+          "reference": "Dismissed",
+          "referenceConstant": 6,
+          "ezapi": "EZapi.PresentationStatus.Dismissed",
+          "mapped": true,
+          "boundary": null
+        },
+        {
+          "reference": "Opened",
+          "referenceConstant": 7,
+          "ezapi": "EZapi.PresentationStatus.Opened",
+          "mapped": true,
+          "boundary": null
+        },
+        {
+          "reference": "Closed",
+          "referenceConstant": 8,
+          "ezapi": "EZapi.PresentationStatus.Closed",
+          "mapped": true,
+          "boundary": null
+        }
+      ]
+    },
+    {
+      "reference": "Nicokobo.Forge.ForgePresentationResult",
+      "ezapi": "EZapi.PresentationResult",
+      "mapped": true,
+      "semanticsVerifiedByInventory": false,
+      "behaviorAudits": [],
+      "properties": [
+        {
+          "reference": "Status",
+          "ezapi": "EZapi.PresentationResult.Status",
+          "mapped": true
+        },
+        {
+          "reference": "Reason",
+          "ezapi": "EZapi.PresentationResult.Reason",
+          "mapped": true
+        }
+      ],
+      "methods": [],
+      "fields": []
+    },
+    {
+      "reference": "Nicokobo.Forge.ForgeDialogueContext",
+      "ezapi": "EZapi.DialogueContext",
+      "mapped": true,
+      "semanticsVerifiedByInventory": false,
+      "behaviorAudits": [],
+      "properties": [
+        {
+          "reference": "Generation",
+          "ezapi": "EZapi.DialogueContext.Generation",
+          "mapped": true
+        },
+        {
+          "reference": "RunId",
+          "ezapi": "EZapi.DialogueContext.RunId",
+          "mapped": true
+        },
+        {
+          "reference": "SlotId",
+          "ezapi": "EZapi.DialogueContext.SlotId",
+          "mapped": true
+        },
+        {
+          "reference": "OwnerId",
+          "ezapi": "EZapi.DialogueContext.OwnerId",
+          "mapped": true
+        },
+        {
+          "reference": "RequestId",
+          "ezapi": "EZapi.DialogueContext.RequestId",
+          "mapped": true
+        },
+        {
+          "reference": "DialogueId",
+          "ezapi": "EZapi.DialogueContext.DialogueId",
+          "mapped": true
+        },
+        {
+          "reference": "ChoiceId",
+          "ezapi": "EZapi.DialogueContext.ChoiceId",
+          "mapped": true
+        }
+      ],
+      "methods": [],
+      "fields": []
+    },
+    {
+      "reference": "Nicokobo.Forge.ForgeDialogueChoice",
+      "ezapi": "EZapi.DialogueChoice",
+      "mapped": true,
+      "semanticsVerifiedByInventory": false,
+      "behaviorAudits": [],
+      "properties": [
+        {
+          "reference": "Id",
+          "ezapi": "EZapi.DialogueChoice.Id",
+          "mapped": true
+        },
+        {
+          "reference": "Label",
+          "ezapi": "EZapi.DialogueChoice.Label",
+          "mapped": true
+        },
+        {
+          "reference": "Preview",
+          "ezapi": "EZapi.DialogueChoice.Preview",
+          "mapped": true
+        },
+        {
+          "reference": "Confirm",
+          "ezapi": "EZapi.DialogueChoice.Confirm",
+          "mapped": true
+        }
+      ],
+      "methods": [],
+      "fields": []
+    },
+    {
+      "reference": "Nicokobo.Forge.ForgeDialogueDefinition",
+      "ezapi": "EZapi.DialogueDefinition",
+      "mapped": true,
+      "semanticsVerifiedByInventory": false,
+      "behaviorAudits": [],
+      "properties": [
+        {
+          "reference": "Id",
+          "ezapi": "EZapi.DialogueDefinition.Id",
+          "mapped": true
+        },
+        {
+          "reference": "Speaker",
+          "ezapi": "EZapi.DialogueDefinition.Speaker",
+          "mapped": true
+        },
+        {
+          "reference": "Body",
+          "ezapi": "EZapi.DialogueDefinition.Body",
+          "mapped": true
+        },
+        {
+          "reference": "Choices",
+          "ezapi": "EZapi.DialogueDefinition.Choices",
+          "mapped": true
+        },
+        {
+          "reference": "ConfirmLabel",
+          "ezapi": "EZapi.DialogueDefinition.ConfirmLabel",
+          "mapped": true
+        },
+        {
+          "reference": "BackLabel",
+          "ezapi": "EZapi.DialogueDefinition.BackLabel",
+          "mapped": true
+        },
+        {
+          "reference": "LeaveLabel",
+          "ezapi": "EZapi.DialogueDefinition.LeaveLabel",
+          "mapped": true
+        },
+        {
+          "reference": "LaterLabel",
+          "ezapi": "EZapi.DialogueDefinition.LaterLabel",
+          "mapped": true
+        },
+        {
+          "reference": "FailureText",
+          "ezapi": "EZapi.DialogueDefinition.FailureText",
+          "mapped": true
+        },
+        {
+          "reference": "RequireConfirmation",
+          "ezapi": "EZapi.DialogueDefinition.RequireConfirmation",
+          "mapped": true
+        },
+        {
+          "reference": "AllowLater",
+          "ezapi": "EZapi.DialogueDefinition.AllowLater",
+          "mapped": true
+        },
+        {
+          "reference": "NextPageLabel",
+          "ezapi": "EZapi.DialogueDefinition.NextPageLabel",
+          "mapped": true
+        },
+        {
+          "reference": "PreviousPageLabel",
+          "ezapi": "EZapi.DialogueDefinition.PreviousPageLabel",
+          "mapped": true
+        }
+      ],
+      "methods": [],
+      "fields": []
+    },
+    {
+      "reference": "Nicokobo.Forge.ForgeSupplierOffer",
+      "ezapi": "EZapi.SupplierOffer",
+      "mapped": true,
+      "semanticsVerifiedByInventory": false,
+      "behaviorAudits": [],
+      "properties": [
+        {
+          "reference": "Id",
+          "ezapi": "EZapi.SupplierOffer.Id",
+          "mapped": true
+        },
+        {
+          "reference": "Label",
+          "ezapi": "EZapi.SupplierOffer.Label",
+          "mapped": true
+        },
+        {
+          "reference": "Preview",
+          "ezapi": "EZapi.SupplierOffer.Preview",
+          "mapped": true
+        },
+        {
+          "reference": "Purchase",
+          "ezapi": "EZapi.SupplierOffer.Purchase",
+          "mapped": true
+        },
+        {
+          "reference": "ConfirmLabel",
+          "ezapi": "EZapi.SupplierOffer.ConfirmLabel",
+          "mapped": true
+        }
+      ],
+      "methods": [],
+      "fields": []
+    },
+    {
+      "reference": "Nicokobo.Forge.ForgeSupplierPage",
+      "ezapi": "EZapi.SupplierPage",
+      "mapped": true,
+      "semanticsVerifiedByInventory": false,
+      "behaviorAudits": [],
+      "properties": [
+        {
+          "reference": "Body",
+          "ezapi": "EZapi.SupplierPage.Body",
+          "mapped": true
+        },
+        {
+          "reference": "Offers",
+          "ezapi": "EZapi.SupplierPage.Offers",
+          "mapped": true
+        },
+        {
+          "reference": "AutomaticOfferId",
+          "ezapi": "EZapi.SupplierPage.AutomaticOfferId",
+          "mapped": true
+        },
+        {
+          "reference": "AutomaticDelaySeconds",
+          "ezapi": "EZapi.SupplierPage.AutomaticDelaySeconds",
+          "mapped": true
+        }
+      ],
+      "methods": [],
+      "fields": []
+    },
+    {
+      "reference": "Nicokobo.Forge.ForgeSupplierDefinition",
+      "ezapi": "EZapi.SupplierDefinition",
+      "mapped": true,
+      "semanticsVerifiedByInventory": false,
+      "behaviorAudits": [],
+      "properties": [
+        {
+          "reference": "Id",
+          "ezapi": "EZapi.SupplierDefinition.Id",
+          "mapped": true
+        },
+        {
+          "reference": "Speaker",
+          "ezapi": "EZapi.SupplierDefinition.Speaker",
+          "mapped": true
+        },
+        {
+          "reference": "Capture",
+          "ezapi": "EZapi.SupplierDefinition.Capture",
+          "mapped": true
+        },
+        {
+          "reference": "Dismiss",
+          "ezapi": "EZapi.SupplierDefinition.Dismiss",
+          "mapped": true
+        },
+        {
+          "reference": "ConfirmLabel",
+          "ezapi": "EZapi.SupplierDefinition.ConfirmLabel",
+          "mapped": true
+        },
+        {
+          "reference": "BackLabel",
+          "ezapi": "EZapi.SupplierDefinition.BackLabel",
+          "mapped": true
+        },
+        {
+          "reference": "ContinueLabel",
+          "ezapi": "EZapi.SupplierDefinition.ContinueLabel",
+          "mapped": true
+        },
+        {
+          "reference": "LeaveLabel",
+          "ezapi": "EZapi.SupplierDefinition.LeaveLabel",
+          "mapped": true
+        },
+        {
+          "reference": "FailureText",
+          "ezapi": "EZapi.SupplierDefinition.FailureText",
+          "mapped": true
+        },
+        {
+          "reference": "RequireConfirmation",
+          "ezapi": "EZapi.SupplierDefinition.RequireConfirmation",
+          "mapped": true
+        },
+        {
+          "reference": "AllowMenuRefresh",
+          "ezapi": "EZapi.SupplierDefinition.AllowMenuRefresh",
+          "mapped": true
+        },
+        {
+          "reference": "CanContinue",
+          "ezapi": "EZapi.SupplierDefinition.CanContinue",
+          "mapped": true
+        },
+        {
+          "reference": "NextPageLabel",
+          "ezapi": "EZapi.SupplierDefinition.NextPageLabel",
+          "mapped": true
+        },
+        {
+          "reference": "PreviousPageLabel",
+          "ezapi": "EZapi.SupplierDefinition.PreviousPageLabel",
+          "mapped": true
+        }
+      ],
+      "methods": [],
+      "fields": []
+    },
+    {
+      "reference": "Nicokobo.Forge.ForgeDialogueScript",
+      "ezapi": "EZapi.DialogueScript",
+      "mapped": true,
+      "semanticsVerifiedByInventory": false,
+      "behaviorAudits": [],
+      "properties": [
+        {
+          "reference": "OwnerId",
+          "ezapi": "EZapi.DialogueScript.OwnerId",
+          "mapped": true
+        },
+        {
+          "reference": "Definition",
+          "ezapi": "EZapi.DialogueScript.Definition",
+          "mapped": true
+        }
+      ],
+      "methods": [],
+      "fields": []
+    },
+    {
+      "reference": "Nicokobo.Forge.ForgeDialogueApi",
+      "ezapi": "EZapi.DialogueApi",
+      "mapped": true,
+      "semanticsVerifiedByInventory": false,
+      "behaviorAudits": [],
+      "properties": [
+        {
+          "reference": "IsAvailable",
+          "ezapi": "EZapi.DialogueApi.IsAvailable",
+          "mapped": true
+        }
+      ],
+      "methods": [
+        {
+          "reference": "Nicokobo.Forge.ForgeDialogueScript Nicokobo.Forge.ForgeDialogueApi::Create(System.String,Nicokobo.Forge.ForgeDialogueDefinition)",
+          "ezapi": [
+            "EZapi.DialogueScript EZapi.DialogueApi::Create(System.String,EZapi.DialogueDefinition)"
+          ],
+          "mapped": true,
+          "boundary": null
+        }
+      ],
+      "fields": []
+    },
+    {
+      "reference": "Nicokobo.Forge.NativeEffectRegistration",
+      "ezapi": "EZapi.NativeEffectRegistration",
+      "mapped": true,
+      "semanticsVerifiedByInventory": false,
+      "behaviorAudits": [],
+      "properties": [
+        {
+          "reference": "EffectId",
+          "ezapi": "EZapi.NativeEffectRegistration.EffectId",
+          "mapped": true
+        },
+        {
+          "reference": "Factory",
+          "ezapi": "EZapi.NativeEffectRegistration.Factory",
+          "mapped": true
+        },
+        {
+          "reference": "RandomEligible",
+          "ezapi": "EZapi.NativeEffectRegistration.RandomEligible",
+          "mapped": true
+        }
+      ],
+      "methods": [],
+      "fields": []
+    },
+    {
+      "reference": "Nicokobo.Forge.ForgeEffectApi",
+      "ezapi": "EZapi.EffectApi",
+      "mapped": true,
+      "semanticsVerifiedByInventory": false,
+      "behaviorAudits": [],
+      "properties": [],
+      "methods": [
+        {
+          "reference": "Nicokobo.Forge.Registration.SubmitResult Nicokobo.Forge.ForgeEffectApi::RegisterEffect(System.String,System.String,System.Func`1<Il2Cpp.ModuleEffectHelper/ModuleEffect>,System.Boolean)",
+          "ezapi": [
+            "EZapi.ContentSubmissionResult EZapi.EffectApi::RegisterEffect(System.String,System.String,System.Func`1<Il2Cpp.ModuleEffectHelper/ModuleEffect>,System.Boolean)"
+          ],
+          "mapped": true,
+          "boundary": null
+        },
+        {
+          "reference": "Nicokobo.Forge.Registration.SubmitResult Nicokobo.Forge.ForgeEffectApi::RegisterEffects(System.String,System.Collections.Generic.IReadOnlyList`1<Nicokobo.Forge.NativeEffectRegistration>)",
+          "ezapi": [
+            "EZapi.ContentSubmissionResult EZapi.EffectApi::RegisterEffects(System.String,System.Collections.Generic.IReadOnlyList`1<EZapi.NativeEffectRegistration>)"
+          ],
+          "mapped": true,
+          "boundary": null
+        },
+        {
+          "reference": "System.Collections.Generic.IReadOnlyList`1<Nicokobo.Forge.NativeApplicationView> Nicokobo.Forge.ForgeEffectApi::Snapshot()",
+          "ezapi": [
+            "System.Collections.Generic.IReadOnlyList`1<EZapi.NativeApplicationView> EZapi.EffectApi::Snapshot()"
+          ],
+          "mapped": true,
+          "boundary": null
+        }
+      ],
+      "fields": []
+    },
+    {
+      "reference": "Nicokobo.Forge.ForgeExternalPowerApi",
+      "ezapi": "EZapi.ExternalPowerApi",
+      "mapped": true,
+      "semanticsVerifiedByInventory": false,
+      "behaviorAudits": [
+        "external-power-public-contract.audit.json"
+      ],
+      "properties": [
+        {
+          "reference": "IsAvailable",
+          "ezapi": "EZapi.ExternalPowerApi.IsAvailable",
+          "mapped": true
+        }
+      ],
+      "methods": [
+        {
+          "reference": "System.Boolean Nicokobo.Forge.ForgeExternalPowerApi::IsConnector(Il2Cpp.GameItem)",
+          "ezapi": [
+            "System.Boolean EZapi.ExternalPowerApi::IsConnector(Il2Cpp.GameItem)"
+          ],
+          "mapped": true,
+          "boundary": null
+        },
+        {
+          "reference": "System.IDisposable Nicokobo.Forge.ForgeExternalPowerApi::Register(System.String,System.String,System.Func`2<Il2Cpp.GameItem,System.Int32>,System.Func`4<Il2Cpp.GameItem,Il2Cpp.GameItem,System.Int32,Nicokobo.Forge.IForgePowerTransaction>)",
+          "ezapi": [
+            "System.IDisposable EZapi.ExternalPowerApi::Register(System.String,System.String,System.Func`2<Il2Cpp.GameItem,System.Int32>,System.Func`4<Il2Cpp.GameItem,Il2Cpp.GameItem,System.Int32,EZapi.IPowerTransaction>)",
+            "System.IDisposable EZapi.ExternalPowerApi::Register(System.String,System.String,System.Func`2<Il2Cpp.GameItem,System.Int32>,System.Func`4<Il2Cpp.GameItem,Il2Cpp.GameItem,System.Int32,EZapi.IPowerTransaction>,EZapi.MachineMaterialContentsPolicy)"
+          ],
+          "mapped": true,
+          "boundary": null
+        },
+        {
+          "reference": "System.Int32 Nicokobo.Forge.ForgeExternalPowerApi::GetEnergy(Il2Cpp.GameItem)",
+          "ezapi": [
+            "System.Int32 EZapi.ExternalPowerApi::GetEnergy(Il2Cpp.GameItem)"
+          ],
+          "mapped": true,
+          "boundary": null
+        }
+      ],
+      "fields": []
+    },
+    {
+      "reference": "Nicokobo.Forge.ForgeHookApi",
+      "ezapi": "EZapi.HookApi",
+      "mapped": true,
+      "semanticsVerifiedByInventory": false,
+      "behaviorAudits": [],
+      "properties": [],
+      "methods": [
+        {
+          "reference": "System.Boolean Nicokobo.Forge.ForgeHookApi::TryValidateNativeTarget(System.Reflection.MethodInfo,System.String&)",
+          "ezapi": [
+            "System.Boolean EZapi.HookApi::TryValidateNativeTarget(System.Reflection.MethodInfo,System.String&)"
+          ],
+          "mapped": true,
+          "boundary": null
+        }
+      ],
+      "fields": []
+    },
+    {
+      "reference": "Nicokobo.Forge.ForgeInventoryAdmissionApi",
+      "ezapi": "EZapi.InventoryAdmissionApi",
+      "mapped": true,
+      "semanticsVerifiedByInventory": false,
+      "behaviorAudits": [],
+      "properties": [
+        {
+          "reference": "IsAvailable",
+          "ezapi": "EZapi.InventoryAdmissionApi.IsAvailable",
+          "mapped": true
+        }
+      ],
+      "methods": [
+        {
+          "reference": "System.IDisposable Nicokobo.Forge.ForgeInventoryAdmissionApi::Register(System.String,System.String,System.String,System.Func`3<Il2Cpp.GameItem,Il2Cpp.GameGridInventory,System.Boolean>)",
+          "ezapi": [
+            "System.IDisposable EZapi.InventoryAdmissionApi::Register(System.String,System.String,System.String,System.Func`3<Il2Cpp.GameItem,Il2Cpp.GameGridInventory,System.Boolean>)"
+          ],
+          "mapped": true,
+          "boundary": null
+        }
+      ],
+      "fields": []
+    },
+    {
+      "reference": "Nicokobo.Forge.NativeInventorySnapshotStatus",
+      "ezapi": "EZapi.InventorySnapshotStatus",
+      "mapped": true,
+      "semanticsVerifiedByInventory": false,
+      "behaviorAudits": [],
+      "properties": [],
+      "methods": [],
+      "fields": [
+        {
+          "reference": "Ready",
+          "referenceConstant": 0,
+          "ezapi": "EZapi.InventorySnapshotStatus.Ready",
+          "mapped": true,
+          "boundary": null
+        },
+        {
+          "reference": "Disabled",
+          "referenceConstant": 1,
+          "ezapi": "EZapi.InventorySnapshotStatus.Unavailable",
+          "mapped": true,
+          "boundary": "Independent status representation: Disabled => Unavailable; compare named EZapi values, never reference integer ordinals."
+        },
+        {
+          "reference": "Unavailable",
+          "referenceConstant": 2,
+          "ezapi": "EZapi.InventorySnapshotStatus.Unavailable",
+          "mapped": true,
+          "boundary": null
+        },
+        {
+          "reference": "Invalid",
+          "referenceConstant": 3,
+          "ezapi": "EZapi.InventorySnapshotStatus.Invalid",
+          "mapped": true,
+          "boundary": null
+        }
+      ]
+    },
+    {
+      "reference": "Nicokobo.Forge.NativeInventoryItem",
+      "ezapi": "EZapi.NativeInventoryItem",
+      "mapped": true,
+      "semanticsVerifiedByInventory": false,
+      "behaviorAudits": [],
+      "properties": [
+        {
+          "reference": "InstanceId",
+          "ezapi": "EZapi.NativeInventoryItem.InstanceId",
+          "mapped": true
+        },
+        {
+          "reference": "ItemId",
+          "ezapi": "EZapi.NativeInventoryItem.ItemId",
+          "mapped": true
+        },
+        {
+          "reference": "Units",
+          "ezapi": "EZapi.NativeInventoryItem.Units",
+          "mapped": true
+        },
+        {
+          "reference": "PlayerOwned",
+          "ezapi": "EZapi.NativeInventoryItem.PlayerOwned",
+          "mapped": true
+        }
+      ],
+      "methods": [],
+      "fields": []
+    },
+    {
+      "reference": "Nicokobo.Forge.NativeInventorySnapshot",
+      "ezapi": "EZapi.NativeInventorySnapshot",
+      "mapped": true,
+      "semanticsVerifiedByInventory": false,
+      "behaviorAudits": [],
+      "properties": [
+        {
+          "reference": "Status",
+          "ezapi": "EZapi.NativeInventorySnapshot.Status",
+          "mapped": true
+        },
+        {
+          "reference": "Items",
+          "ezapi": "EZapi.NativeInventorySnapshot.Items",
+          "mapped": true
+        },
+        {
+          "reference": "Reason",
+          "ezapi": "EZapi.NativeInventorySnapshot.Reason",
+          "mapped": true
+        }
+      ],
+      "methods": [],
+      "fields": []
+    },
+    {
+      "reference": "Nicokobo.Forge.NativeTransferPreviewStatus",
+      "ezapi": "EZapi.TransferPreviewStatus",
+      "mapped": true,
+      "semanticsVerifiedByInventory": false,
+      "behaviorAudits": [],
+      "properties": [],
+      "methods": [],
+      "fields": [
+        {
+          "reference": "Ready",
+          "referenceConstant": 0,
+          "ezapi": "EZapi.TransferPreviewStatus.Ready",
+          "mapped": true,
+          "boundary": null
+        },
+        {
+          "reference": "Disabled",
+          "referenceConstant": 1,
+          "ezapi": "EZapi.TransferPreviewStatus.Unavailable",
+          "mapped": true,
+          "boundary": "Independent status representation: Disabled => Unavailable; compare named EZapi values, never reference integer ordinals."
+        },
+        {
+          "reference": "Unavailable",
+          "referenceConstant": 2,
+          "ezapi": "EZapi.TransferPreviewStatus.Unavailable",
+          "mapped": true,
+          "boundary": null
+        },
+        {
+          "reference": "Invalid",
+          "referenceConstant": 3,
+          "ezapi": "EZapi.TransferPreviewStatus.Invalid",
+          "mapped": true,
+          "boundary": null
+        },
+        {
+          "reference": "SourceMismatch",
+          "referenceConstant": 4,
+          "ezapi": "EZapi.TransferPreviewStatus.SourceMismatch",
+          "mapped": true,
+          "boundary": null
+        },
+        {
+          "reference": "Locked",
+          "referenceConstant": 5,
+          "ezapi": "EZapi.TransferPreviewStatus.Locked",
+          "mapped": true,
+          "boundary": null
+        },
+        {
+          "reference": "NoWholeSlot",
+          "referenceConstant": 6,
+          "ezapi": "EZapi.TransferPreviewStatus.NoWholeSlot",
+          "mapped": true,
+          "boundary": null
+        }
+      ]
+    },
+    {
+      "reference": "Nicokobo.Forge.NativeTransferPreview",
+      "ezapi": "EZapi.NativeTransferPreview",
+      "mapped": true,
+      "semanticsVerifiedByInventory": false,
+      "behaviorAudits": [],
+      "properties": [
+        {
+          "reference": "Status",
+          "ezapi": "EZapi.NativeTransferPreview.Status",
+          "mapped": true
+        },
+        {
+          "reference": "ItemInstanceId",
+          "ezapi": "EZapi.NativeTransferPreview.ItemInstanceId",
+          "mapped": true
+        },
+        {
+          "reference": "Units",
+          "ezapi": "EZapi.NativeTransferPreview.Units",
+          "mapped": true
+        },
+        {
+          "reference": "Reason",
+          "ezapi": "EZapi.NativeTransferPreview.Reason",
+          "mapped": true
+        }
+      ],
+      "methods": [],
+      "fields": []
+    },
+    {
+      "reference": "Nicokobo.Forge.ForgeInventoryApi",
+      "ezapi": "EZapi.InventoryApi",
+      "mapped": true,
+      "semanticsVerifiedByInventory": false,
+      "behaviorAudits": [],
+      "properties": [
+        {
+          "reference": "IsItemDragActive",
+          "ezapi": "EZapi.InventoryApi.IsItemDragActive",
+          "mapped": true
+        }
+      ],
+      "methods": [
+        {
+          "reference": "System.Collections.Generic.IReadOnlyList`1<Il2Cpp.GameItem> Nicokobo.Forge.ForgeInventoryApi::CaptureRunItems(Il2Cpp.PlayerStore)",
+          "ezapi": [
+            "System.Collections.Generic.IReadOnlyList`1<Il2Cpp.GameItem> EZapi.InventoryApi::CaptureRunItems(Il2Cpp.PlayerStore)"
+          ],
+          "mapped": true,
+          "boundary": null
+        },
+        {
+          "reference": "System.Boolean Nicokobo.Forge.ForgeInventoryApi::IsPlayerOwned(Il2Cpp.GameItem)",
+          "ezapi": [
+            "System.Boolean EZapi.InventoryApi::IsPlayerOwned(Il2Cpp.GameItem)"
+          ],
+          "mapped": true,
+          "boundary": null
+        },
+        {
+          "reference": "System.Collections.Generic.IReadOnlyDictionary`2<System.String,System.Int32> Nicokobo.Forge.ForgeInventoryApi::CaptureOwnedItemCounts(Il2Cpp.PlayerStore,System.Collections.Generic.IReadOnlyCollection`1<System.String>)",
+          "ezapi": [
+            "System.Collections.Generic.IReadOnlyDictionary`2<System.String,System.Int32> EZapi.InventoryApi::CaptureOwnedItemCounts(Il2Cpp.PlayerStore,System.Collections.Generic.IReadOnlyCollection`1<System.String>)"
+          ],
+          "mapped": true,
+          "boundary": null
+        },
+        {
+          "reference": "Nicokobo.Forge.NativeInventorySnapshot Nicokobo.Forge.ForgeInventoryApi::CaptureDirect(Il2Cpp.GameInventory)",
+          "ezapi": [
+            "EZapi.NativeInventorySnapshot EZapi.InventoryApi::CaptureDirect(Il2Cpp.GameInventory,System.Boolean)"
+          ],
+          "mapped": true,
+          "boundary": null
+        },
+        {
+          "reference": "Nicokobo.Forge.NativeTransferPreview Nicokobo.Forge.ForgeInventoryApi::PreviewWholeGridTransfer(Il2Cpp.GameItem,Il2Cpp.GameGridInventory,Il2Cpp.GameGridInventory)",
+          "ezapi": [
+            "EZapi.NativeTransferPreview EZapi.InventoryApi::PreviewWholeGridTransfer(Il2Cpp.GameItem,Il2Cpp.GameGridInventory,Il2Cpp.GameGridInventory)"
+          ],
+          "mapped": true,
+          "boundary": null
+        }
+      ],
+      "fields": []
+    },
+    {
+      "reference": "Nicokobo.Forge.ForgeInventoryEndpoint",
+      "ezapi": "EZapi.InventoryEndpoint",
+      "mapped": true,
+      "semanticsVerifiedByInventory": false,
+      "behaviorAudits": [],
+      "properties": [
+        {
+          "reference": "OwnerId",
+          "ezapi": "EZapi.InventoryEndpoint.OwnerId",
+          "mapped": true
+        },
+        {
+          "reference": "EndpointId",
+          "ezapi": "EZapi.InventoryEndpoint.EndpointId",
+          "mapped": true
+        },
+        {
+          "reference": "Root",
+          "ezapi": "EZapi.InventoryEndpoint.Root",
+          "mapped": true
+        },
+        {
+          "reference": "ChargingOnly",
+          "ezapi": "EZapi.InventoryEndpoint.ChargingOnly",
+          "mapped": true
+        }
+      ],
+      "methods": [],
+      "fields": []
+    },
+    {
+      "reference": "Nicokobo.Forge.ForgeInventoryEndpointApi",
+      "ezapi": "EZapi.InventoryEndpointApi",
+      "mapped": true,
+      "semanticsVerifiedByInventory": false,
+      "behaviorAudits": [],
+      "properties": [
+        {
+          "reference": "IsAvailable",
+          "ezapi": "EZapi.InventoryEndpointApi.IsAvailable",
+          "mapped": true
+        },
+        {
+          "reference": "Error",
+          "ezapi": "EZapi.InventoryEndpointApi.Error",
+          "mapped": true
+        }
+      ],
+      "methods": [
+        {
+          "reference": "Nicokobo.Forge.ForgeInventoryEndpoint Nicokobo.Forge.ForgeInventoryEndpointApi::Open(Il2Cpp.PlayerStore,System.String,System.String,System.String,System.Boolean,System.Boolean)",
+          "ezapi": [
+            "EZapi.InventoryEndpoint EZapi.InventoryEndpointApi::Open(Il2Cpp.PlayerStore,System.String,System.String,System.String,System.Boolean,System.Boolean)"
+          ],
+          "mapped": true,
+          "boundary": null
+        },
+        {
+          "reference": "System.Collections.Generic.IReadOnlyList`1<Nicokobo.Forge.ForgeInventoryEndpoint> Nicokobo.Forge.ForgeInventoryEndpointApi::Snapshot()",
+          "ezapi": [
+            "System.Collections.Generic.IReadOnlyList`1<EZapi.InventoryEndpoint> EZapi.InventoryEndpointApi::Snapshot()"
+          ],
+          "mapped": true,
+          "boundary": null
+        },
+        {
+          "reference": "System.Boolean Nicokobo.Forge.ForgeInventoryEndpointApi::Delete(System.String,System.String)",
+          "ezapi": [
+            "System.Boolean EZapi.InventoryEndpointApi::Delete(System.String,System.String)"
+          ],
+          "mapped": true,
+          "boundary": null
+        }
+      ],
+      "fields": []
+    },
+    {
+      "reference": "Nicokobo.Forge.ForgeSaveGraphApi",
+      "ezapi": "EZapi.SaveGraphApi",
+      "mapped": true,
+      "semanticsVerifiedByInventory": false,
+      "behaviorAudits": [],
+      "properties": [],
+      "methods": [
+        {
+          "reference": "System.Collections.Generic.IReadOnlyList`1<Il2Cpp.GameItem> Nicokobo.Forge.ForgeSaveGraphApi::Items(Il2Cpp.GameItem)",
+          "ezapi": [
+            "System.Collections.Generic.IReadOnlyList`1<Il2Cpp.GameItem> EZapi.SaveGraphApi::Items(Il2Cpp.GameItem)"
+          ],
+          "mapped": true,
+          "boundary": null
+        },
+        {
+          "reference": "System.String Nicokobo.Forge.ForgeSaveGraphApi::Encode(Il2Cpp.GameItem)",
+          "ezapi": [
+            "System.String EZapi.SaveGraphApi::Encode(Il2Cpp.GameItem)"
+          ],
+          "mapped": true,
+          "boundary": null
+        },
+        {
+          "reference": "Il2Cpp.GameItem Nicokobo.Forge.ForgeSaveGraphApi::Decode(System.String,System.Collections.Generic.IReadOnlySet`1<System.Int32>)",
+          "ezapi": [
+            "Il2Cpp.GameItem EZapi.SaveGraphApi::Decode(System.String,System.Collections.Generic.IReadOnlySet`1<System.Int32>)"
+          ],
+          "mapped": true,
+          "boundary": null
+        }
+      ],
+      "fields": []
+    },
+    {
+      "reference": "Nicokobo.Forge.ForgeInventoryFreezeApi",
+      "ezapi": "EZapi.InventoryFreezeApi",
+      "mapped": true,
+      "semanticsVerifiedByInventory": false,
+      "behaviorAudits": [],
+      "properties": [
+        {
+          "reference": "IsAvailable",
+          "ezapi": "EZapi.InventoryFreezeApi.IsAvailable",
+          "mapped": true
+        }
+      ],
+      "methods": [
+        {
+          "reference": "System.Boolean Nicokobo.Forge.ForgeInventoryFreezeApi::IsFrozen(Il2Cpp.GameItem)",
+          "ezapi": [
+            "System.Boolean EZapi.InventoryFreezeApi::IsFrozen(Il2Cpp.GameItem)"
+          ],
+          "mapped": true,
+          "boundary": null
+        },
+        {
+          "reference": "System.IDisposable Nicokobo.Forge.ForgeInventoryFreezeApi::TryAcquire(System.Collections.Generic.IEnumerable`1<Il2Cpp.GameItem>,System.String)",
+          "ezapi": [
+            "System.IDisposable EZapi.InventoryFreezeApi::TryAcquire(System.Collections.Generic.IEnumerable`1<Il2Cpp.GameItem>,System.String)"
+          ],
+          "mapped": true,
+          "boundary": null
+        }
+      ],
+      "fields": []
+    },
+    {
+      "reference": "Nicokobo.Forge.ForgeInventoryPlacement",
+      "ezapi": "EZapi.InventoryPlacement",
+      "mapped": true,
+      "semanticsVerifiedByInventory": false,
+      "behaviorAudits": [],
+      "properties": [
+        {
+          "reference": "Item",
+          "ezapi": "EZapi.InventoryPlacement.Item",
+          "mapped": true
+        },
+        {
+          "reference": "Shape",
+          "ezapi": "EZapi.InventoryPlacement.Shape",
+          "mapped": true
+        }
+      ],
+      "methods": [],
+      "fields": []
+    },
+    {
+      "reference": "Nicokobo.Forge.ForgeInventoryPlacementApi",
+      "ezapi": "EZapi.InventoryPlacementApi",
+      "mapped": true,
+      "semanticsVerifiedByInventory": false,
+      "behaviorAudits": [],
+      "properties": [
+        {
+          "reference": "IsAvailable",
+          "ezapi": "EZapi.InventoryPlacementApi.IsAvailable",
+          "mapped": true
+        }
+      ],
+      "methods": [
+        {
+          "reference": "System.Collections.Generic.IReadOnlyList`1<Nicokobo.Forge.ForgeInventoryPlacement> Nicokobo.Forge.ForgeInventoryPlacementApi::PlanWholeGrid(Il2Cpp.GameGridInventory,System.Collections.Generic.IReadOnlyList`1<Il2Cpp.GameItem>)",
+          "ezapi": [
+            "System.Collections.Generic.IReadOnlyList`1<EZapi.InventoryPlacement> EZapi.InventoryPlacementApi::PlanWholeGrid(Il2Cpp.GameGridInventory,System.Collections.Generic.IReadOnlyList`1<Il2Cpp.GameItem>)"
+          ],
+          "mapped": true,
+          "boundary": null
+        }
+      ],
+      "fields": []
+    },
+    {
+      "reference": "Nicokobo.Forge.NativeModuleRegistration",
+      "ezapi": "EZapi.NativeModuleRegistration",
+      "mapped": true,
+      "semanticsVerifiedByInventory": false,
+      "behaviorAudits": [],
+      "properties": [
+        {
+          "reference": "ItemId",
+          "ezapi": "EZapi.NativeModuleRegistration.ItemId",
+          "mapped": true
+        },
+        {
+          "reference": "Factory",
+          "ezapi": "EZapi.NativeModuleRegistration.Factory",
+          "mapped": true
+        },
+        {
+          "reference": "Options",
+          "ezapi": "EZapi.NativeModuleRegistration.Options",
+          "mapped": true
+        }
+      ],
+      "methods": [],
+      "fields": []
+    },
+    {
+      "reference": "Nicokobo.Forge.ForgeItemApi",
+      "ezapi": "EZapi.ItemApi",
+      "mapped": true,
+      "semanticsVerifiedByInventory": false,
+      "behaviorAudits": [],
+      "properties": [],
+      "methods": [
+        {
+          "reference": "Nicokobo.Forge.Registration.SubmitResult Nicokobo.Forge.ForgeItemApi::RegisterNode(System.String,System.String,System.Func`1<Il2Cpp.GameItem>,Nicokobo.Forge.Registration.NativeItemOptions)",
+          "ezapi": [
+            "EZapi.ContentSubmissionResult EZapi.ItemApi::RegisterNode(System.String,System.String,System.Func`1<Il2Cpp.GameItem>,EZapi.NativeItemOptions)"
+          ],
+          "mapped": true,
+          "boundary": null
+        },
+        {
+          "reference": "Nicokobo.Forge.Registration.SubmitResult Nicokobo.Forge.ForgeItemApi::RegisterItem(System.String,System.String,System.Func`1<Il2Cpp.GameItem>,Nicokobo.Forge.Registration.NativeItemOptions)",
+          "ezapi": [
+            "EZapi.ContentSubmissionResult EZapi.ItemApi::RegisterItem(System.String,System.String,System.Func`1<Il2Cpp.GameItem>,EZapi.NativeItemOptions)"
+          ],
+          "mapped": true,
+          "boundary": null
+        },
+        {
+          "reference": "Nicokobo.Forge.Registration.SubmitResult Nicokobo.Forge.ForgeItemApi::RegisterAmenity(System.String,System.String,System.Func`1<Il2Cpp.GameItem>,Nicokobo.Forge.Registration.NativeItemOptions)",
+          "ezapi": [
+            "EZapi.ContentSubmissionResult EZapi.ItemApi::RegisterAmenity(System.String,System.String,System.Func`1<Il2Cpp.GameItem>,EZapi.NativeItemOptions)"
+          ],
+          "mapped": true,
+          "boundary": null
+        },
+        {
+          "reference": "Nicokobo.Forge.Registration.SubmitResult Nicokobo.Forge.ForgeItemApi::RegisterModule(System.String,System.String,System.Func`1<Il2Cpp.GameItem>,Nicokobo.Forge.Registration.NativeItemOptions)",
+          "ezapi": [
+            "EZapi.ContentSubmissionResult EZapi.ItemApi::RegisterModule(System.String,System.String,System.Func`1<Il2Cpp.GameItem>,EZapi.NativeItemOptions)"
+          ],
+          "mapped": true,
+          "boundary": null
+        },
+        {
+          "reference": "Nicokobo.Forge.Registration.SubmitResult Nicokobo.Forge.ForgeItemApi::RegisterModules(System.String,System.Collections.Generic.IReadOnlyList`1<Nicokobo.Forge.NativeModuleRegistration>)",
+          "ezapi": [
+            "EZapi.ContentSubmissionResult EZapi.ItemApi::RegisterModules(System.String,System.Collections.Generic.IReadOnlyList`1<EZapi.NativeModuleRegistration>)"
+          ],
+          "mapped": true,
+          "boundary": null
+        },
+        {
+          "reference": "System.Collections.Generic.IReadOnlyList`1<Nicokobo.Forge.NativeApplicationView> Nicokobo.Forge.ForgeItemApi::Snapshot()",
+          "ezapi": [
+            "System.Collections.Generic.IReadOnlyList`1<EZapi.NativeApplicationView> EZapi.ItemApi::Snapshot()"
+          ],
+          "mapped": true,
+          "boundary": null
+        },
+        {
+          "reference": "System.Boolean Nicokobo.Forge.ForgeItemApi::Exists(System.String)",
+          "ezapi": [
+            "System.Boolean EZapi.ItemApi::Exists(System.String)"
+          ],
+          "mapped": true,
+          "boundary": null
+        },
+        {
+          "reference": "Il2Cpp.GameItem Nicokobo.Forge.ForgeItemApi::Create(System.String,System.Boolean)",
+          "ezapi": [
+            "Il2Cpp.GameItem EZapi.ItemApi::Create(System.String,System.Boolean)"
+          ],
+          "mapped": true,
+          "boundary": null
+        },
+        {
+          "reference": "System.String Nicokobo.Forge.ForgeItemApi::GetDisplayName(System.String)",
+          "ezapi": [
+            "System.String EZapi.ItemApi::GetDisplayName(System.String)"
+          ],
+          "mapped": true,
+          "boundary": null
+        }
+      ],
+      "fields": []
+    },
+    {
+      "reference": "Nicokobo.Forge.ForgeItemInspectionApi",
+      "ezapi": "EZapi.ItemInspection",
+      "mapped": true,
+      "semanticsVerifiedByInventory": false,
+      "behaviorAudits": [],
+      "properties": [],
+      "methods": [
+        {
+          "reference": "System.Nullable`1<System.Int64> Nicokobo.Forge.ForgeItemInspectionApi::CurrentUnitValue(Il2Cpp.GameItem)",
+          "ezapi": [
+            "System.Int64 EZapi.ItemInspection::CurrentUnitValue(Il2Cpp.GameItem)"
+          ],
+          "mapped": true,
+          "boundary": null
+        },
+        {
+          "reference": "Il2Cpp.RichText Nicokobo.Forge.ForgeItemInspectionApi::BuildTooltip(Il2Cpp.GameItem)",
+          "ezapi": [
+            "Il2Cpp.RichText EZapi.ItemInspection::BuildTooltip(Il2Cpp.GameItem,System.Boolean)"
+          ],
+          "mapped": true,
+          "boundary": null
+        }
+      ],
+      "fields": []
+    },
+    {
+      "reference": "Nicokobo.Forge.ForgeItemTransferResult",
+      "ezapi": "EZapi.ItemTransferResult",
+      "mapped": true,
+      "semanticsVerifiedByInventory": false,
+      "behaviorAudits": [],
+      "properties": [
+        {
+          "reference": "Moved",
+          "ezapi": "EZapi.ItemTransferResult.Moved",
+          "mapped": true
+        },
+        {
+          "reference": "Indeterminate",
+          "ezapi": "EZapi.ItemTransferResult.Indeterminate",
+          "mapped": true
+        },
+        {
+          "reference": "Status",
+          "ezapi": "EZapi.ItemTransferResult.Status",
+          "mapped": true
+        }
+      ],
+      "methods": [],
+      "fields": []
+    },
+    {
+      "reference": "Nicokobo.Forge.ForgeItemTransferApi",
+      "ezapi": "EZapi.ItemTransferApi",
+      "mapped": true,
+      "semanticsVerifiedByInventory": false,
+      "behaviorAudits": [],
+      "properties": [],
+      "methods": [
+        {
+          "reference": "Nicokobo.Forge.ForgeItemTransferResult Nicokobo.Forge.ForgeItemTransferApi::Move(Il2Cpp.GameItem,Il2Cpp.GameGridInventory,System.Int32)",
+          "ezapi": [
+            "EZapi.ItemTransferResult EZapi.ItemTransferApi::Move(Il2Cpp.GameItem,Il2Cpp.GameGridInventory,System.Int32)"
+          ],
+          "mapped": true,
+          "boundary": null
+        }
+      ],
+      "fields": []
+    },
+    {
+      "reference": "Nicokobo.Forge.ForgeLifecyclePhase",
+      "ezapi": "EZapi.LifecyclePhase",
+      "mapped": true,
+      "semanticsVerifiedByInventory": false,
+      "behaviorAudits": [],
+      "properties": [],
+      "methods": [],
+      "fields": [
+        {
+          "reference": "BeforeLoad",
+          "referenceConstant": 0,
+          "ezapi": "EZapi.LifecyclePhase.BeforeLoad",
+          "mapped": true,
+          "boundary": null
+        },
+        {
+          "reference": "AfterLoad",
+          "referenceConstant": 1,
+          "ezapi": "EZapi.LifecyclePhase.AfterLoad",
+          "mapped": true,
+          "boundary": null
+        },
+        {
+          "reference": "BeforeNight",
+          "referenceConstant": 2,
+          "ezapi": "EZapi.LifecyclePhase.BeforeNight",
+          "mapped": true,
+          "boundary": null
+        },
+        {
+          "reference": "AfterNight",
+          "referenceConstant": 3,
+          "ezapi": "EZapi.LifecyclePhase.AfterNight",
+          "mapped": true,
+          "boundary": null
+        },
+        {
+          "reference": "BeforeNightServices",
+          "referenceConstant": 4,
+          "ezapi": "EZapi.LifecyclePhase.BeforeNightServices",
+          "mapped": true,
+          "boundary": null
+        },
+        {
+          "reference": "AfterNightServices",
+          "referenceConstant": 5,
+          "ezapi": "EZapi.LifecyclePhase.AfterNightServices",
+          "mapped": true,
+          "boundary": null
+        },
+        {
+          "reference": "AfterSleep",
+          "referenceConstant": 6,
+          "ezapi": "EZapi.LifecyclePhase.AfterSleep",
+          "mapped": true,
+          "boundary": null
+        },
+        {
+          "reference": "AfterEndDay",
+          "referenceConstant": 7,
+          "ezapi": "EZapi.LifecyclePhase.AfterEndDay",
+          "mapped": true,
+          "boundary": null
+        },
+        {
+          "reference": "NightAttemptFinished",
+          "referenceConstant": 8,
+          "ezapi": "EZapi.LifecyclePhase.NightAttemptFinished",
+          "mapped": true,
+          "boundary": null
+        },
+        {
+          "reference": "AfterGameLoadedLate",
+          "referenceConstant": 9,
+          "ezapi": "EZapi.LifecyclePhase.AfterGameLoadedLate",
+          "mapped": true,
+          "boundary": null
+        }
+      ]
+    },
+    {
+      "reference": "Nicokobo.Forge.ForgeRunIdentity",
+      "ezapi": "EZapi.LifecycleRunIdentity",
+      "mapped": true,
+      "semanticsVerifiedByInventory": false,
+      "behaviorAudits": [],
+      "properties": [
+        {
+          "reference": "RunId",
+          "ezapi": "EZapi.LifecycleRunIdentity.RunId",
+          "mapped": true
+        },
+        {
+          "reference": "SlotId",
+          "ezapi": "EZapi.LifecycleRunIdentity.SlotId",
+          "mapped": true
+        },
+        {
+          "reference": "Day",
+          "ezapi": "EZapi.LifecycleRunIdentity.Day",
+          "mapped": true
+        }
+      ],
+      "methods": [],
+      "fields": []
+    },
+    {
+      "reference": "Nicokobo.Forge.ForgeLifecycleContext",
+      "ezapi": "EZapi.LifecycleContext",
+      "mapped": true,
+      "semanticsVerifiedByInventory": false,
+      "behaviorAudits": [],
+      "properties": [
+        {
+          "reference": "Store",
+          "ezapi": "EZapi.LifecycleContext.Store",
+          "mapped": true
+        },
+        {
+          "reference": "Run",
+          "ezapi": "EZapi.LifecycleContext.Run",
+          "mapped": true
+        },
+        {
+          "reference": "Items",
+          "ezapi": "EZapi.LifecycleContext.Items",
+          "mapped": true
+        }
+      ],
+      "methods": [],
+      "fields": []
+    },
+    {
+      "reference": "Nicokobo.Forge.ForgeLifecycleApi",
+      "ezapi": "EZapi.LifecycleApi",
+      "mapped": true,
+      "semanticsVerifiedByInventory": false,
+      "behaviorAudits": [],
+      "properties": [],
+      "methods": [
+        {
+          "reference": "System.IDisposable Nicokobo.Forge.ForgeLifecycleApi::Subscribe(System.String,System.String,Nicokobo.Forge.ForgeLifecyclePhase,System.Action`1<Nicokobo.Forge.ForgeLifecycleContext>,System.Int32)",
+          "ezapi": [
+            "System.IDisposable EZapi.LifecycleApi::Subscribe(System.String,System.String,EZapi.LifecyclePhase,System.Action`1<EZapi.LifecycleContext>,System.Int32)"
+          ],
+          "mapped": true,
+          "boundary": null
+        }
+      ],
+      "fields": []
+    },
+    {
+      "reference": "Nicokobo.Forge.ForgeLiquidApi",
+      "ezapi": "EZapi.Liquids",
+      "mapped": true,
+      "semanticsVerifiedByInventory": false,
+      "behaviorAudits": [],
+      "properties": [],
+      "methods": [
+        {
+          "reference": "System.Boolean Nicokobo.Forge.ForgeLiquidApi::IsContainer(Il2Cpp.GameItem)",
+          "ezapi": [
+            "System.Boolean EZapi.Liquids::IsContainer(Il2Cpp.GameItem)"
+          ],
+          "mapped": true,
+          "boundary": null
+        },
+        {
+          "reference": "Nicokobo.Forge.ForgeMachineLiquidSnapshot Nicokobo.Forge.ForgeLiquidApi::Capture(Il2Cpp.GameItem)",
+          "ezapi": [
+            "EZapi.MachineLiquidSnapshot EZapi.Liquids::CaptureProduction(Il2Cpp.GameItem)"
+          ],
+          "mapped": true,
+          "boundary": null
+        },
+        {
+          "reference": "System.Int32 Nicokobo.Forge.ForgeLiquidApi::WaterQuality(Il2Cpp.GameItem)",
+          "ezapi": [
+            "System.Int32 EZapi.Liquids::WaterQuality(Il2Cpp.GameItem)"
+          ],
+          "mapped": true,
+          "boundary": null
+        }
+      ],
+      "fields": []
+    },
+    {
+      "reference": "Nicokobo.Forge.ForgeLiquidCompositionMath",
+      "ezapi": "EZapi.LiquidCompositionMath",
+      "mapped": true,
+      "semanticsVerifiedByInventory": false,
+      "behaviorAudits": [],
+      "properties": [],
+      "methods": [
+        {
+          "reference": "System.Collections.Generic.IReadOnlyList`1<Nicokobo.Forge.ForgeMachineLiquidPart> Nicokobo.Forge.ForgeLiquidCompositionMath::Consumed(Nicokobo.Forge.ForgeMachineLiquidSnapshot,Nicokobo.Forge.ForgeMachineLiquidSnapshot)",
+          "ezapi": [
+            "System.Collections.Generic.IReadOnlyList`1<EZapi.MachineLiquidPart> EZapi.LiquidCompositionMath::Consumed(EZapi.MachineLiquidSnapshot,EZapi.MachineLiquidSnapshot)"
+          ],
+          "mapped": true,
+          "boundary": null
+        },
+        {
+          "reference": "System.Collections.Generic.IReadOnlyList`1<Nicokobo.Forge.ForgeMachineLiquidPart> Nicokobo.Forge.ForgeLiquidCompositionMath::ReplaceComponent(System.Collections.Generic.IReadOnlyList`1<Nicokobo.Forge.ForgeMachineLiquidPart>,System.String,System.String)",
+          "ezapi": [
+            "System.Collections.Generic.IReadOnlyList`1<EZapi.MachineLiquidPart> EZapi.LiquidCompositionMath::ReplaceComponent(System.Collections.Generic.IReadOnlyList`1<EZapi.MachineLiquidPart>,System.String,System.String)"
+          ],
+          "mapped": true,
+          "boundary": null
+        },
+        {
+          "reference": "System.Decimal Nicokobo.Forge.ForgeLiquidCompositionMath::BaseValue(System.Collections.Generic.IReadOnlyList`1<Nicokobo.Forge.ForgeMachineLiquidPart>)",
+          "ezapi": [
+            "System.Decimal EZapi.LiquidCompositionMath::BaseValue(System.Collections.Generic.IReadOnlyList`1<EZapi.MachineLiquidPart>)"
+          ],
+          "mapped": true,
+          "boundary": null
+        }
+      ],
+      "fields": []
+    },
+    {
+      "reference": "Nicokobo.Forge.ForgeLiquidTransferResult",
+      "ezapi": "EZapi.LiquidTransferResult",
+      "mapped": true,
+      "semanticsVerifiedByInventory": false,
+      "behaviorAudits": [],
+      "properties": [
+        {
+          "reference": "PartsMoved",
+          "ezapi": "EZapi.LiquidTransferResult.PartsMoved",
+          "mapped": true
+        },
+        {
+          "reference": "Indeterminate",
+          "ezapi": "EZapi.LiquidTransferResult.Indeterminate",
+          "mapped": true
+        },
+        {
+          "reference": "Status",
+          "ezapi": "EZapi.LiquidTransferResult.Status",
+          "mapped": true
+        }
+      ],
+      "methods": [],
+      "fields": []
+    },
+    {
+      "reference": "Nicokobo.Forge.ForgeLiquidTransferApi",
+      "ezapi": "EZapi.LiquidTransferApi",
+      "mapped": true,
+      "semanticsVerifiedByInventory": false,
+      "behaviorAudits": [],
+      "properties": [],
+      "methods": [
+        {
+          "reference": "Nicokobo.Forge.ForgeLiquidTransferResult Nicokobo.Forge.ForgeLiquidTransferApi::Pour(Il2Cpp.GameItem,Il2Cpp.GameItem,System.Int32,System.Func`1<System.Boolean>)",
+          "ezapi": [
+            "EZapi.LiquidTransferResult EZapi.LiquidTransferApi::Pour(Il2Cpp.GameItem,Il2Cpp.GameItem)",
+            "EZapi.LiquidTransferResult EZapi.LiquidTransferApi::Pour(Il2Cpp.GameItem,Il2Cpp.GameItem,System.Int32,System.Func`1<System.Boolean>)"
+          ],
+          "mapped": true,
+          "boundary": null
+        },
+        {
+          "reference": "Nicokobo.Forge.ForgeLiquidTransferResult Nicokobo.Forge.ForgeLiquidTransferApi::Pour(Il2Cpp.GameItem,Il2Cpp.GameItem)",
+          "ezapi": [
+            "EZapi.LiquidTransferResult EZapi.LiquidTransferApi::Pour(Il2Cpp.GameItem,Il2Cpp.GameItem)",
+            "EZapi.LiquidTransferResult EZapi.LiquidTransferApi::Pour(Il2Cpp.GameItem,Il2Cpp.GameItem,System.Int32,System.Func`1<System.Boolean>)"
+          ],
+          "mapped": true,
+          "boundary": null
+        }
+      ],
+      "fields": []
+    },
+    {
+      "reference": "Nicokobo.Forge.ForgeListInventoryApi",
+      "ezapi": "EZapi.ListInventoryApi",
+      "mapped": true,
+      "semanticsVerifiedByInventory": false,
+      "behaviorAudits": [],
+      "properties": [
+        {
+          "reference": "IsAvailable",
+          "ezapi": "EZapi.ListInventoryApi.IsAvailable",
+          "mapped": true
+        }
+      ],
+      "methods": [
+        {
+          "reference": "Il2Cpp.GameGridInventory Nicokobo.Forge.ForgeListInventoryApi::Create(Il2Cpp.GameItem,System.String)",
+          "ezapi": [
+            "Il2Cpp.GameGridInventory EZapi.ListInventoryApi::Create(Il2Cpp.GameItem,System.String)"
+          ],
+          "mapped": true,
+          "boundary": null
+        },
+        {
+          "reference": "Il2Cpp.GameGridInventory Nicokobo.Forge.ForgeListInventoryApi::Find(Il2Cpp.GameItem,System.String)",
+          "ezapi": [
+            "Il2Cpp.GameGridInventory EZapi.ListInventoryApi::Find(Il2Cpp.GameItem,System.String)"
+          ],
+          "mapped": true,
+          "boundary": null
+        },
+        {
+          "reference": "System.Boolean Nicokobo.Forge.ForgeListInventoryApi::IsList(Il2Cpp.GameGridInventory)",
+          "ezapi": [
+            "System.Boolean EZapi.ListInventoryApi::IsList(Il2Cpp.GameGridInventory)"
+          ],
+          "mapped": true,
+          "boundary": null
+        },
+        {
+          "reference": "Nicokobo.Forge.ForgeItemTransferResult Nicokobo.Forge.ForgeListInventoryApi::Move(Il2Cpp.GameItem,Il2Cpp.GameInventory,System.Int32,System.Func`3<Il2Cpp.GameItem,System.Int32,System.Boolean>)",
+          "ezapi": [
+            "EZapi.ItemTransferResult EZapi.ListInventoryApi::Move(Il2Cpp.GameItem,Il2Cpp.GameInventory,System.Int32,System.Func`3<Il2Cpp.GameItem,System.Int32,System.Boolean>)"
+          ],
+          "mapped": true,
+          "boundary": null
+        }
+      ],
+      "fields": []
+    },
+    {
+      "reference": "Nicokobo.Forge.ForgeMachineAutomationContext",
+      "ezapi": "EZapi.MachineAutomationContext",
+      "mapped": true,
+      "semanticsVerifiedByInventory": false,
+      "behaviorAudits": [
+        "machine-public-contract.audit.json"
+      ],
+      "properties": [
+        {
+          "reference": "Machine",
+          "ezapi": "EZapi.MachineAutomationContext.Machine",
+          "mapped": true
+        },
+        {
+          "reference": "Inventory",
+          "ezapi": "EZapi.MachineAutomationContext.Inventory",
+          "mapped": true
+        },
+        {
+          "reference": "RecipeId",
+          "ezapi": "EZapi.MachineAutomationContext.RecipeId",
+          "mapped": true
+        },
+        {
+          "reference": "Blocked",
+          "ezapi": "EZapi.MachineAutomationContext.Blocked",
+          "mapped": true
+        },
+        {
+          "reference": "Result",
+          "ezapi": "EZapi.MachineAutomationContext.Result",
+          "mapped": true
+        }
+      ],
+      "methods": [
+        {
+          "reference": "System.Void Nicokobo.Forge.ForgeMachineAutomationContext::SelectRecipe(System.String)",
+          "ezapi": [
+            "System.Void EZapi.MachineAutomationContext::SelectRecipe(System.String)"
+          ],
+          "mapped": true,
+          "boundary": null
+        },
+        {
+          "reference": "System.Void Nicokobo.Forge.ForgeMachineAutomationContext::Block()",
+          "ezapi": [
+            "System.Void EZapi.MachineAutomationContext::Block()"
+          ],
+          "mapped": true,
+          "boundary": null
+        }
+      ],
+      "fields": []
+    },
+    {
+      "reference": "Nicokobo.Forge.ForgeMachineAutomationPhase",
+      "ezapi": "EZapi.MachineAutomationPhase",
+      "mapped": true,
+      "semanticsVerifiedByInventory": false,
+      "behaviorAudits": [
+        "machine-public-contract.audit.json"
+      ],
+      "properties": [],
+      "methods": [],
+      "fields": [
+        {
+          "reference": "BeforeBatch",
+          "referenceConstant": 0,
+          "ezapi": "EZapi.MachineAutomationPhase.BeforeBatch",
+          "mapped": true,
+          "boundary": null
+        },
+        {
+          "reference": "AfterBatch",
+          "referenceConstant": 1,
+          "ezapi": "EZapi.MachineAutomationPhase.AfterBatch",
+          "mapped": true,
+          "boundary": null
+        }
+      ]
+    },
+    {
+      "reference": "Nicokobo.Forge.ForgeRegisteredMachineRecipe",
+      "ezapi": "EZapi.RegisteredMachineRecipe",
+      "mapped": true,
+      "semanticsVerifiedByInventory": false,
+      "behaviorAudits": [
+        "machine-public-contract.audit.json"
+      ],
+      "properties": [
+        {
+          "reference": "OwnerId",
+          "ezapi": "EZapi.RegisteredMachineRecipe.OwnerId",
+          "mapped": true
+        },
+        {
+          "reference": "Recipe",
+          "ezapi": "EZapi.RegisteredMachineRecipe.Recipe",
+          "mapped": true
+        }
+      ],
+      "methods": [],
+      "fields": []
+    },
+    {
+      "reference": "Nicokobo.Forge.ForgeMachineAutomationApi",
+      "ezapi": "EZapi.MachineAutomationApi",
+      "mapped": true,
+      "semanticsVerifiedByInventory": false,
+      "behaviorAudits": [
+        "machine-public-contract.audit.json"
+      ],
+      "properties": [],
+      "methods": [
+        {
+          "reference": "System.Collections.Generic.IReadOnlyList`1<Nicokobo.Forge.ForgeMachineRecipe> Nicokobo.Forge.ForgeMachineAutomationApi::Recipes(System.String)",
+          "ezapi": [
+            "System.Collections.Generic.IReadOnlyList`1<EZapi.MachineRecipe> EZapi.MachineAutomationApi::Recipes(System.String)"
+          ],
+          "mapped": true,
+          "boundary": null
+        },
+        {
+          "reference": "System.Collections.Generic.IReadOnlyList`1<Nicokobo.Forge.ForgeRegisteredMachineRecipe> Nicokobo.Forge.ForgeMachineAutomationApi::RegisteredRecipes(System.String)",
+          "ezapi": [
+            "System.Collections.Generic.IReadOnlyList`1<EZapi.RegisteredMachineRecipe> EZapi.MachineAutomationApi::RegisteredRecipes(System.String)"
+          ],
+          "mapped": true,
+          "boundary": null
+        },
+        {
+          "reference": "System.IDisposable Nicokobo.Forge.ForgeMachineAutomationApi::Subscribe(System.String,System.String,Nicokobo.Forge.ForgeMachineAutomationPhase,System.Action`1<Nicokobo.Forge.ForgeMachineAutomationContext>,System.Int32)",
+          "ezapi": [
+            "System.IDisposable EZapi.MachineAutomationApi::Subscribe(System.String,System.String,EZapi.MachineAutomationPhase,System.Action`1<EZapi.MachineAutomationContext>,System.Int32)"
+          ],
+          "mapped": true,
+          "boundary": null
+        }
+      ],
+      "fields": []
+    },
+    {
+      "reference": "Nicokobo.Forge.ForgeMachineBatchProcessor",
+      "ezapi": "EZapi.MachineBatchProcessor",
+      "mapped": true,
+      "semanticsVerifiedByInventory": false,
+      "behaviorAudits": [
+        "machine-public-contract.audit.json"
+      ],
+      "properties": [],
+      "methods": [
+        {
+          "reference": "System.String Nicokobo.Forge.ForgeMachineBatchProcessor::Process(Il2Cpp.GameItem,Nicokobo.Forge.ForgeMachineInventory)",
+          "ezapi": [
+            "EZapi.MachineBatchResult EZapi.MachineBatchProcessor::Process(Il2Cpp.GameItem)",
+            "EZapi.MachineBatchResult EZapi.MachineBatchProcessor::Process(Il2Cpp.GameItem,EZapi.MachineInventory)"
+          ],
+          "mapped": true,
+          "boundary": null
+        }
+      ],
+      "fields": []
+    },
+    {
+      "reference": "Nicokobo.Forge.ForgeMachineOutputKind",
+      "ezapi": "EZapi.MachineOutputTemplate",
+      "mapped": true,
+      "semanticsVerifiedByInventory": false,
+      "behaviorAudits": [
+        "machine-public-contract.audit.json"
+      ],
+      "properties": [],
+      "methods": [],
+      "fields": [
+        {
+          "reference": "Items",
+          "referenceConstant": 0,
+          "ezapi": null,
+          "mapped": true,
+          "boundary": "Independent JSON/C# representation: Items => items, Container => container; see machine behavior audit."
+        },
+        {
+          "reference": "Container",
+          "referenceConstant": 1,
+          "ezapi": null,
+          "mapped": true,
+          "boundary": "Independent JSON/C# representation: Items => items, Container => container; see machine behavior audit."
+        }
+      ]
+    },
+    {
+      "reference": "Nicokobo.Forge.ForgeMachineGrid",
+      "ezapi": "EZapi.MachineGrid",
+      "mapped": true,
+      "semanticsVerifiedByInventory": false,
+      "behaviorAudits": [
+        "machine-public-contract.audit.json"
+      ],
+      "properties": [
+        {
+          "reference": "Width",
+          "ezapi": "EZapi.MachineGrid.Width",
+          "mapped": true
+        },
+        {
+          "reference": "Height",
+          "ezapi": "EZapi.MachineGrid.Height",
+          "mapped": true
+        }
+      ],
+      "methods": [],
+      "fields": []
+    },
+    {
+      "reference": "Nicokobo.Forge.ForgeMachineContainerSlot",
+      "ezapi": "EZapi.MachineContainerSlot",
+      "mapped": true,
+      "semanticsVerifiedByInventory": false,
+      "behaviorAudits": [
+        "machine-public-contract.audit.json"
+      ],
+      "properties": [
+        {
+          "reference": "SlotId",
+          "ezapi": "EZapi.MachineContainerSlot.SlotId",
+          "mapped": true
+        },
+        {
+          "reference": "Size",
+          "ezapi": "EZapi.MachineContainerSlot.Size",
+          "mapped": true
+        },
+        {
+          "reference": "Label",
+          "ezapi": "EZapi.MachineContainerSlot.Label",
+          "mapped": true
+        },
+        {
+          "reference": "Condition",
+          "ezapi": "EZapi.MachineContainerSlot.Condition",
+          "mapped": true
+        }
+      ],
+      "methods": [],
+      "fields": []
+    },
+    {
+      "reference": "Nicokobo.Forge.ForgeMachineBatteryTemplate",
+      "ezapi": "EZapi.MachineBatteryTemplate",
+      "mapped": true,
+      "semanticsVerifiedByInventory": false,
+      "behaviorAudits": [
+        "machine-public-contract.audit.json"
+      ],
+      "properties": [
+        {
+          "reference": "Size",
+          "ezapi": "EZapi.MachineBatteryTemplate.Size",
+          "mapped": true
+        },
+        {
+          "reference": "Required",
+          "ezapi": "EZapi.MachineBatteryTemplate.Required",
+          "mapped": true
+        }
+      ],
+      "methods": [],
+      "fields": []
+    },
+    {
+      "reference": "Nicokobo.Forge.ForgeMachineModuleTemplate",
+      "ezapi": "EZapi.MachineModuleTemplate",
+      "mapped": true,
+      "semanticsVerifiedByInventory": false,
+      "behaviorAudits": [
+        "machine-public-contract.audit.json"
+      ],
+      "properties": [
+        {
+          "reference": "Size",
+          "ezapi": "EZapi.MachineModuleTemplate.Size",
+          "mapped": true
+        },
+        {
+          "reference": "AllowedTypes",
+          "ezapi": "EZapi.MachineModuleTemplate.AllowedTypes",
+          "mapped": true
+        }
+      ],
+      "methods": [],
+      "fields": []
+    },
+    {
+      "reference": "Nicokobo.Forge.ForgeMachineOutputTemplate",
+      "ezapi": "EZapi.MachineOutputTemplate",
+      "mapped": true,
+      "semanticsVerifiedByInventory": false,
+      "behaviorAudits": [
+        "machine-public-contract.audit.json"
+      ],
+      "properties": [
+        {
+          "reference": "Kind",
+          "ezapi": "EZapi.MachineOutputTemplate.Kind",
+          "mapped": true
+        },
+        {
+          "reference": "Size",
+          "ezapi": "EZapi.MachineOutputTemplate.Size",
+          "mapped": true
+        },
+        {
+          "reference": "ContainerCondition",
+          "ezapi": "EZapi.MachineOutputTemplate.ContainerCondition",
+          "mapped": true
+        }
+      ],
+      "methods": [],
+      "fields": []
+    },
+    {
+      "reference": "Nicokobo.Forge.ForgeMachineTemplate",
+      "ezapi": "EZapi.MachineLayoutDefinition",
+      "mapped": true,
+      "semanticsVerifiedByInventory": false,
+      "behaviorAudits": [
+        "machine-public-contract.audit.json"
+      ],
+      "properties": [
+        {
+          "reference": "ItemInput",
+          "ezapi": "EZapi.MachineLayoutDefinition.ItemInput",
+          "mapped": true
+        },
+        {
+          "reference": "Output",
+          "ezapi": "EZapi.MachineLayoutDefinition.Output",
+          "mapped": true
+        },
+        {
+          "reference": "LiquidInputs",
+          "ezapi": "EZapi.MachineLayoutDefinition.LiquidInputs",
+          "mapped": true
+        },
+        {
+          "reference": "Battery",
+          "ezapi": "EZapi.MachineLayoutDefinition.Battery",
+          "mapped": true
+        },
+        {
+          "reference": "Modules",
+          "ezapi": "EZapi.MachineLayoutDefinition.Modules",
+          "mapped": true
+        },
+        {
+          "reference": "ManualSlot",
+          "ezapi": "EZapi.MachineLayoutDefinition.ManualSlot",
+          "mapped": true
+        }
+      ],
+      "methods": [],
+      "fields": []
+    },
+    {
+      "reference": "Nicokobo.Forge.ForgeMachinePowerRule",
+      "ezapi": "EZapi.MachinePowerRule",
+      "mapped": true,
+      "semanticsVerifiedByInventory": false,
+      "behaviorAudits": [
+        "machine-public-contract.audit.json"
+      ],
+      "properties": [
+        {
+          "reference": "Cost",
+          "ezapi": "EZapi.MachinePowerRule.Cost",
+          "mapped": true
+        },
+        {
+          "reference": "ResolveCost",
+          "ezapi": "EZapi.MachinePowerRule.ResolveCost",
+          "mapped": true
+        },
+        {
+          "reference": "PerOutput",
+          "ezapi": "EZapi.MachinePowerRule.PerOutput",
+          "mapped": true
+        }
+      ],
+      "methods": [],
+      "fields": []
+    },
+    {
+      "reference": "Nicokobo.Forge.ForgeMachineIngredient",
+      "ezapi": "EZapi.MachineIngredient",
+      "mapped": true,
+      "semanticsVerifiedByInventory": false,
+      "behaviorAudits": [
+        "machine-public-contract.audit.json"
+      ],
+      "properties": [
+        {
+          "reference": "ItemId",
+          "ezapi": "EZapi.MachineIngredient.ItemId",
+          "mapped": true
+        },
+        {
+          "reference": "Count",
+          "ezapi": "EZapi.MachineIngredient.Count",
+          "mapped": true
+        },
+        {
+          "reference": "Condition",
+          "ezapi": "EZapi.MachineIngredient.Condition",
+          "mapped": true
+        },
+        {
+          "reference": "Guide",
+          "ezapi": "EZapi.MachineIngredient.Guide",
+          "mapped": true
+        },
+        {
+          "reference": "ItemTag",
+          "ezapi": "EZapi.MachineIngredient.ItemTag",
+          "mapped": true
+        },
+        {
+          "reference": "WholeStack",
+          "ezapi": "EZapi.MachineIngredient.WholeStack",
+          "mapped": true
+        }
+      ],
+      "methods": [],
+      "fields": []
+    },
+    {
+      "reference": "Nicokobo.Forge.ForgeMachineLiquidIngredient",
+      "ezapi": "EZapi.MachineLiquidIngredient",
+      "mapped": true,
+      "semanticsVerifiedByInventory": false,
+      "behaviorAudits": [
+        "machine-public-contract.audit.json"
+      ],
+      "properties": [
+        {
+          "reference": "SlotId",
+          "ezapi": "EZapi.MachineLiquidIngredient.SlotId",
+          "mapped": true
+        },
+        {
+          "reference": "Millilitres",
+          "ezapi": "EZapi.MachineLiquidIngredient.Millilitres",
+          "mapped": true
+        },
+        {
+          "reference": "LiquidId",
+          "ezapi": "EZapi.MachineLiquidIngredient.LiquidId",
+          "mapped": true
+        },
+        {
+          "reference": "Condition",
+          "ezapi": "EZapi.MachineLiquidIngredient.Condition",
+          "mapped": true
+        },
+        {
+          "reference": "ResolveMillilitres",
+          "ezapi": "EZapi.MachineLiquidIngredient.ResolveMillilitres",
+          "mapped": true
+        },
+        {
+          "reference": "Guide",
+          "ezapi": "EZapi.MachineLiquidIngredient.Guide",
+          "mapped": true
+        }
+      ],
+      "methods": [],
+      "fields": []
+    },
+    {
+      "reference": "Nicokobo.Forge.ForgeMachineLiquidAmount",
+      "ezapi": "EZapi.MachineLiquidAmount",
+      "mapped": true,
+      "semanticsVerifiedByInventory": false,
+      "behaviorAudits": [
+        "machine-public-contract.audit.json"
+      ],
+      "properties": [
+        {
+          "reference": "LiquidId",
+          "ezapi": "EZapi.MachineLiquidAmount.LiquidId",
+          "mapped": true
+        },
+        {
+          "reference": "Millilitres",
+          "ezapi": "EZapi.MachineLiquidAmount.Millilitres",
+          "mapped": true
+        },
+        {
+          "reference": "ResolveMillilitres",
+          "ezapi": "EZapi.MachineLiquidAmount.ResolveMillilitres",
+          "mapped": true
+        },
+        {
+          "reference": "ResolveValue",
+          "ezapi": "EZapi.MachineLiquidAmount.ResolveValue",
+          "mapped": true
+        },
+        {
+          "reference": "ResolveQualityBasis",
+          "ezapi": "EZapi.MachineLiquidAmount.ResolveQualityBasis",
+          "mapped": true
+        }
+      ],
+      "methods": [],
+      "fields": []
+    },
+    {
+      "reference": "Nicokobo.Forge.ForgeMachineOutput",
+      "ezapi": "EZapi.MachineItemOutput",
+      "mapped": true,
+      "semanticsVerifiedByInventory": false,
+      "behaviorAudits": [
+        "machine-public-contract.audit.json"
+      ],
+      "properties": [],
+      "methods": [],
+      "fields": []
+    },
+    {
+      "reference": "Nicokobo.Forge.ForgeMachineItemOutput",
+      "ezapi": "EZapi.MachineItemOutput",
+      "mapped": true,
+      "semanticsVerifiedByInventory": false,
+      "behaviorAudits": [
+        "machine-public-contract.audit.json"
+      ],
+      "properties": [
+        {
+          "reference": "ItemId",
+          "ezapi": "EZapi.MachineItemOutput.ItemId",
+          "mapped": true
+        },
+        {
+          "reference": "Count",
+          "ezapi": "EZapi.MachineItemOutput.Count",
+          "mapped": true
+        },
+        {
+          "reference": "ResolveCount",
+          "ezapi": "EZapi.MachineItemOutput.ResolveCount",
+          "mapped": true
+        },
+        {
+          "reference": "PrepareItem",
+          "ezapi": "EZapi.MachineItemOutput.PrepareItem",
+          "mapped": true
+        },
+        {
+          "reference": "Contents",
+          "ezapi": "EZapi.MachineItemOutput.Contents",
+          "mapped": true
+        },
+        {
+          "reference": "Guide",
+          "ezapi": "EZapi.MachineItemOutput.Guide",
+          "mapped": true
+        },
+        {
+          "reference": "ResolveItemId",
+          "ezapi": "EZapi.MachineItemOutput.ResolveItemId",
+          "mapped": true
+        }
+      ],
+      "methods": [],
+      "fields": []
+    },
+    {
+      "reference": "Nicokobo.Forge.ForgeMachineContainerOutput",
+      "ezapi": "EZapi.MachineContainerOutput",
+      "mapped": true,
+      "semanticsVerifiedByInventory": false,
+      "behaviorAudits": [
+        "machine-public-contract.audit.json"
+      ],
+      "properties": [
+        {
+          "reference": "Contents",
+          "ezapi": "EZapi.MachineItemOutput.Contents",
+          "mapped": true
+        },
+        {
+          "reference": "Guide",
+          "ezapi": "EZapi.MachineItemOutput.Guide",
+          "mapped": true
+        },
+        {
+          "reference": "ResolveContents",
+          "ezapi": "EZapi.MachineContainerOutput.ResolveContents",
+          "mapped": true
+        }
+      ],
+      "methods": [],
+      "fields": []
+    },
+    {
+      "reference": "Nicokobo.Forge.ForgeMachineRecipe",
+      "ezapi": "EZapi.MachineRecipe",
+      "mapped": true,
+      "semanticsVerifiedByInventory": false,
+      "behaviorAudits": [
+        "machine-public-contract.audit.json"
+      ],
+      "properties": [
+        {
+          "reference": "RecipeId",
+          "ezapi": "EZapi.MachineRecipe.RecipeId",
+          "mapped": true
+        },
+        {
+          "reference": "ItemInputs",
+          "ezapi": "EZapi.MachineRecipe.ItemInputs",
+          "mapped": true
+        },
+        {
+          "reference": "Output",
+          "ezapi": "EZapi.MachineRecipe.Output",
+          "mapped": true
+        },
+        {
+          "reference": "MachineCondition",
+          "ezapi": "EZapi.MachineRecipe.MachineCondition",
+          "mapped": true
+        },
+        {
+          "reference": "RuleRevision",
+          "ezapi": "EZapi.MachineRecipe.RuleRevision",
+          "mapped": true
+        },
+        {
+          "reference": "Guide",
+          "ezapi": "EZapi.MachineRecipe.Guide",
+          "mapped": true
+        },
+        {
+          "reference": "LiquidInputs",
+          "ezapi": "EZapi.MachineRecipe.LiquidInputs",
+          "mapped": true
+        },
+        {
+          "reference": "AuxiliaryItemIds",
+          "ezapi": "EZapi.MachineRecipe.AuxiliaryItemIds",
+          "mapped": true
+        },
+        {
+          "reference": "Transaction",
+          "ezapi": "EZapi.MachineRecipe.Transaction",
+          "mapped": true
+        }
+      ],
+      "methods": [],
+      "fields": []
+    },
+    {
+      "reference": "Nicokobo.Forge.ForgeMachineDefinition",
+      "ezapi": "EZapi.MachineDefinition",
+      "mapped": true,
+      "semanticsVerifiedByInventory": false,
+      "behaviorAudits": [
+        "machine-public-contract.audit.json"
+      ],
+      "properties": [
+        {
+          "reference": "MachineId",
+          "ezapi": "EZapi.MachineDefinition.MachineId",
+          "mapped": true
+        },
+        {
+          "reference": "Template",
+          "ezapi": "EZapi.MachineDefinition.Template",
+          "mapped": true
+        },
+        {
+          "reference": "Recipes",
+          "ezapi": "EZapi.MachineDefinition.Recipes",
+          "mapped": true
+        },
+        {
+          "reference": "Power",
+          "ezapi": "EZapi.MachineDefinition.Power",
+          "mapped": true
+        },
+        {
+          "reference": "ConfigureItem",
+          "ezapi": "EZapi.MachineDefinition.ConfigureItem",
+          "mapped": true
+        },
+        {
+          "reference": "ItemOptions",
+          "ezapi": "EZapi.MachineDefinition.ItemOptions",
+          "mapped": true
+        },
+        {
+          "reference": "ProductionMarkupPercent",
+          "ezapi": "EZapi.MachineDefinition.ProductionMarkupPercent",
+          "mapped": true
+        },
+        {
+          "reference": "Guide",
+          "ezapi": "EZapi.MachineDefinition.Guide",
+          "mapped": true
+        },
+        {
+          "reference": "ResolveNightlyBatchCount",
+          "ezapi": "EZapi.MachineDefinition.ResolveNightlyBatchCount",
+          "mapped": true
+        }
+      ],
+      "methods": [],
+      "fields": []
+    },
+    {
+      "reference": "Nicokobo.Forge.ForgeMachineItemTake",
+      "ezapi": "EZapi.MachineItemTake",
+      "mapped": true,
+      "semanticsVerifiedByInventory": false,
+      "behaviorAudits": [
+        "machine-public-contract.audit.json"
+      ],
+      "properties": [
+        {
+          "reference": "Item",
+          "ezapi": "EZapi.MachineItemTake.Item",
+          "mapped": true
+        },
+        {
+          "reference": "Count",
+          "ezapi": "EZapi.MachineItemTake.Count",
+          "mapped": true
+        },
+        {
+          "reference": "Value",
+          "ezapi": "EZapi.MachineItemTake.Value",
+          "mapped": true
+        }
+      ],
+      "methods": [],
+      "fields": []
+    },
+    {
+      "reference": "Nicokobo.Forge.ForgeMachineLiquidTake",
+      "ezapi": "EZapi.MachineLiquidTake",
+      "mapped": true,
+      "semanticsVerifiedByInventory": false,
+      "behaviorAudits": [
+        "machine-public-contract.audit.json"
+      ],
+      "properties": [
+        {
+          "reference": "SlotId",
+          "ezapi": "EZapi.MachineLiquidTake.SlotId",
+          "mapped": true
+        },
+        {
+          "reference": "Container",
+          "ezapi": "EZapi.MachineLiquidTake.Container",
+          "mapped": true
+        },
+        {
+          "reference": "Before",
+          "ezapi": "EZapi.MachineLiquidTake.Before",
+          "mapped": true
+        },
+        {
+          "reference": "After",
+          "ezapi": "EZapi.MachineLiquidTake.After",
+          "mapped": true
+        },
+        {
+          "reference": "Value",
+          "ezapi": "EZapi.MachineLiquidTake.Value",
+          "mapped": true
+        },
+        {
+          "reference": "QualityBasis",
+          "ezapi": "EZapi.MachineLiquidTake.QualityBasis",
+          "mapped": true
+        }
+      ],
+      "methods": [],
+      "fields": []
+    },
+    {
+      "reference": "Nicokobo.Forge.ForgeMachineBatchContext",
+      "ezapi": "EZapi.MachineBatchContext",
+      "mapped": true,
+      "semanticsVerifiedByInventory": false,
+      "behaviorAudits": [
+        "machine-public-contract.audit.json"
+      ],
+      "properties": [
+        {
+          "reference": "Machine",
+          "ezapi": "EZapi.MachineBatchContext.Machine",
+          "mapped": true
+        },
+        {
+          "reference": "Items",
+          "ezapi": "EZapi.MachineBatchContext.Items",
+          "mapped": true
+        },
+        {
+          "reference": "LiquidContainers",
+          "ezapi": "EZapi.MachineBatchContext.LiquidContainers",
+          "mapped": true
+        },
+        {
+          "reference": "OutputCount",
+          "ezapi": "EZapi.MachineBatchContext.OutputCount",
+          "mapped": true
+        },
+        {
+          "reference": "ProductionMarkupPercent",
+          "ezapi": "EZapi.MachineBatchContext.ProductionMarkupPercent",
+          "mapped": true
+        },
+        {
+          "reference": "Liquids",
+          "ezapi": "EZapi.MachineBatchContext.Liquids",
+          "mapped": true
+        }
+      ],
+      "methods": [],
+      "fields": []
+    },
+    {
+      "reference": "Nicokobo.Forge.ForgeMachineInventory",
+      "ezapi": "EZapi.MachineInventory",
+      "mapped": true,
+      "semanticsVerifiedByInventory": false,
+      "behaviorAudits": [
+        "machine-public-contract.audit.json"
+      ],
+      "properties": [
+        {
+          "reference": "Battery",
+          "ezapi": "EZapi.MachineInventory.Battery",
+          "mapped": true
+        },
+        {
+          "reference": "Modules",
+          "ezapi": "EZapi.MachineInventory.Modules",
+          "mapped": true
+        },
+        {
+          "reference": "ItemInput",
+          "ezapi": "EZapi.MachineInventory.ItemInput",
+          "mapped": true
+        },
+        {
+          "reference": "Output",
+          "ezapi": "EZapi.MachineInventory.Output",
+          "mapped": true
+        },
+        {
+          "reference": "LiquidInputs",
+          "ezapi": "EZapi.MachineInventory.LiquidInputs",
+          "mapped": true
+        },
+        {
+          "reference": "Manual",
+          "ezapi": "EZapi.MachineInventory.Manual",
+          "mapped": true
+        }
+      ],
+      "methods": [],
+      "fields": []
+    },
+    {
+      "reference": "Nicokobo.Forge.ForgeMachineView",
+      "ezapi": "EZapi.MachineView",
+      "mapped": true,
+      "semanticsVerifiedByInventory": false,
+      "behaviorAudits": [
+        "machine-public-contract.audit.json"
+      ],
+      "properties": [
+        {
+          "reference": "MachineId",
+          "ezapi": "EZapi.MachineView.MachineId",
+          "mapped": true
+        },
+        {
+          "reference": "Template",
+          "ezapi": "EZapi.MachineView.Template",
+          "mapped": true
+        },
+        {
+          "reference": "RecipeCount",
+          "ezapi": "EZapi.MachineView.RecipeCount",
+          "mapped": true
+        },
+        {
+          "reference": "RuntimeInstalled",
+          "ezapi": "EZapi.MachineView.RuntimeInstalled",
+          "mapped": true
+        }
+      ],
+      "methods": [],
+      "fields": []
+    },
+    {
+      "reference": "Nicokobo.Forge.ForgeMachineLiquidPart",
+      "ezapi": "EZapi.MachineLiquidPart",
+      "mapped": true,
+      "semanticsVerifiedByInventory": false,
+      "behaviorAudits": [
+        "machine-public-contract.audit.json"
+      ],
+      "properties": [
+        {
+          "reference": "LiquidId",
+          "ezapi": "EZapi.MachineLiquidPart.LiquidId",
+          "mapped": true
+        },
+        {
+          "reference": "Parts",
+          "ezapi": "EZapi.MachineLiquidPart.Parts",
+          "mapped": true
+        },
+        {
+          "reference": "Value",
+          "ezapi": "EZapi.MachineLiquidPart.Value",
+          "mapped": true
+        },
+        {
+          "reference": "QualityBasis",
+          "ezapi": "EZapi.MachineLiquidPart.QualityBasis",
+          "mapped": true
+        }
+      ],
+      "methods": [],
+      "fields": []
+    },
+    {
+      "reference": "Nicokobo.Forge.ForgeMachineLiquidSnapshot",
+      "ezapi": "EZapi.MachineLiquidSnapshot",
+      "mapped": true,
+      "semanticsVerifiedByInventory": false,
+      "behaviorAudits": [
+        "machine-public-contract.audit.json"
+      ],
+      "properties": [
+        {
+          "reference": "CapacityParts",
+          "ezapi": "EZapi.MachineLiquidSnapshot.CapacityParts",
+          "mapped": true
+        },
+        {
+          "reference": "Contents",
+          "ezapi": "EZapi.MachineLiquidSnapshot.Contents",
+          "mapped": true
+        },
+        {
+          "reference": "TotalParts",
+          "ezapi": "EZapi.MachineLiquidSnapshot.TotalParts",
+          "mapped": true
+        },
+        {
+          "reference": "Millilitres",
+          "ezapi": "EZapi.MachineLiquidSnapshot.Millilitres",
+          "mapped": true
+        }
+      ],
+      "methods": [],
+      "fields": []
+    },
+    {
+      "reference": "Nicokobo.Forge.ForgeMachineRegistrationApi",
+      "ezapi": "EZapi.MachineRegistrationApi",
+      "mapped": true,
+      "semanticsVerifiedByInventory": false,
+      "behaviorAudits": [
+        "machine-public-contract.audit.json"
+      ],
+      "properties": [],
+      "methods": [
+        {
+          "reference": "System.Collections.Generic.IReadOnlyList`1<Nicokobo.Forge.ForgeMachineView> Nicokobo.Forge.ForgeMachineRegistrationApi::Snapshot()",
+          "ezapi": [
+            "System.Collections.Generic.IReadOnlyList`1<EZapi.MachineView> EZapi.MachineRegistrationApi::Snapshot()"
+          ],
+          "mapped": true,
+          "boundary": null
+        },
+        {
+          "reference": "Nicokobo.Forge.ForgeRecipeGuideSnapshot Nicokobo.Forge.ForgeMachineRegistrationApi::GuideSnapshot()",
+          "ezapi": [
+            "EZapi.RecipeGuideSnapshot EZapi.MachineRegistrationApi::GuideSnapshot()"
+          ],
+          "mapped": true,
+          "boundary": null
+        },
+        {
+          "reference": "Nicokobo.Forge.Registration.SubmitResult Nicokobo.Forge.ForgeMachineRegistrationApi::RegisterMachine(System.String,Nicokobo.Forge.ForgeMachineDefinition)",
+          "ezapi": [
+            "EZapi.ContentSubmissionResult EZapi.MachineRegistrationApi::RegisterMachine(System.String,EZapi.MachineDefinition)"
+          ],
+          "mapped": true,
+          "boundary": null
+        },
+        {
+          "reference": "Nicokobo.Forge.Registration.SubmitResult Nicokobo.Forge.ForgeMachineRegistrationApi::RegisterAdditionalRecipes(System.String,System.String,System.Collections.Generic.IReadOnlyList`1<Nicokobo.Forge.ForgeMachineRecipe>)",
+          "ezapi": [
+            "EZapi.ContentSubmissionResult EZapi.MachineRegistrationApi::RegisterAdditionalRecipes(System.String,System.String,System.Collections.Generic.IReadOnlyList`1<EZapi.MachineRecipe>)"
+          ],
+          "mapped": true,
+          "boundary": null
+        },
+        {
+          "reference": "Nicokobo.Forge.Registration.SubmitResult Nicokobo.Forge.ForgeMachineRegistrationApi::ConfigureManufacturingTerminalMarkup(System.String,System.Int32)",
+          "ezapi": [
+            "EZapi.ContentSubmissionResult EZapi.MachineRegistrationApi::ConfigureManufacturingTerminalMarkup(System.String,System.Int32)"
+          ],
+          "mapped": true,
+          "boundary": null
+        }
+      ],
+      "fields": []
+    },
+    {
+      "reference": "Nicokobo.Forge.ForgeMachineRuntimeApi",
+      "ezapi": "EZapi.MachineRuntimeApi",
+      "mapped": true,
+      "semanticsVerifiedByInventory": false,
+      "behaviorAudits": [
+        "machine-public-contract.audit.json"
+      ],
+      "properties": [
+        {
+          "reference": "RuntimeInstalled",
+          "ezapi": "EZapi.MachineRuntimeApi.RuntimeInstalled",
+          "mapped": true
+        }
+      ],
+      "methods": [
+        {
+          "reference": "System.Boolean Nicokobo.Forge.ForgeMachineRuntimeApi::TryGetInventory(Il2Cpp.GameItem,Nicokobo.Forge.ForgeMachineInventory&)",
+          "ezapi": [
+            "System.Boolean EZapi.MachineRuntimeApi::TryGetInventory(Il2Cpp.GameItem,EZapi.MachineInventory&)"
+          ],
+          "mapped": true,
+          "boundary": null
+        },
+        {
+          "reference": "System.String Nicokobo.Forge.ForgeMachineRuntimeApi::ProcessBatch(Il2Cpp.GameItem)",
+          "ezapi": [
+            "EZapi.MachineBatchResult EZapi.MachineRuntimeApi::ProcessBatch(Il2Cpp.GameItem)"
+          ],
+          "mapped": true,
+          "boundary": null
+        },
+        {
+          "reference": "Nicokobo.Forge.ForgeMachineBatchProcessor Nicokobo.Forge.ForgeMachineRuntimeApi::CreateBatchProcessor(System.String,Nicokobo.Forge.ForgeMachineDefinition)",
+          "ezapi": [
+            "EZapi.MachineBatchProcessor EZapi.MachineRuntimeApi::CreateBatchProcessor(System.String,EZapi.MachineDefinition)"
+          ],
+          "mapped": true,
+          "boundary": null
+        }
+      ],
+      "fields": []
+    },
+    {
+      "reference": "Nicokobo.Forge.ForgeManufacturingTerminal",
+      "ezapi": "EZapi.ManufacturingTerminal",
+      "mapped": true,
+      "semanticsVerifiedByInventory": false,
+      "behaviorAudits": [],
+      "properties": [],
+      "methods": [
+        {
+          "reference": "System.String Nicokobo.Forge.ForgeManufacturingTerminal::NormalizeItemId(System.String)",
+          "ezapi": [
+            "System.String EZapi.ManufacturingTerminal::NormalizeItemId(System.String,System.Collections.Generic.IReadOnlyList`1<System.String>)"
+          ],
+          "mapped": true,
+          "boundary": null
+        }
+      ],
+      "fields": [
+        {
+          "reference": "OwnerId",
+          "referenceConstant": "nicokobo.forge.machines",
+          "ezapi": "EZapi.ManufacturingTerminal.OwnerId",
+          "mapped": true,
+          "boundary": null
+        },
+        {
+          "reference": "ItemId",
+          "referenceConstant": "nicokobo.forge.machines.universal_manufacturing_terminal",
+          "ezapi": "EZapi.ManufacturingTerminal.ItemId",
+          "mapped": true,
+          "boundary": null
+        },
+        {
+          "reference": "LegacyItemId",
+          "referenceConstant": "nicokobo.mechcore.synthesis.universal_manufacturing_terminal",
+          "ezapi": null,
+          "mapped": true,
+          "boundary": "Independent terminal owns EZapi IDs and resources. Vendor-specific historical IDs are not auto-claimed/migrated; explicit caller-provided aliases supported by NormalizeItemId in0.1.70."
+        },
+        {
+          "reference": "LegacyManufacturerId",
+          "referenceConstant": "nicokobo.mechcore.synthesis.mechanical_manufacturer",
+          "ezapi": null,
+          "mapped": true,
+          "boundary": "Independent terminal owns EZapi IDs and resources. Vendor-specific historical IDs are not auto-claimed/migrated; explicit caller-provided aliases supported by NormalizeItemId in0.1.70."
+        },
+        {
+          "reference": "ChineseName",
+          "referenceConstant": "全域制造终端",
+          "ezapi": "EZapi.ManufacturingTerminal.ChineseName",
+          "mapped": true,
+          "boundary": null
+        },
+        {
+          "reference": "EnglishName",
+          "referenceConstant": "Universal Manufacturing Terminal",
+          "ezapi": "EZapi.ManufacturingTerminal.EnglishName",
+          "mapped": true,
+          "boundary": null
+        },
+        {
+          "reference": "AtlasKey",
+          "referenceConstant": "Nicokobo/Forge/Machines",
+          "ezapi": null,
+          "mapped": true,
+          "boundary": "Independent terminal owns EZapi IDs and resources. Vendor-specific historical IDs are not auto-claimed/migrated; explicit caller-provided aliases supported by NormalizeItemId in0.1.70."
+        },
+        {
+          "reference": "SpriteKey",
+          "referenceConstant": "nicokobo_forge_universal_manufacturing_terminal",
+          "ezapi": null,
+          "mapped": true,
+          "boundary": "Independent terminal owns EZapi IDs and resources. Vendor-specific historical IDs are not auto-claimed/migrated; explicit caller-provided aliases supported by NormalizeItemId in0.1.70."
+        },
+        {
+          "reference": "Width",
+          "referenceConstant": 3,
+          "ezapi": "EZapi.ManufacturingTerminal.Width",
+          "mapped": true,
+          "boundary": null
+        },
+        {
+          "reference": "Height",
+          "referenceConstant": 3,
+          "ezapi": "EZapi.ManufacturingTerminal.Height",
+          "mapped": true,
+          "boundary": null
+        },
+        {
+          "reference": "BaseValue",
+          "referenceConstant": 400,
+          "ezapi": "EZapi.ManufacturingTerminal.BaseValue",
+          "mapped": true,
+          "boundary": null
+        },
+        {
+          "reference": "InputWidth",
+          "referenceConstant": 9,
+          "ezapi": "EZapi.ManufacturingTerminal.InputWidth",
+          "mapped": true,
+          "boundary": null
+        },
+        {
+          "reference": "InputHeight",
+          "referenceConstant": 6,
+          "ezapi": "EZapi.ManufacturingTerminal.InputHeight",
+          "mapped": true,
+          "boundary": null
+        },
+        {
+          "reference": "OutputWidth",
+          "referenceConstant": 9,
+          "ezapi": "EZapi.ManufacturingTerminal.OutputWidth",
+          "mapped": true,
+          "boundary": null
+        },
+        {
+          "reference": "OutputHeight",
+          "referenceConstant": 6,
+          "ezapi": "EZapi.ManufacturingTerminal.OutputHeight",
+          "mapped": true,
+          "boundary": null
+        },
+        {
+          "reference": "ModuleWidth",
+          "referenceConstant": 7,
+          "ezapi": "EZapi.ManufacturingTerminal.ModuleWidth",
+          "mapped": true,
+          "boundary": null
+        },
+        {
+          "reference": "ModuleHeight",
+          "referenceConstant": 5,
+          "ezapi": "EZapi.ManufacturingTerminal.ModuleHeight",
+          "mapped": true,
+          "boundary": null
+        },
+        {
+          "reference": "BasePowerCost",
+          "referenceConstant": 25,
+          "ezapi": "EZapi.ManufacturingTerminal.BasePowerCost",
+          "mapped": true,
+          "boundary": null
+        },
+        {
+          "reference": "DefaultProductionMarkupPercent",
+          "referenceConstant": 15,
+          "ezapi": "EZapi.ManufacturingTerminal.DefaultProductionMarkupPercent",
+          "mapped": true,
+          "boundary": null
+        }
+      ]
+    },
+    {
+      "reference": "Nicokobo.Forge.ForgeModuleActionContext",
+      "ezapi": "EZapi.ModuleActionContext",
+      "mapped": true,
+      "semanticsVerifiedByInventory": false,
+      "behaviorAudits": [],
+      "properties": [
+        {
+          "reference": "Module",
+          "ezapi": "EZapi.ModuleActionContext.Module",
+          "mapped": true
+        },
+        {
+          "reference": "Inventory",
+          "ezapi": "EZapi.ModuleActionContext.Inventory",
+          "mapped": true
+        },
+        {
+          "reference": "Machine",
+          "ezapi": "EZapi.ModuleActionContext.Machine",
+          "mapped": true
+        }
+      ],
+      "methods": [],
+      "fields": []
+    },
+    {
+      "reference": "Nicokobo.Forge.ForgeModuleApi",
+      "ezapi": "EZapi.ModuleApi",
+      "mapped": true,
+      "semanticsVerifiedByInventory": false,
+      "behaviorAudits": [],
+      "properties": [],
+      "methods": [
+        {
+          "reference": "Nicokobo.Forge.Registration.SubmitResult Nicokobo.Forge.ForgeModuleApi::RegisterAdmission(System.String,System.Collections.Generic.IReadOnlyList`1<Nicokobo.Forge.Registration.ForgeModuleAdmission>)",
+          "ezapi": [
+            "EZapi.ContentSubmissionResult EZapi.ModuleApi::RegisterAdmission(System.String,System.Collections.Generic.IReadOnlyList`1<EZapi.ModuleAdmission>)"
+          ],
+          "mapped": true,
+          "boundary": null
+        },
+        {
+          "reference": "System.Void Nicokobo.Forge.ForgeModuleApi::RemoveAdmission(System.String)",
+          "ezapi": [
+            "System.Void EZapi.ModuleApi::RemoveAdmission(System.String)"
+          ],
+          "mapped": true,
+          "boundary": null
+        },
+        {
+          "reference": "System.IDisposable Nicokobo.Forge.ForgeModuleApi::SubscribeAction(System.String,System.String,System.String,System.Action`1<Nicokobo.Forge.ForgeModuleActionContext>)",
+          "ezapi": [
+            "System.IDisposable EZapi.ModuleApi::SubscribeAction(System.String,System.String,System.String,System.Action`1<EZapi.ModuleActionContext>)"
+          ],
+          "mapped": true,
+          "boundary": null
+        },
+        {
+          "reference": "Il2Cpp.GameGridInventory Nicokobo.Forge.ForgeModuleApi::GetInventory(Il2Cpp.GameItem)",
+          "ezapi": [
+            "Il2Cpp.GameGridInventory EZapi.ModuleApi::GetInventory(Il2Cpp.GameItem)"
+          ],
+          "mapped": true,
+          "boundary": null
+        },
+        {
+          "reference": "System.Collections.Generic.IReadOnlyList`1<Il2Cpp.GameItem> Nicokobo.Forge.ForgeModuleApi::FindInstalled(Il2Cpp.GameItem,System.String,System.String)",
+          "ezapi": [
+            "System.Collections.Generic.IReadOnlyList`1<Il2Cpp.GameItem> EZapi.ModuleApi::FindInstalled(Il2Cpp.GameItem,System.String,System.String)"
+          ],
+          "mapped": true,
+          "boundary": null
+        },
+        {
+          "reference": "System.Void Nicokobo.Forge.ForgeModuleApi::Recompute(Il2Cpp.GameItem)",
+          "ezapi": [
+            "System.Void EZapi.ModuleApi::Recompute(Il2Cpp.GameItem)"
+          ],
+          "mapped": true,
+          "boundary": null
+        },
+        {
+          "reference": "System.IDisposable Nicokobo.Forge.ForgeModuleApi::Subscribe(System.String,System.String,Nicokobo.Forge.ForgeModulePhase,System.Action`1<Nicokobo.Forge.ForgeModuleContext>,System.Int32)",
+          "ezapi": [
+            "System.IDisposable EZapi.ModuleApi::Subscribe(System.String,System.String,EZapi.ModulePhase,System.Action`1<EZapi.ModuleContext>,System.Int32)"
+          ],
+          "mapped": true,
+          "boundary": null
+        },
+        {
+          "reference": "System.IDisposable Nicokobo.Forge.ForgeModuleApi::SubscribeLearning(System.String,System.String,System.Func`2<Il2Cpp.GameItem,T>,System.Action`2<Il2Cpp.GameItem,T>)",
+          "ezapi": [
+            "System.IDisposable EZapi.ModuleApi::SubscribeLearning(System.String,System.String,System.Func`2<Il2Cpp.GameItem,T>,System.Action`2<Il2Cpp.GameItem,T>)"
+          ],
+          "mapped": true,
+          "boundary": null
+        }
+      ],
+      "fields": []
+    },
+    {
+      "reference": "Nicokobo.Forge.ForgeModulePhase",
+      "ezapi": "EZapi.ModulePhase",
+      "mapped": true,
+      "semanticsVerifiedByInventory": false,
+      "behaviorAudits": [],
+      "properties": [],
+      "methods": [],
+      "fields": [
+        {
+          "reference": "BeforeAggregate",
+          "referenceConstant": 0,
+          "ezapi": "EZapi.ModulePhase.BeforeAggregate",
+          "mapped": true,
+          "boundary": null
+        },
+        {
+          "reference": "AfterAggregate",
+          "referenceConstant": 1,
+          "ezapi": "EZapi.ModulePhase.AfterAggregate",
+          "mapped": true,
+          "boundary": null
+        },
+        {
+          "reference": "AfterTemp",
+          "referenceConstant": 2,
+          "ezapi": "EZapi.ModulePhase.AfterTemp",
+          "mapped": true,
+          "boundary": null
+        },
+        {
+          "reference": "BeforeAdded",
+          "referenceConstant": 3,
+          "ezapi": "EZapi.ModulePhase.BeforeAdded",
+          "mapped": true,
+          "boundary": null
+        },
+        {
+          "reference": "AfterRemoved",
+          "referenceConstant": 4,
+          "ezapi": "EZapi.ModulePhase.AfterRemoved",
+          "mapped": true,
+          "boundary": null
+        }
+      ]
+    },
+    {
+      "reference": "Nicokobo.Forge.ForgeModuleContext",
+      "ezapi": "EZapi.ModuleContext",
+      "mapped": true,
+      "semanticsVerifiedByInventory": false,
+      "behaviorAudits": [],
+      "properties": [
+        {
+          "reference": "Modules",
+          "ezapi": "EZapi.ModuleContext.Modules",
+          "mapped": true
+        },
+        {
+          "reference": "Machine",
+          "ezapi": "EZapi.ModuleContext.Machine",
+          "mapped": true
+        },
+        {
+          "reference": "Module",
+          "ezapi": "EZapi.ModuleContext.Module",
+          "mapped": true
+        }
+      ],
+      "methods": [],
+      "fields": []
+    },
+    {
+      "reference": "Nicokobo.Forge.ForgePhoneContext",
+      "ezapi": "EZapi.PhoneContext",
+      "mapped": true,
+      "semanticsVerifiedByInventory": false,
+      "behaviorAudits": [],
+      "properties": [
+        {
+          "reference": "Generation",
+          "ezapi": "EZapi.PhoneContext.Generation",
+          "mapped": true
+        },
+        {
+          "reference": "RunId",
+          "ezapi": "EZapi.PhoneContext.RunId",
+          "mapped": true
+        },
+        {
+          "reference": "SlotId",
+          "ezapi": "EZapi.PhoneContext.SlotId",
+          "mapped": true
+        }
+      ],
+      "methods": [],
+      "fields": []
+    },
+    {
+      "reference": "Nicokobo.Forge.ForgePhoneContact",
+      "ezapi": "EZapi.PhoneContact",
+      "mapped": true,
+      "semanticsVerifiedByInventory": false,
+      "behaviorAudits": [],
+      "properties": [
+        {
+          "reference": "Id",
+          "ezapi": "EZapi.PhoneContact.Id",
+          "mapped": true
+        },
+        {
+          "reference": "Number",
+          "ezapi": "EZapi.PhoneContact.Number",
+          "mapped": true
+        },
+        {
+          "reference": "Visible",
+          "ezapi": "EZapi.PhoneContact.Visible",
+          "mapped": true
+        },
+        {
+          "reference": "DisplayName",
+          "ezapi": "EZapi.PhoneContact.DisplayName",
+          "mapped": true
+        },
+        {
+          "reference": "Call",
+          "ezapi": "EZapi.PhoneContact.Call",
+          "mapped": true
+        }
+      ],
+      "methods": [],
+      "fields": []
+    },
+    {
+      "reference": "Nicokobo.Forge.ForgePhoneApi",
+      "ezapi": "EZapi.PhoneApi",
+      "mapped": true,
+      "semanticsVerifiedByInventory": false,
+      "behaviorAudits": [],
+      "properties": [
+        {
+          "reference": "IsAvailable",
+          "ezapi": "EZapi.PhoneApi.IsAvailable",
+          "mapped": true
+        }
+      ],
+      "methods": [
+        {
+          "reference": "Nicokobo.Forge.ForgePresentationResult Nicokobo.Forge.ForgePhoneApi::Register(System.String,Nicokobo.Forge.ForgePhoneContact)",
+          "ezapi": [
+            "EZapi.PresentationResult EZapi.PhoneApi::Register(System.String,EZapi.PhoneContact)"
+          ],
+          "mapped": true,
+          "boundary": null
+        }
+      ],
+      "fields": []
+    },
+    {
+      "reference": "Nicokobo.Forge.ForgePowerApi",
+      "ezapi": "EZapi.Power",
+      "mapped": true,
+      "semanticsVerifiedByInventory": false,
+      "behaviorAudits": [],
+      "properties": [],
+      "methods": [
+        {
+          "reference": "System.Int32 Nicokobo.Forge.ForgePowerApi::GetMachineCost(Il2Cpp.GameItem)",
+          "ezapi": [
+            "System.Int32 EZapi.Power::GetMachineCost(Il2Cpp.GameItem)"
+          ],
+          "mapped": true,
+          "boundary": null
+        },
+        {
+          "reference": "System.Int32 Nicokobo.Forge.ForgePowerApi::GetEnergy(Il2Cpp.GameItem)",
+          "ezapi": [
+            "System.Int32 EZapi.Power::GetEnergy(Il2Cpp.GameItem)"
+          ],
+          "mapped": true,
+          "boundary": null
+        },
+        {
+          "reference": "Nicokobo.Forge.Runtime.ForgeEnergyDebitResult Nicokobo.Forge.ForgePowerApi::TryDebit(Il2Cpp.GameItem,System.Int32)",
+          "ezapi": [
+            "EZapi.EnergyDebitResult EZapi.Power::TryDebit(Il2Cpp.GameItem,System.Int32)"
+          ],
+          "mapped": true,
+          "boundary": null
+        }
+      ],
+      "fields": []
+    },
+    {
+      "reference": "Nicokobo.Forge.ForgeModuleText",
+      "ezapi": "EZapi.ModuleText",
+      "mapped": true,
+      "semanticsVerifiedByInventory": false,
+      "behaviorAudits": [],
+      "properties": [
+        {
+          "reference": "AdditionalEffect",
+          "ezapi": "EZapi.ModuleText.AdditionalEffect",
+          "mapped": true
+        },
+        {
+          "reference": "Lines",
+          "ezapi": "EZapi.ModuleText.Lines",
+          "mapped": true
+        }
+      ],
+      "methods": [],
+      "fields": []
+    },
+    {
+      "reference": "Nicokobo.Forge.ForgePresentationApi",
+      "ezapi": "EZapi.PresentationApi",
+      "mapped": true,
+      "semanticsVerifiedByInventory": false,
+      "behaviorAudits": [],
+      "properties": [],
+      "methods": [
+        {
+          "reference": "System.Void Nicokobo.Forge.ForgePresentationApi::RegisterOwnerDisplayName(System.String,System.String,System.String)",
+          "ezapi": [
+            "EZapi.ContentSubmissionResult EZapi.PresentationApi::RegisterOwnerDisplayName(System.String,System.String,System.String)"
+          ],
+          "mapped": true,
+          "boundary": null
+        },
+        {
+          "reference": "System.String Nicokobo.Forge.ForgePresentationApi::GetRegisteredItemName(System.String,System.Boolean)",
+          "ezapi": [
+            "System.String EZapi.PresentationApi::GetRegisteredItemName(System.String,System.Boolean)"
+          ],
+          "mapped": true,
+          "boundary": null
+        },
+        {
+          "reference": "System.String Nicokobo.Forge.ForgePresentationApi::GetRegisteredItemDescription(System.String,System.Boolean)",
+          "ezapi": [
+            "System.String EZapi.PresentationApi::GetRegisteredItemDescription(System.String,System.Boolean)"
+          ],
+          "mapped": true,
+          "boundary": null
+        },
+        {
+          "reference": "System.Void Nicokobo.Forge.ForgePresentationApi::RegisterModuleText(System.String,System.String,System.Func`3<Il2Cpp.GameItem,System.Boolean,Nicokobo.Forge.ForgeModuleText>)",
+          "ezapi": [
+            "EZapi.ContentSubmissionResult EZapi.PresentationApi::RegisterModuleText(System.String,System.String,System.Func`3<Il2Cpp.GameItem,System.Boolean,EZapi.ModuleText>)"
+          ],
+          "mapped": true,
+          "boundary": null
+        },
+        {
+          "reference": "System.Void Nicokobo.Forge.ForgePresentationApi::RegisterEffectText(System.String,System.String,Nicokobo.Forge.Registration.LocalizedItemText,Nicokobo.Forge.Registration.LocalizedItemText)",
+          "ezapi": [
+            "EZapi.ContentSubmissionResult EZapi.PresentationApi::RegisterEffectText(System.String,System.String,EZapi.LocalizedItemText,EZapi.LocalizedItemText)"
+          ],
+          "mapped": true,
+          "boundary": null
+        }
+      ],
+      "fields": []
+    },
+    {
+      "reference": "Nicokobo.Forge.ForgeProductionValueApi",
+      "ezapi": "EZapi.ProductionValueApi",
+      "mapped": true,
+      "semanticsVerifiedByInventory": false,
+      "behaviorAudits": [],
+      "properties": [],
+      "methods": [
+        {
+          "reference": "System.Decimal Nicokobo.Forge.ForgeProductionValueApi::InputValue(Nicokobo.Forge.ForgeMachineBatchContext,System.Func`2<Nicokobo.Forge.ForgeMachineItemTake,System.Decimal>,System.Func`2<Nicokobo.Forge.ForgeMachineLiquidTake,System.Decimal>)",
+          "ezapi": [
+            "System.Decimal EZapi.ProductionValueApi::InputValue(EZapi.MachineBatchContext,System.Func`2<EZapi.MachineItemTake,System.Decimal>,System.Func`2<EZapi.MachineLiquidTake,System.Decimal>)"
+          ],
+          "mapped": true,
+          "boundary": null
+        },
+        {
+          "reference": "System.Int64 Nicokobo.Forge.ForgeProductionValueApi::Calculate(Nicokobo.Forge.ForgeMachineBatchContext,System.Int32,System.Func`2<Nicokobo.Forge.ForgeMachineItemTake,System.Decimal>,System.Func`2<Nicokobo.Forge.ForgeMachineLiquidTake,System.Decimal>)",
+          "ezapi": [
+            "System.Int64 EZapi.ProductionValueApi::Calculate(EZapi.MachineBatchContext,System.Int32,System.Func`2<EZapi.MachineItemTake,System.Decimal>,System.Func`2<EZapi.MachineLiquidTake,System.Decimal>)"
+          ],
+          "mapped": true,
+          "boundary": null
+        },
+        {
+          "reference": "System.Void Nicokobo.Forge.ForgeProductionValueApi::SetBasis(Il2Cpp.GameItem,System.Int64)",
+          "ezapi": [
+            "System.Void EZapi.ProductionValueApi::SetBasis(Il2Cpp.GameItem,System.Int64)"
+          ],
+          "mapped": true,
+          "boundary": null
+        },
+        {
+          "reference": "System.Int64 Nicokobo.Forge.ForgeProductionValueApi::ReadBasis(Il2Cpp.GameItem,System.Int64)",
+          "ezapi": [
+            "System.Int64 EZapi.ProductionValueApi::ReadBasis(Il2Cpp.GameItem,System.Int64)"
+          ],
+          "mapped": true,
+          "boundary": null
+        }
+      ],
+      "fields": [
+        {
+          "reference": "BasisTag",
+          "referenceConstant": "NICOKOBO_FORGE_PRODUCTION_BASIS_V1",
+          "ezapi": "EZapi.ProductionValueApi.BasisTag",
+          "mapped": true,
+          "boundary": null
+        }
+      ]
+    },
+    {
+      "reference": "Nicokobo.Forge.ForgeProductionValueMath",
+      "ezapi": "EZapi.ProductionValueMath",
+      "mapped": true,
+      "semanticsVerifiedByInventory": false,
+      "behaviorAudits": [],
+      "properties": [],
+      "methods": [
+        {
+          "reference": "System.Int64 Nicokobo.Forge.ForgeProductionValueMath::PerOutput(System.Decimal,System.Int32,System.Int32)",
+          "ezapi": [
+            "System.Int64 EZapi.ProductionValueMath::PerOutput(System.Decimal,System.Int32,System.Int32)"
+          ],
+          "mapped": true,
+          "boundary": null
+        },
+        {
+          "reference": "System.Int64 Nicokobo.Forge.ForgeProductionValueMath::PerOutputWithOverhead(System.Decimal,System.Int32,System.Decimal,System.Int32)",
+          "ezapi": [
+            "System.Int64 EZapi.ProductionValueMath::PerOutputWithOverhead(System.Decimal,System.Int32,System.Decimal,System.Int32)"
+          ],
+          "mapped": true,
+          "boundary": null
+        }
+      ],
+      "fields": []
+    },
+    {
+      "reference": "Nicokobo.Forge.ForgeReadingApi",
+      "ezapi": "EZapi.ReadingApi",
+      "mapped": true,
+      "semanticsVerifiedByInventory": false,
+      "behaviorAudits": [],
+      "properties": [
+        {
+          "reference": "IsAvailable",
+          "ezapi": "EZapi.ReadingApi.IsAvailable",
+          "mapped": true
+        }
+      ],
+      "methods": [
+        {
+          "reference": "Nicokobo.Forge.ForgePresentationResult Nicokobo.Forge.ForgeReadingApi::Open(System.String,System.String,System.String,System.Int32,System.String,System.String,System.String)",
+          "ezapi": [
+            "EZapi.PresentationResult EZapi.ReadingApi::Open(System.String,System.String,System.String,System.Int32,System.String,System.String,System.String)"
+          ],
+          "mapped": true,
+          "boundary": null
+        },
+        {
+          "reference": "Nicokobo.Forge.ForgePresentationResult Nicokobo.Forge.ForgeReadingApi::Close(System.String,System.String)",
+          "ezapi": [
+            "EZapi.PresentationResult EZapi.ReadingApi::Close(System.String,System.String)"
+          ],
+          "mapped": true,
+          "boundary": null
+        }
+      ],
+      "fields": []
+    },
+    {
+      "reference": "Nicokobo.Forge.ForgeRecipeGuideApi",
+      "ezapi": "EZapi.RecipeGuideApi",
+      "mapped": true,
+      "semanticsVerifiedByInventory": false,
+      "behaviorAudits": [
+        "recipe-guide-public-contract.audit.json"
+      ],
+      "properties": [
+        {
+          "reference": "IsVisible",
+          "ezapi": "EZapi.RecipeGuideApi.IsVisible",
+          "mapped": true
+        }
+      ],
+      "methods": [
+        {
+          "reference": "System.Void Nicokobo.Forge.ForgeRecipeGuideApi::Close()",
+          "ezapi": [
+            "System.Void EZapi.RecipeGuideApi::Close()"
+          ],
+          "mapped": true,
+          "boundary": null
+        },
+        {
+          "reference": "Nicokobo.Forge.Registration.SubmitResult Nicokobo.Forge.ForgeRecipeGuideApi::RegisterRecipes(System.String,System.Collections.Generic.IReadOnlyList`1<Nicokobo.Forge.ForgeRecipeGuideEntry>)",
+          "ezapi": [
+            "EZapi.ContentSubmissionResult EZapi.RecipeGuideApi::RegisterRecipes(System.String,System.Collections.Generic.IReadOnlyList`1<EZapi.RecipeGuideEntry>)"
+          ],
+          "mapped": true,
+          "boundary": null
+        },
+        {
+          "reference": "Nicokobo.Forge.ForgeRecipeGuideSnapshot Nicokobo.Forge.ForgeRecipeGuideApi::Snapshot()",
+          "ezapi": [
+            "EZapi.RecipeGuideSnapshot EZapi.RecipeGuideApi::Snapshot()"
+          ],
+          "mapped": true,
+          "boundary": null
+        }
+      ],
+      "fields": []
+    },
+    {
+      "reference": "Nicokobo.Forge.ForgeRecipeGuideDisplay",
+      "ezapi": "EZapi.RecipeGuideDisplay",
+      "mapped": true,
+      "semanticsVerifiedByInventory": false,
+      "behaviorAudits": [
+        "machine-public-contract.audit.json",
+        "recipe-guide-public-contract.audit.json"
+      ],
+      "properties": [
+        {
+          "reference": "IllustrationItemId",
+          "ezapi": "EZapi.RecipeGuideDisplay.IllustrationItemId",
+          "mapped": true
+        },
+        {
+          "reference": "Name",
+          "ezapi": "EZapi.RecipeGuideDisplay.LocalizedName",
+          "mapped": true
+        },
+        {
+          "reference": "Requirement",
+          "ezapi": "EZapi.RecipeGuideDisplay.LocalizedRequirement",
+          "mapped": true
+        },
+        {
+          "reference": "Quantity",
+          "ezapi": "EZapi.RecipeGuideDisplay.LocalizedQuantity",
+          "mapped": true
+        }
+      ],
+      "methods": [],
+      "fields": []
+    },
+    {
+      "reference": "Nicokobo.Forge.ForgeRecipeGuideOptions",
+      "ezapi": "EZapi.RecipeGuideOptions",
+      "mapped": true,
+      "semanticsVerifiedByInventory": false,
+      "behaviorAudits": [
+        "machine-public-contract.audit.json",
+        "recipe-guide-public-contract.audit.json"
+      ],
+      "properties": [
+        {
+          "reference": "CategoryId",
+          "ezapi": "EZapi.RecipeGuideOptions.CategoryId",
+          "mapped": true
+        },
+        {
+          "reference": "Note",
+          "ezapi": "EZapi.RecipeGuideOptions.LocalizedNote",
+          "mapped": true
+        }
+      ],
+      "methods": [],
+      "fields": []
+    },
+    {
+      "reference": "Nicokobo.Forge.ForgeRecipeGuideFigure",
+      "ezapi": "EZapi.RecipeGuideFigure",
+      "mapped": true,
+      "semanticsVerifiedByInventory": false,
+      "behaviorAudits": [
+        "recipe-guide-public-contract.audit.json"
+      ],
+      "properties": [
+        {
+          "reference": "ItemId",
+          "ezapi": "EZapi.RecipeGuideFigure.ItemId",
+          "mapped": true
+        },
+        {
+          "reference": "Amount",
+          "ezapi": "EZapi.RecipeGuideFigure.Amount",
+          "mapped": true
+        },
+        {
+          "reference": "Name",
+          "ezapi": "EZapi.RecipeGuideFigure.LocalizedName",
+          "mapped": true
+        },
+        {
+          "reference": "Requirement",
+          "ezapi": "EZapi.RecipeGuideFigure.LocalizedRequirement",
+          "mapped": true
+        },
+        {
+          "reference": "Quantity",
+          "ezapi": "EZapi.RecipeGuideFigure.LocalizedQuantity",
+          "mapped": true
+        }
+      ],
+      "methods": [],
+      "fields": []
+    },
+    {
+      "reference": "Nicokobo.Forge.ForgeRecipeGuideEntry",
+      "ezapi": "EZapi.RecipeGuideEntry",
+      "mapped": true,
+      "semanticsVerifiedByInventory": false,
+      "behaviorAudits": [
+        "recipe-guide-public-contract.audit.json"
+      ],
+      "properties": [
+        {
+          "reference": "OwnerId",
+          "ezapi": "EZapi.RecipeGuideEntry.OwnerId",
+          "mapped": true
+        },
+        {
+          "reference": "RecipeId",
+          "ezapi": "EZapi.RecipeGuideEntry.RecipeId",
+          "mapped": true
+        },
+        {
+          "reference": "MachineId",
+          "ezapi": "EZapi.RecipeGuideEntry.MachineId",
+          "mapped": true
+        },
+        {
+          "reference": "MachineName",
+          "ezapi": "EZapi.RecipeGuideEntry.LocalizedMachineName",
+          "mapped": true
+        },
+        {
+          "reference": "CategoryId",
+          "ezapi": "EZapi.RecipeGuideEntry.CategoryId",
+          "mapped": true
+        },
+        {
+          "reference": "Inputs",
+          "ezapi": "EZapi.RecipeGuideEntry.Inputs",
+          "mapped": true
+        },
+        {
+          "reference": "Output",
+          "ezapi": "EZapi.RecipeGuideEntry.Output",
+          "mapped": true
+        },
+        {
+          "reference": "Note",
+          "ezapi": "EZapi.RecipeGuideEntry.LocalizedNote",
+          "mapped": true
+        }
+      ],
+      "methods": [],
+      "fields": []
+    },
+    {
+      "reference": "Nicokobo.Forge.ForgeRecipeGuideSnapshot",
+      "ezapi": "EZapi.RecipeGuideSnapshot",
+      "mapped": true,
+      "semanticsVerifiedByInventory": false,
+      "behaviorAudits": [
+        "recipe-guide-public-contract.audit.json"
+      ],
+      "properties": [
+        {
+          "reference": "Revision",
+          "ezapi": "EZapi.RecipeGuideSnapshot.Revision",
+          "mapped": true
+        },
+        {
+          "reference": "Recipes",
+          "ezapi": "EZapi.RecipeGuideSnapshot.Recipes",
+          "mapped": true
+        }
+      ],
+      "methods": [],
+      "fields": []
+    },
+    {
+      "reference": "Nicokobo.Forge.RunDataStatus",
+      "ezapi": "EZapi.RunDataStatus",
+      "mapped": true,
+      "semanticsVerifiedByInventory": false,
+      "behaviorAudits": [],
+      "properties": [],
+      "methods": [],
+      "fields": [
+        {
+          "reference": "Disabled",
+          "referenceConstant": 0,
+          "ezapi": "EZapi.RunDataStatus.Disabled",
+          "mapped": true,
+          "boundary": null
+        },
+        {
+          "reference": "Invalid",
+          "referenceConstant": 1,
+          "ezapi": "EZapi.RunDataStatus.Invalid",
+          "mapped": true,
+          "boundary": null
+        },
+        {
+          "reference": "Unavailable",
+          "referenceConstant": 2,
+          "ezapi": "EZapi.RunDataStatus.Unavailable",
+          "mapped": true,
+          "boundary": null
+        },
+        {
+          "reference": "Missing",
+          "referenceConstant": 3,
+          "ezapi": "EZapi.RunDataStatus.Missing",
+          "mapped": true,
+          "boundary": null
+        },
+        {
+          "reference": "Present",
+          "referenceConstant": 4,
+          "ezapi": "EZapi.RunDataStatus.Present",
+          "mapped": true,
+          "boundary": null
+        },
+        {
+          "reference": "StagedInMemory",
+          "referenceConstant": 5,
+          "ezapi": "EZapi.RunDataStatus.StagedInMemory",
+          "mapped": true,
+          "boundary": null
+        },
+        {
+          "reference": "Conflict",
+          "referenceConstant": 6,
+          "ezapi": "EZapi.RunDataStatus.Conflict",
+          "mapped": true,
+          "boundary": null
+        },
+        {
+          "reference": "Indeterminate",
+          "referenceConstant": 7,
+          "ezapi": "EZapi.RunDataStatus.Indeterminate",
+          "mapped": true,
+          "boundary": null
+        }
+      ]
+    },
+    {
+      "reference": "Nicokobo.Forge.RunDataResult",
+      "ezapi": "EZapi.RunDataResult",
+      "mapped": true,
+      "semanticsVerifiedByInventory": false,
+      "behaviorAudits": [],
+      "properties": [
+        {
+          "reference": "Status",
+          "ezapi": "EZapi.RunDataResult.Status",
+          "mapped": true
+        },
+        {
+          "reference": "Json",
+          "ezapi": "EZapi.RunDataResult.Json",
+          "mapped": true
+        },
+        {
+          "reference": "Reason",
+          "ezapi": "EZapi.RunDataResult.Reason",
+          "mapped": true
+        }
+      ],
+      "methods": [],
+      "fields": []
+    },
+    {
+      "reference": "Nicokobo.Forge.ForgeRunDataApi",
+      "ezapi": "EZapi.RunDataApi",
+      "mapped": true,
+      "semanticsVerifiedByInventory": false,
+      "behaviorAudits": [],
+      "properties": [],
+      "methods": [
+        {
+          "reference": "Nicokobo.Forge.RunDataResult Nicokobo.Forge.ForgeRunDataApi::Read(Il2Cpp.PlayerStore,System.String,System.String)",
+          "ezapi": [
+            "EZapi.RunDataResult EZapi.RunDataApi::Read(System.String,System.String)",
+            "EZapi.RunDataResult EZapi.RunDataApi::Read(Il2Cpp.PlayerStore,System.String,System.String)"
+          ],
+          "mapped": true,
+          "boundary": null
+        },
+        {
+          "reference": "Nicokobo.Forge.RunDataResult Nicokobo.Forge.ForgeRunDataApi::Stage(Il2Cpp.PlayerStore,System.String,System.String,System.String,System.Int32,System.String,System.String)",
+          "ezapi": [
+            "EZapi.RunDataResult EZapi.RunDataApi::Stage(System.String,System.String,EZapi.GameRunIdentity,System.String,System.String)",
+            "EZapi.RunDataResult EZapi.RunDataApi::Stage(Il2Cpp.PlayerStore,System.String,System.String,System.String,System.Int32,System.String,System.String)"
+          ],
+          "mapped": true,
+          "boundary": null
+        }
+      ],
+      "fields": []
+    },
+    {
+      "reference": "Nicokobo.Forge.ForgeRunPurchaseApi",
+      "ezapi": "EZapi.RunPurchaseApi",
+      "mapped": true,
+      "semanticsVerifiedByInventory": false,
+      "behaviorAudits": [],
+      "properties": [],
+      "methods": [
+        {
+          "reference": "Nicokobo.Forge.ForgeTransactionResult Nicokobo.Forge.ForgeRunPurchaseApi::Purchase(Il2Cpp.PlayerStore,System.Int32,System.Collections.Generic.IReadOnlyList`1<Nicokobo.Forge.ForgeTransactionStep>)",
+          "ezapi": [
+            "EZapi.TransactionResult EZapi.RunPurchaseApi::Purchase(System.Int32,System.Collections.Generic.IReadOnlyList`1<EZapi.TransactionStep>)",
+            "EZapi.TransactionResult EZapi.RunPurchaseApi::Purchase(Il2Cpp.PlayerStore,System.Int32,System.Collections.Generic.IReadOnlyList`1<EZapi.TransactionStep>)"
+          ],
+          "mapped": true,
+          "boundary": null
+        }
+      ],
+      "fields": []
+    },
+    {
+      "reference": "Nicokobo.Forge.ForgeSaveReadStatus",
+      "ezapi": "EZapi.SaveReadStatus",
+      "mapped": true,
+      "semanticsVerifiedByInventory": false,
+      "behaviorAudits": [],
+      "properties": [],
+      "methods": [],
+      "fields": [
+        {
+          "reference": "Readable",
+          "referenceConstant": 0,
+          "ezapi": "EZapi.SaveReadStatus.Readable",
+          "mapped": true,
+          "boundary": null
+        },
+        {
+          "reference": "Missing",
+          "referenceConstant": 1,
+          "ezapi": "EZapi.SaveReadStatus.Missing",
+          "mapped": true,
+          "boundary": null
+        },
+        {
+          "reference": "TooLarge",
+          "referenceConstant": 2,
+          "ezapi": "EZapi.SaveReadStatus.TooLarge",
+          "mapped": true,
+          "boundary": null
+        },
+        {
+          "reference": "ChangedDuringRead",
+          "referenceConstant": 3,
+          "ezapi": "EZapi.SaveReadStatus.ChangedDuringRead",
+          "mapped": true,
+          "boundary": null
+        },
+        {
+          "reference": "Malformed",
+          "referenceConstant": 4,
+          "ezapi": "EZapi.SaveReadStatus.Malformed",
+          "mapped": true,
+          "boundary": null
+        },
+        {
+          "reference": "Unavailable",
+          "referenceConstant": 5,
+          "ezapi": "EZapi.SaveReadStatus.Unavailable",
+          "mapped": true,
+          "boundary": null
+        },
+        {
+          "reference": "Invalid",
+          "referenceConstant": 6,
+          "ezapi": "EZapi.SaveReadStatus.Invalid",
+          "mapped": true,
+          "boundary": null
+        }
+      ]
+    },
+    {
+      "reference": "Nicokobo.Forge.ForgeSaveReadResult",
+      "ezapi": "EZapi.SaveReadResult",
+      "mapped": true,
+      "semanticsVerifiedByInventory": false,
+      "behaviorAudits": [],
+      "properties": [
+        {
+          "reference": "Status",
+          "ezapi": "EZapi.SaveReadResult.Status",
+          "mapped": true
+        },
+        {
+          "reference": "ByteCount",
+          "ezapi": "EZapi.SaveReadResult.ByteCount",
+          "mapped": true
+        },
+        {
+          "reference": "Reason",
+          "ezapi": "EZapi.SaveReadResult.Reason",
+          "mapped": true
+        },
+        {
+          "reference": "Root",
+          "ezapi": "EZapi.SaveReadResult.Root",
+          "mapped": true
+        }
+      ],
+      "methods": [
+        {
+          "reference": "System.Void Nicokobo.Forge.ForgeSaveReadResult::Dispose()",
+          "ezapi": [
+            "System.Void EZapi.SaveReadResult::Dispose()"
+          ],
+          "mapped": true,
+          "boundary": null
+        }
+      ],
+      "fields": []
+    },
+    {
+      "reference": "Nicokobo.Forge.ForgeSaveReadbackApi",
+      "ezapi": "EZapi.SaveReadbackApi",
+      "mapped": true,
+      "semanticsVerifiedByInventory": false,
+      "behaviorAudits": [],
+      "properties": [],
+      "methods": [
+        {
+          "reference": "Nicokobo.Forge.ForgeSaveReadResult Nicokobo.Forge.ForgeSaveReadbackApi::ReadFile(System.String,System.Int32,System.Int32)",
+          "ezapi": [
+            "EZapi.SaveReadResult EZapi.SaveReadbackApi::ReadFile(System.String,System.Int32,System.Int32)"
+          ],
+          "mapped": true,
+          "boundary": null
+        },
+        {
+          "reference": "Nicokobo.Forge.ForgeSaveReadResult Nicokobo.Forge.ForgeSaveReadbackApi::ReadBytes(System.ReadOnlyMemory`1<System.Byte>,System.Int32,System.Int32)",
+          "ezapi": [
+            "EZapi.SaveReadResult EZapi.SaveReadbackApi::ReadBytes(System.ReadOnlyMemory`1<System.Byte>,System.Int32,System.Int32)"
+          ],
+          "mapped": true,
+          "boundary": null
+        },
+        {
+          "reference": "System.Text.Json.JsonDocument Nicokobo.Forge.ForgeSaveReadbackApi::Parse(System.String,System.Int32)",
+          "ezapi": [
+            "System.Text.Json.JsonDocument EZapi.SaveReadbackApi::Parse(System.String,System.Int32)"
+          ],
+          "mapped": true,
+          "boundary": null
+        },
+        {
+          "reference": "System.Boolean Nicokobo.Forge.ForgeSaveReadbackApi::TryGetUniqueProperty(System.Text.Json.JsonElement,System.String,System.Text.Json.JsonElement&,System.Boolean&)",
+          "ezapi": [
+            "System.Boolean EZapi.SaveReadbackApi::TryGetUniqueProperty(System.Text.Json.JsonElement,System.String,System.Text.Json.JsonElement&,System.Boolean&)"
+          ],
+          "mapped": true,
+          "boundary": null
+        },
+        {
+          "reference": "System.Text.Json.JsonElement Nicokobo.Forge.ForgeSaveReadbackApi::RequireProperty(System.Text.Json.JsonElement,System.String)",
+          "ezapi": [
+            "System.Text.Json.JsonElement EZapi.SaveReadbackApi::RequireProperty(System.Text.Json.JsonElement,System.String)"
+          ],
+          "mapped": true,
+          "boundary": null
+        },
+        {
+          "reference": "System.String Nicokobo.Forge.ForgeSaveReadbackApi::Normalize(System.String)",
+          "ezapi": [
+            "System.String EZapi.SaveReadbackApi::Normalize(System.String)"
+          ],
+          "mapped": true,
+          "boundary": null
+        }
+      ],
+      "fields": [
+        {
+          "reference": "DefaultMaxBytes",
+          "referenceConstant": 16777216,
+          "ezapi": "EZapi.SaveReadbackApi.DefaultMaxBytes",
+          "mapped": true,
+          "boundary": null
+        },
+        {
+          "reference": "DefaultMaxDepth",
+          "referenceConstant": 256,
+          "ezapi": "EZapi.SaveReadbackApi.DefaultMaxDepth",
+          "mapped": true,
+          "boundary": null
+        }
+      ]
+    },
+    {
+      "reference": "Nicokobo.Forge.ForgeSpriteDefinition",
+      "ezapi": "EZapi.SpriteDefinition",
+      "mapped": true,
+      "semanticsVerifiedByInventory": false,
+      "behaviorAudits": [],
+      "properties": [
+        {
+          "reference": "Key",
+          "ezapi": "EZapi.SpriteDefinition.Key",
+          "mapped": true
+        },
+        {
+          "reference": "ResourceName",
+          "ezapi": "EZapi.SpriteDefinition.ResourceName",
+          "mapped": true
+        },
+        {
+          "reference": "Width",
+          "ezapi": "EZapi.SpriteDefinition.Width",
+          "mapped": true
+        },
+        {
+          "reference": "Height",
+          "ezapi": "EZapi.SpriteDefinition.Height",
+          "mapped": true
+        },
+        {
+          "reference": "PivotX",
+          "ezapi": "EZapi.SpriteDefinition.PivotX",
+          "mapped": true
+        },
+        {
+          "reference": "PivotY",
+          "ezapi": "EZapi.SpriteDefinition.PivotY",
+          "mapped": true
+        },
+        {
+          "reference": "KeepReadable",
+          "ezapi": "EZapi.SpriteDefinition.KeepReadable",
+          "mapped": true
+        }
+      ],
+      "methods": [],
+      "fields": []
+    },
+    {
+      "reference": "Nicokobo.Forge.ForgeSpriteFilter",
+      "ezapi": "EZapi.SpriteFilter",
+      "mapped": true,
+      "semanticsVerifiedByInventory": false,
+      "behaviorAudits": [],
+      "properties": [],
+      "methods": [],
+      "fields": [
+        {
+          "reference": "Point",
+          "referenceConstant": 0,
+          "ezapi": "EZapi.SpriteFilter.Point",
+          "mapped": true,
+          "boundary": null
+        },
+        {
+          "reference": "Bilinear",
+          "referenceConstant": 1,
+          "ezapi": "EZapi.SpriteFilter.Bilinear",
+          "mapped": true,
+          "boundary": null
+        }
+      ]
+    },
+    {
+      "reference": "Nicokobo.Forge.ForgeStartApi",
+      "ezapi": "EZapi.StartApi",
+      "mapped": true,
+      "semanticsVerifiedByInventory": false,
+      "behaviorAudits": [],
+      "properties": [],
+      "methods": [
+        {
+          "reference": "Nicokobo.Forge.Registration.SubmitResult Nicokobo.Forge.ForgeStartApi::RegisterStart(System.String,System.String,System.Int32)",
+          "ezapi": [
+            "EZapi.Registration.SubmitResult EZapi.StartApi::RegisterStart(System.String,System.String,System.Int32)",
+            "EZapi.Registration.SubmitResult EZapi.StartApi::RegisterStart(System.String,System.String,Il2Cpp.NewGameData/StartType)"
+          ],
+          "mapped": true,
+          "boundary": null
+        },
+        {
+          "reference": "System.Collections.Generic.IReadOnlyList`1<Nicokobo.Forge.Registration.StartRegistrationView> Nicokobo.Forge.ForgeStartApi::Snapshot()",
+          "ezapi": [
+            "System.Collections.Generic.IReadOnlyList`1<EZapi.Registration.StartRegistrationView> EZapi.StartApi::Snapshot()"
+          ],
+          "mapped": true,
+          "boundary": null
+        }
+      ],
+      "fields": []
+    },
+    {
+      "reference": "Nicokobo.Forge.ForgeSupplierApi",
+      "ezapi": "EZapi.SupplierApi",
+      "mapped": true,
+      "semanticsVerifiedByInventory": false,
+      "behaviorAudits": [],
+      "properties": [
+        {
+          "reference": "IsAvailable",
+          "ezapi": "EZapi.SupplierApi.IsAvailable",
+          "mapped": true
+        }
+      ],
+      "methods": [
+        {
+          "reference": "Nicokobo.Forge.ForgePresentationResult Nicokobo.Forge.ForgeSupplierApi::Queue(System.String,System.String,System.String,System.Int32,System.String,System.String,Nicokobo.Forge.ForgeSupplierDefinition)",
+          "ezapi": [
+            "EZapi.PresentationResult EZapi.SupplierApi::Queue(System.String,System.String,System.String,System.Int32,System.String,System.String,EZapi.SupplierDefinition)"
+          ],
+          "mapped": true,
+          "boundary": null
+        }
+      ],
+      "fields": []
+    },
+    {
+      "reference": "Nicokobo.Forge.ForgeWindowInputCapture",
+      "ezapi": "EZapi.WindowInputCapture",
+      "mapped": true,
+      "semanticsVerifiedByInventory": false,
+      "behaviorAudits": [],
+      "properties": [],
+      "methods": [
+        {
+          "reference": "System.Void Nicokobo.Forge.ForgeWindowInputCapture::Open(System.Int32,System.Boolean)",
+          "ezapi": [
+            "System.Void EZapi.WindowInputCapture::Open(System.Int32,System.Boolean)"
+          ],
+          "mapped": true,
+          "boundary": null
+        },
+        {
+          "reference": "System.Void Nicokobo.Forge.ForgeWindowInputCapture::Close(System.Int32,System.Boolean)",
+          "ezapi": [
+            "System.Void EZapi.WindowInputCapture::Close(System.Int32,System.Boolean)"
+          ],
+          "mapped": true,
+          "boundary": null
+        },
+        {
+          "reference": "System.Boolean Nicokobo.Forge.ForgeWindowInputCapture::BlocksPointer(System.Int32,System.Boolean,System.Boolean)",
+          "ezapi": [
+            "System.Boolean EZapi.WindowInputCapture::BlocksPointer(System.Int32,System.Boolean,System.Boolean)"
+          ],
+          "mapped": true,
+          "boundary": null
+        },
+        {
+          "reference": "System.Void Nicokobo.Forge.ForgeWindowInputCapture::Reset()",
+          "ezapi": [
+            "System.Void EZapi.WindowInputCapture::Reset()"
+          ],
+          "mapped": true,
+          "boundary": null
+        }
+      ],
+      "fields": []
+    },
+    {
+      "reference": "Nicokobo.Forge.ForgeWorkshopGroup",
+      "ezapi": "EZapi.WorkshopGroup",
+      "mapped": true,
+      "semanticsVerifiedByInventory": false,
+      "behaviorAudits": [],
+      "properties": [
+        {
+          "reference": "ChineseTitle",
+          "ezapi": "EZapi.WorkshopGroup.ChineseTitle",
+          "mapped": true
+        },
+        {
+          "reference": "EnglishTitle",
+          "ezapi": "EZapi.WorkshopGroup.EnglishTitle",
+          "mapped": true
+        },
+        {
+          "reference": "EntryCount",
+          "ezapi": "EZapi.WorkshopGroup.EntryCount",
+          "mapped": true
+        }
+      ],
+      "methods": [],
+      "fields": []
+    },
+    {
+      "reference": "Nicokobo.Forge.ForgeWorkshopResourceKind",
+      "ezapi": "EZapi.WorkshopResourceKind",
+      "mapped": true,
+      "semanticsVerifiedByInventory": false,
+      "behaviorAudits": [],
+      "properties": [],
+      "methods": [],
+      "fields": [
+        {
+          "reference": "Credits",
+          "referenceConstant": 0,
+          "ezapi": "EZapi.WorkshopResourceKind.Credits",
+          "mapped": true,
+          "boundary": null
+        },
+        {
+          "reference": "Item",
+          "referenceConstant": 1,
+          "ezapi": "EZapi.WorkshopResourceKind.Item",
+          "mapped": true,
+          "boundary": null
+        }
+      ]
+    },
+    {
+      "reference": "Nicokobo.Forge.ForgeWorkshopRequirement",
+      "ezapi": "EZapi.WorkshopRequirement",
+      "mapped": true,
+      "semanticsVerifiedByInventory": false,
+      "behaviorAudits": [],
+      "properties": [
+        {
+          "reference": "Kind",
+          "ezapi": "EZapi.WorkshopRequirement.Kind",
+          "mapped": true
+        },
+        {
+          "reference": "ResourceId",
+          "ezapi": "EZapi.WorkshopRequirement.ResourceId",
+          "mapped": true
+        },
+        {
+          "reference": "Quantity",
+          "ezapi": "EZapi.WorkshopRequirement.Quantity",
+          "mapped": true
+        },
+        {
+          "reference": "Consume",
+          "ezapi": "EZapi.WorkshopRequirement.Consume",
+          "mapped": true
+        },
+        {
+          "reference": "Satisfied",
+          "ezapi": "EZapi.WorkshopRequirement.Satisfied",
+          "mapped": true
+        },
+        {
+          "reference": "DisplayName",
+          "ezapi": "EZapi.WorkshopRequirement.DisplayName",
+          "mapped": true
+        }
+      ],
+      "methods": [],
+      "fields": []
+    },
+    {
+      "reference": "Nicokobo.Forge.ForgeWorkshopReward",
+      "ezapi": "EZapi.WorkshopReward",
+      "mapped": true,
+      "semanticsVerifiedByInventory": false,
+      "behaviorAudits": [],
+      "properties": [
+        {
+          "reference": "Kind",
+          "ezapi": "EZapi.WorkshopReward.Kind",
+          "mapped": true
+        },
+        {
+          "reference": "ResourceId",
+          "ezapi": "EZapi.WorkshopReward.ResourceId",
+          "mapped": true
+        },
+        {
+          "reference": "Quantity",
+          "ezapi": "EZapi.WorkshopReward.Quantity",
+          "mapped": true
+        },
+        {
+          "reference": "DisplayName",
+          "ezapi": "EZapi.WorkshopReward.DisplayName",
+          "mapped": true
+        }
+      ],
+      "methods": [],
+      "fields": []
+    },
+    {
+      "reference": "Nicokobo.Forge.ForgeWorkshopEntry",
+      "ezapi": "EZapi.WorkshopEntry",
+      "mapped": true,
+      "semanticsVerifiedByInventory": false,
+      "behaviorAudits": [],
+      "properties": [
+        {
+          "reference": "Id",
+          "ezapi": "EZapi.WorkshopEntry.Id",
+          "mapped": true
+        },
+        {
+          "reference": "Title",
+          "ezapi": "EZapi.WorkshopEntry.Title",
+          "mapped": true
+        },
+        {
+          "reference": "Subtitle",
+          "ezapi": "EZapi.WorkshopEntry.Subtitle",
+          "mapped": true
+        },
+        {
+          "reference": "Description",
+          "ezapi": "EZapi.WorkshopEntry.Description",
+          "mapped": true
+        },
+        {
+          "reference": "Requirement",
+          "ezapi": "EZapi.WorkshopEntry.Requirement",
+          "mapped": true
+        },
+        {
+          "reference": "CostText",
+          "ezapi": "EZapi.WorkshopEntry.CostText",
+          "mapped": true
+        },
+        {
+          "reference": "NodeCostText",
+          "ezapi": "EZapi.WorkshopEntry.NodeCostText",
+          "mapped": true
+        },
+        {
+          "reference": "StateText",
+          "ezapi": "EZapi.WorkshopEntry.StateText",
+          "mapped": true
+        },
+        {
+          "reference": "ActionText",
+          "ezapi": "EZapi.WorkshopEntry.ActionText",
+          "mapped": true
+        },
+        {
+          "reference": "Unlocked",
+          "ezapi": "EZapi.WorkshopEntry.Unlocked",
+          "mapped": true
+        },
+        {
+          "reference": "PrerequisiteMet",
+          "ezapi": "EZapi.WorkshopEntry.PrerequisiteMet",
+          "mapped": true
+        },
+        {
+          "reference": "ActionEnabled",
+          "ezapi": "EZapi.WorkshopEntry.ActionEnabled",
+          "mapped": true
+        },
+        {
+          "reference": "Dependencies",
+          "ezapi": "EZapi.WorkshopEntry.Dependencies",
+          "mapped": true
+        },
+        {
+          "reference": "Conditions",
+          "ezapi": "EZapi.WorkshopEntry.Conditions",
+          "mapped": true
+        },
+        {
+          "reference": "Rewards",
+          "ezapi": "EZapi.WorkshopEntry.Rewards",
+          "mapped": true
+        },
+        {
+          "reference": "Completed",
+          "ezapi": "EZapi.WorkshopEntry.Completed",
+          "mapped": true
+        },
+        {
+          "reference": "VisualLinks",
+          "ezapi": "EZapi.WorkshopEntry.VisualLinks",
+          "mapped": true
+        },
+        {
+          "reference": "GraphX",
+          "ezapi": "EZapi.WorkshopEntry.GraphX",
+          "mapped": true
+        },
+        {
+          "reference": "GraphY",
+          "ezapi": "EZapi.WorkshopEntry.GraphY",
+          "mapped": true
+        }
+      ],
+      "methods": [],
+      "fields": []
+    },
+    {
+      "reference": "Nicokobo.Forge.ForgeWorkshopSnapshot",
+      "ezapi": "EZapi.WorkshopSnapshot",
+      "mapped": true,
+      "semanticsVerifiedByInventory": false,
+      "behaviorAudits": [],
+      "properties": [
+        {
+          "reference": "Credits",
+          "ezapi": "EZapi.WorkshopSnapshot.Credits",
+          "mapped": true
+        },
+        {
+          "reference": "English",
+          "ezapi": "EZapi.WorkshopSnapshot.English",
+          "mapped": true
+        },
+        {
+          "reference": "Groups",
+          "ezapi": "EZapi.WorkshopSnapshot.Groups",
+          "mapped": true
+        },
+        {
+          "reference": "Entries",
+          "ezapi": "EZapi.WorkshopSnapshot.Entries",
+          "mapped": true
+        },
+        {
+          "reference": "Message",
+          "ezapi": "EZapi.WorkshopSnapshot.Message",
+          "mapped": true
+        }
+      ],
+      "methods": [],
+      "fields": []
+    },
+    {
+      "reference": "Nicokobo.Forge.ForgeWorkshopTabHeader",
+      "ezapi": "EZapi.WorkshopTabHeader",
+      "mapped": true,
+      "semanticsVerifiedByInventory": false,
+      "behaviorAudits": [],
+      "properties": [
+        {
+          "reference": "Id",
+          "ezapi": "EZapi.WorkshopTabHeader.Id",
+          "mapped": true
+        },
+        {
+          "reference": "ChineseTitle",
+          "ezapi": "EZapi.WorkshopTabHeader.ChineseTitle",
+          "mapped": true
+        },
+        {
+          "reference": "EnglishTitle",
+          "ezapi": "EZapi.WorkshopTabHeader.EnglishTitle",
+          "mapped": true
+        }
+      ],
+      "methods": [],
+      "fields": []
+    },
+    {
+      "reference": "Nicokobo.Forge.ForgeWorkshopApi",
+      "ezapi": "EZapi.WorkshopApi",
+      "mapped": true,
+      "semanticsVerifiedByInventory": false,
+      "behaviorAudits": [],
+      "properties": [
+        {
+          "reference": "IsVisible",
+          "ezapi": "EZapi.WorkshopApi.IsVisible",
+          "mapped": true
+        }
+      ],
+      "methods": [
+        {
+          "reference": "Nicokobo.Forge.Registration.SubmitResult Nicokobo.Forge.ForgeWorkshopApi::RegisterTab(System.String,System.String,System.String,System.String,System.Func`1<Nicokobo.Forge.ForgeWorkshopSnapshot>,System.Action`1<System.String>)",
+          "ezapi": [
+            "EZapi.Registration.SubmitResult EZapi.WorkshopApi::RegisterTab(System.String,System.String,System.String,System.String,System.Func`1<EZapi.WorkshopSnapshot>,System.Action`1<System.String>)"
+          ],
+          "mapped": true,
+          "boundary": null
+        },
+        {
+          "reference": "Nicokobo.Forge.Registration.SubmitResult Nicokobo.Forge.ForgeWorkshopApi::RegisterChain(System.String,System.String,System.String,System.String,System.Func`1<Nicokobo.Forge.ForgeWorkshopSnapshot>,System.Action`1<System.String>)",
+          "ezapi": [
+            "EZapi.Registration.SubmitResult EZapi.WorkshopApi::RegisterChain(System.String,System.String,System.String,System.String,System.Func`1<EZapi.WorkshopSnapshot>,System.Action`1<System.String>)"
+          ],
+          "mapped": true,
+          "boundary": null
+        },
+        {
+          "reference": "System.Boolean Nicokobo.Forge.ForgeWorkshopApi::OpenTab(System.String)",
+          "ezapi": [
+            "System.Boolean EZapi.WorkshopApi::OpenTab(System.String)"
+          ],
+          "mapped": true,
+          "boundary": null
+        },
+        {
+          "reference": "System.Void Nicokobo.Forge.ForgeWorkshopApi::CloseWindow()",
+          "ezapi": [
+            "System.Void EZapi.WorkshopApi::CloseWindow()"
+          ],
+          "mapped": true,
+          "boundary": null
+        },
+        {
+          "reference": "System.Boolean Nicokobo.Forge.ForgeWorkshopApi::OpenChain(System.String)",
+          "ezapi": [
+            "System.Boolean EZapi.WorkshopApi::OpenChain(System.String)"
+          ],
+          "mapped": true,
+          "boundary": null
+        }
+      ],
+      "fields": []
+    },
+    {
+      "reference": "Nicokobo.Forge.ForgeMachinePowerMath",
+      "ezapi": "EZapi.MachinePowerMath",
+      "mapped": true,
+      "semanticsVerifiedByInventory": false,
+      "behaviorAudits": [
+        "machine-public-contract.audit.json"
+      ],
+      "properties": [],
+      "methods": [
+        {
+          "reference": "System.Int32 Nicokobo.Forge.ForgeMachinePowerMath::CalculateCost(System.Int32,System.Int32,System.Boolean)",
+          "ezapi": [
+            "System.Int32 EZapi.MachinePowerMath::CalculateCost(System.Int32,System.Int32,System.Boolean)"
+          ],
+          "mapped": true,
+          "boundary": null
+        }
+      ],
+      "fields": []
+    },
+    {
+      "reference": "Nicokobo.Forge.NativeApplicationStatus",
+      "ezapi": "EZapi.NativeApplicationStatus",
+      "mapped": true,
+      "semanticsVerifiedByInventory": false,
+      "behaviorAudits": [],
+      "properties": [],
+      "methods": [],
+      "fields": [
+        {
+          "reference": "Staged",
+          "referenceConstant": 0,
+          "ezapi": "EZapi.NativeApplicationStatus.Staged",
+          "mapped": true,
+          "boundary": null
+        },
+        {
+          "reference": "Applied",
+          "referenceConstant": 1,
+          "ezapi": "EZapi.NativeApplicationStatus.Applied",
+          "mapped": true,
+          "boundary": null
+        },
+        {
+          "reference": "Conflict",
+          "referenceConstant": 2,
+          "ezapi": "EZapi.NativeApplicationStatus.Conflict",
+          "mapped": true,
+          "boundary": null
+        },
+        {
+          "reference": "Failed",
+          "referenceConstant": 3,
+          "ezapi": "EZapi.NativeApplicationStatus.Failed",
+          "mapped": true,
+          "boundary": null
+        }
+      ]
+    },
+    {
+      "reference": "Nicokobo.Forge.NativeApplicationView",
+      "ezapi": "EZapi.NativeApplicationView",
+      "mapped": true,
+      "semanticsVerifiedByInventory": false,
+      "behaviorAudits": [],
+      "properties": [
+        {
+          "reference": "OwnerId",
+          "ezapi": "EZapi.NativeApplicationView.OwnerId",
+          "mapped": true
+        },
+        {
+          "reference": "ContentId",
+          "ezapi": "EZapi.NativeApplicationView.ContentId",
+          "mapped": true
+        },
+        {
+          "reference": "Kind",
+          "ezapi": "EZapi.NativeApplicationView.Kind",
+          "mapped": true
+        },
+        {
+          "reference": "Status",
+          "ezapi": "EZapi.NativeApplicationView.Status",
+          "mapped": true
+        },
+        {
+          "reference": "Reason",
+          "ezapi": "EZapi.NativeApplicationView.Reason",
+          "mapped": true
+        }
+      ],
+      "methods": [],
+      "fields": []
+    },
+    {
+      "reference": "Nicokobo.Forge.Plugin",
+      "ezapi": "EZapi.EZapiBootstrap",
+      "mapped": true,
+      "semanticsVerifiedByInventory": false,
+      "behaviorAudits": [],
+      "properties": [],
+      "methods": [
+        {
+          "reference": "System.Void Nicokobo.Forge.Plugin::OnInitializeMelon()",
+          "ezapi": [
+            "System.Void EZapi.EZapiBootstrap::OnInitializeMelon()"
+          ],
+          "mapped": true,
+          "boundary": null
+        },
+        {
+          "reference": "System.Void Nicokobo.Forge.Plugin::OnUpdate()",
+          "ezapi": [
+            "System.Void EZapi.EZapiBootstrap::OnUpdate()"
+          ],
+          "mapped": true,
+          "boundary": null
+        },
+        {
+          "reference": "System.Void Nicokobo.Forge.Plugin::OnLateUpdate()",
+          "ezapi": [],
+          "mapped": true,
+          "boundary": "Loader entrypoint, not a mod-facing utility; equivalent lifecycle dispatch is owned by EZapiBootstrap.OnUpdate."
+        },
+        {
+          "reference": "System.Void Nicokobo.Forge.Plugin::OnSceneWasLoaded(System.Int32,System.String)",
+          "ezapi": [
+            "System.Void EZapi.EZapiBootstrap::OnSceneWasLoaded(System.Int32,System.String)"
+          ],
+          "mapped": true,
+          "boundary": null
+        },
+        {
+          "reference": "System.Void Nicokobo.Forge.Plugin::OnDeinitializeMelon()",
+          "ezapi": [
+            "System.Void EZapi.EZapiBootstrap::OnDeinitializeMelon()"
+          ],
+          "mapped": true,
+          "boundary": null
+        },
+        {
+          "reference": "System.Void Nicokobo.Forge.Plugin::OnGUI()",
+          "ezapi": [
+            "System.Void EZapi.EZapiBootstrap::OnGUI()"
+          ],
+          "mapped": true,
+          "boundary": null
+        }
+      ],
+      "fields": []
+    },
+    {
+      "reference": "Nicokobo.Forge.Runtime.ForgeEnergyDebitStatus",
+      "ezapi": "EZapi.EnergyDebitStatus",
+      "mapped": true,
+      "semanticsVerifiedByInventory": false,
+      "behaviorAudits": [],
+      "properties": [],
+      "methods": [],
+      "fields": [
+        {
+          "reference": "Committed",
+          "referenceConstant": 0,
+          "ezapi": "EZapi.EnergyDebitStatus.Debited",
+          "mapped": true,
+          "boundary": "Independent status representation: Committed => Debited; compare named EZapi values, never reference integer ordinals."
+        },
+        {
+          "reference": "Insufficient",
+          "referenceConstant": 1,
+          "ezapi": "EZapi.EnergyDebitStatus.Insufficient",
+          "mapped": true,
+          "boundary": null
+        },
+        {
+          "reference": "Invalid",
+          "referenceConstant": 2,
+          "ezapi": "EZapi.EnergyDebitStatus.Rejected",
+          "mapped": true,
+          "boundary": "Independent status representation: Invalid => Rejected; compare named EZapi values, never reference integer ordinals."
+        },
+        {
+          "reference": "Restored",
+          "referenceConstant": 3,
+          "ezapi": "EZapi.EnergyDebitStatus.Restored",
+          "mapped": true,
+          "boundary": null
+        },
+        {
+          "reference": "Faulted",
+          "referenceConstant": 4,
+          "ezapi": "EZapi.EnergyDebitStatus.RecoveryFailed",
+          "mapped": true,
+          "boundary": "Independent status representation: Faulted => RecoveryFailed; compare named EZapi values, never reference integer ordinals."
+        }
+      ]
+    },
+    {
+      "reference": "Nicokobo.Forge.Runtime.ForgeEnergyDebitResult",
+      "ezapi": "EZapi.EnergyDebitResult",
+      "mapped": true,
+      "semanticsVerifiedByInventory": false,
+      "behaviorAudits": [],
+      "properties": [
+        {
+          "reference": "Status",
+          "ezapi": "EZapi.EnergyDebitResult.Status",
+          "mapped": true
+        },
+        {
+          "reference": "Before",
+          "ezapi": "EZapi.EnergyDebitResult.Before",
+          "mapped": true
+        },
+        {
+          "reference": "After",
+          "ezapi": "EZapi.EnergyDebitResult.After",
+          "mapped": true
+        }
+      ],
+      "methods": [],
+      "fields": []
+    },
+    {
+      "reference": "Nicokobo.Forge.Registration.DefinitionKind",
+      "ezapi": "EZapi.Registration.DefinitionKind",
+      "mapped": true,
+      "semanticsVerifiedByInventory": false,
+      "behaviorAudits": [],
+      "properties": [],
+      "methods": [],
+      "fields": [
+        {
+          "reference": "Item",
+          "referenceConstant": 0,
+          "ezapi": "EZapi.Registration.DefinitionKind.Item",
+          "mapped": true,
+          "boundary": null
+        },
+        {
+          "reference": "Module",
+          "referenceConstant": 1,
+          "ezapi": "EZapi.Registration.DefinitionKind.Module",
+          "mapped": true,
+          "boundary": null
+        },
+        {
+          "reference": "Node",
+          "referenceConstant": 2,
+          "ezapi": "EZapi.Registration.DefinitionKind.Node",
+          "mapped": true,
+          "boundary": null
+        },
+        {
+          "reference": "Effect",
+          "referenceConstant": 3,
+          "ezapi": "EZapi.Registration.DefinitionKind.Effect",
+          "mapped": true,
+          "boundary": null
+        },
+        {
+          "reference": "Start",
+          "referenceConstant": 4,
+          "ezapi": "EZapi.Registration.DefinitionKind.Start",
+          "mapped": true,
+          "boundary": null
+        },
+        {
+          "reference": "Perk",
+          "referenceConstant": 5,
+          "ezapi": "EZapi.Registration.DefinitionKind.Perk",
+          "mapped": true,
+          "boundary": null
+        },
+        {
+          "reference": "Status",
+          "referenceConstant": 6,
+          "ezapi": "EZapi.Registration.DefinitionKind.Status",
+          "mapped": true,
+          "boundary": null
+        }
+      ]
+    },
+    {
+      "reference": "Nicokobo.Forge.Registration.SubmitStatus",
+      "ezapi": "EZapi.Registration.SubmitStatus",
+      "mapped": true,
+      "semanticsVerifiedByInventory": false,
+      "behaviorAudits": [],
+      "properties": [],
+      "methods": [],
+      "fields": [
+        {
+          "reference": "Accepted",
+          "referenceConstant": 0,
+          "ezapi": "EZapi.Registration.SubmitStatus.Accepted",
+          "mapped": true,
+          "boundary": null
+        },
+        {
+          "reference": "AlreadyPresent",
+          "referenceConstant": 1,
+          "ezapi": "EZapi.Registration.SubmitStatus.AlreadyPresent",
+          "mapped": true,
+          "boundary": null
+        },
+        {
+          "reference": "Invalid",
+          "referenceConstant": 2,
+          "ezapi": "EZapi.Registration.SubmitStatus.Invalid",
+          "mapped": true,
+          "boundary": null
+        },
+        {
+          "reference": "Conflict",
+          "referenceConstant": 3,
+          "ezapi": "EZapi.Registration.SubmitStatus.Conflict",
+          "mapped": true,
+          "boundary": null
+        }
+      ]
+    },
+    {
+      "reference": "Nicokobo.Forge.Registration.RegistrationStatus",
+      "ezapi": "EZapi.Registration.RegistrationStatus",
+      "mapped": true,
+      "semanticsVerifiedByInventory": false,
+      "behaviorAudits": [],
+      "properties": [],
+      "methods": [],
+      "fields": [
+        {
+          "reference": "DependenciesResolved",
+          "referenceConstant": 0,
+          "ezapi": "EZapi.Registration.RegistrationStatus.DependenciesResolved",
+          "mapped": true,
+          "boundary": null
+        },
+        {
+          "reference": "Waiting",
+          "referenceConstant": 1,
+          "ezapi": "EZapi.Registration.RegistrationStatus.Waiting",
+          "mapped": true,
+          "boundary": null
+        }
+      ]
+    },
+    {
+      "reference": "Nicokobo.Forge.Registration.SubmitResult",
+      "ezapi": "EZapi.Registration.SubmitResult",
+      "mapped": true,
+      "semanticsVerifiedByInventory": false,
+      "behaviorAudits": [],
+      "properties": [
+        {
+          "reference": "Status",
+          "ezapi": "EZapi.Registration.SubmitResult.Status",
+          "mapped": true
+        },
+        {
+          "reference": "Reason",
+          "ezapi": "EZapi.Registration.SubmitResult.Reason",
+          "mapped": true
+        }
+      ],
+      "methods": [],
+      "fields": []
+    },
+    {
+      "reference": "Nicokobo.Forge.Registration.RegistrationView",
+      "ezapi": "EZapi.Registration.RegistrationView",
+      "mapped": true,
+      "semanticsVerifiedByInventory": false,
+      "behaviorAudits": [],
+      "properties": [
+        {
+          "reference": "OwnerId",
+          "ezapi": "EZapi.Registration.RegistrationView.OwnerId",
+          "mapped": true
+        },
+        {
+          "reference": "Version",
+          "ezapi": "EZapi.Registration.RegistrationView.Version",
+          "mapped": true
+        },
+        {
+          "reference": "Status",
+          "ezapi": "EZapi.Registration.RegistrationView.Status",
+          "mapped": true
+        },
+        {
+          "reference": "Reason",
+          "ezapi": "EZapi.Registration.RegistrationView.Reason",
+          "mapped": true
+        },
+        {
+          "reference": "DefinitionIds",
+          "ezapi": "EZapi.Registration.RegistrationView.DefinitionIds",
+          "mapped": true
+        }
+      ],
+      "methods": [],
+      "fields": []
+    },
+    {
+      "reference": "Nicokobo.Forge.Registration.RegistrationBatch",
+      "ezapi": "EZapi.Registration.RegistrationBatch",
+      "mapped": true,
+      "semanticsVerifiedByInventory": false,
+      "behaviorAudits": [],
+      "properties": [
+        {
+          "reference": "OwnerId",
+          "ezapi": "EZapi.Registration.RegistrationBatch.OwnerId",
+          "mapped": true
+        },
+        {
+          "reference": "Version",
+          "ezapi": "EZapi.Registration.RegistrationBatch.Version",
+          "mapped": true
+        }
+      ],
+      "methods": [
+        {
+          "reference": "Nicokobo.Forge.Registration.RegistrationBatch Nicokobo.Forge.Registration.RegistrationBatch::Require(System.String,System.String)",
+          "ezapi": [
+            "EZapi.Registration.RegistrationBatch EZapi.Registration.RegistrationBatch::Require(System.String,System.String)"
+          ],
+          "mapped": true,
+          "boundary": null
+        },
+        {
+          "reference": "Nicokobo.Forge.Registration.RegistrationBatch Nicokobo.Forge.Registration.RegistrationBatch::Define(Nicokobo.Forge.Registration.DefinitionKind,System.String,System.String,System.String[])",
+          "ezapi": [
+            "EZapi.Registration.RegistrationBatch EZapi.Registration.RegistrationBatch::Define(EZapi.Registration.DefinitionKind,System.String,System.String,System.String[])"
+          ],
+          "mapped": true,
+          "boundary": null
+        }
+      ],
+      "fields": []
+    },
+    {
+      "reference": "Nicokobo.Forge.Registration.ForgeModuleAdmission",
+      "ezapi": "EZapi.ModuleAdmission",
+      "mapped": true,
+      "semanticsVerifiedByInventory": false,
+      "behaviorAudits": [],
+      "properties": [
+        {
+          "reference": "MachineId",
+          "ezapi": "EZapi.ModuleAdmission.MachineId",
+          "mapped": true
+        },
+        {
+          "reference": "ModuleTypes",
+          "ezapi": "EZapi.ModuleAdmission.ModuleTypes",
+          "mapped": true
+        }
+      ],
+      "methods": [],
+      "fields": []
+    },
+    {
+      "reference": "Nicokobo.Forge.Registration.NightShopStockPolicy",
+      "ezapi": "EZapi.NightShopStockPolicy",
+      "mapped": true,
+      "semanticsVerifiedByInventory": false,
+      "behaviorAudits": [],
+      "properties": [],
+      "methods": [],
+      "fields": [
+        {
+          "reference": "None",
+          "referenceConstant": 0,
+          "ezapi": "EZapi.NightShopStockPolicy.None",
+          "mapped": true,
+          "boundary": null
+        },
+        {
+          "reference": "Repeatable",
+          "referenceConstant": 1,
+          "ezapi": "EZapi.NightShopStockPolicy.Repeatable",
+          "mapped": true,
+          "boundary": null
+        },
+        {
+          "reference": "Unique",
+          "referenceConstant": 2,
+          "ezapi": "EZapi.NightShopStockPolicy.Unique",
+          "mapped": true,
+          "boundary": null
+        }
+      ]
+    },
+    {
+      "reference": "Nicokobo.Forge.Registration.NpcTradeStockCategory",
+      "ezapi": "EZapi.NpcTradeStockCategory",
+      "mapped": true,
+      "semanticsVerifiedByInventory": false,
+      "behaviorAudits": [],
+      "properties": [],
+      "methods": [],
+      "fields": [
+        {
+          "reference": "None",
+          "referenceConstant": 0,
+          "ezapi": "EZapi.NpcTradeStockCategory.None",
+          "mapped": true,
+          "boundary": null
+        },
+        {
+          "reference": "Material",
+          "referenceConstant": 1,
+          "ezapi": "EZapi.NpcTradeStockCategory.Material",
+          "mapped": true,
+          "boundary": null
+        },
+        {
+          "reference": "Ore",
+          "referenceConstant": 2,
+          "ezapi": "EZapi.NpcTradeStockCategory.Ore",
+          "mapped": true,
+          "boundary": null
+        },
+        {
+          "reference": "Module",
+          "referenceConstant": 4,
+          "ezapi": "EZapi.NpcTradeStockCategory.Module",
+          "mapped": true,
+          "boundary": null
+        },
+        {
+          "reference": "Machine",
+          "referenceConstant": 8,
+          "ezapi": "EZapi.NpcTradeStockCategory.Machine",
+          "mapped": true,
+          "boundary": null
+        },
+        {
+          "reference": "Household",
+          "referenceConstant": 16,
+          "ezapi": "EZapi.NpcTradeStockCategory.Household",
+          "mapped": true,
+          "boundary": null
+        },
+        {
+          "reference": "Food",
+          "referenceConstant": 32,
+          "ezapi": "EZapi.NpcTradeStockCategory.Food",
+          "mapped": true,
+          "boundary": null
+        },
+        {
+          "reference": "Medical",
+          "referenceConstant": 64,
+          "ezapi": "EZapi.NpcTradeStockCategory.Medical",
+          "mapped": true,
+          "boundary": null
+        }
+      ]
+    },
+    {
+      "reference": "Nicokobo.Forge.Registration.NpcTradeStockSupplier",
+      "ezapi": "EZapi.NpcTradeStockSupplier",
+      "mapped": true,
+      "semanticsVerifiedByInventory": false,
+      "behaviorAudits": [],
+      "properties": [],
+      "methods": [],
+      "fields": [
+        {
+          "reference": "Any",
+          "referenceConstant": 0,
+          "ezapi": "EZapi.NpcTradeStockSupplier.Any",
+          "mapped": true,
+          "boundary": null
+        },
+        {
+          "reference": "Thief",
+          "referenceConstant": 1,
+          "ezapi": "EZapi.NpcTradeStockSupplier.Thief",
+          "mapped": true,
+          "boundary": null
+        },
+        {
+          "reference": "Inventor",
+          "referenceConstant": 2,
+          "ezapi": "EZapi.NpcTradeStockSupplier.Inventor",
+          "mapped": true,
+          "boundary": null
+        }
+      ]
+    },
+    {
+      "reference": "Nicokobo.Forge.Registration.NpcTradeStockOptions",
+      "ezapi": "EZapi.NpcTradeStockOptions",
+      "mapped": true,
+      "semanticsVerifiedByInventory": false,
+      "behaviorAudits": [],
+      "properties": [
+        {
+          "reference": "Category",
+          "ezapi": "EZapi.NpcTradeStockOptions.Category",
+          "mapped": true
+        },
+        {
+          "reference": "Weight",
+          "ezapi": "EZapi.NpcTradeStockOptions.Weight",
+          "mapped": true
+        },
+        {
+          "reference": "Suppliers",
+          "ezapi": "EZapi.NpcTradeStockOptions.Suppliers",
+          "mapped": true
+        },
+        {
+          "reference": "IncludeInNightShop",
+          "ezapi": "EZapi.NpcTradeStockOptions.IncludeInNightShop",
+          "mapped": true
+        },
+        {
+          "reference": "SkipWhenOwned",
+          "ezapi": "EZapi.NpcTradeStockOptions.SkipWhenOwned",
+          "mapped": true
+        },
+        {
+          "reference": "MinimumDay",
+          "ezapi": "EZapi.NpcTradeStockOptions.MinimumDay",
+          "mapped": true
+        },
+        {
+          "reference": "PreserveLootTableWeight",
+          "ezapi": "EZapi.NpcTradeStockOptions.PreserveLootTableWeight",
+          "mapped": true
+        },
+        {
+          "reference": "MinerWeight",
+          "ezapi": "EZapi.NpcTradeStockOptions.MinerWeight",
+          "mapped": true
+        }
+      ],
+      "methods": [],
+      "fields": []
+    },
+    {
+      "reference": "Nicokobo.Forge.Registration.LocalizedItemText",
+      "ezapi": "EZapi.LocalizedItemText",
+      "mapped": true,
+      "semanticsVerifiedByInventory": false,
+      "behaviorAudits": [],
+      "properties": [
+        {
+          "reference": "Chinese",
+          "ezapi": "EZapi.LocalizedItemText.Chinese",
+          "mapped": true
+        },
+        {
+          "reference": "English",
+          "ezapi": "EZapi.LocalizedItemText.English",
+          "mapped": true
+        }
+      ],
+      "methods": [
+        {
+          "reference": "System.String Nicokobo.Forge.Registration.LocalizedItemText::For(System.Boolean)",
+          "ezapi": [
+            "System.String EZapi.LocalizedItemText::For(System.Boolean)"
+          ],
+          "mapped": true,
+          "boundary": null
+        }
+      ],
+      "fields": []
+    },
+    {
+      "reference": "Nicokobo.Forge.Registration.NativeItemOptions",
+      "ezapi": "EZapi.NativeItemOptions",
+      "mapped": true,
+      "semanticsVerifiedByInventory": false,
+      "behaviorAudits": [],
+      "properties": [
+        {
+          "reference": "NightShop",
+          "ezapi": "EZapi.NativeItemOptions.NightShop",
+          "mapped": true
+        },
+        {
+          "reference": "IsNightShopAvailable",
+          "ezapi": "EZapi.NativeItemOptions.IsNightShopAvailable",
+          "mapped": true
+        },
+        {
+          "reference": "Name",
+          "ezapi": "EZapi.NativeItemOptions.LocalizedName",
+          "mapped": true
+        },
+        {
+          "reference": "ShortDescription",
+          "ezapi": "EZapi.NativeItemOptions.LocalizedShortDescription",
+          "mapped": true
+        },
+        {
+          "reference": "FlavorText",
+          "ezapi": "EZapi.NativeItemOptions.LocalizedFlavorText",
+          "mapped": true
+        },
+        {
+          "reference": "NpcTrade",
+          "ezapi": "EZapi.NativeItemOptions.NpcTrade",
+          "mapped": true
+        }
+      ],
+      "methods": [],
+      "fields": []
+    },
+    {
+      "reference": "Nicokobo.Forge.Registration.StartRegistrationView",
+      "ezapi": "EZapi.Registration.StartRegistrationView",
+      "mapped": true,
+      "semanticsVerifiedByInventory": false,
+      "behaviorAudits": [],
+      "properties": [
+        {
+          "reference": "OwnerId",
+          "ezapi": "EZapi.Registration.StartRegistrationView.OwnerId",
+          "mapped": true
+        },
+        {
+          "reference": "StartId",
+          "ezapi": "EZapi.Registration.StartRegistrationView.StartId",
+          "mapped": true
+        },
+        {
+          "reference": "NativeStartType",
+          "ezapi": "EZapi.Registration.StartRegistrationView.NativeStartType",
+          "mapped": true
+        }
+      ],
+      "methods": [],
+      "fields": []
+    },
+    {
+      "reference": "Nicokobo.Forge.Logging.ModLogger",
+      "ezapi": "EZapi.ModLog",
+      "mapped": true,
+      "semanticsVerifiedByInventory": false,
+      "behaviorAudits": [],
+      "properties": [
+        {
+          "reference": "Level",
+          "ezapi": "EZapi.ModLog.Level",
+          "mapped": true
+        },
+        {
+          "reference": "IsDebugEnabled",
+          "ezapi": "EZapi.ModLog.IsDebugEnabled",
+          "mapped": true
+        }
+      ],
+      "methods": [
+        {
+          "reference": "System.Void Nicokobo.Forge.Logging.ModLogger::Debug(System.String)",
+          "ezapi": [
+            "System.Void EZapi.ModLog::Debug(System.String)"
+          ],
+          "mapped": true,
+          "boundary": null
+        },
+        {
+          "reference": "System.Void Nicokobo.Forge.Logging.ModLogger::Info(System.String)",
+          "ezapi": [
+            "System.Void EZapi.ModLog::Info(System.String)"
+          ],
+          "mapped": true,
+          "boundary": null
+        },
+        {
+          "reference": "System.Void Nicokobo.Forge.Logging.ModLogger::Warn(System.String)",
+          "ezapi": [
+            "System.Void EZapi.ModLog::Warn(System.String)"
+          ],
+          "mapped": true,
+          "boundary": null
+        },
+        {
+          "reference": "System.Void Nicokobo.Forge.Logging.ModLogger::Error(System.String)",
+          "ezapi": [
+            "System.Void EZapi.ModLog::Error(System.String)"
+          ],
+          "mapped": true,
+          "boundary": null
+        },
+        {
+          "reference": "System.Void Nicokobo.Forge.Logging.ModLogger::Callback(System.String)",
+          "ezapi": [
+            "System.Void EZapi.ModLog::Callback(System.String)"
+          ],
+          "mapped": true,
+          "boundary": null
+        }
+      ],
+      "fields": []
+    },
+    {
+      "reference": "Nicokobo.Forge.Logging.ModLogLevel",
+      "ezapi": "EZapi.LogLevel",
+      "mapped": true,
+      "semanticsVerifiedByInventory": false,
+      "behaviorAudits": [],
+      "properties": [],
+      "methods": [],
+      "fields": [
+        {
+          "reference": "Debug",
+          "referenceConstant": 0,
+          "ezapi": "EZapi.LogLevel.Debug",
+          "mapped": true,
+          "boundary": null
+        },
+        {
+          "reference": "Info",
+          "referenceConstant": 1,
+          "ezapi": "EZapi.LogLevel.Info",
+          "mapped": true,
+          "boundary": null
+        },
+        {
+          "reference": "Warn",
+          "referenceConstant": 2,
+          "ezapi": "EZapi.LogLevel.Warn",
+          "mapped": true,
+          "boundary": null
+        },
+        {
+          "reference": "Error",
+          "referenceConstant": 3,
+          "ezapi": "EZapi.LogLevel.Error",
+          "mapped": true,
+          "boundary": null
+        }
+      ]
+    },
+    {
+      "reference": "Nicokobo.Forge.Logging.ModLogLevels",
+      "ezapi": "EZapi.LogLevels",
+      "mapped": true,
+      "semanticsVerifiedByInventory": false,
+      "behaviorAudits": [],
+      "properties": [],
+      "methods": [
+        {
+          "reference": "System.Boolean Nicokobo.Forge.Logging.ModLogLevels::TryParse(System.String,Nicokobo.Forge.Logging.ModLogLevel&)",
+          "ezapi": [
+            "System.Boolean EZapi.LogLevels::TryParse(System.String,EZapi.LogLevel&)"
+          ],
+          "mapped": true,
+          "boundary": null
+        },
+        {
+          "reference": "System.Boolean Nicokobo.Forge.Logging.ModLogLevels::Allows(Nicokobo.Forge.Logging.ModLogLevel,Nicokobo.Forge.Logging.ModLogLevel)",
+          "ezapi": [
+            "System.Boolean EZapi.LogLevels::Allows(EZapi.LogLevel,EZapi.LogLevel)"
+          ],
+          "mapped": true,
+          "boundary": null
+        }
+      ],
+      "fields": []
+    }
+  ],
+  "behaviorEvidence": "machine-public-contract.audit.json and domain-specific verification reports",
+  "functionalCoverageAccounted": true,
+  "behaviorAdaptations": "public-shape-adaptations.audit.json",
+  "allNativeGameplayCombinationsVerified": false,
+  "distributionVerification": {
+    "dllSHA256": "7E4AB675B0E3BD81C56EEC4606731A6880287549EB4E8E90A707BE18BD52BEEF",
+    "nativeRuntimeVerified": false,
+    "frameworkSourceIncluded": false
+  }
+}

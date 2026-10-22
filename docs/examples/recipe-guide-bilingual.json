@@ -1,0 +1,43 @@
+[
+  {
+    "ownerId": "author.tools",
+    "recipeId": "author.tools.bilingual_press",
+    "machineId": "author.tools.press",
+    "machineName": "Press",
+    "localizedMachineName": {
+      "chinese": "压制机",
+      "english": "Press"
+    },
+    "categoryId": "synthesis",
+    "inputs": [
+      {
+        "itemId": "author.tools.material",
+        "amount": 2,
+        "localizedName": {
+          "chinese": "材料",
+          "english": "Material"
+        },
+        "localizedRequirement": {
+          "chinese": "必须属于玩家",
+          "english": "Must be owned"
+        },
+        "localizedQuantity": {
+          "chinese": "2份",
+          "english": "2 units"
+        }
+      }
+    ],
+    "output": {
+      "itemId": "author.tools.product",
+      "amount": 1,
+      "localizedName": {
+        "chinese": "成品",
+        "english": "Product"
+      }
+    },
+    "localizedNote": {
+      "chinese": "图鉴只显示说明，不执行加工。",
+      "english": "The guide displays instructions; it does not execute a batch."
+    }
+  }
+]

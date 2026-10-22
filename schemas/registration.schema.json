@@ -1,0 +1,88 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "EZapi 通用声明批次",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "ownerId",
+    "version"
+  ],
+  "properties": {
+    "ownerId": {
+      "type": "string",
+      "pattern": "^[a-z0-9_-]+(?:\\.[a-z0-9_-]+)*(?![\\s\\S])",
+      "maxLength": 160
+    },
+    "version": {
+      "type": "string",
+      "pattern": "^(?:0|[1-9][0-9]*)\\.(?:0|[1-9][0-9]*)\\.(?:0|[1-9][0-9]*)(?![\\s\\S])",
+      "maxLength": 32,
+      "description": "每段还需由运行时验证不超过2147483647"
+    },
+    "dependencies": {
+      "type": "array",
+      "maxItems": 64,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "ownerId"
+        ],
+        "properties": {
+          "ownerId": {
+            "type": "string",
+            "pattern": "^[a-z0-9_-]+(?:\\.[a-z0-9_-]+)*(?![\\s\\S])",
+            "maxLength": 160
+          },
+          "minimumVersion": {
+            "type": "string",
+            "pattern": "^(?:0|[1-9][0-9]*)\\.(?:0|[1-9][0-9]*)\\.(?:0|[1-9][0-9]*)(?![\\s\\S])",
+            "maxLength": 32,
+            "description": "每段还需由运行时验证不超过2147483647"
+          }
+        }
+      }
+    },
+    "definitions": {
+      "type": "array",
+      "maxItems": 500,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "kind",
+          "localId",
+          "signature"
+        ],
+        "properties": {
+          "kind": {
+            "type": "string",
+            "pattern": "^(?:[Ii][Tt][Ee][Mm]|[Mm][Oo][Dd][Uu][Ll][Ee]|[Nn][Oo][Dd][Ee]|[Ee][Ff][Ff][Ee][Cc][Tt]|[Ss][Tt][Aa][Rr][Tt]|[Pp][Ee][Rr][Kk]|[Ss][Tt][Aa][Tt][Uu][Ss])(?![\\s\\S])"
+          },
+          "localId": {
+            "type": "string",
+            "pattern": "^[a-z0-9_-]+(?:\\.[a-z0-9_-]+)*(?![\\s\\S])",
+            "maxLength": 160
+          },
+          "signature": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 4096,
+            "pattern": "^(?!\\s*$)[^\\x00-\\x1f\\x7f-\\x9f]+(?![\\s\\S])"
+          },
+          "requiredIds": {
+            "type": "array",
+            "maxItems": 64,
+            "uniqueItems": true,
+            "items": {
+              "type": "string",
+              "pattern": "^[a-z0-9_-]+(?:\\.[a-z0-9_-]+)+(?![\\s\\S])",
+              "maxLength": 160
+            }
+          }
+        }
+      }
+    }
+  },
+  "description": "单批元数据结构；重复作者/ID、引用自身、版本数值和跨批依赖须由托管验证器/运行时检查。"
+}

@@ -1,0 +1,103 @@
+{
+  "schemaVersion": 1,
+  "version": "0.1.73",
+  "api": "EZapi.ItemDataApi",
+  "taskZh": "读取/暂存某件物品的版本化JSON状态",
+  "taskEn": "Read/stage versioned item-owned JSON state",
+  "guide": "item-data.zh-CN.md",
+  "englishGuide": "item-data.en.md",
+  "source": "../src/EZapi/ItemDataApi.cs",
+  "example": "../src/EZapi.Sample/ItemDataExamples.cs",
+  "officialBasis": "../references/probably-stolen-modding/ModdingGuide.zh-CN.md#保存模组数据",
+  "officialRule": "Item-specific state belongs on item tags; use ModifyTag/GetTagReadonly.",
+  "methods": [
+    {
+      "memberKey": "M:EZapi.ItemDataApi.Read``1(Il2Cpp.GameItem,System.String,System.String,System.Int32)",
+      "task": "Read<T>(item,ownerId,key,expectedVersion=1)",
+      "result": "Missing/Present/VersionMismatch provide a revision; no writes; invalid raw JSON preserved"
+    },
+    {
+      "memberKey": "M:EZapi.ItemDataApi.Stage``1(Il2Cpp.GameItem,EZapi.ItemDataRevision,``0,System.Int32)",
+      "task": "Stage<T>(item,revision,value,version=1)",
+      "result": "Compare observed item/run/value; stage through official ModifyTag; verify readback; never save"
+    }
+  ],
+  "phase": "Current initialized game main thread and loaded run; live item only",
+  "nativeEntryPoints": [
+    "Il2Cpp.GameItem.GetTagReadonly(string)",
+    "Il2Cpp.GameItem.ModifyTag(string,Il2CppSystem.Action<TagState>,bool)",
+    "Il2Cpp.GameItem.SyncModifiedState()"
+  ],
+  "tagKey": "EZAPI_ITEM_DATA_V1|<ownerId>|<key>",
+  "envelope": {
+    "version": 1,
+    "data": {
+      "Level": 2,
+      "Note": "中文 / English"
+    }
+  },
+  "limits": {
+    "ownerCharacters": 160,
+    "keyCharacters": 120,
+    "envelopeUtf8Bytes": 16384,
+    "jsonDepth": 16,
+    "ownerKeysPerItem": 128,
+    "ownerUtf8BytesPerItemIncludingKeys": 65536,
+    "totalTagsInspected": 4096
+  },
+  "ownership": "Namespaced key ownership; not a malicious-mod security boundary",
+  "migration": "Explicitly inspect known previous envelope versions, then Stage with returned revision and new version. Unknown future/damaged records are preserved.",
+  "revision": "Binds current run/load epoch, native item identity/state, parent/count and exact observed JSON. Not serializable; current-value comparison only.",
+  "language": "Unicode JSON preserved. Addresses/schema do not change with game locale. Resolve display text with GameLanguage.",
+  "statuses": {
+    "Missing": "No existing tag; read creates none",
+    "Present": "Version/type match",
+    "VersionMismatch": "Explicit migration required",
+    "Invalid": "Input/type/JSON/quota invalid; no automatic repair",
+    "Disabled": "Wrong thread",
+    "Unavailable": "No live run/state or supported build/freeze gate",
+    "Frozen": "Transaction owns item",
+    "Conflict": "Observed context/value changed, reentry or active drag",
+    "StagedInMemory": "Native write read back; not disk persistence",
+    "Indeterminate": "Native write attempted; reconcile before retry"
+  },
+  "offlineVerification": {
+    "report": "verification/item-data-offline-0.1.72.json",
+    "passed": 63,
+    "failed": 0,
+    "scope": "real ItemDataApi source with instrumented item/tag/run wrappers; no native persistence or save/reload claim"
+  },
+  "nativeVerification": {
+    "status": "Scoped current-DLL native save and cold load passed",
+    "evidence": "verification/disk-supplier-native-0.1.72.json",
+    "dllSHA256": "4238A189B36CEC4C55E88CC70E05E9086EC935412B13CF701671405A12E63274",
+    "fixture": "../src/EZapi/DebugDiskItems.cs",
+    "diskSaveReload": {
+      "nativeSaveStage": 18,
+      "coldLoad": 27,
+      "independentDiskReadback": 37,
+      "failed": 0
+    },
+    "boundary": "Stage itself never saves. Explicit debug fixture calls current-day native save; five items in namespaced endpoint with two independent owners, exact JSON/version and language display checked."
+  },
+  "notGuaranteed": [
+    "Atomic payment/consumption/upgrade",
+    "Disk saving",
+    "Unique serial numbers across native copy/split/merge",
+    "Detection of every intervening change restored to an identical value"
+  ],
+  "historicalNativeVerification": {
+    "status": "18 item-data checks passed on current DLL; 469 total native checks",
+    "evidence": "verification/item-data-native-0.1.72.json",
+    "dllSHA256": "FDFEBD8384D8DD13D1AC4C3131416C4AE90FB4CB519D091AFE67E8032F02FF24",
+    "fixture": "../src/EZapi/DebugItemData.cs",
+    "entry": "Registration group in Invoke-EZapiTestBatch.ps1",
+    "readonlyMissingBehavior": "Absent native tag can return an empty disabled sentinel. Dictionary membership distinguishes it from stored disabled data.",
+    "diskSaveReload": "pending; native in-memory graph codec is not disk persistence"
+  },
+  "distributionVerification": {
+    "dllSHA256": "7E4AB675B0E3BD81C56EEC4606731A6880287549EB4E8E90A707BE18BD52BEEF",
+    "nativeRuntimeVerified": false,
+    "frameworkSourceIncluded": false
+  }
+}

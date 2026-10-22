@@ -1,0 +1,80 @@
+{
+  "schemaVersion": 1,
+  "version": "0.1.73",
+  "topic": "Machine window and slot text in the current game language",
+  "guides": {
+    "zh-CN": "machine-layout-localization.zh-CN.md",
+    "en": "machine-layout-localization.en.md"
+  },
+  "schema": "../schemas/machine-layout.schema.json",
+  "example": "examples/machine-layout-bilingual.json",
+  "compiledExample": "../src/EZapi.Sample/MachineGuideExamples.cs",
+  "fields": [
+    {
+      "api": "MachineLayoutDefinition.LocalizedTitle",
+      "memberKey": "P:EZapi.MachineLayoutDefinition.LocalizedTitle",
+      "json": "localizedTitle",
+      "task": "Window title",
+      "fallback": "Title, then current item name"
+    },
+    {
+      "api": "MachineContainerSlot.LocalizedLabel",
+      "memberKey": "P:EZapi.MachineContainerSlot.LocalizedLabel",
+      "json": "liquidInputs[].localizedLabel",
+      "task": "Liquid input slot label",
+      "fallback": "Label (literal, including empty)"
+    },
+    {
+      "api": "MachineOutputTemplate.LocalizedLabel",
+      "memberKey": "P:EZapi.MachineOutputTemplate.LocalizedLabel",
+      "json": "output.localizedLabel",
+      "task": "Liquid-container output slot label; unused for items grid",
+      "fallback": "产物容器 / Output container"
+    },
+    {
+      "api": "MachineLayoutDefinition.LocalizedBatteryLabel",
+      "memberKey": "P:EZapi.MachineLayoutDefinition.LocalizedBatteryLabel",
+      "json": "localizedBatteryLabel",
+      "task": "Battery slot label",
+      "fallback": "电池 / Battery"
+    },
+    {
+      "api": "MachineLayoutDefinition.LocalizedManualLabel",
+      "memberKey": "P:EZapi.MachineLayoutDefinition.LocalizedManualLabel",
+      "json": "localizedManualLabel",
+      "task": "Manual slot label",
+      "fallback": "说明书 / Manual"
+    }
+  ],
+  "refresh": {
+    "api": "MachineLayoutApi.RefreshLocalization(GameItem)",
+    "memberKey": "M:EZapi.MachineLayoutApi.RefreshLocalization(Il2Cpp.GameItem)",
+    "phase": "initialized game main thread",
+    "automatic": "before display-name reads and RestoreContentWindowPosition through ezapi.items.localization",
+    "explicit": "call for a custom continuously open window after a language change",
+    "result": "false when framework stopped or item unmarked; invalid markers/graphs throw before text writes",
+    "mutation": "visible title and slot tooltip only; no layout tag/state sync, graph replacement, filters or inventory mutation"
+  },
+  "validation": {
+    "translations": "one or both of chinese/english; each supplied side nonblank, <=200 characters, no controls",
+    "csv": "key rejected: standalone layout is not owned by a content pack; content DLL may resolve CSV before declaring literal fields",
+    "limits": "full serialized layout <=65536 UTF-8 bytes; existing IDs/grid/filter rules remain"
+  },
+  "persistence": "unlocalized old layout JSON remains byte-identical; language changes do not serialize resolved strings. Adding declarations to an existing saved layout changes its specification and still requires explicit migration.",
+  "readonlyInventory": "TryGetInventory does not refresh text and remains a pure graph read.",
+  "evidence": {
+    "offlineSuite": "../work/ezapi-machine-localization-tests/MachineLocalizationTests.csproj",
+    "offlineChecks": 48,
+    "native": "415 en/zh checks include existing and disk-loaded items, tooltips, reopened container/machine titles, reading, workshop, dialogue, phone and fixture-dispatched supplier pages. See report boundaries."
+  },
+  "historicalNativeEvidence": {
+    "path": "verification/disk-supplier-native-0.1.72.json",
+    "dllSHA256": "4238A189B36CEC4C55E88CC70E05E9086EC935412B13CF701671405A12E63274",
+    "scope": "415 en/zh checks include existing and disk-loaded items, tooltips, reopened container/machine titles, reading, workshop, dialogue, phone and fixture-dispatched supplier pages. See report boundaries."
+  },
+  "distributionVerification": {
+    "dllSHA256": "7E4AB675B0E3BD81C56EEC4606731A6880287549EB4E8E90A707BE18BD52BEEF",
+    "nativeRuntimeVerified": false,
+    "frameworkSourceIncluded": false
+  }
+}

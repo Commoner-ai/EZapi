@@ -1,0 +1,19 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "EZapi 0.1.24 MachineBatchResult output",
+  "description": "Default System.Text.Json result output; no executable recipe JSON importer.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["RecipeId", "Error", "Transaction", "Committed"],
+  "properties": {
+    "RecipeId": {"type": ["string", "null"], "minLength": 1, "maxLength": 160},
+    "Error": {"type": ["string", "null"]},
+    "Transaction": {"anyOf": [{"type": "null"}, {"$ref": "machine-transaction-result.schema.json"}]},
+    "Committed": {"type": "boolean"}
+  },
+  "allOf": [
+    {"if": {"properties": {"Transaction": {"type": "object", "required": ["Status"], "properties": {"Status": {"const": 0}}}}}, "then": {"properties": {"Committed": {"const": true}}}, "else": {"properties": {"Committed": {"const": false}}}},
+    {"if": {"properties": {"Transaction": {"type": "null"}}}, "then": {"properties": {"Committed": {"const": false}, "Error": {"type": "string"}}}},
+    {"if": {"properties": {"Committed": {"const": true}}}, "then": {"properties": {"RecipeId": {"type": "string"}, "Error": {"type": "null"}, "Transaction": {"type": "object", "properties": {"Status": {"const": 0}}}}}}
+  ]
+}

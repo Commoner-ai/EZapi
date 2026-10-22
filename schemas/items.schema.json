@@ -1,0 +1,1704 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "EZapi 0.1.72 declarative items",
+  "type": "array",
+  "maxItems": 500,
+  "items": {
+    "type": "object",
+    "additionalProperties": false,
+    "properties": {
+      "id": {
+        "type": "string",
+        "maxLength": 160,
+        "description": "永久唯一物品 ID；已保存的 ID 不随意更改",
+        "pattern": "^[a-z0-9_-]+(?:\\.[a-z0-9_-]+)+$"
+      },
+      "name": {
+        "type": "string",
+        "maxLength": 200,
+        "description": "Literal name and fallback; supply name or localizedName.",
+        "minLength": 1,
+        "pattern": "\\S"
+      },
+      "description": {
+        "type": "string",
+        "maxLength": 4000,
+        "description": "兼容旧版的短简介；与 shortDescription 二选一"
+      },
+      "shortDescription": {
+        "type": "string",
+        "maxLength": 4000,
+        "description": "短简介。native 交给游戏；early/late 由官方回调显示"
+      },
+      "longDescription": {
+        "type": "string",
+        "maxLength": 8000,
+        "description": "长简介。native 交给游戏的详细说明逻辑；不能保证普通 tooltip 显示"
+      },
+      "flavorText": {
+        "type": "string",
+        "maxLength": 4000,
+        "description": "风味文本；early/late 模式为灰色斜体"
+      },
+      "customText": {
+        "type": "string",
+        "maxLength": 4000,
+        "description": "原生自定义文本字段；需要固定展示时选择 early/late"
+      },
+      "descriptionPlacement": {
+        "type": "string",
+        "enum": [
+          "native",
+          "early",
+          "late"
+        ],
+        "default": "native",
+        "description": "native 保留原生文本字段；early/late 清空这些原生字段并在对应回调显示四段文本，避免重复"
+      },
+      "sprite": {
+        "type": "string",
+        "maxLength": 80,
+        "description": "所属包 Textures/Items 下 PNG 文件名，不含路径和扩展名",
+        "pattern": "^[a-z0-9_-]+$"
+      },
+      "modId": {
+        "type": "string",
+        "maxLength": 160,
+        "description": "内容包 pack.json.id；自动扫描内容包时必填",
+        "pattern": "^[a-z0-9_-]+(?:\\.[a-z0-9_-]+)*$"
+      },
+      "width": {
+        "type": "integer",
+        "minimum": 1,
+        "maximum": 8,
+        "description": "占格宽度，必须与 height 同时提供"
+      },
+      "height": {
+        "type": "integer",
+        "minimum": 1,
+        "maximum": 8,
+        "description": "占格高度，必须与 width 同时提供"
+      },
+      "shapeRows": {
+        "type": "array",
+        "items": {
+          "type": "string",
+          "maxLength": 8,
+          "description": "每行从左到右，0 为空、1 为占格",
+          "pattern": "^[01]+$",
+          "minLength": 1
+        },
+        "maxItems": 8,
+        "minItems": 1,
+        "description": "从上到下的行；行长/行数分别匹配 width/height，至少一个 1"
+      },
+      "value": {
+        "type": "integer",
+        "minimum": 0,
+        "maximum": 1000000000,
+        "description": "每件基础价值，货币单位；自动次数计价会覆盖；不是最终成交价"
+      },
+      "types": {
+        "type": "array",
+        "items": {
+          "type": "string",
+          "maxLength": 160,
+          "description": "原生大写分类或自定义命名空间分类",
+          "pattern": "^(?:[A-Z][A-Z0-9_]*|[a-z0-9_-]+(?:\\.[a-z0-9_-]+)+)$"
+        },
+        "maxItems": 32,
+        "uniqueItems": true,
+        "default": []
+      },
+      "typeNames": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "id": {
+              "type": "string",
+              "maxLength": 160,
+              "description": "必须出现在 types 中的自定义分类",
+              "pattern": "^[a-z0-9_-]+(?:\\.[a-z0-9_-]+)+$"
+            },
+            "name": {
+              "type": "string",
+              "maxLength": 200,
+              "description": "自定义分类显示名称",
+              "minLength": 1,
+              "pattern": "\\S"
+            },
+            "localizedName": {
+              "$ref": "#/$defs/localizedItemText",
+              "properties": {
+                "chinese": {
+                  "maxLength": 200
+                },
+                "english": {
+                  "maxLength": 200
+                }
+              },
+              "description": "Current-locale custom type name. Native uppercase types use game translations."
+            }
+          },
+          "required": [
+            "id"
+          ],
+          "allOf": [
+            {
+              "anyOf": [
+                {
+                  "required": [
+                    "name"
+                  ]
+                },
+                {
+                  "required": [
+                    "localizedName"
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        "maxItems": 32,
+        "default": [],
+        "description": "每个自定义分类必须提供名称，避免原生缺少翻译；原生大写分类无需填写"
+      },
+      "tags": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "id": {
+              "type": "string",
+              "maxLength": 160,
+              "description": "原生 UPPER_CASE 键，或 author.mod.key；自定义键必须用命名空间",
+              "pattern": "^(?:[A-Z][A-Z0-9_]*|[a-z0-9_-]+(?:\\.[a-z0-9_-]+)+)$"
+            },
+            "enabled": {
+              "type": "boolean",
+              "default": true,
+              "description": "标签启用状态，与 boolValue 独立"
+            },
+            "stringValue": {
+              "type": "string",
+              "maxLength": 4000,
+              "description": "独立字符串值"
+            },
+            "intValue": {
+              "type": "integer",
+              "minimum": -2147483648,
+              "maximum": 2147483647,
+              "description": "32 位带符号整数"
+            },
+            "longValue": {
+              "type": "integer",
+              "minimum": -9223372036854775808,
+              "maximum": 9223372036854775807,
+              "description": "64 位带符号整数；JSON 工具必须保留整数精度"
+            },
+            "floatValue": {
+              "type": "number",
+              "minimum": -3.4028234663852886e+38,
+              "maximum": 3.4028234663852886e+38,
+              "description": "有限 32 位浮点数"
+            },
+            "doubleValue": {
+              "type": "number",
+              "minimum": -1.7976931348623157e+308,
+              "maximum": 1.7976931348623157e+308,
+              "description": "有限 64 位浮点数"
+            },
+            "boolValue": {
+              "type": "boolean",
+              "description": "独立布尔值，不代替 enabled"
+            }
+          },
+          "required": [
+            "id"
+          ]
+        },
+        "maxItems": 64,
+        "default": [],
+        "description": "实例独立状态；同标签可同时保存不同类型的值，标签 ID 不重复"
+      },
+      "initialCount": {
+        "type": "integer",
+        "const": 1,
+        "default": 1,
+        "description": "当前版本仅单件。多件堆叠尚未开放"
+      },
+      "maxStackSize": {
+        "type": "integer",
+        "const": 1,
+        "default": 1,
+        "description": "保留字段，仅支持 1；大于 1 明确报 EZAPI_ITEM_STACK_UNSUPPORTED"
+      },
+      "forceDisableUse": {
+        "type": "boolean",
+        "default": false,
+        "description": "原生使用门控；false 不会创建使用行为"
+      },
+      "forceDisableActivate": {
+        "type": "boolean",
+        "default": false,
+        "description": "原生激活门控；false 不会创建激活行为"
+      },
+      "activateDefault": {
+        "type": "boolean",
+        "default": false,
+        "description": "原生默认激活标记，需要内容 Mod 自己的行为"
+      },
+      "bonusAccuracy": {
+        "type": "integer",
+        "minimum": -100,
+        "maximum": 100,
+        "description": "原生额外命中整数值；仅设置字段，未添加武器效果"
+      },
+      "triggerOverwatch": {
+        "type": "boolean",
+        "default": false,
+        "description": "原生监视触发标记；不会添加战斗技能"
+      },
+      "canUseOutsideCombat": {
+        "type": "boolean",
+        "default": false,
+        "description": "原生战斗外使用标记；不会添加使用行为"
+      },
+      "contrabandLevel": {
+        "type": "integer",
+        "minimum": 0,
+        "maximum": 4,
+        "description": "0 不附加违禁规则；1..4 调用 ContrabandHelper.InitContrabandItem",
+        "default": 0
+      },
+      "useCount": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "maximum": {
+            "type": "integer",
+            "minimum": 1,
+            "maximum": 9999,
+            "description": "最大使用次数；不会自动创建使用效果"
+          },
+          "current": {
+            "type": "integer",
+            "minimum": 1,
+            "maximum": 9999,
+            "description": "初始剩余次数，省略时等于 maximum；不能为 0"
+          },
+          "transferable": {
+            "type": "boolean",
+            "default": true,
+            "description": "官方次数转移规则"
+          },
+          "destroyOnEmpty": {
+            "type": "boolean",
+            "default": true,
+            "description": "耗尽时使用原生销毁规则"
+          },
+          "autoValue": {
+            "type": "boolean",
+            "default": false,
+            "description": "按 baseValue + valuePerUse × 剩余次数计价"
+          },
+          "baseValue": {
+            "type": "integer",
+            "minimum": 0,
+            "maximum": 1000000000,
+            "description": "自动计价固定基础价值",
+            "default": 0
+          },
+          "valuePerUse": {
+            "type": "integer",
+            "minimum": 0,
+            "maximum": 1000000000,
+            "description": "每次剩余次数的价值",
+            "default": 0
+          }
+        },
+        "required": [
+          "maximum"
+        ]
+      },
+      "sounds": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "dragStart": {
+            "type": "string",
+            "maxLength": 160,
+            "description": "现有游戏音效 ID；已由其它加载器注册的模组声音 ID 也可引用。EZapi 不加载 WAV/OGG",
+            "minLength": 1,
+            "pattern": "^[^\\x00-\\x1f\\x7f]+$"
+          },
+          "dragEnd": {
+            "type": "string",
+            "maxLength": 160,
+            "description": "现有游戏音效 ID；已由其它加载器注册的模组声音 ID 也可引用。EZapi 不加载 WAV/OGG",
+            "minLength": 1,
+            "pattern": "^[^\\x00-\\x1f\\x7f]+$"
+          },
+          "containerOpen": {
+            "type": "string",
+            "maxLength": 160,
+            "description": "现有游戏音效 ID；已由其它加载器注册的模组声音 ID 也可引用。EZapi 不加载 WAV/OGG",
+            "minLength": 1,
+            "pattern": "^[^\\x00-\\x1f\\x7f]+$"
+          },
+          "containerClose": {
+            "type": "string",
+            "maxLength": 160,
+            "description": "现有游戏音效 ID；已由其它加载器注册的模组声音 ID 也可引用。EZapi 不加载 WAV/OGG",
+            "minLength": 1,
+            "pattern": "^[^\\x00-\\x1f\\x7f]+$"
+          },
+          "select": {
+            "type": "string",
+            "maxLength": 160,
+            "description": "现有游戏音效 ID；已由其它加载器注册的模组声音 ID 也可引用。EZapi 不加载 WAV/OGG",
+            "minLength": 1,
+            "pattern": "^[^\\x00-\\x1f\\x7f]+$"
+          },
+          "examineOpen": {
+            "type": "string",
+            "maxLength": 160,
+            "description": "现有游戏音效 ID；已由其它加载器注册的模组声音 ID 也可引用。EZapi 不加载 WAV/OGG",
+            "minLength": 1,
+            "pattern": "^[^\\x00-\\x1f\\x7f]+$"
+          },
+          "toggle": {
+            "type": "string",
+            "maxLength": 160,
+            "description": "现有游戏音效 ID；已由其它加载器注册的模组声音 ID 也可引用。EZapi 不加载 WAV/OGG",
+            "minLength": 1,
+            "pattern": "^[^\\x00-\\x1f\\x7f]+$"
+          },
+          "activate": {
+            "type": "string",
+            "maxLength": 160,
+            "description": "现有游戏音效 ID；已由其它加载器注册的模组声音 ID 也可引用。EZapi 不加载 WAV/OGG",
+            "minLength": 1,
+            "pattern": "^[^\\x00-\\x1f\\x7f]+$"
+          },
+          "use": {
+            "type": "string",
+            "maxLength": 160,
+            "description": "现有游戏音效 ID；已由其它加载器注册的模组声音 ID 也可引用。EZapi 不加载 WAV/OGG",
+            "minLength": 1,
+            "pattern": "^[^\\x00-\\x1f\\x7f]+$"
+          }
+        },
+        "required": []
+      },
+      "tooltip": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "showSource": {
+            "type": "boolean",
+            "default": true,
+            "description": "在官方 Late 阶段追加一次灰色斜体来源行；不保证整个提示框末尾"
+          },
+          "sourceName": {
+            "type": "string",
+            "maxLength": 200,
+            "description": "来源显示名；省略时取 pack.json.name",
+            "minLength": 1,
+            "pattern": "\\S"
+          },
+          "labels": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "additionalProperties": false,
+              "properties": {
+                "text": {
+                  "type": "string",
+                  "maxLength": 200,
+                  "description": "标签显示文本",
+                  "minLength": 1,
+                  "pattern": "\\S"
+                },
+                "tagId": {
+                  "type": "string",
+                  "maxLength": 160,
+                  "description": "绑定 tags 中已声明的 ID；省略时为纯展示标签",
+                  "pattern": "^(?:[A-Z][A-Z0-9_]*|[a-z0-9_-]+(?:\\.[a-z0-9_-]+)+)$"
+                },
+                "valueKind": {
+                  "type": "string",
+                  "enum": [
+                    "none",
+                    "string",
+                    "int",
+                    "long",
+                    "float",
+                    "double",
+                    "bool"
+                  ],
+                  "default": "none",
+                  "description": "读取当前有效状态；非 none 必须绑定 tagId"
+                },
+                "color": {
+                  "type": "string",
+                  "enum": [
+                    "None",
+                    "White",
+                    "VeryLightGray",
+                    "LightGray",
+                    "Gray",
+                    "DarkGray",
+                    "VeryDarkGray",
+                    "Black",
+                    "LightPurple",
+                    "Purple",
+                    "DarkPurple",
+                    "VeryLightRed",
+                    "LightRed",
+                    "Red",
+                    "DarkRed",
+                    "VeryDarkRed",
+                    "LightOrange",
+                    "Orange",
+                    "DarkOrange",
+                    "LightYellow",
+                    "Yellow",
+                    "DarkYellow",
+                    "VeryLightGreen",
+                    "LightGreen",
+                    "Green",
+                    "DarkGreen",
+                    "VeryDarkGreen",
+                    "LightTurquoise",
+                    "Turquoise",
+                    "DarkTurquoise",
+                    "VeryLightCyan",
+                    "LightCyan",
+                    "Cyan",
+                    "DarkCyan",
+                    "VeryDarkCyan",
+                    "LightBlue",
+                    "Blue",
+                    "DarkBlue",
+                    "EGreen",
+                    "ERed"
+                  ],
+                  "default": "LightTurquoise",
+                  "description": "游戏 ColorPalette 名称，区分大小写"
+                },
+                "bold": {
+                  "type": "boolean",
+                  "default": false,
+                  "description": "粗体"
+                },
+                "italic": {
+                  "type": "boolean",
+                  "default": false,
+                  "description": "斜体"
+                },
+                "localizedText": {
+                  "$ref": "#/$defs/localizedItemText",
+                  "properties": {
+                    "chinese": {
+                      "maxLength": 200
+                    },
+                    "english": {
+                      "maxLength": 200
+                    }
+                  },
+                  "description": "Current-locale display text; the live tag value is appended independently."
+                }
+              },
+              "required": [],
+              "allOf": [
+                {
+                  "if": {
+                    "required": [
+                      "valueKind"
+                    ],
+                    "properties": {
+                      "valueKind": {
+                        "not": {
+                          "const": "none"
+                        }
+                      }
+                    }
+                  },
+                  "then": {
+                    "required": [
+                      "tagId"
+                    ]
+                  }
+                },
+                {
+                  "anyOf": [
+                    {
+                      "required": [
+                        "text"
+                      ]
+                    },
+                    {
+                      "required": [
+                        "localizedText"
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            "maxItems": 32,
+            "default": []
+          },
+          "lines": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "additionalProperties": false,
+              "properties": {
+                "text": {
+                  "type": "string",
+                  "maxLength": 2000,
+                  "description": "追加一行文本",
+                  "minLength": 1,
+                  "pattern": "\\S"
+                },
+                "position": {
+                  "type": "string",
+                  "enum": [
+                    "early",
+                    "late"
+                  ],
+                  "default": "late",
+                  "description": "官方回调阶段；late 仍在原生短简介之前"
+                },
+                "color": {
+                  "type": "string",
+                  "enum": [
+                    "None",
+                    "White",
+                    "VeryLightGray",
+                    "LightGray",
+                    "Gray",
+                    "DarkGray",
+                    "VeryDarkGray",
+                    "Black",
+                    "LightPurple",
+                    "Purple",
+                    "DarkPurple",
+                    "VeryLightRed",
+                    "LightRed",
+                    "Red",
+                    "DarkRed",
+                    "VeryDarkRed",
+                    "LightOrange",
+                    "Orange",
+                    "DarkOrange",
+                    "LightYellow",
+                    "Yellow",
+                    "DarkYellow",
+                    "VeryLightGreen",
+                    "LightGreen",
+                    "Green",
+                    "DarkGreen",
+                    "VeryDarkGreen",
+                    "LightTurquoise",
+                    "Turquoise",
+                    "DarkTurquoise",
+                    "VeryLightCyan",
+                    "LightCyan",
+                    "Cyan",
+                    "DarkCyan",
+                    "VeryDarkCyan",
+                    "LightBlue",
+                    "Blue",
+                    "DarkBlue",
+                    "EGreen",
+                    "ERed"
+                  ],
+                  "default": "None",
+                  "description": "游戏 ColorPalette 名称，区分大小写"
+                },
+                "bold": {
+                  "type": "boolean",
+                  "default": false,
+                  "description": "粗体"
+                },
+                "italic": {
+                  "type": "boolean",
+                  "default": false,
+                  "description": "斜体"
+                },
+                "underline": {
+                  "type": "boolean",
+                  "default": false,
+                  "description": "下划线"
+                },
+                "strikethrough": {
+                  "type": "boolean",
+                  "default": false,
+                  "description": "删除线"
+                },
+                "localizedText": {
+                  "$ref": "#/$defs/localizedItemText",
+                  "properties": {
+                    "chinese": {
+                      "maxLength": 2000
+                    },
+                    "english": {
+                      "maxLength": 2000
+                    }
+                  },
+                  "description": "Current-locale display text; the live tag value is appended independently."
+                }
+              },
+              "required": [],
+              "allOf": [
+                {
+                  "anyOf": [
+                    {
+                      "required": [
+                        "text"
+                      ]
+                    },
+                    {
+                      "required": [
+                        "localizedText"
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            "maxItems": 32,
+            "default": []
+          },
+          "localizedSourceName": {
+            "$ref": "#/$defs/localizedItemText",
+            "properties": {
+              "chinese": {
+                "maxLength": 200
+              },
+              "english": {
+                "maxLength": 200
+              }
+            },
+            "description": "Current-locale source display name; prefer a translated name for the content pack."
+          }
+        },
+        "required": []
+      },
+      "activation": {
+        "type": "object",
+        "additionalProperties": false,
+        "description": "EZapi >=0.1.3；只对当前玩家拥有且仍属于回调库存的单件物品执行原生槽位激活。",
+        "properties": {
+          "kind": {
+            "type": "string",
+            "enum": [
+              "healWounds"
+            ],
+            "description": "按官方 LearnerMod 示例清除伤势，稳定伤口并清除新伤标记。"
+          },
+          "consumption": {
+            "type": "string",
+            "enum": [
+              "destroy",
+              "useCount"
+            ],
+            "default": "destroy",
+            "description": "成功治疗后销毁，或调用原生 UseCountHelper.Use。"
+          },
+          "charge": {
+            "type": "integer",
+            "minimum": 1,
+            "maximum": 9999,
+            "default": 1,
+            "description": "useCount 消耗次数；destroy 时必须为 1。"
+          }
+        },
+        "required": [
+          "kind"
+        ]
+      },
+      "food": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "calories"
+        ],
+        "properties": {
+          "calories": {
+            "type": "integer",
+            "minimum": 1,
+            "maximum": 100000
+          },
+          "canned": {
+            "type": "boolean",
+            "default": false
+          },
+          "freshness": {
+            "type": "integer",
+            "minimum": 0,
+            "maximum": 100
+          },
+          "meat": {
+            "type": "boolean",
+            "default": false,
+            "description": "原生 isMeat 标记；EZapi 0.1.16 起支持。"
+          }
+        },
+        "description": "FoodItemHelper 初始化；省略 freshness 不启用 InitFreshFood。"
+      },
+      "liquidContainer": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "capacity": {
+            "type": "integer",
+            "minimum": 1,
+            "maximum": 100000,
+            "default": 500
+          },
+          "startFull": {
+            "type": "boolean",
+            "default": true
+          }
+        },
+        "description": "LiquidContainerHelper 原生容器；容量毫升；内容和饮用规则交游戏。"
+      },
+      "container": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "width",
+          "height"
+        ],
+        "description": "Native independent storage grid/window. Not liquidContainer; native admission/nesting retained.",
+        "properties": {
+          "width": {
+            "type": "integer",
+            "minimum": 1,
+            "maximum": 12
+          },
+          "height": {
+            "type": "integer",
+            "minimum": 1,
+            "maximum": 12
+          },
+          "title": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 200,
+            "pattern": "\\S",
+            "not": {
+              "pattern": "[\\u0000-\\u001f\\u007f-\\u009f]"
+            }
+          },
+          "draggable": {
+            "type": "boolean",
+            "default": true
+          },
+          "shapeRows": {
+            "type": "array",
+            "minItems": 1,
+            "maxItems": 12,
+            "items": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 12,
+              "pattern": "^[01]+$"
+            }
+          },
+          "allowedTags": {
+            "type": "array",
+            "maxItems": 64,
+            "uniqueItems": true,
+            "items": {
+              "type": "string",
+              "maxLength": 160,
+              "pattern": "^[A-Za-z0-9_-]+(?:\\.[A-Za-z0-9_-]+)*$",
+              "not": {
+                "pattern": "\\s"
+              }
+            }
+          },
+          "allowedIds": {
+            "type": "array",
+            "maxItems": 64,
+            "uniqueItems": true,
+            "items": {
+              "type": "string",
+              "maxLength": 160,
+              "pattern": "^[A-Za-z0-9_-]+(?:\\.[A-Za-z0-9_-]+)*$",
+              "not": {
+                "pattern": "\\s"
+              }
+            }
+          },
+          "localizedTitle": {
+            "$ref": "#/$defs/localizedItemText",
+            "properties": {
+              "chinese": {
+                "maxLength": 200
+              },
+              "english": {
+                "maxLength": 200
+              }
+            },
+            "description": "Current-locale display text. Requires EZapi 0.1.72."
+          }
+        },
+        "not": {
+          "required": [
+            "allowedTags",
+            "allowedIds"
+          ],
+          "properties": {
+            "allowedTags": {
+              "minItems": 1
+            },
+            "allowedIds": {
+              "minItems": 1
+            }
+          }
+        }
+      },
+      "module": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "type": {
+            "type": "string",
+            "pattern": "^(?:[A-Z][A-Z0-9_]*|[a-z0-9_-]+(?:\\.[a-z0-9_-]+)+)$",
+            "maxLength": 160,
+            "default": "MODULE_TYPE_UNIVERSAL"
+          },
+          "performance": {
+            "type": "integer",
+            "minimum": -100000,
+            "maximum": 100000,
+            "default": 0
+          },
+          "efficiency": {
+            "type": "integer",
+            "minimum": -100000,
+            "maximum": 100000,
+            "default": 0
+          },
+          "quality": {
+            "type": "integer",
+            "minimum": -100000,
+            "maximum": 100000,
+            "default": 0
+          },
+          "isShipModule": {
+            "type": "boolean",
+            "default": true
+          },
+          "additionalEffectDisplay": {
+            "type": "string",
+            "maxLength": 4000,
+            "default": ""
+          },
+          "tier": {
+            "type": "integer",
+            "minimum": 1,
+            "maximum": 100,
+            "default": 1
+          },
+          "localizedAdditionalEffectDisplay": {
+            "$ref": "#/$defs/localizedItemText",
+            "properties": {
+              "chinese": {
+                "maxLength": 4000
+              },
+              "english": {
+                "maxLength": 4000
+              }
+            },
+            "description": "Current-locale display text. Requires EZapi 0.1.72."
+          }
+        },
+        "description": "0.1.20：官方八参数ModuleHelper初始化；不自动添加机器准入或效果"
+      },
+      "node": {
+        "type": "boolean",
+        "default": false,
+        "description": "0.1.20：true调用官方ModuleEffectHelper.InitNode；不自动创建效果"
+      },
+      "nightShop": {
+        "type": "string",
+        "enum": [
+          "none",
+          "repeatable",
+          "unique"
+        ],
+        "default": "none",
+        "description": "夜间发明家商店供应；unique仅在玩家当前未持有时加入"
+      },
+      "npcTrade": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "category": {
+            "type": "string",
+            "pattern": "^\\s*(?:[Nn][Oo][Nn][Ee]|(?:[Mm][Aa][Tt][Ee][Rr][Ii][Aa][Ll]|[Oo][Rr][Ee]|[Mm][Oo][Dd][Uu][Ll][Ee]|[Mm][Aa][Cc][Hh][Ii][Nn][Ee]|[Hh][Oo][Uu][Ss][Ee][Hh][Oo][Ll][Dd]|[Ff][Oo][Oo][Dd]|[Mm][Ee][Dd][Ii][Cc][Aa][Ll])(?:\\s*,\\s*(?:[Mm][Aa][Tt][Ee][Rr][Ii][Aa][Ll]|[Oo][Rr][Ee]|[Mm][Oo][Dd][Uu][Ll][Ee]|[Mm][Aa][Cc][Hh][Ii][Nn][Ee]|[Hh][Oo][Uu][Ss][Ee][Hh][Oo][Ll][Dd]|[Ff][Oo][Oo][Dd]|[Mm][Ee][Dd][Ii][Cc][Aa][Ll]))*)\\s*$",
+            "allOf": [
+              {
+                "not": {
+                  "pattern": "\\b[Mm][Aa][Tt][Ee][Rr][Ii][Aa][Ll]\\b[\\s\\S]*\\b[Mm][Aa][Tt][Ee][Rr][Ii][Aa][Ll]\\b"
+                }
+              },
+              {
+                "not": {
+                  "pattern": "\\b[Oo][Rr][Ee]\\b[\\s\\S]*\\b[Oo][Rr][Ee]\\b"
+                }
+              },
+              {
+                "not": {
+                  "pattern": "\\b[Mm][Oo][Dd][Uu][Ll][Ee]\\b[\\s\\S]*\\b[Mm][Oo][Dd][Uu][Ll][Ee]\\b"
+                }
+              },
+              {
+                "not": {
+                  "pattern": "\\b[Mm][Aa][Cc][Hh][Ii][Nn][Ee]\\b[\\s\\S]*\\b[Mm][Aa][Cc][Hh][Ii][Nn][Ee]\\b"
+                }
+              },
+              {
+                "not": {
+                  "pattern": "\\b[Hh][Oo][Uu][Ss][Ee][Hh][Oo][Ll][Dd]\\b[\\s\\S]*\\b[Hh][Oo][Uu][Ss][Ee][Hh][Oo][Ll][Dd]\\b"
+                }
+              },
+              {
+                "not": {
+                  "pattern": "\\b[Ff][Oo][Oo][Dd]\\b[\\s\\S]*\\b[Ff][Oo][Oo][Dd]\\b"
+                }
+              },
+              {
+                "not": {
+                  "pattern": "\\b[Mm][Ee][Dd][Ii][Cc][Aa][Ll]\\b[\\s\\S]*\\b[Mm][Ee][Dd][Ii][Cc][Aa][Ll]\\b"
+                }
+              }
+            ],
+            "default": "None"
+          },
+          "weight": {
+            "type": "number",
+            "exclusiveMinimum": 0,
+            "maximum": 1000000000,
+            "default": 1
+          },
+          "suppliers": {
+            "type": "string",
+            "pattern": "^\\s*(?:[Aa][Nn][Yy]|(?:[Tt][Hh][Ii][Ee][Ff]|[Ii][Nn][Vv][Ee][Nn][Tt][Oo][Rr])(?:\\s*,\\s*(?:[Tt][Hh][Ii][Ee][Ff]|[Ii][Nn][Vv][Ee][Nn][Tt][Oo][Rr]))*)\\s*$",
+            "allOf": [
+              {
+                "not": {
+                  "pattern": "\\b[Tt][Hh][Ii][Ee][Ff]\\b[\\s\\S]*\\b[Tt][Hh][Ii][Ee][Ff]\\b"
+                }
+              },
+              {
+                "not": {
+                  "pattern": "\\b[Ii][Nn][Vv][Ee][Nn][Tt][Oo][Rr]\\b[\\s\\S]*\\b[Ii][Nn][Vv][Ee][Nn][Tt][Oo][Rr]\\b"
+                }
+              }
+            ],
+            "default": "Any"
+          },
+          "includeInNightShop": {
+            "type": "boolean",
+            "default": true
+          },
+          "skipWhenOwned": {
+            "type": "boolean",
+            "default": false
+          },
+          "minimumDay": {
+            "type": "integer",
+            "minimum": 0,
+            "maximum": 2147483647,
+            "default": 0
+          },
+          "preserveLootTableWeight": {
+            "type": "boolean",
+            "default": true
+          },
+          "minerWeight": {
+            "type": "number",
+            "minimum": 0,
+            "maximum": 1000000000
+          }
+        },
+        "description": "NPC候选池；自动路径见npc-stock.zh-CN.md，Machine硬编码供应未接入。矿工使用Ore与minerWeight。"
+      },
+      "localizedName": {
+        "$ref": "#/$defs/localizedItemText",
+        "properties": {
+          "chinese": {
+            "maxLength": 200
+          },
+          "english": {
+            "maxLength": 200
+          }
+        },
+        "description": "Current-locale name; overrides the literal name when supplied. Requires EZapi 0.1.72."
+      },
+      "localizedDescription": {
+        "$ref": "#/$defs/localizedItemText",
+        "properties": {
+          "chinese": {
+            "maxLength": 4000
+          },
+          "english": {
+            "maxLength": 4000
+          }
+        },
+        "description": "Current-locale description; overrides the literal description when supplied. Requires EZapi 0.1.72."
+      },
+      "localizedShortDescription": {
+        "$ref": "#/$defs/localizedItemText",
+        "properties": {
+          "chinese": {
+            "maxLength": 4000
+          },
+          "english": {
+            "maxLength": 4000
+          }
+        },
+        "description": "Current-locale shortDescription; overrides the literal shortDescription when supplied. Requires EZapi 0.1.72."
+      },
+      "localizedLongDescription": {
+        "$ref": "#/$defs/localizedItemText",
+        "properties": {
+          "chinese": {
+            "maxLength": 8000
+          },
+          "english": {
+            "maxLength": 8000
+          }
+        },
+        "description": "Current-locale longDescription; overrides the literal longDescription when supplied. Requires EZapi 0.1.72."
+      },
+      "localizedFlavorText": {
+        "$ref": "#/$defs/localizedItemText",
+        "properties": {
+          "chinese": {
+            "maxLength": 4000
+          },
+          "english": {
+            "maxLength": 4000
+          }
+        },
+        "description": "Current-locale flavorText; overrides the literal flavorText when supplied. Requires EZapi 0.1.72."
+      },
+      "localizedCustomText": {
+        "$ref": "#/$defs/localizedItemText",
+        "properties": {
+          "chinese": {
+            "maxLength": 4000
+          },
+          "english": {
+            "maxLength": 4000
+          }
+        },
+        "description": "Current-locale customText; overrides the literal customText when supplied. Requires EZapi 0.1.72."
+      }
+    },
+    "required": [
+      "id"
+    ],
+    "dependentRequired": {
+      "sprite": [
+        "modId"
+      ],
+      "width": [
+        "height"
+      ],
+      "height": [
+        "width"
+      ],
+      "shapeRows": [
+        "width",
+        "height"
+      ]
+    },
+    "not": {
+      "required": [
+        "description",
+        "shortDescription"
+      ]
+    },
+    "x-semantic-validation": [
+      "JsonItems.Parse 是最终规则：校验 shapeRows 维度/非空、重复 ID/type/tag、typeNames 关联、label.tagId 关联、current<=maximum、次数总价<=1000000000、未开启 autoValue 时不允许非零计价参数。",
+      "Schema 不能拒绝 JSON 重复键；共享 CLI 能拒绝。",
+      "activation.charge<=useCount.maximum 由共享 CLI 验证；当前伤势和剩余次数在每次实际激活时检查。",
+      "native-items-0.1.20: module/node forbids MODULE_*/NODE_* overrides in tags; enforce with shared CLI/runtime validator"
+    ],
+    "allOf": [
+      {
+        "if": {
+          "required": [
+            "activation"
+          ],
+          "properties": {
+            "activation": {
+              "required": [
+                "consumption"
+              ],
+              "properties": {
+                "consumption": {
+                  "const": "useCount"
+                }
+              }
+            }
+          }
+        },
+        "then": {
+          "required": [
+            "useCount"
+          ]
+        }
+      },
+      {
+        "if": {
+          "required": [
+            "activation"
+          ],
+          "properties": {
+            "activation": {
+              "not": {
+                "required": [
+                  "consumption"
+                ],
+                "properties": {
+                  "consumption": {
+                    "const": "useCount"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "then": {
+          "not": {
+            "required": [
+              "useCount"
+            ]
+          },
+          "properties": {
+            "activation": {
+              "properties": {
+                "charge": {
+                  "const": 1
+                }
+              }
+            }
+          }
+        }
+      },
+      {
+        "if": {
+          "required": [
+            "activation"
+          ]
+        },
+        "then": {
+          "properties": {
+            "forceDisableUse": {
+              "const": false
+            },
+            "forceDisableActivate": {
+              "const": false
+            }
+          }
+        }
+      },
+      {
+        "if": {
+          "required": [
+            "food"
+          ]
+        },
+        "then": {
+          "not": {
+            "anyOf": [
+              {
+                "required": [
+                  "liquidContainer"
+                ]
+              },
+              {
+                "required": [
+                  "activation"
+                ]
+              },
+              {
+                "required": [
+                  "useCount"
+                ]
+              }
+            ]
+          }
+        }
+      },
+      {
+        "if": {
+          "required": [
+            "liquidContainer"
+          ]
+        },
+        "then": {
+          "not": {
+            "anyOf": [
+              {
+                "required": [
+                  "food"
+                ]
+              },
+              {
+                "required": [
+                  "activation"
+                ]
+              },
+              {
+                "required": [
+                  "useCount"
+                ]
+              }
+            ]
+          }
+        }
+      },
+      {
+        "if": {
+          "required": [
+            "container"
+          ]
+        },
+        "then": {
+          "not": {
+            "anyOf": [
+              {
+                "required": [
+                  "food"
+                ]
+              },
+              {
+                "required": [
+                  "liquidContainer"
+                ]
+              },
+              {
+                "required": [
+                  "activation"
+                ]
+              },
+              {
+                "required": [
+                  "useCount"
+                ]
+              }
+            ]
+          }
+        }
+      },
+      {
+        "$comment": "native-items-0.1.20 module",
+        "if": {
+          "required": [
+            "module"
+          ]
+        },
+        "then": {
+          "not": {
+            "anyOf": [
+              {
+                "required": [
+                  "food"
+                ]
+              },
+              {
+                "required": [
+                  "liquidContainer"
+                ]
+              },
+              {
+                "required": [
+                  "container"
+                ]
+              },
+              {
+                "required": [
+                  "activation"
+                ]
+              },
+              {
+                "required": [
+                  "useCount"
+                ]
+              },
+              {
+                "required": [
+                  "node"
+                ],
+                "properties": {
+                  "node": {
+                    "const": true
+                  }
+                }
+              }
+            ]
+          }
+        }
+      },
+      {
+        "$comment": "native-items-0.1.20 node",
+        "if": {
+          "required": [
+            "node"
+          ],
+          "properties": {
+            "node": {
+              "const": true
+            }
+          }
+        },
+        "then": {
+          "not": {
+            "anyOf": [
+              {
+                "required": [
+                  "food"
+                ]
+              },
+              {
+                "required": [
+                  "liquidContainer"
+                ]
+              },
+              {
+                "required": [
+                  "container"
+                ]
+              },
+              {
+                "required": [
+                  "activation"
+                ]
+              },
+              {
+                "required": [
+                  "useCount"
+                ]
+              },
+              {
+                "required": [
+                  "module"
+                ]
+              }
+            ]
+          }
+        }
+      },
+      {
+        "anyOf": [
+          {
+            "required": [
+              "name"
+            ]
+          },
+          {
+            "required": [
+              "localizedName"
+            ]
+          }
+        ]
+      },
+      {
+        "not": {
+          "required": [
+            "localizedDescription",
+            "localizedShortDescription"
+          ]
+        }
+      },
+      {
+        "if": {
+          "anyOf": [
+            {
+              "required": [
+                "localizedName"
+              ],
+              "properties": {
+                "localizedName": {
+                  "type": "object",
+                  "required": [
+                    "key"
+                  ]
+                }
+              }
+            },
+            {
+              "required": [
+                "localizedDescription"
+              ],
+              "properties": {
+                "localizedDescription": {
+                  "type": "object",
+                  "required": [
+                    "key"
+                  ]
+                }
+              }
+            },
+            {
+              "required": [
+                "localizedShortDescription"
+              ],
+              "properties": {
+                "localizedShortDescription": {
+                  "type": "object",
+                  "required": [
+                    "key"
+                  ]
+                }
+              }
+            },
+            {
+              "required": [
+                "localizedLongDescription"
+              ],
+              "properties": {
+                "localizedLongDescription": {
+                  "type": "object",
+                  "required": [
+                    "key"
+                  ]
+                }
+              }
+            },
+            {
+              "required": [
+                "localizedFlavorText"
+              ],
+              "properties": {
+                "localizedFlavorText": {
+                  "type": "object",
+                  "required": [
+                    "key"
+                  ]
+                }
+              }
+            },
+            {
+              "required": [
+                "localizedCustomText"
+              ],
+              "properties": {
+                "localizedCustomText": {
+                  "type": "object",
+                  "required": [
+                    "key"
+                  ]
+                }
+              }
+            },
+            {
+              "required": [
+                "container"
+              ],
+              "properties": {
+                "container": {
+                  "required": [
+                    "localizedTitle"
+                  ],
+                  "properties": {
+                    "localizedTitle": {
+                      "type": "object",
+                      "required": [
+                        "key"
+                      ]
+                    }
+                  }
+                }
+              }
+            },
+            {
+              "required": [
+                "module"
+              ],
+              "properties": {
+                "module": {
+                  "required": [
+                    "localizedAdditionalEffectDisplay"
+                  ],
+                  "properties": {
+                    "localizedAdditionalEffectDisplay": {
+                      "type": "object",
+                      "required": [
+                        "key"
+                      ]
+                    }
+                  }
+                }
+              }
+            },
+            {
+              "required": [
+                "typeNames"
+              ],
+              "properties": {
+                "typeNames": {
+                  "contains": {
+                    "required": [
+                      "localizedName"
+                    ],
+                    "properties": {
+                      "localizedName": {
+                        "type": "object",
+                        "required": [
+                          "key"
+                        ]
+                      }
+                    }
+                  }
+                }
+              }
+            },
+            {
+              "required": [
+                "tooltip"
+              ],
+              "properties": {
+                "tooltip": {
+                  "required": [
+                    "localizedSourceName"
+                  ],
+                  "properties": {
+                    "localizedSourceName": {
+                      "type": "object",
+                      "required": [
+                        "key"
+                      ]
+                    }
+                  }
+                }
+              }
+            },
+            {
+              "required": [
+                "tooltip"
+              ],
+              "properties": {
+                "tooltip": {
+                  "required": [
+                    "labels"
+                  ],
+                  "properties": {
+                    "labels": {
+                      "contains": {
+                        "required": [
+                          "localizedText"
+                        ],
+                        "properties": {
+                          "localizedText": {
+                            "type": "object",
+                            "required": [
+                              "key"
+                            ]
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            },
+            {
+              "required": [
+                "tooltip"
+              ],
+              "properties": {
+                "tooltip": {
+                  "required": [
+                    "lines"
+                  ],
+                  "properties": {
+                    "lines": {
+                      "contains": {
+                        "required": [
+                          "localizedText"
+                        ],
+                        "properties": {
+                          "localizedText": {
+                            "type": "object",
+                            "required": [
+                              "key"
+                            ]
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          ]
+        },
+        "then": {
+          "required": [
+            "modId"
+          ]
+        }
+      }
+    ]
+  },
+  "$defs": {
+    "localizedItemText": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "chinese": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 8192,
+          "pattern": "\\S"
+        },
+        "english": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 8192,
+          "pattern": "\\S"
+        },
+        "key": {
+          "type": "string",
+          "maxLength": 160,
+          "pattern": "^[A-Za-z0-9_]+$"
+        }
+      },
+      "anyOf": [
+        {
+          "required": [
+            "chinese"
+          ]
+        },
+        {
+          "required": [
+            "english"
+          ]
+        },
+        {
+          "required": [
+            "key"
+          ]
+        }
+      ],
+      "description": "Inline bilingual text or a key in the owning pack Localization/*.csv. CSV-backed item fields require an English key. Current locale -> en -> inline -> literal fallback; item fields take no format arguments."
+    }
+  }
+}

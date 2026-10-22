@@ -1,0 +1,40 @@
+{
+  "schemaVersion": 1,
+  "authoritativeApi": "Il2Cpp.TypeHelper.ALL_TYPES_LIST",
+  "displayNameApi": "Il2Cpp.TypeHelper.GetTypeDisplayName(string typeConst)",
+  "source": "官方 LearnerMod 物品示例使用 TypeHelper 分类；全部列表直接取当前游戏 TypeHelper，不再手写游戏分类表",
+  "export": "玩家在店铺点击 EZapi 调试 → 校验原生属性后，UserData/EZapi/diagnostics.json 的 nativeChecks.nativeTypes 导出当前游戏全部分类与显示名",
+  "examples": [
+    {
+      "id": "TOOL",
+      "meaning": "工具",
+      "usedBySample": true
+    },
+    {
+      "id": "MATERIAL",
+      "meaning": "材料",
+      "usedBySample": true
+    },
+    {
+      "id": "MEDICAL",
+      "meaning": "医疗用品",
+      "source": "官方 LearnerMod 示例"
+    }
+  ],
+  "customType": {
+    "types": [
+      "author.mod.custom_type"
+    ],
+    "typeNames": [
+      {
+        "id": "author.mod.custom_type",
+        "name": "我的分类"
+      }
+    ]
+  },
+  "distributionVerification": {
+    "dllSHA256": "7E4AB675B0E3BD81C56EEC4606731A6880287549EB4E8E90A707BE18BD52BEEF",
+    "nativeRuntimeVerified": false,
+    "frameworkSourceIncluded": false
+  }
+}

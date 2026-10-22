@@ -1,0 +1,25 @@
+[
+  {
+    "id": "author.minerals.crystal",
+    "name": "蓝晶矿",
+    "value": 250,
+    "npcTrade": {
+      "category": "Ore",
+      "minerWeight": 2,
+      "minimumDay": 5,
+      "skipWhenOwned": true
+    }
+  },
+  {
+    "id": "author.minerals.component",
+    "name": "精制零件",
+    "value": 150,
+    "npcTrade": {
+      "category": "Material",
+      "weight": 3,
+      "suppliers": "Thief, Inventor",
+      "includeInNightShop": true,
+      "preserveLootTableWeight": true
+    }
+  }
+]

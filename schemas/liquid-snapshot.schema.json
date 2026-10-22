@@ -1,0 +1,103 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://ezapi.local/schemas/liquid-snapshot.schema.json",
+  "title": "EZapi 0.1.17 MachineLiquidSnapshot JSON output",
+  "description": "公开只读输出契约；不是items.json字段或液体导入器。TotalParts与Millilitres由C#计算；容量、总量和唯一ID另由C#校验。",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "CapacityParts",
+    "Contents",
+    "TotalParts",
+    "Millilitres"
+  ],
+  "properties": {
+    "CapacityParts": {
+      "type": "integer",
+      "minimum": 0,
+      "maximum": 2147483647
+    },
+    "Contents": {
+      "type": "array",
+      "maxItems": 4096,
+      "items": {
+        "$ref": "#/$defs/component"
+      }
+    },
+    "TotalParts": {
+      "type": "integer",
+      "minimum": 0,
+      "maximum": 2147483647
+    },
+    "Millilitres": {
+      "type": "number",
+      "minimum": 0
+    }
+  },
+  "$defs": {
+    "component": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "LiquidId",
+        "Parts"
+      ],
+      "properties": {
+        "LiquidId": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 160,
+          "pattern": "^(?!.*[\\u0000-\\u001f\\u007f-\\u009f]).*\\S.*$"
+        },
+        "Parts": {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 2147483647
+        },
+        "Value": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "minimum": 0,
+          "description": "该成分合计价值，不再乘Parts"
+        },
+        "QualityBasis": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "minimum": 0,
+          "description": "该成分合计品质计算依据"
+        }
+      },
+      "allOf": [
+        {
+          "if": {
+            "properties": {
+              "Parts": {
+                "const": 0
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "Value": {
+                "enum": [
+                  0,
+                  null
+                ]
+              },
+              "QualityBasis": {
+                "enum": [
+                  0,
+                  null
+                ]
+              }
+            }
+          }
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,8 @@
+{
+  "kind": "all",
+  "message": {"chinese": "制造条件", "english": "Manufacturing requirements"},
+  "children": [
+    {"kind": "day-at-least", "amount": 3, "message": {"chinese": "第3天起开放", "english": "Available from day3"}},
+    {"kind": "credits-at-least", "amount": 100, "message": {"chinese": "至少100信用点", "english": "At least100 credits"}}
+  ]
+}

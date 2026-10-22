@@ -1,0 +1,27 @@
+{
+  "schemaVersion": 1,
+  "version": "0.1.63",
+  "guide": "machine-status.zh-CN.md",
+  "englishGuide": "machine-status.en.md",
+  "evidence": "verification/machine-status-native-0.1.63.json",
+  "thread": "initialized game main thread",
+  "capture": "query-time immutable view; re-query after state changes",
+  "fields": {
+    "RuntimeInstalled": "global MachineRuntimeApi readiness, independent of EnableNightly",
+    "ProcessingAvailable": "Applied && MachineRecipeApi.CanEdit && InventoryAdmissionApi.IsAvailable && InventoryFreezeApi.IsAvailable",
+    "NightlyInstalled": "RuntimeInstalled && definition.EnableNightly"
+  },
+  "compatibility": "original ten-argument constructor/deconstruction retained; manually constructed legacy views default RuntimeInstalled=false",
+  "notGuaranteed": [
+    "materials",
+    "energy",
+    "space",
+    "successful processing",
+    "full public behavior coverage"
+  ],
+  "distributionVerification": {
+    "dllSHA256": "7E4AB675B0E3BD81C56EEC4606731A6880287549EB4E8E90A707BE18BD52BEEF",
+    "nativeRuntimeVerified": false,
+    "frameworkSourceIncluded": false
+  }
+}

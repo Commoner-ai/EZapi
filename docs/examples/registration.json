@@ -1,0 +1,9 @@
+{
+  "ownerId": "author.tools",
+  "version": "1.0.0",
+  "dependencies": [{ "ownerId": "author.core", "minimumVersion": "1.2.0" }],
+  "definitions": [
+    { "kind": "Effect", "localId": "stable", "signature": "effect:v1" },
+    { "kind": "Module", "localId": "sensor", "signature": "module:v1", "requiredIds": ["author.tools.stable", "author.core.base"] }
+  ]
+}
