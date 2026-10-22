@@ -1,0 +1,107 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+
+  <PropertyGroup>
+
+
+    <TargetFramework>net6.0</TargetFramework>
+
+
+    <AssemblyName>EZapi</AssemblyName>
+
+
+    <RootNamespace>EZapi</RootNamespace>
+
+
+    <Nullable>enable</Nullable>
+
+
+    <ImplicitUsings>enable</ImplicitUsings>
+
+
+    <LangVersion>10.0</LangVersion>
+
+
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+
+
+    <GenerateAssemblyInfo>true</GenerateAssemblyInfo>
+
+
+    <Version>0.1.73</Version>
+    <GenerateDocumentationFile>true</GenerateDocumentationFile>
+    <NoWarn>$(NoWarn);1591</NoWarn>
+
+
+  </PropertyGroup>
+
+
+  <ItemGroup>
+
+
+    <Reference Include="Unity.ResourceManager"><HintPath>$(GameDir)\MelonLoader\Il2CppAssemblies\Unity.ResourceManager.dll</HintPath><Private>false</Private></Reference>
+
+
+    <Reference Include="Unity.Localization"><HintPath>$(GameDir)\MelonLoader\Il2CppAssemblies\Unity.Localization.dll</HintPath><Private>false</Private></Reference>
+
+
+    <Reference Include="Unity.TextMeshPro"><HintPath>$(GameDir)\MelonLoader\Il2CppAssemblies\Unity.TextMeshPro.dll</HintPath><Private>false</Private></Reference>
+
+
+    <EmbeddedResource Include="Assets/manufacturing-terminal.png" />
+
+
+    <Reference Include="Assembly-CSharp"><HintPath>$(GameDir)\MelonLoader\Il2CppAssemblies\Assembly-CSharp.dll</HintPath><Private>false</Private></Reference>
+
+
+    <Reference Include="MelonLoader"><HintPath>$(GameDir)\MelonLoader\net6\MelonLoader.dll</HintPath><Private>false</Private></Reference>
+
+
+    <Reference Include="Il2Cppmscorlib"><HintPath>$(GameDir)\MelonLoader\Il2CppAssemblies\Il2Cppmscorlib.dll</HintPath><Private>false</Private></Reference>
+
+
+    <Reference Include="Il2CppSystem"><HintPath>$(GameDir)\MelonLoader\Il2CppAssemblies\Il2CppSystem.dll</HintPath><Private>false</Private></Reference>
+
+
+    <Reference Include="Il2CppSystem.Core"><HintPath>$(GameDir)\MelonLoader\Il2CppAssemblies\Il2CppSystem.Core.dll</HintPath><Private>false</Private></Reference>
+
+
+    <Reference Include="Il2CppInterop.Runtime"><HintPath>$(GameDir)\MelonLoader\net6\Il2CppInterop.Runtime.dll</HintPath><Private>false</Private></Reference>
+
+
+    <Reference Include="Il2CppInterop.Common"><HintPath>$(GameDir)\MelonLoader\net6\Il2CppInterop.Common.dll</HintPath><Private>false</Private></Reference>
+
+
+    <Reference Include="UnityEngine.CoreModule"><HintPath>$(GameDir)\MelonLoader\Il2CppAssemblies\UnityEngine.CoreModule.dll</HintPath><Private>false</Private></Reference>
+
+
+    <Reference Include="UnityEngine.JSONSerializeModule"><HintPath>$(GameDir)\MelonLoader\Il2CppAssemblies\UnityEngine.JSONSerializeModule.dll</HintPath><Private>false</Private></Reference>
+
+
+    <Reference Include="0Harmony"><HintPath>$(GameDir)\MelonLoader\net6\0Harmony.dll</HintPath><Private>false</Private></Reference>
+
+
+    <Reference Include="UnityEngine.ImageConversionModule"><HintPath>$(GameDir)\MelonLoader\Il2CppAssemblies\UnityEngine.ImageConversionModule.dll</HintPath><Private>false</Private></Reference>
+
+
+    <Reference Include="UnityEngine.UI"><HintPath>$(GameDir)\MelonLoader\Il2CppAssemblies\UnityEngine.UI.dll</HintPath><Private>false</Private></Reference>
+
+
+    <Reference Include="UnityEngine.UIModule"><HintPath>$(GameDir)\MelonLoader\Il2CppAssemblies\UnityEngine.UIModule.dll</HintPath><Private>false</Private></Reference>
+
+
+    <Reference Include="UnityEngine.IMGUIModule"><HintPath>$(GameDir)\MelonLoader\Il2CppAssemblies\UnityEngine.IMGUIModule.dll</HintPath><Private>false</Private></Reference>
+
+
+    <Reference Include="UnityEngine.InputLegacyModule"><HintPath>$(GameDir)\MelonLoader\Il2CppAssemblies\UnityEngine.InputLegacyModule.dll</HintPath><Private>false</Private></Reference>
+
+
+    <Reference Include="UnityEngine.TextRenderingModule"><HintPath>$(GameDir)\MelonLoader\Il2CppAssemblies\UnityEngine.TextRenderingModule.dll</HintPath><Private>false</Private></Reference>
+
+
+  </ItemGroup>
+
+
+</Project>
+
+

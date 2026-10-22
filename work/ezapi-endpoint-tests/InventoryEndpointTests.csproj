@@ -1,0 +1,7 @@
+<Project Sdk="Microsoft.NET.Sdk">
+ <PropertyGroup><TargetFrameworks>net6.0;net8.0</TargetFrameworks><OutputType>Exe</OutputType><Nullable>enable</Nullable><ImplicitUsings>enable</ImplicitUsings><LangVersion>10.0</LangVersion></PropertyGroup>
+ <ItemGroup>
+  <Compile Include="../../src/EZapi/InventoryEndpointData.cs" Link="Real/InventoryEndpointData.cs" />
+  <Compile Include="../../src/EZapi/PresentationResult.cs" Link="Real/PresentationResult.cs" />
+ </ItemGroup>
+</Project>

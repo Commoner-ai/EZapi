@@ -1,0 +1,4 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup><OutputType>Exe</OutputType><TargetFrameworks>net6.0;net8.0</TargetFrameworks><Nullable>enable</Nullable><ImplicitUsings>enable</ImplicitUsings><LangVersion>10.0</LangVersion></PropertyGroup>
+  <ItemGroup><Compile Include="../../src/EZapi/PresentationResult.cs" Link="PresentationResult.cs"/><Compile Include="../../src/EZapi/ReadingCoordinator.cs" Link="ReadingCoordinator.cs"/><Compile Include="../../src/EZapi/ReadingTextResolution.cs" Link="ReadingTextResolution.cs"/><Compile Include="../../src/EZapi/LocalizedItemText.cs" Link="LocalizedItemText.cs"/><Compile Include="../../src/EZapi/Localization.cs" Link="Localization.cs"/></ItemGroup>
+</Project>

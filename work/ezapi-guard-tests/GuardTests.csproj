@@ -1,0 +1,14 @@
+<Project Sdk="Microsoft.NET.Sdk">
+ <PropertyGroup><TargetFramework>net8.0</TargetFramework><OutputType>Exe</OutputType><Nullable>enable</Nullable><ImplicitUsings>enable</ImplicitUsings><AllowUnsafeBlocks>true</AllowUnsafeBlocks></PropertyGroup>
+ <ItemGroup>
+  <Compile Include="../../src/EZapi/InventoryServices.cs" Link="Real/InventoryServices.cs"/>
+  <Compile Include="../../src/EZapi/InventoryPlacement.cs" Link="Real/InventoryPlacement.cs"/>
+  <Compile Include="../../src/EZapi/ItemTransfer.cs" Link="Real/ItemTransfer.cs"/>
+  <Compile Include="../../src/EZapi/NativeAccess.cs" Link="Real/NativeAccess.cs"/>
+  <Compile Include="../../src/EZapi/NativeHooks.cs" Link="Real/NativeHooks.cs"/>
+  <Compile Include="../../src/EZapi/InventoryFreeze.cs" Link="Real/InventoryFreeze.cs"/>
+  <Compile Include="../../src/EZapi/InventoryAdmission.cs" Link="Real/InventoryAdmission.cs"/>
+  <Compile Include="../../src/EZapi/InventoryRuntime.cs" Link="Real/InventoryRuntime.cs"/>
+  <Compile Include="../../src/EZapi/ListInventory.cs" Link="Real/ListInventory.cs"/>
+ </ItemGroup>
+</Project>

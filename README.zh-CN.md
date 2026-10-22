@@ -2,9 +2,9 @@
 
 EZapi 是 Probably Stolen 的独立 Mod 前置框架，提供 DLL API、JSON 内容包、离线校验器、可编译示例及 AI 可读索引。优先使用游戏官方接口，并在当前游戏构建中集中处理兼容适配。
 
-**当前预发布：0.1.73-preview.1，程序集版本0.1.73。** 完整目标尚未完成。
+**当前预发布：0.1.73-preview.2，程序集版本0.1.73。** 完整目标尚未完成。
 
-本仓库是公开发布入口，只提供安装包、文档、接口索引和调用示例；框架实现及内部Git历史不公开。请从Releases下载安装包，GitHub自动生成的源码压缩包只含本发布仓库资料。
+本仓库按 **MIT 许可证开源**：框架、离线校验器、测试、构建脚本、文档、接口索引和调用示例均可查看、修改与分发。旧私有仓库的历史不迁入，游戏程序集及私人数据不分发。玩家从 Releases 下载安装包，源码开发见[构建说明](docs/build-from-source.zh-CN.md)。
 
 ## 开发从这里开始
 
@@ -13,7 +13,7 @@ EZapi 是 Probably Stolen 的独立 Mod 前置框架，提供 DLL API、JSON 内
 - [常见 API 任务索引](docs/API.index.zh-CN.json)、[领域索引](docs/source.index.json)、[错误索引](docs/errors.index.json)。
 - [当前游戏语言指南](docs/game-language.zh-CN.md)、[English guide](docs/game-language.en.md)、[语言任务索引](docs/game-language.index.json)。
 - [知识库升级/服务/前置条件扩展](docs/progression-requirements.index.json)、[物品版本化数据](docs/item-data.index.json)、[Forge公共能力对照](docs/forge-parity.index.json)。
-- [本次版本与验证范围](docs/releases/0.1.73-preview.1.md)。
+- [本次版本与验证范围](docs/releases/0.1.73-preview.2.md)。
 
 ## 两个下载包
 
@@ -45,7 +45,7 @@ dotnet tools/ezapi-validate/ezapi-validate.dll --requirements docs/examples/requ
 
 退出码0是通过，1是内容/文件问题，2是命令用法错误。离线通过不表示物品已经进入原生目录、当前游戏资格成立或存档恢复成功。编译样例在 `src/EZapi.Sample/`。
 
-框架实现、内部测试和构建工程不公开、不随开发包分发。作者引用安装好的DLL开发；最小独立工程可直接编译：
+框架实现、离线测试和构建工程已按 MIT 开源，源码从仓库获取；二进制开发包保持精简。作者可引用安装好的 DLL 开发，最小独立工程可直接编译：
 
 ```powershell
 dotnet build docs/examples/minimal-dll/SimpleMod.csproj -c Release -p:GameDir='<游戏目录>'
@@ -59,4 +59,4 @@ Forge参考功能覆盖为39/39组；这是功能对应清点，不承诺Forge�
 
 语言跟随游戏当前设置，CSV可保留更多语言支持。当前DLL完成59组离线回归、25项CLI检查和124项新增外出按钮检查；尚未进游戏验收。历史DLL的语言与保存结果不转移到当前版本。验证范围与哈希见发布附件的package-verification.json和包内verification.json。
 
-框架源码保持私有。二进制分发、调用示例与工具使用许可见LICENSE；第三方依赖说明见THIRD-PARTY-NOTICES.md。
+源码与二进制采用 MIT 许可证，保留版权声明即可使用、修改与分发，见 LICENSE；第三方依赖说明见 THIRD-PARTY-NOTICES.md。

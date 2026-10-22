@@ -1,0 +1,14 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFrameworks>net6.0;net8.0</TargetFrameworks>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <LangVersion>10.0</LangVersion>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="../../src/EZapi/PresentationResult.cs" Link="Real/PresentationResult.cs" />
+    <Compile Include="../../src/EZapi/DialogueDefinition.cs" Link="Real/DialogueDefinition.cs" />
+    <Compile Include="../../src/EZapi/SupplierDefinition.cs" Link="Real/SupplierDefinition.cs" />
+  </ItemGroup>
+<ItemGroup><Compile Include="../../src/EZapi/LocalizedItemText.cs" Link="Real/LocalizedItemText.cs" /><Compile Include="../../src/EZapi/Localization.cs" Link="Real/Localization.cs" /></ItemGroup></Project>

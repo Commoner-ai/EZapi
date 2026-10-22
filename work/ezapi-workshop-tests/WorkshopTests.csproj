@@ -1,0 +1,17 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>net8.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+    <LangVersion>10.0</LangVersion>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="../../src/EZapi/WorkshopDefinitions.cs" Link="Real/WorkshopDefinitions.cs" />
+    <Compile Include="../../src/EZapi/WorkshopApi.cs" Link="Real/WorkshopApi.cs" />
+    <Compile Include="../../src/EZapi/Registration.cs" Link="Real/Registration.cs" />
+    <Compile Include="../../src/EZapi/PresentationResult.cs" Link="Real/PresentationResult.cs" />
+    <Compile Include="../../src/EZapi/LocalizedItemText.cs" Link="Real/LocalizedItemText.cs" />
+    <Compile Include="../../src/EZapi/Localization.cs" Link="Real/Localization.cs" />
+  </ItemGroup>
+</Project>

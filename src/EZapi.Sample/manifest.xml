@@ -1,0 +1,7 @@
+<Manifest>
+  <ID>ezapi_sample</ID>
+  <Name>EZapi Sample</Name>
+  <Author>EZapi</Author>
+  <Version>0.1.0</Version>
+  <Description>标杆示例：通过 JSON 声明物品，再由 EZapi 注册。</Description>
+</Manifest>

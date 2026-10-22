@@ -1,0 +1,8 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup><TargetFramework>net8.0</TargetFramework><OutputType>Exe</OutputType><Nullable>enable</Nullable><ImplicitUsings>enable</ImplicitUsings></PropertyGroup>
+  <ItemGroup>
+    <Compile Include="../../src/EZapi/ModLog.cs" Link="Real/ModLog.cs" />
+    <Compile Include="../../src/EZapi/WindowInputCapture.cs" Link="Real/WindowInputCapture.cs" />
+    <Compile Include="../../src/EZapi/ManufacturingTerminal.cs" Link="Real/ManufacturingTerminal.cs" />
+  </ItemGroup>
+</Project>

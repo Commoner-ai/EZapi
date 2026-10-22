@@ -1,0 +1,12 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup><TargetFramework>net8.0</TargetFramework><OutputType>Exe</OutputType><Nullable>enable</Nullable><ImplicitUsings>enable</ImplicitUsings></PropertyGroup>
+  <ItemGroup>
+    <Compile Include="../../src/EZapi/MachineLayoutDefinition.cs" Link="Real/MachineLayoutDefinition.cs"/>
+    <Compile Include="../../src/EZapi/RecipeGuideDefinition.cs" Link="Real/RecipeGuideDefinition.cs"/>
+    <Compile Include="../../src/EZapi/RecipeGuide.cs" Link="Real/RecipeGuide.cs"/>
+    <Compile Include="../../src/EZapi/RecipeGuideText.cs" Link="Real/RecipeGuideText.cs"/>
+    <Compile Include="../../src/EZapi/JsonItems.cs" Link="Real/JsonItems.cs"/>
+    <Compile Include="../../src/EZapi/ItemDefinition.cs" Link="Real/ItemDefinition.cs"/>
+    <Compile Include="../../src/EZapi/DefinitionRules.cs" Link="Real/DefinitionRules.cs"/>
+  </ItemGroup>
+<ItemGroup><Compile Include="../../src/EZapi/NpcStockDefinition.cs" Link="Shared/NpcStockDefinition.cs" /></ItemGroup><ItemGroup><Compile Include="../../src/EZapi/LocalizedItemText.cs" Link="Shared/LocalizedItemText.cs" /></ItemGroup><ItemGroup><Compile Include="../../src/EZapi/Localization.cs" Link="Shared/Localization.cs" /></ItemGroup><ItemGroup><Compile Include="../../src/EZapi/ItemText.cs" Link="Shared/ItemText.cs" /></ItemGroup></Project>

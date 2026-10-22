@@ -1,0 +1,11 @@
+<Project Sdk="Microsoft.NET.Sdk">
+<PropertyGroup><OutputType>Exe</OutputType><TargetFramework>net8.0</TargetFramework><Nullable>enable</Nullable><ImplicitUsings>enable</ImplicitUsings></PropertyGroup>
+<ItemGroup>
+<Compile Include="../../src/EZapi/MachineContainerConditions.cs" Link="Real/MachineContainerConditions.cs"/>
+<Compile Include="../../src/EZapi/MachineLayoutCallbacks.cs" Link="Real/MachineLayoutCallbacks.cs"/>
+<Compile Include="../../src/EZapi/MachineLayoutDefinition.cs" Link="Real/MachineLayoutDefinition.cs"/>
+<Compile Include="../../src/EZapi/JsonItems.cs" Link="Real/JsonItems.cs"/>
+<Compile Include="../../src/EZapi/ItemDefinition.cs" Link="Real/ItemDefinition.cs"/>
+<Compile Include="../../src/EZapi/DefinitionRules.cs" Link="Real/DefinitionRules.cs"/>
+<Compile Include="../../src/EZapi/NpcStockDefinition.cs" Link="Real/NpcStockDefinition.cs"/>
+</ItemGroup><ItemGroup><Compile Include="../../src/EZapi/LocalizedItemText.cs" Link="Shared/LocalizedItemText.cs" /><Compile Include="../../src/EZapi/Localization.cs" Link="Shared/Localization.cs" /><Compile Include="../../src/EZapi/ItemText.cs" Link="Shared/ItemText.cs" /></ItemGroup></Project>

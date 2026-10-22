@@ -4,974 +4,974 @@
   "startHere": "AI-START-HERE.zh-CN.md",
   "modules": [
     {
+      "file": "../src/EZapi/ContentPackLoader.cs",
       "purpose": "内容包发现、严格清单校验、整包提交",
-      "boundary": "初始化；不创建原生物品",
-      "privateModule": "ContentPackLoader.cs"
+      "boundary": "初始化；不创建原生物品"
     },
     {
+      "file": "../src/EZapi/ItemRegistry.cs",
       "purpose": "声明快照、冲突检查、官方目录工厂注册",
-      "boundary": "初始化 + OnModItemDirectoryInit",
-      "privateModule": "ItemRegistry.cs"
+      "boundary": "初始化 + OnModItemDirectoryInit"
     },
     {
+      "file": "../src/EZapi/OfficialHookSubscriptions.cs",
       "purpose": "订阅/取消官方目录和 tooltip 事件、转换委托强引用",
-      "boundary": "进程启停",
-      "privateModule": "OfficialHookSubscriptions.cs"
+      "boundary": "进程启停"
     },
     {
+      "file": "../src/EZapi/NativeItemFactory.cs",
       "purpose": "CreateEmptyItem + 公开字段/原生 helpers + 实例级行为；FoodItemHelper/WaterHelper 互斥初始化",
-      "boundary": "仅游戏按 ID 创建/重建时；不额外接管吃喝/倒液；保留原生 helper 默认标记",
-      "privateModule": "NativeItemFactory.cs"
+      "boundary": "仅游戏按 ID 创建/重建时；不额外接管吃喝/倒液；保留原生 helper 默认标记"
     },
     {
+      "file": "../src/EZapi/ItemActivation.cs",
       "purpose": "C# 激活注册、JSON 治疗行为、原生实例委托和执行时门控",
-      "boundary": "不 patch、不自动保存；不缓存玩家/库存/物品；回调上下文仅同步使用",
-      "privateModule": "ItemActivation.cs"
+      "boundary": "不 patch、不自动保存；不缓存玩家/库存/物品；回调上下文仅同步使用"
     },
     {
+      "file": "../src/EZapi/ItemPresentation.cs",
       "purpose": "官方 Early/Late 内追加本物品显示",
-      "boundary": "不 Build、不缓存 builder",
-      "privateModule": "ItemPresentation.cs"
+      "boundary": "不 Build、不缓存 builder"
     },
     {
+      "file": "../src/EZapi/LegacySpriteAdapter.cs",
       "purpose": "本机缺失资源便捷 API 的单点兼容桥",
-      "boundary": "自有 atlasCache + SetSprite；不改 UI",
-      "privateModule": "LegacySpriteAdapter.cs"
+      "boundary": "自有 atlasCache + SetSprite；不改 UI"
     },
     {
+      "file": "../src/EZapi/CompatibilityPatches.cs",
       "purpose": "仅自定义分类名和调试输入的显式补丁安装",
-      "boundary": "无 HarmonyPatch 自动安装",
-      "privateModule": "CompatibilityPatches.cs"
+      "boundary": "无 HarmonyPatch 自动安装"
     },
     {
+      "file": "../src/EZapi/DebugItemSpawner.cs",
       "purpose": "手动生成与落点核对",
-      "boundary": "Update；不写存档",
-      "privateModule": "DebugItemSpawner.cs"
+      "boundary": "Update；不写存档"
     },
     {
+      "file": "../src/EZapi/EZapiDebugOverlay.cs",
       "purpose": "面板、按钮、显示快照",
-      "boundary": "OnGUI 只绘制；Update 执行一次请求",
-      "privateModule": "EZapiDebugOverlay.cs"
+      "boundary": "OnGUI 只绘制；Update 执行一次请求"
     },
     {
+      "file": "../src/EZapi/ItemDiagnostics.cs",
       "purpose": "玩家点击后的临时实例属性检查；同时核对原生液体容量/初量、容器可用格和ID过滤谓词；不执行消耗",
-      "boundary": "不自动执行，不写库存/存档",
-      "privateModule": "ItemDiagnostics.cs"
+      "boundary": "不自动执行，不写库存/存档"
     },
     {
+      "file": "../src/EZapi/JsonItems.cs",
       "purpose": "严格 JSON 解析和批量提交入口",
-      "boundary": "与 CLI 共用",
-      "privateModule": "JsonItems.cs"
+      "boundary": "与 CLI 共用"
     },
     {
+      "file": "../src/EZapi/DefinitionRules.cs",
       "purpose": "纯托管字段和引用校验",
-      "boundary": "与 CLI 共用",
-      "privateModule": "DefinitionRules.cs"
+      "boundary": "与 CLI 共用"
     },
     {
+      "file": "../src/EZapi/GameEvents.cs",
       "purpose": "托管订阅、异常隔离、最近事件快照",
-      "boundary": "官方事件同步派发；不自动去重每日玩法",
-      "privateModule": "GameEvents.cs"
+      "boundary": "官方事件同步派发；不自动去重每日玩法"
     },
     {
+      "file": "../src/EZapi/OfficialLifecycleHooks.cs",
       "purpose": "18 组官方生命周期事件 add/remove",
-      "boundary": "同一委托释放；失败保留强引用且惰性，不用 Harmony",
-      "privateModule": "OfficialLifecycleHooks.cs"
+      "boundary": "同一委托释放；失败保留强引用且惰性，不用 Harmony"
     },
     {
+      "file": "../src/EZapi/GameSession.cs",
       "purpose": "一次载入身份与主线程门控",
-      "boundary": "只保留身份和比较用指针数值；切场景/读档后失效",
-      "privateModule": "GameSession.cs"
+      "boundary": "只保留身份和比较用指针数值；切场景/读档后失效"
     },
     {
+      "file": "../src/EZapi/RunData.cs",
       "purpose": "当前 PlayerStore.modData 的命名空间/类型/JSON 兼容桥",
-      "boundary": "不缓存原生对象或数据值，不请求保存，不清空全局字典",
-      "privateModule": "RunData.cs"
+      "boundary": "不缓存原生对象或数据值，不请求保存，不清空全局字典"
     },
     {
+      "file": "../src/EZapi/DebugRunData.cs",
       "purpose": "玩家点击后读写专用测试计数",
-      "boundary": "只写 ezapi.debug；执行前核对点击时身份；不主动保存",
-      "privateModule": "DebugRunData.cs"
+      "boundary": "只写 ezapi.debug；执行前核对点击时身份；不主动保存"
     },
     {
+      "file": "../src/EZapi/LootDefinition.cs",
       "purpose": "掉落表 DTO、操作结果和纯托管快照",
-      "boundary": "不持有原生 LootEntry",
-      "privateModule": "LootDefinition.cs"
+      "boundary": "不持有原生 LootEntry"
     },
     {
+      "file": "../src/EZapi/JsonLoot.cs",
       "purpose": "LootTables JSON 严格解析与限制校验",
-      "boundary": "不触碰 Unity/原生目录",
-      "privateModule": "JsonLoot.cs"
+      "boundary": "不触碰 Unity/原生目录"
     },
     {
+      "file": "../src/EZapi/NativeLootAdapter.cs",
       "purpose": "当前构建 LootRegistry 单点兼容桥",
-      "boundary": "只调用官方公开方法；不写原生列表字段",
-      "privateModule": "NativeLootAdapter.cs"
+      "boundary": "只调用官方公开方法；不写原生列表字段"
     },
     {
+      "file": "../src/EZapi/LootTables.cs",
       "purpose": "掉落声明预检、双就绪门控、一次 journal 提交和快照/试抽 API",
-      "boundary": "不生成物品、不发放、不保存",
-      "privateModule": "LootTables.cs"
+      "boundary": "不生成物品、不发放、不保存"
     },
     {
+      "file": "../src/EZapi/DebugLoot.cs",
       "purpose": "示例掉落表查看与试抽 ID 调试按钮",
-      "boundary": "不创建 GameItem、不修改库存；试抽推进 RNG",
-      "privateModule": "DebugLoot.cs"
+      "boundary": "不创建 GameItem、不修改库存；试抽推进 RNG"
     },
     {
+      "file": "../src/EZapi/FrameworkInfo.cs",
       "purpose": "框架版本、JSON 协议和已实现能力目录",
-      "boundary": "能力声明不代表游戏内行为已验证",
-      "privateModule": "FrameworkInfo.cs"
+      "boundary": "能力声明不代表游戏内行为已验证"
     },
     {
+      "file": "../src/EZapi/PackManifest.cs",
       "purpose": "内容包清单/依赖/校验结果 DTO",
-      "boundary": "纯托管定义",
-      "privateModule": "PackManifest.cs"
+      "boundary": "纯托管定义"
     },
     {
+      "file": "../src/EZapi/PngAssets.cs",
       "purpose": "运行时与 CLI 共用 PNG 结构预检",
-      "boundary": "不解码、不创建 Unity 资源",
-      "privateModule": "PngAssets.cs"
+      "boundary": "不解码、不创建 Unity 资源"
     },
     {
+      "file": "../src/EZapi/ContentPacks.cs",
       "purpose": "单包和目录检查、依赖解析、稳定加载顺序",
-      "boundary": "检查不提交原生目录；运行时由 ContentPackLoader 提交",
-      "privateModule": "ContentPacks.cs"
+      "boundary": "检查不提交原生目录；运行时由 ContentPackLoader 提交"
     },
     {
+      "file": "../src/EZapi/Localization.cs",
       "purpose": "官方CSV语法严格解析、纯托管只读目录、显式语言查询和英文回退、资源覆盖索引",
-      "boundary": "不调用缺失的ModHelper.GetLocalized，不修改游戏语言/字符串表/物品；GetPack只发布已排队包",
-      "privateModule": "Localization.cs"
+      "boundary": "不调用缺失的ModHelper.GetLocalized，不修改游戏语言/字符串表/物品；GetPack只发布已排队包"
     },
     {
+      "file": "../src/EZapi/DebugLocalization.cs",
       "purpose": "玩家点击后解析示例中英文和参数，写诊断快照",
-      "boundary": "不切语言、不写物品/库存/存档",
-      "privateModule": "DebugLocalization.cs"
+      "boundary": "不切语言、不写物品/库存/存档"
     },
     {
+      "file": "../src/EZapi/NativeContainerAdapter.cs",
       "purpose": "原生储物窗口/网格/准入初始化适配",
-      "boundary": "仅工厂创建，独立窗口/网格；不持有静态原生对象，不改全局UI/拖放/保存",
-      "privateModule": "NativeContainerAdapter.cs"
+      "boundary": "仅工厂创建，独立窗口/网格；不持有静态原生对象，不改全局UI/拖放/保存"
     },
     {
+      "file": "../src/EZapi/Transactions.cs",
       "purpose": "同步补偿事务、资格复核与失败恢复",
-      "boundary": "回调主线程；有限步骤，不代表原生事务/持久化",
-      "privateModule": "Transactions.cs"
+      "boundary": "回调主线程；有限步骤，不代表原生事务/持久化"
     },
     {
+      "file": "../src/EZapi/NativeAccess.cs",
       "purpose": "原生运行时调用共同门控",
-      "boundary": "当前周目、主线程，不缓存原生对象",
-      "privateModule": "NativeAccess.cs"
+      "boundary": "当前周目、主线程，不缓存原生对象"
     },
     {
+      "file": "../src/EZapi/Power.cs",
       "purpose": "原生电源读取、单源扣电与身份恢复",
-      "boundary": "主线程、当前周目、拥有且已入库的原生源；原生堆叠数量作为身份校验",
-      "privateModule": "Power.cs"
+      "boundary": "主线程、当前周目、拥有且已入库的原生源；原生堆叠数量作为身份校验"
     },
     {
+      "file": "../src/EZapi/Liquids.cs",
       "purpose": "原生液体成分与容量纯托管快照",
-      "boundary": "只读，不初始化目录或写液体",
-      "privateModule": "Liquids.cs"
+      "boundary": "只读，不初始化目录或写液体"
     },
     {
+      "file": "../src/EZapi/Items.cs",
       "purpose": "原生目录与实际实例价格/提示读取",
-      "boundary": "不自动发放，不手动Build tooltip",
-      "privateModule": "Items.cs"
+      "boundary": "不自动发放，不手动Build tooltip"
     },
     {
+      "file": "../src/EZapi/DebugResources.cs",
       "purpose": "玩家按钮按需读取资源并导出",
-      "boundary": "有界只读，不扣电/倒液/搬运/保存",
-      "privateModule": "DebugResources.cs"
+      "boundary": "有界只读，不扣电/倒液/搬运/保存"
     },
     {
+      "file": "../src/EZapi/InventoryServices.cs",
       "purpose": "库存观察、托管快照、整件预检、公共原生校验",
-      "boundary": "当前周目主线程；有界图遍历；不缓存原生对象",
-      "privateModule": "InventoryServices.cs"
+      "boundary": "当前周目主线程；有界图遍历；不缓存原生对象"
     },
     {
+      "file": "../src/EZapi/InventoryPlacement.cs",
       "purpose": "固定现有物品的整组落点规划",
-      "boundary": "未放置单件；有界原生准入贪心；不移动/保存",
-      "privateModule": "InventoryPlacement.cs"
+      "boundary": "未放置单件；有界原生准入贪心；不移动/保存"
     },
     {
+      "file": "../src/EZapi/ItemTransfer.cs",
       "purpose": "单次原生接纳及纯托管差额审计",
-      "boundary": "Indeterminate后停止；不改数量/父图，不自动恢复/重试",
-      "privateModule": "ItemTransfer.cs"
+      "boundary": "Indeterminate后停止；不改数量/父图，不自动恢复/重试"
     },
     {
+      "file": "../src/EZapi/DebugInventory.cs",
       "purpose": "手动读取最多16份库存诊断",
-      "boundary": "只缓存托管结果；换场景清除；不创建/移动/保存",
-      "privateModule": "DebugInventory.cs"
+      "boundary": "只缓存托管结果；换场景清除；不创建/移动/保存"
     },
     {
+      "file": "../src/EZapi/NativeHooks.cs",
       "purpose": "Interop公开入口检查/补丁组安装释放",
-      "boundary": "主线程；原生运行与保存待验；见inventory-guards.zh-CN.md",
-      "privateModule": "NativeHooks.cs"
+      "boundary": "主线程；原生运行与保存待验；见inventory-guards.zh-CN.md"
     },
     {
+      "file": "../src/EZapi/InventoryFreeze.cs",
       "purpose": "当前Epoch实例图冻结句柄",
-      "boundary": "主线程；原生运行与保存待验；见inventory-guards.zh-CN.md",
-      "privateModule": "InventoryFreeze.cs"
+      "boundary": "主线程；原生运行与保存待验；见inventory-guards.zh-CN.md"
     },
     {
+      "file": "../src/EZapi/InventoryAdmission.cs",
       "purpose": "精确容器准入AND规则",
-      "boundary": "主线程；原生运行与保存待验；见inventory-guards.zh-CN.md",
-      "privateModule": "InventoryAdmission.cs"
+      "boundary": "主线程；原生运行与保存待验；见inventory-guards.zh-CN.md"
     },
     {
+      "file": "../src/EZapi/InventoryRuntime.cs",
       "purpose": "目录后安装/门控/诊断/原生回调",
-      "boundary": "主线程；原生运行与保存待验；见inventory-guards.zh-CN.md",
-      "privateModule": "InventoryRuntime.cs"
+      "boundary": "主线程；原生运行与保存待验；见inventory-guards.zh-CN.md"
     },
     {
+      "file": "../src/EZapi/ListInventory.cs",
       "purpose": "独立原生列表网格/尺寸恢复/扩容转移",
-      "boundary": "主线程；原生运行与保存待验；见inventory-guards.zh-CN.md",
-      "privateModule": "ListInventory.cs"
+      "boundary": "主线程；原生运行与保存待验；见inventory-guards.zh-CN.md"
     },
     {
+      "file": "../src/EZapi/SaveGraph.cs",
       "purpose": "SaveManager原生物品图编码/恢复与身份关系核对",
-      "boundary": "主线程/当前周目；不自动SaveGame；真实保存重载待验",
-      "privateModule": "SaveGraph.cs"
+      "boundary": "主线程/当前周目；不自动SaveGame；真实保存重载待验"
     },
     {
+      "file": "../src/EZapi/Lifecycle.cs",
       "purpose": "10阶段精确原生入口、优先级/owner/ID订阅、作用域和快照",
-      "boundary": "每个订阅者重新捕获Items；单个回调内修改图后须重新扫描；身份门控不证明单件存活",
-      "privateModule": "Lifecycle.cs"
+      "boundary": "每个订阅者重新捕获Items；单个回调内修改图后须重新扫描；身份门控不证明单件存活"
     },
     {
+      "file": "../src/EZapi/Content.cs",
       "purpose": "实际内容应用通知与有界重入分发",
-      "boundary": "整批声明提交后Staged，实际目录Add后Applied；全局订阅",
-      "privateModule": "Content.cs"
+      "boundary": "整批声明提交后Staged，实际目录Add后Applied；全局订阅"
     },
     {
+      "file": "../src/EZapi/DebugLifecycle.cs",
       "purpose": "手动开启阶段记录；最多128条托管快照",
-      "boundary": "不触发结算、保存或读档",
-      "privateModule": "DebugLifecycle.cs"
+      "boundary": "不触发结算、保存或读档"
     },
     {
+      "file": "../src/EZapi/ProductionValue.cs",
       "purpose": "生产计价/功耗纯数学、批次DTO、原生基础价标签及失败恢复",
-      "boundary": "计算纯托管；标签写入当前周目主线程，不保存",
-      "privateModule": "ProductionValue.cs"
+      "boundary": "计算纯托管；标签写入当前周目主线程，不保存"
     },
     {
+      "file": "../src/EZapi/Effects.cs",
       "purpose": "效果整批声明/目录应用/随机池作用域/真实对象清理",
-      "boundary": "官方目录后应用；必需随机钩子先就绪；强引用",
-      "privateModule": "Effects.cs"
+      "boundary": "官方目录后应用；必需随机钩子先就绪；强引用"
     },
     {
+      "file": "../src/EZapi/DebugProduction.cs",
       "purpose": "玩家手动只读生产与效果诊断",
-      "boundary": "不抽取、不改价、不生产、不保存",
-      "privateModule": "DebugProduction.cs"
+      "boundary": "不抽取、不改价、不生产、不保存"
     },
     {
+      "file": "../src/EZapi/DebugBatch.cs",
       "purpose": "手动一次排队五组检查、每帧一组、场景/周目/拖动取消；自动导出托管结果",
-      "boundary": "不把检查函数返回当作PASS；不发放/移动/消耗玩家物品、不保存；最多64声明",
-      "privateModule": "DebugBatch.cs"
+      "boundary": "不把检查函数返回当作PASS；不发放/移动/消耗玩家物品、不保存；最多64声明"
     },
     {
+      "file": "../src/EZapi/LiquidComposition.cs",
       "purpose": "液体成分纯计算与合计元数据",
-      "boundary": "不调用游戏；托管最大余数与原生算法分开",
-      "privateModule": "LiquidComposition.cs"
+      "boundary": "不调用游戏；托管最大余数与原生算法分开"
     },
     {
+      "file": "../src/EZapi/LiquidMetadata.cs",
       "purpose": "Liquids生产元数据入口及独立版本化JSON标签",
-      "boundary": "精确dict键；读取严格匹配实际容量与数量；仅显式设置可迁移",
-      "privateModule": "LiquidMetadata.cs"
+      "boundary": "精确dict键；读取严格匹配实际容量与数量；仅显式设置可迁移"
     },
     {
+      "file": "../src/EZapi/LiquidTransfer.cs",
       "purpose": "两种倒液、双容器冻结与补偿、实例/周目核对",
-      "boundary": "原生过滤路径不盲目回滚；限量拒绝过滤器；无保存/重试",
-      "privateModule": "LiquidTransfer.cs"
+      "boundary": "原生过滤路径不盲目回滚；限量拒绝过滤器；无保存/重试"
     },
     {
+      "file": "../src/EZapi/DebugLiquidTransfer.cs",
       "purpose": "预览源/目标并单次手动倒≤1ml",
-      "boundary": "仅缓存托管身份与快照；场景清除；不自动保存",
-      "privateModule": "DebugLiquidTransfer.cs"
+      "boundary": "仅缓存托管身份与快照；场景清除；不自动保存"
     },
     {
+      "file": "../src/EZapi/NativeDelegateBridge.cs",
       "purpose": "IL2CPP真实接收器与实例委托绑定，避免托管闭包的原生反射类型异常",
-      "boundary": "进程启停；只持有无状态接收器/委托；无核心Delegate补丁；不是内容作者API",
-      "privateModule": "NativeDelegateBridge.cs"
+      "boundary": "进程启停；只持有无状态接收器/委托；无核心Delegate补丁；不是内容作者API"
     },
     {
+      "file": "../src/EZapi/Modules.cs",
       "purpose": "模块八入口、同步context、四组原生钩子、逐次成长状态",
-      "boundary": "初始化声明、目录后原生操作、场景/停止释放",
-      "privateModule": "Modules.cs"
+      "boundary": "初始化声明、目录后原生操作、场景/停止释放"
     },
     {
+      "file": "../src/EZapi/DebugModules.cs",
       "purpose": "显式临时实例模块检查、目录探测和清理",
-      "boundary": "调试按钮；不交付玩家或保存，不证明机器成功生产",
-      "privateModule": "DebugModules.cs"
+      "boundary": "调试按钮；不交付玩家或保存，不证明机器成功生产"
     },
     {
+      "file": "../src/EZapi/NativeItems.cs",
       "purpose": "四类DLL工厂、统一ID冲突、双语物品文本、应用/创建状态和安全边界",
-      "boundary": "官方目录事件；仅已核对的游戏构建读取 locale；工厂不要求UI；停止后旧委托惰性",
-      "privateModule": "NativeItems.cs"
+      "boundary": "官方目录事件；仅已核对的游戏构建读取 locale；工厂不要求UI；停止后旧委托惰性"
     },
     {
+      "file": "../src/EZapi/DebugNativeItems.cs",
       "purpose": "四类工厂+JSON模块/节点的临时实例合并检查",
-      "boundary": "显式按钮，不交付或保存，不验证生产/持久化",
-      "privateModule": "DebugNativeItems.cs"
+      "boundary": "显式按钮，不交付或保存，不验证生产/持久化"
     },
     {
+      "file": "../src/EZapi/MachineLayoutDefinition.cs",
       "purpose": "布局DTO、严格JSON/序列化和内联双语标题/槽标签；CLI共用规则",
-      "boundary": "no player inventory delivery, processing, nightly scheduling, automatic saving or Forge dependency",
-      "privateModule": "MachineLayoutDefinition.cs"
+      "boundary": "no player inventory delivery, processing, nightly scheduling, automatic saving or Forge dependency"
     },
     {
+      "file": "../src/EZapi/MachineLayouts.cs",
       "purpose": "原生窗口、精确父图只读检查、当前语言标题/槽标签刷新；不写持久布局",
-      "boundary": "no player inventory delivery, processing, nightly scheduling, automatic saving or Forge dependency",
-      "privateModule": "MachineLayouts.cs"
+      "boundary": "no player inventory delivery, processing, nightly scheduling, automatic saving or Forge dependency"
     },
     {
+      "file": "../src/EZapi/RecipeGuideDefinition.cs",
       "purpose": "图鉴DTO/严格JSON和共享规则",
-      "boundary": "no player inventory delivery, processing, nightly scheduling, automatic saving or Forge dependency",
-      "privateModule": "RecipeGuideDefinition.cs"
+      "boundary": "no player inventory delivery, processing, nightly scheduling, automatic saving or Forge dependency"
     },
     {
+      "file": "../src/EZapi/RecipeGuide.cs",
       "purpose": "owner原子替换目录、快照和窗口入口",
-      "boundary": "no player inventory delivery, processing, nightly scheduling, automatic saving or Forge dependency",
-      "privateModule": "RecipeGuide.cs"
+      "boundary": "no player inventory delivery, processing, nightly scheduling, automatic saving or Forge dependency"
     },
     {
+      "file": "../src/EZapi/RecipeGuideBrowser.cs",
       "purpose": "图鉴分页、图片缓存预热、中英文本实时刷新与输入隔离",
-      "boundary": "仅选择/目录/语言变化重建文本；绘制后才导出诊断；关闭释放资源",
-      "privateModule": "RecipeGuideBrowser.cs"
+      "boundary": "仅选择/目录/语言变化重建文本；绘制后才导出诊断；关闭释放资源"
     },
     {
+      "file": "../src/EZapi/RecipeGuideText.cs",
       "purpose": "Unicode标量分页，无滚动裁切依赖",
-      "boundary": "no player inventory delivery, processing, nightly scheduling, automatic saving or Forge dependency",
-      "privateModule": "RecipeGuideText.cs"
+      "boundary": "no player inventory delivery, processing, nightly scheduling, automatic saving or Forge dependency"
     },
     {
+      "file": "../src/EZapi/DebugMachineLayouts.cs",
       "purpose": "两个真实自定义目录工厂和临时槽位/图鉴验收",
-      "boundary": "no player inventory delivery, processing, nightly scheduling, automatic saving or Forge dependency",
-      "privateModule": "DebugMachineLayouts.cs"
+      "boundary": "no player inventory delivery, processing, nightly scheduling, automatic saving or Forge dependency"
     },
     {
+      "file": "../src/EZapi/MachineTransactions.cs",
       "purpose": "自定义加工事务契约、产品管理、精确提交/恢复结果",
-      "boundary": "current synchronous scope only; no auto save or nightly dispatch",
-      "privateModule": "MachineTransactions.cs"
+      "boundary": "current synchronous scope only; no auto save or nightly dispatch"
     },
     {
+      "file": "../src/EZapi/NativeTagBackup.cs",
       "purpose": "逐TagState独立克隆，拒绝浅备份，保留原state/dict身份",
-      "boundary": "current synchronous scope only; no auto save or nightly dispatch",
-      "privateModule": "NativeTagBackup.cs"
+      "boundary": "current synchronous scope only; no auto save or nightly dispatch"
     },
     {
+      "file": "../src/EZapi/DebugMachineTransactions.cs",
       "purpose": "临时原生加工/故障/电力/液体恢复批量检查",
-      "boundary": "current synchronous scope only; no auto save or nightly dispatch",
-      "privateModule": "DebugMachineTransactions.cs"
+      "boundary": "current synchronous scope only; no auto save or nightly dispatch"
     },
     {
+      "file": "../src/EZapi/MachineRecipeDefinition.cs",
       "purpose": "配方/材料/液体/动态产物/计划/结果DTO及声明深拷贝校验",
-      "boundary": "C# recipe scope; nullable Transaction selects default strategy; no saving/nightly dispatch",
-      "privateModule": "MachineRecipeDefinition.cs"
+      "boundary": "C# recipe scope; nullable Transaction selects default strategy; no saving/nightly dispatch"
     },
     {
+      "file": "../src/EZapi/MachineIngredientMatching.cs",
       "purpose": "整堆有界组合+整数最大流分配；拒绝重复消费与搜索超限",
-      "boundary": "C# recipe scope; nullable Transaction selects default strategy; no saving/nightly dispatch",
-      "privateModule": "MachineIngredientMatching.cs"
+      "boundary": "C# recipe scope; nullable Transaction selects default strategy; no saving/nightly dispatch"
     },
     {
+      "file": "../src/EZapi/MachineRecipes.cs",
       "purpose": "配方目录、精确输入准入、动态解析、资源复核与自定义事务调度",
-      "boundary": "unified registration/ordered automation/bounded nightly integration; no shared terminal/external grid",
-      "privateModule": "MachineRecipes.cs"
+      "boundary": "unified registration/ordered automation/bounded nightly integration; no shared terminal/external grid"
     },
     {
+      "file": "../src/EZapi/DebugMachineRecipes.cs",
       "purpose": "临时原生14种配方/故障/投料/通知情形，118检查",
-      "boundary": "unified registration/ordered automation/bounded nightly integration; no shared terminal/external grid",
-      "privateModule": "DebugMachineRecipes.cs"
+      "boundary": "unified registration/ordered automation/bounded nightly integration; no shared terminal/external grid"
     },
     {
+      "file": "../src/EZapi/DefaultMachineTransaction.cs",
       "purpose": "标准配方真实资源事务/深标签备份/新液体产物/回滚",
-      "boundary": "synchronous; no persisted crash recovery; see machine-materials.zh-CN.md",
-      "privateModule": "DefaultMachineTransaction.cs"
+      "boundary": "synchronous; no persisted crash recovery; see machine-materials.zh-CN.md"
     },
     {
+      "file": "../src/EZapi/MachineMaterialEscrow.cs",
       "purpose": "原生拆堆保管/合堆原位恢复/确认后销毁/精确冻结许可",
-      "boundary": "synchronous; no persisted crash recovery; see machine-materials.zh-CN.md",
-      "privateModule": "MachineMaterialEscrow.cs"
+      "boundary": "synchronous; no persisted crash recovery; see machine-materials.zh-CN.md"
     },
     {
+      "file": "../src/EZapi/DebugMachineMaterials.cs",
       "purpose": "仅临时图的标准消费与故障检查",
-      "boundary": "synchronous; no persisted crash recovery; see machine-materials.zh-CN.md",
-      "privateModule": "DebugMachineMaterials.cs"
+      "boundary": "synchronous; no persisted crash recovery; see machine-materials.zh-CN.md"
     },
     {
+      "file": "../src/EZapi/MachineRegistration.cs",
       "purpose": "一次机器声明、原子预检/提交、多作者配方追加、工厂与代际",
-      "boundary": "unified registration / shared terminal markup / ordered automation / nightly; external power and remaining template contracts incomplete",
-      "privateModule": "MachineRegistration.cs"
+      "boundary": "unified registration / shared terminal markup / ordered automation / nightly; external power and remaining template contracts incomplete"
     },
     {
+      "file": "../src/EZapi/MachineAutomaticGuide.cs",
       "purpose": "静态配方图鉴转换，不执行动态回调",
-      "boundary": "no nightly/shared terminal/external grid/normal machine save-reload",
-      "privateModule": "MachineAutomaticGuide.cs"
+      "boundary": "no nightly/shared terminal/external grid/normal machine save-reload"
     },
     {
+      "file": "../src/EZapi/DebugMachineRegistration.cs",
       "purpose": "统一注册与真实加工的合并实机入口",
-      "boundary": "unified registration / shared terminal markup / ordered automation / nightly; external power and remaining template contracts incomplete",
-      "privateModule": "DebugMachineRegistration.cs"
+      "boundary": "unified registration / shared terminal markup / ordered automation / nightly; external power and remaining template contracts incomplete"
     },
     {
+      "file": "../src/EZapi/MachineAutomation.cs",
       "purpose": "有序同步订阅与短生命周期选择/阻止上下文",
-      "boundary": "main thread/current run; no automatic save; see machine-automation.zh-CN.md",
-      "privateModule": "MachineAutomation.cs"
+      "boundary": "main thread/current run; no automatic save; see machine-automation.zh-CN.md"
     },
     {
+      "file": "../src/EZapi/MachineRuntime.cs",
       "purpose": "官方BeforeNight的真实统一调度与资源只读核对",
-      "boundary": "只保存候选托管身份，逐台从活图解析；槽/周目/日持久去重；没有自动保存",
-      "privateModule": "MachineRuntime.cs"
+      "boundary": "只保存候选托管身份，逐台从活图解析；槽/周目/日持久去重；没有自动保存"
     },
     {
+      "file": "../src/EZapi/MachineNightCycle.cs",
       "purpose": "1..64有限夜间循环与动态额度",
-      "boundary": "main thread/current run; no automatic save; see machine-automation.zh-CN.md",
-      "privateModule": "MachineNightCycle.cs"
+      "boundary": "main thread/current run; no automatic save; see machine-automation.zh-CN.md"
     },
     {
+      "file": "../src/EZapi/MachineFaultGuard.cs",
       "purpose": "恢复失败实例内存/持久标签隔离",
-      "boundary": "main thread/current run; no automatic save; see machine-automation.zh-CN.md",
-      "privateModule": "MachineFaultGuard.cs"
+      "boundary": "main thread/current run; no automatic save; see machine-automation.zh-CN.md"
     },
     {
+      "file": "../src/EZapi/VisibleStoreInventory.cs",
       "purpose": "Unity存活门控和真实可见店铺库存",
-      "boundary": "main thread/current run; no automatic save; see machine-automation.zh-CN.md",
-      "privateModule": "VisibleStoreInventory.cs"
+      "boundary": "main thread/current run; no automatic save; see machine-automation.zh-CN.md"
     },
     {
+      "file": "../src/EZapi/DebugMachineAutomation.cs",
       "purpose": "临时图119真实自动化断言",
-      "boundary": "main thread/current run; no automatic save; see machine-automation.zh-CN.md",
-      "privateModule": "DebugMachineAutomation.cs"
+      "boundary": "main thread/current run; no automatic save; see machine-automation.zh-CN.md"
     },
     {
+      "file": "../src/EZapi/DebugMachineNight.cs",
       "purpose": "显式新测试档四机器夹具和真实夜次重放核对",
-      "boundary": "main thread/current run; no automatic save; see machine-automation.zh-CN.md",
-      "privateModule": "DebugMachineNight.cs"
+      "boundary": "main thread/current run; no automatic save; see machine-automation.zh-CN.md"
     },
     {
+      "file": "../src/EZapi/ManufacturingTerminal.cs",
       "purpose": "共享终端稳定自有ID、尺寸常量和只读托管状态",
-      "boundary": "no native instances; process-scoped config",
-      "privateModule": "ManufacturingTerminal.cs"
+      "boundary": "no native instances; process-scoped config"
     },
     {
+      "file": "../src/EZapi/ManufacturingTerminalRuntime.cs",
       "purpose": "官方工厂创建独立3x3机器，原生电耗、模块和内嵌自有图像",
-      "boundary": "native allocation only in factory; no foreign ID migration or automatic loot",
-      "privateModule": "ManufacturingTerminalRuntime.cs"
+      "boundary": "native allocation only in factory; no foreign ID migration or automatic loot"
     },
     {
+      "file": "../src/EZapi/DebugManufacturingTerminal.cs",
       "purpose": "84项临时实机检查与槽531+双机夜间/保存夹具",
-      "boundary": "explicit debug buttons only; no automatic save",
-      "privateModule": "DebugManufacturingTerminal.cs"
+      "boundary": "explicit debug buttons only; no automatic save"
     },
     {
+      "file": "../src/EZapi/ExternalPower.cs",
       "purpose": "外电精确ID登记、查询、可释放句柄、IPowerTransaction、单批电力日记",
-      "boundary": "初始化暂存；当前周目同步处理；原委托恢复，不写连接器标签假退款",
-      "privateModule": "ExternalPower.cs"
+      "boundary": "初始化暂存；当前周目同步处理；原委托恢复，不写连接器标签假退款"
     },
     {
+      "file": "../src/EZapi/ExternalPowerRuntime.cs",
       "purpose": "十二个完整签名钩子：原生电源、熔炉批次和本批延后销毁；独立门控",
-      "boundary": "目录就绪；仅已登记连接器；普通电池保留原生加工",
-      "privateModule": "ExternalPowerRuntime.cs"
+      "boundary": "目录就绪；仅已登记连接器；普通电池保留原生加工"
     },
     {
+      "file": "../src/EZapi/DebugExternalPower.cs",
       "purpose": "显式按钮临时原生外电/失败恢复/原电池回归",
-      "boundary": "不保存、不发放；与离线替身证据分开",
-      "privateModule": "DebugExternalPower.cs"
+      "boundary": "不保存、不发放；与离线替身证据分开"
     },
     {
+      "file": "../src/EZapi/NativeFurnacePower.cs",
       "purpose": "原版熔炉同步外电/根槽位与内装物日记，成功后按后代拓扑逆序清理",
-      "boundary": "明确输入ConsumeGraph；旧输出始终保留；内装物冻结；失败恢复原实例，已提交清理失败只隔离",
-      "privateModule": "NativeFurnacePower.cs"
+      "boundary": "明确输入ConsumeGraph；旧输出始终保留；内装物冻结；失败恢复原实例，已提交清理失败只隔离"
     },
     {
+      "file": "../src/EZapi/DebugNativeFurnace.cs",
       "purpose": "显式按钮调用真实原版委托，独立真实外电源，16场景",
-      "boundary": "临时原生图；不调用夜间/保存；故障注入和正常行为分开",
-      "privateModule": "DebugNativeFurnace.cs"
+      "boundary": "临时原生图；不调用夜间/保存；故障注入和正常行为分开"
     },
     {
+      "file": "../src/EZapi/SaveReadback.cs",
       "purpose": "只读有界存档文本、ES3规范化、文件变化检测、唯一属性辅助",
-      "boundary": "纯读取；不写保存、不恢复物品、不缓存JsonDocument跨生命周期",
-      "privateModule": "SaveReadback.cs"
+      "boundary": "纯读取；不写保存、不恢复物品、不缓存JsonDocument跨生命周期"
     },
     {
+      "file": "../src/EZapi/DebugSaveReadback.cs",
       "purpose": "显式游戏内当前存档只读检查",
-      "boundary": "按钮触发；只比较当前文件SHA和周目身份，不保存/恢复",
-      "privateModule": "DebugSaveReadback.cs"
+      "boundary": "按钮触发；只比较当前文件SHA和周目身份，不保存/恢复"
     },
     {
+      "file": "../src/EZapi/Reading.cs",
       "purpose": "原生纸条工厂、文本读回、五个精确钩子和临时对象释放",
-      "boundary": "目录就绪后接入；周目失效后仍能清理",
-      "privateModule": "Reading.cs"
+      "boundary": "目录就绪后接入；周目失效后仍能清理"
     },
     {
+      "file": "../src/EZapi/ReadingCoordinator.cs",
       "purpose": "共享面板所有权、重入/重置、两实例有界保留",
-      "boundary": "独立于游戏；真实源码直接链接离线测试",
-      "privateModule": "ReadingCoordinator.cs"
+      "boundary": "独立于游戏；真实源码直接链接离线测试"
     },
     {
+      "file": "../src/EZapi/PresentationResult.cs",
       "purpose": "展示状态、结果和有界参数规则",
-      "boundary": "保留状态不表示其它展示API已实现",
-      "privateModule": "PresentationResult.cs"
+      "boundary": "保留状态不表示其它展示API已实现"
     },
     {
+      "file": "../src/EZapi/DebugReading.cs",
       "purpose": "真实原生TMP文本/外部接管与生命周期证据",
-      "boundary": "显式调试按钮；不交付纸条、不写存档",
-      "privateModule": "DebugReading.cs"
+      "boundary": "显式调试按钮；不交付纸条、不写存档"
     },
     {
+      "file": "../src/EZapi/Dialogue.cs",
       "purpose": "真实原生对话图、选择许可、共享模式归还、外部引用屏障与生命周期",
-      "boundary": "dialogue.zh-CN.md; 42 native checks plus physical mouse/menu/reload evidence; no save mutation",
-      "privateModule": "Dialogue.cs"
+      "boundary": "dialogue.zh-CN.md; 42 native checks plus physical mouse/menu/reload evidence; no save mutation"
     },
     {
+      "file": "../src/EZapi/DialogueDefinition.cs",
       "purpose": "不可变对话定义、双语文本、页面语言快照和一次确认执行边界",
-      "boundary": "dialogue.zh-CN.md; 42 native checks plus physical mouse/menu/reload evidence; no save mutation",
-      "privateModule": "DialogueDefinition.cs"
+      "boundary": "dialogue.zh-CN.md; 42 native checks plus physical mouse/menu/reload evidence; no save mutation"
     },
     {
+      "file": "../src/EZapi/DebugDialogue.cs",
       "purpose": "跨帧原生按钮流程、异常/外部接管与鼠标验证",
-      "boundary": "dialogue.zh-CN.md; 42 native checks plus physical mouse/menu/reload evidence; no save mutation",
-      "privateModule": "DebugDialogue.cs"
+      "boundary": "dialogue.zh-CN.md; 42 native checks plus physical mouse/menu/reload evidence; no save mutation"
     },
     {
+      "file": "../src/EZapi/Phone.cs",
       "purpose": "原生通讯录绑定、动态查询、精确拨号/选择许可和当前电话身份释放",
-      "boundary": "phone.zh-CN.md; no shared directory clearing; no save requests",
-      "privateModule": "Phone.cs"
+      "boundary": "phone.zh-CN.md; no shared directory clearing; no save requests"
     },
     {
+      "file": "../src/EZapi/PhoneContact.cs",
       "purpose": "联系人不可变快照、范围/重复/容量校验与公共DTO",
-      "boundary": "phone.zh-CN.md; no shared directory clearing; no save requests",
-      "privateModule": "PhoneContact.cs"
+      "boundary": "phone.zh-CN.md; no shared directory clearing; no save requests"
     },
     {
+      "file": "../src/EZapi/NativeDialogueGraph.cs",
       "purpose": "店铺/电话共用自有原生图；新图一次语言解析，不改业务委托和回收许可",
-      "boundary": "phone.zh-CN.md; no shared directory clearing; no save requests",
-      "privateModule": "NativeDialogueGraph.cs"
+      "boundary": "phone.zh-CN.md; no shared directory clearing; no save requests"
     },
     {
+      "file": "../src/EZapi/DebugPhone.cs",
       "purpose": "真实通讯录元素、拨号、确认、挂断、外部号码冲突与鼠标生命周期",
-      "boundary": "phone.zh-CN.md; no shared directory clearing; no save requests",
-      "privateModule": "DebugPhone.cs"
+      "boundary": "phone.zh-CN.md; no shared directory clearing; no save requests"
     },
     {
+      "file": "../src/EZapi/RunPurchase.cs",
       "purpose": "当前周目原生付款、作者交付复核、逆序恢复与受控退款",
-      "boundary": "run-purchase.zh-CN.md; no auto save or replay; failed restore keeps uncertain debit",
-      "privateModule": "RunPurchase.cs"
+      "boundary": "run-purchase.zh-CN.md; no auto save or replay; failed restore keeps uncertain debit"
     },
     {
+      "file": "../src/EZapi/DebugRunPurchase.cs",
       "purpose": "真实现金与临时库存的11种购买结果、恢复和清理",
-      "boundary": "run-purchase.zh-CN.md; no auto save or replay; failed restore keeps uncertain debit",
-      "privateModule": "DebugRunPurchase.cs"
+      "boundary": "run-purchase.zh-CN.md; no auto save or replay; failed restore keeps uncertain debit"
     },
     {
+      "file": "../src/EZapi/InventoryEndpoint.cs",
       "purpose": "持久隐藏网格端点、直接内容快照、经审计存取、删除和保存门控",
-      "boundary": "当前周目主线程/有效句柄；不自动保存；本版构建与冷启动恢复待验证",
-      "privateModule": "InventoryEndpoint.cs"
+      "boundary": "当前周目主线程/有效句柄；不自动保存；本版构建与冷启动恢复待验证"
     },
     {
+      "file": "../src/EZapi/InventoryEndpointRuntime.cs",
       "purpose": "端点保存/加载/新局钩子、物品枚举与电力枚举适配",
-      "boundary": "独立原生钩子组；保存/加载行为待游戏验证",
-      "privateModule": "InventoryEndpointRuntime.cs"
+      "boundary": "独立原生钩子组；保存/加载行为待游戏验证"
     },
     {
+      "file": "../src/EZapi/InventoryEndpointData.cs",
       "purpose": "端点版本化JSON编解码和边界校验",
-      "boundary": "纯托管数据；最多128端点/8MiB；不持有原生引用",
-      "privateModule": "InventoryEndpointData.cs"
+      "boundary": "纯托管数据；最多128端点/8MiB；不持有原生引用"
     },
     {
+      "file": "../src/EZapi.Sample/InventoryExamples.cs",
       "purpose": "InventoryEndpointApi 的可复制 DLL 调用示例：打开、快照、审计存入/取出、空端点删除",
-      "boundary": "仅被调用时执行；调用方提供当前游戏对象；不自动搬运或保存",
-      "privateModule": "InventoryExamples.cs"
+      "boundary": "仅被调用时执行；调用方提供当前游戏对象；不自动搬运或保存"
     },
     {
+      "file": "../src/EZapi/Registration.cs",
       "purpose": "注册结果与只读 DTO",
-      "boundary": "初始化注册结果统一类型；无游戏对象引用。",
-      "privateModule": "Registration.cs"
+      "boundary": "初始化注册结果统一类型；无游戏对象引用。"
     },
     {
+      "file": "../src/EZapi/StartApi.cs",
       "purpose": "原生开局身份映射",
-      "boundary": "只存储 owner/ID/StartType 映射；不创建菜单或改开局玩法。",
-      "privateModule": "StartApi.cs"
+      "boundary": "只存储 owner/ID/StartType 映射；不创建菜单或改开局玩法。"
     },
     {
+      "file": "../src/EZapi/WorkshopDefinitions.cs",
       "purpose": "Workshop DTO 与深度校验",
-      "boundary": "工坊只读快照/条件/奖励/图谱数据；展示字段不执行资源事务。",
-      "privateModule": "WorkshopDefinitions.cs"
+      "boundary": "工坊只读快照/条件/奖励/图谱数据；展示字段不执行资源事务。"
     },
     {
+      "file": "../src/EZapi/WorkshopApi.cs",
       "purpose": "工坊注册、路由与单次动作",
-      "boundary": "页签/进度链生命周期、快照捕获、当前条件复核与单次作者回调；不代扣款或保存。",
-      "privateModule": "WorkshopApi.cs"
+      "boundary": "页签/进度链生命周期、快照捕获、当前条件复核与单次作者回调；不代扣款或保存。"
     },
     {
+      "file": "../src/EZapi/WorkshopBrowser.cs",
       "purpose": "工坊列表、裁剪滚动、进度图连线和一次动作回调",
-      "boundary": "只读快照；无不完整 ScrollView/DrawTexture 包装调用；滚轮仅 Update 消费，关闭清空状态",
-      "privateModule": "WorkshopBrowser.cs"
+      "boundary": "只读快照；无不完整 ScrollView/DrawTexture 包装调用；滚轮仅 Update 消费，关闭清空状态"
     },
     {
+      "file": "../src/EZapi/DebugWorkshop.cs",
       "purpose": "只读工坊调试夹具",
-      "boundary": "仅切换进程内演示状态；不扣资源、不交付物品、不写存档。",
-      "privateModule": "DebugWorkshop.cs"
+      "boundary": "仅切换进程内演示状态；不扣资源、不交付物品、不写存档。"
     },
     {
+      "file": "../src/EZapi.Sample/StartExamples.cs",
       "purpose": "开局身份映射示例",
-      "boundary": "展示官方枚举映射；不改变原生新局。",
-      "privateModule": "StartExamples.cs"
+      "boundary": "展示官方枚举映射；不改变原生新局。"
     },
     {
+      "file": "../src/EZapi.Sample/WorkshopExamples.cs",
       "purpose": "工坊注册与解锁回调示例",
-      "boundary": "演示快照和回调；内存演示不模拟真实交易/存档。",
-      "privateModule": "WorkshopExamples.cs"
+      "boundary": "演示快照和回调；内存演示不模拟真实交易/存档。"
     },
     {
+      "file": "../src/EZapi/RuntimeCapabilities.cs",
       "purpose": "线程安全的运行门控快照与 Assembly-CSharp 构建指纹",
-      "boundary": "只查询 EZapi 门控；不执行玩法、不保留 Unity 对象，未知构建或非主线程失败关闭。",
-      "privateModule": "RuntimeCapabilities.cs"
+      "boundary": "只查询 EZapi 门控；不执行玩法、不保留 Unity 对象，未知构建或非主线程失败关闭。"
     },
     {
+      "file": "../src/EZapi/ClientVisit.cs",
       "purpose": "ClientVisitApi queue, native customer callbacks, run-scope state and safe cleanup",
-      "boundary": "Uses only the official customer-generation hook and exact current-build StoreClient factory/queue signatures; no save writes; gameplay remains unverified.",
-      "privateModule": "ClientVisit.cs"
+      "boundary": "Uses only the official customer-generation hook and exact current-build StoreClient factory/queue signatures; no save writes; gameplay remains unverified."
     },
     {
+      "file": "../src/EZapi.Sample/ClientVisitExamples.cs",
       "purpose": "Example client visit and dialogue",
-      "boundary": "Uses an actor ID provided by the content author; the native blueprint retains its game-defined trade behavior.",
-      "privateModule": "ClientVisitExamples.cs"
+      "boundary": "Uses an actor ID provided by the content author; the native blueprint retains its game-defined trade behavior."
     },
     {
+      "file": "../src/EZapi/SupplierApi.cs",
       "purpose": "动态供应商访客/报价、双语声明流向、延后刷新、同图语言失败提示",
-      "boundary": "Uses the official customer hook; no native shelf or loot-table mutation; payment, inventory delivery and compensation belong to the owner Mod; process-only state; gameplay unverified.",
-      "privateModule": "SupplierApi.cs"
+      "boundary": "Uses the official customer hook; no native shelf or loot-table mutation; payment, inventory delivery and compensation belong to the owner Mod; process-only state; gameplay unverified."
     },
     {
+      "file": "../src/EZapi/SupplierDefinition.cs",
       "purpose": "Supplier definition/page/offer DTOs and bounded immutable callback snapshots",
-      "boundary": "Validates owner-prefixed IDs, labels, offer limits and auto-selection timing; does not transact game items or money.",
-      "privateModule": "SupplierDefinition.cs"
+      "boundary": "Validates owner-prefixed IDs, labels, offer limits and auto-selection timing; does not transact game items or money."
     },
     {
+      "file": "../src/EZapi.Sample/SupplierExamples.cs",
       "purpose": "AI-readable supplier registration, queueing and dynamic offer example",
-      "boundary": "Sample purchase callback is illustrative and does not deduct money or deliver inventory.",
-      "privateModule": "SupplierExamples.cs"
+      "boundary": "Sample purchase callback is illustrative and does not deduct money or deliver inventory."
     },
     {
+      "file": "../src/EZapi/EmbeddedSpriteDefinition.cs",
       "purpose": "embedded sprite definitions, resource bounds and PNG preflight",
-      "boundary": "managed preflight before Unity/native cache mutation",
-      "privateModule": "EmbeddedSpriteDefinition.cs"
+      "boundary": "managed preflight before Unity/native cache mutation"
     },
     {
+      "file": "../src/EZapi/SpriteAssets.cs",
       "purpose": "DLL Mod embedded atlas declaration, install, lookup and GameItem binding",
-      "boundary": "namespaced public atlasCache bridge; portrait key remains unverified",
-      "privateModule": "SpriteAssets.cs"
+      "boundary": "namespaced public atlasCache bridge; portrait key remains unverified"
     },
     {
+      "file": "../src/EZapi/DebugSpriteAssets.cs",
       "purpose": "manual native smoke check for resource decode, atlas install, lookup and assignment",
-      "boundary": "temporary detached items; no inventory/save writes",
-      "privateModule": "DebugSpriteAssets.cs"
+      "boundary": "temporary detached items; no inventory/save writes"
     },
     {
+      "file": "../src/EZapi.Sample/SpriteAssetExamples.cs",
       "purpose": "compile-ready C# embedded atlas example",
-      "boundary": "declaration and calls only; not automatically run",
-      "privateModule": "SpriteAssetExamples.cs"
+      "boundary": "declaration and calls only; not automatically run"
     },
     {
+      "file": "../src/EZapi/PngAssetHeader.cs",
       "purpose": "shared PNG signature and IHDR validation for JSON and embedded DLL assets",
-      "boundary": "header/size preflight only; Unity performs full decode",
-      "privateModule": "PngAssetHeader.cs"
+      "boundary": "header/size preflight only; Unity performs full decode"
     },
     {
+      "file": "../src/EZapi/PowerBatchMath.cs",
       "purpose": "多原生电源费用规划，稳定排序和64位总量",
-      "boundary": "纯托管、不扣电、不锁定或缓存物品",
-      "privateModule": "PowerBatchMath.cs"
+      "boundary": "纯托管、不扣电、不锁定或缓存物品"
     },
     {
+      "file": "../src/EZapi/DebugPower.cs",
       "purpose": "一次按钮检查原生单件与堆叠电源",
-      "boundary": "仅创建临时机器和电源，恢复并销毁，不保存",
-      "privateModule": "DebugPower.cs"
+      "boundary": "仅创建临时机器和电源，恢复并销毁，不保存"
     },
     {
+      "file": "../src/EZapi/PresentationApi.cs",
       "purpose": "owner display names, registered item text queries, dynamic module tooltip lines, and owned effect localization",
-      "boundary": "initialize-thread registration; official tooltip callbacks; only same-owner modules/effects; restore only EZapi-owned effect fields",
-      "privateModule": "PresentationApi.cs"
+      "boundary": "initialize-thread registration; official tooltip callbacks; only same-owner modules/effects; restore only EZapi-owned effect fields"
     },
     {
+      "file": "../src/EZapi/RunDataApi.cs",
       "purpose": "周目 JSON 状态、旧值比较后暂存与结果核对",
-      "boundary": "当前玩家/主线程；便捷 Stage 验证事件 epoch；不保存、不自动迁移",
-      "privateModule": "RunDataApi.cs"
+      "boundary": "当前玩家/主线程；便捷 Stage 验证事件 epoch；不保存、不自动迁移"
     },
     {
+      "file": "../src/EZapi/PortraitSprites.cs",
       "purpose": "肖像命名空间、当前 SpriteDict 注册/解析读回、所有权清理",
-      "boundary": "游戏主线程；不缓存场景对象、不覆盖外部键、无 Harmony；停止后句柄失效",
-      "privateModule": "PortraitSprites.cs"
+      "boundary": "游戏主线程；不缓存场景对象、不覆盖外部键、无 Harmony；停止后句柄失效"
     },
     {
+      "file": "../src/EZapi/NpcStockDefinition.cs",
       "purpose": "纯托管货源选项/候选池与严格JSON枚举",
-      "boundary": "离线可用；不触碰游戏",
-      "privateModule": "NpcStockDefinition.cs"
+      "boundary": "离线可用；不触碰游戏"
     },
     {
+      "file": "../src/EZapi/NpcStockApi.cs",
       "purpose": "Applied声明、当前持有/天数与独立原生RNG/官方事件",
-      "boundary": "当前周目主线程；不交付或保存",
-      "privateModule": "NpcStockApi.cs"
+      "boundary": "当前周目主线程；不交付或保存"
     },
     {
+      "file": "../src/EZapi/NpcStockRuntime.cs",
       "purpose": "精确商人作用域的命名表、矿工和固定分类货位；生成来源去重、延迟清理、周目代次隔离",
-      "boundary": "无真实货架/支付/保存声明；不匹配的特殊物品保留原路径",
-      "privateModule": "NpcStockRuntime.cs"
+      "boundary": "无真实货架/支付/保存声明；不匹配的特殊物品保留原路径"
     },
     {
+      "file": "../src/EZapi/DebugNpcStock.cs",
       "purpose": "真实命名表/官方事件/矿工生成委托集中夹具",
-      "boundary": "测试时捕获临时货物；无真实交易",
-      "privateModule": "DebugNpcStock.cs"
+      "boundary": "测试时捕获临时货物；无真实交易"
     },
     {
+      "file": "../src/EZapi/RegistrationBatch.cs",
       "purpose": "通用定义/依赖、不可变快照与迭代依赖图",
-      "boundary": "metadata only; no native factory application, inventory or save writes",
-      "privateModule": "RegistrationBatch.cs"
+      "boundary": "metadata only; no native factory application, inventory or save writes"
     },
     {
+      "file": "../src/EZapi/RegistrationApi.cs",
       "purpose": "初始化声明、线程/重入/生命周期限制",
-      "boundary": "metadata only; no native factory application, inventory or save writes",
-      "privateModule": "RegistrationApi.cs"
+      "boundary": "metadata only; no native factory application, inventory or save writes"
     },
     {
+      "file": "../src/EZapi/JsonRegistration.cs",
       "purpose": "独立严格通用声明JSON",
-      "boundary": "metadata only; no native factory application, inventory or save writes",
-      "privateModule": "JsonRegistration.cs"
+      "boundary": "metadata only; no native factory application, inventory or save writes"
     },
     {
+      "file": "../src/EZapi/DebugRegistration.cs",
       "purpose": "真实初始化与载入后元数据夹具",
-      "boundary": "metadata only; no native factory application, inventory or save writes",
-      "privateModule": "DebugRegistration.cs"
+      "boundary": "metadata only; no native factory application, inventory or save writes"
     },
     {
+      "file": "../src/EZapi/SaveGraphLoader.cs",
       "purpose": "当前构建原生独立物品加载后处理与精确签名检查",
-      "boundary": "known game build; managed wrappers only; no disk save request",
-      "privateModule": "SaveGraphLoader.cs"
+      "boundary": "known game build; managed wrappers only; no disk save request"
     },
     {
+      "file": "../src/EZapi/DebugSaveGraph.cs",
       "purpose": "普通物品、三层容器、机器槽位和液体的原生往返夹具",
-      "boundary": "known game build; managed wrappers only; no disk save request",
-      "privateModule": "DebugSaveGraph.cs"
+      "boundary": "known game build; managed wrappers only; no disk save request"
     },
     {
+      "file": "../src/EZapi/MachineLiquidDebit.cs",
       "purpose": "标准机器精确成分扣液；完整签名门控、官方ModifyTag与原生倒出后处理",
-      "boundary": "当前已核对游戏构建；调用方持有完整图冻结与原标签备份",
-      "privateModule": "MachineLiquidDebit.cs"
+      "boundary": "当前已核对游戏构建；调用方持有完整图冻结与原标签备份"
     },
     {
+      "file": "../src/EZapi/DebugComponentLiquids.cs",
       "purpose": "六组临时原生混合液、连续扣取、扣空和部分交付补偿验收",
-      "boundary": "显式材料检查按钮；不交付玩家、不保存",
-      "privateModule": "DebugComponentLiquids.cs"
+      "boundary": "显式材料检查按钮；不交付玩家、不保存"
     },
     {
+      "file": "../src/EZapi/MachineLiquidFill.cs",
       "purpose": "已有输出容器正数加液、逐成分读回与构建/完整签名门控",
-      "boundary": "冻结和全部标签补偿归标准事务；不清空重灌",
-      "privateModule": "MachineLiquidFill.cs"
+      "boundary": "冻结和全部标签补偿归标准事务；不清空重灌"
     },
     {
+      "file": "../src/EZapi/DebugLiquidOutputs.cs",
       "purpose": "八组原生容器输出与失败补偿夹具",
-      "boundary": "显式调试入口；故障注入补丁仅测试期间安装并finally移除；不交付或保存",
-      "privateModule": "DebugLiquidOutputs.cs"
+      "boundary": "显式调试入口；故障注入补丁仅测试期间安装并finally移除；不交付或保存"
     },
     {
+      "file": "../src/EZapi/MachineLayoutCallbacks.cs",
       "purpose": "纯托管布局与游戏C#条件分层；复制委托、忽略JSON",
-      "boundary": "命令行校验器不加载游戏程序集，JSON不接受回调字段",
-      "privateModule": "MachineLayoutCallbacks.cs"
+      "boundary": "命令行校验器不加载游戏程序集，JSON不接受回调字段"
     },
     {
+      "file": "../src/EZapi/MachineContainerConditions.cs",
       "purpose": "精确机器/槽位的条件句柄、AND组合、只读审计、故障快照与释放",
-      "boundary": "不持有周目原生引用；原生读档重建不执行作者条件",
-      "privateModule": "MachineContainerConditions.cs"
+      "boundary": "不持有周目原生引用；原生读档重建不执行作者条件"
     },
     {
+      "file": "../src/EZapi/DebugMachineConditions.cs",
       "purpose": "统一注册条件机器与九组原生准入/加工拦截/释放检查",
-      "boundary": "仅临时夹具；不向玩家交付或请求保存",
-      "privateModule": "DebugMachineConditions.cs"
+      "boundary": "仅临时夹具；不向玩家交付或请求保存"
     },
     {
+      "file": "../src/EZapi/MachineMaterialGraph.cs",
       "purpose": "完整材料后代图审计、原实例恢复、拓扑逆序消费与纯托管清理收据",
-      "boundary": "escrow/furnace modes retained; strict state mode observes plain roots and complete read-only machine graphs,including unassigned temporary IDs",
-      "privateModule": "MachineMaterialGraph.cs"
+      "boundary": "escrow/furnace modes retained; strict state mode observes plain roots and complete read-only machine graphs,including unassigned temporary IDs"
     },
     {
+      "file": "../src/EZapi/DebugMaterialGraphs.cs",
       "purpose": "十二组三层材料原生夹具，消费/失败退回/元数据恢复/提交清理异常",
-      "boundary": "仅按钮触发临时图，不请求保存，不安装Destroy探针",
-      "privateModule": "DebugMaterialGraphs.cs"
+      "boundary": "仅按钮触发临时图，不请求保存，不安装Destroy探针"
     },
     {
+      "file": "../src/EZapi/RecipeGuideImages.cs",
       "purpose": "目录ID解析Sprite、网格GPU缩略图、LRU128和异常清理",
-      "boundary": "Update每帧一个未命中；Draw只缓存；共享图像不销毁",
-      "privateModule": "RecipeGuideImages.cs"
+      "boundary": "Update每帧一个未命中；Draw只缓存；共享图像不销毁"
     },
     {
+      "file": "../src/EZapi/RecipeGuideImageGeometry.cs",
       "purpose": "矩形图集UV/翻转、透明裁切边距与等比排版",
-      "boundary": "纯托管；拒绝无效坐标及未知旋转",
-      "privateModule": "RecipeGuideImageGeometry.cs"
+      "boundary": "纯托管；拒绝无效坐标及未知旋转"
     },
     {
+      "file": "../src/EZapi/DebugGuideImages.cs",
       "purpose": "实际GPU逐像素网格、非可读原生Sprite及四个目录图片检查",
-      "boundary": "自有可读夹具先OverrideGeometry，再丢弃CPU副本；不保存",
-      "privateModule": "DebugGuideImages.cs"
+      "boundary": "自有可读夹具先OverrideGeometry，再丢弃CPU副本；不保存"
     },
     {
+      "file": "../src/EZapi/DebugMachineBatteryRequirements.cs",
       "purpose": "必需/可选电源8种实机边界与原生零电量读回",
-      "boundary": "仅调试按钮；游离测试机器和独立外接站；不请求保存",
-      "privateModule": "DebugMachineBatteryRequirements.cs"
+      "boundary": "仅调试按钮；游离测试机器和独立外接站；不请求保存"
     },
     {
+      "file": "../src/EZapi/MachineInventoryBinding.cs",
       "purpose": "同步借用库存的父图/角色/窗口身份及Template核对",
-      "boundary": "不保存原生引用；复制映射；不安装原生窗口委托",
-      "privateModule": "MachineInventoryBinding.cs"
+      "boundary": "不保存原生引用；复制映射；不安装原生窗口委托"
     },
     {
+      "file": "../src/EZapi/DebugMachineInventoryBinding.cs",
       "purpose": "8种真实自定义/标准窗口加工与拒绝回归",
-      "boundary": "机器注册调试按钮；临时游离图；不保存",
-      "privateModule": "DebugMachineInventoryBinding.cs"
+      "boundary": "机器注册调试按钮；临时游离图；不保存"
     },
     {
+      "file": "../src/EZapi/DebugGuideLocalization.cs",
       "purpose": "固定可丢弃档真实切换英语/中文，验证图鉴文字并恢复原语言",
-      "boundary": "Unity公开SelectedLocale；仅调试按钮；按周目门控，退出/故障恢复；不保存",
-      "privateModule": "DebugGuideLocalization.cs"
+      "boundary": "Unity公开SelectedLocale；仅调试按钮；按周目门控，退出/故障恢复；不保存"
     },
     {
+      "file": "../src/EZapi/DebugMachinePersistence.cs",
       "purpose": "指定测试周目创建/读取复杂跨夜保存夹具，四根图、整图材料、液体、真实电站与重复分发检查",
-      "boundary": "仅显式按钮；正常UI保存；不缓存跨夜原生实例；不自动保存",
-      "privateModule": "DebugMachinePersistence.cs"
+      "boundary": "仅显式按钮；正常UI保存；不缓存跨夜原生实例；不自动保存"
     },
     {
+      "file": "../src/EZapi/ItemStockRuntime.cs",
       "purpose": "官方Late作用域内显式原生上架及数量读回；不修改拥有物品快照",
-      "boundary": "夜间补货；原生容量/perk/所有权；真实购买保存冷启动见0.1.65证据",
-      "privateModule": "ItemStockRuntime.cs"
+      "boundary": "夜间补货；原生容量/perk/所有权；真实购买保存冷启动见0.1.65证据"
     },
     {
+      "file": "../src/EZapi/RecipeGuideImageMesh.cs",
       "purpose": "公开三角网格与UV转有限像素索引，保留透明边距/旋转",
-      "boundary": "纯托管；4096顶点/24576索引/200万候选/128像素缩略图/512读回",
-      "privateModule": "RecipeGuideImageMesh.cs"
+      "boundary": "纯托管；4096顶点/24576索引/200万候选/128像素缩略图/512读回"
     },
     {
+      "file": "../src/EZapi/NativeLocaleCalendarGuard.cs",
       "purpose": "050REV5-L语言切换途中暂缓原生日历文字Update，避免同步取表破坏异步组",
-      "boundary": "精确构建/签名/owner门控；不改变游戏日/资源/存档",
-      "privateModule": "NativeLocaleCalendarGuard.cs"
+      "boundary": "精确构建/签名/owner门控；不改变游戏日/资源/存档"
     },
     {
+      "file": "../src/EZapi/NativeGuideLocale.cs",
       "purpose": "初次观察公开加载句柄，随后以语言完成事件门控预览",
-      "boundary": "强引用完成委托；退出取消订阅/移除日历门控；不WaitForCompletion/不缓存临时失败",
-      "privateModule": "NativeGuideLocale.cs"
+      "boundary": "强引用完成委托；退出取消订阅/移除日历门控；不WaitForCompletion/不缓存临时失败"
     },
     {
+      "file": "../src/EZapi/DebugMachineNightResources.cs",
       "purpose": "12 temporary native nightly resource observation scenarios",
-      "boundary": "no actual night/save; fixture-owned mutations restored locally",
-      "privateModule": "DebugMachineNightResources.cs"
+      "boundary": "no actual night/save; fixture-owned mutations restored locally"
     },
     {
+      "file": "../src/EZapi/DebugRecipeReadOnly.cs",
       "purpose": "23 temporary native recipe callback mutation scenarios",
-      "boundary": "no save/night; illegal author mutations detected,not automatically restored",
-      "privateModule": "DebugRecipeReadOnly.cs"
+      "boundary": "no save/night; illegal author mutations detected,not automatically restored"
     },
     {
+      "file": "../src/EZapi/ModLog.cs",
       "purpose": "每Mod独立级别/结构化接收器/惰性日志",
-      "boundary": "同步托管，无全局配置修改",
-      "privateModule": "ModLog.cs"
+      "boundary": "同步托管，无全局配置修改"
     },
     {
+      "file": "../src/EZapi/WindowInputCapture.cs",
       "purpose": "独立窗口指针手势与关闭释放屏障",
-      "boundary": "仅托管状态，路由由作者组合，Reset释放自己状态",
-      "privateModule": "WindowInputCapture.cs"
+      "boundary": "仅托管状态，路由由作者组合，Reset释放自己状态"
     },
     {
+      "file": "../src/EZapi/Progression.cs",
       "purpose": "当前原生升级/服务的纯托管快照",
-      "boundary": "已载入周目主线程，只读，不付款或Unlock",
-      "privateModule": "Progression.cs"
+      "boundary": "已载入周目主线程，只读，不付款或Unlock"
     },
     {
+      "file": "../src/EZapi/Requirements.cs",
       "purpose": "共享C#/JSON前置条件树、严格校验与三值组合",
-      "boundary": "纯托管；事实回调只读；未知取反仍未知",
-      "privateModule": "Requirements.cs"
+      "boundary": "纯托管；事实回调只读；未知取反仍未知"
     },
     {
+      "file": "../src/EZapi/RequirementApi.cs",
       "purpose": "当前周目升级/服务/日/现金条件适配",
-      "boundary": "每次重新捕获并核对周目，不跨调用缓存",
-      "privateModule": "RequirementApi.cs"
+      "boundary": "每次重新捕获并核对周目，不跨调用缓存"
     },
     {
+      "file": "../src/EZapi/GameRunIdentity.cs",
       "purpose": "独立的纯托管周目身份快照",
-      "boundary": "Epoch只用于本次进程载入身份",
-      "privateModule": "GameRunIdentity.cs"
+      "boundary": "Epoch只用于本次进程载入身份"
     },
     {
+      "file": "../src/EZapi/ReadableIds.cs",
       "purpose": "原生升级/服务ID的共享形状规则",
-      "boundary": "不判断原生目录存在性",
-      "privateModule": "ReadableIds.cs"
+      "boundary": "不判断原生目录存在性"
     },
     {
+      "file": "../src/EZapi/GameLanguage.cs",
       "purpose": "当前游戏语言及CSV/双语文本便捷查询",
-      "boundary": "主线程/构建门控；失败带原因回退英文，不切换语言",
-      "privateModule": "GameLanguage.cs"
+      "boundary": "主线程/构建门控；失败带原因回退英文，不切换语言"
     },
     {
+      "file": "../src/EZapi/DeclarativeItemLocalization.cs",
       "purpose": "物品和独立机器的显示/重开本地化刷新；保护玩家改名与原生库存图",
-      "boundary": "游戏主线程、当前语言；不持久化解析后的标题/标签",
-      "privateModule": "DeclarativeItemLocalization.cs"
+      "boundary": "游戏主线程、当前语言；不持久化解析后的标题/标签"
     },
     {
+      "file": "../src/EZapi/ReadingTextResolution.cs",
       "purpose": "阅读标题/正文/署名同一次语言解析与原生分配前校验",
-      "boundary": "纯托管，不创建物品/面板/存档",
-      "privateModule": "ReadingTextResolution.cs"
+      "boundary": "纯托管，不创建物品/面板/存档"
     },
     {
+      "file": "../src/EZapi/ItemDataApi.cs",
       "purpose": "命名空间化物品JSON读取、版本迁移与比较暂存 / Versioned item JSON state",
-      "boundary": "当前主线程/周目/实例；官方GetTagReadonly/ModifyTag；无付款或存档调用",
-      "privateModule": "ItemDataApi.cs"
+      "boundary": "当前主线程/周目/实例；官方GetTagReadonly/ModifyTag；无付款或存档调用"
     },
     {
+      "file": "../src/EZapi/DebugDiskItems.cs",
       "purpose": "单槽一次性保存/冷加载/语言测试夹具",
-      "boundary": "只允许精确测试槽/RunId；Stage显式保存，Load只读",
-      "privateModule": "DebugDiskItems.cs"
+      "boundary": "只允许精确测试槽/RunId；Stage显式保存，Load只读"
     },
     {
+      "file": "../src/EZapi/DebugSupplierLocalization.cs",
       "purpose": "供应商原生对话中英验收夹具",
-      "boundary": "主动触发到达/离场回调；无实际付款/交付",
-      "privateModule": "DebugSupplierLocalization.cs"
+      "boundary": "主动触发到达/离场回调；无实际付款/交付"
     },
     {
+      "file": "../src/EZapi/NativeWindowTitles.cs",
       "purpose": "原生标题文本固定字号测量及有界适配",
-      "boundary": "只改标题节点；不改窗口和库存；失败恢复原值",
-      "privateModule": "NativeWindowTitles.cs"
+      "boundary": "只改标题节点；不改窗口和库存；失败恢复原值"
     },
     {
+      "file": "AI-START-HERE.en.md",
       "purpose": "英文开发者和AI入口",
-      "boundary": "开发候选；遵守状态寿命和写入边界",
-      "privateModule": "AI-START-HERE.en.md"
+      "boundary": "开发候选；遵守状态寿命和写入边界"
     },
     {
+      "file": "developer-workflows.index.json",
       "purpose": "任务到样例/命令/错误恢复的短路径",
-      "boundary": "JSON/DLL/语言/物品数据/前置条件五类任务",
-      "privateModule": "developer-workflows.index.json"
+      "boundary": "JSON/DLL/语言/物品数据/前置条件五类任务"
     },
     {
+      "file": "../src/EZapi/DeveloperToolsSettings.cs",
       "purpose": "启动期可选开发面板与回归夹具开关",
-      "boundary": "默认关闭；严格配置；不改存档/游戏语言；需重启",
-      "privateModule": "DeveloperToolsSettings.cs"
+      "boundary": "默认关闭；严格配置；不改存档/游戏语言；需重启"
     },
     {
+      "file": "../src/EZapi/DepartureApi.cs",
       "purpose": "自适应外出入口注册、注销和状态快照",
-      "boundary": "初始化后主线程；声明保留至注销或关闭",
-      "privateModule": "DepartureApi.cs"
+      "boundary": "初始化后主线程；声明保留至注销或关闭"
     },
     {
+      "file": "../src/EZapi/DepartureButton.cs",
       "purpose": "声明、纯托管身份快照、所有权与回调门控",
-      "boundary": "查询只读；点击前复核代次，隔离异常和重入",
-      "privateModule": "DepartureButton.cs"
+      "boundary": "查询只读；点击前复核代次，隔离异常和重入"
     },
     {
+      "file": "../src/EZapi/DepartureLayout.cs",
       "purpose": "搜打撤布局提取：空位候选和碰撞规划",
-      "boundary": "纯托管几何；不含Unity对象；有界搜索",
-      "privateModule": "DepartureLayout.cs"
+      "boundary": "纯托管几何；不含Unity对象；有界搜索"
     },
     {
+      "file": "../src/EZapi/DepartureRuntime.cs",
       "purpose": "原生模板克隆、实际占位、裁切和监听生命周期",
-      "boundary": "只写自有对象；地图/读档/场景变化销毁；不保存",
-      "privateModule": "DepartureRuntime.cs"
+      "boundary": "只写自有对象；地图/读档/场景变化销毁；不保存"
     }
   ],
   "forbiddenPatterns": [
@@ -1055,11 +1055,5 @@
   "language": "game-language.index.json",
   "dialogueLocalization": "dialogue-localization.index.json",
   "itemData": "item-data.index.json",
-  "installation": "install-and-debug.zh-CN.md",
-  "sourceAccess": "private; consumer SDK does not include framework implementation",
-  "distributionVerification": {
-    "dllSHA256": "7E4AB675B0E3BD81C56EEC4606731A6880287549EB4E8E90A707BE18BD52BEEF",
-    "nativeRuntimeVerified": false,
-    "frameworkSourceIncluded": false
-  }
+  "installation": "install-and-debug.zh-CN.md"
 }

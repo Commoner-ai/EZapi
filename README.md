@@ -1,12 +1,12 @@
 # EZapi
 
-**Probably Stolen 模组前置框架**：为玩家提供单DLL前置，为开发者和AI提供DLL API、JSON内容包、文档、调用示例及调试工具。框架源码不公开。
+**Probably Stolen 模组前置框架**：为玩家提供单DLL前置，为开发者和AI提供DLL API、JSON内容包、文档、调用示例及调试工具。框架、校验器与测试采用 MIT 开源。
 
 An independent **Probably Stolen** Mod framework: DLL APIs, declarative JSON packs, an offline validator, buildable examples and machine-readable AI indexes. Prefer official game APIs. No Forge runtime dependency or bundled game assemblies.
 
-**0.1.73-preview.1** is a prerelease, with assembly version 0.1.73. Reference functionality has 39 implemented groups; this is not a promise of binary compatibility or complete gameplay validation.
+**0.1.73-preview.2** is a prerelease, with assembly version 0.1.73. Reference functionality has 39 implemented groups; this is not a promise of binary compatibility or complete gameplay validation.
 
-**Public distribution repository:** packages, documentation and consumer examples. Framework implementation source and internal Git history are not published here.
+**MIT open source:** framework implementation, offline validator, tests, build tooling, documentation and examples are available here. Older private history is not imported. See [build from source](docs/build-from-source.en.md).
 
 [中文说明](README.zh-CN.md) · [Downloads](https://github.com/Commoner-ai/EZapi/releases) · [Install and debug](docs/install-and-debug.en.md) · [AI entry](docs/AI-START-HERE.en.md)
 
@@ -23,7 +23,7 @@ The developer package includes [game entry and batch automation](docs/automation
 
 ## Develop a Mod
 
-Framework implementation source and build projects are private. The developer package provides DLL/XML, exact public API indexes, guides, JSON schemas, a binary offline validator, consumer examples and automation scripts. See [adaptive departure buttons](docs/departure-buttons.en.md).
+Framework implementation and build projects are available under MIT; see [source build instructions](docs/build-from-source.en.md). The developer package provides DLL/XML, exact public API indexes, guides, JSON schemas, a binary offline validator, consumer examples and automation scripts. See [adaptive departure buttons](docs/departure-buttons.en.md).
 
 Build the independent example against your installed EZapi and MelonLoader:
 
@@ -31,8 +31,8 @@ Build the independent example against your installed EZapi and MelonLoader:
 dotnet build docs/examples/minimal-dll/SimpleMod.csproj -c Release -p:GameDir='<game root>'
 ```
 
-Language follows game settings. Additional CSV locales remain supported with English/author fallback; Chinese/English are priority acceptance locales. Official docs: [probably-stolen-modding](https://github.com/dragonpan2/probably-stolen-modding). Framework build and fetch scripts are internal.
+Language follows game settings. Additional CSV locales remain supported with English/author fallback; Chinese/English are priority acceptance locales. Official docs: [probably-stolen-modding](https://github.com/dragonpan2/probably-stolen-modding). Build and reference-fetch scripts are available in this repository.
 
-The departure API creates a new DLL hash. Earlier native language/save evidence remains tied to its historical hash. Offline verification is not native gameplay verification. See [release notes](docs/releases/0.1.73-preview.1.md).
+The departure API creates a new DLL hash. Earlier native language/save evidence remains tied to its historical hash. Offline verification is not native gameplay verification. See [release notes](docs/releases/0.1.73-preview.2.md).
 
-Framework implementation is private. See LICENSE for binary redistribution and consumer-example permissions, and THIRD-PARTY-NOTICES.md for dependencies.
+See the MIT LICENSE for source and binary reuse, and THIRD-PARTY-NOTICES.md for dependencies. Game/runtime DLLs and private workspace data are not redistributed.

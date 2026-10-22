@@ -1,0 +1,48 @@
+# Official format: no header; one physical line per key.
+debug_ready,EZapi: {0} locale files loaded
+food_description,"Native food helper, no custom hunger system."
+food_name,EZapi native food
+help_lines,Check tooltips and dragging.\nThen test save and reload.
+item_ezapi_sample_dressing_case_name,EZapi Dressing Case
+item_ezapi_sample_dressing_case_shortDescription,"An irregular internal grid that accepts only the two sample dressing IDs, for checking filtering and saves."
+item_ezapi_sample_early_shape_customText,Early custom text.
+item_ezapi_sample_early_shape_flavorText,"Early flavor text: Even with one cell missing, it has its own place."
+item_ezapi_sample_early_shape_longDescription,Early long description: The item occupies an L-shaped 2 by 2 area.
+item_ezapi_sample_early_shape_name,EZapi Early Text and Irregular Shape
+item_ezapi_sample_early_shape_shortDescription,Early short description: This line is added during the official early tooltip phase.
+item_ezapi_sample_early_shape_tooltip_line_0_text,Underline style sample
+item_ezapi_sample_early_shape_tooltip_line_1_text,Strikethrough style sample
+item_ezapi_sample_early_shape_tooltip_source_name,EZapi Sample Content Pack
+item_ezapi_sample_field_kit_customText,Custom text: EZapi native item property sample.
+item_ezapi_sample_field_kit_flavorText,Flavor text: Make a complete mod with a few simple calls.
+item_ezapi_sample_field_kit_longDescription,"Long description: This independently registered item shows that types and tags do not create healing, storage, or combat behavior."
+item_ezapi_sample_field_kit_name,EZapi Item Property Demo
+item_ezapi_sample_field_kit_shortDescription,Short description: Checks item properties and tags; grants no healing effect.
+item_ezapi_sample_field_kit_tooltip_label_0_text,Quality
+item_ezapi_sample_field_kit_tooltip_label_1_text,Owner
+item_ezapi_sample_field_kit_tooltip_label_2_text,A disabled tag should stay hidden
+item_ezapi_sample_field_kit_tooltip_line_0_text,Early hint: This checks native item properties.
+item_ezapi_sample_field_kit_tooltip_line_1_text,Late hint: Tag values follow the live item state.
+item_ezapi_sample_field_kit_type_0_name,Framework Demo
+item_ezapi_sample_field_ration_name,EZapi Native Food
+item_ezapi_sample_field_ration_shortDescription,"Food with 400 calories. Use it to test native eating, freshness, and persistence."
+item_ezapi_sample_late_uses_customText,Late custom text.
+item_ezapi_sample_late_uses_flavorText,Late flavor text.
+item_ezapi_sample_late_uses_longDescription,Late long description: 3 uses remain out of 5.
+item_ezapi_sample_late_uses_name,EZapi Late Text and Use Count
+item_ezapi_sample_late_uses_shortDescription,Late short description: This item has a use count; the mod author must implement its use behavior.
+item_ezapi_sample_restricted_description,Native contraband level 1; this tests game rules and adds no custom use behavior.
+item_ezapi_sample_restricted_name,EZapi Contraband Level Sample
+item_ezapi_sample_restricted_tooltip_label_0_text,Display-only label
+item_ezapi_sample_reusable_dressing_name,EZapi Three-Use Wound Dressing
+item_ezapi_sample_reusable_dressing_shortDescription,Heals when owned by the player and injuries are present. Uses one charge per treatment; starts with 3 charges and is destroyed by the game when empty.
+item_ezapi_sample_storage_box_container_title,EZapi Storage Box
+item_ezapi_sample_storage_box_name,EZapi Storage Box
+item_ezapi_sample_storage_box_shortDescription,Internal grid is 4 by 3. The game opens the native container; dragging and nesting use native rules.
+item_ezapi_sample_water_container_name,EZapi 500 ml Liquid Container
+item_ezapi_sample_water_container_shortDescription,"Capacity 500 ml, full on creation. Use it to test native drinking, transfers, and persistence."
+item_ezapi_sample_wound_dressing_longDescription,"Uses the official healing-item example behavior. It is not consumed when the player is healthy, does not treat addiction, and is not general health restoration."
+item_ezapi_sample_wound_dressing_name,EZapi Disposable Wound Dressing
+item_ezapi_sample_wound_dressing_shortDescription,"When owned by the player and injuries are present, activate it to heal; the whole item is consumed."
+liquid_description,Native liquid container; test drinking and transfers in game.
+liquid_name,EZapi 500ml liquid container

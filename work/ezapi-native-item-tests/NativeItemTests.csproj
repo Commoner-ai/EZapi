@@ -1,0 +1,17 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup><TargetFramework>net8.0</TargetFramework><OutputType>Exe</OutputType><Nullable>enable</Nullable><ImplicitUsings>enable</ImplicitUsings></PropertyGroup>
+  <ItemGroup>
+    <Compile Include="../../src/EZapi/ItemRegistry.cs" Link="Real/ItemRegistry.cs" />
+    <Compile Include="../../src/EZapi/ContentPackLoader.cs" Link="Real/ContentPackLoader.cs" />
+    <Compile Include="../../src/EZapi/ItemDefinition.cs" Link="Real/ItemDefinition.cs" />
+    <Compile Include="../../src/EZapi/DefinitionRules.cs" Link="Real/DefinitionRules.cs" />
+    <Compile Include="../../src/EZapi/JsonItems.cs" Link="Real/JsonItems.cs" />
+    <Compile Include="../../src/EZapi/JsonLoot.cs" Link="Real/JsonLoot.cs" />
+    <Compile Include="../../src/EZapi/LootDefinition.cs" Link="Real/LootDefinition.cs" />
+  </ItemGroup>
+<ItemGroup><Compile Include="../../src/EZapi/FrameworkInfo.cs" Link="Shared/FrameworkInfo.cs" /></ItemGroup>
+<ItemGroup><Compile Include="../../src/EZapi/PackManifest.cs" Link="Shared/PackManifest.cs" /></ItemGroup>
+<ItemGroup><Compile Include="../../src/EZapi/PngAssets.cs" Link="Shared/PngAssets.cs" /><Compile Include="../../src/EZapi/PngAssetHeader.cs" Link="Shared/PngAssetHeader.cs" /></ItemGroup>
+<ItemGroup><Compile Include="../../src/EZapi/ContentPacks.cs" Link="Shared/ContentPacks.cs" /></ItemGroup>
+<ItemGroup><Compile Include="../../src/EZapi/Localization.cs" Link="Shared/Localization.cs" /></ItemGroup>
+<ItemGroup><Compile Include="../../src/EZapi/Content.cs" Link="Real/Content.cs" /></ItemGroup><ItemGroup><Compile Include="../../src/EZapi/LocalizedItemText.cs" Link="Real/LocalizedItemText.cs" /><Compile Include="../../src/EZapi/NativeItems.cs" Link="Real/NativeItems.cs" /></ItemGroup><ItemGroup><Compile Include="../../src/EZapi/Items.cs" Link="Real/Items.cs" /></ItemGroup><ItemGroup><Compile Include="../../src/EZapi/ItemStockContract.cs" Link="Real/ItemStockContract.cs" /></ItemGroup><ItemGroup><Compile Include="../../src/EZapi/NpcStockDefinition.cs" Link="Shared/NpcStockDefinition.cs" /></ItemGroup><ItemGroup><Compile Include="../../src/EZapi/GameLanguage.cs" Link="Real/GameLanguage.cs" /></ItemGroup><ItemGroup><Compile Include="../../src/EZapi/ItemText.cs" Link="Shared/ItemText.cs" /></ItemGroup></Project>

@@ -1,0 +1,11 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup><TargetFramework>net8.0</TargetFramework><OutputType>Exe</OutputType><Nullable>enable</Nullable><ImplicitUsings>enable</ImplicitUsings><AllowUnsafeBlocks>true</AllowUnsafeBlocks></PropertyGroup>
+  <ItemGroup>
+    <Compile Include="../../src/EZapi/Modules.cs" Link="Real/Modules.cs" />
+    <Compile Include="../../src/EZapi/NativeHooks.cs" Link="Real/NativeHooks.cs" />
+    <Compile Include="../../src/EZapi/GameSession.cs" Link="Real/GameSession.cs" />
+  </ItemGroup>
+<ItemGroup>
+<Compile Include="../../src/EZapi/GameRunIdentity.cs" Link="Shared/GameRunIdentity.cs" />
+</ItemGroup>
+</Project>

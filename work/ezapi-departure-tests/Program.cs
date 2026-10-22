@@ -1,0 +1,86 @@
+using EZapi;
+using System.Text.Json;
+
+int passed = 0;
+void Check(bool ok, string name) { if (!ok) throw new Exception(name); passed++; }
+var area = new DepartureRect(0, 0, 900, 600);
+var origin = new DepartureRect(620, 470, 120, 40);
+DepartureContext context = new(7, "test-run", 42, 1, false, new("en"));
+DepartureButton Button(string id = "author.trip.entry", Action<DepartureContext>? click = null) => new(id, "Outing", click ?? (_ => { }));
+var catalog = new DepartureCatalog();
+Check(catalog.Register("author.trip", Button()).Status == PresentationStatus.Queued, "register accepts declaration before map");
+Check(catalog.Register("author.trip", Button()).Status == PresentationStatus.Conflict, "duplicate id rejected");
+Check(catalog.Register("other", Button()).Status == PresentationStatus.Invalid, "cross-owner registration rejected");
+Check(catalog.Remove("author", "author.trip.entry").Status == PresentationStatus.Conflict, "parent namespace cannot remove child owner's button");
+Check(catalog.Remove("other", "author.trip.entry").Status == PresentationStatus.Invalid, "unowned removal rejected");
+Check(catalog.Entries.Count == 1, "invalid removal preserves registration");
+foreach (var label in new[] { "", " ", "a\0b", "a\nb", new string('x', 201) })
+    Check(catalog.Register("author.trip", Button("author.trip.bad") with { Label = label }).Status == PresentationStatus.Invalid, "invalid label rejected");
+Check(catalog.Register("author.trip", Button("author.trip.null") with { OnClick = null! }).Status == PresentationStatus.Invalid, "missing callback rejected");
+var entry = catalog.Entries["author.trip.entry"];
+Check(catalog.Evaluate(entry, context, () => true, out var label1, out var visible, out var enabled) && label1 == "Outing" && visible && enabled, "default current visit enabled");
+Check(catalog.Evaluate(entry, context with { RemainingVisits = 0 }, () => true, out _, out _, out enabled) && !enabled, "zero visits disabled");
+Check(catalog.Evaluate(entry, context with { InTransit = true }, () => true, out _, out _, out enabled) && !enabled, "transit disabled");
+Check(!catalog.Evaluate(entry, context, () => false, out _, out _, out _), "stale scope blocks query");
+int clicks = 0;
+catalog.Register("author.trip", Button("author.trip.click", _ => clicks++));
+var clickable = catalog.Entries["author.trip.click"];
+Check(!catalog.Invoke(clickable, context, () => true) && clicks == 0, "unplaced cannot click");
+clickable.Placed = clickable.Interactable = true;
+Check(catalog.Invoke(clickable, context, () => true) && clicks == 1, "one invocation delivers one callback");
+Check(!catalog.Invoke(clickable, context with { RemainingVisits = 0 }, () => true) && clicks == 1, "click rechecks visits");
+Check(!catalog.Invoke(clickable, context with { InTransit = true }, () => true) && clicks == 1, "click rechecks transit");
+catalog.Remove("author.trip", "author.trip.click");
+Check(!catalog.Invoke(clickable, context, () => true) && clicks == 1, "retired binding cannot click");
+bool current = true;
+catalog.Register("author.trip", Button("author.trip.reload") with { Visible = _ => { current = false; return true; } });
+Check(!catalog.Evaluate(catalog.Entries["author.trip.reload"], context, () => current, out _, out _, out _), "reload inside predicate revokes continuation");
+PresentationResult? reentry = null;
+catalog.Register("author.trip", Button("author.trip.reentry") with { Visible = _ => { reentry = catalog.Remove("author.trip", "author.trip.entry"); return true; } });
+Check(catalog.Evaluate(catalog.Entries["author.trip.reentry"], context, () => true, out _, out _, out _) && reentry?.Status == PresentationStatus.Conflict && catalog.Entries.ContainsKey("author.trip.entry"), "query reentry rejected");
+catalog.Register("author.trip", Button("author.trip.throw") with { Visible = _ => throw new Exception("mod failure") });
+Check(!catalog.Evaluate(catalog.Entries["author.trip.throw"], context, () => true, out _, out _, out _) && !catalog.Busy, "query exception isolated and guard released");
+Check(catalog.Evaluate(entry, context, () => true, out _, out _, out _), "other owner entry survives predicate failure");
+catalog.Register("author.trip", Button("author.trip.clickthrow", _ => throw new Exception("business failure")));
+var failing = catalog.Entries["author.trip.clickthrow"]; failing.Placed = failing.Interactable = true;
+Check(!catalog.Invoke(failing, context, () => true) && failing.Error!.StartsWith("EZAPI_DEPARTURE_CLICK") && !catalog.Busy, "click failure stays inside caller");
+catalog.Register("author.trip", Button("author.trip.free") with { RequireVisit = false });
+Check(catalog.Evaluate(catalog.Entries["author.trip.free"], context with { RemainingVisits = 0 }, () => true, out _, out _, out enabled) && enabled, "explicit no-visit entry allowed");
+catalog.Register("author.trip", Button("author.trip.name") with { DisplayName = c => c.Language.LocaleCode == "fr" ? "Sortir" : "Outing" });
+Check(catalog.Evaluate(catalog.Entries["author.trip.name"], context with { Language = new("fr") }, () => true, out label1, out _, out _) && label1 == "Sortir", "dynamic language callback supported");
+var crowded = new[] { new DepartureRect(200, 400, 500, 55), origin };
+var plan = DepartureLayout.Plan(area, origin, 100, 8, 8, crowded, 8, true);
+Check(plan.All(x => x is not null), "multiple registrations get free slots");
+Check(plan.Where(x => x.HasValue).All(x => area.Contains(x!.Value) && !crowded.Any(b => b.Expand(3).Overlaps(x.Value))), "external occupied rectangles never overlapped");
+Check(plan.Where(x => x.HasValue).Select(x => x!.Value).Distinct().Count() == 8, "each entry gets distinct location");
+Check(plan.SequenceEqual(DepartureLayout.Plan(area, origin, 100, 8, 8, crowded, 8, true)), "stable deterministic layout");
+Check(DepartureLayout.Plan(area, origin, 100, 8, 8, new[] { area }, 2, false).All(x => x is null), "full map returns hidden slots");
+Check(DepartureLayout.Plan(new(0, 0, 100, 30), origin, 100, 8, 8, Array.Empty<DepartureRect>(), 1, true)[0] is null, "undersized view handled");
+Check(DepartureLayout.Plan(area, origin with { Width = float.NaN }, 100, 8, 8, Array.Empty<DepartureRect>(), 1, true)[0] is null, "invalid geometry rejected");
+Check(DepartureLayout.Plan(area, origin, 100, -1, 8, Array.Empty<DepartureRect>(), 1, true)[0] is null, "invalid gap rejected");
+Check(DepartureLayout.Plan(area, origin, 100, 8, 8, Enumerable.Repeat(origin, 4097).ToArray(), 1, true)[0] is null, "obstacle limit fails closed");
+var reserved = DepartureLayout.Plan(area, origin, origin.CenterX, 8, 8, new[] { origin }, 4, true);
+Check(reserved.All(x => !x.HasValue || !Enumerable.Range(1, 4).Any(row => new DepartureRect(origin.X, origin.Y - row * 48, 120, 40).Expand(3).Overlaps(x.Value))), "legacy dynamic rows reserved");
+var random = new Random(730);
+for (int sample = 0; sample < 80; sample++)
+{
+    var viewport = new DepartureRect(0, 0, random.Next(320, 1800), random.Next(240, 1000));
+    var template = new DepartureRect(viewport.Width * .6f, viewport.Height * .8f, random.Next(55, 180), random.Next(25, 70));
+    var obstacles = Enumerable.Range(0, 8).Select(_ => new DepartureRect(random.Next(0, (int)viewport.Width), random.Next(0, (int)viewport.Height), random.Next(10, 300), random.Next(10, 80))).ToArray();
+    var layout = DepartureLayout.Plan(viewport, template, 80, 8, 8, obstacles, 10, true).Where(x => x.HasValue).Select(x => x!.Value).ToArray();
+    Check(layout.All(x => viewport.Contains(x) && obstacles.All(o => !o.Expand(3).Overlaps(x))) &&
+        layout.SelectMany((x, i) => layout.Skip(i + 1).Select(y => !x.Expand(3).Overlaps(y))).All(x => x), "variable-resolution geometry invariant");
+}
+DepartureApi.Start();
+GameSession.OnThread = false;
+Check(DepartureApi.Register("author.trip", "author.trip.thread", "Entry", () => { }).Status == PresentationStatus.Unavailable, "off-thread registration unavailable");
+GameSession.OnThread = true;
+Check(DepartureApi.Register("author.trip", "author.trip.api", "Entry", () => { }).Status == PresentationStatus.Queued, "simple one-call registration works");
+Check(DepartureApi.Snapshot().Single().Id == "author.trip.api", "public diagnostic snapshot");
+GameBuildFingerprint.IsKnown = false;
+Check(!DepartureApi.IsAvailable, "unknown build does not enable native adapter");
+GameBuildFingerprint.IsKnown = true;
+Check(DepartureApi.Unregister("author.trip", "author.trip.api").Status == PresentationStatus.Closed && DepartureApi.Snapshot().Count == 0, "public unregister clears declaration");
+DepartureApi.Stop();
+Check(!DepartureApi.IsAvailable && DepartureRuntime.Resets > 0, "shutdown revokes runtime bindings");
+Console.WriteLine(JsonSerializer.Serialize(new { passed, failed = 0, scope = "Source-linked registration, callback isolation, stale scope, language and adaptive layout invariants. No native UI or gameplay verification." }));

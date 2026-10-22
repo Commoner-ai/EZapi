@@ -1,0 +1,8 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup><TargetFramework>net8.0</TargetFramework><OutputType>Exe</OutputType><Nullable>enable</Nullable><ImplicitUsings>enable</ImplicitUsings></PropertyGroup>
+  <ItemGroup>
+    <Compile Include="../../src/EZapi/GameLanguage.cs" Link="Real/GameLanguage.cs" />
+    <Compile Include="../../src/EZapi/LocalizedItemText.cs" Link="Real/LocalizedItemText.cs" />
+    <Compile Include="../../src/EZapi/Localization.cs" Link="Real/Localization.cs" />
+  </ItemGroup>
+</Project>

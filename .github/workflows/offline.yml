@@ -1,0 +1,22 @@
+name: Offline checks
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+jobs:
+  offline:
+    runs-on: windows-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: '8.0.x'
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Source distribution boundaries
+        shell: pwsh
+        run: python scripts/Check-SourceDistribution.py
+      - name: Offline suites and CLI process cases
+        shell: pwsh
+        run: ./Build-EZapi.ps1 -OfflineOnly

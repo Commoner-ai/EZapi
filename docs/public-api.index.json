@@ -354,7 +354,12 @@
         "returns": null,
         "parameters": {}
       },
-      "sources": [],
+      "sources": [
+        {
+          "path": "../src/EZapi/ClientVisit.cs",
+          "line": 11
+        }
+      ],
       "domain": "visits",
       "curatedEntryIds": [
         "EZapi.ClientVisitApi.IsAvailable",
@@ -522,7 +527,12 @@
         "returns": null,
         "parameters": {}
       },
-      "sources": [],
+      "sources": [
+        {
+          "path": "../src/EZapi/ItemDefinition.cs",
+          "line": 101
+        }
+      ],
       "domain": "items",
       "curatedEntryIds": [],
       "fields": [],
@@ -688,7 +698,12 @@
         "returns": null,
         "parameters": {}
       },
-      "sources": [],
+      "sources": [
+        {
+          "path": "../src/EZapi/Content.cs",
+          "line": 9
+        }
+      ],
       "domain": "registration",
       "curatedEntryIds": [
         "EZapi.ContentApi.Subscribe"
@@ -757,7 +772,12 @@
         "returns": null,
         "parameters": {}
       },
-      "sources": [],
+      "sources": [
+        {
+          "path": "../src/EZapi/ContentPacks.cs",
+          "line": 9
+        }
+      ],
       "domain": "packs",
       "curatedEntryIds": [
         "EZapi.ContentPacks.Check",
@@ -855,7 +875,12 @@
       "compilerGenerated": false,
       "genericParameters": [],
       "documentation": null,
-      "sources": [],
+      "sources": [
+        {
+          "path": "../src/EZapi/Effects.cs",
+          "line": 9
+        }
+      ],
       "domain": "effects",
       "curatedEntryIds": [],
       "fields": [],
@@ -1127,7 +1152,12 @@
         "returns": null,
         "parameters": {}
       },
-      "sources": [],
+      "sources": [
+        {
+          "path": "../src/EZapi/DefinitionRules.cs",
+          "line": 5
+        }
+      ],
       "domain": "items",
       "curatedEntryIds": [
         "EZapi.DefinitionRules.Validate"
@@ -1236,7 +1266,12 @@
         "returns": null,
         "parameters": {}
       },
-      "sources": [],
+      "sources": [
+        {
+          "path": "../src/EZapi/DepartureApi.cs",
+          "line": 7
+        }
+      ],
       "domain": "departure",
       "curatedEntryIds": [],
       "fields": [],
@@ -1422,7 +1457,12 @@
         "returns": null,
         "parameters": {}
       },
-      "sources": [],
+      "sources": [
+        {
+          "path": "../src/EZapi/DepartureButton.cs",
+          "line": 11
+        }
+      ],
       "domain": "departure",
       "curatedEntryIds": [],
       "fields": [],
@@ -1823,7 +1863,12 @@
         "returns": null,
         "parameters": {}
       },
-      "sources": [],
+      "sources": [
+        {
+          "path": "../src/EZapi/DepartureButton.cs",
+          "line": 26
+        }
+      ],
       "domain": "departure",
       "curatedEntryIds": [],
       "fields": [],
@@ -2252,7 +2297,12 @@
         "returns": null,
         "parameters": {}
       },
-      "sources": [],
+      "sources": [
+        {
+          "path": "../src/EZapi/DepartureButton.cs",
+          "line": 4
+        }
+      ],
       "domain": "departure",
       "curatedEntryIds": [],
       "fields": [],
@@ -2649,7 +2699,12 @@
         "returns": null,
         "parameters": {}
       },
-      "sources": [],
+      "sources": [
+        {
+          "path": "../src/EZapi/Dialogue.cs",
+          "line": 7
+        }
+      ],
       "domain": "dialogue",
       "curatedEntryIds": [
         "EZapi.DialogueApi.Close",
@@ -2844,7 +2899,12 @@
         "returns": null,
         "parameters": {}
       },
-      "sources": [],
+      "sources": [
+        {
+          "path": "../src/EZapi/DialogueDefinition.cs",
+          "line": 10
+        }
+      ],
       "domain": "dialogue",
       "curatedEntryIds": [
         "EZapi.DialogueChoice.LocalizedConfirmLabel",
@@ -3268,7 +3328,12 @@
         "returns": null,
         "parameters": {}
       },
-      "sources": [],
+      "sources": [
+        {
+          "path": "../src/EZapi/DialogueDefinition.cs",
+          "line": 4
+        }
+      ],
       "domain": "dialogue",
       "curatedEntryIds": [
         "EZapi.DialogueContext.LocaleCode"
@@ -3711,7 +3776,12 @@
       "compilerGenerated": false,
       "genericParameters": [],
       "documentation": null,
-      "sources": [],
+      "sources": [
+        {
+          "path": "../src/EZapi/DialogueDefinition.cs",
+          "line": 19
+        }
+      ],
       "domain": "dialogue",
       "curatedEntryIds": [
         "EZapi.DialogueDefinition.LocalizedBackLabel",
@@ -4404,7 +4474,12 @@
         "returns": null,
         "parameters": {}
       },
-      "sources": [],
+      "sources": [
+        {
+          "path": "../src/EZapi/DialogueDefinition.cs",
+          "line": 46
+        }
+      ],
       "domain": "dialogue",
       "curatedEntryIds": [],
       "fields": [],
@@ -4453,7 +4528,12 @@
         "returns": null,
         "parameters": {}
       },
-      "sources": [],
+      "sources": [
+        {
+          "path": "../src/EZapi/EZapiBootstrap.cs",
+          "line": 28
+        }
+      ],
       "domain": "framework",
       "curatedEntryIds": [],
       "fields": [],
@@ -4647,7 +4727,12 @@
         "returns": null,
         "parameters": {}
       },
-      "sources": [],
+      "sources": [
+        {
+          "path": "../src/EZapi/Effects.cs",
+          "line": 12
+        }
+      ],
       "domain": "effects",
       "curatedEntryIds": [
         "EZapi.EffectApi.GetRuntimeStatus",
@@ -4794,7 +4879,12 @@
         "returns": null,
         "parameters": {}
       },
-      "sources": [],
+      "sources": [
+        {
+          "path": "../src/EZapi/SpriteAssets.cs",
+          "line": 59
+        }
+      ],
       "domain": "sprites",
       "curatedEntryIds": [
         "EZapi.EmbeddedSpriteAtlas.Assign",
@@ -5091,7 +5181,12 @@
       "compilerGenerated": false,
       "genericParameters": [],
       "documentation": null,
-      "sources": [],
+      "sources": [
+        {
+          "path": "../src/EZapi/Power.cs",
+          "line": 5
+        }
+      ],
       "domain": "power",
       "curatedEntryIds": [],
       "fields": [],
@@ -5430,7 +5525,12 @@
       "compilerGenerated": false,
       "genericParameters": [],
       "documentation": null,
-      "sources": [],
+      "sources": [
+        {
+          "path": "../src/EZapi/Power.cs",
+          "line": 4
+        }
+      ],
       "domain": "power",
       "curatedEntryIds": [],
       "fields": [
@@ -5532,7 +5632,12 @@
         "returns": null,
         "parameters": {}
       },
-      "sources": [],
+      "sources": [
+        {
+          "path": "../src/EZapi/ExternalPower.cs",
+          "line": 15
+        }
+      ],
       "domain": "external-power",
       "curatedEntryIds": [
         "EZapi.ExternalPowerApi.GetEnergy",
@@ -5799,7 +5904,12 @@
       "compilerGenerated": false,
       "genericParameters": [],
       "documentation": null,
-      "sources": [],
+      "sources": [
+        {
+          "path": "../src/EZapi/ItemDefinition.cs",
+          "line": 119
+        }
+      ],
       "domain": "items",
       "curatedEntryIds": [],
       "fields": [],
@@ -5904,7 +6014,12 @@
       "compilerGenerated": false,
       "genericParameters": [],
       "documentation": null,
-      "sources": [],
+      "sources": [
+        {
+          "path": "../src/EZapi/FrameworkInfo.cs",
+          "line": 20
+        }
+      ],
       "domain": "framework",
       "curatedEntryIds": [],
       "fields": [],
@@ -6176,7 +6291,12 @@
         "returns": null,
         "parameters": {}
       },
-      "sources": [],
+      "sources": [
+        {
+          "path": "../src/EZapi/FrameworkInfo.cs",
+          "line": 4
+        }
+      ],
       "domain": "framework",
       "curatedEntryIds": [
         "EZapi.FrameworkInfo.GetCapabilities"
@@ -6240,7 +6360,12 @@
         "returns": null,
         "parameters": {}
       },
-      "sources": [],
+      "sources": [
+        {
+          "path": "../src/EZapi/GameEvents.cs",
+          "line": 5
+        }
+      ],
       "domain": "events",
       "curatedEntryIds": [],
       "fields": [
@@ -6476,7 +6601,12 @@
         "returns": null,
         "parameters": {}
       },
-      "sources": [],
+      "sources": [
+        {
+          "path": "../src/EZapi/GameEvents.cs",
+          "line": 15
+        }
+      ],
       "domain": "events",
       "curatedEntryIds": [],
       "fields": [],
@@ -6783,7 +6913,12 @@
         "returns": null,
         "parameters": {}
       },
-      "sources": [],
+      "sources": [
+        {
+          "path": "../src/EZapi/GameEvents.cs",
+          "line": 21
+        }
+      ],
       "domain": "events",
       "curatedEntryIds": [
         "EZapi.GameEvents.GetRecentEvents",
@@ -6867,7 +7002,12 @@
         "returns": null,
         "parameters": {}
       },
-      "sources": [],
+      "sources": [
+        {
+          "path": "../src/EZapi/GameLanguage.cs",
+          "line": 34
+        }
+      ],
       "domain": "language",
       "curatedEntryIds": [
         "EZapi.GameLanguage.Current",
@@ -7047,7 +7187,12 @@
         "returns": null,
         "parameters": {}
       },
-      "sources": [],
+      "sources": [
+        {
+          "path": "../src/EZapi/GameLanguage.cs",
+          "line": 4
+        }
+      ],
       "domain": "language",
       "curatedEntryIds": [
         "EZapi.GameLanguageSnapshot.Resolve(EZapi.LocalizationCatalog,System.String,System.String,System.Object[])",
@@ -7512,7 +7657,12 @@
         "returns": null,
         "parameters": {}
       },
-      "sources": [],
+      "sources": [
+        {
+          "path": "../src/EZapi/GameRunIdentity.cs",
+          "line": 4
+        }
+      ],
       "domain": "events",
       "curatedEntryIds": [],
       "fields": [],
@@ -7819,7 +7969,12 @@
         "returns": null,
         "parameters": {}
       },
-      "sources": [],
+      "sources": [
+        {
+          "path": "../src/EZapi/NativeHooks.cs",
+          "line": 11
+        }
+      ],
       "domain": "infrastructure",
       "curatedEntryIds": [
         "EZapi.HookApi.GetRuntimeStatus",
@@ -7899,7 +8054,12 @@
         "returns": null,
         "parameters": {}
       },
-      "sources": [],
+      "sources": [
+        {
+          "path": "../src/EZapi/MachineTransactions.cs",
+          "line": 10
+        }
+      ],
       "domain": "machine-transactions",
       "curatedEntryIds": [
         "EZapi.IMachineBatchTransaction.Apply",
@@ -8020,7 +8180,12 @@
         "returns": null,
         "parameters": {}
       },
-      "sources": [],
+      "sources": [
+        {
+          "path": "../src/EZapi/ExternalPower.cs",
+          "line": 5
+        }
+      ],
       "domain": "external-power",
       "curatedEntryIds": [
         "EZapi.IPowerTransaction.Debit",
@@ -8131,7 +8296,12 @@
         "returns": null,
         "parameters": {}
       },
-      "sources": [],
+      "sources": [
+        {
+          "path": "../src/EZapi/Requirements.cs",
+          "line": 17
+        }
+      ],
       "domain": "progression",
       "curatedEntryIds": [
         "EZapi.IRequirementFacts.Read"
@@ -8200,7 +8370,12 @@
         "returns": null,
         "parameters": {}
       },
-      "sources": [],
+      "sources": [
+        {
+          "path": "../src/EZapi/InventoryAdmission.cs",
+          "line": 6
+        }
+      ],
       "domain": "guards",
       "curatedEntryIds": [
         "EZapi.InventoryAdmissionApi.IsAvailable",
@@ -8297,7 +8472,12 @@
         "returns": null,
         "parameters": {}
       },
-      "sources": [],
+      "sources": [
+        {
+          "path": "../src/EZapi/InventoryServices.cs",
+          "line": 24
+        }
+      ],
       "domain": "inventory",
       "curatedEntryIds": [
         "EZapi.InventoryApi.CaptureDirect",
@@ -8520,7 +8700,12 @@
         "returns": null,
         "parameters": {}
       },
-      "sources": [],
+      "sources": [
+        {
+          "path": "../src/EZapi/InventoryEndpoint.cs",
+          "line": 7
+        }
+      ],
       "domain": "endpoint",
       "curatedEntryIds": [],
       "fields": [],
@@ -8864,7 +9049,12 @@
         "returns": null,
         "parameters": {}
       },
-      "sources": [],
+      "sources": [
+        {
+          "path": "../src/EZapi/InventoryEndpoint.cs",
+          "line": 32
+        }
+      ],
       "domain": "endpoint",
       "curatedEntryIds": [
         "EZapi.InventoryEndpointApi.CaptureContents",
@@ -9226,7 +9416,12 @@
         "returns": null,
         "parameters": {}
       },
-      "sources": [],
+      "sources": [
+        {
+          "path": "../src/EZapi/InventoryFreeze.cs",
+          "line": 5
+        }
+      ],
       "domain": "guards",
       "curatedEntryIds": [
         "EZapi.InventoryFreezeApi.IsAvailable",
@@ -9337,7 +9532,12 @@
         "returns": null,
         "parameters": {}
       },
-      "sources": [],
+      "sources": [
+        {
+          "path": "../src/EZapi/InventoryPlacement.cs",
+          "line": 6
+        }
+      ],
       "domain": "inventory",
       "curatedEntryIds": [],
       "fields": [],
@@ -9614,7 +9814,12 @@
         "returns": null,
         "parameters": {}
       },
-      "sources": [],
+      "sources": [
+        {
+          "path": "../src/EZapi/InventoryPlacement.cs",
+          "line": 9
+        }
+      ],
       "domain": "inventory",
       "curatedEntryIds": [
         "EZapi.InventoryPlacementApi.IsAvailable",
@@ -9695,7 +9900,12 @@
         "returns": null,
         "parameters": {}
       },
-      "sources": [],
+      "sources": [
+        {
+          "path": "../src/EZapi/InventoryServices.cs",
+          "line": 8
+        }
+      ],
       "domain": "inventory",
       "curatedEntryIds": [],
       "fields": [],
@@ -10134,7 +10344,12 @@
       "compilerGenerated": false,
       "genericParameters": [],
       "documentation": null,
-      "sources": [],
+      "sources": [
+        {
+          "path": "../src/EZapi/InventoryServices.cs",
+          "line": 5
+        }
+      ],
       "domain": "inventory",
       "curatedEntryIds": [],
       "fields": [
@@ -10203,7 +10418,12 @@
         "returns": null,
         "parameters": {}
       },
-      "sources": [],
+      "sources": [
+        {
+          "path": "../src/EZapi/ItemActivation.cs",
+          "line": 24
+        }
+      ],
       "domain": "activation",
       "curatedEntryIds": [
         "EZapi.ItemActivation.Register"
@@ -10272,7 +10492,12 @@
         "returns": null,
         "parameters": {}
       },
-      "sources": [],
+      "sources": [
+        {
+          "path": "../src/EZapi/ItemActivation.cs",
+          "line": 10
+        }
+      ],
       "domain": "activation",
       "curatedEntryIds": [],
       "fields": [],
@@ -10345,7 +10570,12 @@
         "returns": null,
         "parameters": {}
       },
-      "sources": [],
+      "sources": [
+        {
+          "path": "../src/EZapi/ItemDefinition.cs",
+          "line": 171
+        }
+      ],
       "domain": "items",
       "curatedEntryIds": [],
       "fields": [],
@@ -10421,7 +10651,12 @@
         "returns": null,
         "parameters": {}
       },
-      "sources": [],
+      "sources": [
+        {
+          "path": "../src/EZapi/NativeItems.cs",
+          "line": 32
+        }
+      ],
       "domain": "items",
       "curatedEntryIds": [
         "EZapi.ItemApi.Create",
@@ -10823,7 +11058,12 @@
         "returns": null,
         "parameters": {}
       },
-      "sources": [],
+      "sources": [
+        {
+          "path": "../src/EZapi/ItemDataApi.cs",
+          "line": 45
+        }
+      ],
       "domain": "item-data",
       "curatedEntryIds": [
         "EZapi.ItemDataApi.Read",
@@ -11039,7 +11279,12 @@
         "returns": null,
         "parameters": {}
       },
-      "sources": [],
+      "sources": [
+        {
+          "path": "../src/EZapi/ItemDataApi.cs",
+          "line": 18
+        }
+      ],
       "domain": "item-data",
       "curatedEntryIds": [],
       "fields": [],
@@ -11423,7 +11668,12 @@
         "returns": null,
         "parameters": {}
       },
-      "sources": [],
+      "sources": [
+        {
+          "path": "../src/EZapi/ItemDataApi.cs",
+          "line": 26
+        }
+      ],
       "domain": "item-data",
       "curatedEntryIds": [],
       "fields": [],
@@ -11482,7 +11732,12 @@
         "returns": null,
         "parameters": {}
       },
-      "sources": [],
+      "sources": [
+        {
+          "path": "../src/EZapi/ItemDataApi.cs",
+          "line": 11
+        }
+      ],
       "domain": "item-data",
       "curatedEntryIds": [],
       "fields": [
@@ -11630,7 +11885,12 @@
         "returns": null,
         "parameters": {}
       },
-      "sources": [],
+      "sources": [
+        {
+          "path": "../src/EZapi/ItemDataApi.cs",
+          "line": 39
+        }
+      ],
       "domain": "item-data",
       "curatedEntryIds": [],
       "fields": [],
@@ -11937,7 +12197,12 @@
         "returns": null,
         "parameters": {}
       },
-      "sources": [],
+      "sources": [
+        {
+          "path": "../src/EZapi/ItemDefinition.cs",
+          "line": 4
+        }
+      ],
       "domain": "items",
       "curatedEntryIds": [
         "EZapi.ItemDefinition.Container"
@@ -12670,7 +12935,12 @@
         "returns": null,
         "parameters": {}
       },
-      "sources": [],
+      "sources": [
+        {
+          "path": "../src/EZapi/Items.cs",
+          "line": 35
+        }
+      ],
       "domain": "items",
       "curatedEntryIds": [
         "EZapi.ItemInspection.BuildTooltip",
@@ -12765,7 +13035,12 @@
         "returns": null,
         "parameters": {}
       },
-      "sources": [],
+      "sources": [
+        {
+          "path": "../src/EZapi/ItemDefinition.cs",
+          "line": 227
+        }
+      ],
       "domain": "items",
       "curatedEntryIds": [],
       "fields": [],
@@ -12826,7 +13101,12 @@
         "returns": null,
         "parameters": {}
       },
-      "sources": [],
+      "sources": [
+        {
+          "path": "../src/EZapi/ItemRegistry.cs",
+          "line": 8
+        }
+      ],
       "domain": "items",
       "curatedEntryIds": [
         "EZapi.ItemRegistry.GetStatus",
@@ -12987,7 +13267,12 @@
         "returns": null,
         "parameters": {}
       },
-      "sources": [],
+      "sources": [
+        {
+          "path": "../src/EZapi/ItemDefinition.cs",
+          "line": 179
+        }
+      ],
       "domain": "items",
       "curatedEntryIds": [],
       "fields": [],
@@ -13137,7 +13422,12 @@
         "returns": null,
         "parameters": {}
       },
-      "sources": [],
+      "sources": [
+        {
+          "path": "../src/EZapi/ItemStockContract.cs",
+          "line": 7
+        }
+      ],
       "domain": "stock",
       "curatedEntryIds": [],
       "fields": [],
@@ -13504,7 +13794,12 @@
         "returns": null,
         "parameters": {}
       },
-      "sources": [],
+      "sources": [
+        {
+          "path": "../src/EZapi/ItemDefinition.cs",
+          "line": 147
+        }
+      ],
       "domain": "items",
       "curatedEntryIds": [],
       "fields": [],
@@ -13640,7 +13935,12 @@
         "returns": null,
         "parameters": {}
       },
-      "sources": [],
+      "sources": [
+        {
+          "path": "../src/EZapi/ItemDefinition.cs",
+          "line": 193
+        }
+      ],
       "domain": "items",
       "curatedEntryIds": [],
       "fields": [],
@@ -13740,7 +14040,12 @@
         "returns": null,
         "parameters": {}
       },
-      "sources": [],
+      "sources": [
+        {
+          "path": "../src/EZapi/ItemTransfer.cs",
+          "line": 8
+        }
+      ],
       "domain": "inventory",
       "curatedEntryIds": [
         "EZapi.ItemTransferApi.Move"
@@ -13811,7 +14116,12 @@
         "returns": null,
         "parameters": {}
       },
-      "sources": [],
+      "sources": [
+        {
+          "path": "../src/EZapi/ItemTransfer.cs",
+          "line": 5
+        }
+      ],
       "domain": "inventory",
       "curatedEntryIds": [],
       "fields": [],
@@ -14173,7 +14483,12 @@
       "compilerGenerated": false,
       "genericParameters": [],
       "documentation": null,
-      "sources": [],
+      "sources": [
+        {
+          "path": "../src/EZapi/ItemDefinition.cs",
+          "line": 139
+        }
+      ],
       "domain": "items",
       "curatedEntryIds": [],
       "fields": [],
@@ -14249,7 +14564,12 @@
         "returns": null,
         "parameters": {}
       },
-      "sources": [],
+      "sources": [
+        {
+          "path": "../src/EZapi/Items.cs",
+          "line": 5
+        }
+      ],
       "domain": "items",
       "curatedEntryIds": [
         "EZapi.Items.Create",
@@ -14364,7 +14684,12 @@
         "returns": null,
         "parameters": {}
       },
-      "sources": [],
+      "sources": [
+        {
+          "path": "../src/EZapi/JsonItems.cs",
+          "line": 6
+        }
+      ],
       "domain": "items",
       "curatedEntryIds": [
         "EZapi.JsonItems.Parse",
@@ -14450,7 +14775,12 @@
         "returns": null,
         "parameters": {}
       },
-      "sources": [],
+      "sources": [
+        {
+          "path": "../src/EZapi/JsonLoot.cs",
+          "line": 6
+        }
+      ],
       "domain": "loot",
       "curatedEntryIds": [
         "EZapi.JsonLoot.Parse",
@@ -14551,7 +14881,16 @@
         "returns": null,
         "parameters": {}
       },
-      "sources": [],
+      "sources": [
+        {
+          "path": "../src/EZapi/MachineLayoutCallbacks.cs",
+          "line": 19
+        },
+        {
+          "path": "../src/EZapi/MachineLayoutDefinition.cs",
+          "line": 54
+        }
+      ],
       "domain": "layouts",
       "curatedEntryIds": [
         "EZapi.JsonMachineLayout.Parse",
@@ -14657,7 +14996,12 @@
         "returns": null,
         "parameters": {}
       },
-      "sources": [],
+      "sources": [
+        {
+          "path": "../src/EZapi/RecipeGuideDefinition.cs",
+          "line": 69
+        }
+      ],
       "domain": "guide",
       "curatedEntryIds": [
         "EZapi.JsonRecipeGuide.Parse"
@@ -14717,7 +15061,12 @@
         "returns": null,
         "parameters": {}
       },
-      "sources": [],
+      "sources": [
+        {
+          "path": "../src/EZapi/JsonRegistration.cs",
+          "line": 6
+        }
+      ],
       "domain": "registration",
       "curatedEntryIds": [
         "EZapi.JsonRegistration.Parse"
@@ -14763,7 +15112,12 @@
       "compilerGenerated": false,
       "genericParameters": [],
       "documentation": null,
-      "sources": [],
+      "sources": [
+        {
+          "path": "../src/EZapi/Lifecycle.cs",
+          "line": 60
+        }
+      ],
       "domain": "events",
       "curatedEntryIds": [
         "EZapi.LifecycleApi.GetRuntimeStatus",
@@ -14870,7 +15224,12 @@
         "returns": null,
         "parameters": {}
       },
-      "sources": [],
+      "sources": [
+        {
+          "path": "../src/EZapi/Lifecycle.cs",
+          "line": 15
+        }
+      ],
       "domain": "events",
       "curatedEntryIds": [],
       "fields": [],
@@ -14972,7 +15331,12 @@
         "returns": null,
         "parameters": {}
       },
-      "sources": [],
+      "sources": [
+        {
+          "path": "../src/EZapi/Lifecycle.cs",
+          "line": 6
+        }
+      ],
       "domain": "events",
       "curatedEntryIds": [],
       "fields": [
@@ -15120,7 +15484,12 @@
         "returns": null,
         "parameters": {}
       },
-      "sources": [],
+      "sources": [
+        {
+          "path": "../src/EZapi/Lifecycle.cs",
+          "line": 12
+        }
+      ],
       "domain": "events",
       "curatedEntryIds": [],
       "fields": [],
@@ -15427,7 +15796,12 @@
         "returns": null,
         "parameters": {}
       },
-      "sources": [],
+      "sources": [
+        {
+          "path": "../src/EZapi/LiquidComposition.cs",
+          "line": 4
+        }
+      ],
       "domain": "effects",
       "curatedEntryIds": [
         "EZapi.LiquidCompositionMath.Add",
@@ -15642,7 +16016,12 @@
       "compilerGenerated": false,
       "genericParameters": [],
       "documentation": null,
-      "sources": [],
+      "sources": [
+        {
+          "path": "../src/EZapi/ItemDefinition.cs",
+          "line": 131
+        }
+      ],
       "domain": "items",
       "curatedEntryIds": [],
       "fields": [],
@@ -15713,7 +16092,12 @@
       "compilerGenerated": false,
       "genericParameters": [],
       "documentation": null,
-      "sources": [],
+      "sources": [
+        {
+          "path": "../src/EZapi/Liquids.cs",
+          "line": 4
+        }
+      ],
       "domain": "liquids",
       "curatedEntryIds": [],
       "fields": [],
@@ -15985,7 +16369,12 @@
         "returns": null,
         "parameters": {}
       },
-      "sources": [],
+      "sources": [
+        {
+          "path": "../src/EZapi/Liquids.cs",
+          "line": 6
+        }
+      ],
       "domain": "liquids",
       "curatedEntryIds": [],
       "fields": [],
@@ -16099,7 +16488,12 @@
         "returns": null,
         "parameters": {}
       },
-      "sources": [],
+      "sources": [
+        {
+          "path": "../src/EZapi/LiquidTransfer.cs",
+          "line": 11
+        }
+      ],
       "domain": "liquids",
       "curatedEntryIds": [
         "EZapi.LiquidTransferApi.Pour",
@@ -16218,7 +16612,12 @@
       "compilerGenerated": false,
       "genericParameters": [],
       "documentation": null,
-      "sources": [],
+      "sources": [
+        {
+          "path": "../src/EZapi/LiquidTransfer.cs",
+          "line": 4
+        }
+      ],
       "domain": "liquids",
       "curatedEntryIds": [],
       "fields": [],
@@ -16544,7 +16943,16 @@
         "returns": null,
         "parameters": {}
       },
-      "sources": [],
+      "sources": [
+        {
+          "path": "../src/EZapi/LiquidMetadata.cs",
+          "line": 5
+        },
+        {
+          "path": "../src/EZapi/Liquids.cs",
+          "line": 24
+        }
+      ],
       "domain": "liquids",
       "curatedEntryIds": [
         "EZapi.Liquids.Capture",
@@ -16719,7 +17127,12 @@
         "returns": null,
         "parameters": {}
       },
-      "sources": [],
+      "sources": [
+        {
+          "path": "../src/EZapi/ListInventory.cs",
+          "line": 5
+        }
+      ],
       "domain": "guards",
       "curatedEntryIds": [
         "EZapi.ListInventoryApi.Create",
@@ -16914,7 +17327,12 @@
         "returns": null,
         "parameters": {}
       },
-      "sources": [],
+      "sources": [
+        {
+          "path": "../src/EZapi/Localization.cs",
+          "line": 11
+        }
+      ],
       "domain": "language",
       "curatedEntryIds": [
         "EZapi.Localization.GetPack",
@@ -17086,7 +17504,12 @@
         "returns": null,
         "parameters": {}
       },
-      "sources": [],
+      "sources": [
+        {
+          "path": "../src/EZapi/Localization.cs",
+          "line": 156
+        }
+      ],
       "domain": "language",
       "curatedEntryIds": [
         "EZapi.LocalizationCatalog.Resolve"
@@ -17191,7 +17614,12 @@
       "compilerGenerated": false,
       "genericParameters": [],
       "documentation": null,
-      "sources": [],
+      "sources": [
+        {
+          "path": "../src/EZapi/Localization.cs",
+          "line": 150
+        }
+      ],
       "domain": "language",
       "curatedEntryIds": [],
       "fields": [],
@@ -17520,7 +17948,12 @@
       "compilerGenerated": false,
       "genericParameters": [],
       "documentation": null,
-      "sources": [],
+      "sources": [
+        {
+          "path": "../src/EZapi/Localization.cs",
+          "line": 148
+        }
+      ],
       "domain": "language",
       "curatedEntryIds": [],
       "fields": [],
@@ -17884,7 +18317,12 @@
         "returns": null,
         "parameters": {}
       },
-      "sources": [],
+      "sources": [
+        {
+          "path": "../src/EZapi/Localization.cs",
+          "line": 147
+        }
+      ],
       "domain": "language",
       "curatedEntryIds": [],
       "fields": [],
@@ -18163,7 +18601,12 @@
         "returns": null,
         "parameters": {}
       },
-      "sources": [],
+      "sources": [
+        {
+          "path": "../src/EZapi/LocalizedItemText.cs",
+          "line": 4
+        }
+      ],
       "domain": "language",
       "curatedEntryIds": [
         "EZapi.LocalizedItemText.ForLocale"
@@ -18565,7 +19008,12 @@
       "compilerGenerated": false,
       "genericParameters": [],
       "documentation": null,
-      "sources": [],
+      "sources": [
+        {
+          "path": "../src/EZapi/Localization.cs",
+          "line": 152
+        }
+      ],
       "domain": "language",
       "curatedEntryIds": [],
       "fields": [],
@@ -18959,7 +19407,12 @@
         "returns": null,
         "parameters": {}
       },
-      "sources": [],
+      "sources": [
+        {
+          "path": "../src/EZapi/ModLog.cs",
+          "line": 35
+        }
+      ],
       "domain": "helpers",
       "curatedEntryIds": [
         "EZapi.LogEntry..ctor"
@@ -19310,7 +19763,12 @@
         "returns": null,
         "parameters": {}
       },
-      "sources": [],
+      "sources": [
+        {
+          "path": "../src/EZapi/ModLog.cs",
+          "line": 6
+        }
+      ],
       "domain": "helpers",
       "curatedEntryIds": [],
       "fields": [
@@ -19401,7 +19859,12 @@
         "returns": null,
         "parameters": {}
       },
-      "sources": [],
+      "sources": [
+        {
+          "path": "../src/EZapi/ModLog.cs",
+          "line": 9
+        }
+      ],
       "domain": "helpers",
       "curatedEntryIds": [
         "EZapi.LogLevels.Allows",
@@ -19505,7 +19968,12 @@
         "returns": null,
         "parameters": {}
       },
-      "sources": [],
+      "sources": [
+        {
+          "path": "../src/EZapi/LootDefinition.cs",
+          "line": 4
+        }
+      ],
       "domain": "loot",
       "curatedEntryIds": [],
       "fields": [],
@@ -19583,7 +20051,12 @@
         "returns": null,
         "parameters": {}
       },
-      "sources": [],
+      "sources": [
+        {
+          "path": "../src/EZapi/LootDefinition.cs",
+          "line": 33
+        }
+      ],
       "domain": "loot",
       "curatedEntryIds": [],
       "fields": [],
@@ -19945,7 +20418,12 @@
       "compilerGenerated": false,
       "genericParameters": [],
       "documentation": null,
-      "sources": [],
+      "sources": [
+        {
+          "path": "../src/EZapi/LootDefinition.cs",
+          "line": 10
+        }
+      ],
       "domain": "loot",
       "curatedEntryIds": [],
       "fields": [],
@@ -20006,7 +20484,12 @@
       "compilerGenerated": false,
       "genericParameters": [],
       "documentation": null,
-      "sources": [],
+      "sources": [
+        {
+          "path": "../src/EZapi/LootDefinition.cs",
+          "line": 34
+        }
+      ],
       "domain": "loot",
       "curatedEntryIds": [],
       "fields": [],
@@ -20363,7 +20846,12 @@
       "compilerGenerated": false,
       "genericParameters": [],
       "documentation": null,
-      "sources": [],
+      "sources": [
+        {
+          "path": "../src/EZapi/LootDefinition.cs",
+          "line": 21
+        }
+      ],
       "domain": "loot",
       "curatedEntryIds": [],
       "fields": [],
@@ -20477,7 +20965,12 @@
         "returns": null,
         "parameters": {}
       },
-      "sources": [],
+      "sources": [
+        {
+          "path": "../src/EZapi/LootDefinition.cs",
+          "line": 31
+        }
+      ],
       "domain": "loot",
       "curatedEntryIds": [],
       "fields": [],
@@ -20784,7 +21277,12 @@
         "returns": null,
         "parameters": {}
       },
-      "sources": [],
+      "sources": [
+        {
+          "path": "../src/EZapi/LootTables.cs",
+          "line": 10
+        }
+      ],
       "domain": "loot",
       "curatedEntryIds": [
         "EZapi.LootTables.GetSnapshot",
@@ -20921,7 +21419,12 @@
       "compilerGenerated": false,
       "genericParameters": [],
       "documentation": null,
-      "sources": [],
+      "sources": [
+        {
+          "path": "../src/EZapi/LootDefinition.cs",
+          "line": 15
+        }
+      ],
       "domain": "loot",
       "curatedEntryIds": [],
       "fields": [],
@@ -20990,7 +21493,12 @@
         "returns": null,
         "parameters": {}
       },
-      "sources": [],
+      "sources": [
+        {
+          "path": "../src/EZapi/MachineAutomation.cs",
+          "line": 39
+        }
+      ],
       "domain": "machine-runtime",
       "curatedEntryIds": [
         "EZapi.MachineAutomationApi.Recipes",
@@ -21127,7 +21635,12 @@
         "returns": null,
         "parameters": {}
       },
-      "sources": [],
+      "sources": [
+        {
+          "path": "../src/EZapi/MachineAutomation.cs",
+          "line": 8
+        }
+      ],
       "domain": "machine-runtime",
       "curatedEntryIds": [],
       "fields": [],
@@ -21270,7 +21783,12 @@
       "compilerGenerated": false,
       "genericParameters": [],
       "documentation": null,
-      "sources": [],
+      "sources": [
+        {
+          "path": "../src/EZapi/MachineAutomation.cs",
+          "line": 5
+        }
+      ],
       "domain": "machine-runtime",
       "curatedEntryIds": [],
       "fields": [
@@ -21330,7 +21848,12 @@
         "returns": null,
         "parameters": {}
       },
-      "sources": [],
+      "sources": [
+        {
+          "path": "../src/EZapi/ProductionValue.cs",
+          "line": 56
+        }
+      ],
       "domain": "effects",
       "curatedEntryIds": [],
       "fields": [],
@@ -21691,7 +22214,12 @@
         "returns": null,
         "parameters": {}
       },
-      "sources": [],
+      "sources": [
+        {
+          "path": "../src/EZapi/MachineRecipes.cs",
+          "line": 98
+        }
+      ],
       "domain": "recipes",
       "curatedEntryIds": [
         "EZapi.MachineBatchProcessor.Process(Il2Cpp.GameItem)",
@@ -21778,7 +22306,12 @@
       "compilerGenerated": false,
       "genericParameters": [],
       "documentation": null,
-      "sources": [],
+      "sources": [
+        {
+          "path": "../src/EZapi/MachineRecipeDefinition.cs",
+          "line": 95
+        }
+      ],
       "domain": "recipes",
       "curatedEntryIds": [],
       "fields": [],
@@ -22094,7 +22627,12 @@
         "returns": null,
         "parameters": {}
       },
-      "sources": [],
+      "sources": [
+        {
+          "path": "../src/EZapi/MachineLayoutDefinition.cs",
+          "line": 19
+        }
+      ],
       "domain": "layouts",
       "curatedEntryIds": [],
       "fields": [],
@@ -22371,7 +22909,12 @@
         "returns": null,
         "parameters": {}
       },
-      "sources": [],
+      "sources": [
+        {
+          "path": "../src/EZapi/MachineContainerConditions.cs",
+          "line": 12
+        }
+      ],
       "domain": "machine-conditions",
       "curatedEntryIds": [
         "EZapi.MachineContainerConditionApi.Register",
@@ -22462,7 +23005,12 @@
         "returns": null,
         "parameters": {}
       },
-      "sources": [],
+      "sources": [
+        {
+          "path": "../src/EZapi/MachineContainerConditions.cs",
+          "line": 6
+        }
+      ],
       "domain": "machine-conditions",
       "curatedEntryIds": [],
       "fields": [],
@@ -22831,7 +23379,12 @@
         "returns": null,
         "parameters": {}
       },
-      "sources": [],
+      "sources": [
+        {
+          "path": "../src/EZapi/MachineRecipeDefinition.cs",
+          "line": 50
+        }
+      ],
       "domain": "recipes",
       "curatedEntryIds": [
         "EZapi.MachineContainerOutput.Condition",
@@ -23088,7 +23641,16 @@
         "returns": null,
         "parameters": {}
       },
-      "sources": [],
+      "sources": [
+        {
+          "path": "../src/EZapi/MachineLayoutCallbacks.cs",
+          "line": 5
+        },
+        {
+          "path": "../src/EZapi/MachineLayoutDefinition.cs",
+          "line": 8
+        }
+      ],
       "domain": "layouts",
       "curatedEntryIds": [
         "EZapi.MachineContainerSlot.Condition",
@@ -23227,7 +23789,12 @@
         "returns": null,
         "parameters": {}
       },
-      "sources": [],
+      "sources": [
+        {
+          "path": "../src/EZapi/MachineRegistration.cs",
+          "line": 10
+        }
+      ],
       "domain": "machine-registration",
       "curatedEntryIds": [],
       "fields": [],
@@ -23637,7 +24204,12 @@
         "returns": null,
         "parameters": {}
       },
-      "sources": [],
+      "sources": [
+        {
+          "path": "../src/EZapi/MachineLayoutDefinition.cs",
+          "line": 6
+        }
+      ],
       "domain": "layouts",
       "curatedEntryIds": [],
       "fields": [],
@@ -23916,7 +24488,12 @@
         "returns": null,
         "parameters": {}
       },
-      "sources": [],
+      "sources": [
+        {
+          "path": "../src/EZapi/MachineRecipeDefinition.cs",
+          "line": 20
+        }
+      ],
       "domain": "recipes",
       "curatedEntryIds": [],
       "fields": [],
@@ -24261,7 +24838,12 @@
         "returns": null,
         "parameters": {}
       },
-      "sources": [],
+      "sources": [
+        {
+          "path": "../src/EZapi/MachineLayouts.cs",
+          "line": 8
+        }
+      ],
       "domain": "layouts",
       "curatedEntryIds": [],
       "fields": [],
@@ -24672,7 +25254,12 @@
       "compilerGenerated": false,
       "genericParameters": [],
       "documentation": null,
-      "sources": [],
+      "sources": [
+        {
+          "path": "../src/EZapi/MachineRecipeDefinition.cs",
+          "line": 38
+        }
+      ],
       "domain": "recipes",
       "curatedEntryIds": [],
       "fields": [],
@@ -25042,7 +25629,12 @@
         "returns": null,
         "parameters": {}
       },
-      "sources": [],
+      "sources": [
+        {
+          "path": "../src/EZapi/ProductionValue.cs",
+          "line": 7
+        }
+      ],
       "domain": "effects",
       "curatedEntryIds": [],
       "fields": [],
@@ -25331,7 +25923,12 @@
         "returns": null,
         "parameters": {}
       },
-      "sources": [],
+      "sources": [
+        {
+          "path": "../src/EZapi/MachineLayouts.cs",
+          "line": 19
+        }
+      ],
       "domain": "layouts",
       "curatedEntryIds": [
         "EZapi.MachineLayoutApi.Create",
@@ -25460,7 +26057,12 @@
         "returns": null,
         "parameters": {}
       },
-      "sources": [],
+      "sources": [
+        {
+          "path": "../src/EZapi/MachineLayoutDefinition.cs",
+          "line": 35
+        }
+      ],
       "domain": "layouts",
       "curatedEntryIds": [
         "EZapi.MachineLayoutDefinition.LocalizedBatteryLabel",
@@ -25653,7 +26255,12 @@
         "returns": null,
         "parameters": {}
       },
-      "sources": [],
+      "sources": [
+        {
+          "path": "../src/EZapi/MachineRecipeDefinition.cs",
+          "line": 33
+        }
+      ],
       "domain": "recipes",
       "curatedEntryIds": [],
       "fields": [],
@@ -26004,7 +26611,12 @@
         "returns": null,
         "parameters": {}
       },
-      "sources": [],
+      "sources": [
+        {
+          "path": "../src/EZapi/MachineRecipeDefinition.cs",
+          "line": 27
+        }
+      ],
       "domain": "recipes",
       "curatedEntryIds": [],
       "fields": [],
@@ -26385,7 +26997,12 @@
         "returns": null,
         "parameters": {}
       },
-      "sources": [],
+      "sources": [
+        {
+          "path": "../src/EZapi/ProductionValue.cs",
+          "line": 13
+        }
+      ],
       "domain": "effects",
       "curatedEntryIds": [],
       "fields": [],
@@ -26688,7 +27305,12 @@
         "returns": null,
         "parameters": {}
       },
-      "sources": [],
+      "sources": [
+        {
+          "path": "../src/EZapi/ProductionValue.cs",
+          "line": 20
+        }
+      ],
       "domain": "effects",
       "curatedEntryIds": [
         "EZapi.MachineLiquidSnapshot.From"
@@ -27012,7 +27634,12 @@
         "returns": null,
         "parameters": {}
       },
-      "sources": [],
+      "sources": [
+        {
+          "path": "../src/EZapi/ProductionValue.cs",
+          "line": 49
+        }
+      ],
       "domain": "effects",
       "curatedEntryIds": [],
       "fields": [],
@@ -27391,7 +28018,12 @@
         "returns": null,
         "parameters": {}
       },
-      "sources": [],
+      "sources": [
+        {
+          "path": "../src/EZapi/MachineRecipeDefinition.cs",
+          "line": 59
+        }
+      ],
       "domain": "recipes",
       "curatedEntryIds": [],
       "fields": [
@@ -27444,7 +28076,12 @@
       "compilerGenerated": false,
       "genericParameters": [],
       "documentation": null,
-      "sources": [],
+      "sources": [
+        {
+          "path": "../src/EZapi/MachineLayoutDefinition.cs",
+          "line": 20
+        }
+      ],
       "domain": "layouts",
       "curatedEntryIds": [],
       "fields": [],
@@ -27508,7 +28145,16 @@
       "compilerGenerated": false,
       "genericParameters": [],
       "documentation": null,
-      "sources": [],
+      "sources": [
+        {
+          "path": "../src/EZapi/MachineLayoutCallbacks.cs",
+          "line": 12
+        },
+        {
+          "path": "../src/EZapi/MachineLayoutDefinition.cs",
+          "line": 26
+        }
+      ],
       "domain": "layouts",
       "curatedEntryIds": [
         "EZapi.MachineOutputTemplate.ContainerCondition",
@@ -27614,7 +28260,12 @@
         "returns": null,
         "parameters": {}
       },
-      "sources": [],
+      "sources": [
+        {
+          "path": "../src/EZapi/ProductionValue.cs",
+          "line": 109
+        }
+      ],
       "domain": "effects",
       "curatedEntryIds": [
         "EZapi.MachinePowerMath.CalculateCost"
@@ -27685,7 +28336,12 @@
         "returns": null,
         "parameters": {}
       },
-      "sources": [],
+      "sources": [
+        {
+          "path": "../src/EZapi/MachineRecipeDefinition.cs",
+          "line": 57
+        }
+      ],
       "domain": "recipes",
       "curatedEntryIds": [],
       "fields": [],
@@ -27994,7 +28650,12 @@
         "returns": null,
         "parameters": {}
       },
-      "sources": [],
+      "sources": [
+        {
+          "path": "../src/EZapi/MachineTransactions.cs",
+          "line": 20
+        }
+      ],
       "domain": "machine-transactions",
       "curatedEntryIds": [],
       "fields": [],
@@ -28303,7 +28964,12 @@
         "returns": null,
         "parameters": {}
       },
-      "sources": [],
+      "sources": [
+        {
+          "path": "../src/EZapi/MachineTransactions.cs",
+          "line": 23
+        }
+      ],
       "domain": "machine-transactions",
       "curatedEntryIds": [],
       "fields": [],
@@ -28582,7 +29248,12 @@
         "returns": null,
         "parameters": {}
       },
-      "sources": [],
+      "sources": [
+        {
+          "path": "../src/EZapi/MachineRecipeDefinition.cs",
+          "line": 64
+        }
+      ],
       "domain": "recipes",
       "curatedEntryIds": [
         "EZapi.MachineRecipe.MaterialContents"
@@ -28997,7 +29668,12 @@
         "returns": null,
         "parameters": {}
       },
-      "sources": [],
+      "sources": [
+        {
+          "path": "../src/EZapi/MachineRecipes.cs",
+          "line": 6
+        }
+      ],
       "domain": "recipes",
       "curatedEntryIds": [
         "EZapi.MachineRecipeApi.CreateBatchProcessor",
@@ -29234,7 +29910,12 @@
         "returns": null,
         "parameters": {}
       },
-      "sources": [],
+      "sources": [
+        {
+          "path": "../src/EZapi/MachineRecipeDefinition.cs",
+          "line": 78
+        }
+      ],
       "domain": "recipes",
       "curatedEntryIds": [],
       "fields": [],
@@ -29381,7 +30062,12 @@
       "compilerGenerated": false,
       "genericParameters": [],
       "documentation": null,
-      "sources": [],
+      "sources": [
+        {
+          "path": "../src/EZapi/MachineRecipeDefinition.cs",
+          "line": 101
+        }
+      ],
       "domain": "recipes",
       "curatedEntryIds": [],
       "fields": [],
@@ -29655,7 +30341,12 @@
         "returns": null,
         "parameters": {}
       },
-      "sources": [],
+      "sources": [
+        {
+          "path": "../src/EZapi/MachineRecipeDefinition.cs",
+          "line": 100
+        }
+      ],
       "domain": "recipes",
       "curatedEntryIds": [],
       "fields": [],
@@ -30022,7 +30713,12 @@
         "returns": null,
         "parameters": {}
       },
-      "sources": [],
+      "sources": [
+        {
+          "path": "../src/EZapi/MachineRegistration.cs",
+          "line": 34
+        }
+      ],
       "domain": "machine-registration",
       "curatedEntryIds": [
         "EZapi.MachineRegistrationApi.ConfigureManufacturingTerminalMarkup",
@@ -30249,7 +30945,12 @@
         "returns": null,
         "parameters": {}
       },
-      "sources": [],
+      "sources": [
+        {
+          "path": "../src/EZapi/MachineRuntime.cs",
+          "line": 6
+        }
+      ],
       "domain": "machine-runtime",
       "curatedEntryIds": [
         "EZapi.MachineRuntimeApi.CreateBatchProcessor",
@@ -30381,7 +31082,12 @@
         "returns": null,
         "parameters": {}
       },
-      "sources": [],
+      "sources": [
+        {
+          "path": "../src/EZapi/MachineTransactions.cs",
+          "line": 37
+        }
+      ],
       "domain": "machine-transactions",
       "curatedEntryIds": [
         "EZapi.MachineTransactionApi.Run"
@@ -30470,7 +31176,12 @@
       "compilerGenerated": false,
       "genericParameters": [],
       "documentation": null,
-      "sources": [],
+      "sources": [
+        {
+          "path": "../src/EZapi/MachineTransactions.cs",
+          "line": 24
+        }
+      ],
       "domain": "machine-transactions",
       "curatedEntryIds": [],
       "fields": [],
@@ -30856,7 +31567,12 @@
       "compilerGenerated": false,
       "genericParameters": [],
       "documentation": null,
-      "sources": [],
+      "sources": [
+        {
+          "path": "../src/EZapi/MachineTransactions.cs",
+          "line": 21
+        }
+      ],
       "domain": "machine-transactions",
       "curatedEntryIds": [],
       "fields": [
@@ -30949,7 +31665,12 @@
         "returns": null,
         "parameters": {}
       },
-      "sources": [],
+      "sources": [
+        {
+          "path": "../src/EZapi/MachineRegistration.cs",
+          "line": 23
+        }
+      ],
       "domain": "machine-registration",
       "curatedEntryIds": [],
       "fields": [],
@@ -31483,7 +32204,12 @@
         "returns": null,
         "parameters": {}
       },
-      "sources": [],
+      "sources": [
+        {
+          "path": "../src/EZapi/ManufacturingTerminal.cs",
+          "line": 10
+        }
+      ],
       "domain": "terminal",
       "curatedEntryIds": [
         "EZapi.ManufacturingTerminal.NormalizeItemId",
@@ -31731,7 +32457,12 @@
         "returns": null,
         "parameters": {}
       },
-      "sources": [],
+      "sources": [
+        {
+          "path": "../src/EZapi/ManufacturingTerminal.cs",
+          "line": 4
+        }
+      ],
       "domain": "terminal",
       "curatedEntryIds": [],
       "fields": [],
@@ -32068,7 +32799,12 @@
         "returns": null,
         "parameters": {}
       },
-      "sources": [],
+      "sources": [
+        {
+          "path": "../src/EZapi/ModLog.cs",
+          "line": 45
+        }
+      ],
       "domain": "helpers",
       "curatedEntryIds": [
         "EZapi.ModLog..ctor",
@@ -32367,7 +33103,12 @@
         "returns": null,
         "parameters": {}
       },
-      "sources": [],
+      "sources": [
+        {
+          "path": "../src/EZapi/Modules.cs",
+          "line": 26
+        }
+      ],
       "domain": "modules",
       "curatedEntryIds": [],
       "fields": [],
@@ -32442,7 +33183,12 @@
         "returns": null,
         "parameters": {}
       },
-      "sources": [],
+      "sources": [
+        {
+          "path": "../src/EZapi/Modules.cs",
+          "line": 8
+        }
+      ],
       "domain": "modules",
       "curatedEntryIds": [],
       "fields": [],
@@ -32719,7 +33465,12 @@
         "returns": null,
         "parameters": {}
       },
-      "sources": [],
+      "sources": [
+        {
+          "path": "../src/EZapi/Modules.cs",
+          "line": 65
+        }
+      ],
       "domain": "modules",
       "curatedEntryIds": [
         "EZapi.ModuleApi.FindInstalled",
@@ -33103,7 +33854,12 @@
         "returns": null,
         "parameters": {}
       },
-      "sources": [],
+      "sources": [
+        {
+          "path": "../src/EZapi/Modules.cs",
+          "line": 12
+        }
+      ],
       "domain": "modules",
       "curatedEntryIds": [],
       "fields": [],
@@ -33176,7 +33932,12 @@
         "returns": null,
         "parameters": {}
       },
-      "sources": [],
+      "sources": [
+        {
+          "path": "../src/EZapi/ItemDefinition.cs",
+          "line": 87
+        }
+      ],
       "domain": "items",
       "curatedEntryIds": [],
       "fields": [],
@@ -33312,7 +34073,12 @@
       "compilerGenerated": false,
       "genericParameters": [],
       "documentation": null,
-      "sources": [],
+      "sources": [
+        {
+          "path": "../src/EZapi/Modules.cs",
+          "line": 9
+        }
+      ],
       "domain": "modules",
       "curatedEntryIds": [],
       "fields": [
@@ -33405,7 +34171,12 @@
         "returns": null,
         "parameters": {}
       },
-      "sources": [],
+      "sources": [
+        {
+          "path": "../src/EZapi/PresentationApi.cs",
+          "line": 8
+        }
+      ],
       "domain": "presentation",
       "curatedEntryIds": [],
       "fields": [],
@@ -33682,7 +34453,12 @@
         "returns": null,
         "parameters": {}
       },
-      "sources": [],
+      "sources": [
+        {
+          "path": "../src/EZapi/Content.cs",
+          "line": 5
+        }
+      ],
       "domain": "registration",
       "curatedEntryIds": [],
       "fields": [
@@ -33759,7 +34535,12 @@
       "compilerGenerated": false,
       "genericParameters": [],
       "documentation": null,
-      "sources": [],
+      "sources": [
+        {
+          "path": "../src/EZapi/Content.cs",
+          "line": 6
+        }
+      ],
       "domain": "registration",
       "curatedEntryIds": [],
       "fields": [],
@@ -34123,7 +34904,12 @@
         "returns": null,
         "parameters": {}
       },
-      "sources": [],
+      "sources": [
+        {
+          "path": "../src/EZapi/Effects.cs",
+          "line": 8
+        }
+      ],
       "domain": "effects",
       "curatedEntryIds": [],
       "fields": [],
@@ -34427,7 +35213,12 @@
       "compilerGenerated": false,
       "genericParameters": [],
       "documentation": null,
-      "sources": [],
+      "sources": [
+        {
+          "path": "../src/EZapi/NativeHooks.cs",
+          "line": 8
+        }
+      ],
       "domain": "infrastructure",
       "curatedEntryIds": [],
       "fields": [],
@@ -34761,7 +35552,12 @@
         "returns": null,
         "parameters": {}
       },
-      "sources": [],
+      "sources": [
+        {
+          "path": "../src/EZapi/InventoryServices.cs",
+          "line": 14
+        }
+      ],
       "domain": "inventory",
       "curatedEntryIds": [],
       "fields": [],
@@ -35155,7 +35951,12 @@
       "compilerGenerated": false,
       "genericParameters": [],
       "documentation": null,
-      "sources": [],
+      "sources": [
+        {
+          "path": "../src/EZapi/InventoryServices.cs",
+          "line": 15
+        }
+      ],
       "domain": "inventory",
       "curatedEntryIds": [],
       "fields": [],
@@ -35637,7 +36438,12 @@
         "returns": null,
         "parameters": {}
       },
-      "sources": [],
+      "sources": [
+        {
+          "path": "../src/EZapi/NativeDelegateBridge.cs",
+          "line": 45
+        }
+      ],
       "domain": "infrastructure",
       "curatedEntryIds": [],
       "fields": [],
@@ -35927,7 +36733,12 @@
         "returns": null,
         "parameters": {}
       },
-      "sources": [],
+      "sources": [
+        {
+          "path": "../src/EZapi/NativeItems.cs",
+          "line": 28
+        }
+      ],
       "domain": "items",
       "curatedEntryIds": [],
       "fields": [],
@@ -36384,7 +37195,12 @@
         "returns": null,
         "parameters": {}
       },
-      "sources": [],
+      "sources": [
+        {
+          "path": "../src/EZapi/NativeItems.cs",
+          "line": 7
+        }
+      ],
       "domain": "items",
       "curatedEntryIds": [],
       "fields": [
@@ -36466,7 +37282,12 @@
         "returns": null,
         "parameters": {}
       },
-      "sources": [],
+      "sources": [
+        {
+          "path": "../src/EZapi/NativeItems.cs",
+          "line": 9
+        }
+      ],
       "domain": "items",
       "curatedEntryIds": [],
       "fields": [],
@@ -37006,7 +37827,12 @@
         "returns": null,
         "parameters": {}
       },
-      "sources": [],
+      "sources": [
+        {
+          "path": "../src/EZapi/NativeItems.cs",
+          "line": 26
+        }
+      ],
       "domain": "items",
       "curatedEntryIds": [],
       "fields": [],
@@ -37310,7 +38136,12 @@
       "compilerGenerated": false,
       "genericParameters": [],
       "documentation": null,
-      "sources": [],
+      "sources": [
+        {
+          "path": "../src/EZapi/InventoryServices.cs",
+          "line": 18
+        }
+      ],
       "domain": "inventory",
       "curatedEntryIds": [],
       "fields": [],
@@ -37654,7 +38485,12 @@
         "returns": null,
         "parameters": {}
       },
-      "sources": [],
+      "sources": [
+        {
+          "path": "../src/EZapi/ItemStockContract.cs",
+          "line": 4
+        }
+      ],
       "domain": "stock",
       "curatedEntryIds": [],
       "fields": [
@@ -37723,7 +38559,12 @@
         "returns": null,
         "parameters": {}
       },
-      "sources": [],
+      "sources": [
+        {
+          "path": "../src/EZapi/NpcStockApi.cs",
+          "line": 5
+        }
+      ],
       "domain": "npc-stock",
       "curatedEntryIds": [
         "EZapi.NpcStockApi.BuildPool",
@@ -37958,7 +38799,12 @@
         "returns": null,
         "parameters": {}
       },
-      "sources": [],
+      "sources": [
+        {
+          "path": "../src/EZapi/NpcStockDefinition.cs",
+          "line": 33
+        }
+      ],
       "domain": "npc-stock",
       "curatedEntryIds": [],
       "fields": [],
@@ -38290,7 +39136,12 @@
       "compilerGenerated": false,
       "genericParameters": [],
       "documentation": null,
-      "sources": [],
+      "sources": [
+        {
+          "path": "../src/EZapi/NpcStockDefinition.cs",
+          "line": 116
+        }
+      ],
       "domain": "npc-stock",
       "curatedEntryIds": [],
       "fields": [],
@@ -38415,7 +39266,12 @@
         "returns": null,
         "parameters": {}
       },
-      "sources": [],
+      "sources": [
+        {
+          "path": "../src/EZapi/NpcStockDefinition.cs",
+          "line": 30
+        }
+      ],
       "domain": "npc-stock",
       "curatedEntryIds": [],
       "fields": [],
@@ -38779,7 +39635,12 @@
       "compilerGenerated": false,
       "genericParameters": [],
       "documentation": null,
-      "sources": [],
+      "sources": [
+        {
+          "path": "../src/EZapi/NpcStockDefinition.cs",
+          "line": 34
+        }
+      ],
       "domain": "npc-stock",
       "curatedEntryIds": [],
       "fields": [],
@@ -39081,7 +39942,12 @@
         "returns": null,
         "parameters": {}
       },
-      "sources": [],
+      "sources": [
+        {
+          "path": "../src/EZapi/NpcStockDefinition.cs",
+          "line": 56
+        }
+      ],
       "domain": "npc-stock",
       "curatedEntryIds": [
         "EZapi.NpcStockPlanner.Build",
@@ -39175,7 +40041,12 @@
       "compilerGenerated": false,
       "genericParameters": [],
       "documentation": null,
-      "sources": [],
+      "sources": [
+        {
+          "path": "../src/EZapi/NpcStockDefinition.cs",
+          "line": 35
+        }
+      ],
       "domain": "npc-stock",
       "curatedEntryIds": [
         "EZapi.NpcStockPool.Pick"
@@ -39251,7 +40122,12 @@
       "compilerGenerated": false,
       "genericParameters": [],
       "documentation": null,
-      "sources": [],
+      "sources": [
+        {
+          "path": "../src/EZapi/NpcStockDefinition.cs",
+          "line": 123
+        }
+      ],
       "domain": "npc-stock",
       "curatedEntryIds": [],
       "fields": [],
@@ -39374,7 +40250,12 @@
         "returns": null,
         "parameters": {}
       },
-      "sources": [],
+      "sources": [
+        {
+          "path": "../src/EZapi/NpcStockDefinition.cs",
+          "line": 7
+        }
+      ],
       "domain": "npc-stock",
       "curatedEntryIds": [],
       "fields": [
@@ -39500,7 +40381,12 @@
         "returns": null,
         "parameters": {}
       },
-      "sources": [],
+      "sources": [
+        {
+          "path": "../src/EZapi/NpcStockDefinition.cs",
+          "line": 14
+        }
+      ],
       "domain": "npc-stock",
       "curatedEntryIds": [],
       "fields": [],
@@ -39858,7 +40744,12 @@
         "returns": null,
         "parameters": {}
       },
-      "sources": [],
+      "sources": [
+        {
+          "path": "../src/EZapi/NpcStockDefinition.cs",
+          "line": 11
+        }
+      ],
       "domain": "npc-stock",
       "curatedEntryIds": [],
       "fields": [
@@ -39922,7 +40813,12 @@
       "compilerGenerated": false,
       "genericParameters": [],
       "documentation": null,
-      "sources": [],
+      "sources": [
+        {
+          "path": "../src/EZapi/PackManifest.cs",
+          "line": 14
+        }
+      ],
       "domain": "packs",
       "curatedEntryIds": [],
       "fields": [],
@@ -39983,7 +40879,12 @@
       "compilerGenerated": false,
       "genericParameters": [],
       "documentation": null,
-      "sources": [],
+      "sources": [
+        {
+          "path": "../src/EZapi/PackManifest.cs",
+          "line": 26
+        }
+      ],
       "domain": "packs",
       "curatedEntryIds": [],
       "fields": [],
@@ -40285,7 +41186,12 @@
         "returns": null,
         "parameters": {}
       },
-      "sources": [],
+      "sources": [
+        {
+          "path": "../src/EZapi/PackManifest.cs",
+          "line": 4
+        }
+      ],
       "domain": "packs",
       "curatedEntryIds": [],
       "fields": [],
@@ -40411,7 +41317,12 @@
         "returns": null,
         "parameters": {}
       },
-      "sources": [],
+      "sources": [
+        {
+          "path": "../src/EZapi/PackManifest.cs",
+          "line": 20
+        }
+      ],
       "domain": "packs",
       "curatedEntryIds": [],
       "fields": [],
@@ -40885,7 +41796,12 @@
         "returns": null,
         "parameters": {}
       },
-      "sources": [],
+      "sources": [
+        {
+          "path": "../src/EZapi/Phone.cs",
+          "line": 7
+        }
+      ],
       "domain": "phone",
       "curatedEntryIds": [
         "EZapi.PhoneApi.GetRuntimeStatus",
@@ -41034,7 +41950,12 @@
         "returns": null,
         "parameters": {}
       },
-      "sources": [],
+      "sources": [
+        {
+          "path": "../src/EZapi/PhoneContact.cs",
+          "line": 6
+        }
+      ],
       "domain": "phone",
       "curatedEntryIds": [],
       "fields": [],
@@ -41398,7 +42319,12 @@
       "compilerGenerated": false,
       "genericParameters": [],
       "documentation": null,
-      "sources": [],
+      "sources": [
+        {
+          "path": "../src/EZapi/PhoneContact.cs",
+          "line": 8
+        }
+      ],
       "domain": "phone",
       "curatedEntryIds": [],
       "fields": [],
@@ -41792,7 +42718,12 @@
         "returns": null,
         "parameters": {}
       },
-      "sources": [],
+      "sources": [
+        {
+          "path": "../src/EZapi/PhoneContact.cs",
+          "line": 4
+        }
+      ],
       "domain": "phone",
       "curatedEntryIds": [],
       "fields": [],
@@ -42099,7 +43030,12 @@
         "returns": null,
         "parameters": {}
       },
-      "sources": [],
+      "sources": [
+        {
+          "path": "../src/EZapi/Power.cs",
+          "line": 11
+        }
+      ],
       "domain": "power",
       "curatedEntryIds": [
         "EZapi.Power.GetEnergy",
@@ -42219,7 +43155,12 @@
         "returns": null,
         "parameters": {}
       },
-      "sources": [],
+      "sources": [
+        {
+          "path": "../src/EZapi/PowerBatchMath.cs",
+          "line": 12
+        }
+      ],
       "domain": "power",
       "curatedEntryIds": [
         "EZapi.PowerBatchMath.Plan"
@@ -42286,7 +43227,12 @@
         "returns": null,
         "parameters": {}
       },
-      "sources": [],
+      "sources": [
+        {
+          "path": "../src/EZapi/PowerBatchMath.cs",
+          "line": 4
+        }
+      ],
       "domain": "power",
       "curatedEntryIds": [],
       "fields": [],
@@ -42565,7 +43511,12 @@
         "returns": null,
         "parameters": {}
       },
-      "sources": [],
+      "sources": [
+        {
+          "path": "../src/EZapi/PowerBatchMath.cs",
+          "line": 7
+        }
+      ],
       "domain": "power",
       "curatedEntryIds": [],
       "fields": [],
@@ -42872,7 +43823,12 @@
         "returns": null,
         "parameters": {}
       },
-      "sources": [],
+      "sources": [
+        {
+          "path": "../src/EZapi/PresentationApi.cs",
+          "line": 14
+        }
+      ],
       "domain": "presentation",
       "curatedEntryIds": [
         "EZapi.PresentationApi.GetRegisteredItemDescription",
@@ -43126,7 +44082,12 @@
       "compilerGenerated": false,
       "genericParameters": [],
       "documentation": null,
-      "sources": [],
+      "sources": [
+        {
+          "path": "../src/EZapi/PresentationResult.cs",
+          "line": 5
+        }
+      ],
       "domain": "reading",
       "curatedEntryIds": [],
       "fields": [],
@@ -43398,7 +44359,12 @@
         "returns": null,
         "parameters": {}
       },
-      "sources": [],
+      "sources": [
+        {
+          "path": "../src/EZapi/PresentationResult.cs",
+          "line": 4
+        }
+      ],
       "domain": "reading",
       "curatedEntryIds": [],
       "fields": [
@@ -43533,7 +44499,12 @@
         "returns": null,
         "parameters": {}
       },
-      "sources": [],
+      "sources": [
+        {
+          "path": "../src/EZapi/ProductionValue.cs",
+          "line": 122
+        }
+      ],
       "domain": "effects",
       "curatedEntryIds": [
         "EZapi.ProductionValueApi.Calculate",
@@ -43744,7 +44715,12 @@
         "returns": null,
         "parameters": {}
       },
-      "sources": [],
+      "sources": [
+        {
+          "path": "../src/EZapi/ProductionValue.cs",
+          "line": 93
+        }
+      ],
       "domain": "effects",
       "curatedEntryIds": [
         "EZapi.ProductionValueMath.PerOutput",
@@ -43870,7 +44846,12 @@
         "returns": null,
         "parameters": {}
       },
-      "sources": [],
+      "sources": [
+        {
+          "path": "../src/EZapi/Progression.cs",
+          "line": 18
+        }
+      ],
       "domain": "progression",
       "curatedEntryIds": [
         "EZapi.ProgressionApi.ReadService",
@@ -43967,7 +44948,12 @@
         "returns": null,
         "parameters": {}
       },
-      "sources": [],
+      "sources": [
+        {
+          "path": "../src/EZapi/Progression.cs",
+          "line": 6
+        }
+      ],
       "domain": "progression",
       "curatedEntryIds": [],
       "fields": [],
@@ -44299,7 +45285,12 @@
       "compilerGenerated": false,
       "genericParameters": [],
       "documentation": null,
-      "sources": [],
+      "sources": [
+        {
+          "path": "../src/EZapi/Progression.cs",
+          "line": 4
+        }
+      ],
       "domain": "progression",
       "curatedEntryIds": [],
       "fields": [
@@ -44379,7 +45370,12 @@
         "returns": null,
         "parameters": {}
       },
-      "sources": [],
+      "sources": [
+        {
+          "path": "../src/EZapi/Reading.cs",
+          "line": 6
+        }
+      ],
       "domain": "reading",
       "curatedEntryIds": [
         "EZapi.ReadingApi.Close",
@@ -44630,7 +45626,12 @@
         "returns": null,
         "parameters": {}
       },
-      "sources": [],
+      "sources": [
+        {
+          "path": "../src/EZapi/RecipeGuide.cs",
+          "line": 4
+        }
+      ],
       "domain": "guide",
       "curatedEntryIds": [
         "EZapi.RecipeGuideApi.Close",
@@ -44785,7 +45786,12 @@
         "returns": null,
         "parameters": {}
       },
-      "sources": [],
+      "sources": [
+        {
+          "path": "../src/EZapi/MachineRecipeDefinition.cs",
+          "line": 5
+        }
+      ],
       "domain": "recipes",
       "curatedEntryIds": [],
       "fields": [],
@@ -45160,7 +46166,12 @@
         "returns": null,
         "parameters": {}
       },
-      "sources": [],
+      "sources": [
+        {
+          "path": "../src/EZapi/RecipeGuideDefinition.cs",
+          "line": 13
+        }
+      ],
       "domain": "guide",
       "curatedEntryIds": [],
       "fields": [],
@@ -45643,7 +46654,12 @@
         "returns": null,
         "parameters": {}
       },
-      "sources": [],
+      "sources": [
+        {
+          "path": "../src/EZapi/RecipeGuideDefinition.cs",
+          "line": 6
+        }
+      ],
       "domain": "guide",
       "curatedEntryIds": [],
       "fields": [],
@@ -46043,7 +47059,12 @@
       "compilerGenerated": false,
       "genericParameters": [],
       "documentation": null,
-      "sources": [],
+      "sources": [
+        {
+          "path": "../src/EZapi/MachineRecipeDefinition.cs",
+          "line": 12
+        }
+      ],
       "domain": "recipes",
       "curatedEntryIds": [],
       "fields": [],
@@ -46327,7 +47348,12 @@
         "returns": null,
         "parameters": {}
       },
-      "sources": [],
+      "sources": [
+        {
+          "path": "../src/EZapi/RecipeGuideDefinition.cs",
+          "line": 22
+        }
+      ],
       "domain": "guide",
       "curatedEntryIds": [
         "EZapi.RecipeGuideRules.ResolveLocale",
@@ -46423,7 +47449,12 @@
       "compilerGenerated": false,
       "genericParameters": [],
       "documentation": null,
-      "sources": [],
+      "sources": [
+        {
+          "path": "../src/EZapi/RecipeGuideDefinition.cs",
+          "line": 19
+        }
+      ],
       "domain": "guide",
       "curatedEntryIds": [],
       "fields": [],
@@ -46697,7 +47728,12 @@
         "returns": null,
         "parameters": {}
       },
-      "sources": [],
+      "sources": [
+        {
+          "path": "../src/EZapi/MachineRecipeDefinition.cs",
+          "line": 17
+        }
+      ],
       "domain": "recipes",
       "curatedEntryIds": [],
       "fields": [],
@@ -46974,7 +48010,12 @@
         "returns": null,
         "parameters": {}
       },
-      "sources": [],
+      "sources": [
+        {
+          "path": "../src/EZapi/RegistrationBatch.cs",
+          "line": 5
+        }
+      ],
       "domain": "registration",
       "curatedEntryIds": [],
       "fields": [
@@ -47087,7 +48128,12 @@
         "returns": null,
         "parameters": {}
       },
-      "sources": [],
+      "sources": [
+        {
+          "path": "../src/EZapi/RegistrationBatch.cs",
+          "line": 16
+        }
+      ],
       "domain": "registration",
       "curatedEntryIds": [
         "EZapi.Registration.RegistrationBatch.Define",
@@ -47265,7 +48311,12 @@
       "compilerGenerated": false,
       "genericParameters": [],
       "documentation": null,
-      "sources": [],
+      "sources": [
+        {
+          "path": "../src/EZapi/RegistrationBatch.cs",
+          "line": 9
+        }
+      ],
       "domain": "registration",
       "curatedEntryIds": [],
       "fields": [],
@@ -47594,7 +48645,12 @@
       "compilerGenerated": false,
       "genericParameters": [],
       "documentation": null,
-      "sources": [],
+      "sources": [
+        {
+          "path": "../src/EZapi/RegistrationBatch.cs",
+          "line": 8
+        }
+      ],
       "domain": "registration",
       "curatedEntryIds": [],
       "fields": [],
@@ -47866,7 +48922,12 @@
         "returns": null,
         "parameters": {}
       },
-      "sources": [],
+      "sources": [
+        {
+          "path": "../src/EZapi/RegistrationBatch.cs",
+          "line": 7
+        }
+      ],
       "domain": "registration",
       "curatedEntryIds": [],
       "fields": [
@@ -47921,7 +48982,12 @@
       "compilerGenerated": false,
       "genericParameters": [],
       "documentation": null,
-      "sources": [],
+      "sources": [
+        {
+          "path": "../src/EZapi/RegistrationBatch.cs",
+          "line": 10
+        }
+      ],
       "domain": "registration",
       "curatedEntryIds": [],
       "fields": [],
@@ -48285,7 +49351,12 @@
         "returns": null,
         "parameters": {}
       },
-      "sources": [],
+      "sources": [
+        {
+          "path": "../src/EZapi/Registration.cs",
+          "line": 19
+        }
+      ],
       "domain": "registration",
       "curatedEntryIds": [],
       "fields": [],
@@ -48594,7 +49665,12 @@
         "returns": null,
         "parameters": {}
       },
-      "sources": [],
+      "sources": [
+        {
+          "path": "../src/EZapi/Registration.cs",
+          "line": 13
+        }
+      ],
       "domain": "registration",
       "curatedEntryIds": [],
       "fields": [],
@@ -48883,7 +49959,12 @@
         "returns": null,
         "parameters": {}
       },
-      "sources": [],
+      "sources": [
+        {
+          "path": "../src/EZapi/Registration.cs",
+          "line": 4
+        }
+      ],
       "domain": "registration",
       "curatedEntryIds": [],
       "fields": [
@@ -48963,7 +50044,12 @@
         "returns": null,
         "parameters": {}
       },
-      "sources": [],
+      "sources": [
+        {
+          "path": "../src/EZapi/RegistrationApi.cs",
+          "line": 5
+        }
+      ],
       "domain": "registration",
       "curatedEntryIds": [
         "EZapi.RegistrationApi.IsResolved",
@@ -49132,7 +50218,12 @@
         "returns": null,
         "parameters": {}
       },
-      "sources": [],
+      "sources": [
+        {
+          "path": "../src/EZapi/RequirementApi.cs",
+          "line": 5
+        }
+      ],
       "domain": "progression",
       "curatedEntryIds": [
         "EZapi.RequirementApi.Evaluate"
@@ -49183,7 +50274,12 @@
         "returns": null,
         "parameters": {}
       },
-      "sources": [],
+      "sources": [
+        {
+          "path": "../src/EZapi/Requirements.cs",
+          "line": 5
+        }
+      ],
       "domain": "progression",
       "curatedEntryIds": [],
       "fields": [],
@@ -49280,7 +50376,12 @@
       "compilerGenerated": false,
       "genericParameters": [],
       "documentation": null,
-      "sources": [],
+      "sources": [
+        {
+          "path": "../src/EZapi/Requirements.cs",
+          "line": 18
+        }
+      ],
       "domain": "progression",
       "curatedEntryIds": [],
       "fields": [],
@@ -49686,7 +50787,12 @@
         "returns": null,
         "parameters": {}
       },
-      "sources": [],
+      "sources": [
+        {
+          "path": "../src/EZapi/Requirements.cs",
+          "line": 15
+        }
+      ],
       "domain": "progression",
       "curatedEntryIds": [],
       "fields": [],
@@ -49958,7 +51064,12 @@
       "compilerGenerated": false,
       "genericParameters": [],
       "documentation": null,
-      "sources": [],
+      "sources": [
+        {
+          "path": "../src/EZapi/Requirements.cs",
+          "line": 13
+        }
+      ],
       "domain": "progression",
       "curatedEntryIds": [],
       "fields": [
@@ -50027,7 +51138,12 @@
         "returns": null,
         "parameters": {}
       },
-      "sources": [],
+      "sources": [
+        {
+          "path": "../src/EZapi/Requirements.cs",
+          "line": 25
+        }
+      ],
       "domain": "progression",
       "curatedEntryIds": [
         "EZapi.Requirements.Copy",
@@ -50151,7 +51267,12 @@
         "returns": null,
         "parameters": {}
       },
-      "sources": [],
+      "sources": [
+        {
+          "path": "../src/EZapi/RunData.cs",
+          "line": 11
+        }
+      ],
       "domain": "save",
       "curatedEntryIds": [
         "EZapi.RunData.Open",
@@ -50249,7 +51370,12 @@
         "returns": null,
         "parameters": {}
       },
-      "sources": [],
+      "sources": [
+        {
+          "path": "../src/EZapi/RunDataApi.cs",
+          "line": 21
+        }
+      ],
       "domain": "save",
       "curatedEntryIds": [
         "EZapi.RunDataApi.Read",
@@ -50537,7 +51663,12 @@
         "returns": null,
         "parameters": {}
       },
-      "sources": [],
+      "sources": [
+        {
+          "path": "../src/EZapi/RunDataApi.cs",
+          "line": 14
+        }
+      ],
       "domain": "save",
       "curatedEntryIds": [],
       "fields": [],
@@ -50844,7 +51975,12 @@
         "returns": null,
         "parameters": {}
       },
-      "sources": [],
+      "sources": [
+        {
+          "path": "../src/EZapi/RunDataApi.cs",
+          "line": 8
+        }
+      ],
       "domain": "save",
       "curatedEntryIds": [],
       "fields": [
@@ -50968,7 +52104,12 @@
         "returns": null,
         "parameters": {}
       },
-      "sources": [],
+      "sources": [
+        {
+          "path": "../src/EZapi/RunData.cs",
+          "line": 37
+        }
+      ],
       "domain": "save",
       "curatedEntryIds": [],
       "fields": [],
@@ -51636,7 +52777,12 @@
         "returns": null,
         "parameters": {}
       },
-      "sources": [],
+      "sources": [
+        {
+          "path": "../src/EZapi/RunPurchase.cs",
+          "line": 8
+        }
+      ],
       "domain": "purchases",
       "curatedEntryIds": [
         "EZapi.RunPurchaseApi.Purchase"
@@ -51748,7 +52894,12 @@
         "returns": null,
         "parameters": {}
       },
-      "sources": [],
+      "sources": [
+        {
+          "path": "../src/EZapi/RuntimeCapabilities.cs",
+          "line": 44
+        }
+      ],
       "domain": "framework",
       "curatedEntryIds": [
         "EZapi.RuntimeCapabilities.Current"
@@ -51794,7 +52945,12 @@
         "returns": null,
         "parameters": {}
       },
-      "sources": [],
+      "sources": [
+        {
+          "path": "../src/EZapi/RuntimeCapabilities.cs",
+          "line": 16
+        }
+      ],
       "domain": "framework",
       "curatedEntryIds": [],
       "fields": [],
@@ -52611,7 +53767,12 @@
         "returns": null,
         "parameters": {}
       },
-      "sources": [],
+      "sources": [
+        {
+          "path": "../src/EZapi/SaveGraph.cs",
+          "line": 12
+        }
+      ],
       "domain": "save-graph",
       "curatedEntryIds": [
         "EZapi.SaveGraphApi.CanDecode",
@@ -52775,7 +53936,12 @@
         "returns": null,
         "parameters": {}
       },
-      "sources": [],
+      "sources": [
+        {
+          "path": "../src/EZapi/SaveReadback.cs",
+          "line": 9
+        }
+      ],
       "domain": "save-readback",
       "curatedEntryIds": [],
       "fields": [],
@@ -52868,7 +54034,12 @@
         "returns": null,
         "parameters": {}
       },
-      "sources": [],
+      "sources": [
+        {
+          "path": "../src/EZapi/SaveReadback.cs",
+          "line": 6
+        }
+      ],
       "domain": "save-readback",
       "curatedEntryIds": [],
       "fields": [
@@ -52981,7 +54152,12 @@
         "returns": null,
         "parameters": {}
       },
-      "sources": [],
+      "sources": [
+        {
+          "path": "../src/EZapi/SaveReadback.cs",
+          "line": 26
+        }
+      ],
       "domain": "save-readback",
       "curatedEntryIds": [
         "EZapi.SaveReadbackApi.Normalize",
@@ -53288,7 +54464,12 @@
         "returns": null,
         "parameters": {}
       },
-      "sources": [],
+      "sources": [
+        {
+          "path": "../src/EZapi/Progression.cs",
+          "line": 11
+        }
+      ],
       "domain": "progression",
       "curatedEntryIds": [],
       "fields": [],
@@ -53835,7 +55016,12 @@
         "returns": null,
         "parameters": {}
       },
-      "sources": [],
+      "sources": [
+        {
+          "path": "../src/EZapi/SpriteAssets.cs",
+          "line": 8
+        }
+      ],
       "domain": "sprites",
       "curatedEntryIds": [
         "EZapi.SpriteAssets.CreateEmbeddedAtlas"
@@ -53929,7 +55115,12 @@
         "returns": null,
         "parameters": {}
       },
-      "sources": [],
+      "sources": [
+        {
+          "path": "../src/EZapi/EmbeddedSpriteDefinition.cs",
+          "line": 16
+        }
+      ],
       "domain": "sprites",
       "curatedEntryIds": [
         "EZapi.SpriteDefinition.Height",
@@ -54325,7 +55516,12 @@
         "returns": null,
         "parameters": {}
       },
-      "sources": [],
+      "sources": [
+        {
+          "path": "../src/EZapi/EmbeddedSpriteDefinition.cs",
+          "line": 6
+        }
+      ],
       "domain": "sprites",
       "curatedEntryIds": [],
       "fields": [
@@ -54383,7 +55579,12 @@
         "returns": null,
         "parameters": {}
       },
-      "sources": [],
+      "sources": [
+        {
+          "path": "../src/EZapi/StartApi.cs",
+          "line": 10
+        }
+      ],
       "domain": "start",
       "curatedEntryIds": [
         "EZapi.StartApi.RegisterStart(StartType)",
@@ -54525,7 +55726,12 @@
         "returns": null,
         "parameters": {}
       },
-      "sources": [],
+      "sources": [
+        {
+          "path": "../src/EZapi/SupplierApi.cs",
+          "line": 7
+        }
+      ],
       "domain": "suppliers",
       "curatedEntryIds": [
         "EZapi.SupplierApi.IsAvailable",
@@ -54695,7 +55901,12 @@
         "returns": null,
         "parameters": {}
       },
-      "sources": [],
+      "sources": [
+        {
+          "path": "../src/EZapi/SupplierDefinition.cs",
+          "line": 24
+        }
+      ],
       "domain": "suppliers",
       "curatedEntryIds": [
         "EZapi.SupplierDefinition.LocalizedBackLabel",
@@ -55389,7 +56600,12 @@
         "returns": null,
         "parameters": {}
       },
-      "sources": [],
+      "sources": [
+        {
+          "path": "../src/EZapi/SupplierDefinition.cs",
+          "line": 4
+        }
+      ],
       "domain": "suppliers",
       "curatedEntryIds": [
         "EZapi.SupplierOffer.LocalizedConfirmLabel",
@@ -55813,7 +57029,12 @@
         "returns": null,
         "parameters": {}
       },
-      "sources": [],
+      "sources": [
+        {
+          "path": "../src/EZapi/SupplierDefinition.cs",
+          "line": 15
+        }
+      ],
       "domain": "suppliers",
       "curatedEntryIds": [
         "EZapi.SupplierPage.LocalizedBody"
@@ -56128,7 +57349,12 @@
       "compilerGenerated": false,
       "genericParameters": [],
       "documentation": null,
-      "sources": [],
+      "sources": [
+        {
+          "path": "../src/EZapi/ItemDefinition.cs",
+          "line": 202
+        }
+      ],
       "domain": "items",
       "curatedEntryIds": [],
       "fields": [],
@@ -56252,7 +57478,12 @@
       "compilerGenerated": false,
       "genericParameters": [],
       "documentation": null,
-      "sources": [],
+      "sources": [
+        {
+          "path": "../src/EZapi/ItemDefinition.cs",
+          "line": 214
+        }
+      ],
       "domain": "items",
       "curatedEntryIds": [],
       "fields": [],
@@ -56385,7 +57616,12 @@
       "compilerGenerated": false,
       "genericParameters": [],
       "documentation": null,
-      "sources": [],
+      "sources": [
+        {
+          "path": "../src/EZapi/Transactions.cs",
+          "line": 10
+        }
+      ],
       "domain": "purchases",
       "curatedEntryIds": [],
       "fields": [],
@@ -56771,7 +58007,12 @@
       "compilerGenerated": false,
       "genericParameters": [],
       "documentation": null,
-      "sources": [],
+      "sources": [
+        {
+          "path": "../src/EZapi/Transactions.cs",
+          "line": 9
+        }
+      ],
       "domain": "purchases",
       "curatedEntryIds": [],
       "fields": [
@@ -56864,7 +58105,12 @@
         "returns": null,
         "parameters": {}
       },
-      "sources": [],
+      "sources": [
+        {
+          "path": "../src/EZapi/Transactions.cs",
+          "line": 8
+        }
+      ],
       "domain": "purchases",
       "curatedEntryIds": [],
       "fields": [],
@@ -57201,7 +58447,12 @@
         "returns": null,
         "parameters": {}
       },
-      "sources": [],
+      "sources": [
+        {
+          "path": "../src/EZapi/Transactions.cs",
+          "line": 22
+        }
+      ],
       "domain": "purchases",
       "curatedEntryIds": [
         "EZapi.Transactions.Run"
@@ -57247,7 +58498,12 @@
       "compilerGenerated": false,
       "genericParameters": [],
       "documentation": null,
-      "sources": [],
+      "sources": [
+        {
+          "path": "../src/EZapi/InventoryServices.cs",
+          "line": 6
+        }
+      ],
       "domain": "inventory",
       "curatedEntryIds": [],
       "fields": [
@@ -57351,7 +58607,12 @@
         "returns": null,
         "parameters": {}
       },
-      "sources": [],
+      "sources": [
+        {
+          "path": "../src/EZapi/Progression.cs",
+          "line": 8
+        }
+      ],
       "domain": "progression",
       "curatedEntryIds": [],
       "fields": [],
@@ -57923,7 +59184,12 @@
       "compilerGenerated": false,
       "genericParameters": [],
       "documentation": null,
-      "sources": [],
+      "sources": [
+        {
+          "path": "../src/EZapi/ItemDefinition.cs",
+          "line": 159
+        }
+      ],
       "domain": "items",
       "curatedEntryIds": [],
       "fields": [],
@@ -58047,7 +59313,12 @@
         "returns": null,
         "parameters": {}
       },
-      "sources": [],
+      "sources": [
+        {
+          "path": "../src/EZapi/WindowInputCapture.cs",
+          "line": 9
+        }
+      ],
       "domain": "helpers",
       "curatedEntryIds": [
         "EZapi.WindowInputCapture..ctor",
@@ -58237,7 +59508,12 @@
         "returns": null,
         "parameters": {}
       },
-      "sources": [],
+      "sources": [
+        {
+          "path": "../src/EZapi/WorkshopApi.cs",
+          "line": 30
+        }
+      ],
       "domain": "workshop",
       "curatedEntryIds": [
         "EZapi.WorkshopApi.CloseWindow",
@@ -58512,7 +59788,12 @@
         "returns": null,
         "parameters": {}
       },
-      "sources": [],
+      "sources": [
+        {
+          "path": "../src/EZapi/WorkshopDefinitions.cs",
+          "line": 72
+        }
+      ],
       "domain": "workshop",
       "curatedEntryIds": [
         "EZapi.WorkshopDefinitionRules.Validate"
@@ -58574,7 +59855,12 @@
         "returns": null,
         "parameters": {}
       },
-      "sources": [],
+      "sources": [
+        {
+          "path": "../src/EZapi/WorkshopDefinitions.cs",
+          "line": 26
+        }
+      ],
       "domain": "workshop",
       "curatedEntryIds": [
         "EZapi.WorkshopEntry.LocalizedActionText",
@@ -59382,7 +60668,12 @@
         "returns": null,
         "parameters": {}
       },
-      "sources": [],
+      "sources": [
+        {
+          "path": "../src/EZapi/WorkshopDefinitions.cs",
+          "line": 7
+        }
+      ],
       "domain": "workshop",
       "curatedEntryIds": [],
       "fields": [],
@@ -59691,7 +60982,12 @@
         "returns": null,
         "parameters": {}
       },
-      "sources": [],
+      "sources": [
+        {
+          "path": "../src/EZapi/WorkshopDefinitions.cs",
+          "line": 10
+        }
+      ],
       "domain": "workshop",
       "curatedEntryIds": [
         "EZapi.WorkshopRequirement.LocalizedDisplayName"
@@ -60089,7 +61385,12 @@
         "returns": null,
         "parameters": {}
       },
-      "sources": [],
+      "sources": [
+        {
+          "path": "../src/EZapi/WorkshopDefinitions.cs",
+          "line": 4
+        }
+      ],
       "domain": "workshop",
       "curatedEntryIds": [],
       "fields": [
@@ -60149,7 +61450,12 @@
         "returns": null,
         "parameters": {}
       },
-      "sources": [],
+      "sources": [
+        {
+          "path": "../src/EZapi/WorkshopDefinitions.cs",
+          "line": 18
+        }
+      ],
       "domain": "workshop",
       "curatedEntryIds": [
         "EZapi.WorkshopReward.LocalizedDisplayName"
@@ -60489,7 +61795,12 @@
         "returns": null,
         "parameters": {}
       },
-      "sources": [],
+      "sources": [
+        {
+          "path": "../src/EZapi/WorkshopDefinitions.cs",
+          "line": 56
+        }
+      ],
       "domain": "workshop",
       "curatedEntryIds": [
         "EZapi.WorkshopSnapshot.FollowGameLanguage",
@@ -60952,7 +62263,12 @@
         "returns": null,
         "parameters": {}
       },
-      "sources": [],
+      "sources": [
+        {
+          "path": "../src/EZapi/WorkshopDefinitions.cs",
+          "line": 69
+        }
+      ],
       "domain": "workshop",
       "curatedEntryIds": [],
       "fields": [],
@@ -61243,11 +62559,5 @@
         }
       ]
     }
-  ],
-  "sourceAccess": "private; all public signatures are present without method bodies",
-  "distributionVerification": {
-    "dllSHA256": "7E4AB675B0E3BD81C56EEC4606731A6880287549EB4E8E90A707BE18BD52BEEF",
-    "nativeRuntimeVerified": false,
-    "frameworkSourceIncluded": false
-  }
+  ]
 }

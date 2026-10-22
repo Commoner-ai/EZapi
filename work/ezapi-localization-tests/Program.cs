@@ -1,0 +1,82 @@
+using System.Text;
+using System.Text.Json;
+using EZapi;
+var cases=new List<string>();
+void Check(bool ok,string name){if(!ok)throw new Exception(name);cases.Add(name);}
+LocalizationTable Parse(string text,string locale="en")=>Localization.Parse(new MemoryStream(Encoding.UTF8.GetBytes(text)),locale);
+var en=Parse("# comment\nhealth_name,Health Pack\nquoted,\"She said \"\"no refunds\"\".\"\ncomma,first,second\nline,First line\\nSecond line\ndays,Expires in {0} day(s)\n");
+Check(en.Entries["comma"]=="first,second","first comma owns remaining text");
+Check(en.Entries["quoted"]=="She said \"no refunds\".","quoted CSV text decodes doubled quotes");
+Check(en.Entries["line"]=="First line\nSecond line","literal backslash-n decodes newline");
+Check(Localization.FormatIndexes(en.Entries["days"]).SequenceEqual(new[]{0}),"numbered placeholder indexes parse");
+var dir=Path.Combine(Path.GetTempPath(),"ezapi-loc-"+Guid.NewGuid().ToString("N"));Directory.CreateDirectory(dir);
+File.WriteAllText(Path.Combine(dir,"en.csv"),"name,Health\ndays,Expires in {0} day(s)\n",new UTF8Encoding(false));
+File.WriteAllText(Path.Combine(dir,"zh.csv"),"name,医疗包\n",new UTF8Encoding(false));
+var catalog=Localization.LoadDirectory(dir);
+Check(catalog.Index.Files==2&&catalog.Index.Entries==3,"directory loads direct supported locale files");
+var text=catalog.Resolve("zh","name","fallback");Check(text.Text=="医疗包"&&text.ResolvedLocale=="zh"&&!text.UsedFallback,"current locale resolves first");
+text=catalog.Resolve("zh","days","fallback",3);Check(text.Text=="Expires in 3 day(s)"&&text.ResolvedLocale=="en"&&text.UsedFallback,"missing locale key falls back to English");
+text=catalog.Resolve("de","missing","Readable fallback");Check(text.Text=="Readable fallback"&&text.MissingKey,"missing key uses readable fallback");
+void Reject(string name,Action action){try{action();throw new Exception(name+" accepted");}catch(InvalidDataException){cases.Add(name);}}
+Reject("duplicate key",()=>Parse("a,1\na,2\n"));
+Reject("invalid key",()=>Parse("a-b,1\n"));
+Reject("unclosed quote",()=>Parse("a,\"value\n"));
+Reject("unescaped brace",()=>Parse("a,{oops}\n"));
+Reject("invalid locale",()=>Parse("a,1\n","en-US"));
+Check(Parse("\uFEFFa,中文\r\nb,English\r\n").Entries["a"]=="中文","UTF8 BOM and CRLF accepted");
+Check(Parse("\n# note\n\t \n").Entries.Count==0,"empty and comment-only file accepted");
+Check(Parse("a, value \n").Entries["a"]==" value ","text whitespace preserved");
+Check(Parse("a,She said \"no\"\n").Entries["a"]=="She said \"no\"","unquoted embedded quotes preserved");
+Check(Parse("a,\"a,b\"\n").Entries["a"]=="a,b","quoted comma preserved");
+Check(Parse("a,\"\"\"\"\n").Entries["a"]=="\"","single literal quoted character");
+using(var stream=new MemoryStream(Encoding.UTF8.GetBytes("a,1\n"))){Localization.Parse(stream,"en");Check(stream.CanRead,"Parse leaves input stream open");}
+Reject("missing comma",()=>Parse("not_a_pair\n"));
+Reject("empty key",()=>Parse(",value\n"));
+Reject("space in key",()=>Parse("a b,value\n"));
+Reject("overlong key",()=>Parse(new string('a',161)+",value\n"));
+Reject("nonASCII key",()=>Parse("键,value\n"));
+Reject("empty value",()=>Parse("a,\n"));
+Reject("whitespace value",()=>Parse("a,\" \"\n"));
+Reject("text after quote",()=>Parse("a,\"v\" trailing\n"));
+Reject("real multiline value",()=>Parse("a,\"first\nsecond\"\n"));
+Reject("NUL text",()=>Parse("a,x\0y\n"));
+Reject("invalid UTF8",()=>Localization.Parse(new MemoryStream(new byte[]{0x61,0x2c,0xff}),"en"));
+Reject("file byte limit",()=>Parse(new string('a',Localization.MaxFileBytes+1)));
+Reject("decoded text length limit",()=>Parse("a,"+new string('a',8193)));
+Reject("entry count limit",()=>Parse(string.Join("\n",Enumerable.Range(0,4097).Select(n=>"k"+n+",value"))));
+foreach(var bad in new[]{"{name}","{32}","{-1}","{0,257}","{0,-257}","{0","bad}","{0:{x}}","{0:N999999999}","{0:D257}"})
+    Reject("unsupported format "+bad,()=>Parse("a,"+bad));
+Check(Localization.FormatIndexes("{{0}} {1} {0,8:N2} {1}").SequenceEqual(new[]{0,1}),"escaped braces, alignment and format accepted");
+text=catalog.Resolve("en","days","fallback");Check(text.FormatError is not null&&text.Text.Contains("{0}"),"missing argument returns explicit error without throwing");
+Check(catalog.Resolve("unknown","name","fallback").Text=="Health","unknown requested language uses English");
+Check(catalog.Resolve("en","missing","literal {0}").Text=="literal {0}","fallback remains literal text");
+Check(catalog.Index.Resources.Single(r=>r.Locale=="zh").MissingEnglishKeys.SequenceEqual(new[]{"days"}),"coverage indexes missing English keys");
+Check(catalog.Index.Warnings.Count==1,"missing translations produce warning");
+try{((IDictionary<string,string>)catalog.Tables["en"].Entries).Add("x","y");throw new Exception("mutable");}catch(NotSupportedException){cases.Add("table entries are read only");}
+try{((IDictionary<string,LocalizationTable>)catalog.Tables).Clear();throw new Exception("mutable");}catch(NotSupportedException){cases.Add("catalog tables are read only");}
+Directory.CreateDirectory(Path.Combine(dir,"nested"));File.WriteAllText(Path.Combine(dir,"nested","bad.csv"),"invalid");
+Check(Localization.LoadDirectory(dir).Index.Files==2,"locale scanning is not recursive");
+File.WriteAllText(Path.Combine(dir,"zh.csv"),"name,更改后的文本\n");Check(catalog.Resolve("zh","name","fallback").Text=="医疗包","loaded catalog is independent of later file edits");
+Check(Localization.LoadDirectory(dir).Resolve("zh","name","fallback").Text=="更改后的文本","explicit reload returns new snapshot");
+Check(Localization.LoadDirectory(Path.Combine(dir,"absent")).Index.Files==0,"missing optional directory is empty");
+Check(Localization.LoadDirectory(Path.Combine(dir,"absent")).Resolve("zh","missing","可读回退").Text=="可读回退","empty directory resolves readable fallback");
+Reject("file instead of directory",()=>Localization.LoadDirectory(Path.Combine(dir,"en.csv")));
+var fmt=Path.Combine(dir,"format-only");Directory.CreateDirectory(fmt);
+File.WriteAllText(Path.Combine(fmt,"en.csv"),"money,Value {0:N2}\nescaped,{{0}} {0}\nbad_type,{0:Q}\n");var formatted=Localization.LoadDirectory(fmt);
+Check(formatted.Resolve("en","money","fallback",1234.5).Text=="Value 1,234.50","numeric formatting uses invariant culture");
+Check(formatted.Resolve("en","escaped","fallback",3).Text=="{0} 3","escaped braces format as literals");
+Check(formatted.Resolve("en","bad_type","fallback",1).FormatError is not null,"invalid parameter-specific format is reported");
+Check(formatted.Resolve("en","money","fallback",new string('x',65537)).FormatError is not null,"oversized formatted output reported");
+try{formatted.Resolve("en","money"," ",1);throw new Exception("fallback accepted");}catch(ArgumentException){cases.Add("blank fallback rejected");}
+File.WriteAllText(Path.Combine(dir,"ptBR.csv"),"name,Saúde\n");Check(Localization.LoadDirectory(dir).Tables.ContainsKey("ptBR"),"official ptBR case accepted");
+File.WriteAllText(Path.Combine(dir,"en-US.csv"),"name,X\n");Reject("unsupported locale filename",()=>Localization.LoadDirectory(dir));File.Delete(Path.Combine(dir,"en-US.csv"));
+File.WriteAllText(Path.Combine(dir,"de.CSV"),"name,X\n");Reject("extension case must match official filename",()=>Localization.LoadDirectory(dir));File.Delete(Path.Combine(dir,"de.CSV"));
+Localization.CommitPack("test.pack",catalog);Check(ReferenceEquals(Localization.GetPack("test.pack"),catalog),"published pack snapshot queries by owner");
+Check(Localization.GetPack("missing.pack") is null,"unknown owner has no snapshot");Localization.ClearPacks();Check(Localization.GetPack("test.pack") is null,"shutdown clears published catalogs");
+File.WriteAllText(Path.Combine(dir,"fr.csv"),"days,Days {1}\n",new UTF8Encoding(false));
+Reject("placeholder mismatch",()=>Localization.LoadDirectory(dir));
+File.Delete(Path.Combine(dir,"fr.csv"));File.WriteAllText(Path.Combine(dir,"zh.csv"),"days,{0} 天，还剩 {0}\n");
+Check(Localization.LoadDirectory(dir).Resolve("zh","days","fallback",3).Text=="3 天，还剩 3","placeholder repetitions may differ by language");
+Directory.Delete(dir,true);
+var report=new{passed=cases.Count,cases,scope="official CSV syntax, UTF-8, fallback, formatting, directory/resource validation; no native ModHelper runtime"};
+Directory.CreateDirectory("work");File.WriteAllText("work/ezapi-localization-tests.json",JsonSerializer.Serialize(report,new JsonSerializerOptions{WriteIndented=true}));Console.WriteLine(JsonSerializer.Serialize(report));

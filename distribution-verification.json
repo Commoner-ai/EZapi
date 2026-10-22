@@ -1,23 +1,25 @@
 {
-  "tag": "0.1.73-preview.1",
+  "tag": "0.1.73-preview.2",
   "passed": true,
   "assets": [
     {
-      "file": "EZapi-0.1.73-preview.1-game.zip",
-      "sha256": "6559DBA3C343E449642495C8AA113200138DF2BA8337A94CCF8DDEF7F0AE53C4",
-      "bytes": 709322
+      "file": "EZapi-0.1.73-preview.2-game.zip",
+      "sha256": "D78277A2C3BE5AFDE6C2F40CCFC364F53FFC330557555E82CCBB5B3912A82151",
+      "bytes": 709369
     },
     {
-      "file": "EZapi-0.1.73-preview.1-developer.zip",
-      "sha256": "0247F489689F996B90C02D22BA1A42A6B9F9510BC7BAB6C787480DAA096571E3",
-      "bytes": 1680768
+      "file": "EZapi-0.1.73-preview.2-developer.zip",
+      "sha256": "755D1416D4B78E98DE6CC08986A755E36DDF6877CA2703999448721CA7C1C11F",
+      "bytes": 1685469
     }
   ],
   "dllSHA256": "7E4AB675B0E3BD81C56EEC4606731A6880287549EB4E8E90A707BE18BD52BEEF",
   "frameworkSourceIncluded": false,
   "internalTestsIncluded": false,
   "frameworkBuildProjectsIncluded": false,
-  "sourceRepositoryVisibility": "private",
+  "sourceRepositoryVisibility": "public",
+  "sourceRepository": "https://github.com/Commoner-ai/EZapi",
+  "license": "MIT",
   "oneGameDllPerPackage": true,
   "debugDefaultOff": true,
   "internalPluginExcluded": true,
@@ -40,5 +42,18 @@
     "nativeGameStarted": false
   },
   "publicRepository": "https://github.com/Commoner-ai/EZapi",
-  "sourceRepositoryKeptPrivate": true
+  "sourcePublishedInRepository": true,
+  "oldPrivateHistoryImported": false,
+  "sourceRebuildVerification": {
+    "fullBuildFromExportedSourcePassed": true,
+    "offlineSuites": 59,
+    "cliProcessChecks": 25,
+    "samplePackValidationPassed": true,
+    "publicApiIndexValidationPassed": true,
+    "packagingFromSourceBuiltCandidatePassed": true,
+    "nativeRuntimeVerified": false,
+    "runtimeDllUnchangedInRelease": true,
+    "releaseDllSHA256": "7E4AB675B0E3BD81C56EEC4606731A6880287549EB4E8E90A707BE18BD52BEEF",
+    "sourceFilesMatchLocal": 250
+  }
 }

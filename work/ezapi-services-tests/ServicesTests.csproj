@@ -1,0 +1,10 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup><TargetFramework>net8.0</TargetFramework><OutputType>Exe</OutputType><Nullable>enable</Nullable><ImplicitUsings>enable</ImplicitUsings></PropertyGroup>
+  <ItemGroup>
+    <Compile Include="../../src/EZapi/Transactions.cs" Link="Real/Transactions.cs" />
+    <Compile Include="../../src/EZapi/NativeAccess.cs" Link="Real/NativeAccess.cs" />
+    <Compile Include="../../src/EZapi/Power.cs" Link="Real/Power.cs" />
+    <Compile Include="../../src/EZapi/Liquids.cs" Link="Real/Liquids.cs" />
+    <Compile Include="../../src/EZapi/Items.cs" Link="Real/Items.cs" />
+  </ItemGroup>
+</Project>

@@ -1,0 +1,8 @@
+<Project Sdk="Microsoft.NET.Sdk">
+<PropertyGroup><TargetFramework>net8.0</TargetFramework><OutputType>Exe</OutputType><Nullable>enable</Nullable><ImplicitUsings>enable</ImplicitUsings></PropertyGroup>
+<ItemGroup>
+<Compile Include="../../src/EZapi/ProductionValue.cs" Link="Real/ProductionValue.cs" />
+<Compile Include="../../src/EZapi/Effects.cs" Link="Real/Effects.cs" />
+<Compile Include="../../src/EZapi/Content.cs" Link="Real/Content.cs" />
+</ItemGroup>
+</Project>

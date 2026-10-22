@@ -1,0 +1,4 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup><OutputType>Exe</OutputType><TargetFrameworks>net6.0;net8.0</TargetFrameworks><Nullable>enable</Nullable><ImplicitUsings>enable</ImplicitUsings><LangVersion>10.0</LangVersion></PropertyGroup>
+  <ItemGroup><Compile Include="../../src/EZapi/SaveReadback.cs" Link="Real/SaveReadback.cs" /></ItemGroup>
+</Project>

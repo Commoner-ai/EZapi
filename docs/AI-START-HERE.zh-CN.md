@@ -1,12 +1,12 @@
 # EZapi：开发者与AI入口
 
-当前预发布 **0.1.73-preview.1**，程序集版本0.1.73。公开发布仓库：[Commoner-ai/EZapi](https://github.com/Commoner-ai/EZapi)。框架源码、内部测试和构建工程保持私有；使用公开DLL接口开发，不需要框架源码。
+当前预发布 **0.1.73-preview.2**，程序集版本0.1.73。公开发布仓库：[Commoner-ai/EZapi](https://github.com/Commoner-ai/EZapi)。框架、离线校验器、测试和构建工程已按 MIT 开源，见[源码构建](build-from-source.zh-CN.md)；开发普通 Mod 仍只需公开 DLL 接口。
 
 ## 从任务到示例
 
 - [工作流索引](developer-workflows.index.json)：先按目标选择JSON内容包或DLL API。
 - [全部公开签名](public-api.index.json)：当前DLL的类型、重载、参数、默认值和XML注释；不会包含方法实现。
-- [常见API](API.index.zh-CN.json)、[领域索引](source.index.json)、[错误索引](errors.index.json)：选择调用阶段、失败处理和示例。领域索引中的实现模块名仅用于说明，不提供框架源码。
+- [常见API](API.index.zh-CN.json)、[领域索引](source.index.json)、[错误索引](errors.index.json)：选择调用阶段、失败处理和示例。仓库中的领域索引提供实现源码路径；二进制 SDK 中给出模块名与 GitHub 源码入口。
 - [自适应外出按钮](departure-buttons.zh-CN.md)：在原生离店地图添加入口，自动寻找空位；目的地、次数消耗、库存和保存由调用Mod负责。
 - [安装与调试](install-and-debug.zh-CN.md)、[自动进入游戏](automation.zh-CN.md)、[English entry](AI-START-HERE.en.md)。
 
@@ -32,7 +32,7 @@ dotnet tools/ezapi-validate/ezapi-validate.dll --help
 dotnet build ./SimpleMod.csproj -c Release '-p:GameDir=<你的游戏目录>'
 ```
 
-先安装EZapi与MelonLoader；只把生成的调用方DLL复制到游戏Mods，不再复制一份EZapi或MelonLoader。外出按钮也有[独立工程](examples/departure-dll/DepartureMod.csproj)，在开发包根目录编译，默认引用包内DLL。仓库网页和GitHub自动源码ZIP只提供调用资料；完整二进制工具在Releases开发包中。
+先安装EZapi与MelonLoader；只把生成的调用方DLL复制到游戏Mods，不再复制一份EZapi或MelonLoader。外出按钮也有[独立工程](examples/departure-dll/DepartureMod.csproj)，在开发包根目录编译，默认引用包内DLL。仓库网页和 preview.2 标签的 GitHub 自动源码 ZIP 提供框架及工具源码；可直接使用的二进制工具在 Releases 开发包中。
 
 ## 语言、生命周期与结果
 

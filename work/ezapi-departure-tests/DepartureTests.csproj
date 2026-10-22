@@ -1,0 +1,9 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup><TargetFramework>net8.0</TargetFramework><OutputType>Exe</OutputType><ImplicitUsings>enable</ImplicitUsings><Nullable>enable</Nullable></PropertyGroup>
+  <ItemGroup>
+    <Compile Include="../../src/EZapi/DepartureButton.cs" Link="Real/DepartureButton.cs" />
+    <Compile Include="../../src/EZapi/DepartureLayout.cs" Link="Real/DepartureLayout.cs" />
+    <Compile Include="../../src/EZapi/DepartureApi.cs" Link="Real/DepartureApi.cs" />
+    <Compile Include="../../src/EZapi/PresentationResult.cs" Link="Real/PresentationResult.cs" />
+  </ItemGroup>
+</Project>

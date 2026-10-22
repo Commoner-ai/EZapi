@@ -1,0 +1,1 @@
+namespace EZapi { internal static class NativeItemLocalization { internal static string CurrentLocaleCode="en"; } }

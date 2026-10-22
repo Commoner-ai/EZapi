@@ -1,0 +1,14 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup><OutputType>Exe</OutputType><TargetFramework>net8.0</TargetFramework><Nullable>enable</Nullable><ImplicitUsings>enable</ImplicitUsings><LangVersion>10.0</LangVersion></PropertyGroup>
+  <ItemGroup>
+    <Compile Include="../../src/EZapi/PresentationResult.cs" Link="Real/PresentationResult.cs" />
+    <Compile Include="../../src/EZapi/DialogueDefinition.cs" Link="Real/DialogueDefinition.cs" />
+    <Compile Include="../../src/EZapi/Dialogue.cs" Link="Real/Dialogue.cs" />
+    <Compile Include="../../src/EZapi/NativeDialogueGraph.cs" Link="Real/NativeDialogueGraph.cs" />
+    <Compile Include="../../src/EZapi/LocalizedItemText.cs" Link="Real/LocalizedItemText.cs" />
+    <Compile Include="../../src/EZapi/Localization.cs" Link="Real/Localization.cs" />
+    <Compile Include="../../src/EZapi/SupplierDefinition.cs" Link="Real/SupplierDefinition.cs" />
+    <Compile Include="../../src/EZapi/SupplierApi.cs" Link="Real/SupplierApi.cs" />
+    <Compile Include="../ezapi-dialogue-native-tests/NativeBoundary.cs" Link="NativeBoundary.cs" />
+  </ItemGroup>
+</Project>

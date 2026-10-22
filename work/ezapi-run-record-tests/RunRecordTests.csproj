@@ -1,0 +1,11 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup><TargetFramework>net8.0</TargetFramework><OutputType>Exe</OutputType><Nullable>enable</Nullable><ImplicitUsings>enable</ImplicitUsings></PropertyGroup>
+  <ItemGroup>
+    <Compile Include="../../src/EZapi/GameSession.cs" Link="Real/GameSession.cs" />
+    <Compile Include="../../src/EZapi/RunData.cs" Link="Real/RunData.cs" />
+    <Compile Include="../../src/EZapi/RunDataApi.cs" Link="Real/RunDataApi.cs" />
+  </ItemGroup>
+<ItemGroup>
+<Compile Include="../../src/EZapi/GameRunIdentity.cs" Link="Shared/GameRunIdentity.cs" />
+</ItemGroup>
+</Project>

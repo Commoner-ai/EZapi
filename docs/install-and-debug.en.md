@@ -1,6 +1,6 @@
 # Installation and optional developer tools
 
-Release: **0.1.73-preview.1**, assembly version 0.1.73. This is a prerelease for the tested Probably Stolen Demo 050REV5-L baseline and MelonLoader IL2CPP .NET6. Unknown builds disable sensitive integrations.
+Release: **0.1.73-preview.2**, assembly version 0.1.73. This is a prerelease for the tested Probably Stolen Demo 050REV5-L baseline and MelonLoader IL2CPP .NET6. Unknown builds disable sensitive integrations.
 
 | Asset | Audience | Contents |
 | --- | --- | --- |

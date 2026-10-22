@@ -5729,6 +5729,12 @@
         "returns": null,
         "parameters": {}
       },
+      "sources": [
+        {
+          "path": "../src/EZapi/ClientVisit.cs",
+          "line": 11
+        }
+      ],
       "metadataSource": "public-api.index.json",
       "metadataDllSHA256": "7E4AB675B0E3BD81C56EEC4606731A6880287549EB4E8E90A707BE18BD52BEEF"
     },
@@ -5895,6 +5901,12 @@
         "returns": null,
         "parameters": {}
       },
+      "sources": [
+        {
+          "path": "../src/EZapi/ItemDefinition.cs",
+          "line": 101
+        }
+      ],
       "metadataSource": "public-api.index.json",
       "metadataDllSHA256": "7E4AB675B0E3BD81C56EEC4606731A6880287549EB4E8E90A707BE18BD52BEEF"
     },
@@ -6077,6 +6089,12 @@
         "returns": null,
         "parameters": {}
       },
+      "sources": [
+        {
+          "path": "../src/EZapi/Dialogue.cs",
+          "line": 7
+        }
+      ],
       "metadataSource": "public-api.index.json",
       "metadataDllSHA256": "7E4AB675B0E3BD81C56EEC4606731A6880287549EB4E8E90A707BE18BD52BEEF"
     },
@@ -6491,6 +6509,12 @@
         "returns": null,
         "parameters": {}
       },
+      "sources": [
+        {
+          "path": "../src/EZapi/DialogueDefinition.cs",
+          "line": 10
+        }
+      ],
       "metadataSource": "public-api.index.json",
       "metadataDllSHA256": "7E4AB675B0E3BD81C56EEC4606731A6880287549EB4E8E90A707BE18BD52BEEF"
     },
@@ -6931,6 +6955,12 @@
         "returns": null,
         "parameters": {}
       },
+      "sources": [
+        {
+          "path": "../src/EZapi/DialogueDefinition.cs",
+          "line": 4
+        }
+      ],
       "metadataSource": "public-api.index.json",
       "metadataDllSHA256": "7E4AB675B0E3BD81C56EEC4606731A6880287549EB4E8E90A707BE18BD52BEEF"
     },
@@ -7605,6 +7635,12 @@
       ],
       "events": [],
       "documentation": null,
+      "sources": [
+        {
+          "path": "../src/EZapi/DialogueDefinition.cs",
+          "line": 19
+        }
+      ],
       "metadataSource": "public-api.index.json",
       "metadataDllSHA256": "7E4AB675B0E3BD81C56EEC4606731A6880287549EB4E8E90A707BE18BD52BEEF"
     },
@@ -7648,6 +7684,12 @@
         "returns": null,
         "parameters": {}
       },
+      "sources": [
+        {
+          "path": "../src/EZapi/DialogueDefinition.cs",
+          "line": 46
+        }
+      ],
       "metadataSource": "public-api.index.json",
       "metadataDllSHA256": "7E4AB675B0E3BD81C56EEC4606731A6880287549EB4E8E90A707BE18BD52BEEF"
     },
@@ -7987,6 +8029,12 @@
         }
       ],
       "documentation": null,
+      "sources": [
+        {
+          "path": "../src/EZapi/Power.cs",
+          "line": 5
+        }
+      ],
       "metadataSource": "public-api.index.json",
       "metadataDllSHA256": "7E4AB675B0E3BD81C56EEC4606731A6880287549EB4E8E90A707BE18BD52BEEF"
     },
@@ -8087,6 +8135,12 @@
         }
       ],
       "documentation": null,
+      "sources": [
+        {
+          "path": "../src/EZapi/ItemDefinition.cs",
+          "line": 119
+        }
+      ],
       "metadataSource": "public-api.index.json",
       "metadataDllSHA256": "7E4AB675B0E3BD81C56EEC4606731A6880287549EB4E8E90A707BE18BD52BEEF"
     },
@@ -8392,6 +8446,12 @@
         "returns": null,
         "parameters": {}
       },
+      "sources": [
+        {
+          "path": "../src/EZapi/GameEvents.cs",
+          "line": 15
+        }
+      ],
       "metadataSource": "public-api.index.json",
       "metadataDllSHA256": "7E4AB675B0E3BD81C56EEC4606731A6880287549EB4E8E90A707BE18BD52BEEF"
     },
@@ -8697,6 +8757,12 @@
         "returns": null,
         "parameters": {}
       },
+      "sources": [
+        {
+          "path": "../src/EZapi/GameRunIdentity.cs",
+          "line": 4
+        }
+      ],
       "metadataSource": "public-api.index.json",
       "metadataDllSHA256": "7E4AB675B0E3BD81C56EEC4606731A6880287549EB4E8E90A707BE18BD52BEEF"
     },
@@ -8971,6 +9037,12 @@
         "returns": null,
         "parameters": {}
       },
+      "sources": [
+        {
+          "path": "../src/EZapi/InventoryPlacement.cs",
+          "line": 6
+        }
+      ],
       "metadataSource": "public-api.index.json",
       "metadataDllSHA256": "7E4AB675B0E3BD81C56EEC4606731A6880287549EB4E8E90A707BE18BD52BEEF"
     },
@@ -9414,6 +9486,12 @@
         "returns": null,
         "parameters": {}
       },
+      "sources": [
+        {
+          "path": "../src/EZapi/InventoryServices.cs",
+          "line": 8
+        }
+      ],
       "metadataSource": "public-api.index.json",
       "metadataDllSHA256": "7E4AB675B0E3BD81C56EEC4606731A6880287549EB4E8E90A707BE18BD52BEEF"
     },
@@ -10303,6 +10381,12 @@
         "returns": null,
         "parameters": {}
       },
+      "sources": [
+        {
+          "path": "../src/EZapi/ItemDefinition.cs",
+          "line": 4
+        }
+      ],
       "metadataSource": "public-api.index.json",
       "metadataDllSHA256": "7E4AB675B0E3BD81C56EEC4606731A6880287549EB4E8E90A707BE18BD52BEEF"
     },
@@ -10675,6 +10759,12 @@
         "returns": null,
         "parameters": {}
       },
+      "sources": [
+        {
+          "path": "../src/EZapi/ItemTransfer.cs",
+          "line": 5
+        }
+      ],
       "metadataSource": "public-api.index.json",
       "metadataDllSHA256": "7E4AB675B0E3BD81C56EEC4606731A6880287549EB4E8E90A707BE18BD52BEEF"
     },
@@ -10739,6 +10829,12 @@
         }
       ],
       "documentation": null,
+      "sources": [
+        {
+          "path": "../src/EZapi/ItemDefinition.cs",
+          "line": 131
+        }
+      ],
       "metadataSource": "public-api.index.json",
       "metadataDllSHA256": "7E4AB675B0E3BD81C56EEC4606731A6880287549EB4E8E90A707BE18BD52BEEF"
     },
@@ -10853,6 +10949,12 @@
         "returns": null,
         "parameters": {}
       },
+      "sources": [
+        {
+          "path": "../src/EZapi/Liquids.cs",
+          "line": 6
+        }
+      ],
       "metadataSource": "public-api.index.json",
       "metadataDllSHA256": "7E4AB675B0E3BD81C56EEC4606731A6880287549EB4E8E90A707BE18BD52BEEF"
     },
@@ -10927,6 +11029,12 @@
         "returns": null,
         "parameters": {}
       },
+      "sources": [
+        {
+          "path": "../src/EZapi/LootDefinition.cs",
+          "line": 4
+        }
+      ],
       "metadataSource": "public-api.index.json",
       "metadataDllSHA256": "7E4AB675B0E3BD81C56EEC4606731A6880287549EB4E8E90A707BE18BD52BEEF"
     },
@@ -10988,6 +11096,12 @@
         }
       ],
       "documentation": null,
+      "sources": [
+        {
+          "path": "../src/EZapi/LootDefinition.cs",
+          "line": 10
+        }
+      ],
       "metadataSource": "public-api.index.json",
       "metadataDllSHA256": "7E4AB675B0E3BD81C56EEC4606731A6880287549EB4E8E90A707BE18BD52BEEF"
     },
@@ -11345,6 +11459,12 @@
         }
       ],
       "documentation": null,
+      "sources": [
+        {
+          "path": "../src/EZapi/LootDefinition.cs",
+          "line": 34
+        }
+      ],
       "metadataSource": "public-api.index.json",
       "metadataDllSHA256": "7E4AB675B0E3BD81C56EEC4606731A6880287549EB4E8E90A707BE18BD52BEEF"
     },
@@ -11451,6 +11571,12 @@
         }
       ],
       "documentation": null,
+      "sources": [
+        {
+          "path": "../src/EZapi/LootDefinition.cs",
+          "line": 21
+        }
+      ],
       "metadataSource": "public-api.index.json",
       "metadataDllSHA256": "7E4AB675B0E3BD81C56EEC4606731A6880287549EB4E8E90A707BE18BD52BEEF"
     },
@@ -11515,6 +11641,12 @@
         }
       ],
       "documentation": null,
+      "sources": [
+        {
+          "path": "../src/EZapi/LootDefinition.cs",
+          "line": 15
+        }
+      ],
       "metadataSource": "public-api.index.json",
       "metadataDllSHA256": "7E4AB675B0E3BD81C56EEC4606731A6880287549EB4E8E90A707BE18BD52BEEF"
     },
@@ -11691,6 +11823,12 @@
         "returns": null,
         "parameters": {}
       },
+      "sources": [
+        {
+          "path": "../src/EZapi/MachineAutomation.cs",
+          "line": 8
+        }
+      ],
       "metadataSource": "public-api.index.json",
       "metadataDllSHA256": "7E4AB675B0E3BD81C56EEC4606731A6880287549EB4E8E90A707BE18BD52BEEF"
     },
@@ -11741,6 +11879,12 @@
       "events": [],
       "methods": [],
       "documentation": null,
+      "sources": [
+        {
+          "path": "../src/EZapi/MachineAutomation.cs",
+          "line": 5
+        }
+      ],
       "metadataSource": "public-api.index.json",
       "metadataDllSHA256": "7E4AB675B0E3BD81C56EEC4606731A6880287549EB4E8E90A707BE18BD52BEEF"
     },
@@ -12199,6 +12343,12 @@
         "returns": null,
         "parameters": {}
       },
+      "sources": [
+        {
+          "path": "../src/EZapi/MachineRegistration.cs",
+          "line": 10
+        }
+      ],
       "metadataSource": "public-api.index.json",
       "metadataDllSHA256": "7E4AB675B0E3BD81C56EEC4606731A6880287549EB4E8E90A707BE18BD52BEEF"
     },
@@ -12325,6 +12475,12 @@
         "returns": null,
         "parameters": {}
       },
+      "sources": [
+        {
+          "path": "../src/EZapi/MachineRuntime.cs",
+          "line": 6
+        }
+      ],
       "metadataSource": "public-api.index.json",
       "metadataDllSHA256": "7E4AB675B0E3BD81C56EEC4606731A6880287549EB4E8E90A707BE18BD52BEEF"
     },
@@ -12904,6 +13060,12 @@
         "returns": null,
         "parameters": {}
       },
+      "sources": [
+        {
+          "path": "../src/EZapi/MachineRegistration.cs",
+          "line": 23
+        }
+      ],
       "metadataSource": "public-api.index.json",
       "metadataDllSHA256": "7E4AB675B0E3BD81C56EEC4606731A6880287549EB4E8E90A707BE18BD52BEEF"
     },
@@ -13156,6 +13318,12 @@
         "returns": null,
         "parameters": {}
       },
+      "sources": [
+        {
+          "path": "../src/EZapi/ManufacturingTerminal.cs",
+          "line": 10
+        }
+      ],
       "metadataSource": "public-api.index.json",
       "metadataDllSHA256": "7E4AB675B0E3BD81C56EEC4606731A6880287549EB4E8E90A707BE18BD52BEEF"
     },
@@ -13500,6 +13668,12 @@
         "returns": null,
         "parameters": {}
       },
+      "sources": [
+        {
+          "path": "../src/EZapi/ManufacturingTerminal.cs",
+          "line": 4
+        }
+      ],
       "metadataSource": "public-api.index.json",
       "metadataDllSHA256": "7E4AB675B0E3BD81C56EEC4606731A6880287549EB4E8E90A707BE18BD52BEEF"
     },
@@ -13826,6 +14000,12 @@
         }
       ],
       "documentation": null,
+      "sources": [
+        {
+          "path": "../src/EZapi/NativeHooks.cs",
+          "line": 8
+        }
+      ],
       "metadataSource": "public-api.index.json",
       "metadataDllSHA256": "7E4AB675B0E3BD81C56EEC4606731A6880287549EB4E8E90A707BE18BD52BEEF"
     },
@@ -14224,6 +14404,12 @@
         "returns": null,
         "parameters": {}
       },
+      "sources": [
+        {
+          "path": "../src/EZapi/InventoryServices.cs",
+          "line": 14
+        }
+      ],
       "metadataSource": "public-api.index.json",
       "metadataDllSHA256": "7E4AB675B0E3BD81C56EEC4606731A6880287549EB4E8E90A707BE18BD52BEEF"
     },
@@ -14703,6 +14889,12 @@
         }
       ],
       "documentation": null,
+      "sources": [
+        {
+          "path": "../src/EZapi/InventoryServices.cs",
+          "line": 15
+        }
+      ],
       "metadataSource": "public-api.index.json",
       "metadataDllSHA256": "7E4AB675B0E3BD81C56EEC4606731A6880287549EB4E8E90A707BE18BD52BEEF"
     },
@@ -15042,6 +15234,12 @@
         }
       ],
       "documentation": null,
+      "sources": [
+        {
+          "path": "../src/EZapi/InventoryServices.cs",
+          "line": 18
+        }
+      ],
       "metadataSource": "public-api.index.json",
       "metadataDllSHA256": "7E4AB675B0E3BD81C56EEC4606731A6880287549EB4E8E90A707BE18BD52BEEF"
     },
@@ -15096,6 +15294,12 @@
         }
       ],
       "documentation": null,
+      "sources": [
+        {
+          "path": "../src/EZapi/PackManifest.cs",
+          "line": 14
+        }
+      ],
       "metadataSource": "public-api.index.json",
       "metadataDllSHA256": "7E4AB675B0E3BD81C56EEC4606731A6880287549EB4E8E90A707BE18BD52BEEF"
     },
@@ -15225,6 +15429,12 @@
         "returns": null,
         "parameters": {}
       },
+      "sources": [
+        {
+          "path": "../src/EZapi/PackManifest.cs",
+          "line": 4
+        }
+      ],
       "metadataSource": "public-api.index.json",
       "metadataDllSHA256": "7E4AB675B0E3BD81C56EEC4606731A6880287549EB4E8E90A707BE18BD52BEEF"
     },
@@ -15361,6 +15571,12 @@
         "returns": null,
         "parameters": {}
       },
+      "sources": [
+        {
+          "path": "../src/EZapi/Phone.cs",
+          "line": 7
+        }
+      ],
       "metadataSource": "public-api.index.json",
       "metadataDllSHA256": "7E4AB675B0E3BD81C56EEC4606731A6880287549EB4E8E90A707BE18BD52BEEF"
     },
@@ -15724,6 +15940,12 @@
         "returns": null,
         "parameters": {}
       },
+      "sources": [
+        {
+          "path": "../src/EZapi/PhoneContact.cs",
+          "line": 6
+        }
+      ],
       "metadataSource": "public-api.index.json",
       "metadataDllSHA256": "7E4AB675B0E3BD81C56EEC4606731A6880287549EB4E8E90A707BE18BD52BEEF"
     },
@@ -16107,6 +16329,12 @@
       ],
       "events": [],
       "documentation": null,
+      "sources": [
+        {
+          "path": "../src/EZapi/PhoneContact.cs",
+          "line": 8
+        }
+      ],
       "metadataSource": "public-api.index.json",
       "metadataDllSHA256": "7E4AB675B0E3BD81C56EEC4606731A6880287549EB4E8E90A707BE18BD52BEEF"
     },
@@ -16410,6 +16638,12 @@
         "returns": null,
         "parameters": {}
       },
+      "sources": [
+        {
+          "path": "../src/EZapi/PhoneContact.cs",
+          "line": 4
+        }
+      ],
       "metadataSource": "public-api.index.json",
       "metadataDllSHA256": "7E4AB675B0E3BD81C56EEC4606731A6880287549EB4E8E90A707BE18BD52BEEF"
     },
@@ -16673,6 +16907,12 @@
       ],
       "events": [],
       "documentation": null,
+      "sources": [
+        {
+          "path": "../src/EZapi/PresentationResult.cs",
+          "line": 5
+        }
+      ],
       "metadataSource": "public-api.index.json",
       "metadataDllSHA256": "7E4AB675B0E3BD81C56EEC4606731A6880287549EB4E8E90A707BE18BD52BEEF"
     },
@@ -16802,6 +17042,12 @@
         "returns": null,
         "parameters": {}
       },
+      "sources": [
+        {
+          "path": "../src/EZapi/PresentationResult.cs",
+          "line": 4
+        }
+      ],
       "metadataSource": "public-api.index.json",
       "metadataDllSHA256": "7E4AB675B0E3BD81C56EEC4606731A6880287549EB4E8E90A707BE18BD52BEEF"
     },
@@ -17042,6 +17288,12 @@
         "returns": null,
         "parameters": {}
       },
+      "sources": [
+        {
+          "path": "../src/EZapi/Reading.cs",
+          "line": 6
+        }
+      ],
       "metadataSource": "public-api.index.json",
       "metadataDllSHA256": "7E4AB675B0E3BD81C56EEC4606731A6880287549EB4E8E90A707BE18BD52BEEF"
     },
@@ -17445,6 +17697,12 @@
         "returns": null,
         "parameters": {}
       },
+      "sources": [
+        {
+          "path": "../src/EZapi/MachineRecipeDefinition.cs",
+          "line": 5
+        }
+      ],
       "metadataSource": "public-api.index.json",
       "metadataDllSHA256": "7E4AB675B0E3BD81C56EEC4606731A6880287549EB4E8E90A707BE18BD52BEEF"
     },
@@ -17742,6 +18000,12 @@
         }
       ],
       "documentation": null,
+      "sources": [
+        {
+          "path": "../src/EZapi/MachineRecipeDefinition.cs",
+          "line": 12
+        }
+      ],
       "metadataSource": "public-api.index.json",
       "metadataDllSHA256": "7E4AB675B0E3BD81C56EEC4606731A6880287549EB4E8E90A707BE18BD52BEEF"
     },
@@ -18024,6 +18288,12 @@
         "returns": null,
         "parameters": {}
       },
+      "sources": [
+        {
+          "path": "../src/EZapi/MachineRecipeDefinition.cs",
+          "line": 17
+        }
+      ],
       "metadataSource": "public-api.index.json",
       "metadataDllSHA256": "7E4AB675B0E3BD81C56EEC4606731A6880287549EB4E8E90A707BE18BD52BEEF"
     },
@@ -18711,6 +18981,12 @@
         "returns": null,
         "parameters": {}
       },
+      "sources": [
+        {
+          "path": "../src/EZapi/RunData.cs",
+          "line": 37
+        }
+      ],
       "metadataSource": "public-api.index.json",
       "metadataDllSHA256": "7E4AB675B0E3BD81C56EEC4606731A6880287549EB4E8E90A707BE18BD52BEEF"
     },
@@ -18815,6 +19091,12 @@
         "returns": null,
         "parameters": {}
       },
+      "sources": [
+        {
+          "path": "../src/EZapi/RunPurchase.cs",
+          "line": 8
+        }
+      ],
       "metadataSource": "public-api.index.json",
       "metadataDllSHA256": "7E4AB675B0E3BD81C56EEC4606731A6880287549EB4E8E90A707BE18BD52BEEF"
     },
@@ -18851,6 +19133,12 @@
         "returns": null,
         "parameters": {}
       },
+      "sources": [
+        {
+          "path": "../src/EZapi/RuntimeCapabilities.cs",
+          "line": 44
+        }
+      ],
       "metadataSource": "public-api.index.json",
       "metadataDllSHA256": "7E4AB675B0E3BD81C56EEC4606731A6880287549EB4E8E90A707BE18BD52BEEF"
     },
@@ -19664,6 +19952,12 @@
         "returns": null,
         "parameters": {}
       },
+      "sources": [
+        {
+          "path": "../src/EZapi/RuntimeCapabilities.cs",
+          "line": 16
+        }
+      ],
       "metadataSource": "public-api.index.json",
       "metadataDllSHA256": "7E4AB675B0E3BD81C56EEC4606731A6880287549EB4E8E90A707BE18BD52BEEF"
     },
@@ -19753,6 +20047,12 @@
         "returns": null,
         "parameters": {}
       },
+      "sources": [
+        {
+          "path": "../src/EZapi/SaveReadback.cs",
+          "line": 9
+        }
+      ],
       "metadataSource": "public-api.index.json",
       "metadataDllSHA256": "7E4AB675B0E3BD81C56EEC4606731A6880287549EB4E8E90A707BE18BD52BEEF"
     },
@@ -19860,6 +20160,12 @@
         "returns": null,
         "parameters": {}
       },
+      "sources": [
+        {
+          "path": "../src/EZapi/SaveReadback.cs",
+          "line": 6
+        }
+      ],
       "metadataSource": "public-api.index.json",
       "metadataDllSHA256": "7E4AB675B0E3BD81C56EEC4606731A6880287549EB4E8E90A707BE18BD52BEEF"
     },
@@ -20152,6 +20458,12 @@
         "returns": null,
         "parameters": {}
       },
+      "sources": [
+        {
+          "path": "../src/EZapi/SaveReadback.cs",
+          "line": 26
+        }
+      ],
       "metadataSource": "public-api.index.json",
       "metadataDllSHA256": "7E4AB675B0E3BD81C56EEC4606731A6880287549EB4E8E90A707BE18BD52BEEF"
     },
@@ -20310,6 +20622,12 @@
         "returns": null,
         "parameters": {}
       },
+      "sources": [
+        {
+          "path": "../src/EZapi/SupplierApi.cs",
+          "line": 7
+        }
+      ],
       "metadataSource": "public-api.index.json",
       "metadataDllSHA256": "7E4AB675B0E3BD81C56EEC4606731A6880287549EB4E8E90A707BE18BD52BEEF"
     },
@@ -20989,6 +21307,12 @@
         "returns": null,
         "parameters": {}
       },
+      "sources": [
+        {
+          "path": "../src/EZapi/SupplierDefinition.cs",
+          "line": 24
+        }
+      ],
       "metadataSource": "public-api.index.json",
       "metadataDllSHA256": "7E4AB675B0E3BD81C56EEC4606731A6880287549EB4E8E90A707BE18BD52BEEF"
     },
@@ -21403,6 +21727,12 @@
         "returns": null,
         "parameters": {}
       },
+      "sources": [
+        {
+          "path": "../src/EZapi/SupplierDefinition.cs",
+          "line": 4
+        }
+      ],
       "metadataSource": "public-api.index.json",
       "metadataDllSHA256": "7E4AB675B0E3BD81C56EEC4606731A6880287549EB4E8E90A707BE18BD52BEEF"
     },
@@ -21717,6 +22047,12 @@
         "returns": null,
         "parameters": {}
       },
+      "sources": [
+        {
+          "path": "../src/EZapi/SupplierDefinition.cs",
+          "line": 15
+        }
+      ],
       "metadataSource": "public-api.index.json",
       "metadataDllSHA256": "7E4AB675B0E3BD81C56EEC4606731A6880287549EB4E8E90A707BE18BD52BEEF"
     },
@@ -22099,6 +22435,12 @@
       ],
       "events": [],
       "documentation": null,
+      "sources": [
+        {
+          "path": "../src/EZapi/Transactions.cs",
+          "line": 10
+        }
+      ],
       "metadataSource": "public-api.index.json",
       "metadataDllSHA256": "7E4AB675B0E3BD81C56EEC4606731A6880287549EB4E8E90A707BE18BD52BEEF"
     },
@@ -22179,6 +22521,12 @@
       "interfaces": [],
       "events": [],
       "documentation": null,
+      "sources": [
+        {
+          "path": "../src/EZapi/Transactions.cs",
+          "line": 9
+        }
+      ],
       "metadataSource": "public-api.index.json",
       "metadataDllSHA256": "7E4AB675B0E3BD81C56EEC4606731A6880287549EB4E8E90A707BE18BD52BEEF"
     },
@@ -22512,6 +22860,12 @@
         "returns": null,
         "parameters": {}
       },
+      "sources": [
+        {
+          "path": "../src/EZapi/Transactions.cs",
+          "line": 8
+        }
+      ],
       "metadataSource": "public-api.index.json",
       "metadataDllSHA256": "7E4AB675B0E3BD81C56EEC4606731A6880287549EB4E8E90A707BE18BD52BEEF"
     },
@@ -22555,6 +22909,12 @@
         "returns": null,
         "parameters": {}
       },
+      "sources": [
+        {
+          "path": "../src/EZapi/Transactions.cs",
+          "line": 22
+        }
+      ],
       "metadataSource": "public-api.index.json",
       "metadataDllSHA256": "7E4AB675B0E3BD81C56EEC4606731A6880287549EB4E8E90A707BE18BD52BEEF"
     },
@@ -22639,6 +22999,12 @@
         "returns": null,
         "parameters": {}
       },
+      "sources": [
+        {
+          "path": "../src/EZapi/SpriteAssets.cs",
+          "line": 8
+        }
+      ],
       "metadataSource": "public-api.index.json",
       "metadataDllSHA256": "7E4AB675B0E3BD81C56EEC4606731A6880287549EB4E8E90A707BE18BD52BEEF"
     },
@@ -22920,6 +23286,12 @@
         "returns": null,
         "parameters": {}
       },
+      "sources": [
+        {
+          "path": "../src/EZapi/SpriteAssets.cs",
+          "line": 59
+        }
+      ],
       "metadataSource": "public-api.index.json",
       "metadataDllSHA256": "7E4AB675B0E3BD81C56EEC4606731A6880287549EB4E8E90A707BE18BD52BEEF"
     },
@@ -23304,6 +23676,12 @@
         "returns": null,
         "parameters": {}
       },
+      "sources": [
+        {
+          "path": "../src/EZapi/EmbeddedSpriteDefinition.cs",
+          "line": 16
+        }
+      ],
       "metadataSource": "public-api.index.json",
       "metadataDllSHA256": "7E4AB675B0E3BD81C56EEC4606731A6880287549EB4E8E90A707BE18BD52BEEF"
     },
@@ -23356,6 +23734,12 @@
         "returns": null,
         "parameters": {}
       },
+      "sources": [
+        {
+          "path": "../src/EZapi/EmbeddedSpriteDefinition.cs",
+          "line": 6
+        }
+      ],
       "metadataSource": "public-api.index.json",
       "metadataDllSHA256": "7E4AB675B0E3BD81C56EEC4606731A6880287549EB4E8E90A707BE18BD52BEEF"
     },
@@ -23638,6 +24022,12 @@
         "returns": null,
         "parameters": {}
       },
+      "sources": [
+        {
+          "path": "../src/EZapi/PowerBatchMath.cs",
+          "line": 4
+        }
+      ],
       "metadataSource": "public-api.index.json",
       "metadataDllSHA256": "7E4AB675B0E3BD81C56EEC4606731A6880287549EB4E8E90A707BE18BD52BEEF"
     },
@@ -23943,6 +24333,12 @@
         "returns": null,
         "parameters": {}
       },
+      "sources": [
+        {
+          "path": "../src/EZapi/PowerBatchMath.cs",
+          "line": 7
+        }
+      ],
       "metadataSource": "public-api.index.json",
       "metadataDllSHA256": "7E4AB675B0E3BD81C56EEC4606731A6880287549EB4E8E90A707BE18BD52BEEF"
     },
@@ -24000,6 +24396,12 @@
         "returns": null,
         "parameters": {}
       },
+      "sources": [
+        {
+          "path": "../src/EZapi/PowerBatchMath.cs",
+          "line": 12
+        }
+      ],
       "metadataSource": "public-api.index.json",
       "metadataDllSHA256": "7E4AB675B0E3BD81C56EEC4606731A6880287549EB4E8E90A707BE18BD52BEEF"
     },
@@ -24421,6 +24823,12 @@
         "returns": null,
         "parameters": {}
       },
+      "sources": [
+        {
+          "path": "../src/EZapi/LocalizedItemText.cs",
+          "line": 4
+        }
+      ],
       "metadataSource": "public-api.index.json",
       "metadataDllSHA256": "7E4AB675B0E3BD81C56EEC4606731A6880287549EB4E8E90A707BE18BD52BEEF"
     },
@@ -24999,6 +25407,12 @@
         "returns": null,
         "parameters": {}
       },
+      "sources": [
+        {
+          "path": "../src/EZapi/NativeItems.cs",
+          "line": 9
+        }
+      ],
       "metadataSource": "public-api.index.json",
       "metadataDllSHA256": "7E4AB675B0E3BD81C56EEC4606731A6880287549EB4E8E90A707BE18BD52BEEF"
     },
@@ -25281,6 +25695,12 @@
         "returns": null,
         "parameters": {}
       },
+      "sources": [
+        {
+          "path": "../src/EZapi/PresentationApi.cs",
+          "line": 8
+        }
+      ],
       "metadataSource": "public-api.index.json",
       "metadataDllSHA256": "7E4AB675B0E3BD81C56EEC4606731A6880287549EB4E8E90A707BE18BD52BEEF"
     },
@@ -25536,6 +25956,12 @@
         "returns": null,
         "parameters": {}
       },
+      "sources": [
+        {
+          "path": "../src/EZapi/MachineRecipeDefinition.cs",
+          "line": 50
+        }
+      ],
       "metadataSource": "public-api.index.json",
       "metadataDllSHA256": "7E4AB675B0E3BD81C56EEC4606731A6880287549EB4E8E90A707BE18BD52BEEF"
     },
@@ -25664,6 +26090,16 @@
         "returns": null,
         "parameters": {}
       },
+      "sources": [
+        {
+          "path": "../src/EZapi/MachineLayoutCallbacks.cs",
+          "line": 5
+        },
+        {
+          "path": "../src/EZapi/MachineLayoutDefinition.cs",
+          "line": 8
+        }
+      ],
       "metadataSource": "public-api.index.json",
       "metadataDllSHA256": "7E4AB675B0E3BD81C56EEC4606731A6880287549EB4E8E90A707BE18BD52BEEF"
     },
@@ -25756,6 +26192,16 @@
       "interfaces": [],
       "events": [],
       "documentation": null,
+      "sources": [
+        {
+          "path": "../src/EZapi/MachineLayoutCallbacks.cs",
+          "line": 12
+        },
+        {
+          "path": "../src/EZapi/MachineLayoutDefinition.cs",
+          "line": 26
+        }
+      ],
       "metadataSource": "public-api.index.json",
       "metadataDllSHA256": "7E4AB675B0E3BD81C56EEC4606731A6880287549EB4E8E90A707BE18BD52BEEF"
     },
@@ -25836,6 +26282,12 @@
         "returns": null,
         "parameters": {}
       },
+      "sources": [
+        {
+          "path": "../src/EZapi/MachineContainerConditions.cs",
+          "line": 12
+        }
+      ],
       "metadataSource": "public-api.index.json",
       "metadataDllSHA256": "7E4AB675B0E3BD81C56EEC4606731A6880287549EB4E8E90A707BE18BD52BEEF"
     },
@@ -26199,6 +26651,12 @@
         "returns": null,
         "parameters": {}
       },
+      "sources": [
+        {
+          "path": "../src/EZapi/MachineContainerConditions.cs",
+          "line": 6
+        }
+      ],
       "metadataSource": "public-api.index.json",
       "metadataDllSHA256": "7E4AB675B0E3BD81C56EEC4606731A6880287549EB4E8E90A707BE18BD52BEEF"
     },
@@ -26251,6 +26709,12 @@
         "returns": null,
         "parameters": {}
       },
+      "sources": [
+        {
+          "path": "../src/EZapi/MachineRecipeDefinition.cs",
+          "line": 59
+        }
+      ],
       "metadataSource": "public-api.index.json",
       "metadataDllSHA256": "7E4AB675B0E3BD81C56EEC4606731A6880287549EB4E8E90A707BE18BD52BEEF"
     },
@@ -26660,6 +27124,12 @@
         "returns": null,
         "parameters": {}
       },
+      "sources": [
+        {
+          "path": "../src/EZapi/MachineRecipeDefinition.cs",
+          "line": 64
+        }
+      ],
       "metadataSource": "public-api.index.json",
       "metadataDllSHA256": "7E4AB675B0E3BD81C56EEC4606731A6880287549EB4E8E90A707BE18BD52BEEF"
     },
@@ -27195,6 +27665,12 @@
         "returns": null,
         "parameters": {}
       },
+      "sources": [
+        {
+          "path": "../src/EZapi/RecipeGuideDefinition.cs",
+          "line": 13
+        }
+      ],
       "metadataSource": "public-api.index.json",
       "metadataDllSHA256": "7E4AB675B0E3BD81C56EEC4606731A6880287549EB4E8E90A707BE18BD52BEEF"
     },
@@ -27634,6 +28110,12 @@
         "returns": null,
         "parameters": {}
       },
+      "sources": [
+        {
+          "path": "../src/EZapi/RecipeGuideDefinition.cs",
+          "line": 6
+        }
+      ],
       "metadataSource": "public-api.index.json",
       "metadataDllSHA256": "7E4AB675B0E3BD81C56EEC4606731A6880287549EB4E8E90A707BE18BD52BEEF"
     },
@@ -27919,6 +28401,12 @@
         }
       ],
       "documentation": null,
+      "sources": [
+        {
+          "path": "../src/EZapi/RecipeGuideDefinition.cs",
+          "line": 19
+        }
+      ],
       "metadataSource": "public-api.index.json",
       "metadataDllSHA256": "7E4AB675B0E3BD81C56EEC4606731A6880287549EB4E8E90A707BE18BD52BEEF"
     }
@@ -30173,10 +30661,5 @@
   "languageGuide": "game-language.index.json",
   "dialogueLocalizationGuide": "dialogue-localization.index.json",
   "embeddedTypeMetadataPolicy": "Embedded types are regenerated from the compiled full public index; domain contract prose is retained. Full index is authoritative for all declarations.",
-  "itemData": "item-data.index.json",
-  "distributionVerification": {
-    "dllSHA256": "7E4AB675B0E3BD81C56EEC4606731A6880287549EB4E8E90A707BE18BD52BEEF",
-    "nativeRuntimeVerified": false,
-    "frameworkSourceIncluded": false
-  }
+  "itemData": "item-data.index.json"
 }

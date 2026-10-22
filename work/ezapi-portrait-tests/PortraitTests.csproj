@@ -1,0 +1,10 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup><OutputType>Exe</OutputType><TargetFramework>net8.0</TargetFramework><ImplicitUsings>enable</ImplicitUsings><Nullable>enable</Nullable></PropertyGroup>
+  <ItemGroup>
+    <Compile Include="../../src/EZapi/SpriteAssets.cs" Link="Real/SpriteAssets.cs" />
+    <Compile Include="../../src/EZapi/PortraitSprites.cs" Link="Real/PortraitSprites.cs" />
+    <Compile Include="../../src/EZapi/EmbeddedSpriteDefinition.cs" Link="Real/EmbeddedSpriteDefinition.cs" />
+    <Compile Include="../../src/EZapi/PngAssetHeader.cs" Link="Real/PngAssetHeader.cs" />
+    <EmbeddedResource Include="../../src/EZapi.Sample/Textures/Items/field_kit.png" LogicalName="portrait.fixture.png" />
+  </ItemGroup>
+</Project>

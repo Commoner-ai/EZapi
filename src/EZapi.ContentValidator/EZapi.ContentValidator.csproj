@@ -1,0 +1,15 @@
+<Project Sdk="Microsoft.NET.Sdk">
+<PropertyGroup><OutputType>Exe</OutputType><TargetFramework>net8.0</TargetFramework><AssemblyName>ezapi-validate</AssemblyName><Nullable>enable</Nullable><ImplicitUsings>enable</ImplicitUsings></PropertyGroup>
+<ItemGroup><Compile Include="../EZapi/ItemDefinition.cs" Link="Shared/ItemDefinition.cs"/><Compile Include="../EZapi/DefinitionRules.cs" Link="Shared/DefinitionRules.cs"/><Compile Include="../EZapi/JsonItems.cs" Link="Shared/JsonItems.cs"/></ItemGroup>
+<ItemGroup><Compile Include="../EZapi/LootDefinition.cs" Link="Shared/LootDefinition.cs"/><Compile Include="../EZapi/JsonLoot.cs" Link="Shared/JsonLoot.cs"/></ItemGroup>
+<ItemGroup><Compile Include="../EZapi/FrameworkInfo.cs" Link="Shared/FrameworkInfo.cs" /><Compile Include="../EZapi/SaveReadback.cs" Link="Shared/SaveReadback.cs" /></ItemGroup>
+<ItemGroup><Compile Include="../EZapi/PackManifest.cs" Link="Shared/PackManifest.cs" /></ItemGroup>
+<ItemGroup><Compile Include="../EZapi/PngAssets.cs" Link="Shared/PngAssets.cs"/><Compile Include="../EZapi/PngAssetHeader.cs" Link="Shared/PngAssetHeader.cs"/></ItemGroup>
+<ItemGroup><Compile Include="../EZapi/ContentPacks.cs" Link="Shared/ContentPacks.cs" /></ItemGroup>
+<ItemGroup><Compile Include="../EZapi/Localization.cs" Link="Shared/Localization.cs" /></ItemGroup>
+<ItemGroup><Compile Include="../EZapi/MachineLayoutDefinition.cs" Link="Shared/MachineLayoutDefinition.cs"/><Compile Include="../EZapi/RecipeGuideDefinition.cs" Link="Shared/RecipeGuideDefinition.cs"/></ItemGroup><ItemGroup><Compile Include="../EZapi/NpcStockDefinition.cs" Link="Shared/NpcStockDefinition.cs" /></ItemGroup><ItemGroup><Compile Include="../EZapi/Registration.cs" Link="Shared/Registration.cs"/><Compile Include="../EZapi/RegistrationBatch.cs" Link="Shared/RegistrationBatch.cs"/><Compile Include="../EZapi/JsonRegistration.cs" Link="Shared/JsonRegistration.cs"/></ItemGroup><ItemGroup><Compile Include="../EZapi/LocalizedItemText.cs" Link="Shared/LocalizedItemText.cs" /></ItemGroup><ItemGroup>
+<Compile Include="../EZapi/GameRunIdentity.cs" Link="Shared/GameRunIdentity.cs" />
+<Compile Include="../EZapi/ReadableIds.cs" Link="Shared/ReadableIds.cs" />
+<Compile Include="../EZapi/Requirements.cs" Link="Shared/Requirements.cs" />
+</ItemGroup>
+<ItemGroup><Compile Include="../EZapi/ItemText.cs" Link="Shared/ItemText.cs" /></ItemGroup></Project>
