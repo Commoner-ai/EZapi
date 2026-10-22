@@ -1,0 +1,193 @@
+{
+  "schemaVersion": 1,
+  "title": {
+    "chinese": "电脑装配 · 布局预览",
+    "english": "Computer assembly · layout preview"
+  },
+  "root": {
+    "id": "root",
+    "kind": "Column",
+    "padding": 6,
+    "gap": 6,
+    "children": [
+      {
+        "id": "parts.row1",
+        "kind": "Row",
+        "gap": 8,
+        "vertical": "Start",
+        "children": [
+          {
+            "id": "cpu",
+            "kind": "Column",
+            "horizontal": "Center",
+            "gap": 3,
+            "children": [
+              {
+                "id": "cpu.label",
+                "kind": "Tag",
+                "width": 100,
+                "height": 16,
+                "horizontal": "Center",
+                "vertical": "Center",
+                "wrap": false,
+                "text": {
+                  "chinese": "处理器",
+                  "english": "Processor"
+                }
+              },
+              {
+                "id": "cpu.slot",
+                "kind": "Slot",
+                "columns": 4,
+                "rows": 2
+              }
+            ]
+          },
+          {
+            "id": "ram",
+            "kind": "Column",
+            "horizontal": "Center",
+            "gap": 3,
+            "children": [
+              {
+                "id": "ram.label",
+                "kind": "Tag",
+                "width": 100,
+                "height": 16,
+                "horizontal": "Center",
+                "vertical": "Center",
+                "wrap": false,
+                "text": {
+                  "chinese": "内存",
+                  "english": "Memory"
+                }
+              },
+              {
+                "id": "ram.slot",
+                "kind": "Slot",
+                "columns": 4,
+                "rows": 2
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "parts.row2",
+        "kind": "Row",
+        "gap": 8,
+        "vertical": "Start",
+        "children": [
+          {
+            "id": "gpu",
+            "kind": "Column",
+            "horizontal": "Center",
+            "gap": 3,
+            "children": [
+              {
+                "id": "gpu.label",
+                "kind": "Tag",
+                "width": 100,
+                "height": 16,
+                "horizontal": "Center",
+                "vertical": "Center",
+                "wrap": false,
+                "text": {
+                  "chinese": "显卡",
+                  "english": "Graphics"
+                }
+              },
+              {
+                "id": "gpu.slot",
+                "kind": "Slot",
+                "columns": 4,
+                "rows": 2
+              }
+            ]
+          },
+          {
+            "id": "disk",
+            "kind": "Column",
+            "horizontal": "Center",
+            "gap": 3,
+            "children": [
+              {
+                "id": "disk.label",
+                "kind": "Tag",
+                "width": 100,
+                "height": 16,
+                "horizontal": "Center",
+                "vertical": "Center",
+                "wrap": false,
+                "text": {
+                  "chinese": "硬盘",
+                  "english": "Storage"
+                }
+              },
+              {
+                "id": "disk.slot",
+                "kind": "Slot",
+                "columns": 4,
+                "rows": 2
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "usb",
+        "kind": "Column",
+        "horizontal": "Center",
+        "gap": 3,
+        "children": [
+          {
+            "id": "usb.label",
+            "kind": "Tag",
+            "width": 208,
+            "height": 16,
+            "horizontal": "Center",
+            "vertical": "Center",
+            "wrap": false,
+            "text": {
+              "chinese": "USB",
+              "english": "USB"
+            }
+          },
+          {
+            "id": "usb.slot",
+            "kind": "Slot",
+            "columns": 3,
+            "rows": 1
+          }
+        ]
+      },
+      {
+        "id": "status",
+        "kind": "Label",
+        "width": 208,
+        "height": 48,
+        "horizontal": "Start",
+        "vertical": "Center",
+        "wrap": true,
+        "text": {
+          "chinese": "待安装：处理器、内存、显卡、硬盘。\n店铺网络：未联网。",
+          "english": "Needed: CPU, memory,\ngraphics and storage.\nNetwork: disconnected."
+        }
+      },
+      {
+        "id": "start",
+        "kind": "Button",
+        "width": 208,
+        "height": 20,
+        "horizontal": "Center",
+        "vertical": "Center",
+        "wrap": false,
+        "text": {
+          "chinese": "启动电脑",
+          "english": "Start computer"
+        }
+      }
+    ],
+    "horizontal": "Center"
+  }
+}

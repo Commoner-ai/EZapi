@@ -15,7 +15,7 @@ docs = root/'docs'
 status = json.loads((docs/'release-status.json').read_text(encoding='utf-8-sig'))
 assert status['nativeRuntimeVerified'] is False
 assert status['license'] == 'MIT'
-assert status['offlineVerification']['offlineSuitesPassed'] == 59
+assert status['offlineVerification']['offlineSuitesPassed'] == 60
 assert status['offlineVerification']['cliProcessChecksPassed'] == 25
 tag, version = status['releaseTag'], status['assemblyVersion']
 errors = []
@@ -134,9 +134,23 @@ assert schema['items']['properties']['tooltip']['properties']['showSource']['def
 for lang in ['zh-CN', 'en']:
     assert 'tooltip-style' in (docs/f'AI-START-HERE.{lang}.md').read_text(encoding='utf-8-sig')
 tool_dir = root/('distribution' if (root/'distribution/New-EZapiMod.ps1').is_file() else 'developer-tools')
-for name in ['New-EZapiMod.ps1', 'Find-EZapiApi.ps1']:
+for name in ['New-EZapiMod.ps1', 'Find-EZapiApi.ps1', 'Set-EZapiUiPreview.ps1']:
     assert (tool_dir/name).is_file(), name
     assert (tool_dir/name).read_bytes().startswith(b'\xef\xbb\xbf'), 'PowerShell 5.1 UTF-8 BOM required: '+name
+# Native layout recipes and schema are shipped to AI consumers together. This
+# checks their distribution contract, not the actual game font or rendering.
+ui = json.loads((docs/'native-ui-preview.index.json').read_text(encoding='utf-8-sig'))
+ui_schema = json.loads((root/'schemas/native-ui.schema.json').read_text(encoding='utf-8-sig'))
+assert len(ui['templates']) == 3
+assert ui['limits'] == {'bytes': 65536, 'nodes': 128, 'depth': 12, 'width': 1024, 'height': 768, 'inspectedTextNodes': 256}
+assert ui_schema['$defs']['node']['properties']['vertical']['default'] == 'Center'
+for rel in ui['templates']:
+    recipe = json.loads((docs/rel).read_text(encoding='utf-8-sig'))
+    assert recipe['schemaVersion'] == 1 and recipe['title']['chinese'] and recipe['title']['english']
+    assert recipe['root']['kind'] == 'Column'
+assert (docs/ui['example']).is_file()
+for lang in ['zh-CN', 'en']:
+    assert 'native-ui-preview' in (docs/f'AI-START-HERE.{lang}.md').read_text(encoding='utf-8-sig')
 assert not errors, json.dumps(errors, ensure_ascii=False, indent=2)
 print(json.dumps({'passed': True, 'releaseTag': tag, 'indexesChecked': indexes,
                   'markdownPagesChecked': len(pages), 'localLinksChecked': links,

@@ -3,10 +3,10 @@ namespace EZapi;
 /// <summary>框架声明契约。能力表示入口已实现，不表示玩家已验证对应游戏行为。</summary>
 public static class FrameworkInfo
 {
-    public const string Version = "0.1.74";
+    public const string Version = "0.1.76";
     public const string JsonProtocolVersion = "0.1";
     private static readonly IReadOnlyList<FrameworkCapability> Capabilities = Array.AsReadOnly(new[] {
-        "localization.game-language", "progression.readonly", "requirements.declarative", "logging.per-mod", "input.window-capture", "machines.terminal-id-normalization", "registration.batches", "items.register", "items.json", "items.png", "assets.embedded-sprite-atlas", "items.rectangle", "items.shape-mask", "items.text",
+        "presentation.native-ui-components", "debug.native-ui-preview", "localization.game-language", "progression.readonly", "requirements.declarative", "logging.per-mod", "input.window-capture", "machines.terminal-id-normalization", "registration.batches", "items.register", "items.json", "items.png", "assets.embedded-sprite-atlas", "items.rectangle", "items.shape-mask", "items.text",
         "items.types", "items.custom-type-names", "items.tags", "items.use-count", "items.contraband",
         "items.native-flags", "items.sound-ids", "items.npc-stock", "tooltip.lines", "tooltip.labels", "tooltip.source-once",
         "debug.overlay", "debug.native-check", "diagnostics", "items.activation.json", "items.activation.csharp",

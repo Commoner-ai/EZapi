@@ -1,30 +1,23 @@
 # EZapi 当前版本与验收状态
 
-当前预发布 **0.1.74-preview.2**，程序集 **0.1.74**，许可证 **MIT**。框架源码、测试、构建脚本和文档已公开。两个二进制包仍单独分发：玩家只安装一份 Mods/EZapi.dll；开发包包含调用资料、校验器和进入游戏工具，调试默认关闭。
+当前预发布 **0.1.76-preview.1**，程序集 **0.1.76**，许可证 **MIT**。玩家包仅一份 `Mods/EZapi.dll`；开发包提供同一 DLL、XML 注释、校验器、文档、示例和进入游戏脚本，调试默认关闭。框架源码在 GitHub 单独获取。
+
+本版增加[原生 UI 积木与 AI 布局预览](native-ui-preview.zh-CN.md)，以及双语开发面板和显式测试档绑定。JSON 可重载真实原生窗口，报告实际字体、字号、对齐、换行、文字溢出和控件坐标。已有 Mod 窗口可用只读 InspectWindow 检查。
 
 | 项目 | 当前结论 |
 | --- | --- |
-| 源码构建及构建后封装 | 已通过 |
-| 离线源代码链接测试 | 59 组通过 |
-| 校验器独立进程检查 | 25 项通过 |
-| 参考功能覆盖 | 39 组实现；此数字不代表全部开发完成或实机验收 |
-| 当前 DLL 实机 UI、Mod 组合、保存重载 | **尚未完成验收** |
+| 正式工程与独立 DLL 调用示例 | 编译验证 |
+| 源码链接离线测试 | 60 组；另有 25 项 CLI 独立进程检查 |
+| 参考功能覆盖 | 39 组实现；不代表全部开发完成或实机验收 |
+| 当前 DLL 局部原生 UI 和中英回归 | 421项通过、0项失败；见 scopedNativeObservations |
+| 全框架、组合 Mod 和当前 DLL 保存重载 | **仍待验收** |
 
-当前运行 DLL SHA256：`FE6DE81903D1F3A1234031C193D0F5678B17D99949AB24A47DCAB52958DFCA55`。[王尔德人脉网络浏览器](wild-network.zh-CN.md)在preview.1加入，本次继续使用相同DLL。用户已确认悬停/点击定位、详情与常驻竖向滚动条正常，并显示现有搜打撤 Mod 的黑客条目；这些是局部 UI 反馈，不代表框架全部实机验收。离线检查证明其声明、算法及替身边界，不能证明游戏内实际执行结果。
+准确 DLL 哈希与验收范围统一读取 [release-status.json](release-status.json)。几何与字体检查不代表机器加工、任意 Mod 兼容或保存正确。此次测试使用显式绑定的可丢弃档与临时窗口，不请求保存。
 
-## 当前资料入口
+- [AI 开发入口](AI-START-HERE.zh-CN.md)、[公开 API 完整签名](public-api.index.json)、[任务索引](developer-workflows.index.json)、[源码索引](source.index.json)。
+- [安装与可选调试](install-and-debug.zh-CN.md)、[源码构建](build-from-source.zh-CN.md)、[游戏自动化](automation.zh-CN.md)。
+- [可选原版 Tooltip 规范](tooltip-style.zh-CN.md)、[物品美术参考](item-art.zh-CN.md)、[兼容性边界](compatibility.md)。
 
-本次为文档与开发工具修订：新增[可选原版 Tooltip 规范](tooltip-style.zh-CN.md)、JSON/DLL示例和离线起步/查询工具，运行DLL与preview.1相同。新增示例仅完成离线校验/编译，没有新增游戏内视觉或保存重载证据。
+[历史目录](history/README.md)及旧版发布说明只证明对应 DLL。0.1.74 的王尔德界面反馈、0.1.75 的中英回归、0.1.72 的 415 项检查均不得转移为本版证据。私人原始日志、存档和内部审计资料不分发。
 
-- [安装与可选调试](install-and-debug.zh-CN.md)、[源码构建](build-from-source.zh-CN.md)、[自动进入游戏](automation.zh-CN.md)。
-- [AI 开发入口](AI-START-HERE.zh-CN.md)、[公开 API 签名](public-api.index.json)、[任务索引](developer-workflows.index.json)、[领域源码索引](source.index.json)。
-- [兼容性边界](compatibility.md)、[官方接口映射](official-api-map.zh-CN.md)、[功能覆盖](FORGE-PARITY.zh-CN.md)。
-- [机器可读状态](release-status.json)：当前发布版本、DLL 哈希、验证范围的统一入口。
-
-## 如何阅读历史证据
-
-[历史记录目录](history/README.md) 保存按旧版本撰写的阶段报告。415 项中英检查属于 0.1.72 的历史 DLL `4238A189B36CEC4C55E88CC70E05E9086EC935412B13CF701671405A12E63274`；其结果不会转移到本版。历史记录中的“本版”“当前”“已通过”和存档数量均只指当时记录的版本与测试范围。
-
-公开资料不附带历史私人日志、存档或内部审计产物。对这些文件只保留历史标识及“未公开”说明，不再提供失效下载链接。当前 API 的准确信号以公开签名、当前指南和实际返回值为准；旧报告不覆盖新指南。
-
-开发包保留[可选物品美术参考](item-art.zh-CN.md)：96张原版参考、8张分类图和中英AI提示词。原版美术保留独立权属；美术参考保持可选。
+开发包保留 96 张可选原版美术参考与中英 AI 提示词；原版美术保留独立权属，不按 EZapi MIT 授权。

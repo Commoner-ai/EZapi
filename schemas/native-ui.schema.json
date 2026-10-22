@@ -1,0 +1,304 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "EZapi native UI preview layout",
+  "description": "Editor aid. Runtime additionally enforces 64 KiB, 128 nodes, depth 12, unique IDs and child geometry. JSON field and enum names are case insensitive at runtime; this schema documents canonical spelling.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "root"
+  ],
+  "properties": {
+    "schemaVersion": {
+      "const": 1,
+      "default": 1
+    },
+    "title": {
+      "allOf": [
+        {
+          "$ref": "#/$defs/text"
+        },
+        {
+          "properties": {
+            "chinese": {
+              "maxLength": 160
+            },
+            "english": {
+              "maxLength": 160
+            }
+          }
+        }
+      ]
+    },
+    "root": {
+      "$ref": "#/$defs/node"
+    }
+  },
+  "$defs": {
+    "text": {
+      "type": "object",
+      "additionalProperties": false,
+      "anyOf": [
+        {
+          "required": [
+            "chinese"
+          ],
+          "properties": {
+            "chinese": {
+              "type": "string"
+            }
+          }
+        },
+        {
+          "required": [
+            "english"
+          ],
+          "properties": {
+            "english": {
+              "type": "string"
+            }
+          }
+        }
+      ],
+      "properties": {
+        "chinese": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "minLength": 1,
+          "maxLength": 2048
+        },
+        "english": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "minLength": 1,
+          "maxLength": 2048
+        }
+      },
+      "description": "At least one readable non-null language required. Missing side falls back. CSV keys unsupported here."
+    },
+    "align": {
+      "enum": [
+        "Start",
+        "Center",
+        "End"
+      ]
+    },
+    "node": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "id",
+        "kind"
+      ],
+      "properties": {
+        "id": {
+          "type": "string",
+          "pattern": "^[A-Za-z0-9._-]{1,100}$"
+        },
+        "kind": {
+          "enum": [
+            "Row",
+            "Column",
+            "Frame",
+            "Label",
+            "Tag",
+            "Button",
+            "Inventory",
+            "Slot",
+            "Spacer"
+          ]
+        },
+        "width": {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 1024,
+          "default": 0
+        },
+        "height": {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 768,
+          "default": 0
+        },
+        "gap": {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 64,
+          "default": 4
+        },
+        "padding": {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 64,
+          "default": 0
+        },
+        "horizontal": {
+          "$ref": "#/$defs/align",
+          "default": "Start"
+        },
+        "vertical": {
+          "$ref": "#/$defs/align",
+          "default": "Center"
+        },
+        "reverse": {
+          "type": "boolean",
+          "default": false
+        },
+        "text": {
+          "$ref": "#/$defs/text"
+        },
+        "fontSize": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "minimum": 4,
+          "maximum": 24
+        },
+        "wrap": {
+          "type": "boolean",
+          "default": false
+        },
+        "columns": {
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 32,
+          "default": 1
+        },
+        "rows": {
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 32,
+          "default": 1
+        },
+        "children": {
+          "type": "array",
+          "maxItems": 127,
+          "items": {
+            "$ref": "#/$defs/node"
+          }
+        }
+      },
+      "allOf": [
+        {
+          "if": {
+            "properties": {
+              "kind": {
+                "enum": [
+                  "Label",
+                  "Tag",
+                  "Button"
+                ]
+              }
+            }
+          },
+          "then": {
+            "required": [
+              "text",
+              "width",
+              "height"
+            ],
+            "properties": {
+              "width": {
+                "minimum": 5
+              },
+              "height": {
+                "minimum": 1
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "kind": {
+                "const": "Tag"
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "height": {
+                "minimum": 16
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "kind": {
+                "const": "Frame"
+              }
+            }
+          },
+          "then": {
+            "required": [
+              "children"
+            ],
+            "properties": {
+              "children": {
+                "minItems": 1,
+                "maxItems": 1
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "kind": {
+                "enum": [
+                  "Row",
+                  "Column"
+                ]
+              }
+            }
+          },
+          "then": {
+            "required": [
+              "children"
+            ],
+            "properties": {
+              "children": {
+                "minItems": 1
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "kind": {
+                "enum": [
+                  "Label",
+                  "Tag",
+                  "Button",
+                  "Inventory",
+                  "Slot",
+                  "Spacer"
+                ]
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "children": {
+                "maxItems": 0
+              },
+              "padding": {
+                "const": 0
+              },
+              "reverse": {
+                "const": false
+              }
+            }
+          }
+        }
+      ]
+    }
+  }
+}

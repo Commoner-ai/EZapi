@@ -10,5 +10,5 @@ namespace EZapi {
   internal static bool TryPresentation(string id,out ItemDefinition d){d=null!;return false;}
   internal static IEnumerable<DebugItemRow> DebugRows()=>Array.Empty<DebugItemRow>();
  }
- internal static class NativeItemLocalization { internal static string CurrentLocaleCode=>"en"; }
+ internal static class NativeItemLocalization { internal static string CurrentLocaleCode=>"en"; internal static bool IsEnglish=>true; }
 }

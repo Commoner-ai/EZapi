@@ -6,7 +6,7 @@
 
 An independent **Probably Stolen** Mod framework: DLL APIs, declarative JSON packs, an offline validator, buildable examples and machine-readable AI indexes. Prefer official game APIs. No Forge runtime dependency or bundled game assemblies.
 
-**0.1.74-preview.2** is a prerelease, with assembly version 0.1.74. Reference functionality has 39 implemented groups; this is not a promise of binary compatibility or complete gameplay validation.
+**0.1.76-preview.1** is a prerelease, with assembly version 0.1.76. Reference functionality has 39 implemented groups; this is not a promise of binary compatibility or complete gameplay validation.
 
 **MIT open source:** framework implementation, offline validator, tests, build tooling, documentation and examples are available here. Older private history is not imported. See [build from source](docs/build-from-source.en.md).
 
@@ -39,7 +39,7 @@ dotnet build docs/examples/minimal-dll/SimpleMod.csproj -c Release -p:GameDir='<
 
 Language follows game settings. Additional CSV locales remain supported with English/author fallback; Chinese/English are priority acceptance locales. Official docs: [probably-stolen-modding](https://github.com/dragonpan2/probably-stolen-modding). Build and reference-fetch scripts are available in this repository.
 
-This SDK revision adds Tooltip documentation, consumer examples and offline developer tools while keeping the preview.1 runtime unchanged. That runtime provides the Wild network browser with native cards, category tabs, search and a permanent vertical scrollbar. Earlier native language/save evidence remains tied to its historical hash. Offline verification is not native gameplay verification. See [release notes](docs/releases/0.1.74-preview.2.md).
+This runtime adds native UI components, reloadable JSON preview, actual-font measurements and bilingual developer tools. Start with the [native UI guide](docs/native-ui-preview.en.md). Current scoped observations are recorded separately from 60 offline suites and 25 CLI checks. Full framework, mixed-Mod and save/reload acceptance remain pending; historical DLL results never transfer. See [release notes](docs/releases/0.1.76-preview.1.md).
 
 See the MIT LICENSE for source and binary reuse, and THIRD-PARTY-NOTICES.md for dependencies. Game/runtime DLLs and private workspace data are not redistributed.
 

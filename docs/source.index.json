@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "version": "0.1.74",
+  "version": "0.1.76",
   "startHere": "AI-START-HERE.zh-CN.md",
   "tooltipStyle": "tooltip-style.index.json",
   "modules": [
@@ -983,6 +983,26 @@
       "file": "../src/EZapi/WildBrowserRules.cs",
       "purpose": "纯托管搜索、筛选和网格溢出规则",
       "boundary": "离线可检验；不证明原生 UI"
+    },
+    {
+      "file": "../src/EZapi/NativeUiDefinition.cs",
+      "purpose": "Strict native layout JSON and deterministic logical geometry",
+      "boundary": "Main-thread native UI lifetime; parser/measure are offline. No save or gameplay replacement."
+    },
+    {
+      "file": "../src/EZapi/NativeUiComponents.cs",
+      "purpose": "Reusable native rows, columns, centering and text",
+      "boundary": "Main-thread native UI lifetime; parser/measure are offline. No save or gameplay replacement."
+    },
+    {
+      "file": "../src/EZapi/NativeUiPreview.cs",
+      "purpose": "Scoped native preview, measurements, lifecycle and read-only inspection",
+      "boundary": "Main-thread native UI lifetime; parser/measure are offline. No save or gameplay replacement."
+    },
+    {
+      "file": "../src/EZapi/DebugRegressionSession.cs",
+      "purpose": "Explicit disposable-run binding for opt-in transient fixtures",
+      "boundary": "Main-thread native UI lifetime; parser/measure are offline. No save or gameplay replacement."
     }
   ],
   "forbiddenPatterns": [
@@ -1097,10 +1117,11 @@
   "installation": "install-and-debug.zh-CN.md",
   "documentationContext": {
     "kind": "current-api-guide",
-    "releaseTag": "0.1.74-preview.2",
-    "assemblyVersion": "0.1.74",
+    "releaseTag": "0.1.76-preview.1",
+    "assemblyVersion": "0.1.76",
     "releaseStatus": "release-status.json",
     "nativeRuntimeVerified": false,
-    "evidencePolicy": "Old native claims are preserved only under historical* fields and do not apply to the current DLL."
-  }
+    "evidencePolicy": "Only explicitly scoped current-DLL observations apply. Historical evidence never transfers."
+  },
+  "nativeUi": "native-ui-preview.index.json"
 }

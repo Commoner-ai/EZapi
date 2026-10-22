@@ -1,12 +1,26 @@
 {
   "schemaVersion": 1,
-  "version": "0.1.74",
+  "version": "0.1.76",
   "purpose": "Short, reproducible developer workflows; exact signatures are in public-api.index.json",
   "entryPoints": {
     "zh": "AI-START-HERE.zh-CN.md",
     "en": "AI-START-HERE.en.md"
   },
   "workflows": [
+    {
+      "id": "native-ui-preview",
+      "taskZh": "原版UI积木、上下居中与AI预览测量",
+      "taskEn": "Native UI components, vertical centering and AI preview measurements",
+      "guideZh": "native-ui-preview.zh-CN.md",
+      "guideEn": "native-ui-preview.en.md",
+      "index": "native-ui-preview.index.json",
+      "schema": "../schemas/native-ui.schema.json",
+      "sample": "examples/ui-preview/computer.json",
+      "project": "examples/native-ui-dll/NativeUi.csproj",
+      "sourceTool": "../distribution/Set-EZapiUiPreview.ps1",
+      "sdkTool": "../developer-tools/Set-EZapiUiPreview.ps1",
+      "boundary": "Ordinary developer mode. Native fonts and geometry only; no callbacks, item grants or saves."
+    },
     {
       "id": "generate-bilingual-mod",
       "taskZh": "离线生成中英双语 JSON 或 DLL 起步工程并选择 Tooltip 风格",
@@ -141,10 +155,10 @@
   },
   "documentationContext": {
     "kind": "current-api-guide",
-    "releaseTag": "0.1.74-preview.2",
-    "assemblyVersion": "0.1.74",
+    "releaseTag": "0.1.76-preview.1",
+    "assemblyVersion": "0.1.76",
     "releaseStatus": "release-status.json",
     "nativeRuntimeVerified": false,
-    "evidencePolicy": "Old native claims are preserved only under historical* fields and do not apply to the current DLL."
+    "evidencePolicy": "Only explicitly scoped current-DLL observations apply. Historical evidence never transfers."
   }
 }

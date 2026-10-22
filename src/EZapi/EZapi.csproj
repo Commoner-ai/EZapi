@@ -28,7 +28,7 @@
     <GenerateAssemblyInfo>true</GenerateAssemblyInfo>
 
 
-    <Version>0.1.74</Version>
+    <Version>0.1.76</Version>
     <GenerateDocumentationFile>true</GenerateDocumentationFile>
     <NoWarn>$(NoWarn);1591</NoWarn>
 
@@ -49,6 +49,7 @@
 
 
     <EmbeddedResource Include="Assets/manufacturing-terminal.png" />
+    <EmbeddedResource Include="../../docs/examples/ui-preview/*.json" LogicalName="EZapi.UiPreview.%(Filename).json" />
 
 
     <Reference Include="Assembly-CSharp"><HintPath>$(GameDir)\MelonLoader\Il2CppAssemblies\Assembly-CSharp.dll</HintPath><Private>false</Private></Reference>

@@ -1,4 +1,4 @@
-> Current developer guide. See [release status](current-status.en.md). This update changes documentation and consumer examples; the runtime DLL is unchanged. Offline validation/compilation does not establish native visual acceptance.
+> Current developer guide. See [release status](current-status.en.md). These optional recipes use existing fields and preserve their defaults. Offline validation/compilation does not establish native visual acceptance.
 
 # Optional native-style item tooltips
 

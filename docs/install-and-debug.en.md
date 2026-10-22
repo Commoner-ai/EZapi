@@ -2,7 +2,7 @@
 
 # Installation and optional developer tools
 
-Release: **0.1.74-preview.2**, assembly version 0.1.74. This is a prerelease for the tested Probably Stolen Demo 050REV5-L baseline and MelonLoader IL2CPP .NET6. Unknown builds disable sensitive integrations.
+Release: **0.1.76-preview.1**, assembly version 0.1.76. This is a prerelease for the tested Probably Stolen Demo 050REV5-L baseline and MelonLoader IL2CPP .NET6. Unknown builds disable sensitive integrations.
 
 | Asset | Audience | Contents |
 | --- | --- | --- |
@@ -25,4 +25,4 @@ Disabling the panel does not delete test items or save data. Follow content auth
 
 The developer package puts sample packs under examples/ContentPacks; install them into Mods/EZapiPacks only when desired. Avoid simultaneously installing DLL and JSON examples that declare the same IDs. The offline validator needs .NET8. See [AI entry](AI-START-HERE.en.md), [workflows](developer-workflows.index.json) and [public signatures](public-api.index.json).
 
-The runtime DLL is now 0.1.74 and adds the Wild network browser. Scoped native checks of this UI have passed; full framework acceptance and save/reload remain pending. See [current status](release-status.json) for the precise scope. Earlier language/save tests belong to their recorded historical DLLs.
+Runtime 0.1.76 adds [native UI components and AI preview](native-ui-preview.en.md), plus bilingual developer tools. Exact scoped observations and hash are in [release status](release-status.json); full framework, mixed-Mod and save/reload acceptance remain pending. Older DLL evidence applies only to its original build.

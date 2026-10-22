@@ -6,12 +6,13 @@ namespace EZapi;
 /// <summary>调试生成专用；不参与目录注册或 tooltip。每次重新获取当前库存，不自动保存。</summary>
 internal static class DebugItemSpawner
 {
+    private static string L(string zh,string en)=>NativeItemLocalization.IsEnglish?en:zh;
     internal static bool TrySpawnDebug(string itemId, int expectedSlot, string expectedRun, out string message, bool emptyLiquid=false)
     {
-        message = "未知物品";
+        message = L("未知物品", "Unknown item");
         if (!ItemRegistry.TryGet(itemId,out var definition)) return false;
-        if(emptyLiquid&&definition.LiquidContainer is null){message="只有液体容器支持生成空瓶";return false;}
-        if (ItemRegistry.GetStatus(itemId) != "Applied") { message = "物品尚未成功应用到游戏目录"; return false; }
+        if(emptyLiquid&&definition.LiquidContainer is null){message=L("只有液体容器支持生成空瓶", "Only liquid containers can be generated empty.");return false;}
+        if (ItemRegistry.GetStatus(itemId) != "Applied") { message = L("物品尚未成功应用到游戏目录", "Item is not Applied to the native directory."); return false; }
         GameItem? item = null;
         try
         {
@@ -20,15 +21,15 @@ internal static class DebugItemSpawner
             // 每次点击重新获取，禁止把场景库存缓存到下一次读档或切场景。
             var visible = VisibleStoreInventory.TryGet(out var inventory);
             if (store is null || !visible)
-            { message = "请先进入店铺并显示主库存"; return false; }
+            { message = L("请先进入店铺并显示主库存", "Enter the store with the main inventory visible."); return false; }
             if (expectedSlot < 0 || string.IsNullOrEmpty(expectedRun) || store.saveSlotId != expectedSlot || store.runID != expectedRun)
-            { message = "存档会话已变化，请重新点击生成"; return false; }
+            { message = L("存档会话已变化，请重新点击生成", "Save session changed; click Generate again."); return false; }
             if (ItemMouseDragHandler.current?.IsDraggingItem == true)
-            { message = "请先放下正在拖拽的物品"; return false; }
+            { message = L("请先放下正在拖拽的物品", "Put down the dragged item first."); return false; }
             item = DirectoryMaster.Item(itemId, true);
             if (item is null || item.Pointer == IntPtr.Zero || item.identifier != itemId || item.parentInventory is not null)
             {
-                message = "游戏目录未返回有效物品实例";
+                message = L("游戏目录未返回有效物品实例", "The native directory returned no valid item.");
                 return false;
             }
             GeneralHelper.SetItemOwned(item, true);
@@ -43,7 +44,7 @@ internal static class DebugItemSpawner
             var bounds = inventory.inventoryShape;
             if (bounds is null || bounds.width <= 0 || bounds.height <= 0 || (long)bounds.width * bounds.height > 4096)
             {
-                message = "主背包尚未生成有效网格";
+                message = L("主背包尚未生成有效网格", "The main inventory has no valid grid.");
                 return false;
             }
             var shape = new GridShapeBuilder(item.modifiedShape);
@@ -60,7 +61,7 @@ internal static class DebugItemSpawner
                 }
             if (marker is null)
             {
-                message = "主背包没有可用格子";
+                message = L("主背包没有可用格子", "No valid free slot in the main inventory.");
                 return false;
             }
             try { marker.TryAcceptOnce(item.unitCount); }
@@ -70,7 +71,7 @@ internal static class DebugItemSpawner
                 if (stored.Pointer == item.Pointer) { present = true; break; }
             if (item.parentInventory?.Pointer != inventory.Pointer || !present || inventory.childItems.Count != beforeCount + 1)
             {
-                message = "游戏未确认物品已放入主背包";
+                message = L("游戏未确认物品已放入主背包", "Native item placement was not confirmed.");
                 return false;
             }
             // 原生接受已经成功，刷新呈现失败也不能重发或销毁已放入的实例。
@@ -78,13 +79,13 @@ internal static class DebugItemSpawner
             catch (Exception e) { MelonLogger.Warning("[EZapi] Debug inventory refresh: " + e); }
             MelonLogger.Msg("[EZapi] Debug spawned " + itemId + "; slot=" + store!.saveSlotId + "; parent verified=True; target=EmporiumEntry.invElement/" + inventory.identifier +
                 "; before=" + beforeCount + "; count=" + inventory.childItems.Count + "; emptyLiquid="+emptyLiquid+"; no automatic save");
-            message = "已放入屏幕底部店铺主库存（未自动保存）";
+            message = L("已放入屏幕底部店铺主库存（未自动保存）", "Placed in the visible store inventory; not automatically saved.");
             return true;
         }
         catch (Exception e)
         {
             MelonLogger.Error("[EZapi] EZAPI_DEBUG_SPAWN_FAILED " + itemId + ": " + e);
-            message = "生成失败：" + e.Message;
+            message = L("生成失败：", "Generation failed: ") + e.Message;
             return false;
         }
         finally

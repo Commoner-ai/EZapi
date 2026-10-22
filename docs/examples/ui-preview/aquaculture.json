@@ -1,0 +1,182 @@
+{
+  "schemaVersion": 1,
+  "title": {
+    "chinese": "养殖式布局 · 预览",
+    "english": "Aquaculture-style layout · preview"
+  },
+  "root": {
+    "id": "root",
+    "kind": "Column",
+    "padding": 6,
+    "gap": 6,
+    "children": [
+      {
+        "id": "bays",
+        "kind": "Row",
+        "gap": 6,
+        "vertical": "Center",
+        "children": [
+          {
+            "id": "power",
+            "kind": "Column",
+            "horizontal": "Center",
+            "gap": 3,
+            "children": [
+              {
+                "id": "power.label",
+                "kind": "Tag",
+                "width": 40,
+                "height": 16,
+                "horizontal": "Center",
+                "vertical": "Center",
+                "wrap": false,
+                "text": {
+                  "chinese": "电力",
+                  "english": "Power"
+                }
+              },
+              {
+                "id": "power.slot",
+                "kind": "Slot",
+                "columns": 1,
+                "rows": 3
+              }
+            ]
+          },
+          {
+            "id": "water",
+            "kind": "Column",
+            "horizontal": "Center",
+            "gap": 3,
+            "children": [
+              {
+                "id": "water.label",
+                "kind": "Tag",
+                "width": 48,
+                "height": 16,
+                "horizontal": "Center",
+                "vertical": "Center",
+                "wrap": false,
+                "text": {
+                  "chinese": "水",
+                  "english": "Water"
+                }
+              },
+              {
+                "id": "water.slot",
+                "kind": "Slot",
+                "columns": 3,
+                "rows": 3
+              }
+            ]
+          },
+          {
+            "id": "filter",
+            "kind": "Column",
+            "horizontal": "Center",
+            "gap": 3,
+            "children": [
+              {
+                "id": "filter.label",
+                "kind": "Tag",
+                "width": 56,
+                "height": 16,
+                "horizontal": "Center",
+                "vertical": "Center",
+                "wrap": false,
+                "text": {
+                  "chinese": "过滤器",
+                  "english": "Filter"
+                }
+              },
+              {
+                "id": "filter.grid",
+                "kind": "Inventory",
+                "columns": 3,
+                "rows": 2
+              }
+            ]
+          },
+          {
+            "id": "separator",
+            "kind": "Column",
+            "horizontal": "Center",
+            "gap": 3,
+            "children": [
+              {
+                "id": "separator.label",
+                "kind": "Tag",
+                "width": 64,
+                "height": 16,
+                "horizontal": "Center",
+                "vertical": "Center",
+                "wrap": false,
+                "text": {
+                  "chinese": "分配器",
+                  "english": "Distributor"
+                }
+              },
+              {
+                "id": "separator.slot",
+                "kind": "Slot",
+                "columns": 3,
+                "rows": 3
+              }
+            ]
+          },
+          {
+            "id": "fish",
+            "kind": "Column",
+            "horizontal": "Center",
+            "gap": 3,
+            "children": [
+              {
+                "id": "fish.label",
+                "kind": "Tag",
+                "width": 96,
+                "height": 16,
+                "horizontal": "Center",
+                "vertical": "Center",
+                "wrap": false,
+                "text": {
+                  "chinese": "鱼缸",
+                  "english": "Fish tank"
+                }
+              },
+              {
+                "id": "fish.grid",
+                "kind": "Inventory",
+                "columns": 6,
+                "rows": 3
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "action.frame",
+        "kind": "Frame",
+        "width": 332,
+        "height": 22,
+        "horizontal": "Center",
+        "vertical": "Center",
+        "children": [
+          {
+            "id": "mix",
+            "kind": "Button",
+            "width": 56,
+            "height": 18,
+            "horizontal": "Center",
+            "vertical": "Center",
+            "wrap": false,
+            "text": {
+              "chinese": "混合",
+              "english": "Mix"
+            }
+          }
+        ]
+      }
+    ],
+    "horizontal": "Center"
+  }
+}

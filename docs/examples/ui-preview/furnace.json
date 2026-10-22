@@ -1,0 +1,159 @@
+{
+  "schemaVersion": 1,
+  "title": {
+    "chinese": "熔炉式布局 · 预览",
+    "english": "Furnace-style layout · preview"
+  },
+  "root": {
+    "id": "root",
+    "kind": "Column",
+    "padding": 6,
+    "gap": 6,
+    "children": [
+      {
+        "id": "bays",
+        "kind": "Row",
+        "gap": 6,
+        "vertical": "Center",
+        "children": [
+          {
+            "id": "power",
+            "kind": "Column",
+            "horizontal": "Center",
+            "gap": 3,
+            "children": [
+              {
+                "id": "power.label",
+                "kind": "Tag",
+                "width": 40,
+                "height": 16,
+                "horizontal": "Center",
+                "vertical": "Center",
+                "wrap": false,
+                "text": {
+                  "chinese": "电源",
+                  "english": "Power"
+                }
+              },
+              {
+                "id": "power.slot",
+                "kind": "Slot",
+                "columns": 1,
+                "rows": 3
+              }
+            ]
+          },
+          {
+            "id": "modules",
+            "kind": "Column",
+            "horizontal": "Center",
+            "gap": 3,
+            "children": [
+              {
+                "id": "modules.label",
+                "kind": "Tag",
+                "width": 64,
+                "height": 16,
+                "horizontal": "Center",
+                "vertical": "Center",
+                "wrap": false,
+                "text": {
+                  "chinese": "模组",
+                  "english": "Modules"
+                }
+              },
+              {
+                "id": "modules.grid",
+                "kind": "Inventory",
+                "columns": 4,
+                "rows": 4
+              }
+            ]
+          },
+          {
+            "id": "input",
+            "kind": "Column",
+            "horizontal": "Center",
+            "gap": 3,
+            "children": [
+              {
+                "id": "input.label",
+                "kind": "Tag",
+                "width": 96,
+                "height": 16,
+                "horizontal": "Center",
+                "vertical": "Center",
+                "wrap": false,
+                "text": {
+                  "chinese": "输入",
+                  "english": "Input"
+                }
+              },
+              {
+                "id": "input.grid",
+                "kind": "Inventory",
+                "columns": 6,
+                "rows": 4
+              }
+            ]
+          },
+          {
+            "id": "output",
+            "kind": "Column",
+            "horizontal": "Center",
+            "gap": 3,
+            "children": [
+              {
+                "id": "output.label",
+                "kind": "Tag",
+                "width": 96,
+                "height": 16,
+                "horizontal": "Center",
+                "vertical": "Center",
+                "wrap": false,
+                "text": {
+                  "chinese": "输出",
+                  "english": "Output"
+                }
+              },
+              {
+                "id": "output.grid",
+                "kind": "Inventory",
+                "columns": 6,
+                "rows": 4
+              }
+            ]
+          },
+          {
+            "id": "manual",
+            "kind": "Column",
+            "horizontal": "Center",
+            "gap": 3,
+            "children": [
+              {
+                "id": "manual.label",
+                "kind": "Tag",
+                "width": 48,
+                "height": 16,
+                "horizontal": "Center",
+                "vertical": "Center",
+                "wrap": false,
+                "text": {
+                  "chinese": "备注",
+                  "english": "Manual"
+                }
+              },
+              {
+                "id": "manual.slot",
+                "kind": "Slot",
+                "columns": 1,
+                "rows": 1
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "horizontal": "Center"
+  }
+}

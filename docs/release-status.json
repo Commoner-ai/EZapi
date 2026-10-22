@@ -1,28 +1,23 @@
 {
   "schemaVersion": 1,
-  "releaseTag": "0.1.74-preview.2",
-  "assemblyVersion": "0.1.74",
+  "releaseTag": "0.1.76-preview.1",
+  "assemblyVersion": "0.1.76",
   "status": "prerelease",
   "license": "MIT",
   "repository": "https://github.com/Commoner-ai/EZapi",
-  "runtimeDllSHA256": "FE6DE81903D1F3A1234031C193D0F5678B17D99949AB24A47DCAB52958DFCA55",
-  "runtimeChangedSince": "0.1.74-preview.1: Wild network browser layout adapter added",
-  "sdkRevision": {
-    "runtimeIdenticalTo": "0.1.74-preview.1",
-    "changes": ["Optional native Tooltip guidelines and examples", "Offline bilingual Mod generator with Tooltip style option", "Offline exact API/task/error search", "Documentation evidence-boundary corrections"],
-    "newTooltipNativeAcceptance": false
-  },
+  "runtimeDllSHA256": "48D037715375C8AFF6528AD6674A224FF7F953BE33BC1E04672462AC121A54E5",
+  "runtimeChangedSince": "0.1.74-preview.2: native UI components/preview, developer bilingual usability and explicit transient regression binding",
   "offlineVerification": {
     "sourceRebuildPassed": true,
-    "offlineSuitesPassed": 59,
+    "offlineSuitesPassed": 60,
     "cliProcessChecksPassed": 25,
     "sourceBuiltPackagingPassed": true
   },
   "nativeRuntimeVerified": false,
   "pendingNativeAcceptance": [
-    "Current-DLL native UI",
-    "Mixed-Mod layouts",
-    "Native save and reload"
+    "Full framework gameplay acceptance",
+    "Other Mod combinations and real machine-window integration",
+    "Native save and reload for current DLL"
   ],
   "referenceCoverage": {
     "implementedGroups": 39,
@@ -42,30 +37,62 @@
     "tooltipStyleEn": "tooltip-style.en.md",
     "tooltipStyleIndex": "tooltip-style.index.json",
     "wildBrowserZh": "wild-network.zh-CN.md",
-    "wildBrowserEn": "wild-network.en.md"
+    "wildBrowserEn": "wild-network.en.md",
+    "nativeUiZh": "native-ui-preview.zh-CN.md",
+    "nativeUiEn": "native-ui-preview.en.md",
+    "nativeUiIndex": "native-ui-preview.index.json"
+  },
+  "historicalNativeObservations": {
+    "assemblyVersion": "0.1.74",
+    "observations": [
+      {
+        "feature": "Wild network browser",
+        "source": "user feedback on current 0.1.74 build",
+        "checks": [
+          "hover/click card alignment",
+          "selected native details",
+          "visible vertical scrollbar",
+          "existing DeepSpace Mod Hacker entry"
+        ],
+        "scope": "specific UI observations; not full framework acceptance; no native save/reload or arbitrary Mod guarantee"
+      },
+      {
+        "feature": "Wild network large-catalog probe",
+        "checks": [
+          "new live category discovered after binding",
+          "84 additional native UI cards",
+          "vertical mouse wheel",
+          "draggable vertical scrollbar",
+          "viewport clipping"
+        ],
+        "scope": "current DLL mixed with the existing DeepSpace Mod; UI-only fixture, not a persistent upgrade registration or purchase/save test"
+      }
+    ]
   },
   "scopedNativeObservations": [
     {
-      "feature": "Wild network browser",
-      "source": "user feedback on current 0.1.74 build",
-      "checks": [
-        "hover/click card alignment",
-        "selected native details",
-        "visible vertical scrollbar",
-        "existing DeepSpace Mod Hacker entry"
+      "feature": "Native UI preview and bilingual developer surfaces",
+      "assemblyVersion": "0.1.76",
+      "dllSHA256": "48D037715375C8AFF6528AD6674A224FF7F953BE33BC1E04672462AC121A54E5",
+      "checksPassed": 421,
+      "checksFailed": 0,
+      "locales": [
+        "en",
+        "zh"
       ],
-      "scope": "specific UI observations; not full framework acceptance; no native save/reload or arbitrary Mod guarantee"
-    },
-    {
-      "feature": "Wild network large-catalog probe",
       "checks": [
-        "new live category discovered after binding",
-        "84 additional native UI cards",
-        "vertical mouse wheel",
-        "draggable vertical scrollbar",
-        "viewport clipping"
+        "computer/furnace/aquaculture templates: actual boxes and native fonts",
+        "both-axis caption centering",
+        "intentional overflow detected",
+        "invalid JSON preserves existing preview",
+        "closing clears current graph and retained controls",
+        "native item/tooltip, machine-layout, reading, workshop, dialogue, phone and supplier fixtures",
+        "original native locale restored"
       ],
-      "scope": "current DLL mixed with the existing DeepSpace Mod; UI-only fixture, not a persistent upgrade registration or purchase/save test"
+      "loadedModContext": "EZapi with an existing DeepSpace Mod 0.3.7; no arbitrary-Mod compatibility guarantee",
+      "saveFilesUnchanged": 551,
+      "scope": "explicitly bound transient UI fixtures; supplier arrival fixture-dispatched; no natural supplier visit/payment/delivery, machine production or disk save/reload acceptance",
+      "evidenceAvailability": "local raw evidence retained privately; aggregate observations only are distributed"
     }
   ]
 }

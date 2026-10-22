@@ -2,12 +2,12 @@
 
 # 安装与可选开发工具
 
-此版为 0.1.74-preview.2。运行 DLL 的程序集版本为 0.1.74，调试功能开关在启动时读取，修改后重启游戏。
+此版为 0.1.76-preview.1。运行 DLL 的程序集版本为 0.1.76，调试功能开关在启动时读取，修改后重启游戏。
 
 | 下载 | 用途 | 内容 |
 | --- | --- | --- |
-| EZapi-0.1.74-preview.2-game.zip | 玩家和仅需要前置的用户 | 仅一份 Mods/EZapi.dll，默认不显示调试 |
-| EZapi-0.1.74-preview.2-developer.zip | Mod作者和AI | 同一份前置、可选调试配置、校验器、完整指南、索引和样例；不需要额外游戏插件 |
+| EZapi-0.1.76-preview.1-game.zip | 玩家和仅需要前置的用户 | 仅一份 Mods/EZapi.dll，默认不显示调试 |
+| EZapi-0.1.76-preview.1-developer.zip | Mod作者和AI | 同一份前置、可选调试配置、校验器、完整指南、索引和样例；不需要额外游戏插件 |
 
 ## 玩家安装
 
@@ -50,4 +50,4 @@ powershell -NoProfile -ExecutionPolicy Bypass -File ./Set-EZapiDeveloperTools.ps
 
 开发包中的样例包放在 `examples/ContentPacks`；仅当需要示例时复制到 `Mods/EZapiPacks`。DLL 样例和 JSON 包不要重复安装同一组示例物品。离线校验器需要 .NET8；游戏内前置需要 MelonLoader 的 .NET6。从 [AI 入口](AI-START-HERE.zh-CN.md)、[开发路径索引](developer-workflows.index.json) 和 [完整公开签名](public-api.index.json) 开始。
 
-本版运行 DLL 升级为 0.1.74，新增王尔德人脉网络滚动界面。该界面的局部实机检查已完成；全框架实机验收和保存重载仍待完成，准确范围见[当前状态](release-status.json)。此前 415 项中英/保存重载报告仅属于记录中的历史 DLL。
+本版运行 DLL 升级为 0.1.76，增加[原生UI积木与AI预览](native-ui-preview.zh-CN.md)和双语开发工具。准确局部原生检查与哈希见[当前状态](release-status.json)；全框架、组合Mod和保存重载仍待完成。旧DLL记录仅适用于其原始版本。

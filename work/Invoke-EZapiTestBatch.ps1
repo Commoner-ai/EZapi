@@ -1,4 +1,4 @@
-param(
+﻿param(
 
 
 
@@ -10,11 +10,11 @@ param(
 
 
 
- [string]$ExpectedVersion='0.1.73-usability',
+ [Parameter(Mandatory=$true)][string]$ExpectedVersion,
 
 
 
- [int]$ExpectedSlot=534,
+ [Parameter(Mandatory=$true)][ValidateRange(0,2147483647)][int]$ExpectedSlot,
 
 
 

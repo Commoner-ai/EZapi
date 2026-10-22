@@ -51,6 +51,7 @@ routes=[
  ('terminal','制造终端','Manufacturing terminal','manufacturing-terminal.zh-CN.md','ManufacturingTerminalExamples','ManufacturingTerminal'),
  ('guide','配方图鉴','Recipe guide','recipe-guide-localization.zh-CN.md','MachineGuideExamples','RecipeGuide RecipeGuideDefinition'),
  ('presentation','来源名与提示','Owner names and tooltip text','presentation.zh-CN.md','PresentationExamples','PresentationApi'),
+ ('native-ui','原生UI积木与AI预览','Native UI components and AI preview','native-ui-preview.zh-CN.md','','NativeUiDefinition NativeUiComponents NativeUiPreview'),
  ('reading','阅读面板','Reading panel','reading.zh-CN.md','ReadingExamples','Reading PresentationResult'),
  ('dialogue','对话','Dialogue','dialogue.zh-CN.md','DialogueExamples','Dialogue DialogueDefinition'),
  ('departure','自适应外出地点按钮','Adaptive departure buttons','departure-buttons.zh-CN.md','DepartureExamples','DepartureApi DepartureButton'),

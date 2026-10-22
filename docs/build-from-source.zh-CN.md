@@ -14,7 +14,7 @@ cd EZapi
 pwsh -NoProfile -File ./Build-EZapi.ps1 -OfflineOnly
 ```
 
-运行全部 59 组源代码链接测试、25 项校验器独立进程检查及能力索引检查。测试使用明确的原生边界替身；测试通过不证明真实游戏 UI、原生方法或跨天存档正常。输出报告在忽略的 `work/offline-tests-report.json`。
+运行全部 60 组源代码链接测试、25 项校验器独立进程检查及能力索引检查。测试使用明确的原生边界替身；测试通过不证明真实游戏 UI、原生方法或跨天存档正常。输出报告在忽略的 `work/offline-tests-report.json`。
 
 ## 构建游戏 DLL 与安装包候选
 

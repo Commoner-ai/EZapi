@@ -12,7 +12,7 @@ cd EZapi
 pwsh -NoProfile -File ./Build-EZapi.ps1 -OfflineOnly
 ```
 
-This runs 59 source-linked suites, 25 separate CLI-process cases and capability catalog checks. Tests use explicit native-boundary stand-ins. They do not verify actual Unity UI, native calls, or saved-game behavior. Reports go to ignored work files.
+This runs 60 source-linked suites, 25 separate CLI-process cases and capability catalog checks. Tests use explicit native-boundary stand-ins. They do not verify actual Unity UI, native calls, or saved-game behavior. Reports go to ignored work files.
 
 For the runtime build also install .NET 6 SDK and supply your own Probably Stolen installation with compatible MelonLoader IL2CPP .NET6. Start it once to generate `MelonLoader/Il2CppAssemblies`. Current baseline: Demo050REV5-L. Game and loader DLLs are not redistributed:
 

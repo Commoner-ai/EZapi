@@ -1,21 +1,19 @@
 # Current EZapi release and verification
 
-This documentation/SDK-tool revision adds [optional native Tooltip recipes](tooltip-style.en.md), JSON/DLL examples and offline starter/search tools. The runtime DLL is identical to preview.1. New examples have offline validation/compilation only, with no new native visual or save/reload evidence.
+Current prerelease **0.1.76-preview.1**, assembly **0.1.76**, MIT. Players install one `Mods/EZapi.dll`. The SDK adds the same DLL, XML comments, validator, guides, caller examples and game-entry automation; debug defaults off. Framework source is available separately on GitHub.
 
-Current prerelease: **0.1.74-preview.2**, assembly **0.1.74**, license **MIT**. Framework source, tests and build tooling are public. Players install one Mods/EZapi.dll; the developer package adds optional tools, validator, guides and game-entry automation. Debug defaults off.
+This runtime adds [native UI components and AI layout preview](native-ui-preview.en.md), bilingual developer tools and explicit disposable-run binding. Reload JSON into actual native controls and inspect real fonts, sizes, alignment, wrapping, overflow and logical boxes. Existing native windows can use read-only InspectWindow.
 
 | Scope | Current result |
 | --- | --- |
-| Source rebuild and binary packaging | Passed |
-| Source-linked offline suites | 59 passed |
-| Separate validator CLI-process checks | 25 passed |
-| Reference feature coverage | 39 implemented groups; not full project completion or gameplay acceptance |
-| Current-DLL native UI, mixed Mods, save/reload | **Acceptance remains pending** |
+| Runtime projects and independent DLL consumers | Compilation checks |
+| Source-linked offline suites | 60; plus 25 independent CLI-process checks |
+| Reference feature coverage | 39 implemented groups; not full project or native acceptance |
+| Scoped current-DLL UI and en/zh observations | 421 passed, 0 failed; see scopedNativeObservations |
+| Full framework, mixed Mods and current-DLL save/reload | **Acceptance remains pending** |
 
-Runtime SHA256: `FE6DE81903D1F3A1234031C193D0F5678B17D99949AB24A47DCAB52958DFCA55`. The [Wild network browser](wild-network.en.md) was added in preview.1; this revision keeps that identical DLL. User feedback confirms hover/click alignment, native details, the visible vertical scrollbar and the existing DeepSpace Hacker entry. These are scoped observations, not full framework acceptance. Offline tests use explicit boundary stand-ins and do not establish actual game behavior.
+Read [release-status.json](release-status.json) for the exact DLL hash and scoped evidence. Font and geometry checks do not establish processing, arbitrary-Mod compatibility or persistence. Transient fixtures run only in an explicitly bound disposable store and request no saving.
 
-Start with [installation](install-and-debug.en.md), [source builds](build-from-source.en.md), [AI entry](AI-START-HERE.en.md), [exact API signatures](public-api.index.json) and [machine-readable release status](release-status.json).
+Start with [AI entry](AI-START-HERE.en.md), [exact signatures](public-api.index.json), [task workflows](developer-workflows.index.json), [installation](install-and-debug.en.md), [source builds](build-from-source.en.md) and [automation](automation.en.md). Optional [native Tooltip recipes](tooltip-style.en.md) and [art references](item-art.en.md) remain available.
 
-The [historical record index](history/README.md) contains reports scoped to older binaries. The 415 en/zh checks belong to historical 0.1.72 DLL `4238A189B36CEC4C55E88CC70E05E9086EC935412B13CF701671405A12E63274`. Historical statements such as “current DLL passed” never apply to this release. Private historical logs, saves and audit artifacts are not distributed; unavailable references are labeled as historical identifiers rather than working downloads.
-
-The developer package retains the optional [item artwork reference](item-art.en.md): 96 original sprites, eight boards and English/Chinese AI prompts. Original artwork retains separate rights.
+The [historical record index](history/README.md) and old release notes apply only to their recorded DLLs. The 0.1.74 Wild feedback, unpublished 0.1.75 bilingual batch and 0.1.72 415-check batch never transfer to this build. Private raw logs, saves and internal audit artifacts are not distributed. Original artwork retains separate rights and is excluded from MIT.

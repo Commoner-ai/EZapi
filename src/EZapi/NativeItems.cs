@@ -239,7 +239,7 @@ internal static class NativeFactoryRegistry
     }
     internal static IEnumerable<DebugItemRow> DebugRows()=>Entries.Values.OrderBy(e=>e.Definition.ItemId,StringComparer.Ordinal)
         .Select(e=>new DebugItemRow(e.Definition.ItemId,GetDisplayName(e.Definition.ItemId)??e.Definition.ItemId,Status(e.Definition.ItemId)!,null,
-            $"DLL工厂 {e.Kind} · 创建 {e.Created} · 失败 {e.Failures}"));
+            NativeItemLocalization.IsEnglish ? $"DLL factory {e.Kind} · created {e.Created} · failed {e.Failures}" : $"DLL工厂 {e.Kind} · 创建 {e.Created} · 失败 {e.Failures}"));
 }
 
 /// <summary>只在已核对的当前游戏构建调用官方 locale getter；未知构建安全回退到英文。</summary>

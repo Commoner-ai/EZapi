@@ -2,7 +2,7 @@
 
 # EZapi developer and AI entry point
 
-Current prerelease: **0.1.74-preview.2**, assembly 0.1.74. [Public distribution](https://github.com/Commoner-ai/EZapi). Framework implementation, offline tests and build projects are MIT open source; see [source builds](build-from-source.en.md). Use the public DLL APIs, metadata, guides and consumer examples.
+Current prerelease: **0.1.76-preview.1**, assembly 0.1.76. [Public distribution](https://github.com/Commoner-ai/EZapi). Framework implementation, offline tests and build projects are MIT open source; see [source builds](build-from-source.en.md). Use the public DLL APIs, metadata, guides and consumer examples.
 
 For artwork matching the original game, use the optional [item art guide](item-art.en.md), [asset/workflow index](item-art.index.json) and bundled same-category references.
 
@@ -53,6 +53,8 @@ Language follows game settings. Use GameLanguage.Current with inline bilingual t
 
 ## Verification scope
 
-59 offline suites and 25 CLI process checks passed, including 141 source-linked departure/browser checks. 669 direct game references matched and static reachable Unity wrappers had no unstripping stubs. Scoped native checks on this DLL cover existing Mod entries, 84 additional temporary cards, a new category, vertical scrolling, search and window cleanup. **Full framework native acceptance and save/reload remain pending.** Historical language/save reports apply only to their recorded DLLs. Package manifests record hashes and boundaries.
+Current checks are separated into 60 offline suites, 25 CLI process checks and scoped current-DLL native observations in release-status.json. **Full framework, mixed-Mod and save/reload acceptance remain pending.** Historical evidence never transfers.
 
 Prefer the [official Probably Stolen guide](https://github.com/dragonpan2/probably-stolen-modding), the actual game signatures and each API result. EZapi has no Forge DLL dependency and promises no Forge binary compatibility.
+
+For native layouts, vertical centering, text sizes and overflow, start with the [UI preview index](native-ui-preview.index.json) and [native UI guide](native-ui-preview.en.md). Reload a template, inspect actual-font measurements and review the matching screenshot.

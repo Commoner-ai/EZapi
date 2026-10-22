@@ -36,7 +36,7 @@ internal static class DebugSupplierLocalization
     {
         if(Running)throw new InvalidOperationException("supplier locale fixture already running");
         _run=NativeAccess.RequireRun();
-        if(_run.SaveSlotId!=534||_run.RunId!="e39e848c-36b7-40e9-ab7e-b6adcb9881b8"||InventoryApi.IsItemDragActive||
+        if(!DebugRegressionSession.Matches(_run.SaveSlotId,_run.RunId)||InventoryApi.IsItemDragActive||
             Manager==null||Manager.currentDialog is not null||DialogueApi.RetainedItems!=0)
             throw new InvalidOperationException("exact disposable run and idle native dialogue required");
         Checks.Clear();LastReport=null;_passed=_failed=_captures=_purchases=_dismisses=0;

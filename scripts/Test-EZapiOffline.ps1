@@ -1,4 +1,4 @@
-param()
+﻿param()
 $ErrorActionPreference = 'Stop'
 $taskRoot = Split-Path -Parent $PSScriptRoot
 Push-Location -LiteralPath $taskRoot
@@ -8,7 +8,7 @@ try {
     dotnet build src/EZapi.ContentValidator/EZapi.ContentValidator.csproj -c Release
     if ($LASTEXITCODE -ne 0) { throw 'Offline validator build failed.' }
     $taskSuites = @(Get-ChildItem 'work/ezapi-*-tests/*.csproj' -File | Sort-Object FullName)
-    if ($taskSuites.Count -ne 59) { throw "Expected 59 offline suites, found $($taskSuites.Count)." }
+    if ($taskSuites.Count -ne 60) { throw "Expected 60 offline suites, found $($taskSuites.Count)." }
     foreach ($taskSuite in $taskSuites) {
         Write-Output "Running $($taskSuite.Directory.Name)"
         dotnet run --project $taskSuite.FullName -c Release --framework net8.0

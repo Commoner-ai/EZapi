@@ -8,7 +8,7 @@ internal static class DebugResources
     internal static void Clear() => LastReport = null;
     internal static string Run(GameRunIdentity? expected)
     {
-        if (expected is null || !NativeAccess.SameRun(expected)) return "场景或周目已变化，请在店铺重新点击。";
+        if (expected is null || !NativeAccess.SameRun(expected)) return NativeItemLocalization.IsEnglish?"Scene or run changed; retry from the store.":"场景或周目已变化，请在店铺重新点击。";
         var player = GameSession.Resolve(expected);
         var items = player.FindAllItem(true);
         if (items is null || items.Count > 4096) return "物品列表未就绪或超过单次4096件的读取上限。";
@@ -35,6 +35,6 @@ internal static class DebugResources
         LastReport = new {at=DateTimeOffset.Now,run=expected,totalItems=items.Count,liquidContainers=liquids,
             poweredItems=powered,details=records,bounded=true,scope="current run FindAllItem roots; read only; no debit, transfer, creation or save"};
         EZapiBootstrap.WriteDiagnostics();
-        return $"只读资源：{liquids} 个液体容器，{powered} 件有电量物品；最多64条详情已写入诊断。";
+        return NativeItemLocalization.IsEnglish?$"Read only: {liquids} liquid containers, {powered} powered items; up to 64 details exported.":$"只读资源：{liquids} 个液体容器，{powered} 件有电量物品；最多64条详情已写入诊断。";
     }
 }

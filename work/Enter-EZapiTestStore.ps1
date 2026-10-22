@@ -1,4 +1,4 @@
-param(
+﻿param(
 
 
  [string]$GameDir='E:\steam\steamapps\common\Probably Stolen Demo',
@@ -10,7 +10,7 @@ param(
  [Parameter(Mandatory=$true)][int]$ExpectedSlot,
 
 
- [string]$ExpectedVersion='0.1.74-usability',
+ [Parameter(Mandatory=$true)][string]$ExpectedVersion,
 
 
  [ValidateRange(30,300)][int]$StartupTimeoutSeconds=150,

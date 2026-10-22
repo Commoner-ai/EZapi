@@ -1,4 +1,4 @@
-> Current developer guide. See [release status](current-status.en.md): this release changes documentation/assets only; runtime is unchanged and current-DLL native acceptance remains pending.
+> Current developer guide. See [release status](current-status.en.md): original artwork is a separately licensed reference set. Full current-DLL native acceptance remains pending.
 
 # Item artwork matching the original game
 

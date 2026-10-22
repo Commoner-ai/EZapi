@@ -71,10 +71,10 @@ internal static class DebugInventory
                 visibleItemRenders = roots.Take(64).Select(CaptureRender).ToArray(),
                 scope = "read only; at most16 direct inventories; no movement, creation, planning or save" };
             EZapiBootstrap.WriteDiagnostics();
-            return $"库存只读：{roots.Count} 个物品实例、{counts.Count} 种拥有物品，{snapshots.Count} 个直接库存；详情已导出。";
+            return NativeItemLocalization.IsEnglish?$"Read only: {roots.Count} item instances, {counts.Count} owned types, {snapshots.Count} direct inventories; details exported.":$"库存只读：{roots.Count} 个物品实例、{counts.Count} 种拥有物品，{snapshots.Count} 个直接库存；详情已导出。";
         } catch (Exception e) {
             LastReport = new { at = DateTimeOffset.Now, run = expected, error = e.GetType().Name + ": " + e.Message };
-            EZapiBootstrap.WriteDiagnostics(); return "库存读取失败，已写入 inventoryDebug；请查看诊断。";
+            EZapiBootstrap.WriteDiagnostics(); return NativeItemLocalization.IsEnglish?"Inventory inspection failed; see inventoryDebug in diagnostics.":"库存读取失败，已写入 inventoryDebug；请查看诊断。";
         }
     }
     private static object CaptureRender(GameItem item)

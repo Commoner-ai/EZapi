@@ -2552,16 +2552,32 @@
     {
       "code": "EZAPI_WILD_RESTORE",
       "fix": "人脉网络原生对象恢复异常；查看已销毁对象与其他 Mod 的 UI 生命周期，换场景会清除自有引用"
+    },
+    {
+      "code": "EZAPI_UI_LAYOUT",
+      "fix": "检查节点ID、明确尺寸、唯一ID、gap/padding、Tag高度至少16；修复布局而非压缩槽位。Validate bounded node IDs, sizes, gaps and text; tags require height >=16."
+    },
+    {
+      "code": "EZAPI_UI_NATIVE",
+      "fix": "核对已支持游戏构建与当前原生窗口寿命。Check supported build, live window and single native ownership."
+    },
+    {
+      "code": "EZAPI_UI_PREVIEW_DISABLED",
+      "fix": "启用普通开发工具并重启；无需回归测试开关。Enable ordinary developer tools and restart; regression fixtures not required."
+    },
+    {
+      "code": "EZAPI_UI_PREVIEW_STATE",
+      "fix": "进入当前店铺，结束拖拽，在游戏主线程调用。Use the game main thread, loaded store and no item drag."
     }
   ],
-  "version": "0.1.74",
+  "version": "0.1.76",
   "languageGuide": "game-language.index.json",
   "documentationContext": {
     "kind": "current-api-guide",
-    "releaseTag": "0.1.74-preview.2",
-    "assemblyVersion": "0.1.74",
+    "releaseTag": "0.1.76-preview.1",
+    "assemblyVersion": "0.1.76",
     "releaseStatus": "release-status.json",
     "nativeRuntimeVerified": false,
-    "evidencePolicy": "Old native claims are preserved only under historical* fields and do not apply to the current DLL."
+    "evidencePolicy": "Only explicitly scoped current-DLL observations apply. Historical evidence never transfers."
   }
 }

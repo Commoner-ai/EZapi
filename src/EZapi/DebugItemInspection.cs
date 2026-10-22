@@ -9,7 +9,7 @@ internal static class DebugItemInspection
     internal static void Clear() => LastReport = null;
     internal static string Run()
     {
-        if (InventoryApi.IsItemDragActive) return "请先放下拖拽物品。";
+        if (InventoryApi.IsItemDragActive) return NativeItemLocalization.IsEnglish?"Put down the dragged item first.":"请先放下拖拽物品。";
         var rows = new List<object>(); var errors = new List<string>(); var checks = new List<object>();
         var results = new Dictionary<(string Mode,long Value,int Count),long>();
         int passed=0, failed=0;
@@ -81,7 +81,7 @@ internal static class DebugItemInspection
         LastReport = new {at=DateTimeOffset.Now,passed,failed,checks,rows,errors,scope="detached temporary native fixtures; no delivery, payment or save; built-in tooltip unchanged"};
         foreach(var error in errors) MelonLogger.Error("[EZapi] Item inspection probe: "+error);
         EZapiBootstrap.WriteDiagnostics();
-        return $"单件估值：{passed}通过，{failed}失败；临时物品已销毁。";
+        return NativeItemLocalization.IsEnglish?$"Unit value: {passed} passed, {failed} failed; temporary items released.":$"单件估值：{passed}通过，{failed}失败；临时物品已销毁。";
     }
     private static string State(GameItem item) => $"{item.Pointer}/{item.uniqueId}/{item.unitCount}/{item.unitValue}/{item.unitBaseValue}/{item.lateUnitValue}/{item.backupUnitValue}/{item.parentInventory?.Pointer}/{item.state.Pointer}/{item.modifiedState.Pointer}/{item.itemFeatures.Count}";
 }

@@ -19,11 +19,11 @@
     },
     {
       "path": "AGENTS.md",
-      "sha256": "5668E4AF870AEC3640F12686F8DFF419636FA0F092CC5CB32B268AF9D7A0DF5B"
+      "sha256": "A6830CAB19C5383D06C98F3D8B7888CFCF4DD9EC46BE99132AA9CE23F39F469C"
     },
     {
       "path": "Build-EZapi.ps1",
-      "sha256": "26263E047C831B8D16A6D5EBAB0307336C4E9EEC0A2C3F5150B896B31FEED7DF"
+      "sha256": "3B4F7BD50F0B574A1777FFF5C05750A467C223F2D01FF796D0F1C1E263994A16"
     },
     {
       "path": "LICENSE",
@@ -31,11 +31,11 @@
     },
     {
       "path": "README.md",
-      "sha256": "0C00B50853238AD3A214F73BF9029751B79503AC5341C8CB1A17A0B4930050DD"
+      "sha256": "FB7360CCA75405C9C3CA467F4CB89AFE8A117618701CA2914AF01166D525EEFF"
     },
     {
       "path": "README.zh-CN.md",
-      "sha256": "CC3AF6CBE14C7943AC3AEE3CE293A44B8910C5EACB1C56460F991485F58678A4"
+      "sha256": "CDC1FC5250B476A9C8F7A681CC6A068D45A0773D6439ED3E4F067617B0C9AD9C"
     },
     {
       "path": "THIRD-PARTY-NOTICES.md",
@@ -43,15 +43,19 @@
     },
     {
       "path": "developer-tools/Set-EZapiDeveloperTools.ps1",
-      "sha256": "76E208BE40B252F2C0340CE44049E87925F1DFB30ACF457E73CAF4534F35657E"
+      "sha256": "97338DB555931065793A2968AA62C0409B497E53C424F0053EED40CE0EB13BDC"
+    },
+    {
+      "path": "developer-tools/Set-EZapiUiPreview.ps1",
+      "sha256": "9585697CE101216398EA12B1516E40C2221D3377995E2E1FAABBB0D73E665662"
     },
     {
       "path": "developer-tools/automation/Enter-EZapiTestStore.ps1",
-      "sha256": "03AC105E6260B165CD5E2C2747D56E6565DAEC1C202643EC66B82E8810D971FB"
+      "sha256": "18F3F48DE891AB905BB5AD8E39CFE6C1B127D343776A6AAAA0001BF61414D787"
     },
     {
       "path": "developer-tools/automation/Invoke-EZapiGuideLocalization.ps1",
-      "sha256": "7CC89F40CB24B7318D95FFFCD40F264B0B148E68AFBD92D59D0ED9589BBB354D"
+      "sha256": "A197195CA3D31C49B97DEAF4567DE62E8EA4E3C7282CCC21EDF524C6996E299D"
     },
     {
       "path": "developer-tools/automation/Invoke-EZapiNativeTest.ps1",
@@ -59,19 +63,19 @@
     },
     {
       "path": "developer-tools/automation/Invoke-EZapiTestBatch.ps1",
-      "sha256": "7D071D45F21CE2094F6542139239EE3F0465218A3C59F31D9232430E5079EDE2"
+      "sha256": "643B760189E63D673DF04BEB2A65D6F40F1E7DBEF7DCBA409AE891EF4AABE25F"
     },
     {
       "path": "developer-tools/automation/README.md",
-      "sha256": "C2247E215A2701E6838D3010C10D3880529002829D28BB00E1F219B4F82D9D23"
+      "sha256": "F5508BEF8524398A832EA421EF653326C420C9597B2203688CBA05362AEC62A9"
     },
     {
       "path": "developer-tools/automation/README.zh-CN.md",
-      "sha256": "8F78584B411096C1B28F53F5F739E9F8306FB6824472BEAD17419350948F2981"
+      "sha256": "B2826D719BE12A8DC00CC8EBF9E939DADBF09ACC91F4A894707EDBBBC07A7692"
     },
     {
       "path": "distribution-verification.json",
-      "sha256": "65F060ACE55A951E1AB50F06974A5C773F84AF92D3E7E3A522B44EF3AF5C3ACC"
+      "sha256": "8EAE5A9D3C53B9D415D7C79554605F7604EFC44693EB05A01578394DD65FD88D"
     },
     {
       "path": "distribution/Find-EZapiApi.ps1",
@@ -91,7 +95,11 @@
     },
     {
       "path": "distribution/Set-EZapiDeveloperTools.ps1",
-      "sha256": "BF422DAB5B88EF868BFE40A4843413AFDC303ACCEB3196E7243276BE60ACCA68"
+      "sha256": "907C173233D4B0E96A22BEA050B97EB0CE8B4E242C73521F85C47B7268F64A9D"
+    },
+    {
+      "path": "distribution/Set-EZapiUiPreview.ps1",
+      "sha256": "9585697CE101216398EA12B1516E40C2221D3377995E2E1FAABBB0D73E665662"
     },
     {
       "path": "distribution/developer-tools.json",
@@ -99,19 +107,19 @@
     },
     {
       "path": "docs/AI-START-HERE.en.md",
-      "sha256": "30F255011DDE0D046B3B87BF1DA6E7EC6B6DF1B45A2C24B7602AAE5A19745BAF"
+      "sha256": "4802F03C9CFB4CD761FC3F0EC6143EC67DD5446C5C7FAAF4D60B24232BDEF1CF"
     },
     {
       "path": "docs/AI-START-HERE.zh-CN.md",
-      "sha256": "B711039FAC8D9A255E5F096B1A2E012651FE703F003D2273C34A0877A2EAF9A3"
+      "sha256": "4A3E57B3C7D7382A85CA9F82B012B883DC08B14D8FA7A501B21F86F7FCFE5A77"
     },
     {
       "path": "docs/API.index.zh-CN.json",
-      "sha256": "B3F60574DBF57A08110E6B7611F4C36E1BEDCF23901A363A0EE4AF8C41A687EF"
+      "sha256": "3A34A8F1A3336ED8932794568122D7A73D05F34D7491BE1040AC767985FDC324"
     },
     {
       "path": "docs/FORGE-PARITY.zh-CN.md",
-      "sha256": "BFE005053F7F3FB462CD78A0F86A308EE87A0DC6BB4152786585B12A8D4496F7"
+      "sha256": "66FD0569482FA5012337BC93FCBD0FF1AF131D963380AC687EC4630A240169F1"
     },
     {
       "path": "docs/SOURCE-PROVENANCE.zh-CN.md",
@@ -951,11 +959,11 @@
     },
     {
       "path": "docs/automation.en.md",
-      "sha256": "35ED5EC16F166290AC19A135F32D44839B6C4380A4598DCFBB091A443BD65658"
+      "sha256": "3CEF30D1D60172381FC478971CC671F248A278A1B3466F9D0B289CFA84FFA9C7"
     },
     {
       "path": "docs/automation.zh-CN.md",
-      "sha256": "130452E89DDC2B9A3C6643F1A6382F71CFC9C23E0BEBB6EAABB1FDAD3941FD9C"
+      "sha256": "567016F7613310FD250C932EDC27386FF6E4EDB77721ED416E9867F52589CC78"
     },
     {
       "path": "docs/batch-validation.zh-CN.md",
@@ -963,15 +971,15 @@
     },
     {
       "path": "docs/build-from-source.en.md",
-      "sha256": "D833BB32B50D66CD987BAF8C5C6E227E04A94574681BBA4FCCFAFE1352311EF9"
+      "sha256": "311785DE3F15864EF35537E506D2579C08F6B70B8ECA57016DE068E73D99D83A"
     },
     {
       "path": "docs/build-from-source.zh-CN.md",
-      "sha256": "931158325CC6CCCD6C40270A31B6AB6258AD2E5592BE21D2DDF8F9F6DA1A18FF"
+      "sha256": "CF56C578046EA1080165301B03D6ACC1052D70B8A973380A5E92EAA82D973D3D"
     },
     {
       "path": "docs/capabilities.json",
-      "sha256": "F22DE12EC00509228BE5B0540F6228399C36C48C8F461DBBCD0EC946CB43537F"
+      "sha256": "7904D5F24990C4CF1C1E89332B8D1DE262C2A7E02F2A59E38C325F4A7559A6FB"
     },
     {
       "path": "docs/client-visits.zh-CN.md",
@@ -991,11 +999,11 @@
     },
     {
       "path": "docs/current-status.en.md",
-      "sha256": "FDEC6D7259ECDA2D3B375471A277F9C0C3047A3AF79F0DE76A8B402F3C6F3584"
+      "sha256": "DF4F5C09A35D87D8D84BC34D33B51EBFAE0149B6933ACEA842C48A0249FF0052"
     },
     {
       "path": "docs/current-status.zh-CN.md",
-      "sha256": "4F6656F87DC1B48766815C6B0771D9BC4F1A1399DC304DCB9B3347642DD882B5"
+      "sha256": "9C7A4CCCEAA635E21F93536B80761A3E3C57DBD864ECEF411F03DC2FF13108AD"
     },
     {
       "path": "docs/departure-buttons.en.md",
@@ -1003,7 +1011,7 @@
     },
     {
       "path": "docs/departure-buttons.index.json",
-      "sha256": "1141B746A39156AF13A37A4FE9565E360C34C1E129CB776BA4B2CF7846297530"
+      "sha256": "D7F75C02C5229ABB20B4368668AF5189A16F898FFFE0F5136B8B93F068429910"
     },
     {
       "path": "docs/departure-buttons.zh-CN.md",
@@ -1015,7 +1023,7 @@
     },
     {
       "path": "docs/developer-workflows.index.json",
-      "sha256": "45E179CF556FA9B41C1A8A56CC20F189E0C6F744DE1BBC15933A67EA87D489DF"
+      "sha256": "17BB48EE043A67FBE3FCEA4AF8C8A0EA1FD54721F6FF69489B55994B378E9E44"
     },
     {
       "path": "docs/dialogue-localization.en.md",
@@ -1023,7 +1031,7 @@
     },
     {
       "path": "docs/dialogue-localization.index.json",
-      "sha256": "935287EF5D12D553C276025F4CF522AA7F34491BFFF9B3F605297C803814360F"
+      "sha256": "FBD539F2A35D5BC08EEC145F53DAD460571CA34576F7348F9E3E8C8D86E32F40"
     },
     {
       "path": "docs/dialogue-localization.zh-CN.md",
@@ -1035,7 +1043,7 @@
     },
     {
       "path": "docs/errors.index.json",
-      "sha256": "1A2E8C03EC63E85BB90116B55F68292C2ED4AFF812CF58310462BE6361597C6B"
+      "sha256": "EB48C20DB34AF8806CE7C7A375D2080ACEF53698C7DFB2791D580711A7C6D09D"
     },
     {
       "path": "docs/examples/author.tools/items.json",
@@ -1086,6 +1094,14 @@
       "sha256": "B1FC92873A66810F38D3535DD840A4A71F3B360D0757F31A7BADD51CD86F7078"
     },
     {
+      "path": "docs/examples/native-ui-dll/NativeUi.csproj",
+      "sha256": "6BB901EFD8C18C2BCB9ABA3D3727891F89640816D62859315E998C35F41B00EF"
+    },
+    {
+      "path": "docs/examples/native-ui-dll/UiLayout.cs",
+      "sha256": "2705A14B2465C2314913ADC46DA5E1CBB87D3131BB73275E1DE885F28F1737E0"
+    },
+    {
       "path": "docs/examples/npc-stock.json",
       "sha256": "356F644B344DD3AA410CD2DA138D98697B6C7264542A8CB015CF2EA9DF1E6911"
     },
@@ -1122,6 +1138,18 @@
       "sha256": "6809EA4D52B9B90A69C4D28184E24145A4558292B4ABA0F90A681BA6EB813FBB"
     },
     {
+      "path": "docs/examples/ui-preview/aquaculture.json",
+      "sha256": "E2258DF8A30024D25B84035B492840920726241F984CECEC5BAA8246128ADC9E"
+    },
+    {
+      "path": "docs/examples/ui-preview/computer.json",
+      "sha256": "9B6D8448BE73930890EA3525D8259697D9187A670D379794A7E565916B7D469D"
+    },
+    {
+      "path": "docs/examples/ui-preview/furnace.json",
+      "sha256": "DB29CF33B734C49C395AE3CA6F79ECDECF5EFDEDDC4E63FB223ED5B6C3BCB8E0"
+    },
+    {
       "path": "docs/external-power-0.1.29.zh-CN.md",
       "sha256": "78E3596F6FC47E18A3555A0FD1EDFD0EF7350FD8BB162AC647A06FB8AF8ACF48"
     },
@@ -1131,11 +1159,11 @@
     },
     {
       "path": "docs/forge-parity.index.json",
-      "sha256": "67352C8E51771FEE063A4EB950A3631F54FC8C187F4903E6726DFBE4C17414C1"
+      "sha256": "0D142FF0E9A901138DBE617CE529CCF836D01161792E6B8E7567F8FBA547B78D"
     },
     {
       "path": "docs/forge-public-contract.index.json",
-      "sha256": "AD6F90E95637C9430B8C1349A02B6816B744B9B826EB0DB8C12E3C82A14445F3"
+      "sha256": "F4A381290DB2B36A6029FAF4EC5E7FF22147553CF9E951A692FFC6F5EF263C13"
     },
     {
       "path": "docs/furnace-contents.en.md",
@@ -1143,7 +1171,7 @@
     },
     {
       "path": "docs/furnace-contents.index.json",
-      "sha256": "9425A93DCB9A9D804E963735E49B8FDE7B6709012E5F8E3B497F82DFB002447F"
+      "sha256": "B63E380A49FD1F9C1679375E0B8E71F17959BF9757F038AF134F88B018183139"
     },
     {
       "path": "docs/furnace-contents.zh-CN.md",
@@ -1159,7 +1187,7 @@
     },
     {
       "path": "docs/game-language.index.json",
-      "sha256": "EC8DDCEC5CDEEEC89C075B16A1F94880A5D82DB239617823E7D5F9E86B382AB2"
+      "sha256": "111168E02685C9A2DDF7D8600366CD01EC95109AB3CC6D163EBE68D1C2BDAF16"
     },
     {
       "path": "docs/game-language.zh-CN.md",
@@ -1283,11 +1311,11 @@
     },
     {
       "path": "docs/install-and-debug.en.md",
-      "sha256": "D09C47FE09CDF3768D9E9A24D95D92FCAD487E71C2CC75667A6C6F23B4F687ED"
+      "sha256": "6575B2F092CCA44E6537FAEF949283A25C8FBE98132DC2E9753FC08E53CB801C"
     },
     {
       "path": "docs/install-and-debug.zh-CN.md",
-      "sha256": "81EBD1B134FD5D1A4D02E5B55B98E4C57B43B3934DCFD237E555897FC691AF3B"
+      "sha256": "26ACB3067A32EB1A099D7EB70D931AE1530B7C0B7DBE90D6CFAE18FFC5D7E1E6"
     },
     {
       "path": "docs/inventory-endpoints.zh-CN.md",
@@ -1307,11 +1335,11 @@
     },
     {
       "path": "docs/item-art.en.md",
-      "sha256": "3C338830334A8972F14B6E8D1337203419AFDE0E14D3674F0B93722DD15C1D60"
+      "sha256": "8545925030E7BC3B55D56AAD8F434A8ED6A11319FBDDD65694A0994F18735CC2"
     },
     {
       "path": "docs/item-art.index.json",
-      "sha256": "EFC2DB85C845ED17AF89C694812B424AE4FE38B5029D9633B28AEC6FE46AC76C"
+      "sha256": "47FA5B768CC490E503B30C0B578EE8CFC7872138B380558EE9A663378C997E3C"
     },
     {
       "path": "docs/item-art.zh-CN.md",
@@ -1323,7 +1351,7 @@
     },
     {
       "path": "docs/item-data.index.json",
-      "sha256": "23D9A0E7837D17F9D085F5EB70F871742AA7457AEF1C8FE98259C007AE660374"
+      "sha256": "AE313C7F4ABC62CCA328EAF12EA5E4254051926A4A75A3CDD9BC768975BA1AC9"
     },
     {
       "path": "docs/item-data.zh-CN.md",
@@ -1331,11 +1359,11 @@
     },
     {
       "path": "docs/item-localization.index.json",
-      "sha256": "37ADAC3330F53305E093978D16F81E9B31166AAE797CA652AB0E10FC40A92F35"
+      "sha256": "33F73DF396FA43FC7032A4769D79C68E9EBC4E9C3664650ECC1E8BA2E85ECD06"
     },
     {
       "path": "docs/item-properties.index.json",
-      "sha256": "E7DB74C185C231BBF7D6D360429B2476C1A9F923B33D32C86E2B76EBF005ECF8"
+      "sha256": "BD181FE00CFCA2FDF4713AF9ADBA9653CC4E6ECC90E70F67FAA700185F119C6E"
     },
     {
       "path": "docs/item-stock.en.md",
@@ -1343,7 +1371,7 @@
     },
     {
       "path": "docs/item-stock.index.json",
-      "sha256": "AD33FF79402CC882DF53A6E9E959804EC06223DF990D0E2F9A3078ECF737AF10"
+      "sha256": "3B1565CDAFA90F0C42F17FAC57F8C49D57EDE881EAAC0DA072839D2B70643944"
     },
     {
       "path": "docs/item-stock.zh-CN.md",
@@ -1351,7 +1379,7 @@
     },
     {
       "path": "docs/knowledge-expansion.index.json",
-      "sha256": "92D32FE99497A8F5C413117FD63F788FAFC6CC5FFAA29BE93904B86CC848EDC9"
+      "sha256": "2B6AA0055FDF91879F548991DB5BBEB9A6C90CAE01C41D0277E1E40DDA724DD3"
     },
     {
       "path": "docs/lifecycle-content.zh-CN.md",
@@ -1363,7 +1391,7 @@
     },
     {
       "path": "docs/lifecycle.index.json",
-      "sha256": "E112C471A51E33132FE3527F663F2A9E73AA268BEAD0A14B001338CB9E98DC5D"
+      "sha256": "DCA2CF902016E9EB3EDFA5BA3B751179649B23D4DF91E68D2C5A1EC6BE755B83"
     },
     {
       "path": "docs/liquid-transfer.zh-CN.md",
@@ -1395,7 +1423,7 @@
     },
     {
       "path": "docs/machine-contract.index.json",
-      "sha256": "71DF84E199605CA5DB5EF5BFDD4906A127CDEB6C9775B414D66853B353D86AE5"
+      "sha256": "6CD375A7965753A1267B0312C5556BCC07719361EB4B5DC7FB92B2057B54A961"
     },
     {
       "path": "docs/machine-contract.zh-CN.md",
@@ -1411,7 +1439,7 @@
     },
     {
       "path": "docs/machine-layout-localization.index.json",
-      "sha256": "EF27EA608E7FFDFC1443DD872517010E2C05FBBB5C42DC33780BEDF3236E0321"
+      "sha256": "CB19453C9B058F00E36356EA94FEA9D2CAA558CDB1DD03924D34D7FA0B981C79"
     },
     {
       "path": "docs/machine-layout-localization.zh-CN.md",
@@ -1447,7 +1475,7 @@
     },
     {
       "path": "docs/machine-night-readonly.index.json",
-      "sha256": "ED19A10FD5F0F0D98342E7E5DF64DA01E79C9A9A61E920AC0232CD5823C7472A"
+      "sha256": "712A950942C42E843EC11FCF4BC8D9BA4024F37A57455A75AA824C23FB05CB1B"
     },
     {
       "path": "docs/machine-night-readonly.zh-CN.md",
@@ -1459,7 +1487,7 @@
     },
     {
       "path": "docs/machine-persistence.index.json",
-      "sha256": "93C61B71AEEB152992036A5012A44519FE8FF546808CEE95E5CCB57A812CFB7F"
+      "sha256": "0A454E39E14F52F4720DA46BF9B9D06D07C852E65EA86AA01600B8D2BC186E08"
     },
     {
       "path": "docs/machine-persistence.zh-CN.md",
@@ -1471,7 +1499,7 @@
     },
     {
       "path": "docs/machine-recipe-readonly.index.json",
-      "sha256": "8D5ACD221FE7709B394B63B8450A155F312199A965202491E2A1E0A00D58DFF4"
+      "sha256": "32188B50E869609302DCD55AC60D276ABBCD32FCA15A4B738AE7D7F6330987E7"
     },
     {
       "path": "docs/machine-recipe-readonly.zh-CN.md",
@@ -1503,7 +1531,7 @@
     },
     {
       "path": "docs/machine-status.index.json",
-      "sha256": "3E89EB423E73994E58E5342B53EDE19EA49016EBA0C1B8817DC30AC5D74198EA"
+      "sha256": "43104B75BBE4A59072F258C1C3EA3FAC68AE5E14A9EFFE81ADEE6CA5F6F16EC2"
     },
     {
       "path": "docs/machine-status.zh-CN.md",
@@ -1551,7 +1579,7 @@
     },
     {
       "path": "docs/native-item-types.json",
-      "sha256": "E29AF26558569352F7F46EE0C76FE715433D74B9D84BC853FB88CB2B836DD90A"
+      "sha256": "098EA2E03413CF71B7844C21E2D026A748D97ECD978DE31B07A9C3354D4E4AB5"
     },
     {
       "path": "docs/native-items-0.1.20.zh-CN.md",
@@ -1590,12 +1618,24 @@
       "sha256": "7CCE5EB0119186A594AF299A60E84597B95CB13DD91A30A092CB4A2445BF3BBA"
     },
     {
+      "path": "docs/native-ui-preview.en.md",
+      "sha256": "68D5923961F1D2440C05B15D6938592CC6A32CA8E1150118E5C9F2AF2E130701"
+    },
+    {
+      "path": "docs/native-ui-preview.index.json",
+      "sha256": "036F3B9018EEDB316BAFB91D08A0AC7CE15F8EA491B9D2B6C69E0F88C4D39E7F"
+    },
+    {
+      "path": "docs/native-ui-preview.zh-CN.md",
+      "sha256": "5F248B035108B3F196C57B7DFEB2EBA06414F06B0A480A24FDAA957984190025"
+    },
+    {
       "path": "docs/npc-fixed-stock.en.md",
       "sha256": "CDA6E1B1069415547D6FF40401132225E7C03E94C067CDD8020B8366F2F3FA03"
     },
     {
       "path": "docs/npc-fixed-stock.index.json",
-      "sha256": "B68745D95C13EF6CE2569737BAB3ECE949F9CE754674AB356943826B794CB8F2"
+      "sha256": "4A308CD54D88FBD739FADC9930D77603CF57BCE97102945E1315B750830F08E5"
     },
     {
       "path": "docs/npc-fixed-stock.zh-CN.md",
@@ -1611,11 +1651,11 @@
     },
     {
       "path": "docs/official-sources.index.json",
-      "sha256": "08327249D4A82AB3464A72035628BF57C40DA52EB80C6855A1DB8C550472BC83"
+      "sha256": "046245BF8CE1D971D804C52C197F2B4A1D5645C48596609CFCF46DDAB2AF5857"
     },
     {
       "path": "docs/patches.index.json",
-      "sha256": "148A1ABB3A97FF4C9A9D10EBCC0F5146FFA274E043FF7ECB8D85A451FF04B04D"
+      "sha256": "2D7B5E386D6C737F58985CE9007D256661D8C2D78A8A421588C1C5E1E560CBE8"
     },
     {
       "path": "docs/phone.zh-CN.md",
@@ -1639,7 +1679,7 @@
     },
     {
       "path": "docs/progression-requirements.index.json",
-      "sha256": "52333424A8F0404D6A27A4CF44D59EE4F0A8B4B687D37A013537FB57F432B575"
+      "sha256": "4024D81C1B2B154B4DE34CD7EA8F4270AF918335F506F78047B610B442709F9C"
     },
     {
       "path": "docs/progression-requirements.zh-CN.md",
@@ -1647,11 +1687,11 @@
     },
     {
       "path": "docs/public-api.index.json",
-      "sha256": "8D0280B576118DED6A044EBFDB58053D53323E4108D91FDB90A89F11427676EB"
+      "sha256": "3FB0710F9476D504F5F0D1F12E78CE43AA91B064E54D4A0DB6D50C492FBD15C7"
     },
     {
       "path": "docs/public-contract-coverage.index.json",
-      "sha256": "03103BA2458A6F2EF1FA2336873621AA2F41EB27436609FB1F98736306B974C4"
+      "sha256": "1C2E29AE57621A3F5C9E3D164C6D38BA5457DF97B5790C2F13EEE41AAC193215"
     },
     {
       "path": "docs/public-helpers.en.md",
@@ -1659,7 +1699,7 @@
     },
     {
       "path": "docs/public-helpers.index.json",
-      "sha256": "E10EBEA98B8D8368D3782E3F6349EDF5BA3916E11CE97666384CEEDBC255F648"
+      "sha256": "3B8FD7C85812370EDEC64204C1A3254F15E4999F6A1C6ADE77D5A4CB3C014F60"
     },
     {
       "path": "docs/public-helpers.zh-CN.md",
@@ -1671,7 +1711,7 @@
     },
     {
       "path": "docs/recipe-guide-bilingual.index.json",
-      "sha256": "DF745998B8377529DB7107BBC9CF387213613276A31B1D1D6968DDA4138E77B0"
+      "sha256": "B78260E3EC7368224104F9FFB8E04062B57F929414B3F7617D6FC29FD3B82585"
     },
     {
       "path": "docs/recipe-guide-images.en.md",
@@ -1679,7 +1719,7 @@
     },
     {
       "path": "docs/recipe-guide-images.index.json",
-      "sha256": "39B0C69592C39D1372875D928A41DCC66A3B873BA61960B0FE60D3DF01EEA953"
+      "sha256": "F8998C933BA0DA58775DD50E44D74D1FCC7A36C555D9ED8BA323A6B72613EF5E"
     },
     {
       "path": "docs/recipe-guide-images.zh-CN.md",
@@ -1699,7 +1739,7 @@
     },
     {
       "path": "docs/release-status.json",
-      "sha256": "45F087CFB2CDF2F64A78B297B0C738FEF6BA21F4306890090C56E50A8ABB777C"
+      "sha256": "F86438723688AB0A516DDBD1C02D6E33173C7637E0C3F1E640B30C77951789A0"
     },
     {
       "path": "docs/releases/0.1.72-preview.1.md",
@@ -1734,8 +1774,12 @@
       "sha256": "429617B6AC7D88D9F02963B144227BF61EBB33D9961AD4FE083723E933A08BE4"
     },
     {
+      "path": "docs/releases/0.1.76-preview.1.md",
+      "sha256": "8474E833AEB74FCE7A17846C2D53A0593CE485A41D27E01DA38BC2B6A1CCAC22"
+    },
+    {
       "path": "docs/releases/README.md",
-      "sha256": "F1DB583C9672594CE722DB929B37BF403FAA873F21959FBC954292325F9511C7"
+      "sha256": "F5E18D78A7374327EDFE5139BE083C22C69053A7CAB94FFD4F2C8B68186F2A11"
     },
     {
       "path": "docs/run-data-records.zh-CN.md",
@@ -1767,7 +1811,7 @@
     },
     {
       "path": "docs/source.index.json",
-      "sha256": "6270607A28D71F12CF299F143A167273324E39E84D336F45391188B11DAF0482"
+      "sha256": "2DB5A8A2EB89B6010E249E3019B7B46D7BA6FD6B8B82AE2D6E444CC050C16073"
     },
     {
       "path": "docs/sprite-assets.zh-CN.md",
@@ -1791,11 +1835,11 @@
     },
     {
       "path": "docs/tooltip-style.en.md",
-      "sha256": "2E010B68EA9AAE25F2F11A041C7FD8758BD5506475FB2340A2B1F76C9466C965"
+      "sha256": "35FA19DAB6DE167DA689393E5060434F23C3FFDCA5DB3AB8D156F809EE0AAC25"
     },
     {
       "path": "docs/tooltip-style.index.json",
-      "sha256": "080D26FFB7683057F67D3A2BD9F8F305D505574C4C7053F0365408313E7A1A16"
+      "sha256": "2BC5B36FF9C74AB374672127B0A44CE67F2B4D74C1A5D433CA8F972E356D72D4"
     },
     {
       "path": "docs/tooltip-style.zh-CN.md",
@@ -1803,11 +1847,11 @@
     },
     {
       "path": "docs/wild-network.en.md",
-      "sha256": "42A1662CD6908E7CBDE98C5CB4E061061AA4ED3DD1C9FCCC74BC1EAA07B86A7D"
+      "sha256": "91DCFA37AE54F4E256D4AF3CC699BC04C49BD7CE50CAEC4334B52225B8236AA9"
     },
     {
       "path": "docs/wild-network.zh-CN.md",
-      "sha256": "C3FBA3965BBC1D0526A7593D4460538D55E675F5D1321DDE933A0F4B78677214"
+      "sha256": "CB6092A3EE8DB2FCC9E725999EEB87456F99F0FB0E35A8692D94E80C692A65D2"
     },
     {
       "path": "docs/workshop-0.1.38.zh-CN.md",
@@ -1882,6 +1926,10 @@
       "sha256": "1002D595D2F6487C6CDEABE9858ADE88B4674384412441CD991C0F0207CC01B0"
     },
     {
+      "path": "schemas/native-ui.schema.json",
+      "sha256": "07EE53067148C1938F3E2BE53956BEECD5A02F23839E53E1F61F65520115CA47"
+    },
+    {
       "path": "schemas/pack.schema.json",
       "sha256": "B22EBC242719B91CF9DE9BD1DAC9EBB4D92A459E6040D42C81CEB5F6DAABD2AF"
     },
@@ -1895,7 +1943,7 @@
     },
     {
       "path": "scripts/Check-SourceDistribution.py",
-      "sha256": "AA2F63A756A54712E3468C05046AB0532EDD1C625908E212AF2190C949BE4313"
+      "sha256": "B2E56658A0872F20ED6A3F0A7A3340443C85979720953BDD9490E83CB01C411C"
     },
     {
       "path": "scripts/Fetch-OfficialDocs.ps1",
@@ -1903,15 +1951,15 @@
     },
     {
       "path": "scripts/Package-EZapi.py",
-      "sha256": "C6A2294C7B9A90C22F29DB3A2363EC15559327002F2F99D199D548847D33DB39"
+      "sha256": "AF82EDFD3C1CDC30C54DCC0C52A0E6DA2B0B413C25F8A5EAD155CBF7666C2979"
     },
     {
       "path": "scripts/Test-EZapiOffline.ps1",
-      "sha256": "6E4E2DA45C61F50591D526C85F6A85D8E9BB5A368B83BA51545CAB143686D583"
+      "sha256": "BEFB8864EDC8DBD288CBF9486E1D8B4490003E69DA9C9CA516E7A96D4570D173"
     },
     {
       "path": "scripts/Verify-Documentation.py",
-      "sha256": "2DAAA37D12D2CA71E43BAE3783D6B7C5A3638C04974792A2EB54D07E448D3DD3"
+      "sha256": "39DD1428D99BE7E8B62483B4C2007D5EC692C0DB8E796315B595E923A9D2B15E"
     },
     {
       "path": "src/EZapi.ContentValidator/EZapi.ContentValidator.csproj",
@@ -2143,7 +2191,7 @@
     },
     {
       "path": "src/EZapi/DebugDiskItems.cs",
-      "sha256": "0ED185E7B8F93773177E0A74328D9F13505A8B846A392951AD6FBA63A0DD6ED4"
+      "sha256": "7E8140A952B7CF86916647A10E09190643351138C49F1A3EBD764D9F6C848513"
     },
     {
       "path": "src/EZapi/DebugExternalPower.cs",
@@ -2155,7 +2203,7 @@
     },
     {
       "path": "src/EZapi/DebugGuideLocalization.cs",
-      "sha256": "C650071F51AB7CCC25715B3AB7D5FF3BD7FD328A31AE9EF929055908200AD5DD"
+      "sha256": "A40384D035A2FC953D426A184AE178B1B4176CD82F9871657984C8A6240FC953"
     },
     {
       "path": "src/EZapi/DebugInputShield.cs",
@@ -2163,7 +2211,7 @@
     },
     {
       "path": "src/EZapi/DebugInventory.cs",
-      "sha256": "A266310F6FD90BC3198914F6444A55474412A627C416D081B2BDF74247B34B98"
+      "sha256": "A750A6C8C138032A4E4020B62AE3DEDDA542165F9622C79DD870DF5FEE973F18"
     },
     {
       "path": "src/EZapi/DebugInventoryEndpoint.cs",
@@ -2175,11 +2223,11 @@
     },
     {
       "path": "src/EZapi/DebugItemInspection.cs",
-      "sha256": "30B566964A9825308FFFA97A8D234C071F813FED171A1EED1871572A86BBE97A"
+      "sha256": "05D099BCE4BD8AE00EB3AD3CA86343A795CDA3319443E6474D580D1AE1AC43EF"
     },
     {
       "path": "src/EZapi/DebugItemSpawner.cs",
-      "sha256": "F13AA21052903C0E4594D098486FA3C0F511DDDB5AE5ED2C403829CEDDCB73B1"
+      "sha256": "FCAB2827335800563A920D7C383437D5A851AA6B08E937BDFC4F33897F373097"
     },
     {
       "path": "src/EZapi/DebugItemStock.cs",
@@ -2199,7 +2247,7 @@
     },
     {
       "path": "src/EZapi/DebugLocalization.cs",
-      "sha256": "4EBEF54174C026BD557B2812EB70F735C4F938AC63FD69E8E0B54989AE2084D0"
+      "sha256": "9BA36DBAD1D25EA3DBBC45F6AA761BF7C96B2C8B80CD777D84B5F3A45941D08D"
     },
     {
       "path": "src/EZapi/DebugLocalizedItems.cs",
@@ -2278,6 +2326,10 @@
       "sha256": "E4344B0B964679D3C673685CBCFFF7B03FC78EF95A4FF1345FDA881122BAA582"
     },
     {
+      "path": "src/EZapi/DebugNativeUi.cs",
+      "sha256": "11D2A8124FA0F72F289476ADA8742D2C02DDFD5B79EF08FAFE283EB28D526D9B"
+    },
+    {
       "path": "src/EZapi/DebugNpcStock.cs",
       "sha256": "0E5FC949294A3A26470DEB502C0A7A16566B1FC480495657BAE347D8F3CE105A"
     },
@@ -2314,8 +2366,12 @@
       "sha256": "AD394BC04E52F146F8460008A7B74F6A775F97702A0A733C972AC7A3CD1DC462"
     },
     {
+      "path": "src/EZapi/DebugRegressionSession.cs",
+      "sha256": "602DD8058BF760447F541806F7473874C557DBB026B56685DC7D585E4859DC45"
+    },
+    {
       "path": "src/EZapi/DebugResources.cs",
-      "sha256": "BAD50E2BB8F52CF4ADAD209E771C458BA3B8435162AC59FD4A6B65852E1665DA"
+      "sha256": "C95CB18CD20FE4BAFEE28D01B01FA7AAB89DACF8003DDE490398A7EA8862FE89"
     },
     {
       "path": "src/EZapi/DebugRunData.cs",
@@ -2343,7 +2399,7 @@
     },
     {
       "path": "src/EZapi/DebugSupplierLocalization.cs",
-      "sha256": "EC723A078BE7CE3FCD1C7D9F988275E531EF486A461B87D2CED7B5C8E70D82CF"
+      "sha256": "F21BA39F3354F692C7A3D110773CF6F6F20DF576D2D4B715D026C3B6E1AB41F7"
     },
     {
       "path": "src/EZapi/DebugWorkshop.cs",
@@ -2391,15 +2447,15 @@
     },
     {
       "path": "src/EZapi/EZapi.csproj",
-      "sha256": "2F5ED30E96DA689A2C78B0B0237D283484EAAE002302FD20A1573877FED383B3"
+      "sha256": "3EBCF39EC47445CF0876252B8446E186E6D6204589321A9607746A644647C9AA"
     },
     {
       "path": "src/EZapi/EZapiBootstrap.cs",
-      "sha256": "5E84E4B7FE2DB1E930249BD210D152DF954E891FB4C8B87D936B3012AE40AD9C"
+      "sha256": "5B0F0C1AD9BF5F48BB98C12663081CA7ACE63F78919B0BB36A5321C2F31097A1"
     },
     {
       "path": "src/EZapi/EZapiDebugOverlay.cs",
-      "sha256": "EF2A64B2335EABCDAF1A09F5BAF3C0182AA052BA787A106A060A9D2E48793742"
+      "sha256": "BD2B96576F3D4A86F7EC1E95E818DCDC5BCC2E3A68ADF2220D82CA78D0A3C109"
     },
     {
       "path": "src/EZapi/Effects.cs",
@@ -2419,7 +2475,7 @@
     },
     {
       "path": "src/EZapi/FrameworkInfo.cs",
-      "sha256": "3C37E7239F8CE8AC77CFCEDD041C6C9FFCE0E60B2A27535022D14C9FBF859588"
+      "sha256": "E0ADB9604941AF9B60B32E922D67E0D7DC2A7CE705EECA3602992C84A5D27FCE"
     },
     {
       "path": "src/EZapi/GameEvents.cs",
@@ -2491,7 +2547,7 @@
     },
     {
       "path": "src/EZapi/ItemRegistry.cs",
-      "sha256": "B696C5F9A7187396CF94B04771B80EB2705B8538581A67C5544CFD7AB12683EC"
+      "sha256": "37096F3C1BB22EB05F2067DDE4EF10CE7A76493E7D9F2814244F325DB2446CD6"
     },
     {
       "path": "src/EZapi/ItemStockContract.cs",
@@ -2695,7 +2751,7 @@
     },
     {
       "path": "src/EZapi/NativeItems.cs",
-      "sha256": "E03C8061179C5374E9911F34B371178DC4A97FDCEC506743F3CA4E5F2161930F"
+      "sha256": "580A524A8457551CBC43A837C006D9CEBEDC74CC953666187237D63C4CC4A210"
     },
     {
       "path": "src/EZapi/NativeLocaleCalendarGuard.cs",
@@ -2708,6 +2764,18 @@
     {
       "path": "src/EZapi/NativeTagBackup.cs",
       "sha256": "97DF1ABFF83DB75BD1601C7AD07316CFA90B011CCA47D68E688C919B3BEB1CFE"
+    },
+    {
+      "path": "src/EZapi/NativeUiComponents.cs",
+      "sha256": "D9DCC79E627C2FE7792F28230B5C66A271EB43AC7503D5B12A1F685DBD6749C0"
+    },
+    {
+      "path": "src/EZapi/NativeUiDefinition.cs",
+      "sha256": "546B7D9D6206AEED88A528B892B7B903E4A3B9BFB8AF9B9DEFC5B764815958A1"
+    },
+    {
+      "path": "src/EZapi/NativeUiPreview.cs",
+      "sha256": "855AA3C86DCF7346C7BB327461D546669940F1FC00843CBCE706A6A3BD7B0173"
     },
     {
       "path": "src/EZapi/NativeWindowTitles.cs",
@@ -2923,11 +2991,11 @@
     },
     {
       "path": "work/Enter-EZapiTestStore.ps1",
-      "sha256": "03AC105E6260B165CD5E2C2747D56E6565DAEC1C202643EC66B82E8810D971FB"
+      "sha256": "18F3F48DE891AB905BB5AD8E39CFE6C1B127D343776A6AAAA0001BF61414D787"
     },
     {
       "path": "work/Invoke-EZapiGuideLocalization.ps1",
-      "sha256": "7CC89F40CB24B7318D95FFFCD40F264B0B148E68AFBD92D59D0ED9589BBB354D"
+      "sha256": "A197195CA3D31C49B97DEAF4567DE62E8EA4E3C7282CCC21EDF524C6996E299D"
     },
     {
       "path": "work/Invoke-EZapiNativeTest.ps1",
@@ -2935,11 +3003,11 @@
     },
     {
       "path": "work/Invoke-EZapiTestBatch.ps1",
-      "sha256": "7D071D45F21CE2094F6542139239EE3F0465218A3C59F31D9232430E5079EDE2"
+      "sha256": "643B760189E63D673DF04BEB2A65D6F40F1E7DBEF7DCBA409AE891EF4AABE25F"
     },
     {
       "path": "work/build-public-api-index.py",
-      "sha256": "E1AB87C502F777BAA5EBA1190DA819DF0FD7F015D7F93E9CE0174E22349CDE40"
+      "sha256": "374FA8300232535A4C1FA99120CE9A25B299809C62AF1DF78F47F96BE6E7676C"
     },
     {
       "path": "work/ezapi-activation-tests/ActivationTests.csproj",
@@ -3043,11 +3111,11 @@
     },
     {
       "path": "work/ezapi-developer-options-tests/DeveloperOptionsTests.csproj",
-      "sha256": "DEB1B30BC775A39581BC0B4E1FEA64608B625AF5BAD0D01D87DAF957091ADFDE"
+      "sha256": "6253AD34855FAB6DB01D6BE8F12ACD0A7EA08D7BED968E194CEC0F5A81254EED"
     },
     {
       "path": "work/ezapi-developer-options-tests/Program.cs",
-      "sha256": "5A96B5E15A82A50F87253B3457F9C2D2F5787C584FB30B4E940E2D847C86D913"
+      "sha256": "A43E1B46FDD79EBA29C1A658365F3A2C9FCE9D5CDBA4AF1D560396A3AA636725"
     },
     {
       "path": "work/ezapi-dialogue-native-tests/DialogueNativeTests.csproj",
@@ -3239,7 +3307,7 @@
     },
     {
       "path": "work/ezapi-loot-tests/FactoryBoundaryStub.cs",
-      "sha256": "4762E063A8DA97287C31DF4F5A36EF29113C8131919D0251411BBD3ADF246B8E"
+      "sha256": "0399CD92FF691180B3FC8FF4794981F5B2E81ACC6C1B59C72EC158F584AE6223"
     },
     {
       "path": "work/ezapi-loot-tests/LootTests.csproj",
@@ -3406,6 +3474,18 @@
       "sha256": "F2A5432A8C027A49878347AC7C91B8010F5B5FDA9587E1ECB65007090BD17573"
     },
     {
+      "path": "work/ezapi-native-ui-tests/LocaleBoundary.cs",
+      "sha256": "60551E45CDA1A5B4617AC7A6172EEA2BE8D2739982FB491F566AC2201CAD1385"
+    },
+    {
+      "path": "work/ezapi-native-ui-tests/NativeUiTests.csproj",
+      "sha256": "02E0E2FF1BAF9B0A1A384159AF9FCDD059A525FE64B68779A654CFF11AF1B622"
+    },
+    {
+      "path": "work/ezapi-native-ui-tests/Program.cs",
+      "sha256": "96425EE9FF6EFD3C0A845F2B51A48E6EA1406E4331F7B6564150FBB17B636BE5"
+    },
+    {
       "path": "work/ezapi-npc-adapter-tests/NpcAdapterTests.csproj",
       "sha256": "08F73064281B94D5AF1EE0201D89E3C8D819B8A9314748CF41D64E584B5F26BF"
     },
@@ -3447,7 +3527,7 @@
     },
     {
       "path": "work/ezapi-official-tests/FactoryBoundaryStub.cs",
-      "sha256": "4762E063A8DA97287C31DF4F5A36EF29113C8131919D0251411BBD3ADF246B8E"
+      "sha256": "0399CD92FF691180B3FC8FF4794981F5B2E81ACC6C1B59C72EC158F584AE6223"
     },
     {
       "path": "work/ezapi-official-tests/NativeStubs.cs",
@@ -3463,7 +3543,7 @@
     },
     {
       "path": "work/ezapi-pack-tests/FactoryBoundaryStub.cs",
-      "sha256": "4762E063A8DA97287C31DF4F5A36EF29113C8131919D0251411BBD3ADF246B8E"
+      "sha256": "0399CD92FF691180B3FC8FF4794981F5B2E81ACC6C1B59C72EC158F584AE6223"
     },
     {
       "path": "work/ezapi-pack-tests/NativeStubs.cs",
@@ -3475,7 +3555,7 @@
     },
     {
       "path": "work/ezapi-pack-tests/Program.cs",
-      "sha256": "800F6A805E1C0D99892380427750F98A584D093E5DEE163317AF336627699630"
+      "sha256": "0F71E6BE70E4D8E22E71490761C061AA0BC688EA47A26AB57BAA5C9FB22D2B2A"
     },
     {
       "path": "work/ezapi-phone-tests/NativeBoundary.cs",

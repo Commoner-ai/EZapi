@@ -1,10 +1,10 @@
 {
   "schemaVersion": 1,
   "framework": "EZapi",
-  "version": "0.1.74",
+  "version": "0.1.76",
   "assembly": "EZapi",
-  "assemblyVersion": "0.1.74.0",
-  "dllSha256": "FE6DE81903D1F3A1234031C193D0F5678B17D99949AB24A47DCAB52958DFCA55",
+  "assemblyVersion": "0.1.76.0",
+  "dllSha256": "48D037715375C8AFF6528AD6674A224FF7F953BE33BC1E04672462AC121A54E5",
   "source": "compiled EZapi.dll public metadata plus compiler-generated XML documentation",
   "curatedUsageIndex": "API.index.zh-CN.json",
   "typeLevelSourceIndex": "source.index.json",
@@ -12,13 +12,13 @@
   "scope": "Exported public type declarations and declared public members; property/event accessors represented by their declarations; inherited members resolved through baseType/interfaces; compiler-generated members retained and flagged; metadata nullability is not inferred",
   "complete": true,
   "counts": {
-    "types": 260,
-    "fields": 204,
-    "properties": 879,
+    "types": 274,
+    "fields": 218,
+    "properties": 935,
     "events": 0,
-    "methods": 1316,
-    "members": 2399,
-    "declarations": 2659
+    "methods": 1413,
+    "members": 2566,
+    "declarations": 2840
   },
   "inheritanceRule": "Only members declared on a type appear in that type; resolve inherited members using baseType and interfaces.",
   "identifierRule": "Stable documentation IDs use T:/F:/P:/E:/M: prefixes; method IDs contain parameter signatures so overloads never collide.",
@@ -251,6 +251,13 @@
       "taskEn": "Owner names and tooltip text",
       "guide": "presentation.zh-CN.md",
       "example": "../src/EZapi.Sample/PresentationExamples.cs"
+    },
+    {
+      "id": "native-ui",
+      "taskZh": "原生UI积木与AI预览",
+      "taskEn": "Native UI components and AI preview",
+      "guide": "native-ui-preview.zh-CN.md",
+      "example": null
     },
     {
       "id": "reading",
@@ -6320,7 +6327,7 @@
           "isStatic": true,
           "isReadOnly": false,
           "hasConstant": true,
-          "constant": "0.1.74",
+          "constant": "0.1.76",
           "compilerGenerated": false,
           "documentation": null
         }
@@ -38470,6 +38477,1823 @@
       ]
     },
     {
+      "id": "T:EZapi.NativeUiComponents",
+      "name": "EZapi.NativeUiComponents",
+      "kind": "class",
+      "baseType": "System.Object",
+      "interfaces": [],
+      "abstract": true,
+      "sealed": true,
+      "compilerGenerated": false,
+      "genericParameters": [],
+      "documentation": {
+        "summary": "Small native building blocks for caller-owned windows. Native graph ownership is retained; never pass a control already attached elsewhere. No patches, callbacks or processing are installed. 原生窗口积木：调用方持有窗口寿命，禁止重复挂接同一控件；不接管机器加工和保存。",
+        "remarks": null,
+        "returns": null,
+        "parameters": {}
+      },
+      "sources": [
+        {
+          "path": "../src/EZapi/NativeUiComponents.cs",
+          "line": 12
+        }
+      ],
+      "domain": "native-ui",
+      "curatedEntryIds": [],
+      "fields": [],
+      "properties": [],
+      "events": [],
+      "methods": [
+        {
+          "id": "M:EZapi.NativeUiComponents.Button(System.String,System.Int32,System.Int32,Il2CppSystem.Action,System.Nullable{System.Single})",
+          "name": "Button",
+          "signature": "Il2Cpp.ButtonElement EZapi.NativeUiComponents::Button(System.String,System.Int32,System.Int32,Il2CppSystem.Action,System.Nullable`1<System.Single>)",
+          "returnType": "Il2Cpp.ButtonElement",
+          "isStatic": true,
+          "isConstructor": false,
+          "isAbstract": false,
+          "isVirtual": false,
+          "compilerGenerated": false,
+          "genericParameters": [],
+          "parameters": [
+            {
+              "name": "text",
+              "type": "System.String",
+              "optional": false,
+              "hasDefault": false,
+              "defaultValue": null,
+              "isOut": false,
+              "isParams": false
+            },
+            {
+              "name": "width",
+              "type": "System.Int32",
+              "optional": true,
+              "hasDefault": true,
+              "defaultValue": 80,
+              "isOut": false,
+              "isParams": false
+            },
+            {
+              "name": "height",
+              "type": "System.Int32",
+              "optional": true,
+              "hasDefault": true,
+              "defaultValue": 16,
+              "isOut": false,
+              "isParams": false
+            },
+            {
+              "name": "callback",
+              "type": "Il2CppSystem.Action",
+              "optional": true,
+              "hasDefault": true,
+              "defaultValue": null,
+              "isOut": false,
+              "isParams": false
+            },
+            {
+              "name": "fontSize",
+              "type": "System.Nullable`1<System.Single>",
+              "optional": true,
+              "hasDefault": true,
+              "defaultValue": null,
+              "isOut": false,
+              "isParams": false
+            }
+          ],
+          "documentation": {
+            "summary": "Native ButtonElement with centered caption; caller supplies and owns an optional native callback.",
+            "remarks": null,
+            "returns": null,
+            "parameters": {}
+          }
+        },
+        {
+          "id": "M:EZapi.NativeUiComponents.Center(Il2Cpp.PixelElement,System.Int32,System.Int32)",
+          "name": "Center",
+          "signature": "Il2Cpp.PixelElement EZapi.NativeUiComponents::Center(Il2Cpp.PixelElement,System.Int32,System.Int32)",
+          "returnType": "Il2Cpp.PixelElement",
+          "isStatic": true,
+          "isConstructor": false,
+          "isAbstract": false,
+          "isVirtual": false,
+          "compilerGenerated": false,
+          "genericParameters": [],
+          "parameters": [
+            {
+              "name": "child",
+              "type": "Il2Cpp.PixelElement",
+              "optional": false,
+              "hasDefault": false,
+              "defaultValue": null,
+              "isOut": false,
+              "isParams": false
+            },
+            {
+              "name": "width",
+              "type": "System.Int32",
+              "optional": false,
+              "hasDefault": false,
+              "defaultValue": null,
+              "isOut": false,
+              "isParams": false
+            },
+            {
+              "name": "height",
+              "type": "System.Int32",
+              "optional": false,
+              "hasDefault": false,
+              "defaultValue": null,
+              "isOut": false,
+              "isParams": false
+            }
+          ],
+          "documentation": {
+            "summary": "Center one native element in a fixed box, horizontally and vertically. No scaling.",
+            "remarks": null,
+            "returns": null,
+            "parameters": {}
+          }
+        },
+        {
+          "id": "M:EZapi.NativeUiComponents.Column(Il2Cpp.PixelElement[])",
+          "name": "Column",
+          "signature": "Il2Cpp.PixelElement EZapi.NativeUiComponents::Column(Il2Cpp.PixelElement[])",
+          "returnType": "Il2Cpp.PixelElement",
+          "isStatic": true,
+          "isConstructor": false,
+          "isAbstract": false,
+          "isVirtual": false,
+          "compilerGenerated": false,
+          "genericParameters": [],
+          "parameters": [
+            {
+              "name": "children",
+              "type": "Il2Cpp.PixelElement[]",
+              "optional": false,
+              "hasDefault": false,
+              "defaultValue": null,
+              "isOut": false,
+              "isParams": true
+            }
+          ],
+          "documentation": {
+            "summary": "Vertical flow with default four-pixel spacing and left alignment.",
+            "remarks": null,
+            "returns": null,
+            "parameters": {}
+          }
+        },
+        {
+          "id": "M:EZapi.NativeUiComponents.Column(System.Int32,EZapi.UiAlign,Il2Cpp.PixelElement[])",
+          "name": "Column",
+          "signature": "Il2Cpp.PixelElement EZapi.NativeUiComponents::Column(System.Int32,EZapi.UiAlign,Il2Cpp.PixelElement[])",
+          "returnType": "Il2Cpp.PixelElement",
+          "isStatic": true,
+          "isConstructor": false,
+          "isAbstract": false,
+          "isVirtual": false,
+          "compilerGenerated": false,
+          "genericParameters": [],
+          "parameters": [
+            {
+              "name": "gap",
+              "type": "System.Int32",
+              "optional": false,
+              "hasDefault": false,
+              "defaultValue": null,
+              "isOut": false,
+              "isParams": false
+            },
+            {
+              "name": "horizontal",
+              "type": "EZapi.UiAlign",
+              "optional": false,
+              "hasDefault": false,
+              "defaultValue": null,
+              "isOut": false,
+              "isParams": false
+            },
+            {
+              "name": "children",
+              "type": "Il2Cpp.PixelElement[]",
+              "optional": false,
+              "hasDefault": false,
+              "defaultValue": null,
+              "isOut": false,
+              "isParams": true
+            }
+          ],
+          "documentation": {
+            "summary": "Vertical flow with explicit spacing and horizontal alignment.",
+            "remarks": null,
+            "returns": null,
+            "parameters": {}
+          }
+        },
+        {
+          "id": "M:EZapi.NativeUiComponents.Frame(Il2Cpp.PixelElement,System.Int32,System.Int32,EZapi.UiAlign,EZapi.UiAlign)",
+          "name": "Frame",
+          "signature": "Il2Cpp.PixelElement EZapi.NativeUiComponents::Frame(Il2Cpp.PixelElement,System.Int32,System.Int32,EZapi.UiAlign,EZapi.UiAlign)",
+          "returnType": "Il2Cpp.PixelElement",
+          "isStatic": true,
+          "isConstructor": false,
+          "isAbstract": false,
+          "isVirtual": false,
+          "compilerGenerated": false,
+          "genericParameters": [],
+          "parameters": [
+            {
+              "name": "child",
+              "type": "Il2Cpp.PixelElement",
+              "optional": false,
+              "hasDefault": false,
+              "defaultValue": null,
+              "isOut": false,
+              "isParams": false
+            },
+            {
+              "name": "width",
+              "type": "System.Int32",
+              "optional": false,
+              "hasDefault": false,
+              "defaultValue": null,
+              "isOut": false,
+              "isParams": false
+            },
+            {
+              "name": "height",
+              "type": "System.Int32",
+              "optional": false,
+              "hasDefault": false,
+              "defaultValue": null,
+              "isOut": false,
+              "isParams": false
+            },
+            {
+              "name": "horizontal",
+              "type": "EZapi.UiAlign",
+              "optional": true,
+              "hasDefault": true,
+              "defaultValue": 0,
+              "isOut": false,
+              "isParams": false
+            },
+            {
+              "name": "vertical",
+              "type": "EZapi.UiAlign",
+              "optional": true,
+              "hasDefault": true,
+              "defaultValue": 1,
+              "isOut": false,
+              "isParams": false
+            }
+          ],
+          "documentation": {
+            "summary": "Align in a fixed box using whole native pixels; rejects undersized boxes.",
+            "remarks": null,
+            "returns": null,
+            "parameters": {}
+          }
+        },
+        {
+          "id": "M:EZapi.NativeUiComponents.Inset(Il2Cpp.PixelElement,System.Int32)",
+          "name": "Inset",
+          "signature": "Il2Cpp.PixelElement EZapi.NativeUiComponents::Inset(Il2Cpp.PixelElement,System.Int32)",
+          "returnType": "Il2Cpp.PixelElement",
+          "isStatic": true,
+          "isConstructor": false,
+          "isAbstract": false,
+          "isVirtual": false,
+          "compilerGenerated": false,
+          "genericParameters": [],
+          "parameters": [
+            {
+              "name": "child",
+              "type": "Il2Cpp.PixelElement",
+              "optional": false,
+              "hasDefault": false,
+              "defaultValue": null,
+              "isOut": false,
+              "isParams": false
+            },
+            {
+              "name": "padding",
+              "type": "System.Int32",
+              "optional": false,
+              "hasDefault": false,
+              "defaultValue": null,
+              "isOut": false,
+              "isParams": false
+            }
+          ],
+          "documentation": {
+            "summary": "Uniform inner padding without resizing the control or its hitbox.",
+            "remarks": null,
+            "returns": null,
+            "parameters": {}
+          }
+        },
+        {
+          "id": "M:EZapi.NativeUiComponents.Label(System.String,System.Int32,System.Int32,EZapi.UiAlign,EZapi.UiAlign,System.Nullable{System.Single},System.Boolean,System.Boolean)",
+          "name": "Label",
+          "signature": "Il2Cpp.PixelElement EZapi.NativeUiComponents::Label(System.String,System.Int32,System.Int32,EZapi.UiAlign,EZapi.UiAlign,System.Nullable`1<System.Single>,System.Boolean,System.Boolean)",
+          "returnType": "Il2Cpp.PixelElement",
+          "isStatic": true,
+          "isConstructor": false,
+          "isAbstract": false,
+          "isVirtual": false,
+          "compilerGenerated": false,
+          "genericParameters": [],
+          "parameters": [
+            {
+              "name": "text",
+              "type": "System.String",
+              "optional": false,
+              "hasDefault": false,
+              "defaultValue": null,
+              "isOut": false,
+              "isParams": false
+            },
+            {
+              "name": "width",
+              "type": "System.Int32",
+              "optional": true,
+              "hasDefault": true,
+              "defaultValue": 80,
+              "isOut": false,
+              "isParams": false
+            },
+            {
+              "name": "height",
+              "type": "System.Int32",
+              "optional": true,
+              "hasDefault": true,
+              "defaultValue": 16,
+              "isOut": false,
+              "isParams": false
+            },
+            {
+              "name": "horizontal",
+              "type": "EZapi.UiAlign",
+              "optional": true,
+              "hasDefault": true,
+              "defaultValue": 0,
+              "isOut": false,
+              "isParams": false
+            },
+            {
+              "name": "vertical",
+              "type": "EZapi.UiAlign",
+              "optional": true,
+              "hasDefault": true,
+              "defaultValue": 1,
+              "isOut": false,
+              "isParams": false
+            },
+            {
+              "name": "fontSize",
+              "type": "System.Nullable`1<System.Single>",
+              "optional": true,
+              "hasDefault": true,
+              "defaultValue": null,
+              "isOut": false,
+              "isParams": false
+            },
+            {
+              "name": "wrap",
+              "type": "System.Boolean",
+              "optional": true,
+              "hasDefault": true,
+              "defaultValue": false,
+              "isOut": false,
+              "isParams": false
+            },
+            {
+              "name": "tag",
+              "type": "System.Boolean",
+              "optional": true,
+              "hasDefault": true,
+              "defaultValue": false,
+              "isOut": false,
+              "isParams": false
+            }
+          ],
+          "documentation": {
+            "summary": "Native text or compact TagElement. Defaults retain the game's locale font; explicit boxes and TMP vertical alignment fix bottom-aligned captions. Reapply after caller-owned native rebuilding.",
+            "remarks": null,
+            "returns": null,
+            "parameters": {}
+          }
+        },
+        {
+          "id": "M:EZapi.NativeUiComponents.Row(Il2Cpp.PixelElement[])",
+          "name": "Row",
+          "signature": "Il2Cpp.PixelElement EZapi.NativeUiComponents::Row(Il2Cpp.PixelElement[])",
+          "returnType": "Il2Cpp.PixelElement",
+          "isStatic": true,
+          "isConstructor": false,
+          "isAbstract": false,
+          "isVirtual": false,
+          "compilerGenerated": false,
+          "genericParameters": [],
+          "parameters": [
+            {
+              "name": "children",
+              "type": "Il2Cpp.PixelElement[]",
+              "optional": false,
+              "hasDefault": false,
+              "defaultValue": null,
+              "isOut": false,
+              "isParams": true
+            }
+          ],
+          "documentation": {
+            "summary": "Horizontal flow, native pixels, vertically centered by default.",
+            "remarks": null,
+            "returns": null,
+            "parameters": {}
+          }
+        },
+        {
+          "id": "M:EZapi.NativeUiComponents.Row(System.Int32,EZapi.UiAlign,Il2Cpp.PixelElement[])",
+          "name": "Row",
+          "signature": "Il2Cpp.PixelElement EZapi.NativeUiComponents::Row(System.Int32,EZapi.UiAlign,Il2Cpp.PixelElement[])",
+          "returnType": "Il2Cpp.PixelElement",
+          "isStatic": true,
+          "isConstructor": false,
+          "isAbstract": false,
+          "isVirtual": false,
+          "compilerGenerated": false,
+          "genericParameters": [],
+          "parameters": [
+            {
+              "name": "gap",
+              "type": "System.Int32",
+              "optional": false,
+              "hasDefault": false,
+              "defaultValue": null,
+              "isOut": false,
+              "isParams": false
+            },
+            {
+              "name": "vertical",
+              "type": "EZapi.UiAlign",
+              "optional": false,
+              "hasDefault": false,
+              "defaultValue": null,
+              "isOut": false,
+              "isParams": false
+            },
+            {
+              "name": "children",
+              "type": "Il2Cpp.PixelElement[]",
+              "optional": false,
+              "hasDefault": false,
+              "defaultValue": null,
+              "isOut": false,
+              "isParams": true
+            }
+          ],
+          "documentation": {
+            "summary": "Horizontal flow with explicit spacing and vertical alignment. 上下居中只需选择Center。",
+            "remarks": null,
+            "returns": null,
+            "parameters": {}
+          }
+        },
+        {
+          "id": "M:EZapi.NativeUiComponents.Section(System.String,Il2Cpp.PixelElement,System.Int32)",
+          "name": "Section",
+          "signature": "Il2Cpp.PixelElement EZapi.NativeUiComponents::Section(System.String,Il2Cpp.PixelElement,System.Int32)",
+          "returnType": "Il2Cpp.PixelElement",
+          "isStatic": true,
+          "isConstructor": false,
+          "isAbstract": false,
+          "isVirtual": false,
+          "compilerGenerated": false,
+          "genericParameters": [],
+          "parameters": [
+            {
+              "name": "title",
+              "type": "System.String",
+              "optional": false,
+              "hasDefault": false,
+              "defaultValue": null,
+              "isOut": false,
+              "isParams": false
+            },
+            {
+              "name": "content",
+              "type": "Il2Cpp.PixelElement",
+              "optional": false,
+              "hasDefault": false,
+              "defaultValue": null,
+              "isOut": false,
+              "isParams": false
+            },
+            {
+              "name": "gap",
+              "type": "System.Int32",
+              "optional": true,
+              "hasDefault": true,
+              "defaultValue": 3,
+              "isOut": false,
+              "isParams": false
+            }
+          ],
+          "documentation": {
+            "summary": "A native label above a content control, with centered headings and an explicit gap.",
+            "remarks": null,
+            "returns": null,
+            "parameters": {}
+          }
+        },
+        {
+          "id": "M:EZapi.NativeUiComponents.Spacer(System.Int32,System.Int32)",
+          "name": "Spacer",
+          "signature": "Il2Cpp.PixelElement EZapi.NativeUiComponents::Spacer(System.Int32,System.Int32)",
+          "returnType": "Il2Cpp.PixelElement",
+          "isStatic": true,
+          "isConstructor": false,
+          "isAbstract": false,
+          "isVirtual": false,
+          "compilerGenerated": false,
+          "genericParameters": [],
+          "parameters": [
+            {
+              "name": "width",
+              "type": "System.Int32",
+              "optional": false,
+              "hasDefault": false,
+              "defaultValue": null,
+              "isOut": false,
+              "isParams": false
+            },
+            {
+              "name": "height",
+              "type": "System.Int32",
+              "optional": false,
+              "hasDefault": false,
+              "defaultValue": null,
+              "isOut": false,
+              "isParams": false
+            }
+          ],
+          "documentation": {
+            "summary": "Empty logical pixels; a positive size avoids native minimum-size ambiguity.",
+            "remarks": null,
+            "returns": null,
+            "parameters": {}
+          }
+        }
+      ]
+    },
+    {
+      "id": "T:EZapi.NativeUiDocument",
+      "name": "EZapi.NativeUiDocument",
+      "kind": "class",
+      "baseType": "System.Object",
+      "interfaces": [
+        "System.IEquatable`1<EZapi.NativeUiDocument>"
+      ],
+      "abstract": false,
+      "sealed": true,
+      "compilerGenerated": false,
+      "genericParameters": [],
+      "documentation": {
+        "summary": "One reusable preview document; no callbacks, item grants or save operations are encoded.",
+        "remarks": null,
+        "returns": null,
+        "parameters": {}
+      },
+      "sources": [
+        {
+          "path": "../src/EZapi/NativeUiDefinition.cs",
+          "line": 41
+        }
+      ],
+      "domain": "native-ui",
+      "curatedEntryIds": [],
+      "fields": [],
+      "properties": [
+        {
+          "id": "P:EZapi.NativeUiDocument.Title",
+          "name": "Title",
+          "type": "EZapi.LocalizedItemText",
+          "readable": true,
+          "writable": true,
+          "initOnly": true,
+          "isStatic": false,
+          "parameters": [],
+          "compilerGenerated": false,
+          "documentation": null
+        },
+        {
+          "id": "P:EZapi.NativeUiDocument.Root",
+          "name": "Root",
+          "type": "EZapi.UiNode",
+          "readable": true,
+          "writable": true,
+          "initOnly": true,
+          "isStatic": false,
+          "parameters": [],
+          "compilerGenerated": false,
+          "documentation": null
+        },
+        {
+          "id": "P:EZapi.NativeUiDocument.SchemaVersion",
+          "name": "SchemaVersion",
+          "type": "System.Int32",
+          "readable": true,
+          "writable": true,
+          "initOnly": true,
+          "isStatic": false,
+          "parameters": [],
+          "compilerGenerated": false,
+          "documentation": null
+        }
+      ],
+      "events": [],
+      "methods": [
+        {
+          "id": "M:EZapi.NativeUiDocument.<Clone>$",
+          "name": "<Clone>$",
+          "signature": "EZapi.NativeUiDocument EZapi.NativeUiDocument::<Clone>$()",
+          "returnType": "EZapi.NativeUiDocument",
+          "isStatic": false,
+          "isConstructor": false,
+          "isAbstract": false,
+          "isVirtual": false,
+          "compilerGenerated": true,
+          "genericParameters": [],
+          "parameters": [],
+          "documentation": null
+        },
+        {
+          "id": "M:EZapi.NativeUiDocument.Equals(EZapi.NativeUiDocument)",
+          "name": "Equals",
+          "signature": "System.Boolean EZapi.NativeUiDocument::Equals(EZapi.NativeUiDocument)",
+          "returnType": "System.Boolean",
+          "isStatic": false,
+          "isConstructor": false,
+          "isAbstract": false,
+          "isVirtual": true,
+          "compilerGenerated": true,
+          "genericParameters": [],
+          "parameters": [
+            {
+              "name": "other",
+              "type": "EZapi.NativeUiDocument",
+              "optional": false,
+              "hasDefault": false,
+              "defaultValue": null,
+              "isOut": false,
+              "isParams": false
+            }
+          ],
+          "documentation": null
+        },
+        {
+          "id": "M:EZapi.NativeUiDocument.Equals(System.Object)",
+          "name": "Equals",
+          "signature": "System.Boolean EZapi.NativeUiDocument::Equals(System.Object)",
+          "returnType": "System.Boolean",
+          "isStatic": false,
+          "isConstructor": false,
+          "isAbstract": false,
+          "isVirtual": true,
+          "compilerGenerated": true,
+          "genericParameters": [],
+          "parameters": [
+            {
+              "name": "obj",
+              "type": "System.Object",
+              "optional": false,
+              "hasDefault": false,
+              "defaultValue": null,
+              "isOut": false,
+              "isParams": false
+            }
+          ],
+          "documentation": null
+        },
+        {
+          "id": "M:EZapi.NativeUiDocument.op_Equality(EZapi.NativeUiDocument,EZapi.NativeUiDocument)",
+          "name": "op_Equality",
+          "signature": "System.Boolean EZapi.NativeUiDocument::op_Equality(EZapi.NativeUiDocument,EZapi.NativeUiDocument)",
+          "returnType": "System.Boolean",
+          "isStatic": true,
+          "isConstructor": false,
+          "isAbstract": false,
+          "isVirtual": false,
+          "compilerGenerated": true,
+          "genericParameters": [],
+          "parameters": [
+            {
+              "name": "left",
+              "type": "EZapi.NativeUiDocument",
+              "optional": false,
+              "hasDefault": false,
+              "defaultValue": null,
+              "isOut": false,
+              "isParams": false
+            },
+            {
+              "name": "right",
+              "type": "EZapi.NativeUiDocument",
+              "optional": false,
+              "hasDefault": false,
+              "defaultValue": null,
+              "isOut": false,
+              "isParams": false
+            }
+          ],
+          "documentation": null
+        },
+        {
+          "id": "M:EZapi.NativeUiDocument.op_Inequality(EZapi.NativeUiDocument,EZapi.NativeUiDocument)",
+          "name": "op_Inequality",
+          "signature": "System.Boolean EZapi.NativeUiDocument::op_Inequality(EZapi.NativeUiDocument,EZapi.NativeUiDocument)",
+          "returnType": "System.Boolean",
+          "isStatic": true,
+          "isConstructor": false,
+          "isAbstract": false,
+          "isVirtual": false,
+          "compilerGenerated": true,
+          "genericParameters": [],
+          "parameters": [
+            {
+              "name": "left",
+              "type": "EZapi.NativeUiDocument",
+              "optional": false,
+              "hasDefault": false,
+              "defaultValue": null,
+              "isOut": false,
+              "isParams": false
+            },
+            {
+              "name": "right",
+              "type": "EZapi.NativeUiDocument",
+              "optional": false,
+              "hasDefault": false,
+              "defaultValue": null,
+              "isOut": false,
+              "isParams": false
+            }
+          ],
+          "documentation": null
+        },
+        {
+          "id": "M:EZapi.NativeUiDocument.GetHashCode",
+          "name": "GetHashCode",
+          "signature": "System.Int32 EZapi.NativeUiDocument::GetHashCode()",
+          "returnType": "System.Int32",
+          "isStatic": false,
+          "isConstructor": false,
+          "isAbstract": false,
+          "isVirtual": true,
+          "compilerGenerated": true,
+          "genericParameters": [],
+          "parameters": [],
+          "documentation": null
+        },
+        {
+          "id": "M:EZapi.NativeUiDocument.ToString",
+          "name": "ToString",
+          "signature": "System.String EZapi.NativeUiDocument::ToString()",
+          "returnType": "System.String",
+          "isStatic": false,
+          "isConstructor": false,
+          "isAbstract": false,
+          "isVirtual": true,
+          "compilerGenerated": true,
+          "genericParameters": [],
+          "parameters": [],
+          "documentation": null
+        },
+        {
+          "id": "M:EZapi.NativeUiDocument.#ctor",
+          "name": ".ctor",
+          "signature": "System.Void EZapi.NativeUiDocument::.ctor()",
+          "returnType": "System.Void",
+          "isStatic": false,
+          "isConstructor": true,
+          "isAbstract": false,
+          "isVirtual": false,
+          "compilerGenerated": false,
+          "genericParameters": [],
+          "parameters": [],
+          "documentation": null
+        }
+      ]
+    },
+    {
+      "id": "T:EZapi.NativeUiInspection",
+      "name": "EZapi.NativeUiInspection",
+      "kind": "class",
+      "baseType": "System.Object",
+      "interfaces": [
+        "System.IEquatable`1<EZapi.NativeUiInspection>"
+      ],
+      "abstract": false,
+      "sealed": true,
+      "compilerGenerated": false,
+      "genericParameters": [],
+      "documentation": {
+        "summary": "Scoped measurements, not a guarantee of game design quality, accessibility or functional correctness.",
+        "remarks": null,
+        "returns": null,
+        "parameters": {}
+      },
+      "sources": [
+        {
+          "path": "../src/EZapi/NativeUiPreview.cs",
+          "line": 14
+        }
+      ],
+      "domain": "native-ui",
+      "curatedEntryIds": [],
+      "fields": [],
+      "properties": [
+        {
+          "id": "P:EZapi.NativeUiInspection.Text",
+          "name": "Text",
+          "type": "System.Collections.Generic.IReadOnlyList`1<EZapi.UiTextMeasurement>",
+          "readable": true,
+          "writable": true,
+          "initOnly": true,
+          "isStatic": false,
+          "parameters": [],
+          "compilerGenerated": false,
+          "documentation": null
+        },
+        {
+          "id": "P:EZapi.NativeUiInspection.Issues",
+          "name": "Issues",
+          "type": "System.Collections.Generic.IReadOnlyList`1<System.String>",
+          "readable": true,
+          "writable": true,
+          "initOnly": true,
+          "isStatic": false,
+          "parameters": [],
+          "compilerGenerated": false,
+          "documentation": null
+        },
+        {
+          "id": "P:EZapi.NativeUiInspection.WindowHeight",
+          "name": "WindowHeight",
+          "type": "System.Int32",
+          "readable": true,
+          "writable": true,
+          "initOnly": true,
+          "isStatic": false,
+          "parameters": [],
+          "compilerGenerated": false,
+          "documentation": null
+        },
+        {
+          "id": "P:EZapi.NativeUiInspection.WindowWidth",
+          "name": "WindowWidth",
+          "type": "System.Int32",
+          "readable": true,
+          "writable": true,
+          "initOnly": true,
+          "isStatic": false,
+          "parameters": [],
+          "compilerGenerated": false,
+          "documentation": null
+        },
+        {
+          "id": "P:EZapi.NativeUiInspection.Locale",
+          "name": "Locale",
+          "type": "System.String",
+          "readable": true,
+          "writable": true,
+          "initOnly": true,
+          "isStatic": false,
+          "parameters": [],
+          "compilerGenerated": false,
+          "documentation": null
+        }
+      ],
+      "events": [],
+      "methods": [
+        {
+          "id": "M:EZapi.NativeUiInspection.<Clone>$",
+          "name": "<Clone>$",
+          "signature": "EZapi.NativeUiInspection EZapi.NativeUiInspection::<Clone>$()",
+          "returnType": "EZapi.NativeUiInspection",
+          "isStatic": false,
+          "isConstructor": false,
+          "isAbstract": false,
+          "isVirtual": false,
+          "compilerGenerated": true,
+          "genericParameters": [],
+          "parameters": [],
+          "documentation": null
+        },
+        {
+          "id": "M:EZapi.NativeUiInspection.Equals(EZapi.NativeUiInspection)",
+          "name": "Equals",
+          "signature": "System.Boolean EZapi.NativeUiInspection::Equals(EZapi.NativeUiInspection)",
+          "returnType": "System.Boolean",
+          "isStatic": false,
+          "isConstructor": false,
+          "isAbstract": false,
+          "isVirtual": true,
+          "compilerGenerated": true,
+          "genericParameters": [],
+          "parameters": [
+            {
+              "name": "other",
+              "type": "EZapi.NativeUiInspection",
+              "optional": false,
+              "hasDefault": false,
+              "defaultValue": null,
+              "isOut": false,
+              "isParams": false
+            }
+          ],
+          "documentation": null
+        },
+        {
+          "id": "M:EZapi.NativeUiInspection.Equals(System.Object)",
+          "name": "Equals",
+          "signature": "System.Boolean EZapi.NativeUiInspection::Equals(System.Object)",
+          "returnType": "System.Boolean",
+          "isStatic": false,
+          "isConstructor": false,
+          "isAbstract": false,
+          "isVirtual": true,
+          "compilerGenerated": true,
+          "genericParameters": [],
+          "parameters": [
+            {
+              "name": "obj",
+              "type": "System.Object",
+              "optional": false,
+              "hasDefault": false,
+              "defaultValue": null,
+              "isOut": false,
+              "isParams": false
+            }
+          ],
+          "documentation": null
+        },
+        {
+          "id": "M:EZapi.NativeUiInspection.op_Equality(EZapi.NativeUiInspection,EZapi.NativeUiInspection)",
+          "name": "op_Equality",
+          "signature": "System.Boolean EZapi.NativeUiInspection::op_Equality(EZapi.NativeUiInspection,EZapi.NativeUiInspection)",
+          "returnType": "System.Boolean",
+          "isStatic": true,
+          "isConstructor": false,
+          "isAbstract": false,
+          "isVirtual": false,
+          "compilerGenerated": true,
+          "genericParameters": [],
+          "parameters": [
+            {
+              "name": "left",
+              "type": "EZapi.NativeUiInspection",
+              "optional": false,
+              "hasDefault": false,
+              "defaultValue": null,
+              "isOut": false,
+              "isParams": false
+            },
+            {
+              "name": "right",
+              "type": "EZapi.NativeUiInspection",
+              "optional": false,
+              "hasDefault": false,
+              "defaultValue": null,
+              "isOut": false,
+              "isParams": false
+            }
+          ],
+          "documentation": null
+        },
+        {
+          "id": "M:EZapi.NativeUiInspection.op_Inequality(EZapi.NativeUiInspection,EZapi.NativeUiInspection)",
+          "name": "op_Inequality",
+          "signature": "System.Boolean EZapi.NativeUiInspection::op_Inequality(EZapi.NativeUiInspection,EZapi.NativeUiInspection)",
+          "returnType": "System.Boolean",
+          "isStatic": true,
+          "isConstructor": false,
+          "isAbstract": false,
+          "isVirtual": false,
+          "compilerGenerated": true,
+          "genericParameters": [],
+          "parameters": [
+            {
+              "name": "left",
+              "type": "EZapi.NativeUiInspection",
+              "optional": false,
+              "hasDefault": false,
+              "defaultValue": null,
+              "isOut": false,
+              "isParams": false
+            },
+            {
+              "name": "right",
+              "type": "EZapi.NativeUiInspection",
+              "optional": false,
+              "hasDefault": false,
+              "defaultValue": null,
+              "isOut": false,
+              "isParams": false
+            }
+          ],
+          "documentation": null
+        },
+        {
+          "id": "M:EZapi.NativeUiInspection.GetHashCode",
+          "name": "GetHashCode",
+          "signature": "System.Int32 EZapi.NativeUiInspection::GetHashCode()",
+          "returnType": "System.Int32",
+          "isStatic": false,
+          "isConstructor": false,
+          "isAbstract": false,
+          "isVirtual": true,
+          "compilerGenerated": true,
+          "genericParameters": [],
+          "parameters": [],
+          "documentation": null
+        },
+        {
+          "id": "M:EZapi.NativeUiInspection.ToString",
+          "name": "ToString",
+          "signature": "System.String EZapi.NativeUiInspection::ToString()",
+          "returnType": "System.String",
+          "isStatic": false,
+          "isConstructor": false,
+          "isAbstract": false,
+          "isVirtual": true,
+          "compilerGenerated": true,
+          "genericParameters": [],
+          "parameters": [],
+          "documentation": null
+        },
+        {
+          "id": "M:EZapi.NativeUiInspection.#ctor(System.String,System.Int32,System.Int32,System.Collections.Generic.IReadOnlyList{EZapi.UiTextMeasurement},System.Collections.Generic.IReadOnlyList{System.String})",
+          "name": ".ctor",
+          "signature": "System.Void EZapi.NativeUiInspection::.ctor(System.String,System.Int32,System.Int32,System.Collections.Generic.IReadOnlyList`1<EZapi.UiTextMeasurement>,System.Collections.Generic.IReadOnlyList`1<System.String>)",
+          "returnType": "System.Void",
+          "isStatic": false,
+          "isConstructor": true,
+          "isAbstract": false,
+          "isVirtual": false,
+          "compilerGenerated": false,
+          "genericParameters": [],
+          "parameters": [
+            {
+              "name": "Locale",
+              "type": "System.String",
+              "optional": false,
+              "hasDefault": false,
+              "defaultValue": null,
+              "isOut": false,
+              "isParams": false
+            },
+            {
+              "name": "WindowWidth",
+              "type": "System.Int32",
+              "optional": false,
+              "hasDefault": false,
+              "defaultValue": null,
+              "isOut": false,
+              "isParams": false
+            },
+            {
+              "name": "WindowHeight",
+              "type": "System.Int32",
+              "optional": false,
+              "hasDefault": false,
+              "defaultValue": null,
+              "isOut": false,
+              "isParams": false
+            },
+            {
+              "name": "Text",
+              "type": "System.Collections.Generic.IReadOnlyList`1<EZapi.UiTextMeasurement>",
+              "optional": false,
+              "hasDefault": false,
+              "defaultValue": null,
+              "isOut": false,
+              "isParams": false
+            },
+            {
+              "name": "Issues",
+              "type": "System.Collections.Generic.IReadOnlyList`1<System.String>",
+              "optional": false,
+              "hasDefault": false,
+              "defaultValue": null,
+              "isOut": false,
+              "isParams": false
+            }
+          ],
+          "documentation": {
+            "summary": "Scoped measurements, not a guarantee of game design quality, accessibility or functional correctness.",
+            "remarks": null,
+            "returns": null,
+            "parameters": {}
+          }
+        },
+        {
+          "id": "M:EZapi.NativeUiInspection.Deconstruct(System.String@,System.Int32@,System.Int32@,System.Collections.Generic.IReadOnlyList{EZapi.UiTextMeasurement}@,System.Collections.Generic.IReadOnlyList{System.String}@)",
+          "name": "Deconstruct",
+          "signature": "System.Void EZapi.NativeUiInspection::Deconstruct(System.String&,System.Int32&,System.Int32&,System.Collections.Generic.IReadOnlyList`1<EZapi.UiTextMeasurement>&,System.Collections.Generic.IReadOnlyList`1<System.String>&)",
+          "returnType": "System.Void",
+          "isStatic": false,
+          "isConstructor": false,
+          "isAbstract": false,
+          "isVirtual": false,
+          "compilerGenerated": true,
+          "genericParameters": [],
+          "parameters": [
+            {
+              "name": "Locale",
+              "type": "System.String&",
+              "optional": false,
+              "hasDefault": false,
+              "defaultValue": null,
+              "isOut": true,
+              "isParams": false
+            },
+            {
+              "name": "WindowWidth",
+              "type": "System.Int32&",
+              "optional": false,
+              "hasDefault": false,
+              "defaultValue": null,
+              "isOut": true,
+              "isParams": false
+            },
+            {
+              "name": "WindowHeight",
+              "type": "System.Int32&",
+              "optional": false,
+              "hasDefault": false,
+              "defaultValue": null,
+              "isOut": true,
+              "isParams": false
+            },
+            {
+              "name": "Text",
+              "type": "System.Collections.Generic.IReadOnlyList`1<EZapi.UiTextMeasurement>&",
+              "optional": false,
+              "hasDefault": false,
+              "defaultValue": null,
+              "isOut": true,
+              "isParams": false
+            },
+            {
+              "name": "Issues",
+              "type": "System.Collections.Generic.IReadOnlyList`1<System.String>&",
+              "optional": false,
+              "hasDefault": false,
+              "defaultValue": null,
+              "isOut": true,
+              "isParams": false
+            }
+          ],
+          "documentation": null
+        }
+      ]
+    },
+    {
+      "id": "T:EZapi.NativeUiLayout",
+      "name": "EZapi.NativeUiLayout",
+      "kind": "class",
+      "baseType": "System.Object",
+      "interfaces": [],
+      "abstract": true,
+      "sealed": true,
+      "compilerGenerated": false,
+      "genericParameters": [],
+      "documentation": {
+        "summary": "Offline deterministic layout and bounded strict JSON. 离线布局运算与严格JSON读取，不调用游戏。",
+        "remarks": null,
+        "returns": null,
+        "parameters": {}
+      },
+      "sources": [
+        {
+          "path": "../src/EZapi/NativeUiDefinition.cs",
+          "line": 51
+        }
+      ],
+      "domain": "native-ui",
+      "curatedEntryIds": [],
+      "fields": [],
+      "properties": [],
+      "events": [],
+      "methods": [
+        {
+          "id": "M:EZapi.NativeUiLayout.Parse(System.IO.Stream)",
+          "name": "Parse",
+          "signature": "EZapi.NativeUiDocument EZapi.NativeUiLayout::Parse(System.IO.Stream)",
+          "returnType": "EZapi.NativeUiDocument",
+          "isStatic": true,
+          "isConstructor": false,
+          "isAbstract": false,
+          "isVirtual": false,
+          "compilerGenerated": false,
+          "genericParameters": [],
+          "parameters": [
+            {
+              "name": "source",
+              "type": "System.IO.Stream",
+              "optional": false,
+              "hasDefault": false,
+              "defaultValue": null,
+              "isOut": false,
+              "isParams": false
+            }
+          ],
+          "documentation": {
+            "summary": "Read at most 64 KiB, reject duplicate/unknown fields and integer enums before layout.",
+            "remarks": null,
+            "returns": null,
+            "parameters": {}
+          }
+        },
+        {
+          "id": "M:EZapi.NativeUiLayout.Measure(EZapi.NativeUiDocument)",
+          "name": "Measure",
+          "signature": "EZapi.UiLayoutNode EZapi.NativeUiLayout::Measure(EZapi.NativeUiDocument)",
+          "returnType": "EZapi.UiLayoutNode",
+          "isStatic": true,
+          "isConstructor": false,
+          "isAbstract": false,
+          "isVirtual": false,
+          "compilerGenerated": false,
+          "genericParameters": [],
+          "parameters": [
+            {
+              "name": "document",
+              "type": "EZapi.NativeUiDocument",
+              "optional": false,
+              "hasDefault": false,
+              "defaultValue": null,
+              "isOut": false,
+              "isParams": false
+            }
+          ],
+          "documentation": {
+            "summary": "Validate and snapshot a document into independent read-only nodes and absolute logical boxes.",
+            "remarks": null,
+            "returns": null,
+            "parameters": {}
+          }
+        }
+      ]
+    },
+    {
+      "id": "T:EZapi.NativeUiPreviewApi",
+      "name": "EZapi.NativeUiPreviewApi",
+      "kind": "class",
+      "baseType": "System.Object",
+      "interfaces": [],
+      "abstract": true,
+      "sealed": true,
+      "compilerGenerated": false,
+      "genericParameters": [],
+      "documentation": {
+        "summary": "One explicit native UI preview, gated by ordinary developer tools. Uses native window/labels/buttons/inventory, never submits callbacks, delivers items or saves. Closing, loading or leaving the scene releases its own objects. 单个可重载原生预览；仅开发模式启用，不替换其他Mod UI，不执行交易/加工/存档。",
+        "remarks": null,
+        "returns": null,
+        "parameters": {}
+      },
+      "sources": [
+        {
+          "path": "../src/EZapi/NativeUiPreview.cs",
+          "line": 25
+        }
+      ],
+      "domain": "native-ui",
+      "curatedEntryIds": [],
+      "fields": [],
+      "properties": [
+        {
+          "id": "P:EZapi.NativeUiPreviewApi.IsVisible",
+          "name": "IsVisible",
+          "type": "System.Boolean",
+          "readable": true,
+          "writable": false,
+          "initOnly": false,
+          "isStatic": true,
+          "parameters": [],
+          "compilerGenerated": false,
+          "documentation": null
+        }
+      ],
+      "events": [],
+      "methods": [
+        {
+          "id": "M:EZapi.NativeUiPreviewApi.InspectWindow(Il2Cpp.PixelWindow)",
+          "name": "InspectWindow",
+          "signature": "EZapi.NativeUiInspection EZapi.NativeUiPreviewApi::InspectWindow(Il2Cpp.PixelWindow)",
+          "returnType": "EZapi.NativeUiInspection",
+          "isStatic": true,
+          "isConstructor": false,
+          "isAbstract": false,
+          "isVirtual": false,
+          "compilerGenerated": false,
+          "genericParameters": [],
+          "parameters": [
+            {
+              "name": "window",
+              "type": "Il2Cpp.PixelWindow",
+              "optional": false,
+              "hasDefault": false,
+              "defaultValue": null,
+              "isOut": false,
+              "isParams": false
+            }
+          ],
+          "documentation": {
+            "summary": "Read-only audit of an existing native PixelWindow, including other Mods' windows. Does not restyle or clone it. Fits and overflow checks use the current actual TMP font, not character counts. At most 256 labels.",
+            "remarks": null,
+            "returns": null,
+            "parameters": {}
+          }
+        },
+        {
+          "id": "M:EZapi.NativeUiPreviewApi.Measure",
+          "name": "Measure",
+          "signature": "EZapi.NativeUiPreviewReport EZapi.NativeUiPreviewApi::Measure()",
+          "returnType": "EZapi.NativeUiPreviewReport",
+          "isStatic": true,
+          "isConstructor": false,
+          "isAbstract": false,
+          "isVirtual": false,
+          "compilerGenerated": false,
+          "genericParameters": [],
+          "parameters": [],
+          "documentation": {
+            "summary": "Export current native geometry without saving or modifying inventory contents.",
+            "remarks": null,
+            "returns": null,
+            "parameters": {}
+          }
+        },
+        {
+          "id": "M:EZapi.NativeUiPreviewApi.Open(EZapi.NativeUiDocument)",
+          "name": "Open",
+          "signature": "EZapi.NativeUiPreviewReport EZapi.NativeUiPreviewApi::Open(EZapi.NativeUiDocument)",
+          "returnType": "EZapi.NativeUiPreviewReport",
+          "isStatic": true,
+          "isConstructor": false,
+          "isAbstract": false,
+          "isVirtual": false,
+          "compilerGenerated": false,
+          "genericParameters": [],
+          "parameters": [
+            {
+              "name": "document",
+              "type": "EZapi.NativeUiDocument",
+              "optional": false,
+              "hasDefault": false,
+              "defaultValue": null,
+              "isOut": false,
+              "isParams": false
+            }
+          ],
+          "documentation": {
+            "summary": "Validate fully, then replace this preview only; a loaded store and no active drag are required.",
+            "remarks": null,
+            "returns": null,
+            "parameters": {}
+          }
+        },
+        {
+          "id": "M:EZapi.NativeUiPreviewApi.Open(System.IO.Stream)",
+          "name": "Open",
+          "signature": "EZapi.NativeUiPreviewReport EZapi.NativeUiPreviewApi::Open(System.IO.Stream)",
+          "returnType": "EZapi.NativeUiPreviewReport",
+          "isStatic": true,
+          "isConstructor": false,
+          "isAbstract": false,
+          "isVirtual": false,
+          "compilerGenerated": false,
+          "genericParameters": [],
+          "parameters": [
+            {
+              "name": "json",
+              "type": "System.IO.Stream",
+              "optional": false,
+              "hasDefault": false,
+              "defaultValue": null,
+              "isOut": false,
+              "isParams": false
+            }
+          ],
+          "documentation": {
+            "summary": "Read bounded JSON, then open its preview. The input stream remains owned by the caller.",
+            "remarks": null,
+            "returns": null,
+            "parameters": {}
+          }
+        },
+        {
+          "id": "M:EZapi.NativeUiPreviewApi.Close",
+          "name": "Close",
+          "signature": "System.Void EZapi.NativeUiPreviewApi::Close()",
+          "returnType": "System.Void",
+          "isStatic": true,
+          "isConstructor": false,
+          "isAbstract": false,
+          "isVirtual": false,
+          "compilerGenerated": false,
+          "genericParameters": [],
+          "parameters": [],
+          "documentation": {
+            "summary": "Close and release this tool's objects only. Does not access any player inventory or save.",
+            "remarks": null,
+            "returns": null,
+            "parameters": {}
+          }
+        }
+      ]
+    },
+    {
+      "id": "T:EZapi.NativeUiPreviewReport",
+      "name": "EZapi.NativeUiPreviewReport",
+      "kind": "class",
+      "baseType": "System.Object",
+      "interfaces": [
+        "System.IEquatable`1<EZapi.NativeUiPreviewReport>"
+      ],
+      "abstract": false,
+      "sealed": true,
+      "compilerGenerated": false,
+      "genericParameters": [],
+      "documentation": {
+        "summary": "Preview report: expected layout versus actual native graph, with read-only text inspection.",
+        "remarks": null,
+        "returns": null,
+        "parameters": {}
+      },
+      "sources": [
+        {
+          "path": "../src/EZapi/NativeUiPreview.cs",
+          "line": 17
+        }
+      ],
+      "domain": "native-ui",
+      "curatedEntryIds": [],
+      "fields": [],
+      "properties": [
+        {
+          "id": "P:EZapi.NativeUiPreviewReport.Inspection",
+          "name": "Inspection",
+          "type": "EZapi.NativeUiInspection",
+          "readable": true,
+          "writable": true,
+          "initOnly": true,
+          "isStatic": false,
+          "parameters": [],
+          "compilerGenerated": false,
+          "documentation": null
+        },
+        {
+          "id": "P:EZapi.NativeUiPreviewReport.Visible",
+          "name": "Visible",
+          "type": "System.Boolean",
+          "readable": true,
+          "writable": true,
+          "initOnly": true,
+          "isStatic": false,
+          "parameters": [],
+          "compilerGenerated": false,
+          "documentation": null
+        },
+        {
+          "id": "P:EZapi.NativeUiPreviewReport.Controls",
+          "name": "Controls",
+          "type": "System.Collections.Generic.IReadOnlyList`1<EZapi.UiPreviewControl>",
+          "readable": true,
+          "writable": true,
+          "initOnly": true,
+          "isStatic": false,
+          "parameters": [],
+          "compilerGenerated": false,
+          "documentation": null
+        },
+        {
+          "id": "P:EZapi.NativeUiPreviewReport.Issues",
+          "name": "Issues",
+          "type": "System.Collections.Generic.IReadOnlyList`1<System.String>",
+          "readable": true,
+          "writable": true,
+          "initOnly": true,
+          "isStatic": false,
+          "parameters": [],
+          "compilerGenerated": false,
+          "documentation": null
+        },
+        {
+          "id": "P:EZapi.NativeUiPreviewReport.Locale",
+          "name": "Locale",
+          "type": "System.String",
+          "readable": true,
+          "writable": true,
+          "initOnly": true,
+          "isStatic": false,
+          "parameters": [],
+          "compilerGenerated": false,
+          "documentation": null
+        }
+      ],
+      "events": [],
+      "methods": [
+        {
+          "id": "M:EZapi.NativeUiPreviewReport.<Clone>$",
+          "name": "<Clone>$",
+          "signature": "EZapi.NativeUiPreviewReport EZapi.NativeUiPreviewReport::<Clone>$()",
+          "returnType": "EZapi.NativeUiPreviewReport",
+          "isStatic": false,
+          "isConstructor": false,
+          "isAbstract": false,
+          "isVirtual": false,
+          "compilerGenerated": true,
+          "genericParameters": [],
+          "parameters": [],
+          "documentation": null
+        },
+        {
+          "id": "M:EZapi.NativeUiPreviewReport.Equals(EZapi.NativeUiPreviewReport)",
+          "name": "Equals",
+          "signature": "System.Boolean EZapi.NativeUiPreviewReport::Equals(EZapi.NativeUiPreviewReport)",
+          "returnType": "System.Boolean",
+          "isStatic": false,
+          "isConstructor": false,
+          "isAbstract": false,
+          "isVirtual": true,
+          "compilerGenerated": true,
+          "genericParameters": [],
+          "parameters": [
+            {
+              "name": "other",
+              "type": "EZapi.NativeUiPreviewReport",
+              "optional": false,
+              "hasDefault": false,
+              "defaultValue": null,
+              "isOut": false,
+              "isParams": false
+            }
+          ],
+          "documentation": null
+        },
+        {
+          "id": "M:EZapi.NativeUiPreviewReport.Equals(System.Object)",
+          "name": "Equals",
+          "signature": "System.Boolean EZapi.NativeUiPreviewReport::Equals(System.Object)",
+          "returnType": "System.Boolean",
+          "isStatic": false,
+          "isConstructor": false,
+          "isAbstract": false,
+          "isVirtual": true,
+          "compilerGenerated": true,
+          "genericParameters": [],
+          "parameters": [
+            {
+              "name": "obj",
+              "type": "System.Object",
+              "optional": false,
+              "hasDefault": false,
+              "defaultValue": null,
+              "isOut": false,
+              "isParams": false
+            }
+          ],
+          "documentation": null
+        },
+        {
+          "id": "M:EZapi.NativeUiPreviewReport.op_Equality(EZapi.NativeUiPreviewReport,EZapi.NativeUiPreviewReport)",
+          "name": "op_Equality",
+          "signature": "System.Boolean EZapi.NativeUiPreviewReport::op_Equality(EZapi.NativeUiPreviewReport,EZapi.NativeUiPreviewReport)",
+          "returnType": "System.Boolean",
+          "isStatic": true,
+          "isConstructor": false,
+          "isAbstract": false,
+          "isVirtual": false,
+          "compilerGenerated": true,
+          "genericParameters": [],
+          "parameters": [
+            {
+              "name": "left",
+              "type": "EZapi.NativeUiPreviewReport",
+              "optional": false,
+              "hasDefault": false,
+              "defaultValue": null,
+              "isOut": false,
+              "isParams": false
+            },
+            {
+              "name": "right",
+              "type": "EZapi.NativeUiPreviewReport",
+              "optional": false,
+              "hasDefault": false,
+              "defaultValue": null,
+              "isOut": false,
+              "isParams": false
+            }
+          ],
+          "documentation": null
+        },
+        {
+          "id": "M:EZapi.NativeUiPreviewReport.op_Inequality(EZapi.NativeUiPreviewReport,EZapi.NativeUiPreviewReport)",
+          "name": "op_Inequality",
+          "signature": "System.Boolean EZapi.NativeUiPreviewReport::op_Inequality(EZapi.NativeUiPreviewReport,EZapi.NativeUiPreviewReport)",
+          "returnType": "System.Boolean",
+          "isStatic": true,
+          "isConstructor": false,
+          "isAbstract": false,
+          "isVirtual": false,
+          "compilerGenerated": true,
+          "genericParameters": [],
+          "parameters": [
+            {
+              "name": "left",
+              "type": "EZapi.NativeUiPreviewReport",
+              "optional": false,
+              "hasDefault": false,
+              "defaultValue": null,
+              "isOut": false,
+              "isParams": false
+            },
+            {
+              "name": "right",
+              "type": "EZapi.NativeUiPreviewReport",
+              "optional": false,
+              "hasDefault": false,
+              "defaultValue": null,
+              "isOut": false,
+              "isParams": false
+            }
+          ],
+          "documentation": null
+        },
+        {
+          "id": "M:EZapi.NativeUiPreviewReport.GetHashCode",
+          "name": "GetHashCode",
+          "signature": "System.Int32 EZapi.NativeUiPreviewReport::GetHashCode()",
+          "returnType": "System.Int32",
+          "isStatic": false,
+          "isConstructor": false,
+          "isAbstract": false,
+          "isVirtual": true,
+          "compilerGenerated": true,
+          "genericParameters": [],
+          "parameters": [],
+          "documentation": null
+        },
+        {
+          "id": "M:EZapi.NativeUiPreviewReport.ToString",
+          "name": "ToString",
+          "signature": "System.String EZapi.NativeUiPreviewReport::ToString()",
+          "returnType": "System.String",
+          "isStatic": false,
+          "isConstructor": false,
+          "isAbstract": false,
+          "isVirtual": true,
+          "compilerGenerated": true,
+          "genericParameters": [],
+          "parameters": [],
+          "documentation": null
+        },
+        {
+          "id": "M:EZapi.NativeUiPreviewReport.#ctor(System.Boolean,System.String,System.Collections.Generic.IReadOnlyList{EZapi.UiPreviewControl},EZapi.NativeUiInspection,System.Collections.Generic.IReadOnlyList{System.String})",
+          "name": ".ctor",
+          "signature": "System.Void EZapi.NativeUiPreviewReport::.ctor(System.Boolean,System.String,System.Collections.Generic.IReadOnlyList`1<EZapi.UiPreviewControl>,EZapi.NativeUiInspection,System.Collections.Generic.IReadOnlyList`1<System.String>)",
+          "returnType": "System.Void",
+          "isStatic": false,
+          "isConstructor": true,
+          "isAbstract": false,
+          "isVirtual": false,
+          "compilerGenerated": false,
+          "genericParameters": [],
+          "parameters": [
+            {
+              "name": "Visible",
+              "type": "System.Boolean",
+              "optional": false,
+              "hasDefault": false,
+              "defaultValue": null,
+              "isOut": false,
+              "isParams": false
+            },
+            {
+              "name": "Locale",
+              "type": "System.String",
+              "optional": false,
+              "hasDefault": false,
+              "defaultValue": null,
+              "isOut": false,
+              "isParams": false
+            },
+            {
+              "name": "Controls",
+              "type": "System.Collections.Generic.IReadOnlyList`1<EZapi.UiPreviewControl>",
+              "optional": false,
+              "hasDefault": false,
+              "defaultValue": null,
+              "isOut": false,
+              "isParams": false
+            },
+            {
+              "name": "Inspection",
+              "type": "EZapi.NativeUiInspection",
+              "optional": false,
+              "hasDefault": false,
+              "defaultValue": null,
+              "isOut": false,
+              "isParams": false
+            },
+            {
+              "name": "Issues",
+              "type": "System.Collections.Generic.IReadOnlyList`1<System.String>",
+              "optional": false,
+              "hasDefault": false,
+              "defaultValue": null,
+              "isOut": false,
+              "isParams": false
+            }
+          ],
+          "documentation": {
+            "summary": "Preview report: expected layout versus actual native graph, with read-only text inspection.",
+            "remarks": null,
+            "returns": null,
+            "parameters": {}
+          }
+        },
+        {
+          "id": "M:EZapi.NativeUiPreviewReport.Deconstruct(System.Boolean@,System.String@,System.Collections.Generic.IReadOnlyList{EZapi.UiPreviewControl}@,EZapi.NativeUiInspection@,System.Collections.Generic.IReadOnlyList{System.String}@)",
+          "name": "Deconstruct",
+          "signature": "System.Void EZapi.NativeUiPreviewReport::Deconstruct(System.Boolean&,System.String&,System.Collections.Generic.IReadOnlyList`1<EZapi.UiPreviewControl>&,EZapi.NativeUiInspection&,System.Collections.Generic.IReadOnlyList`1<System.String>&)",
+          "returnType": "System.Void",
+          "isStatic": false,
+          "isConstructor": false,
+          "isAbstract": false,
+          "isVirtual": false,
+          "compilerGenerated": true,
+          "genericParameters": [],
+          "parameters": [
+            {
+              "name": "Visible",
+              "type": "System.Boolean&",
+              "optional": false,
+              "hasDefault": false,
+              "defaultValue": null,
+              "isOut": true,
+              "isParams": false
+            },
+            {
+              "name": "Locale",
+              "type": "System.String&",
+              "optional": false,
+              "hasDefault": false,
+              "defaultValue": null,
+              "isOut": true,
+              "isParams": false
+            },
+            {
+              "name": "Controls",
+              "type": "System.Collections.Generic.IReadOnlyList`1<EZapi.UiPreviewControl>&",
+              "optional": false,
+              "hasDefault": false,
+              "defaultValue": null,
+              "isOut": true,
+              "isParams": false
+            },
+            {
+              "name": "Inspection",
+              "type": "EZapi.NativeUiInspection&",
+              "optional": false,
+              "hasDefault": false,
+              "defaultValue": null,
+              "isOut": true,
+              "isParams": false
+            },
+            {
+              "name": "Issues",
+              "type": "System.Collections.Generic.IReadOnlyList`1<System.String>&",
+              "optional": false,
+              "hasDefault": false,
+              "defaultValue": null,
+              "isOut": true,
+              "isParams": false
+            }
+          ],
+          "documentation": null
+        }
+      ]
+    },
+    {
       "id": "T:EZapi.NightShopStockPolicy",
       "name": "EZapi.NightShopStockPolicy",
       "kind": "enum",
@@ -58590,6 +60414,2518 @@
       "methods": []
     },
     {
+      "id": "T:EZapi.UiAlign",
+      "name": "EZapi.UiAlign",
+      "kind": "enum",
+      "baseType": "System.Enum",
+      "interfaces": [],
+      "abstract": false,
+      "sealed": true,
+      "compilerGenerated": false,
+      "genericParameters": [],
+      "documentation": {
+        "summary": "Start = left/top; End = right/bottom. Center uses integer pixels. 起点为左/上，终点为右/下。",
+        "remarks": null,
+        "returns": null,
+        "parameters": {}
+      },
+      "sources": [
+        {
+          "path": "../src/EZapi/NativeUiDefinition.cs",
+          "line": 10
+        }
+      ],
+      "domain": "native-ui",
+      "curatedEntryIds": [],
+      "fields": [
+        {
+          "id": "F:EZapi.UiAlign.Center",
+          "name": "Center",
+          "type": "EZapi.UiAlign",
+          "isStatic": true,
+          "isReadOnly": false,
+          "hasConstant": true,
+          "constant": 1,
+          "compilerGenerated": false,
+          "documentation": null
+        },
+        {
+          "id": "F:EZapi.UiAlign.End",
+          "name": "End",
+          "type": "EZapi.UiAlign",
+          "isStatic": true,
+          "isReadOnly": false,
+          "hasConstant": true,
+          "constant": 2,
+          "compilerGenerated": false,
+          "documentation": null
+        },
+        {
+          "id": "F:EZapi.UiAlign.Start",
+          "name": "Start",
+          "type": "EZapi.UiAlign",
+          "isStatic": true,
+          "isReadOnly": false,
+          "hasConstant": true,
+          "constant": 0,
+          "compilerGenerated": false,
+          "documentation": null
+        },
+        {
+          "id": "F:EZapi.UiAlign.value__",
+          "name": "value__",
+          "type": "System.Int32",
+          "isStatic": false,
+          "isReadOnly": false,
+          "hasConstant": false,
+          "constant": null,
+          "compilerGenerated": false,
+          "documentation": null
+        }
+      ],
+      "properties": [],
+      "events": [],
+      "methods": []
+    },
+    {
+      "id": "T:EZapi.UiBox",
+      "name": "EZapi.UiBox",
+      "kind": "class",
+      "baseType": "System.Object",
+      "interfaces": [
+        "System.IEquatable`1<EZapi.UiBox>"
+      ],
+      "abstract": false,
+      "sealed": true,
+      "compilerGenerated": false,
+      "genericParameters": [],
+      "documentation": {
+        "summary": "Logical native pixels, before the game's canvas scaling. 原生逻辑像素，非屏幕像素。",
+        "remarks": null,
+        "returns": null,
+        "parameters": {}
+      },
+      "sources": [
+        {
+          "path": "../src/EZapi/NativeUiDefinition.cs",
+          "line": 7
+        }
+      ],
+      "domain": "native-ui",
+      "curatedEntryIds": [],
+      "fields": [],
+      "properties": [
+        {
+          "id": "P:EZapi.UiBox.Height",
+          "name": "Height",
+          "type": "System.Int32",
+          "readable": true,
+          "writable": true,
+          "initOnly": true,
+          "isStatic": false,
+          "parameters": [],
+          "compilerGenerated": false,
+          "documentation": null
+        },
+        {
+          "id": "P:EZapi.UiBox.Width",
+          "name": "Width",
+          "type": "System.Int32",
+          "readable": true,
+          "writable": true,
+          "initOnly": true,
+          "isStatic": false,
+          "parameters": [],
+          "compilerGenerated": false,
+          "documentation": null
+        },
+        {
+          "id": "P:EZapi.UiBox.X",
+          "name": "X",
+          "type": "System.Int32",
+          "readable": true,
+          "writable": true,
+          "initOnly": true,
+          "isStatic": false,
+          "parameters": [],
+          "compilerGenerated": false,
+          "documentation": null
+        },
+        {
+          "id": "P:EZapi.UiBox.Y",
+          "name": "Y",
+          "type": "System.Int32",
+          "readable": true,
+          "writable": true,
+          "initOnly": true,
+          "isStatic": false,
+          "parameters": [],
+          "compilerGenerated": false,
+          "documentation": null
+        }
+      ],
+      "events": [],
+      "methods": [
+        {
+          "id": "M:EZapi.UiBox.<Clone>$",
+          "name": "<Clone>$",
+          "signature": "EZapi.UiBox EZapi.UiBox::<Clone>$()",
+          "returnType": "EZapi.UiBox",
+          "isStatic": false,
+          "isConstructor": false,
+          "isAbstract": false,
+          "isVirtual": false,
+          "compilerGenerated": true,
+          "genericParameters": [],
+          "parameters": [],
+          "documentation": null
+        },
+        {
+          "id": "M:EZapi.UiBox.Equals(EZapi.UiBox)",
+          "name": "Equals",
+          "signature": "System.Boolean EZapi.UiBox::Equals(EZapi.UiBox)",
+          "returnType": "System.Boolean",
+          "isStatic": false,
+          "isConstructor": false,
+          "isAbstract": false,
+          "isVirtual": true,
+          "compilerGenerated": true,
+          "genericParameters": [],
+          "parameters": [
+            {
+              "name": "other",
+              "type": "EZapi.UiBox",
+              "optional": false,
+              "hasDefault": false,
+              "defaultValue": null,
+              "isOut": false,
+              "isParams": false
+            }
+          ],
+          "documentation": null
+        },
+        {
+          "id": "M:EZapi.UiBox.Equals(System.Object)",
+          "name": "Equals",
+          "signature": "System.Boolean EZapi.UiBox::Equals(System.Object)",
+          "returnType": "System.Boolean",
+          "isStatic": false,
+          "isConstructor": false,
+          "isAbstract": false,
+          "isVirtual": true,
+          "compilerGenerated": true,
+          "genericParameters": [],
+          "parameters": [
+            {
+              "name": "obj",
+              "type": "System.Object",
+              "optional": false,
+              "hasDefault": false,
+              "defaultValue": null,
+              "isOut": false,
+              "isParams": false
+            }
+          ],
+          "documentation": null
+        },
+        {
+          "id": "M:EZapi.UiBox.op_Equality(EZapi.UiBox,EZapi.UiBox)",
+          "name": "op_Equality",
+          "signature": "System.Boolean EZapi.UiBox::op_Equality(EZapi.UiBox,EZapi.UiBox)",
+          "returnType": "System.Boolean",
+          "isStatic": true,
+          "isConstructor": false,
+          "isAbstract": false,
+          "isVirtual": false,
+          "compilerGenerated": true,
+          "genericParameters": [],
+          "parameters": [
+            {
+              "name": "left",
+              "type": "EZapi.UiBox",
+              "optional": false,
+              "hasDefault": false,
+              "defaultValue": null,
+              "isOut": false,
+              "isParams": false
+            },
+            {
+              "name": "right",
+              "type": "EZapi.UiBox",
+              "optional": false,
+              "hasDefault": false,
+              "defaultValue": null,
+              "isOut": false,
+              "isParams": false
+            }
+          ],
+          "documentation": null
+        },
+        {
+          "id": "M:EZapi.UiBox.op_Inequality(EZapi.UiBox,EZapi.UiBox)",
+          "name": "op_Inequality",
+          "signature": "System.Boolean EZapi.UiBox::op_Inequality(EZapi.UiBox,EZapi.UiBox)",
+          "returnType": "System.Boolean",
+          "isStatic": true,
+          "isConstructor": false,
+          "isAbstract": false,
+          "isVirtual": false,
+          "compilerGenerated": true,
+          "genericParameters": [],
+          "parameters": [
+            {
+              "name": "left",
+              "type": "EZapi.UiBox",
+              "optional": false,
+              "hasDefault": false,
+              "defaultValue": null,
+              "isOut": false,
+              "isParams": false
+            },
+            {
+              "name": "right",
+              "type": "EZapi.UiBox",
+              "optional": false,
+              "hasDefault": false,
+              "defaultValue": null,
+              "isOut": false,
+              "isParams": false
+            }
+          ],
+          "documentation": null
+        },
+        {
+          "id": "M:EZapi.UiBox.GetHashCode",
+          "name": "GetHashCode",
+          "signature": "System.Int32 EZapi.UiBox::GetHashCode()",
+          "returnType": "System.Int32",
+          "isStatic": false,
+          "isConstructor": false,
+          "isAbstract": false,
+          "isVirtual": true,
+          "compilerGenerated": true,
+          "genericParameters": [],
+          "parameters": [],
+          "documentation": null
+        },
+        {
+          "id": "M:EZapi.UiBox.ToString",
+          "name": "ToString",
+          "signature": "System.String EZapi.UiBox::ToString()",
+          "returnType": "System.String",
+          "isStatic": false,
+          "isConstructor": false,
+          "isAbstract": false,
+          "isVirtual": true,
+          "compilerGenerated": true,
+          "genericParameters": [],
+          "parameters": [],
+          "documentation": null
+        },
+        {
+          "id": "M:EZapi.UiBox.#ctor(System.Int32,System.Int32,System.Int32,System.Int32)",
+          "name": ".ctor",
+          "signature": "System.Void EZapi.UiBox::.ctor(System.Int32,System.Int32,System.Int32,System.Int32)",
+          "returnType": "System.Void",
+          "isStatic": false,
+          "isConstructor": true,
+          "isAbstract": false,
+          "isVirtual": false,
+          "compilerGenerated": false,
+          "genericParameters": [],
+          "parameters": [
+            {
+              "name": "X",
+              "type": "System.Int32",
+              "optional": false,
+              "hasDefault": false,
+              "defaultValue": null,
+              "isOut": false,
+              "isParams": false
+            },
+            {
+              "name": "Y",
+              "type": "System.Int32",
+              "optional": false,
+              "hasDefault": false,
+              "defaultValue": null,
+              "isOut": false,
+              "isParams": false
+            },
+            {
+              "name": "Width",
+              "type": "System.Int32",
+              "optional": false,
+              "hasDefault": false,
+              "defaultValue": null,
+              "isOut": false,
+              "isParams": false
+            },
+            {
+              "name": "Height",
+              "type": "System.Int32",
+              "optional": false,
+              "hasDefault": false,
+              "defaultValue": null,
+              "isOut": false,
+              "isParams": false
+            }
+          ],
+          "documentation": {
+            "summary": "Logical native pixels, before the game's canvas scaling. 原生逻辑像素，非屏幕像素。",
+            "remarks": null,
+            "returns": null,
+            "parameters": {}
+          }
+        },
+        {
+          "id": "M:EZapi.UiBox.Deconstruct(System.Int32@,System.Int32@,System.Int32@,System.Int32@)",
+          "name": "Deconstruct",
+          "signature": "System.Void EZapi.UiBox::Deconstruct(System.Int32&,System.Int32&,System.Int32&,System.Int32&)",
+          "returnType": "System.Void",
+          "isStatic": false,
+          "isConstructor": false,
+          "isAbstract": false,
+          "isVirtual": false,
+          "compilerGenerated": true,
+          "genericParameters": [],
+          "parameters": [
+            {
+              "name": "X",
+              "type": "System.Int32&",
+              "optional": false,
+              "hasDefault": false,
+              "defaultValue": null,
+              "isOut": true,
+              "isParams": false
+            },
+            {
+              "name": "Y",
+              "type": "System.Int32&",
+              "optional": false,
+              "hasDefault": false,
+              "defaultValue": null,
+              "isOut": true,
+              "isParams": false
+            },
+            {
+              "name": "Width",
+              "type": "System.Int32&",
+              "optional": false,
+              "hasDefault": false,
+              "defaultValue": null,
+              "isOut": true,
+              "isParams": false
+            },
+            {
+              "name": "Height",
+              "type": "System.Int32&",
+              "optional": false,
+              "hasDefault": false,
+              "defaultValue": null,
+              "isOut": true,
+              "isParams": false
+            }
+          ],
+          "documentation": null
+        }
+      ]
+    },
+    {
+      "id": "T:EZapi.UiKind",
+      "name": "EZapi.UiKind",
+      "kind": "enum",
+      "baseType": "System.Enum",
+      "interfaces": [],
+      "abstract": false,
+      "sealed": true,
+      "compilerGenerated": false,
+      "genericParameters": [],
+      "documentation": {
+        "summary": "Native component recipes. Row/Column determine flow; Frame supplies padding/alignment.",
+        "remarks": null,
+        "returns": null,
+        "parameters": {}
+      },
+      "sources": [
+        {
+          "path": "../src/EZapi/NativeUiDefinition.cs",
+          "line": 13
+        }
+      ],
+      "domain": "native-ui",
+      "curatedEntryIds": [],
+      "fields": [
+        {
+          "id": "F:EZapi.UiKind.Button",
+          "name": "Button",
+          "type": "EZapi.UiKind",
+          "isStatic": true,
+          "isReadOnly": false,
+          "hasConstant": true,
+          "constant": 5,
+          "compilerGenerated": false,
+          "documentation": null
+        },
+        {
+          "id": "F:EZapi.UiKind.Column",
+          "name": "Column",
+          "type": "EZapi.UiKind",
+          "isStatic": true,
+          "isReadOnly": false,
+          "hasConstant": true,
+          "constant": 1,
+          "compilerGenerated": false,
+          "documentation": null
+        },
+        {
+          "id": "F:EZapi.UiKind.Frame",
+          "name": "Frame",
+          "type": "EZapi.UiKind",
+          "isStatic": true,
+          "isReadOnly": false,
+          "hasConstant": true,
+          "constant": 2,
+          "compilerGenerated": false,
+          "documentation": null
+        },
+        {
+          "id": "F:EZapi.UiKind.Inventory",
+          "name": "Inventory",
+          "type": "EZapi.UiKind",
+          "isStatic": true,
+          "isReadOnly": false,
+          "hasConstant": true,
+          "constant": 6,
+          "compilerGenerated": false,
+          "documentation": null
+        },
+        {
+          "id": "F:EZapi.UiKind.Label",
+          "name": "Label",
+          "type": "EZapi.UiKind",
+          "isStatic": true,
+          "isReadOnly": false,
+          "hasConstant": true,
+          "constant": 3,
+          "compilerGenerated": false,
+          "documentation": null
+        },
+        {
+          "id": "F:EZapi.UiKind.Row",
+          "name": "Row",
+          "type": "EZapi.UiKind",
+          "isStatic": true,
+          "isReadOnly": false,
+          "hasConstant": true,
+          "constant": 0,
+          "compilerGenerated": false,
+          "documentation": null
+        },
+        {
+          "id": "F:EZapi.UiKind.Slot",
+          "name": "Slot",
+          "type": "EZapi.UiKind",
+          "isStatic": true,
+          "isReadOnly": false,
+          "hasConstant": true,
+          "constant": 7,
+          "compilerGenerated": false,
+          "documentation": null
+        },
+        {
+          "id": "F:EZapi.UiKind.Spacer",
+          "name": "Spacer",
+          "type": "EZapi.UiKind",
+          "isStatic": true,
+          "isReadOnly": false,
+          "hasConstant": true,
+          "constant": 8,
+          "compilerGenerated": false,
+          "documentation": null
+        },
+        {
+          "id": "F:EZapi.UiKind.Tag",
+          "name": "Tag",
+          "type": "EZapi.UiKind",
+          "isStatic": true,
+          "isReadOnly": false,
+          "hasConstant": true,
+          "constant": 4,
+          "compilerGenerated": false,
+          "documentation": null
+        },
+        {
+          "id": "F:EZapi.UiKind.value__",
+          "name": "value__",
+          "type": "System.Int32",
+          "isStatic": false,
+          "isReadOnly": false,
+          "hasConstant": false,
+          "constant": null,
+          "compilerGenerated": false,
+          "documentation": null
+        }
+      ],
+      "properties": [],
+      "events": [],
+      "methods": []
+    },
+    {
+      "id": "T:EZapi.UiLayoutNode",
+      "name": "EZapi.UiLayoutNode",
+      "kind": "class",
+      "baseType": "System.Object",
+      "interfaces": [
+        "System.IEquatable`1<EZapi.UiLayoutNode>"
+      ],
+      "abstract": false,
+      "sealed": true,
+      "compilerGenerated": false,
+      "genericParameters": [],
+      "documentation": {
+        "summary": "Expected boxes, relative to document content origin at top left. Not a font/visual acceptance report.",
+        "remarks": null,
+        "returns": null,
+        "parameters": {}
+      },
+      "sources": [
+        {
+          "path": "../src/EZapi/NativeUiDefinition.cs",
+          "line": 48
+        }
+      ],
+      "domain": "native-ui",
+      "curatedEntryIds": [],
+      "fields": [],
+      "properties": [
+        {
+          "id": "P:EZapi.UiLayoutNode.Box",
+          "name": "Box",
+          "type": "EZapi.UiBox",
+          "readable": true,
+          "writable": true,
+          "initOnly": true,
+          "isStatic": false,
+          "parameters": [],
+          "compilerGenerated": false,
+          "documentation": null
+        },
+        {
+          "id": "P:EZapi.UiLayoutNode.Kind",
+          "name": "Kind",
+          "type": "EZapi.UiKind",
+          "readable": true,
+          "writable": true,
+          "initOnly": true,
+          "isStatic": false,
+          "parameters": [],
+          "compilerGenerated": false,
+          "documentation": null
+        },
+        {
+          "id": "P:EZapi.UiLayoutNode.Definition",
+          "name": "Definition",
+          "type": "EZapi.UiNode",
+          "readable": true,
+          "writable": true,
+          "initOnly": true,
+          "isStatic": false,
+          "parameters": [],
+          "compilerGenerated": false,
+          "documentation": null
+        },
+        {
+          "id": "P:EZapi.UiLayoutNode.Children",
+          "name": "Children",
+          "type": "System.Collections.Generic.IReadOnlyList`1<EZapi.UiLayoutNode>",
+          "readable": true,
+          "writable": true,
+          "initOnly": true,
+          "isStatic": false,
+          "parameters": [],
+          "compilerGenerated": false,
+          "documentation": null
+        },
+        {
+          "id": "P:EZapi.UiLayoutNode.Id",
+          "name": "Id",
+          "type": "System.String",
+          "readable": true,
+          "writable": true,
+          "initOnly": true,
+          "isStatic": false,
+          "parameters": [],
+          "compilerGenerated": false,
+          "documentation": null
+        }
+      ],
+      "events": [],
+      "methods": [
+        {
+          "id": "M:EZapi.UiLayoutNode.<Clone>$",
+          "name": "<Clone>$",
+          "signature": "EZapi.UiLayoutNode EZapi.UiLayoutNode::<Clone>$()",
+          "returnType": "EZapi.UiLayoutNode",
+          "isStatic": false,
+          "isConstructor": false,
+          "isAbstract": false,
+          "isVirtual": false,
+          "compilerGenerated": true,
+          "genericParameters": [],
+          "parameters": [],
+          "documentation": null
+        },
+        {
+          "id": "M:EZapi.UiLayoutNode.Equals(EZapi.UiLayoutNode)",
+          "name": "Equals",
+          "signature": "System.Boolean EZapi.UiLayoutNode::Equals(EZapi.UiLayoutNode)",
+          "returnType": "System.Boolean",
+          "isStatic": false,
+          "isConstructor": false,
+          "isAbstract": false,
+          "isVirtual": true,
+          "compilerGenerated": true,
+          "genericParameters": [],
+          "parameters": [
+            {
+              "name": "other",
+              "type": "EZapi.UiLayoutNode",
+              "optional": false,
+              "hasDefault": false,
+              "defaultValue": null,
+              "isOut": false,
+              "isParams": false
+            }
+          ],
+          "documentation": null
+        },
+        {
+          "id": "M:EZapi.UiLayoutNode.Equals(System.Object)",
+          "name": "Equals",
+          "signature": "System.Boolean EZapi.UiLayoutNode::Equals(System.Object)",
+          "returnType": "System.Boolean",
+          "isStatic": false,
+          "isConstructor": false,
+          "isAbstract": false,
+          "isVirtual": true,
+          "compilerGenerated": true,
+          "genericParameters": [],
+          "parameters": [
+            {
+              "name": "obj",
+              "type": "System.Object",
+              "optional": false,
+              "hasDefault": false,
+              "defaultValue": null,
+              "isOut": false,
+              "isParams": false
+            }
+          ],
+          "documentation": null
+        },
+        {
+          "id": "M:EZapi.UiLayoutNode.op_Equality(EZapi.UiLayoutNode,EZapi.UiLayoutNode)",
+          "name": "op_Equality",
+          "signature": "System.Boolean EZapi.UiLayoutNode::op_Equality(EZapi.UiLayoutNode,EZapi.UiLayoutNode)",
+          "returnType": "System.Boolean",
+          "isStatic": true,
+          "isConstructor": false,
+          "isAbstract": false,
+          "isVirtual": false,
+          "compilerGenerated": true,
+          "genericParameters": [],
+          "parameters": [
+            {
+              "name": "left",
+              "type": "EZapi.UiLayoutNode",
+              "optional": false,
+              "hasDefault": false,
+              "defaultValue": null,
+              "isOut": false,
+              "isParams": false
+            },
+            {
+              "name": "right",
+              "type": "EZapi.UiLayoutNode",
+              "optional": false,
+              "hasDefault": false,
+              "defaultValue": null,
+              "isOut": false,
+              "isParams": false
+            }
+          ],
+          "documentation": null
+        },
+        {
+          "id": "M:EZapi.UiLayoutNode.op_Inequality(EZapi.UiLayoutNode,EZapi.UiLayoutNode)",
+          "name": "op_Inequality",
+          "signature": "System.Boolean EZapi.UiLayoutNode::op_Inequality(EZapi.UiLayoutNode,EZapi.UiLayoutNode)",
+          "returnType": "System.Boolean",
+          "isStatic": true,
+          "isConstructor": false,
+          "isAbstract": false,
+          "isVirtual": false,
+          "compilerGenerated": true,
+          "genericParameters": [],
+          "parameters": [
+            {
+              "name": "left",
+              "type": "EZapi.UiLayoutNode",
+              "optional": false,
+              "hasDefault": false,
+              "defaultValue": null,
+              "isOut": false,
+              "isParams": false
+            },
+            {
+              "name": "right",
+              "type": "EZapi.UiLayoutNode",
+              "optional": false,
+              "hasDefault": false,
+              "defaultValue": null,
+              "isOut": false,
+              "isParams": false
+            }
+          ],
+          "documentation": null
+        },
+        {
+          "id": "M:EZapi.UiLayoutNode.GetHashCode",
+          "name": "GetHashCode",
+          "signature": "System.Int32 EZapi.UiLayoutNode::GetHashCode()",
+          "returnType": "System.Int32",
+          "isStatic": false,
+          "isConstructor": false,
+          "isAbstract": false,
+          "isVirtual": true,
+          "compilerGenerated": true,
+          "genericParameters": [],
+          "parameters": [],
+          "documentation": null
+        },
+        {
+          "id": "M:EZapi.UiLayoutNode.ToString",
+          "name": "ToString",
+          "signature": "System.String EZapi.UiLayoutNode::ToString()",
+          "returnType": "System.String",
+          "isStatic": false,
+          "isConstructor": false,
+          "isAbstract": false,
+          "isVirtual": true,
+          "compilerGenerated": true,
+          "genericParameters": [],
+          "parameters": [],
+          "documentation": null
+        },
+        {
+          "id": "M:EZapi.UiLayoutNode.#ctor(System.String,EZapi.UiKind,EZapi.UiBox,EZapi.UiNode,System.Collections.Generic.IReadOnlyList{EZapi.UiLayoutNode})",
+          "name": ".ctor",
+          "signature": "System.Void EZapi.UiLayoutNode::.ctor(System.String,EZapi.UiKind,EZapi.UiBox,EZapi.UiNode,System.Collections.Generic.IReadOnlyList`1<EZapi.UiLayoutNode>)",
+          "returnType": "System.Void",
+          "isStatic": false,
+          "isConstructor": true,
+          "isAbstract": false,
+          "isVirtual": false,
+          "compilerGenerated": false,
+          "genericParameters": [],
+          "parameters": [
+            {
+              "name": "Id",
+              "type": "System.String",
+              "optional": false,
+              "hasDefault": false,
+              "defaultValue": null,
+              "isOut": false,
+              "isParams": false
+            },
+            {
+              "name": "Kind",
+              "type": "EZapi.UiKind",
+              "optional": false,
+              "hasDefault": false,
+              "defaultValue": null,
+              "isOut": false,
+              "isParams": false
+            },
+            {
+              "name": "Box",
+              "type": "EZapi.UiBox",
+              "optional": false,
+              "hasDefault": false,
+              "defaultValue": null,
+              "isOut": false,
+              "isParams": false
+            },
+            {
+              "name": "Definition",
+              "type": "EZapi.UiNode",
+              "optional": false,
+              "hasDefault": false,
+              "defaultValue": null,
+              "isOut": false,
+              "isParams": false
+            },
+            {
+              "name": "Children",
+              "type": "System.Collections.Generic.IReadOnlyList`1<EZapi.UiLayoutNode>",
+              "optional": false,
+              "hasDefault": false,
+              "defaultValue": null,
+              "isOut": false,
+              "isParams": false
+            }
+          ],
+          "documentation": {
+            "summary": "Expected boxes, relative to document content origin at top left. Not a font/visual acceptance report.",
+            "remarks": null,
+            "returns": null,
+            "parameters": {}
+          }
+        },
+        {
+          "id": "M:EZapi.UiLayoutNode.Deconstruct(System.String@,EZapi.UiKind@,EZapi.UiBox@,EZapi.UiNode@,System.Collections.Generic.IReadOnlyList{EZapi.UiLayoutNode}@)",
+          "name": "Deconstruct",
+          "signature": "System.Void EZapi.UiLayoutNode::Deconstruct(System.String&,EZapi.UiKind&,EZapi.UiBox&,EZapi.UiNode&,System.Collections.Generic.IReadOnlyList`1<EZapi.UiLayoutNode>&)",
+          "returnType": "System.Void",
+          "isStatic": false,
+          "isConstructor": false,
+          "isAbstract": false,
+          "isVirtual": false,
+          "compilerGenerated": true,
+          "genericParameters": [],
+          "parameters": [
+            {
+              "name": "Id",
+              "type": "System.String&",
+              "optional": false,
+              "hasDefault": false,
+              "defaultValue": null,
+              "isOut": true,
+              "isParams": false
+            },
+            {
+              "name": "Kind",
+              "type": "EZapi.UiKind&",
+              "optional": false,
+              "hasDefault": false,
+              "defaultValue": null,
+              "isOut": true,
+              "isParams": false
+            },
+            {
+              "name": "Box",
+              "type": "EZapi.UiBox&",
+              "optional": false,
+              "hasDefault": false,
+              "defaultValue": null,
+              "isOut": true,
+              "isParams": false
+            },
+            {
+              "name": "Definition",
+              "type": "EZapi.UiNode&",
+              "optional": false,
+              "hasDefault": false,
+              "defaultValue": null,
+              "isOut": true,
+              "isParams": false
+            },
+            {
+              "name": "Children",
+              "type": "System.Collections.Generic.IReadOnlyList`1<EZapi.UiLayoutNode>&",
+              "optional": false,
+              "hasDefault": false,
+              "defaultValue": null,
+              "isOut": true,
+              "isParams": false
+            }
+          ],
+          "documentation": null
+        }
+      ]
+    },
+    {
+      "id": "T:EZapi.UiMeasuredBox",
+      "name": "EZapi.UiMeasuredBox",
+      "kind": "class",
+      "baseType": "System.Object",
+      "interfaces": [
+        "System.IEquatable`1<EZapi.UiMeasuredBox>"
+      ],
+      "abstract": false,
+      "sealed": true,
+      "compilerGenerated": false,
+      "genericParameters": [],
+      "documentation": null,
+      "sources": [
+        {
+          "path": "../src/EZapi/NativeUiPreview.cs",
+          "line": 11
+        }
+      ],
+      "domain": "native-ui",
+      "curatedEntryIds": [],
+      "fields": [],
+      "properties": [
+        {
+          "id": "P:EZapi.UiMeasuredBox.Height",
+          "name": "Height",
+          "type": "System.Single",
+          "readable": true,
+          "writable": true,
+          "initOnly": true,
+          "isStatic": false,
+          "parameters": [],
+          "compilerGenerated": false,
+          "documentation": null
+        },
+        {
+          "id": "P:EZapi.UiMeasuredBox.Width",
+          "name": "Width",
+          "type": "System.Single",
+          "readable": true,
+          "writable": true,
+          "initOnly": true,
+          "isStatic": false,
+          "parameters": [],
+          "compilerGenerated": false,
+          "documentation": null
+        },
+        {
+          "id": "P:EZapi.UiMeasuredBox.X",
+          "name": "X",
+          "type": "System.Single",
+          "readable": true,
+          "writable": true,
+          "initOnly": true,
+          "isStatic": false,
+          "parameters": [],
+          "compilerGenerated": false,
+          "documentation": null
+        },
+        {
+          "id": "P:EZapi.UiMeasuredBox.Y",
+          "name": "Y",
+          "type": "System.Single",
+          "readable": true,
+          "writable": true,
+          "initOnly": true,
+          "isStatic": false,
+          "parameters": [],
+          "compilerGenerated": false,
+          "documentation": null
+        }
+      ],
+      "events": [],
+      "methods": [
+        {
+          "id": "M:EZapi.UiMeasuredBox.<Clone>$",
+          "name": "<Clone>$",
+          "signature": "EZapi.UiMeasuredBox EZapi.UiMeasuredBox::<Clone>$()",
+          "returnType": "EZapi.UiMeasuredBox",
+          "isStatic": false,
+          "isConstructor": false,
+          "isAbstract": false,
+          "isVirtual": false,
+          "compilerGenerated": true,
+          "genericParameters": [],
+          "parameters": [],
+          "documentation": null
+        },
+        {
+          "id": "M:EZapi.UiMeasuredBox.Equals(EZapi.UiMeasuredBox)",
+          "name": "Equals",
+          "signature": "System.Boolean EZapi.UiMeasuredBox::Equals(EZapi.UiMeasuredBox)",
+          "returnType": "System.Boolean",
+          "isStatic": false,
+          "isConstructor": false,
+          "isAbstract": false,
+          "isVirtual": true,
+          "compilerGenerated": true,
+          "genericParameters": [],
+          "parameters": [
+            {
+              "name": "other",
+              "type": "EZapi.UiMeasuredBox",
+              "optional": false,
+              "hasDefault": false,
+              "defaultValue": null,
+              "isOut": false,
+              "isParams": false
+            }
+          ],
+          "documentation": null
+        },
+        {
+          "id": "M:EZapi.UiMeasuredBox.Equals(System.Object)",
+          "name": "Equals",
+          "signature": "System.Boolean EZapi.UiMeasuredBox::Equals(System.Object)",
+          "returnType": "System.Boolean",
+          "isStatic": false,
+          "isConstructor": false,
+          "isAbstract": false,
+          "isVirtual": true,
+          "compilerGenerated": true,
+          "genericParameters": [],
+          "parameters": [
+            {
+              "name": "obj",
+              "type": "System.Object",
+              "optional": false,
+              "hasDefault": false,
+              "defaultValue": null,
+              "isOut": false,
+              "isParams": false
+            }
+          ],
+          "documentation": null
+        },
+        {
+          "id": "M:EZapi.UiMeasuredBox.op_Equality(EZapi.UiMeasuredBox,EZapi.UiMeasuredBox)",
+          "name": "op_Equality",
+          "signature": "System.Boolean EZapi.UiMeasuredBox::op_Equality(EZapi.UiMeasuredBox,EZapi.UiMeasuredBox)",
+          "returnType": "System.Boolean",
+          "isStatic": true,
+          "isConstructor": false,
+          "isAbstract": false,
+          "isVirtual": false,
+          "compilerGenerated": true,
+          "genericParameters": [],
+          "parameters": [
+            {
+              "name": "left",
+              "type": "EZapi.UiMeasuredBox",
+              "optional": false,
+              "hasDefault": false,
+              "defaultValue": null,
+              "isOut": false,
+              "isParams": false
+            },
+            {
+              "name": "right",
+              "type": "EZapi.UiMeasuredBox",
+              "optional": false,
+              "hasDefault": false,
+              "defaultValue": null,
+              "isOut": false,
+              "isParams": false
+            }
+          ],
+          "documentation": null
+        },
+        {
+          "id": "M:EZapi.UiMeasuredBox.op_Inequality(EZapi.UiMeasuredBox,EZapi.UiMeasuredBox)",
+          "name": "op_Inequality",
+          "signature": "System.Boolean EZapi.UiMeasuredBox::op_Inequality(EZapi.UiMeasuredBox,EZapi.UiMeasuredBox)",
+          "returnType": "System.Boolean",
+          "isStatic": true,
+          "isConstructor": false,
+          "isAbstract": false,
+          "isVirtual": false,
+          "compilerGenerated": true,
+          "genericParameters": [],
+          "parameters": [
+            {
+              "name": "left",
+              "type": "EZapi.UiMeasuredBox",
+              "optional": false,
+              "hasDefault": false,
+              "defaultValue": null,
+              "isOut": false,
+              "isParams": false
+            },
+            {
+              "name": "right",
+              "type": "EZapi.UiMeasuredBox",
+              "optional": false,
+              "hasDefault": false,
+              "defaultValue": null,
+              "isOut": false,
+              "isParams": false
+            }
+          ],
+          "documentation": null
+        },
+        {
+          "id": "M:EZapi.UiMeasuredBox.GetHashCode",
+          "name": "GetHashCode",
+          "signature": "System.Int32 EZapi.UiMeasuredBox::GetHashCode()",
+          "returnType": "System.Int32",
+          "isStatic": false,
+          "isConstructor": false,
+          "isAbstract": false,
+          "isVirtual": true,
+          "compilerGenerated": true,
+          "genericParameters": [],
+          "parameters": [],
+          "documentation": null
+        },
+        {
+          "id": "M:EZapi.UiMeasuredBox.ToString",
+          "name": "ToString",
+          "signature": "System.String EZapi.UiMeasuredBox::ToString()",
+          "returnType": "System.String",
+          "isStatic": false,
+          "isConstructor": false,
+          "isAbstract": false,
+          "isVirtual": true,
+          "compilerGenerated": true,
+          "genericParameters": [],
+          "parameters": [],
+          "documentation": null
+        },
+        {
+          "id": "M:EZapi.UiMeasuredBox.#ctor(System.Single,System.Single,System.Single,System.Single)",
+          "name": ".ctor",
+          "signature": "System.Void EZapi.UiMeasuredBox::.ctor(System.Single,System.Single,System.Single,System.Single)",
+          "returnType": "System.Void",
+          "isStatic": false,
+          "isConstructor": true,
+          "isAbstract": false,
+          "isVirtual": false,
+          "compilerGenerated": false,
+          "genericParameters": [],
+          "parameters": [
+            {
+              "name": "X",
+              "type": "System.Single",
+              "optional": false,
+              "hasDefault": false,
+              "defaultValue": null,
+              "isOut": false,
+              "isParams": false
+            },
+            {
+              "name": "Y",
+              "type": "System.Single",
+              "optional": false,
+              "hasDefault": false,
+              "defaultValue": null,
+              "isOut": false,
+              "isParams": false
+            },
+            {
+              "name": "Width",
+              "type": "System.Single",
+              "optional": false,
+              "hasDefault": false,
+              "defaultValue": null,
+              "isOut": false,
+              "isParams": false
+            },
+            {
+              "name": "Height",
+              "type": "System.Single",
+              "optional": false,
+              "hasDefault": false,
+              "defaultValue": null,
+              "isOut": false,
+              "isParams": false
+            }
+          ],
+          "documentation": null
+        },
+        {
+          "id": "M:EZapi.UiMeasuredBox.Deconstruct(System.Single@,System.Single@,System.Single@,System.Single@)",
+          "name": "Deconstruct",
+          "signature": "System.Void EZapi.UiMeasuredBox::Deconstruct(System.Single&,System.Single&,System.Single&,System.Single&)",
+          "returnType": "System.Void",
+          "isStatic": false,
+          "isConstructor": false,
+          "isAbstract": false,
+          "isVirtual": false,
+          "compilerGenerated": true,
+          "genericParameters": [],
+          "parameters": [
+            {
+              "name": "X",
+              "type": "System.Single&",
+              "optional": false,
+              "hasDefault": false,
+              "defaultValue": null,
+              "isOut": true,
+              "isParams": false
+            },
+            {
+              "name": "Y",
+              "type": "System.Single&",
+              "optional": false,
+              "hasDefault": false,
+              "defaultValue": null,
+              "isOut": true,
+              "isParams": false
+            },
+            {
+              "name": "Width",
+              "type": "System.Single&",
+              "optional": false,
+              "hasDefault": false,
+              "defaultValue": null,
+              "isOut": true,
+              "isParams": false
+            },
+            {
+              "name": "Height",
+              "type": "System.Single&",
+              "optional": false,
+              "hasDefault": false,
+              "defaultValue": null,
+              "isOut": true,
+              "isParams": false
+            }
+          ],
+          "documentation": null
+        }
+      ]
+    },
+    {
+      "id": "T:EZapi.UiNode",
+      "name": "EZapi.UiNode",
+      "kind": "class",
+      "baseType": "System.Object",
+      "interfaces": [
+        "System.IEquatable`1<EZapi.UiNode>"
+      ],
+      "abstract": false,
+      "sealed": true,
+      "compilerGenerated": false,
+      "genericParameters": [],
+      "documentation": {
+        "summary": "Declarative layout node. Every ID is unique within one document. Width/Height are outer logical pixels; zero auto-sizes groups and inventory, but text requires an explicit box. Children never shrink silently. 声明布局；分组可自动尺寸，文字必须有明确框，放不下会报错，不偷偷缩小。",
+        "remarks": null,
+        "returns": null,
+        "parameters": {}
+      },
+      "sources": [
+        {
+          "path": "../src/EZapi/NativeUiDefinition.cs",
+          "line": 20
+        }
+      ],
+      "domain": "native-ui",
+      "curatedEntryIds": [],
+      "fields": [],
+      "properties": [
+        {
+          "id": "P:EZapi.UiNode.Text",
+          "name": "Text",
+          "type": "EZapi.LocalizedItemText",
+          "readable": true,
+          "writable": true,
+          "initOnly": true,
+          "isStatic": false,
+          "parameters": [],
+          "compilerGenerated": false,
+          "documentation": null
+        },
+        {
+          "id": "P:EZapi.UiNode.Horizontal",
+          "name": "Horizontal",
+          "type": "EZapi.UiAlign",
+          "readable": true,
+          "writable": true,
+          "initOnly": true,
+          "isStatic": false,
+          "parameters": [],
+          "compilerGenerated": false,
+          "documentation": null
+        },
+        {
+          "id": "P:EZapi.UiNode.Vertical",
+          "name": "Vertical",
+          "type": "EZapi.UiAlign",
+          "readable": true,
+          "writable": true,
+          "initOnly": true,
+          "isStatic": false,
+          "parameters": [],
+          "compilerGenerated": false,
+          "documentation": null
+        },
+        {
+          "id": "P:EZapi.UiNode.Kind",
+          "name": "Kind",
+          "type": "EZapi.UiKind",
+          "readable": true,
+          "writable": true,
+          "initOnly": true,
+          "isStatic": false,
+          "parameters": [],
+          "compilerGenerated": false,
+          "documentation": null
+        },
+        {
+          "id": "P:EZapi.UiNode.Reverse",
+          "name": "Reverse",
+          "type": "System.Boolean",
+          "readable": true,
+          "writable": true,
+          "initOnly": true,
+          "isStatic": false,
+          "parameters": [],
+          "compilerGenerated": false,
+          "documentation": null
+        },
+        {
+          "id": "P:EZapi.UiNode.Wrap",
+          "name": "Wrap",
+          "type": "System.Boolean",
+          "readable": true,
+          "writable": true,
+          "initOnly": true,
+          "isStatic": false,
+          "parameters": [],
+          "compilerGenerated": false,
+          "documentation": null
+        },
+        {
+          "id": "P:EZapi.UiNode.Children",
+          "name": "Children",
+          "type": "System.Collections.Generic.IReadOnlyList`1<EZapi.UiNode>",
+          "readable": true,
+          "writable": true,
+          "initOnly": true,
+          "isStatic": false,
+          "parameters": [],
+          "compilerGenerated": false,
+          "documentation": null
+        },
+        {
+          "id": "P:EZapi.UiNode.Columns",
+          "name": "Columns",
+          "type": "System.Int32",
+          "readable": true,
+          "writable": true,
+          "initOnly": true,
+          "isStatic": false,
+          "parameters": [],
+          "compilerGenerated": false,
+          "documentation": null
+        },
+        {
+          "id": "P:EZapi.UiNode.Gap",
+          "name": "Gap",
+          "type": "System.Int32",
+          "readable": true,
+          "writable": true,
+          "initOnly": true,
+          "isStatic": false,
+          "parameters": [],
+          "compilerGenerated": false,
+          "documentation": null
+        },
+        {
+          "id": "P:EZapi.UiNode.Height",
+          "name": "Height",
+          "type": "System.Int32",
+          "readable": true,
+          "writable": true,
+          "initOnly": true,
+          "isStatic": false,
+          "parameters": [],
+          "compilerGenerated": false,
+          "documentation": null
+        },
+        {
+          "id": "P:EZapi.UiNode.Padding",
+          "name": "Padding",
+          "type": "System.Int32",
+          "readable": true,
+          "writable": true,
+          "initOnly": true,
+          "isStatic": false,
+          "parameters": [],
+          "compilerGenerated": false,
+          "documentation": null
+        },
+        {
+          "id": "P:EZapi.UiNode.Rows",
+          "name": "Rows",
+          "type": "System.Int32",
+          "readable": true,
+          "writable": true,
+          "initOnly": true,
+          "isStatic": false,
+          "parameters": [],
+          "compilerGenerated": false,
+          "documentation": null
+        },
+        {
+          "id": "P:EZapi.UiNode.Width",
+          "name": "Width",
+          "type": "System.Int32",
+          "readable": true,
+          "writable": true,
+          "initOnly": true,
+          "isStatic": false,
+          "parameters": [],
+          "compilerGenerated": false,
+          "documentation": null
+        },
+        {
+          "id": "P:EZapi.UiNode.FontSize",
+          "name": "FontSize",
+          "type": "System.Nullable`1<System.Single>",
+          "readable": true,
+          "writable": true,
+          "initOnly": true,
+          "isStatic": false,
+          "parameters": [],
+          "compilerGenerated": false,
+          "documentation": {
+            "summary": "Null retains the native locale font size; 4..24 is an explicit logical font size.",
+            "remarks": null,
+            "returns": null,
+            "parameters": {}
+          }
+        },
+        {
+          "id": "P:EZapi.UiNode.Id",
+          "name": "Id",
+          "type": "System.String",
+          "readable": true,
+          "writable": true,
+          "initOnly": true,
+          "isStatic": false,
+          "parameters": [],
+          "compilerGenerated": false,
+          "documentation": null
+        }
+      ],
+      "events": [],
+      "methods": [
+        {
+          "id": "M:EZapi.UiNode.<Clone>$",
+          "name": "<Clone>$",
+          "signature": "EZapi.UiNode EZapi.UiNode::<Clone>$()",
+          "returnType": "EZapi.UiNode",
+          "isStatic": false,
+          "isConstructor": false,
+          "isAbstract": false,
+          "isVirtual": false,
+          "compilerGenerated": true,
+          "genericParameters": [],
+          "parameters": [],
+          "documentation": null
+        },
+        {
+          "id": "M:EZapi.UiNode.Equals(EZapi.UiNode)",
+          "name": "Equals",
+          "signature": "System.Boolean EZapi.UiNode::Equals(EZapi.UiNode)",
+          "returnType": "System.Boolean",
+          "isStatic": false,
+          "isConstructor": false,
+          "isAbstract": false,
+          "isVirtual": true,
+          "compilerGenerated": true,
+          "genericParameters": [],
+          "parameters": [
+            {
+              "name": "other",
+              "type": "EZapi.UiNode",
+              "optional": false,
+              "hasDefault": false,
+              "defaultValue": null,
+              "isOut": false,
+              "isParams": false
+            }
+          ],
+          "documentation": null
+        },
+        {
+          "id": "M:EZapi.UiNode.Equals(System.Object)",
+          "name": "Equals",
+          "signature": "System.Boolean EZapi.UiNode::Equals(System.Object)",
+          "returnType": "System.Boolean",
+          "isStatic": false,
+          "isConstructor": false,
+          "isAbstract": false,
+          "isVirtual": true,
+          "compilerGenerated": true,
+          "genericParameters": [],
+          "parameters": [
+            {
+              "name": "obj",
+              "type": "System.Object",
+              "optional": false,
+              "hasDefault": false,
+              "defaultValue": null,
+              "isOut": false,
+              "isParams": false
+            }
+          ],
+          "documentation": null
+        },
+        {
+          "id": "M:EZapi.UiNode.op_Equality(EZapi.UiNode,EZapi.UiNode)",
+          "name": "op_Equality",
+          "signature": "System.Boolean EZapi.UiNode::op_Equality(EZapi.UiNode,EZapi.UiNode)",
+          "returnType": "System.Boolean",
+          "isStatic": true,
+          "isConstructor": false,
+          "isAbstract": false,
+          "isVirtual": false,
+          "compilerGenerated": true,
+          "genericParameters": [],
+          "parameters": [
+            {
+              "name": "left",
+              "type": "EZapi.UiNode",
+              "optional": false,
+              "hasDefault": false,
+              "defaultValue": null,
+              "isOut": false,
+              "isParams": false
+            },
+            {
+              "name": "right",
+              "type": "EZapi.UiNode",
+              "optional": false,
+              "hasDefault": false,
+              "defaultValue": null,
+              "isOut": false,
+              "isParams": false
+            }
+          ],
+          "documentation": null
+        },
+        {
+          "id": "M:EZapi.UiNode.op_Inequality(EZapi.UiNode,EZapi.UiNode)",
+          "name": "op_Inequality",
+          "signature": "System.Boolean EZapi.UiNode::op_Inequality(EZapi.UiNode,EZapi.UiNode)",
+          "returnType": "System.Boolean",
+          "isStatic": true,
+          "isConstructor": false,
+          "isAbstract": false,
+          "isVirtual": false,
+          "compilerGenerated": true,
+          "genericParameters": [],
+          "parameters": [
+            {
+              "name": "left",
+              "type": "EZapi.UiNode",
+              "optional": false,
+              "hasDefault": false,
+              "defaultValue": null,
+              "isOut": false,
+              "isParams": false
+            },
+            {
+              "name": "right",
+              "type": "EZapi.UiNode",
+              "optional": false,
+              "hasDefault": false,
+              "defaultValue": null,
+              "isOut": false,
+              "isParams": false
+            }
+          ],
+          "documentation": null
+        },
+        {
+          "id": "M:EZapi.UiNode.GetHashCode",
+          "name": "GetHashCode",
+          "signature": "System.Int32 EZapi.UiNode::GetHashCode()",
+          "returnType": "System.Int32",
+          "isStatic": false,
+          "isConstructor": false,
+          "isAbstract": false,
+          "isVirtual": true,
+          "compilerGenerated": true,
+          "genericParameters": [],
+          "parameters": [],
+          "documentation": null
+        },
+        {
+          "id": "M:EZapi.UiNode.ToString",
+          "name": "ToString",
+          "signature": "System.String EZapi.UiNode::ToString()",
+          "returnType": "System.String",
+          "isStatic": false,
+          "isConstructor": false,
+          "isAbstract": false,
+          "isVirtual": true,
+          "compilerGenerated": true,
+          "genericParameters": [],
+          "parameters": [],
+          "documentation": null
+        },
+        {
+          "id": "M:EZapi.UiNode.#ctor",
+          "name": ".ctor",
+          "signature": "System.Void EZapi.UiNode::.ctor()",
+          "returnType": "System.Void",
+          "isStatic": false,
+          "isConstructor": true,
+          "isAbstract": false,
+          "isVirtual": false,
+          "compilerGenerated": false,
+          "genericParameters": [],
+          "parameters": [],
+          "documentation": null
+        }
+      ]
+    },
+    {
+      "id": "T:EZapi.UiPreviewControl",
+      "name": "EZapi.UiPreviewControl",
+      "kind": "class",
+      "baseType": "System.Object",
+      "interfaces": [
+        "System.IEquatable`1<EZapi.UiPreviewControl>"
+      ],
+      "abstract": false,
+      "sealed": true,
+      "compilerGenerated": false,
+      "genericParameters": [],
+      "documentation": null,
+      "sources": [
+        {
+          "path": "../src/EZapi/NativeUiPreview.cs",
+          "line": 12
+        }
+      ],
+      "domain": "native-ui",
+      "curatedEntryIds": [],
+      "fields": [],
+      "properties": [
+        {
+          "id": "P:EZapi.UiPreviewControl.Expected",
+          "name": "Expected",
+          "type": "EZapi.UiBox",
+          "readable": true,
+          "writable": true,
+          "initOnly": true,
+          "isStatic": false,
+          "parameters": [],
+          "compilerGenerated": false,
+          "documentation": null
+        },
+        {
+          "id": "P:EZapi.UiPreviewControl.Kind",
+          "name": "Kind",
+          "type": "EZapi.UiKind",
+          "readable": true,
+          "writable": true,
+          "initOnly": true,
+          "isStatic": false,
+          "parameters": [],
+          "compilerGenerated": false,
+          "documentation": null
+        },
+        {
+          "id": "P:EZapi.UiPreviewControl.Actual",
+          "name": "Actual",
+          "type": "EZapi.UiMeasuredBox",
+          "readable": true,
+          "writable": true,
+          "initOnly": true,
+          "isStatic": false,
+          "parameters": [],
+          "compilerGenerated": false,
+          "documentation": null
+        },
+        {
+          "id": "P:EZapi.UiPreviewControl.Id",
+          "name": "Id",
+          "type": "System.String",
+          "readable": true,
+          "writable": true,
+          "initOnly": true,
+          "isStatic": false,
+          "parameters": [],
+          "compilerGenerated": false,
+          "documentation": null
+        }
+      ],
+      "events": [],
+      "methods": [
+        {
+          "id": "M:EZapi.UiPreviewControl.<Clone>$",
+          "name": "<Clone>$",
+          "signature": "EZapi.UiPreviewControl EZapi.UiPreviewControl::<Clone>$()",
+          "returnType": "EZapi.UiPreviewControl",
+          "isStatic": false,
+          "isConstructor": false,
+          "isAbstract": false,
+          "isVirtual": false,
+          "compilerGenerated": true,
+          "genericParameters": [],
+          "parameters": [],
+          "documentation": null
+        },
+        {
+          "id": "M:EZapi.UiPreviewControl.Equals(EZapi.UiPreviewControl)",
+          "name": "Equals",
+          "signature": "System.Boolean EZapi.UiPreviewControl::Equals(EZapi.UiPreviewControl)",
+          "returnType": "System.Boolean",
+          "isStatic": false,
+          "isConstructor": false,
+          "isAbstract": false,
+          "isVirtual": true,
+          "compilerGenerated": true,
+          "genericParameters": [],
+          "parameters": [
+            {
+              "name": "other",
+              "type": "EZapi.UiPreviewControl",
+              "optional": false,
+              "hasDefault": false,
+              "defaultValue": null,
+              "isOut": false,
+              "isParams": false
+            }
+          ],
+          "documentation": null
+        },
+        {
+          "id": "M:EZapi.UiPreviewControl.Equals(System.Object)",
+          "name": "Equals",
+          "signature": "System.Boolean EZapi.UiPreviewControl::Equals(System.Object)",
+          "returnType": "System.Boolean",
+          "isStatic": false,
+          "isConstructor": false,
+          "isAbstract": false,
+          "isVirtual": true,
+          "compilerGenerated": true,
+          "genericParameters": [],
+          "parameters": [
+            {
+              "name": "obj",
+              "type": "System.Object",
+              "optional": false,
+              "hasDefault": false,
+              "defaultValue": null,
+              "isOut": false,
+              "isParams": false
+            }
+          ],
+          "documentation": null
+        },
+        {
+          "id": "M:EZapi.UiPreviewControl.op_Equality(EZapi.UiPreviewControl,EZapi.UiPreviewControl)",
+          "name": "op_Equality",
+          "signature": "System.Boolean EZapi.UiPreviewControl::op_Equality(EZapi.UiPreviewControl,EZapi.UiPreviewControl)",
+          "returnType": "System.Boolean",
+          "isStatic": true,
+          "isConstructor": false,
+          "isAbstract": false,
+          "isVirtual": false,
+          "compilerGenerated": true,
+          "genericParameters": [],
+          "parameters": [
+            {
+              "name": "left",
+              "type": "EZapi.UiPreviewControl",
+              "optional": false,
+              "hasDefault": false,
+              "defaultValue": null,
+              "isOut": false,
+              "isParams": false
+            },
+            {
+              "name": "right",
+              "type": "EZapi.UiPreviewControl",
+              "optional": false,
+              "hasDefault": false,
+              "defaultValue": null,
+              "isOut": false,
+              "isParams": false
+            }
+          ],
+          "documentation": null
+        },
+        {
+          "id": "M:EZapi.UiPreviewControl.op_Inequality(EZapi.UiPreviewControl,EZapi.UiPreviewControl)",
+          "name": "op_Inequality",
+          "signature": "System.Boolean EZapi.UiPreviewControl::op_Inequality(EZapi.UiPreviewControl,EZapi.UiPreviewControl)",
+          "returnType": "System.Boolean",
+          "isStatic": true,
+          "isConstructor": false,
+          "isAbstract": false,
+          "isVirtual": false,
+          "compilerGenerated": true,
+          "genericParameters": [],
+          "parameters": [
+            {
+              "name": "left",
+              "type": "EZapi.UiPreviewControl",
+              "optional": false,
+              "hasDefault": false,
+              "defaultValue": null,
+              "isOut": false,
+              "isParams": false
+            },
+            {
+              "name": "right",
+              "type": "EZapi.UiPreviewControl",
+              "optional": false,
+              "hasDefault": false,
+              "defaultValue": null,
+              "isOut": false,
+              "isParams": false
+            }
+          ],
+          "documentation": null
+        },
+        {
+          "id": "M:EZapi.UiPreviewControl.GetHashCode",
+          "name": "GetHashCode",
+          "signature": "System.Int32 EZapi.UiPreviewControl::GetHashCode()",
+          "returnType": "System.Int32",
+          "isStatic": false,
+          "isConstructor": false,
+          "isAbstract": false,
+          "isVirtual": true,
+          "compilerGenerated": true,
+          "genericParameters": [],
+          "parameters": [],
+          "documentation": null
+        },
+        {
+          "id": "M:EZapi.UiPreviewControl.ToString",
+          "name": "ToString",
+          "signature": "System.String EZapi.UiPreviewControl::ToString()",
+          "returnType": "System.String",
+          "isStatic": false,
+          "isConstructor": false,
+          "isAbstract": false,
+          "isVirtual": true,
+          "compilerGenerated": true,
+          "genericParameters": [],
+          "parameters": [],
+          "documentation": null
+        },
+        {
+          "id": "M:EZapi.UiPreviewControl.#ctor(System.String,EZapi.UiKind,EZapi.UiBox,EZapi.UiMeasuredBox)",
+          "name": ".ctor",
+          "signature": "System.Void EZapi.UiPreviewControl::.ctor(System.String,EZapi.UiKind,EZapi.UiBox,EZapi.UiMeasuredBox)",
+          "returnType": "System.Void",
+          "isStatic": false,
+          "isConstructor": true,
+          "isAbstract": false,
+          "isVirtual": false,
+          "compilerGenerated": false,
+          "genericParameters": [],
+          "parameters": [
+            {
+              "name": "Id",
+              "type": "System.String",
+              "optional": false,
+              "hasDefault": false,
+              "defaultValue": null,
+              "isOut": false,
+              "isParams": false
+            },
+            {
+              "name": "Kind",
+              "type": "EZapi.UiKind",
+              "optional": false,
+              "hasDefault": false,
+              "defaultValue": null,
+              "isOut": false,
+              "isParams": false
+            },
+            {
+              "name": "Expected",
+              "type": "EZapi.UiBox",
+              "optional": false,
+              "hasDefault": false,
+              "defaultValue": null,
+              "isOut": false,
+              "isParams": false
+            },
+            {
+              "name": "Actual",
+              "type": "EZapi.UiMeasuredBox",
+              "optional": false,
+              "hasDefault": false,
+              "defaultValue": null,
+              "isOut": false,
+              "isParams": false
+            }
+          ],
+          "documentation": null
+        },
+        {
+          "id": "M:EZapi.UiPreviewControl.Deconstruct(System.String@,EZapi.UiKind@,EZapi.UiBox@,EZapi.UiMeasuredBox@)",
+          "name": "Deconstruct",
+          "signature": "System.Void EZapi.UiPreviewControl::Deconstruct(System.String&,EZapi.UiKind&,EZapi.UiBox&,EZapi.UiMeasuredBox&)",
+          "returnType": "System.Void",
+          "isStatic": false,
+          "isConstructor": false,
+          "isAbstract": false,
+          "isVirtual": false,
+          "compilerGenerated": true,
+          "genericParameters": [],
+          "parameters": [
+            {
+              "name": "Id",
+              "type": "System.String&",
+              "optional": false,
+              "hasDefault": false,
+              "defaultValue": null,
+              "isOut": true,
+              "isParams": false
+            },
+            {
+              "name": "Kind",
+              "type": "EZapi.UiKind&",
+              "optional": false,
+              "hasDefault": false,
+              "defaultValue": null,
+              "isOut": true,
+              "isParams": false
+            },
+            {
+              "name": "Expected",
+              "type": "EZapi.UiBox&",
+              "optional": false,
+              "hasDefault": false,
+              "defaultValue": null,
+              "isOut": true,
+              "isParams": false
+            },
+            {
+              "name": "Actual",
+              "type": "EZapi.UiMeasuredBox&",
+              "optional": false,
+              "hasDefault": false,
+              "defaultValue": null,
+              "isOut": true,
+              "isParams": false
+            }
+          ],
+          "documentation": null
+        }
+      ]
+    },
+    {
+      "id": "T:EZapi.UiTextMeasurement",
+      "name": "EZapi.UiTextMeasurement",
+      "kind": "class",
+      "baseType": "System.Object",
+      "interfaces": [
+        "System.IEquatable`1<EZapi.UiTextMeasurement>"
+      ],
+      "abstract": false,
+      "sealed": true,
+      "compilerGenerated": false,
+      "genericParameters": [],
+      "documentation": {
+        "summary": "Actual native text geometry and font measurements; coordinates are logical pixels relative to the window.",
+        "remarks": null,
+        "returns": null,
+        "parameters": {}
+      },
+      "sources": [
+        {
+          "path": "../src/EZapi/NativeUiPreview.cs",
+          "line": 9
+        }
+      ],
+      "domain": "native-ui",
+      "curatedEntryIds": [],
+      "fields": [],
+      "properties": [
+        {
+          "id": "P:EZapi.UiTextMeasurement.Box",
+          "name": "Box",
+          "type": "EZapi.UiMeasuredBox",
+          "readable": true,
+          "writable": true,
+          "initOnly": true,
+          "isStatic": false,
+          "parameters": [],
+          "compilerGenerated": false,
+          "documentation": null
+        },
+        {
+          "id": "P:EZapi.UiTextMeasurement.Overflows",
+          "name": "Overflows",
+          "type": "System.Boolean",
+          "readable": true,
+          "writable": true,
+          "initOnly": true,
+          "isStatic": false,
+          "parameters": [],
+          "compilerGenerated": false,
+          "documentation": null
+        },
+        {
+          "id": "P:EZapi.UiTextMeasurement.Wrap",
+          "name": "Wrap",
+          "type": "System.Boolean",
+          "readable": true,
+          "writable": true,
+          "initOnly": true,
+          "isStatic": false,
+          "parameters": [],
+          "compilerGenerated": false,
+          "documentation": null
+        },
+        {
+          "id": "P:EZapi.UiTextMeasurement.FontSize",
+          "name": "FontSize",
+          "type": "System.Single",
+          "readable": true,
+          "writable": true,
+          "initOnly": true,
+          "isStatic": false,
+          "parameters": [],
+          "compilerGenerated": false,
+          "documentation": null
+        },
+        {
+          "id": "P:EZapi.UiTextMeasurement.RequiredHeight",
+          "name": "RequiredHeight",
+          "type": "System.Single",
+          "readable": true,
+          "writable": true,
+          "initOnly": true,
+          "isStatic": false,
+          "parameters": [],
+          "compilerGenerated": false,
+          "documentation": null
+        },
+        {
+          "id": "P:EZapi.UiTextMeasurement.RequiredWidth",
+          "name": "RequiredWidth",
+          "type": "System.Single",
+          "readable": true,
+          "writable": true,
+          "initOnly": true,
+          "isStatic": false,
+          "parameters": [],
+          "compilerGenerated": false,
+          "documentation": null
+        },
+        {
+          "id": "P:EZapi.UiTextMeasurement.Alignment",
+          "name": "Alignment",
+          "type": "System.String",
+          "readable": true,
+          "writable": true,
+          "initOnly": true,
+          "isStatic": false,
+          "parameters": [],
+          "compilerGenerated": false,
+          "documentation": null
+        },
+        {
+          "id": "P:EZapi.UiTextMeasurement.Font",
+          "name": "Font",
+          "type": "System.String",
+          "readable": true,
+          "writable": true,
+          "initOnly": true,
+          "isStatic": false,
+          "parameters": [],
+          "compilerGenerated": false,
+          "documentation": null
+        },
+        {
+          "id": "P:EZapi.UiTextMeasurement.Name",
+          "name": "Name",
+          "type": "System.String",
+          "readable": true,
+          "writable": true,
+          "initOnly": true,
+          "isStatic": false,
+          "parameters": [],
+          "compilerGenerated": false,
+          "documentation": null
+        },
+        {
+          "id": "P:EZapi.UiTextMeasurement.Text",
+          "name": "Text",
+          "type": "System.String",
+          "readable": true,
+          "writable": true,
+          "initOnly": true,
+          "isStatic": false,
+          "parameters": [],
+          "compilerGenerated": false,
+          "documentation": null
+        }
+      ],
+      "events": [],
+      "methods": [
+        {
+          "id": "M:EZapi.UiTextMeasurement.<Clone>$",
+          "name": "<Clone>$",
+          "signature": "EZapi.UiTextMeasurement EZapi.UiTextMeasurement::<Clone>$()",
+          "returnType": "EZapi.UiTextMeasurement",
+          "isStatic": false,
+          "isConstructor": false,
+          "isAbstract": false,
+          "isVirtual": false,
+          "compilerGenerated": true,
+          "genericParameters": [],
+          "parameters": [],
+          "documentation": null
+        },
+        {
+          "id": "M:EZapi.UiTextMeasurement.Equals(EZapi.UiTextMeasurement)",
+          "name": "Equals",
+          "signature": "System.Boolean EZapi.UiTextMeasurement::Equals(EZapi.UiTextMeasurement)",
+          "returnType": "System.Boolean",
+          "isStatic": false,
+          "isConstructor": false,
+          "isAbstract": false,
+          "isVirtual": true,
+          "compilerGenerated": true,
+          "genericParameters": [],
+          "parameters": [
+            {
+              "name": "other",
+              "type": "EZapi.UiTextMeasurement",
+              "optional": false,
+              "hasDefault": false,
+              "defaultValue": null,
+              "isOut": false,
+              "isParams": false
+            }
+          ],
+          "documentation": null
+        },
+        {
+          "id": "M:EZapi.UiTextMeasurement.Equals(System.Object)",
+          "name": "Equals",
+          "signature": "System.Boolean EZapi.UiTextMeasurement::Equals(System.Object)",
+          "returnType": "System.Boolean",
+          "isStatic": false,
+          "isConstructor": false,
+          "isAbstract": false,
+          "isVirtual": true,
+          "compilerGenerated": true,
+          "genericParameters": [],
+          "parameters": [
+            {
+              "name": "obj",
+              "type": "System.Object",
+              "optional": false,
+              "hasDefault": false,
+              "defaultValue": null,
+              "isOut": false,
+              "isParams": false
+            }
+          ],
+          "documentation": null
+        },
+        {
+          "id": "M:EZapi.UiTextMeasurement.op_Equality(EZapi.UiTextMeasurement,EZapi.UiTextMeasurement)",
+          "name": "op_Equality",
+          "signature": "System.Boolean EZapi.UiTextMeasurement::op_Equality(EZapi.UiTextMeasurement,EZapi.UiTextMeasurement)",
+          "returnType": "System.Boolean",
+          "isStatic": true,
+          "isConstructor": false,
+          "isAbstract": false,
+          "isVirtual": false,
+          "compilerGenerated": true,
+          "genericParameters": [],
+          "parameters": [
+            {
+              "name": "left",
+              "type": "EZapi.UiTextMeasurement",
+              "optional": false,
+              "hasDefault": false,
+              "defaultValue": null,
+              "isOut": false,
+              "isParams": false
+            },
+            {
+              "name": "right",
+              "type": "EZapi.UiTextMeasurement",
+              "optional": false,
+              "hasDefault": false,
+              "defaultValue": null,
+              "isOut": false,
+              "isParams": false
+            }
+          ],
+          "documentation": null
+        },
+        {
+          "id": "M:EZapi.UiTextMeasurement.op_Inequality(EZapi.UiTextMeasurement,EZapi.UiTextMeasurement)",
+          "name": "op_Inequality",
+          "signature": "System.Boolean EZapi.UiTextMeasurement::op_Inequality(EZapi.UiTextMeasurement,EZapi.UiTextMeasurement)",
+          "returnType": "System.Boolean",
+          "isStatic": true,
+          "isConstructor": false,
+          "isAbstract": false,
+          "isVirtual": false,
+          "compilerGenerated": true,
+          "genericParameters": [],
+          "parameters": [
+            {
+              "name": "left",
+              "type": "EZapi.UiTextMeasurement",
+              "optional": false,
+              "hasDefault": false,
+              "defaultValue": null,
+              "isOut": false,
+              "isParams": false
+            },
+            {
+              "name": "right",
+              "type": "EZapi.UiTextMeasurement",
+              "optional": false,
+              "hasDefault": false,
+              "defaultValue": null,
+              "isOut": false,
+              "isParams": false
+            }
+          ],
+          "documentation": null
+        },
+        {
+          "id": "M:EZapi.UiTextMeasurement.GetHashCode",
+          "name": "GetHashCode",
+          "signature": "System.Int32 EZapi.UiTextMeasurement::GetHashCode()",
+          "returnType": "System.Int32",
+          "isStatic": false,
+          "isConstructor": false,
+          "isAbstract": false,
+          "isVirtual": true,
+          "compilerGenerated": true,
+          "genericParameters": [],
+          "parameters": [],
+          "documentation": null
+        },
+        {
+          "id": "M:EZapi.UiTextMeasurement.ToString",
+          "name": "ToString",
+          "signature": "System.String EZapi.UiTextMeasurement::ToString()",
+          "returnType": "System.String",
+          "isStatic": false,
+          "isConstructor": false,
+          "isAbstract": false,
+          "isVirtual": true,
+          "compilerGenerated": true,
+          "genericParameters": [],
+          "parameters": [],
+          "documentation": null
+        },
+        {
+          "id": "M:EZapi.UiTextMeasurement.#ctor(System.String,System.String,System.String,System.Single,System.String,System.Boolean,System.Single,System.Single,EZapi.UiMeasuredBox,System.Boolean)",
+          "name": ".ctor",
+          "signature": "System.Void EZapi.UiTextMeasurement::.ctor(System.String,System.String,System.String,System.Single,System.String,System.Boolean,System.Single,System.Single,EZapi.UiMeasuredBox,System.Boolean)",
+          "returnType": "System.Void",
+          "isStatic": false,
+          "isConstructor": true,
+          "isAbstract": false,
+          "isVirtual": false,
+          "compilerGenerated": false,
+          "genericParameters": [],
+          "parameters": [
+            {
+              "name": "Name",
+              "type": "System.String",
+              "optional": false,
+              "hasDefault": false,
+              "defaultValue": null,
+              "isOut": false,
+              "isParams": false
+            },
+            {
+              "name": "Text",
+              "type": "System.String",
+              "optional": false,
+              "hasDefault": false,
+              "defaultValue": null,
+              "isOut": false,
+              "isParams": false
+            },
+            {
+              "name": "Font",
+              "type": "System.String",
+              "optional": false,
+              "hasDefault": false,
+              "defaultValue": null,
+              "isOut": false,
+              "isParams": false
+            },
+            {
+              "name": "FontSize",
+              "type": "System.Single",
+              "optional": false,
+              "hasDefault": false,
+              "defaultValue": null,
+              "isOut": false,
+              "isParams": false
+            },
+            {
+              "name": "Alignment",
+              "type": "System.String",
+              "optional": false,
+              "hasDefault": false,
+              "defaultValue": null,
+              "isOut": false,
+              "isParams": false
+            },
+            {
+              "name": "Wrap",
+              "type": "System.Boolean",
+              "optional": false,
+              "hasDefault": false,
+              "defaultValue": null,
+              "isOut": false,
+              "isParams": false
+            },
+            {
+              "name": "RequiredWidth",
+              "type": "System.Single",
+              "optional": false,
+              "hasDefault": false,
+              "defaultValue": null,
+              "isOut": false,
+              "isParams": false
+            },
+            {
+              "name": "RequiredHeight",
+              "type": "System.Single",
+              "optional": false,
+              "hasDefault": false,
+              "defaultValue": null,
+              "isOut": false,
+              "isParams": false
+            },
+            {
+              "name": "Box",
+              "type": "EZapi.UiMeasuredBox",
+              "optional": false,
+              "hasDefault": false,
+              "defaultValue": null,
+              "isOut": false,
+              "isParams": false
+            },
+            {
+              "name": "Overflows",
+              "type": "System.Boolean",
+              "optional": false,
+              "hasDefault": false,
+              "defaultValue": null,
+              "isOut": false,
+              "isParams": false
+            }
+          ],
+          "documentation": {
+            "summary": "Actual native text geometry and font measurements; coordinates are logical pixels relative to the window.",
+            "remarks": null,
+            "returns": null,
+            "parameters": {}
+          }
+        },
+        {
+          "id": "M:EZapi.UiTextMeasurement.Deconstruct(System.String@,System.String@,System.String@,System.Single@,System.String@,System.Boolean@,System.Single@,System.Single@,EZapi.UiMeasuredBox@,System.Boolean@)",
+          "name": "Deconstruct",
+          "signature": "System.Void EZapi.UiTextMeasurement::Deconstruct(System.String&,System.String&,System.String&,System.Single&,System.String&,System.Boolean&,System.Single&,System.Single&,EZapi.UiMeasuredBox&,System.Boolean&)",
+          "returnType": "System.Void",
+          "isStatic": false,
+          "isConstructor": false,
+          "isAbstract": false,
+          "isVirtual": false,
+          "compilerGenerated": true,
+          "genericParameters": [],
+          "parameters": [
+            {
+              "name": "Name",
+              "type": "System.String&",
+              "optional": false,
+              "hasDefault": false,
+              "defaultValue": null,
+              "isOut": true,
+              "isParams": false
+            },
+            {
+              "name": "Text",
+              "type": "System.String&",
+              "optional": false,
+              "hasDefault": false,
+              "defaultValue": null,
+              "isOut": true,
+              "isParams": false
+            },
+            {
+              "name": "Font",
+              "type": "System.String&",
+              "optional": false,
+              "hasDefault": false,
+              "defaultValue": null,
+              "isOut": true,
+              "isParams": false
+            },
+            {
+              "name": "FontSize",
+              "type": "System.Single&",
+              "optional": false,
+              "hasDefault": false,
+              "defaultValue": null,
+              "isOut": true,
+              "isParams": false
+            },
+            {
+              "name": "Alignment",
+              "type": "System.String&",
+              "optional": false,
+              "hasDefault": false,
+              "defaultValue": null,
+              "isOut": true,
+              "isParams": false
+            },
+            {
+              "name": "Wrap",
+              "type": "System.Boolean&",
+              "optional": false,
+              "hasDefault": false,
+              "defaultValue": null,
+              "isOut": true,
+              "isParams": false
+            },
+            {
+              "name": "RequiredWidth",
+              "type": "System.Single&",
+              "optional": false,
+              "hasDefault": false,
+              "defaultValue": null,
+              "isOut": true,
+              "isParams": false
+            },
+            {
+              "name": "RequiredHeight",
+              "type": "System.Single&",
+              "optional": false,
+              "hasDefault": false,
+              "defaultValue": null,
+              "isOut": true,
+              "isParams": false
+            },
+            {
+              "name": "Box",
+              "type": "EZapi.UiMeasuredBox&",
+              "optional": false,
+              "hasDefault": false,
+              "defaultValue": null,
+              "isOut": true,
+              "isParams": false
+            },
+            {
+              "name": "Overflows",
+              "type": "System.Boolean&",
+              "optional": false,
+              "hasDefault": false,
+              "defaultValue": null,
+              "isOut": true,
+              "isParams": false
+            }
+          ],
+          "documentation": null
+        }
+      ]
+    },
+    {
       "id": "T:EZapi.UpgradeSnapshot",
       "name": "EZapi.UpgradeSnapshot",
       "kind": "class",
@@ -62562,8 +66898,8 @@
   ],
   "documentationContext": {
     "kind": "current-api-guide",
-    "releaseTag": "0.1.74-preview.2",
-    "assemblyVersion": "0.1.74",
+    "releaseTag": "0.1.76-preview.1",
+    "assemblyVersion": "0.1.76",
     "releaseStatus": "release-status.json",
     "nativeRuntimeVerified": false,
     "evidencePolicy": "Historical DLL evidence does not apply to this generated metadata."

@@ -91,6 +91,11 @@ internal static class DebugDiskItems
     }
     internal static object? VerifyLocale(string locale,Action<bool,string> check)
     {
+        // The optional disk fixture belongs to one historical disposable run.
+        // Other explicitly bound runs still exercise transient locale surfaces,
+        // but must not open or claim that disk evidence.
+        var run=NativeAccess.RequireRun();
+        if(run.SaveSlotId!=534||run.RunId!="e39e848c-36b7-40e9-ab7e-b6adcb9881b8")return null;
         var store=Require();if(Open(store) is null)return null;
         var graph=SaveGraphApi.Items(Open(store)!.Root);
         var en=locale=="en";var items=graph.Where(i=>i.identifier=="ezapi.sample.field_kit").ToArray();

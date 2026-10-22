@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "version": "0.1.74",
+  "version": "0.1.76",
   "topic": "Follow current game language in DLL and JSON Mods",
   "languagePolicy": {
     "confirmedAt": "2026-10-22",
@@ -14,7 +14,10 @@
     "authorResponsibility": "samples and milestone text provide Chinese and English; authors may supply other official-locale translations; literal strings are not automatically translated",
     "separateEzapiLanguageSetting": false,
     "otherLocales": "automatic game-locale CSV lookup uses available translations for all official locales, then English and readable author fallback; complete additional translations and native verification deferred",
-    "pendingNativeAcceptance": ["Current-DLL en/zh surfaces", "Current-DLL native save and reload"],
+    "pendingNativeAcceptance": [
+      "Current-DLL en/zh surfaces",
+      "Current-DLL native save and reload"
+    ],
     "nativeAcceptanceBoundary": "415 scoped en/zh checks belong to the historical 0.1.72 DLL. Current-DLL acceptance remains pending; no all-languages or all-gameplay-combinations claim."
   },
   "guides": {
@@ -71,10 +74,10 @@
   },
   "documentationContext": {
     "kind": "current-api-guide",
-    "releaseTag": "0.1.74-preview.2",
-    "assemblyVersion": "0.1.74",
+    "releaseTag": "0.1.76-preview.1",
+    "assemblyVersion": "0.1.76",
     "releaseStatus": "release-status.json",
     "nativeRuntimeVerified": false,
-    "evidencePolicy": "Old native claims are preserved only under historical* fields and do not apply to the current DLL."
+    "evidencePolicy": "Only explicitly scoped current-DLL observations apply. Historical evidence never transfers."
   }
 }

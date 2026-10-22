@@ -205,10 +205,19 @@ public static class ItemRegistry
     internal static IReadOnlyList<ItemDefinition> AllDefinitions()=>Definitions.Values.ToArray();
     internal static object Report()=>States.ToDictionary(p=>p.Key,p=>p.Value);
     internal static IReadOnlyList<DebugItemRow> DebugRows()=>Definitions.Values.OrderBy(x=>x.Id,StringComparer.Ordinal)
-        .Select(x=>new DebugItemRow(x.Id,ItemText.Name(x,NativeItemLocalization.CurrentLocaleCode),GetStatus(x.Id),LegacySpriteAdapter.SourcePath(x),
-            $"类型 {x.Types.Count} · 标签 {x.Tags.Count} · 单件 · tooltip {x.Tooltip.Lines.Count+x.Tooltip.Labels.Count}"+
-            (x.Food is { } food?$" · 食品 {food.Calories} 热量":x.LiquidContainer is { } liquid?$" · 液体容器 {liquid.Capacity} ml":
-             x.Container is { } box?$" · 储物 {box.Width}×{box.Height}":x.Module is { } module?$" · 模块 {module.Type} · 等级 {module.Tier}":x.Node?" · 原生节点":"")))
+        .Select(x=>new DebugItemRow(x.Id,ItemText.Name(x,NativeItemLocalization.CurrentLocaleCode),GetStatus(x.Id),LegacySpriteAdapter.SourcePath(x),DebugSummary(x)))
         .Concat(NativeFactoryRegistry.DebugRows()).ToArray();
+    private static string DebugSummary(ItemDefinition x)
+    {
+        var en=NativeItemLocalization.IsEnglish;
+        return (en?$"Types {x.Types.Count} · Tags {x.Tags.Count} · Single item · Tooltip {x.Tooltip.Lines.Count+x.Tooltip.Labels.Count}":
+            $"类型 {x.Types.Count} · 标签 {x.Tags.Count} · 单件 · tooltip {x.Tooltip.Lines.Count+x.Tooltip.Labels.Count}")+
+            (x.Food is {} food?(en?$" · Food {food.Calories} kcal":$" · 食品 {food.Calories} 热量"):
+             x.LiquidContainer is {} liquid?(en?$" · Liquid container {liquid.Capacity} ml":$" · 液体容器 {liquid.Capacity} ml"):
+             x.Container is {} box?(en?$" · Storage {box.Width}×{box.Height}":$" · 储物 {box.Width}×{box.Height}"):
+             x.Module is {} module?(en?$" · Module {module.Type} · Tier {module.Tier}":$" · 模块 {module.Type} · 等级 {module.Tier}"):
+             x.Node?(en?" · Native node":" · 原生节点"):"");
+    }
+
 }
 internal sealed record DebugItemRow(string Id,string Name,string State,string? SpritePath,string Summary);

@@ -81,7 +81,7 @@ for name in names:
         rows.append({'path': name, 'sha256': hashlib.sha256(file.read_bytes()).hexdigest().upper()})
 assert not errors, json.dumps(errors, ensure_ascii=False)
 assert (root/'src/EZapi/EZapi.csproj').is_file(), 'framework source missing'
-assert len(list((root/'work').glob('ezapi-*-tests/*.csproj'))) == 59, 'offline suite missing'
+assert len(list((root/'work').glob('ezapi-*-tests/*.csproj'))) == 60, 'offline suite missing'
 if args.write_manifest:
     (root/'source-distribution.json').write_text(json.dumps({
         'schemaVersion': 1, 'license': 'MIT', 'frameworkSourceIncluded': True,

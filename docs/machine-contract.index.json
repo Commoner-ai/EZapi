@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "version": "0.1.74",
+  "version": "0.1.76",
   "auditRevision": "machine-contract",
   "guideZh": "machine-contract.zh-CN.md",
   "guideEn": "machine-contract.en.md",
@@ -54,10 +54,10 @@
   "previousVersionBaseline": "0.1.69",
   "documentationContext": {
     "kind": "current-api-guide",
-    "releaseTag": "0.1.74-preview.2",
-    "assemblyVersion": "0.1.74",
+    "releaseTag": "0.1.76-preview.1",
+    "assemblyVersion": "0.1.76",
     "releaseStatus": "release-status.json",
     "nativeRuntimeVerified": false,
-    "evidencePolicy": "Old native claims are preserved only under historical* fields and do not apply to the current DLL."
+    "evidencePolicy": "Only explicitly scoped current-DLL observations apply. Historical evidence never transfers."
   }
 }

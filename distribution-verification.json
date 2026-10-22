@@ -1,19 +1,19 @@
 {
-  "tag": "0.1.74-preview.2",
+  "tag": "0.1.76-preview.1",
   "passed": true,
   "assets": [
     {
-      "file": "EZapi-0.1.74-preview.2-game.zip",
-      "sha256": "7E5CD75929688776DB2DC0C183DC8BF621B31D8F42781C49CEBF7BDFC08EE6E5",
-      "bytes": 721525
+      "file": "EZapi-0.1.76-preview.1-game.zip",
+      "sha256": "63179CADE5619F631102DF8FB17B19377F31EE351067E976755359F3FE63EE3B",
+      "bytes": 748372
     },
     {
-      "file": "EZapi-0.1.74-preview.2-developer.zip",
-      "sha256": "E38D292DDAB66F56E2577D11F5C2EA0A987212E86B7529CE8DF7434C54825D71",
-      "bytes": 2519134
+      "file": "EZapi-0.1.76-preview.1-developer.zip",
+      "sha256": "8F3BFF325D9D772DB580A32FAE85E372418B1A38704A015186FEE212EFA041BD",
+      "bytes": 2577028
     }
   ],
-  "dllSHA256": "FE6DE81903D1F3A1234031C193D0F5678B17D99949AB24A47DCAB52958DFCA55",
+  "dllSHA256": "48D037715375C8AFF6528AD6674A224FF7F953BE33BC1E04672462AC121A54E5",
   "frameworkSourceIncluded": false,
   "internalTestsIncluded": false,
   "frameworkBuildProjectsIncluded": false,
@@ -30,6 +30,8 @@
   "offlineModGeneratorIncluded": true,
   "offlineApiSearchIncluded": true,
   "optionalTooltipStyleGuideIncluded": true,
+  "nativeUiPreviewTemplatesIncluded": true,
+  "nativeUiPreviewStagingToolIncluded": true,
   "documentationConsistencyVerified": true,
   "optionalArtReferenceIncluded": true,
   "artReferenceOriginalSprites": 96,
@@ -38,20 +40,12 @@
   "originalArtworkCoveredByEzapiMit": false,
   "sourcePublishedInRepository": true,
   "oldPrivateHistoryImported": false,
-  "runtimeUnchangedFrom": "0.1.74-preview.1",
-  "sdkVerification": {
-    "runtimeDllSHA256": "FE6DE81903D1F3A1234031C193D0F5678B17D99949AB24A47DCAB52958DFCA55",
-    "packagedPS51SearchPassed": true,
-    "packagedJsonExampleValid": true,
-    "packagedDllExampleCompiled": true,
-    "archiveFilesPrivacyChecked": 521,
-    "newNativeAcceptance": false,
-    "generatorKindStyleCases": 4,
-    "windowsPowerShell51Passed": true
-  },
   "verification": {
-    "offlineSuites": 59,
+    "offlineSuites": 60,
     "cliProcessChecks": 25,
-    "evidenceScope": "Existing evidence for the identical runtime DLL; this revision adds SDK validation/compile checks, not gameplay acceptance."
+    "scopedNativeChecksPassed": 421,
+    "scopedNativeChecksFailed": 0,
+    "saveFilesUnchanged": 551,
+    "evidenceScope": "exact current DLL transient bilingual UI fixtures only; full gameplay/mixed-Mod/save acceptance remains pending"
   }
 }

@@ -30,4 +30,30 @@ try{
     Check(!DeveloperToolsSettings.Current.Enabled&&warnings.Count==2,"oversize file refused");
     DeveloperToolsSettings.Reset();Check(!DeveloperToolsSettings.Current.Enabled,"shutdown resets process state");
 }finally{Directory.Delete(directory,true);}
-Console.WriteLine(JsonSerializer.Serialize(new{passed,failed=0,scope="Real developer-options parser/file lifecycle. Does not prove native overlay rendering."}));
+const string run="a87775fe-911b-493f-9dc6-f68e51b19c50";
+var bindingJson="{\"Slot\":7,\"RunId\":\""+run+"\"}";
+var binding=DebugRegressionSession.Parse(Encoding.UTF8.GetBytes(bindingJson));
+Check(binding.Matches(7,run)&&!binding.Matches(8,run)&&!binding.Matches(7,"other"),"fixture authorization requires exact slot and run");
+Check(DebugRegressionSession.Parse(Encoding.UTF8.GetPreamble().Concat(Encoding.UTF8.GetBytes(bindingJson)).ToArray())==binding,"fixture binding supports UTF8 BOM");
+foreach(var bad in new[]{"{}","[]","null",bindingJson.Replace("7","-1"),bindingJson.Replace("7","7.1"),bindingJson.Replace("7","2147483648"),
+    bindingJson.Replace("\"Slot\":7","\"Slot\":\"7\""),bindingJson.Replace("\"Slot\":7","\"slot\":7"),bindingJson.Replace(run,Guid.Empty.ToString()),
+    bindingJson.Replace(run,"no-run"),bindingJson.Replace("}",",\"unknown\":true}"),bindingJson.Replace("}",",\"Slot\":8}"),new string(' ',1025)}){
+    bool rejected=false;try{DebugRegressionSession.Parse(Encoding.UTF8.GetBytes(bad));}catch(Exception e)when(e is JsonException or InvalidDataException){rejected=true;}
+    Check(rejected,"invalid fixture binding rejected");
+}
+directory=Path.Combine(Path.GetTempPath(),"ezapi-session-"+Guid.NewGuid().ToString("N"));Directory.CreateDirectory(directory);
+try{
+    var path=Path.Combine(directory,"regression-session.json");var warnings=new List<string>();
+    DebugRegressionSession.Load(path,true,warnings.Add);
+    Check(DebugRegressionSession.Current is null&&!File.Exists(path)&&warnings.Count==0,"missing binding creates no file and grants no run");
+    File.WriteAllText(path,bindingJson);var original=File.ReadAllBytes(path);
+    DebugRegressionSession.Load(path,false,warnings.Add);
+    Check(DebugRegressionSession.Current is null,"disabled regression mode ignores an otherwise valid binding");
+    DebugRegressionSession.Load(path,true,warnings.Add);
+    Check(DebugRegressionSession.Matches(7,run)&&!DebugRegressionSession.Matches(7,run.ToUpperInvariant()),"loaded binding is exact and never silently normalizes identity");
+    Check(original.SequenceEqual(File.ReadAllBytes(path)),"session loading never modifies caller configuration");
+    File.WriteAllText(path,"{}");DebugRegressionSession.Load(path,true,warnings.Add);
+    Check(DebugRegressionSession.Current is null&&DebugRegressionSession.Error is not null&&warnings.Count==1,"invalid binding clears previous authorization");
+    DebugRegressionSession.Reset();Check(DebugRegressionSession.Current is null&&DebugRegressionSession.Error is null,"shutdown revokes fixture binding");
+}finally{Directory.Delete(directory,true);}
+Console.WriteLine(JsonSerializer.Serialize(new{passed,failed=0,scope="Real developer-options and transient regression-binding parser/file lifecycle. No native overlay rendering or save authorization."}));

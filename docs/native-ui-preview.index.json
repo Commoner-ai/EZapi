@@ -1,0 +1,79 @@
+{
+  "schemaVersion": 1,
+  "version": "0.1.76",
+  "guides": {
+    "zh": "native-ui-preview.zh-CN.md",
+    "en": "native-ui-preview.en.md"
+  },
+  "schema": "../schemas/native-ui.schema.json",
+  "example": "examples/native-ui-dll/UiLayout.cs",
+  "templates": [
+    "examples/ui-preview/computer.json",
+    "examples/ui-preview/furnace.json",
+    "examples/ui-preview/aquaculture.json"
+  ],
+  "tasks": [
+    {
+      "zh": "上下居中",
+      "en": "Vertical centering",
+      "json": "Row.vertical=Center or Frame.vertical=Center",
+      "api": "EZapi.NativeUiComponents.Row"
+    },
+    {
+      "zh": "左右居中",
+      "en": "Horizontal centering",
+      "json": "Column.horizontal=Center or Frame.horizontal=Center",
+      "api": "EZapi.NativeUiComponents.Center"
+    },
+    {
+      "zh": "统一间隔",
+      "en": "Consistent gaps",
+      "json": "gap and padding in logical pixels",
+      "api": "EZapi.NativeUiComponents.Inset"
+    },
+    {
+      "zh": "字号换行与对齐",
+      "en": "Font size, wrapping and alignment",
+      "json": "fontSize, wrap, horizontal, vertical",
+      "api": "EZapi.NativeUiComponents.Label"
+    },
+    {
+      "zh": "读取已有原生窗口",
+      "en": "Inspect existing native window",
+      "api": "EZapi.NativeUiPreviewApi.InspectWindow"
+    }
+  ],
+  "workflow": [
+    "Enable ordinary developer tools",
+    "Stage JSON with Set-EZapiUiPreview.ps1",
+    "Load a disposable store and click UI preview",
+    "Export diagnostics and read uiPreview.current plus same-preview screenshot",
+    "Review Controls.Expected/Actual, Inspection.Text and Issues",
+    "Repeat in en/zh, then close and verify retainedControls=0"
+  ],
+  "reportPath": "UserData/EZapi/diagnostics.json:uiPreview.current",
+  "units": "native logical pixels before canvas scaling; not screenshot pixels",
+  "limits": {
+    "bytes": 65536,
+    "nodes": 128,
+    "depth": 12,
+    "width": 1024,
+    "height": 768,
+    "inspectedTextNodes": 256
+  },
+  "boundaries": [
+    "Preview buttons disabled and empty inventories locked",
+    "No item grants, game callbacks or save operations",
+    "Existing-window inspection is read only; main thread and current run required",
+    "Layout success does not establish processing, persistence, all-Mod compatibility or artistic quality",
+    "last is historical; visible/current identify the live preview"
+  ],
+  "documentationContext": {
+    "kind": "current-api-guide",
+    "releaseTag": "0.1.76-preview.1",
+    "assemblyVersion": "0.1.76",
+    "releaseStatus": "release-status.json",
+    "nativeRuntimeVerified": false,
+    "evidencePolicy": "Only explicitly scoped current-DLL observations apply. Historical evidence never transfers."
+  }
+}

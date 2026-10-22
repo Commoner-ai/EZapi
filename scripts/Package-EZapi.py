@@ -120,7 +120,7 @@ tree(candidate/'tools/ezapi-validate', developer/'tools/ezapi-validate', {'.dll'
 tree(candidate/'Mods/EZapiPacks', developer/'examples/ContentPacks', {'.json', '.png', '.csv'})
 copy(candidate/'examples/EZapi.Sample.dll', developer/'examples/EZapi.Sample.dll')
 copy(ROOT/'distribution/Set-EZapiDeveloperTools.ps1', developer/'developer-tools/Set-EZapiDeveloperTools.ps1')
-for name in ['New-EZapiMod.ps1', 'Find-EZapiApi.ps1']:
+for name in ['New-EZapiMod.ps1', 'Find-EZapiApi.ps1', 'Set-EZapiUiPreview.ps1']:
     copy(ROOT/'distribution'/name, developer/'developer-tools'/name)
 copy(ROOT/'distribution/developer-tools.json', developer/'developer-tools/UserData/EZapi/developer-tools.json')
 for name in ['Enter-EZapiTestStore.ps1', 'Invoke-EZapiNativeTest.ps1', 'Invoke-EZapiTestBatch.ps1', 'Invoke-EZapiGuideLocalization.ps1']:
@@ -197,6 +197,8 @@ write(output/'package-verification.json', {
     'offlineModGeneratorIncluded': True,
     'offlineApiSearchIncluded': True,
     'optionalTooltipStyleGuideIncluded': True,
+    'nativeUiPreviewTemplatesIncluded': True,
+    'nativeUiPreviewStagingToolIncluded': True,
     'documentationConsistencyVerified': True,
     'optionalArtReferenceIncluded': True,
     'artReferenceOriginalSprites': 96,

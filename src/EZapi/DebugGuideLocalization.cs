@@ -6,7 +6,7 @@ using UnityEngine.ResourceManagement.AsyncOperations;
 using System.Text.Json;
 namespace EZapi;
 
-/// <summary>一次性中英实机回归；只在固定可丢弃档执行，使用Unity公开语言入口，结束/故障恢复原语言。</summary>
+/// <summary>一次性中英实机回归；只在显式绑定的可丢弃档执行，使用Unity公开语言入口，结束/故障恢复原语言。</summary>
 internal static class DebugGuideLocalization
 {
     internal static object? LastReport {get;private set;}
@@ -27,7 +27,7 @@ internal static class DebugGuideLocalization
     internal static bool Start(bool allSurfaces=false)
     {
         if(_stage!=0||!VisibleStoreInventory.IsReady||InventoryApi.IsItemDragActive)return false;
-        var run=NativeAccess.RequireRun();if(run.SaveSlotId!=534||run.RunId!="e39e848c-36b7-40e9-ab7e-b6adcb9881b8")return false;
+        var run=NativeAccess.RequireRun();if(!DebugRegressionSession.Matches(run.SaveSlotId,run.RunId))return false;
         Checks.Clear();LocaleSamples.Clear();SurfaceSamples.Clear();_passed=_failed=0;_error=null;LastReport=null;_run=run;_englishSnapshot=null;_surface=null;_allSurfaces=allSurfaces;
         try {
             _original=LocalizationSettings.SelectedLocale??throw new InvalidOperationException("native original locale missing");
@@ -106,6 +106,7 @@ internal static class DebugGuideLocalization
     private static void StartSurfaces(string locale)
     {
         RecipeGuideApi.Close();
+        Import(locale,"native-ui",DebugNativeUi.Verify(locale));
         SurfaceSamples.Add(new{locale,surface="items",report=DebugLocalizedItems.Verify(locale,Check)});
         var diskItems=DebugDiskItems.VerifyLocale(locale,Check);
         if(diskItems is not null)SurfaceSamples.Add(new{locale,surface="disk-items",report=diskItems});
@@ -156,7 +157,7 @@ internal static class DebugGuideLocalization
     private static void Fail(Exception error)
     {
         _error=error.GetType().Name+": "+error.Message;Check(false,"native language test: "+_error);
-        try{DebugSupplierLocalization.Clear();RecipeGuideApi.Close();WorkshopApi.CloseWindow();ReadingApi.Close("ezapi.debug.locale","ezapi.debug.locale.note");DebugLocalizedItems.Clear();if(_original is not null)Il2Cpp.EmporiumEntry.Instance.ChangeLanguage(_original.Identifier.Code);}catch(Exception restore){_error+="; restore: "+restore.Message;}
+        try{NativeUiPreviewApi.Close();DebugSupplierLocalization.Clear();RecipeGuideApi.Close();WorkshopApi.CloseWindow();ReadingApi.Close("ezapi.debug.locale","ezapi.debug.locale.note");DebugLocalizedItems.Clear();if(_original is not null)Il2Cpp.EmporiumEntry.Instance.ChangeLanguage(_original.Identifier.Code);}catch(Exception restore){_error+="; restore: "+restore.Message;}
         _stage=0;_pendingLocale=null;Preloads.Clear();Report();_original=null;_run=null;_englishSnapshot=null;
     }
     private static void Report()
