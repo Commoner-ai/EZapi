@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "releaseTag": "0.1.74-preview.1",
+  "releaseTag": "0.1.74-preview.2",
   "assemblyVersion": "0.1.74",
   "status": "prerelease",
   "license": "MIT",
@@ -33,6 +33,9 @@
     "exactApi": "public-api.index.json",
     "artReferenceZh": "item-art.zh-CN.md",
     "artReferenceEn": "item-art.en.md",
+    "tooltipStyleZh": "tooltip-style.zh-CN.md",
+    "tooltipStyleEn": "tooltip-style.en.md",
+    "tooltipStyleIndex": "tooltip-style.index.json",
     "wildBrowserZh": "wild-network.zh-CN.md",
     "wildBrowserEn": "wild-network.en.md"
   },

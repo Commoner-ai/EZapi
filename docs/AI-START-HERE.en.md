@@ -2,13 +2,14 @@
 
 # EZapi developer and AI entry point
 
-Current prerelease: **0.1.74-preview.1**, assembly 0.1.74. [Public distribution](https://github.com/Commoner-ai/EZapi). Framework implementation, offline tests and build projects are MIT open source; see [source builds](build-from-source.en.md). Use the public DLL APIs, metadata, guides and consumer examples.
+Current prerelease: **0.1.74-preview.2**, assembly 0.1.74. [Public distribution](https://github.com/Commoner-ai/EZapi). Framework implementation, offline tests and build projects are MIT open source; see [source builds](build-from-source.en.md). Use the public DLL APIs, metadata, guides and consumer examples.
 
 For artwork matching the original game, use the optional [item art guide](item-art.en.md), [asset/workflow index](item-art.index.json) and bundled same-category references.
 
 ## Choose a task
 
 - [Workflows](developer-workflows.index.json): JSON packs or DLL APIs, example and failure boundary.
+- [Optional native-style tooltips](tooltip-style.en.md): native categories/value/properties, separate instructions/narrative, explicit attribution opt-out, extended-style alternative, JSON/DLL examples and [machine index](tooltip-style.index.json).
 - [Exact public signatures](public-api.index.json): types, overloads, parameters, defaults and XML documentation from the current binary; no method bodies.
 - [Task index](API.index.zh-CN.json), [domain index](source.index.json), [errors](errors.index.json). The repository domain index links implementation sources; the binary SDK lists modules and links to GitHub.
 - [Adaptive departure buttons](departure-buttons.en.md), [installation](install-and-debug.en.md), [entry automation](automation.en.md), [中文入口](AI-START-HERE.zh-CN.md).
@@ -26,6 +27,15 @@ dotnet tools/ezapi-validate/ezapi-validate.dll --help
 ```
 
 Validation does not launch the game, deliver items or prove native application/save restoration.
+
+Offline starter/search tools are included in the SDK (`distribution/` in source):
+
+```powershell
+./developer-tools/New-EZapiMod.ps1 -Kind Json -ModId author.example -OutputDir ./MyNewMod -TooltipStyle Native
+./developer-tools/Find-EZapiApi.ps1 -Query 'ItemRegistry.Register'
+```
+
+Choose `-Kind Dll` or `-TooltipStyle Extended` when needed. Generation requires a fresh directory, creates bilingual text following game settings, and uses a material category to adjust by gameplay. Search returns actual overload/task/error metadata without loading game assemblies.
 
 ## Build a consumer DLL
 

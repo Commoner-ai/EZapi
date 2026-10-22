@@ -1,0 +1,76 @@
+{
+  "schemaVersion": 1,
+  "version": "0.1.74",
+  "purpose": "Optional item Tooltip recipes for humans and AI; not a new runtime configuration field",
+  "optional": true,
+  "guideZh": "tooltip-style.zh-CN.md",
+  "guideEn": "tooltip-style.en.md",
+  "schema": "../schemas/items.schema.json",
+  "publicApi": "public-api.index.json",
+  "generator": {
+    "sourceTool": "../distribution/New-EZapiMod.ps1",
+    "sdkTool": "../developer-tools/New-EZapiMod.ps1",
+    "option": "-TooltipStyle Native|Extended",
+    "default": "Native",
+    "installsOrSaves": false
+  },
+  "recipes": [
+    {
+      "id": "native",
+      "nameZh": "贴近原版 Tooltip",
+      "nameEn": "Native-style Tooltip",
+      "jsonSettings": {"descriptionPlacement": "native", "tooltip": {"showSource": false}},
+      "csharpDeclaration": "ItemDefinition: DescriptionPlacement = \"native\", Tooltip = new() { ShowSource = false }",
+      "csharpFactory": "NativeItemOptions(ShowSource: false); supply descriptions through native factory fields or matching Options",
+      "extraLabelsAndLines": "Omit by default; necessary unique gameplay state may be shown once",
+      "examplePack": "examples/tooltip-native/pack.json",
+      "exampleItems": "examples/tooltip-native/items.json",
+      "exampleProject": "examples/tooltip-dll/TooltipMod.csproj",
+      "exampleCaller": "examples/tooltip-dll/Mod.cs"
+    },
+    {
+      "id": "extended",
+      "nameZh": "扩展信息 Tooltip",
+      "nameEn": "Extended-information Tooltip",
+      "jsonSettings": {"descriptionPlacement": "native", "tooltip": {"showSource": true}},
+      "csharpDeclaration": "ItemDefinition: DescriptionPlacement = \"native\", Tooltip = new() { ShowSource = true }",
+      "csharpFactory": "NativeItemOptions(ShowSource: true)",
+      "extraLabelsAndLines": "Optional real state via tooltip.labels, tooltip.lines or PresentationApi.RegisterModuleText; never duplicate native facts",
+      "sourcePlacement": "Official Late callback, not guaranteed final line; current game renders native short description/flavor after Late"
+    }
+  ],
+  "nativeHierarchy": [
+    {"role": "name", "fields": ["name", "localizedName"], "rule": "Accurate name once"},
+    {"role": "categories", "fields": ["types", "typeNames"], "rule": "Real gameplay categories; native brackets, color and localization"},
+    {"role": "value", "fields": ["value"], "rule": "Native estimation/base value; do not duplicate in prose"},
+    {"role": "properties", "fields": ["food", "module"], "rule": "Examples of actual helper-backed definitions; applicable categories only, not a complete list"},
+    {"role": "instructions", "fields": ["shortDescription", "localizedShortDescription"], "rule": "Optional essential instructions not already shown by the game"},
+    {"role": "narrative", "fields": ["flavorText", "localizedFlavorText"], "rule": "Optional narrative rendered by the native path, with its spacing/color/italics"}
+  ],
+  "compatibility": {
+    "runtimeChanged": false,
+    "publishedShowSourceDefault": true,
+    "nativeStyleNeedsExplicitSourceOptOut": true,
+    "tooltipStyleIsNotAJsonField": true,
+    "nativeItemOptionsHasDescriptionPlacement": false,
+    "keepOtherModsContent": true,
+    "noGlobalTooltipReplacement": true,
+    "lateMeansFinalLine": false,
+    "doNotUseAsGenericHoverParagraph": ["longDescription", "customText"],
+    "language": "Follow game locale with localized fields or pack CSV; stable IDs are never translated"
+  },
+  "evidence": {
+    "basis": ["User-supplied vanilla and Mod screenshots", "Official item-field and Early/Late hook documentation", "Current framework field mapping and read-only current-game Tooltip path inspection"],
+    "officialGuide": "https://github.com/dragonpan2/probably-stolen-modding/blob/main/ModdingGuide.zh-CN.md",
+    "scope": "Documentation recipes and consumer examples; no new in-game visual or save/reload acceptance",
+    "sampleAssumption": "Processor is a plain MATERIAL for this example only; no image, activation or delivery"
+  },
+  "documentationContext": {
+    "kind": "current-api-guide",
+    "releaseTag": "0.1.74-preview.2",
+    "assemblyVersion": "0.1.74",
+    "releaseStatus": "release-status.json",
+    "nativeRuntimeVerified": false,
+    "evidencePolicy": "Old native claims do not apply to the current DLL."
+  }
+}

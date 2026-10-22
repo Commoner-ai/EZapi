@@ -402,7 +402,7 @@
           "showSource": {
             "type": "boolean",
             "default": true,
-            "description": "在官方 Late 阶段追加一次灰色斜体来源行；不保证整个提示框末尾"
+        "description": "可选来源行，兼容默认true；贴近原版显式false。官方Late追加灰色斜体，不保证整个提示框末尾。见docs/tooltip-style.zh-CN.md"
           },
           "sourceName": {
             "type": "string",

@@ -8,6 +8,39 @@
   },
   "workflows": [
     {
+      "id": "generate-bilingual-mod",
+      "taskZh": "离线生成中英双语 JSON 或 DLL 起步工程并选择 Tooltip 风格",
+      "taskEn": "Generate a bilingual JSON or DLL starter and choose a Tooltip recipe offline",
+      "guideZh": "AI-START-HERE.zh-CN.md",
+      "guideEn": "AI-START-HERE.en.md",
+      "sourceTool": "../distribution/New-EZapiMod.ps1",
+      "sdkTool": "../developer-tools/New-EZapiMod.ps1",
+      "command": "./developer-tools/New-EZapiMod.ps1 -Kind Json -ModId author.example -OutputDir ./MyNewMod -TooltipStyle Native",
+      "boundary": "Fresh directory only. Does not install, generate native items or save. MATERIAL is an example; adjust actual gameplay types."
+    },
+    {
+      "id": "search-sdk-offline",
+      "taskZh": "离线查找中文任务、英文 API 完整重载签名与错误处理",
+      "taskEn": "Search SDK tasks, exact API overload signatures and error handling offline",
+      "sourceTool": "../distribution/Find-EZapiApi.ps1",
+      "sdkTool": "../developer-tools/Find-EZapiApi.ps1",
+      "command": "./developer-tools/Find-EZapiApi.ps1 -Query 'ItemRegistry.Register'",
+      "boundary": "Reads shipped indexes; no game DLL loading. Check exact member IDs and each API lifecycle before use."
+    },
+    {
+      "id": "optional-native-tooltip",
+      "taskZh": "选择原版或扩展物品 Tooltip 风格，规范简介与风味摆放",
+      "taskEn": "Choose native or extended item Tooltip style and separate instructions from narrative",
+      "guideZh": "tooltip-style.zh-CN.md",
+      "guideEn": "tooltip-style.en.md",
+      "index": "tooltip-style.index.json",
+      "sample": "examples/tooltip-native/items.json",
+      "project": "examples/tooltip-dll/TooltipMod.csproj",
+      "command": "dotnet tools/ezapi-validate/ezapi-validate.dll --pack docs/examples/tooltip-native",
+      "optional": true,
+      "boundary": "Recipes use existing fields, not tooltipStyle. Native style explicitly disables ShowSource; preserve native properties and other Mods. Late does not guarantee a final line."
+    },
+    {
       "id": "json-item",
       "taskZh": "不用 C# 添加物品",
       "taskEn": "Add an item without C#",
@@ -108,7 +141,7 @@
   },
   "documentationContext": {
     "kind": "current-api-guide",
-    "releaseTag": "0.1.74-preview.1",
+    "releaseTag": "0.1.74-preview.2",
     "assemblyVersion": "0.1.74",
     "releaseStatus": "release-status.json",
     "nativeRuntimeVerified": false,

@@ -3,6 +3,7 @@
   "framework": "EZapi",
   "version": "0.1.74",
   "schema": "../schemas/items.schema.json",
+  "tooltipStyle": "tooltip-style.index.json",
   "scope": "原生常用属性封装；不是所有游戏内部字段，也不是所有物品玩法",
   "properties": [
     {
@@ -487,7 +488,7 @@
         "showSource": {
           "type": "boolean",
           "default": true,
-          "description": "在官方 Late 阶段追加一次灰色斜体来源行；不保证整个提示框末尾"
+          "description": "可选来源行，兼容默认true；贴近原版显式false。官方Late追加灰色斜体，不保证整个提示框末尾。见docs/tooltip-style.zh-CN.md"
         },
         "sourceName": {
           "type": "string",
@@ -1162,7 +1163,7 @@
   "previousImplementationVersionBaseline": "0.1.51",
   "documentationContext": {
     "kind": "current-api-guide",
-    "releaseTag": "0.1.74-preview.1",
+    "releaseTag": "0.1.74-preview.2",
     "assemblyVersion": "0.1.74",
     "releaseStatus": "release-status.json",
     "nativeRuntimeVerified": false,

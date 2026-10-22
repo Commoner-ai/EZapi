@@ -4,6 +4,8 @@
 
 `PresentationApi` 为 DLL Mod 提供物品登记文本查询、owner 展示名、模块运行时附加文字和自有模块效果的双语文本。注册在 EZapi 初始化主线程完成；所有文本回调都在游戏官方 tooltip 回调期间同步执行。EZapi 不调用 `RichTextBuilder.Build`，也不保留 tooltip builder 或 `GameItem` 引用。
 
+先按[Tooltip 风格规范](tooltip-style.zh-CN.md)选择原版风格或扩展信息风格。本页的来源、物品 ID 和模块附加行用于演示扩展信息，不是原版外观的必填项。原版风格显式关闭 `ShowSource`，优先使用原生短说明与风味字段；游戏已显示的属性不重复追加。
+
 ## 注册顺序
 
 先登记物品或效果，再登记其 presentation。物品 ID 必须以 owner ID 加点号开头；`RegisterModuleText` 要求该 ID 已声明为这个 owner 的 JSON/DLL 模块。`RegisterEffectText` 要求效果先由相同 owner 通过 `EffectApi.RegisterEffect(s)` 声明。重复注册、跨 owner 引用、无效文本或错过初始化窗口会返回 `ContentSubmissionResult`，查看 `Accepted` 和 `Reason`。
@@ -38,7 +40,9 @@ if (ownerText.Accepted && item.Accepted)
 | `RegisterModuleText(ownerId, itemId, callback)` | 在官方 Late tooltip 回调中调用 callback，追加 `AdditionalEffect` 和 `Lines`。只针对该 owner 已应用的模块和实际匹配的实例 ID。 |
 | `RegisterEffectText(ownerId, effectId, name, description)` | 为相同 owner 通过 `EffectApi` 登记的效果提供中英名称/说明。语言变化时更新该确切效果对象；停用时恢复仍由 EZapi 控制的字段。 |
 
-`LocalizedItemText` 的 `Chinese` 用于 `zh*` locale，`English` 用于其它 locale；一侧为 `null` 时回退另一侧，空字符串表示有意清空。效果名至少要提供一种非空翻译。描述可省略；被省略的字段保留效果工厂原文。`GetRegisteredItemName/Description` 的 `english` 参数是显式查询选项，与游戏当前语言无关。
+`LocalizedItemText` 的 `Chinese` 用于 `zh*` locale，`English` 用于其它 locale；一侧为 `null` 时回退另一侧。空串能否清空取决于入口：声明式物品的 `localized*` 由 `LocalizedItemText.Validate` 要求非空，不能用空串清空；原生工厂 Options 的字面短说明/风味允许空串清空，名称仍须非空。效果名至少要提供一种非空翻译，效果描述可省略以保留工厂原文。`GetRegisteredItemName/Description` 的 `english` 参数是显式查询选项，与游戏当前语言无关。
+
+官方 Late 只是一个追加阶段，不是整个 Tooltip 的最终末行：当前构建之后仍会绘制原生短说明、风味和部分特殊内容。因此来源可能在原生说明上面，不能承诺“来源总在全部说明之后”。不为搬动来源清空共享 builder 或替换整个 Tooltip。
 
 模块回调每次 tooltip 都会重新执行，因此只应读取传入实例并返回短文本，不要修改实例、库存或效果，不要启动任务，也不要保存实例。异常、超过 128 行、行长超过 2048 字符或附加效果文字超过 4000 字符会跳过本次输出并记录一次诊断；错误不会穿过官方 IL2CPP tooltip 回调。
 

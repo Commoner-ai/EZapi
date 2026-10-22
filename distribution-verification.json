@@ -1,16 +1,16 @@
 {
-  "tag": "0.1.74-preview.1",
+  "tag": "0.1.74-preview.2",
   "passed": true,
   "assets": [
     {
-      "file": "EZapi-0.1.74-preview.1-game.zip",
-      "sha256": "0D64BADF1ED6FEFDBEE0F36023C37B1483B0F6E3272A39CBC023A6C53C5B4871",
-      "bytes": 721350
+      "file": "EZapi-0.1.74-preview.2-game.zip",
+      "sha256": "DF0B798138ED33B9386D45E8F477F9DD0DADC9B4AF061F688B2EE4FD73B6DB7C",
+      "bytes": 721525
     },
     {
-      "file": "EZapi-0.1.74-preview.1-developer.zip",
-      "sha256": "BDCAED33958642C05ED4A6BFA9448CF3986D26D060EDB088876E637718E3B612",
-      "bytes": 2493153
+      "file": "EZapi-0.1.74-preview.2-developer.zip",
+      "sha256": "33B09CC0EB138F48D07D98678B368BE5C73EE17B60F44890E671A504EAEB19E9",
+      "bytes": 2518978
     }
   ],
   "dllSHA256": "FE6DE81903D1F3A1234031C193D0F5678B17D99949AB24A47DCAB52958DFCA55",
@@ -27,6 +27,9 @@
   "nativeRuntimeVerified": false,
   "fullGoalComplete": false,
   "developerAutomationIncluded": true,
+  "offlineModGeneratorIncluded": true,
+  "offlineApiSearchIncluded": true,
+  "optionalTooltipStyleGuideIncluded": true,
   "documentationConsistencyVerified": true,
   "optionalArtReferenceIncluded": true,
   "artReferenceOriginalSprites": 96,
@@ -35,39 +38,20 @@
   "originalArtworkCoveredByEzapiMit": false,
   "sourcePublishedInRepository": true,
   "oldPrivateHistoryImported": false,
+  "runtimeUnchangedFrom": "0.1.74-preview.1",
+  "sdkVerification": {
+    "runtimeDllSHA256": "FE6DE81903D1F3A1234031C193D0F5678B17D99949AB24A47DCAB52958DFCA55",
+    "packagedPS51SearchPassed": true,
+    "packagedJsonExampleValid": true,
+    "packagedDllExampleCompiled": true,
+    "archiveFilesPrivacyChecked": 521,
+    "newNativeAcceptance": false,
+    "generatorKindStyleCases": 4,
+    "windowsPowerShell51Passed": true
+  },
   "verification": {
     "offlineSuites": 59,
     "cliProcessChecks": 25,
-    "departureAndBrowserSourceLinkedChecks": 141,
-    "directGameMethodReferences": 669,
-    "missingGameMethodReferences": 0,
-    "unityUnstrippingStubs": 0,
-    "archivePrivacyAndHashesVerified": true
-  },
-  "scopedNativeObservations": [
-    {
-      "feature": "Wild network browser",
-      "source": "user feedback on current 0.1.74 build",
-      "checks": [
-        "hover/click card alignment",
-        "selected native details",
-        "visible vertical scrollbar",
-        "existing DeepSpace Mod Hacker entry"
-      ],
-      "scope": "specific UI observations; not full framework acceptance; no native save/reload or arbitrary Mod guarantee"
-    },
-    {
-      "feature": "Wild network large-catalog probe",
-      "checks": [
-        "new live category discovered after binding",
-        "84 additional native UI cards",
-        "vertical mouse wheel",
-        "draggable vertical scrollbar",
-        "viewport clipping",
-        "committed name/ID search",
-        "window close clears temporary cards, references and selection"
-      ],
-      "scope": "current DLL mixed with the existing DeepSpace Mod; UI-only fixture, not a persistent upgrade registration or purchase/save test"
-    }
-  ]
+    "evidenceScope": "Existing evidence for the identical runtime DLL; this revision adds SDK validation/compile checks, not gameplay acceptance."
+  }
 }

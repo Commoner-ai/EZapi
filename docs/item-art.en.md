@@ -4,6 +4,8 @@
 
 For a Mod item that should fit Probably Stolen's visual style, use the optional [original-art reference set](art-reference/README.md). It is included in the developer documentation and SDK, not the player package, and is not a runtime requirement.
 
+For matching hover text, also choose the [optional native Tooltip recipe](tooltip-style.en.md). Artwork and text layout are separate concerns; avoid attribution and repeated names/stats when following native style.
+
 1. Pick the matching category below, or two or three transparent images from `art-reference/enlarged-4x/`.
 2. Give those images and the [English prompt](art-reference/AI-PROMPT.en.txt) to the image model. Specify your item's structure, material and target logical pixel dimensions.
 3. Review the result at its intended small size: silhouette, consistent pixel grid, limited detail, real alpha and agreement with the references.

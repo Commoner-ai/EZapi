@@ -2,6 +2,7 @@
   "schemaVersion": 1,
   "version": "0.1.74",
   "startHere": "AI-START-HERE.zh-CN.md",
+  "tooltipStyle": "tooltip-style.index.json",
   "modules": [
     {
       "file": "../src/EZapi/ContentPackLoader.cs",
@@ -1096,7 +1097,7 @@
   "installation": "install-and-debug.zh-CN.md",
   "documentationContext": {
     "kind": "current-api-guide",
-    "releaseTag": "0.1.74-preview.1",
+    "releaseTag": "0.1.74-preview.2",
     "assemblyVersion": "0.1.74",
     "releaseStatus": "release-status.json",
     "nativeRuntimeVerified": false,

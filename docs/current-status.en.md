@@ -1,6 +1,8 @@
 # Current EZapi release and verification
 
-Current prerelease: **0.1.74-preview.1**, assembly **0.1.74**, license **MIT**. Framework source, tests and build tooling are public. Players install one Mods/EZapi.dll; the developer package adds optional tools, validator, guides and game-entry automation. Debug defaults off.
+This documentation/SDK-tool revision adds [optional native Tooltip recipes](tooltip-style.en.md), JSON/DLL examples and offline starter/search tools. The runtime DLL is identical to preview.1. New examples have offline validation/compilation only, with no new native visual or save/reload evidence.
+
+Current prerelease: **0.1.74-preview.2**, assembly **0.1.74**, license **MIT**. Framework source, tests and build tooling are public. Players install one Mods/EZapi.dll; the developer package adds optional tools, validator, guides and game-entry automation. Debug defaults off.
 
 | Scope | Current result |
 | --- | --- |

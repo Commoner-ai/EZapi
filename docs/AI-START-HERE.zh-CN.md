@@ -2,7 +2,7 @@
 
 # EZapi：开发者与AI入口
 
-当前预发布 **0.1.74-preview.1**，程序集版本0.1.74。公开发布仓库：[Commoner-ai/EZapi](https://github.com/Commoner-ai/EZapi)。框架、离线校验器、测试和构建工程已按 MIT 开源，见[源码构建](build-from-source.zh-CN.md)；开发普通 Mod 仍只需公开 DLL 接口。
+当前预发布 **0.1.74-preview.2**，程序集版本0.1.74。公开发布仓库：[Commoner-ai/EZapi](https://github.com/Commoner-ai/EZapi)。框架、离线校验器、测试和构建工程已按 MIT 开源，见[源码构建](build-from-source.zh-CN.md)；开发普通 Mod 仍只需公开 DLL 接口。
 
 ## 从任务到示例
 
@@ -13,6 +13,7 @@
 - [安装与调试](install-and-debug.zh-CN.md)、[自动进入游戏](automation.zh-CN.md)、[English entry](AI-START-HERE.en.md)。
 
 - [物品美术参考与提示词](item-art.zh-CN.md)：需要贴近原版画风时，按类别选原版参考图；使用[item-art.index.json](item-art.index.json)查资源和提示词。
+- [可选原版 Tooltip 规范](tooltip-style.zh-CN.md)：原生分类/价格/属性与短说明、风味分层；显式关闭来源行，避免重复。扩展信息风格仍可选，含 JSON/DLL 示例与[机器索引](tooltip-style.index.json)。
 
 ## 先下载开发包
 
@@ -27,6 +28,15 @@ dotnet tools/ezapi-validate/ezapi-validate.dll --help
 ```
 
 离线校验不启动游戏，不生成物品，不证明原生目录已应用或存档恢复成功。
+
+开发包还提供离线起步与查询工具（源码中的脚本在 `distribution/`）：
+
+```powershell
+./developer-tools/New-EZapiMod.ps1 -Kind Json -ModId author.example -OutputDir ./MyNewMod -TooltipStyle Native
+./developer-tools/Find-EZapiApi.ps1 -Query 'ItemRegistry.Register'
+```
+
+可选 `-Kind Dll` 或 `-TooltipStyle Extended`。生成器只创建不存在的新目录，中英名称/简介跟随游戏设置；普通材料分类需按实际玩法调整。查询工具输出真实重载签名、任务与错误索引，不加载游戏程序集。
 
 ## 最小DLL调用方
 

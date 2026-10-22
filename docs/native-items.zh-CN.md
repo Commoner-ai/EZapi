@@ -28,7 +28,9 @@ ID 使用小写命名空间，例如 `author.tools.sensor`，并属于 owner 的
 
 `NativeItemOptions` 是不可变 DTO：Name、ShortDescription、FlavorText、SourceName、ShowSource 提供固定文本；LocalizedName、LocalizedShortDescription、LocalizedFlavorText、LocalizedSourceName 可覆盖对应文本并提供中英两份。null 保留工厂原值，说明的空串明确清空。来源行通过既有官方 tooltip 回调显示，不安装第二套 tooltip 补丁。没有提供名称时，调试列表使用 ID，实际物品名称仍取工厂结果。
 
-双语文本按游戏当前 locale 选择：`zh` 开头（例如 `zh-CN`、`zh-TW`）选中文，其它 locale 选英文；某一侧缺失时用另一侧。当前构建通过官方 `LocHelper.GetCurrentLocaleCode()` 读取语言，并由 `Assembly-CSharp.dll` SHA-256 精确门控；游戏版本或 getter 不匹配时安全回退英文。名称、简介与风味写入物品实例时确定，因此已创建物品不会因游戏中途切换语言而自动重写；`ItemApi.GetDisplayName` 和 tooltip 来源行会在查询时按当前语言解析。
+`ShowSource` 默认 true；希望贴近原版时显式传 `new NativeItemOptions(ShowSource: false, ...)`，不手工复写游戏已有分类、价格或属性。原生短说明用于操作，风味用于叙述；完整的可选规则见[Tooltip 风格规范](tooltip-style.zh-CN.md)。官方 Late 之后仍有原生描述，来源并不保证在最终末尾。
+
+双语文本按游戏当前 locale 选择：`zh` 开头（例如 `zh-CN`、`zh-TW`）选中文，其它 locale 选英文；某一侧缺失时用另一侧。当前构建通过官方 `LocHelper.GetCurrentLocaleCode()` 读取语言，并由 `Assembly-CSharp.dll` SHA-256 精确门控；游戏版本或 getter 不匹配时安全回退英文。低层 `ItemApi` 工厂的 Options 名称、简介与风味在创建时写入，查询显示名和来源时会重新解析。声明式 `ItemDefinition`/JSON 的已应用物品另有按显示/Tooltip/重开窗口触发的本地化刷新，保护玩家改名，不扫描全部库存；两类入口不可混为一谈，见[游戏语言指南](game-language.zh-CN.md)。
 
 ```csharp
 new NativeItemOptions(

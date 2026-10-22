@@ -78,7 +78,7 @@ JSON 的每个 `localized*` 对象可以提供 `chinese`、`english`，也可以
 
 游戏内置 ModLoader 文档示例使用 `ModHelper.GetCurrentLocale().Identifier.Code` 与 `ModHelper.GetLocalized`。EZapi 的 MelonLoader DLL 接口保持独立，不伪造 ModHelper 或加载器 ABI；它在当前确切游戏构建中适配 locale getter，并保留英文失败回退。Mod 内容 CSV 的无表头格式和转义约束见 [localization.zh-CN.md](localization.zh-CN.md) 与 [官方 API 对照](official-api-map.zh-CN.md)。
 
-已编译样例：[LanguageExamples.cs](../src/EZapi.Sample/LanguageExamples.cs) 与 [中英物品内容包](../src/EZapi.Sample/Content/items.json)。整包 CSV/字段映射及物品刷新有离线测试证据；当前 DLL 的实际 en/zh 切换、测试物品/Tooltip/容器重开和 CSV 显示已纳入上述415项原生检查；五件测试物品的原生保存、新进程重载及独立磁盘回读分别通过18、27、37项检查。
+已编译样例：[LanguageExamples.cs](../src/EZapi.Sample/LanguageExamples.cs) 与 [中英物品内容包](../src/EZapi.Sample/Content/items.json)。整包 CSV/字段映射及物品刷新有离线测试证据。上述415项中英原生检查、18项保存、27项新进程重载及37项磁盘回读均属于历史0.1.72 DLL，不能作为当前DLL验收。当前DLL的语言界面与保存重载仍待实机验收。
 
 ## 0.1.72 展示 API
 

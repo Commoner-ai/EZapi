@@ -118,6 +118,25 @@ assert 'excluded from EZapi' in (art/'NOTICE.md').read_text(encoding='utf-8')
 assert 'art-reference' in (root/'THIRD-PARTY-NOTICES.md').read_text(encoding='utf-8')
 assert 'item-art' in (docs/'AI-START-HERE.zh-CN.md').read_text(encoding='utf-8')
 assert 'item-art' in (docs/'AI-START-HERE.en.md').read_text(encoding='utf-8')
+
+# Tooltip recipes are existing-field examples, not a new runtime setting.
+tooltip = json.loads((docs/'tooltip-style.index.json').read_text(encoding='utf-8-sig'))
+recipes = {row['id']: row for row in tooltip['recipes']}
+native = recipes['native']['jsonSettings']
+assert native == {'descriptionPlacement': 'native', 'tooltip': {'showSource': False}}
+assert recipes['extended']['jsonSettings']['tooltip']['showSource'] is True
+item = json.loads((docs/'examples/tooltip-native/items.json').read_text(encoding='utf-8-sig'))[0]
+assert item['descriptionPlacement'] == native['descriptionPlacement'] and item['tooltip'] == native['tooltip']
+assert item['types'] and item['localizedFlavorText']['chinese'] and item['localizedFlavorText']['english']
+schema = json.loads((root/'schemas/items.schema.json').read_text(encoding='utf-8-sig'))
+assert 'tooltipStyle' not in schema['items']['properties']
+assert schema['items']['properties']['tooltip']['properties']['showSource']['default'] is True
+for lang in ['zh-CN', 'en']:
+    assert 'tooltip-style' in (docs/f'AI-START-HERE.{lang}.md').read_text(encoding='utf-8-sig')
+tool_dir = root/('distribution' if (root/'distribution/New-EZapiMod.ps1').is_file() else 'developer-tools')
+for name in ['New-EZapiMod.ps1', 'Find-EZapiApi.ps1']:
+    assert (tool_dir/name).is_file(), name
+    assert (tool_dir/name).read_bytes().startswith(b'\xef\xbb\xbf'), 'PowerShell 5.1 UTF-8 BOM required: '+name
 assert not errors, json.dumps(errors, ensure_ascii=False, indent=2)
 print(json.dumps({'passed': True, 'releaseTag': tag, 'indexesChecked': indexes,
                   'markdownPagesChecked': len(pages), 'localLinksChecked': links,

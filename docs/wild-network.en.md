@@ -1,6 +1,6 @@
 # Wild network browser
 
-0.1.74-preview.1 keeps the original detail and unlock controls on the left and places live category tabs, search, filters and a card grid on the right. The vertical scrollbar is always visible: its handle fills the track when everything fits and becomes draggable when entries overflow. Extra categories can scroll horizontally in the tab strip.
+0.1.74-preview.2 keeps the original detail and unlock controls on the left and places live category tabs, search, filters and a card grid on the right. The vertical scrollbar is always visible: its handle fills the track when everything fits and becomes draggable when entries overflow. Extra categories can scroll horizontally in the tab strip.
 
 The feature ships in the same `Mods/EZapi.dll`. Developer tools are optional.
 

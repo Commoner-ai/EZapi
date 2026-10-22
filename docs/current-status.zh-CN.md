@@ -1,6 +1,6 @@
 # EZapi 当前版本与验收状态
 
-当前预发布 **0.1.74-preview.1**，程序集 **0.1.74**，许可证 **MIT**。框架源码、测试、构建脚本和文档已公开。两个二进制包仍单独分发：玩家只安装一份 Mods/EZapi.dll；开发包包含调用资料、校验器和进入游戏工具，调试默认关闭。
+当前预发布 **0.1.74-preview.2**，程序集 **0.1.74**，许可证 **MIT**。框架源码、测试、构建脚本和文档已公开。两个二进制包仍单独分发：玩家只安装一份 Mods/EZapi.dll；开发包包含调用资料、校验器和进入游戏工具，调试默认关闭。
 
 | 项目 | 当前结论 |
 | --- | --- |
@@ -13,6 +13,8 @@
 当前运行 DLL SHA256：`FE6DE81903D1F3A1234031C193D0F5678B17D99949AB24A47DCAB52958DFCA55`。本版新增[王尔德人脉网络浏览器](wild-network.zh-CN.md)，运行 DLL 已变化。用户已确认悬停/点击定位、详情与常驻竖向滚动条正常，并显示现有搜打撤 Mod 的黑客条目；这些是局部 UI 反馈，不代表框架全部实机验收。离线检查证明其声明、算法及替身边界，不能证明游戏内实际执行结果。
 
 ## 当前资料入口
+
+本次为文档与开发工具修订：新增[可选原版 Tooltip 规范](tooltip-style.zh-CN.md)、JSON/DLL示例和离线起步/查询工具，运行DLL与preview.1相同。新增示例仅完成离线校验/编译，没有新增游戏内视觉或保存重载证据。
 
 - [安装与可选调试](install-and-debug.zh-CN.md)、[源码构建](build-from-source.zh-CN.md)、[自动进入游戏](automation.zh-CN.md)。
 - [AI 开发入口](AI-START-HERE.zh-CN.md)、[公开 API 签名](public-api.index.json)、[任务索引](developer-workflows.index.json)、[领域源码索引](source.index.json)。

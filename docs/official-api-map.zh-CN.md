@@ -5,7 +5,7 @@
 | 任务 | EZapi 入口 | 当前指南 |
 | --- | --- | --- |
 | 官方目录与工厂 | ItemRegistry / ItemApi / RegistrationApi | [物品](native-items.zh-CN.md)、[声明注册](registration.zh-CN.md) |
-| Tooltip、名称、分类与来源 | ItemDefinition / PresentationApi | [表现](presentation.zh-CN.md) |
+| Tooltip、名称、分类与来源 | ItemDefinition / PresentationApi | [可选原版规范](tooltip-style.zh-CN.md)、[表现](presentation.zh-CN.md) |
 | 游戏语言与 CSV | GameLanguage / Localization | [语言](game-language.zh-CN.md)、[CSV](localization.zh-CN.md) |
 | 官方生命周期与周目数据 | GameEvents / LifecycleApi / RunData | [阶段](lifecycle-content.zh-CN.md)、[周目记录](run-data-records.zh-CN.md) |
 | 库存、物品图与只读存档 | InventoryApi / SaveGraphApi / SaveReadbackApi | [库存](inventory-services.zh-CN.md)、[物品图](save-graph.zh-CN.md)、[回读](save-readback.zh-CN.md) |

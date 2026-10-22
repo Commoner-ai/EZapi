@@ -23,8 +23,12 @@ try {
         if ($LASTEXITCODE -ne 0) { throw "Build failed: $taskProject" }
     }
     $taskDll = Join-Path $PSScriptRoot 'src/EZapi/bin/Release/net6.0/EZapi.dll'
-    dotnet build docs/examples/minimal-dll/SimpleMod.csproj -c Release "-p:GameDir=$GameDir" "-p:EZapiDll=$taskDll"
-    if ($LASTEXITCODE -ne 0) { throw 'Independent consumer example failed.' }
+    foreach ($taskConsumer in @('minimal-dll/SimpleMod.csproj','tooltip-dll/TooltipMod.csproj')) {
+        dotnet build "docs/examples/$taskConsumer" -c Release "-p:GameDir=$GameDir" "-p:EZapiDll=$taskDll"
+        if ($LASTEXITCODE -ne 0) { throw "Independent consumer example failed: $taskConsumer" }
+    }
+    dotnet src/EZapi.ContentValidator/bin/Release/net8.0/ezapi-validate.dll --pack docs/examples/tooltip-native
+    if ($LASTEXITCODE -ne 0) { throw 'Native-tooltip content example failed validation.' }
     & "$PSScriptRoot/scripts/Test-EZapiOffline.ps1"
     dotnet build work/ezapi-inspect/Inspect.csproj -c Release
     if ($LASTEXITCODE -ne 0) { throw 'Metadata inspector build failed.' }

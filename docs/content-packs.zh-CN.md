@@ -6,6 +6,8 @@
 
 希望贴近原版画风时，使用[物品美术指南](item-art.zh-CN.md)中的分类参考图和AI提示词。开发包已附原始尺寸与4倍最近邻透明图；真实占格仍由items.json独立声明。
 
+物品悬停文字另按[可选原版 Tooltip 规范](tooltip-style.zh-CN.md)选择风格：原版用 `descriptionPlacement: "native"` 和 `tooltip.showSource: false`，短操作说明与风味叙述分开，分类和数值交给游戏。需要来源/额外状态时可选扩展信息风格，不强制所有 Mod 一种样式。
+
 ## 目录
 
 ```text

@@ -1,0 +1,16 @@
+[
+  {
+    "id": "author.tooltip.processor",
+    "modId": "author.tooltip",
+    "name": "Intel Core i3-370M Processor",
+    "localizedName": {"chinese": "Intel Core i3-370M 处理器", "english": "Intel Core i3-370M Processor"},
+    "types": ["MATERIAL"],
+    "width": 1,
+    "height": 1,
+    "value": 20,
+    "descriptionPlacement": "native",
+    "flavorText": "A trace of warmth lingers in the old silicon.",
+    "localizedFlavorText": {"chinese": "旧硅片仍有余温。", "english": "A trace of warmth lingers in the old silicon."},
+    "tooltip": {"showSource": false}
+  }
+]

@@ -1,0 +1,8 @@
+{
+  "id": "author.tooltip",
+  "name": "Native tooltip example",
+  "ezapiVersion": "0.1",
+  "version": "1.0.0",
+  "minEzapiVersion": "0.1.74",
+  "requires": ["items.json", "items.types", "items.text"]
+}

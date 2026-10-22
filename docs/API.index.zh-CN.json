@@ -31664,7 +31664,7 @@
   "itemData": "item-data.index.json",
   "documentationContext": {
     "kind": "current-api-guide",
-    "releaseTag": "0.1.74-preview.1",
+    "releaseTag": "0.1.74-preview.2",
     "assemblyVersion": "0.1.74",
     "releaseStatus": "release-status.json",
     "nativeRuntimeVerified": false,

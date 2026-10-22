@@ -49,7 +49,8 @@ def sanitize(root):
         text = re.sub(r'https?://ntfy\.sh/[^\s"\)<>]+', '<notification-endpoint>', text)
         # Consumer download links must point to the public distribution repository.
         text = re.sub(r'https://github\.com/Commoner-ai/EZapi(?:-Releases)?(?=/|[\s\)\]"\x27]|$)', PUBLIC_REPOSITORY, text)
-        p.write_text(text, encoding='utf-8')
+        # Windows PowerShell 5.1 needs a BOM for scripts containing Chinese.
+        p.write_text(text, encoding='utf-8-sig' if p.suffix == '.ps1' else 'utf-8')
 
 def archive(root):
     rows = [{'path': p.relative_to(root).as_posix(), 'sha256': sha(p)}
@@ -119,6 +120,8 @@ tree(candidate/'tools/ezapi-validate', developer/'tools/ezapi-validate', {'.dll'
 tree(candidate/'Mods/EZapiPacks', developer/'examples/ContentPacks', {'.json', '.png', '.csv'})
 copy(candidate/'examples/EZapi.Sample.dll', developer/'examples/EZapi.Sample.dll')
 copy(ROOT/'distribution/Set-EZapiDeveloperTools.ps1', developer/'developer-tools/Set-EZapiDeveloperTools.ps1')
+for name in ['New-EZapiMod.ps1', 'Find-EZapiApi.ps1']:
+    copy(ROOT/'distribution'/name, developer/'developer-tools'/name)
 copy(ROOT/'distribution/developer-tools.json', developer/'developer-tools/UserData/EZapi/developer-tools.json')
 for name in ['Enter-EZapiTestStore.ps1', 'Invoke-EZapiNativeTest.ps1', 'Invoke-EZapiTestBatch.ps1', 'Invoke-EZapiGuideLocalization.ps1']:
     copy(ROOT/'work'/name, developer/'developer-tools/automation'/name)
@@ -191,6 +194,9 @@ write(output/'package-verification.json', {
     'internalPluginExcluded': True, 'examplesAutoInstalled': False,
     'nativeRuntimeVerified': False, 'fullGoalComplete': False,
     'developerAutomationIncluded': True,
+    'offlineModGeneratorIncluded': True,
+    'offlineApiSearchIncluded': True,
+    'optionalTooltipStyleGuideIncluded': True,
     'documentationConsistencyVerified': True,
     'optionalArtReferenceIncluded': True,
     'artReferenceOriginalSprites': 96,
