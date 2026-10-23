@@ -90,6 +90,8 @@ internal static class NativeFactoryRegistry
     internal static bool HasCreationError(string id)=>Entries.TryGetValue(id,out var e)&&e.LastError is not null;
     private static bool ValidLocalized(LocalizedItemText? text,int maximum,bool requireText)
     {
+        // Optional descriptions accept explicit empty text; ItemText refresh uses ForLocale
+        // just like NativeItemOptions. Names/sources retain the readable-text requirement.
         if(text is null)return true;
         if(text.Key is not null)return false;
         var values=new[]{text.Chinese,text.English};
@@ -242,7 +244,7 @@ internal static class NativeFactoryRegistry
             NativeItemLocalization.IsEnglish ? $"DLL factory {e.Kind} · created {e.Created} · failed {e.Failures}" : $"DLL工厂 {e.Kind} · 创建 {e.Created} · 失败 {e.Failures}"));
 }
 
-/// <summary>只在已核对的当前游戏构建调用官方 locale getter；未知构建安全回退到英文。</summary>
+/// <summary>沿用 GameLanguage 的主线程、getter签名和结果检查；包装DLL指纹不限制语言读取。</summary>
 internal static class NativeItemLocalization
 {
     private static bool _warned;

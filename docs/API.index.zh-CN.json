@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "framework": "EZapi",
-  "version": "0.1.76",
+  "version": "0.1.87",
   "entries": [
     {
       "id": "EZapi.ClientVisitApi.IsAvailable",
@@ -6479,6 +6479,829 @@
         "currentDllEvidence": false
       },
       "nativeScope": "Current DLL: temporary item-data regression plus explicit native save18/cold-load27/independent disk37 checks; five endpoint fixture nodes. No payment, automatic save or crash-recovery guarantee."
+    },
+    {
+      "id": "EZapi.ItemCatalogApi.BeginScan",
+      "memberKey": "M:EZapi.ItemCatalogApi.BeginScan",
+      "signature": "EZapi.ItemCatalogScan EZapi.ItemCatalogApi::BeginScan()",
+      "parameters": [],
+      "phase": "loaded game main thread; Step once per Update; Dispose on reload/scene/locale change",
+      "result": "实际原版/Mod目录；仅Complete可读取成功条目，Failures保留逐项失败；名称跟随捕获时游戏语言。",
+      "failure": "未就绪/未知构建/无真实locale拒绝开始；未完成、已取消或周目/语言过期拒绝Snapshot；清理失败终止。",
+      "guide": "item-catalog.index.json",
+      "example": "examples/item-catalog-dll/Catalog.cs",
+      "signatureVerified": true,
+      "runtimeGameplayVerified": false,
+      "stability": "Preview",
+      "assembly": "EZapi.dll"
+    },
+    {
+      "id": "EZapi.ItemCatalogApi.BeginScanSubset",
+      "memberKey": "M:EZapi.ItemCatalogApi.BeginScan(System.Collections.Generic.IReadOnlyList{System.String})",
+      "signature": "EZapi.ItemCatalogScan EZapi.ItemCatalogApi::BeginScan(System.Collections.Generic.IReadOnlyList`1<System.String>)",
+      "parameters": [
+        {
+          "name": "itemIds",
+          "type": "System.Collections.Generic.IReadOnlyList`1<System.String>",
+          "optional": false,
+          "hasDefault": false,
+          "defaultValue": null,
+          "isOut": false,
+          "isParams": false
+        }
+      ],
+      "phase": "loaded game main thread; Step once per Update; Dispose on reload/scene/locale change",
+      "result": "实际原版/Mod目录；仅Complete可读取成功条目，Failures保留逐项失败；名称跟随捕获时游戏语言。",
+      "failure": "未就绪/未知构建/无真实locale拒绝开始；未完成、已取消或周目/语言过期拒绝Snapshot；清理失败终止。",
+      "guide": "item-catalog.index.json",
+      "example": "examples/item-catalog-dll/Catalog.cs",
+      "signatureVerified": true,
+      "runtimeGameplayVerified": false,
+      "stability": "Preview",
+      "assembly": "EZapi.dll"
+    },
+    {
+      "id": "EZapi.ItemCatalogApi.CaptureIdentifiers",
+      "memberKey": "M:EZapi.ItemCatalogApi.CaptureIdentifiers",
+      "signature": "System.Collections.Generic.IReadOnlyList`1<System.String> EZapi.ItemCatalogApi::CaptureIdentifiers()",
+      "parameters": [],
+      "phase": "loaded game main thread; Step once per Update; Dispose on reload/scene/locale change",
+      "result": "实际原版/Mod目录；仅Complete可读取成功条目，Failures保留逐项失败；名称跟随捕获时游戏语言。",
+      "failure": "未就绪/未知构建/无真实locale拒绝开始；未完成、已取消或周目/语言过期拒绝Snapshot；清理失败终止。",
+      "guide": "item-catalog.index.json",
+      "example": "examples/item-catalog-dll/Catalog.cs",
+      "signatureVerified": true,
+      "runtimeGameplayVerified": false,
+      "stability": "Preview",
+      "assembly": "EZapi.dll"
+    },
+    {
+      "id": "EZapi.ItemCatalogScan.Step",
+      "memberKey": "M:EZapi.ItemCatalogScan.Step(System.Int32,System.Double)",
+      "signature": "EZapi.ItemCatalogProgress EZapi.ItemCatalogScan::Step(System.Int32,System.Double)",
+      "parameters": [
+        {
+          "name": "maximumItems",
+          "type": "System.Int32",
+          "optional": true,
+          "hasDefault": true,
+          "defaultValue": 4,
+          "isOut": false,
+          "isParams": false
+        },
+        {
+          "name": "timeBudgetMilliseconds",
+          "type": "System.Double",
+          "optional": true,
+          "hasDefault": true,
+          "defaultValue": 4,
+          "isOut": false,
+          "isParams": false
+        }
+      ],
+      "phase": "loaded game main thread; Step once per Update; Dispose on reload/scene/locale change",
+      "result": "实际原版/Mod目录；仅Complete可读取成功条目，Failures保留逐项失败；名称跟随捕获时游戏语言。",
+      "failure": "未就绪/未知构建/无真实locale拒绝开始；未完成、已取消或周目/语言过期拒绝Snapshot；清理失败终止。",
+      "guide": "item-catalog.index.json",
+      "example": "examples/item-catalog-dll/Catalog.cs",
+      "signatureVerified": true,
+      "runtimeGameplayVerified": false,
+      "stability": "Preview",
+      "assembly": "EZapi.dll"
+    },
+    {
+      "id": "EZapi.ItemCatalogScan.Snapshot",
+      "memberKey": "M:EZapi.ItemCatalogScan.Snapshot",
+      "signature": "System.Collections.Generic.IReadOnlyList`1<EZapi.ItemCatalogEntry> EZapi.ItemCatalogScan::Snapshot()",
+      "parameters": [],
+      "phase": "loaded game main thread; Step once per Update; Dispose on reload/scene/locale change",
+      "result": "实际原版/Mod目录；仅Complete可读取成功条目，Failures保留逐项失败；名称跟随捕获时游戏语言。",
+      "failure": "未就绪/未知构建/无真实locale拒绝开始；未完成、已取消或周目/语言过期拒绝Snapshot；清理失败终止。",
+      "guide": "item-catalog.index.json",
+      "example": "examples/item-catalog-dll/Catalog.cs",
+      "signatureVerified": true,
+      "runtimeGameplayVerified": false,
+      "stability": "Preview",
+      "assembly": "EZapi.dll"
+    },
+    {
+      "id": "EZapi.ItemCatalogScan.Dispose",
+      "memberKey": "M:EZapi.ItemCatalogScan.Dispose",
+      "signature": "System.Void EZapi.ItemCatalogScan::Dispose()",
+      "parameters": [],
+      "phase": "loaded game main thread; Step once per Update; Dispose on reload/scene/locale change",
+      "result": "实际原版/Mod目录；仅Complete可读取成功条目，Failures保留逐项失败；名称跟随捕获时游戏语言。",
+      "failure": "未就绪/未知构建/无真实locale拒绝开始；未完成、已取消或周目/语言过期拒绝Snapshot；清理失败终止。",
+      "guide": "item-catalog.index.json",
+      "example": "examples/item-catalog-dll/Catalog.cs",
+      "signatureVerified": true,
+      "runtimeGameplayVerified": false,
+      "stability": "Preview",
+      "assembly": "EZapi.dll"
+    },
+    {
+      "id": "EZapi.ItemCatalogScan.Progress",
+      "memberKey": "P:EZapi.ItemCatalogScan.Progress",
+      "signature": "EZapi.ItemCatalogProgress Progress { get; }",
+      "parameters": [],
+      "phase": "loaded game main thread; Step once per Update; Dispose on reload/scene/locale change",
+      "result": "实际原版/Mod目录；仅Complete可读取成功条目，Failures保留逐项失败；名称跟随捕获时游戏语言。",
+      "failure": "未就绪/未知构建/无真实locale拒绝开始；未完成、已取消或周目/语言过期拒绝Snapshot；清理失败终止。",
+      "guide": "item-catalog.index.json",
+      "example": "examples/item-catalog-dll/Catalog.cs",
+      "signatureVerified": true,
+      "runtimeGameplayVerified": false,
+      "stability": "Preview",
+      "assembly": "EZapi.dll"
+    },
+    {
+      "id": "EZapi.ItemCatalogScan.Failures",
+      "memberKey": "P:EZapi.ItemCatalogScan.Failures",
+      "signature": "System.Collections.Generic.IReadOnlyList`1<EZapi.ItemCatalogFailure> Failures { get; }",
+      "parameters": [],
+      "phase": "loaded game main thread; Step once per Update; Dispose on reload/scene/locale change",
+      "result": "实际原版/Mod目录；仅Complete可读取成功条目，Failures保留逐项失败；名称跟随捕获时游戏语言。",
+      "failure": "未就绪/未知构建/无真实locale拒绝开始；未完成、已取消或周目/语言过期拒绝Snapshot；清理失败终止。",
+      "guide": "item-catalog.index.json",
+      "example": "examples/item-catalog-dll/Catalog.cs",
+      "signatureVerified": true,
+      "runtimeGameplayVerified": false,
+      "stability": "Preview",
+      "assembly": "EZapi.dll"
+    },
+    {
+      "id": "EZapi.ItemOriginApi.Read",
+      "memberKey": "M:EZapi.ItemOriginApi.Read(Il2Cpp.GameItem)",
+      "signature": "EZapi.ItemOriginReadResult EZapi.ItemOriginApi::Read(Il2Cpp.GameItem)",
+      "parameters": [
+        {
+          "name": "item",
+          "type": "Il2Cpp.GameItem",
+          "optional": false,
+          "hasDefault": false,
+          "defaultValue": null,
+          "isOut": false,
+          "isParams": false
+        }
+      ],
+      "phase": "Current loaded game main thread; live current item",
+      "result": "Native origin snapshot or guarded in-memory stage. Fixed0 differs from InitializeNative. No delivery/payment/save.",
+      "failure": "Indeterminate means native write attempted; Read and reconcile before retry.",
+      "guide": "item-origin.index.json",
+      "example": "examples/item-origin-dll/Origin.cs",
+      "signatureVerified": true,
+      "runtimeGameplayVerified": false,
+      "stability": "Preview",
+      "assembly": "EZapi.dll"
+    },
+    {
+      "id": "EZapi.ItemOriginApi.InitializeNative",
+      "memberKey": "M:EZapi.ItemOriginApi.InitializeNative(Il2Cpp.GameItem)",
+      "signature": "EZapi.ItemOriginWriteResult EZapi.ItemOriginApi::InitializeNative(Il2Cpp.GameItem)",
+      "parameters": [
+        {
+          "name": "item",
+          "type": "Il2Cpp.GameItem",
+          "optional": false,
+          "hasDefault": false,
+          "defaultValue": null,
+          "isOut": false,
+          "isParams": false
+        }
+      ],
+      "phase": "Current loaded game main thread; live current item",
+      "result": "Native origin snapshot or guarded in-memory stage. Fixed0 differs from InitializeNative. No delivery/payment/save.",
+      "failure": "Indeterminate means native write attempted; Read and reconcile before retry.",
+      "guide": "item-origin.index.json",
+      "example": "examples/item-origin-dll/Origin.cs",
+      "signatureVerified": true,
+      "runtimeGameplayVerified": false,
+      "stability": "Preview",
+      "assembly": "EZapi.dll"
+    },
+    {
+      "id": "EZapi.ItemOriginApi.StageClean",
+      "memberKey": "M:EZapi.ItemOriginApi.StageClean(Il2Cpp.GameItem)",
+      "signature": "EZapi.ItemOriginWriteResult EZapi.ItemOriginApi::StageClean(Il2Cpp.GameItem)",
+      "parameters": [
+        {
+          "name": "item",
+          "type": "Il2Cpp.GameItem",
+          "optional": false,
+          "hasDefault": false,
+          "defaultValue": null,
+          "isOut": false,
+          "isParams": false
+        }
+      ],
+      "phase": "Current loaded game main thread; live current item",
+      "result": "Native origin snapshot or guarded in-memory stage. Fixed0 differs from InitializeNative. No delivery/payment/save.",
+      "failure": "Indeterminate means native write attempted; Read and reconcile before retry.",
+      "guide": "item-origin.index.json",
+      "example": "examples/item-origin-dll/Origin.cs",
+      "signatureVerified": true,
+      "runtimeGameplayVerified": false,
+      "stability": "Preview",
+      "assembly": "EZapi.dll"
+    },
+    {
+      "id": "EZapi.ItemOriginApi.StageStolen",
+      "memberKey": "M:EZapi.ItemOriginApi.StageStolen(Il2Cpp.GameItem,System.Int32)",
+      "signature": "EZapi.ItemOriginWriteResult EZapi.ItemOriginApi::StageStolen(Il2Cpp.GameItem,System.Int32)",
+      "parameters": [
+        {
+          "name": "item",
+          "type": "Il2Cpp.GameItem",
+          "optional": false,
+          "hasDefault": false,
+          "defaultValue": null,
+          "isOut": false,
+          "isParams": false
+        },
+        {
+          "name": "heatPercent",
+          "type": "System.Int32",
+          "optional": true,
+          "hasDefault": true,
+          "defaultValue": 100,
+          "isOut": false,
+          "isParams": false
+        }
+      ],
+      "phase": "Current loaded game main thread; live current item",
+      "result": "Native origin snapshot or guarded in-memory stage. Fixed0 differs from InitializeNative. No delivery/payment/save.",
+      "failure": "Indeterminate means native write attempted; Read and reconcile before retry.",
+      "guide": "item-origin.index.json",
+      "example": "examples/item-origin-dll/Origin.cs",
+      "signatureVerified": true,
+      "runtimeGameplayVerified": false,
+      "stability": "Preview",
+      "assembly": "EZapi.dll"
+    },
+    {
+      "id": "EZapi.ArtworkPixels.AnalyzeRgba",
+      "memberKey": "M:EZapi.ArtworkPixels.AnalyzeRgba(System.Int32,System.Int32,System.Byte[],EZapi.ArtworkOptions)",
+      "signature": "EZapi.ArtworkStatistics EZapi.ArtworkPixels::AnalyzeRgba(System.Int32,System.Int32,System.Byte[],EZapi.ArtworkOptions)",
+      "parameters": [
+        {
+          "name": "width",
+          "type": "System.Int32",
+          "optional": false,
+          "hasDefault": false,
+          "defaultValue": null,
+          "isOut": false,
+          "isParams": false
+        },
+        {
+          "name": "height",
+          "type": "System.Int32",
+          "optional": false,
+          "hasDefault": false,
+          "defaultValue": null,
+          "isOut": false,
+          "isParams": false
+        },
+        {
+          "name": "rgba",
+          "type": "System.Byte[]",
+          "optional": false,
+          "hasDefault": false,
+          "defaultValue": null,
+          "isOut": false,
+          "isParams": false
+        },
+        {
+          "name": "options",
+          "type": "EZapi.ArtworkOptions",
+          "optional": true,
+          "hasDefault": true,
+          "defaultValue": null,
+          "isOut": false,
+          "isParams": false
+        }
+      ],
+      "phase": "Pure AnalyzeRgba allows workers; native Inspect uses initialized main thread; InspectItem needs current run",
+      "result": "Only Inspected carries content evidence; pure RGBA returns statistics. Configurable policy, no sale eligibility or source-image export.",
+      "failure": "Native failures are distinct from black/transparent; GPU cleanup failure suppresses statistics. Pure invalid input throws.",
+      "guide": "artwork-inspection.index.json",
+      "example": "examples/artwork-dll/Artwork.cs",
+      "signatureVerified": true,
+      "runtimeGameplayVerified": false,
+      "stability": "Preview",
+      "assembly": "EZapi.dll"
+    },
+    {
+      "id": "EZapi.SpriteArtworkApi.Inspect",
+      "memberKey": "M:EZapi.SpriteArtworkApi.Inspect(UnityEngine.Sprite,EZapi.ArtworkOptions)",
+      "signature": "EZapi.SpriteArtworkResult EZapi.SpriteArtworkApi::Inspect(UnityEngine.Sprite,EZapi.ArtworkOptions)",
+      "parameters": [
+        {
+          "name": "sprite",
+          "type": "UnityEngine.Sprite",
+          "optional": false,
+          "hasDefault": false,
+          "defaultValue": null,
+          "isOut": false,
+          "isParams": false
+        },
+        {
+          "name": "options",
+          "type": "EZapi.ArtworkOptions",
+          "optional": true,
+          "hasDefault": true,
+          "defaultValue": null,
+          "isOut": false,
+          "isParams": false
+        }
+      ],
+      "phase": "Pure AnalyzeRgba allows workers; native Inspect uses initialized main thread; InspectItem needs current run",
+      "result": "Only Inspected carries content evidence; pure RGBA returns statistics. Configurable policy, no sale eligibility or source-image export.",
+      "failure": "Native failures are distinct from black/transparent; GPU cleanup failure suppresses statistics. Pure invalid input throws.",
+      "guide": "artwork-inspection.index.json",
+      "example": "examples/sprite-inspection-dll/StockArtwork.cs",
+      "signatureVerified": true,
+      "runtimeGameplayVerified": false,
+      "stability": "Preview",
+      "assembly": "EZapi.dll"
+    },
+    {
+      "id": "EZapi.SpriteArtworkApi.InspectItem",
+      "memberKey": "M:EZapi.SpriteArtworkApi.InspectItem(Il2Cpp.GameItem,EZapi.ArtworkOptions)",
+      "signature": "EZapi.SpriteArtworkResult EZapi.SpriteArtworkApi::InspectItem(Il2Cpp.GameItem,EZapi.ArtworkOptions)",
+      "parameters": [
+        {
+          "name": "item",
+          "type": "Il2Cpp.GameItem",
+          "optional": false,
+          "hasDefault": false,
+          "defaultValue": null,
+          "isOut": false,
+          "isParams": false
+        },
+        {
+          "name": "options",
+          "type": "EZapi.ArtworkOptions",
+          "optional": true,
+          "hasDefault": true,
+          "defaultValue": null,
+          "isOut": false,
+          "isParams": false
+        }
+      ],
+      "phase": "Pure AnalyzeRgba allows workers; native Inspect uses initialized main thread; InspectItem needs current run",
+      "result": "Only Inspected carries content evidence; pure RGBA returns statistics. Configurable policy, no sale eligibility or source-image export.",
+      "failure": "Native failures are distinct from black/transparent; GPU cleanup failure suppresses statistics. Pure invalid input throws.",
+      "guide": "artwork-inspection.index.json",
+      "example": "examples/sprite-inspection-dll/StockArtwork.cs",
+      "signatureVerified": true,
+      "runtimeGameplayVerified": false,
+      "stability": "Preview",
+      "assembly": "EZapi.dll"
+    },
+    {
+      "id": "EZapi.DeliveryReceiptAudit.CheckHandoff",
+      "memberKey": "M:EZapi.DeliveryReceiptAudit.CheckHandoff(EZapi.DeliveryReceiptSnapshot,EZapi.DeliveryReceiptSnapshot,EZapi.DeliveryReceiptStamp,System.Nullable{System.Int64})",
+      "signature": "EZapi.DeliveryReceiptResult EZapi.DeliveryReceiptAudit::CheckHandoff(EZapi.DeliveryReceiptSnapshot,EZapi.DeliveryReceiptSnapshot,EZapi.DeliveryReceiptStamp,System.Nullable`1<System.Int64>)",
+      "parameters": [
+        {
+          "name": "before",
+          "type": "EZapi.DeliveryReceiptSnapshot",
+          "optional": false,
+          "hasDefault": false,
+          "defaultValue": null,
+          "isOut": false,
+          "isParams": false
+        },
+        {
+          "name": "after",
+          "type": "EZapi.DeliveryReceiptSnapshot",
+          "optional": false,
+          "hasDefault": false,
+          "defaultValue": null,
+          "isOut": false,
+          "isParams": false
+        },
+        {
+          "name": "stamp",
+          "type": "EZapi.DeliveryReceiptStamp",
+          "optional": false,
+          "hasDefault": false,
+          "defaultValue": null,
+          "isOut": false,
+          "isParams": false
+        },
+        {
+          "name": "requiredInventoryIdentity",
+          "type": "System.Nullable`1<System.Int64>",
+          "optional": true,
+          "hasDefault": true,
+          "defaultValue": null,
+          "isOut": false,
+          "isParams": false
+        }
+      ],
+      "phase": "Native stamp/capture use current initialized game main thread/run/build; pure managed audit permits workers",
+      "result": "Detached tag receipt, complete fresh scan or managed inventory evidence; caller completed ledger prevents duplicate rewards.",
+      "failure": "Never read old wrapper after native handoff or resend from InFlight absence. No automatic native handoff, retry, cleanup, ledger/payment/save.",
+      "guide": "delivery-receipts.index.json",
+      "example": "examples/delivery-receipt-dll/ReceiptDelivery.cs",
+      "signatureVerified": true,
+      "runtimeGameplayVerified": false,
+      "stability": "Preview",
+      "assembly": "EZapi.dll"
+    },
+    {
+      "id": "EZapi.DeliveryReceiptAudit.Reconcile",
+      "memberKey": "M:EZapi.DeliveryReceiptAudit.Reconcile(EZapi.DeliveryReceiptSnapshot,EZapi.DeliveryReceipt,EZapi.DeliveryLedgerState)",
+      "signature": "EZapi.DeliveryReceiptResult EZapi.DeliveryReceiptAudit::Reconcile(EZapi.DeliveryReceiptSnapshot,EZapi.DeliveryReceipt,EZapi.DeliveryLedgerState)",
+      "parameters": [
+        {
+          "name": "snapshot",
+          "type": "EZapi.DeliveryReceiptSnapshot",
+          "optional": false,
+          "hasDefault": false,
+          "defaultValue": null,
+          "isOut": false,
+          "isParams": false
+        },
+        {
+          "name": "receipt",
+          "type": "EZapi.DeliveryReceipt",
+          "optional": false,
+          "hasDefault": false,
+          "defaultValue": null,
+          "isOut": false,
+          "isParams": false
+        },
+        {
+          "name": "ledgerState",
+          "type": "EZapi.DeliveryLedgerState",
+          "optional": false,
+          "hasDefault": false,
+          "defaultValue": null,
+          "isOut": false,
+          "isParams": false
+        }
+      ],
+      "phase": "Native stamp/capture use current initialized game main thread/run/build; pure managed audit permits workers",
+      "result": "Detached tag receipt, complete fresh scan or managed inventory evidence; caller completed ledger prevents duplicate rewards.",
+      "failure": "Never read old wrapper after native handoff or resend from InFlight absence. No automatic native handoff, retry, cleanup, ledger/payment/save.",
+      "guide": "delivery-receipts.index.json",
+      "example": "examples/delivery-receipt-dll/ReceiptDelivery.cs",
+      "signatureVerified": true,
+      "runtimeGameplayVerified": false,
+      "stability": "Preview",
+      "assembly": "EZapi.dll"
+    },
+    {
+      "id": "EZapi.ItemReceiptApi.Capture",
+      "memberKey": "M:EZapi.ItemReceiptApi.Capture(System.String,System.String)",
+      "signature": "EZapi.DeliveryReceiptSnapshot EZapi.ItemReceiptApi::Capture(System.String,System.String)",
+      "parameters": [
+        {
+          "name": "ownerId",
+          "type": "System.String",
+          "optional": false,
+          "hasDefault": false,
+          "defaultValue": null,
+          "isOut": false,
+          "isParams": false
+        },
+        {
+          "name": "key",
+          "type": "System.String",
+          "optional": false,
+          "hasDefault": false,
+          "defaultValue": null,
+          "isOut": false,
+          "isParams": false
+        }
+      ],
+      "phase": "Native stamp/capture use current initialized game main thread/run/build; pure managed audit permits workers",
+      "result": "Detached tag receipt, complete fresh scan or managed inventory evidence; caller completed ledger prevents duplicate rewards.",
+      "failure": "Never read old wrapper after native handoff or resend from InFlight absence. No automatic native handoff, retry, cleanup, ledger/payment/save.",
+      "guide": "delivery-receipts.index.json",
+      "example": "examples/delivery-receipt-dll/ReceiptDelivery.cs",
+      "signatureVerified": true,
+      "runtimeGameplayVerified": false,
+      "stability": "Preview",
+      "assembly": "EZapi.dll"
+    },
+    {
+      "id": "EZapi.ItemReceiptApi.StampDetached",
+      "memberKey": "M:EZapi.ItemReceiptApi.StampDetached(Il2Cpp.GameItem,System.String,System.String,EZapi.DeliveryReceipt)",
+      "signature": "EZapi.DeliveryReceiptStampResult EZapi.ItemReceiptApi::StampDetached(Il2Cpp.GameItem,System.String,System.String,EZapi.DeliveryReceipt)",
+      "parameters": [
+        {
+          "name": "item",
+          "type": "Il2Cpp.GameItem",
+          "optional": false,
+          "hasDefault": false,
+          "defaultValue": null,
+          "isOut": false,
+          "isParams": false
+        },
+        {
+          "name": "ownerId",
+          "type": "System.String",
+          "optional": false,
+          "hasDefault": false,
+          "defaultValue": null,
+          "isOut": false,
+          "isParams": false
+        },
+        {
+          "name": "key",
+          "type": "System.String",
+          "optional": false,
+          "hasDefault": false,
+          "defaultValue": null,
+          "isOut": false,
+          "isParams": false
+        },
+        {
+          "name": "receipt",
+          "type": "EZapi.DeliveryReceipt",
+          "optional": false,
+          "hasDefault": false,
+          "defaultValue": null,
+          "isOut": false,
+          "isParams": false
+        }
+      ],
+      "phase": "Native stamp/capture use current initialized game main thread/run/build; pure managed audit permits workers",
+      "result": "Detached tag receipt, complete fresh scan or managed inventory evidence; caller completed ledger prevents duplicate rewards.",
+      "failure": "Never read old wrapper after native handoff or resend from InFlight absence. No automatic native handoff, retry, cleanup, ledger/payment/save.",
+      "guide": "delivery-receipts.index.json",
+      "example": "examples/delivery-receipt-dll/ReceiptDelivery.cs",
+      "signatureVerified": true,
+      "runtimeGameplayVerified": false,
+      "stability": "Preview",
+      "assembly": "EZapi.dll"
+    },
+    {
+      "id": "EZapi.PreparedItemApi.Create",
+      "memberKey": "M:EZapi.PreparedItemApi.Create(EZapi.PreparedItemKind,System.Boolean)",
+      "signature": "EZapi.PreparedItemResult EZapi.PreparedItemApi::Create(EZapi.PreparedItemKind,System.Boolean)",
+      "parameters": [
+        {
+          "name": "kind",
+          "type": "EZapi.PreparedItemKind",
+          "optional": false,
+          "hasDefault": false,
+          "defaultValue": null,
+          "isOut": false,
+          "isParams": false
+        },
+        {
+          "name": "owned",
+          "type": "System.Boolean",
+          "optional": true,
+          "hasDefault": true,
+          "defaultValue": true,
+          "isOut": false,
+          "isParams": false
+        }
+      ],
+      "phase": "Describe pure managed; Create current initialized game thread/run/build/freeze gates",
+      "result": "Explicit native filled crates/random modules/genuine injector: only Created returns a detached Item.",
+      "failure": "FactoryAttempted means native randomness/callbacks may have run. No automatic reroll/delivery/save; never destroy borrowed/attached/stale graphs.",
+      "guide": "prepared-items.index.json",
+      "example": "examples/prepared-item-dll/PreparedReward.cs",
+      "signatureVerified": true,
+      "runtimeGameplayVerified": false,
+      "stability": "Preview",
+      "assembly": "EZapi.dll"
+    },
+    {
+      "id": "EZapi.PreparedItemApi.Describe",
+      "memberKey": "M:EZapi.PreparedItemApi.Describe",
+      "signature": "System.Collections.Generic.IReadOnlyList`1<EZapi.PreparedItemDefinition> EZapi.PreparedItemApi::Describe()",
+      "parameters": [],
+      "phase": "Describe pure managed; Create current initialized game thread/run/build/freeze gates",
+      "result": "Explicit native filled crates/random modules/genuine injector: only Created returns a detached Item.",
+      "failure": "FactoryAttempted means native randomness/callbacks may have run. No automatic reroll/delivery/save; never destroy borrowed/attached/stale graphs.",
+      "guide": "prepared-items.index.json",
+      "example": "examples/prepared-item-dll/PreparedReward.cs",
+      "signatureVerified": true,
+      "runtimeGameplayVerified": false,
+      "stability": "Preview",
+      "assembly": "EZapi.dll"
+    },
+    {
+      "id": "EZapi.DeliveryGraphAudit.CheckHandoff",
+      "memberKey": "M:EZapi.DeliveryGraphAudit.CheckHandoff(EZapi.DeliveryGraphSnapshot,EZapi.DeliveryGraphSnapshot,EZapi.DeliveryGraphSnapshot,System.Nullable{System.Int64},System.Boolean)",
+      "signature": "EZapi.DeliveryReceiptResult EZapi.DeliveryGraphAudit::CheckHandoff(EZapi.DeliveryGraphSnapshot,EZapi.DeliveryGraphSnapshot,EZapi.DeliveryGraphSnapshot,System.Nullable`1<System.Int64>,System.Boolean)",
+      "parameters": [
+        {
+          "name": "before",
+          "type": "EZapi.DeliveryGraphSnapshot",
+          "optional": false,
+          "hasDefault": false,
+          "defaultValue": null,
+          "isOut": false,
+          "isParams": false
+        },
+        {
+          "name": "after",
+          "type": "EZapi.DeliveryGraphSnapshot",
+          "optional": false,
+          "hasDefault": false,
+          "defaultValue": null,
+          "isOut": false,
+          "isParams": false
+        },
+        {
+          "name": "detached",
+          "type": "EZapi.DeliveryGraphSnapshot",
+          "optional": false,
+          "hasDefault": false,
+          "defaultValue": null,
+          "isOut": false,
+          "isParams": false
+        },
+        {
+          "name": "requiredInventoryIdentity",
+          "type": "System.Nullable`1<System.Int64>",
+          "optional": true,
+          "hasDefault": true,
+          "defaultValue": null,
+          "isOut": false,
+          "isParams": false
+        },
+        {
+          "name": "allowChildOwnershipInitialization",
+          "type": "System.Boolean",
+          "optional": true,
+          "hasDefault": true,
+          "defaultValue": false,
+          "isOut": false,
+          "isParams": false
+        }
+      ],
+      "phase": "Pure managed immutable complete observations; offline/workers allowed",
+      "result": "Managed complete graph evidence and exact same-load handoff audit; reload root receipt reconciliation only.",
+      "failure": "No partial capture. InFlight absence or graph differences remain uncertain; never automatically reissue or access old native wrappers.",
+      "guide": "delivery-graphs.index.json",
+      "example": "examples/delivery-graph-dll/GraphDelivery.cs",
+      "signatureVerified": true,
+      "runtimeGameplayVerified": false,
+      "stability": "Preview",
+      "assembly": "EZapi.dll"
+    },
+    {
+      "id": "EZapi.DeliveryGraphAudit.Reconcile",
+      "memberKey": "M:EZapi.DeliveryGraphAudit.Reconcile(EZapi.DeliveryGraphSnapshot,EZapi.DeliveryReceipt,EZapi.DeliveryLedgerState)",
+      "signature": "EZapi.DeliveryReceiptResult EZapi.DeliveryGraphAudit::Reconcile(EZapi.DeliveryGraphSnapshot,EZapi.DeliveryReceipt,EZapi.DeliveryLedgerState)",
+      "parameters": [
+        {
+          "name": "snapshot",
+          "type": "EZapi.DeliveryGraphSnapshot",
+          "optional": false,
+          "hasDefault": false,
+          "defaultValue": null,
+          "isOut": false,
+          "isParams": false
+        },
+        {
+          "name": "receipt",
+          "type": "EZapi.DeliveryReceipt",
+          "optional": false,
+          "hasDefault": false,
+          "defaultValue": null,
+          "isOut": false,
+          "isParams": false
+        },
+        {
+          "name": "ledgerState",
+          "type": "EZapi.DeliveryLedgerState",
+          "optional": false,
+          "hasDefault": false,
+          "defaultValue": null,
+          "isOut": false,
+          "isParams": false
+        }
+      ],
+      "phase": "Pure managed immutable complete observations; offline/workers allowed",
+      "result": "Managed complete graph evidence and exact same-load handoff audit; reload root receipt reconciliation only.",
+      "failure": "No partial capture. InFlight absence or graph differences remain uncertain; never automatically reissue or access old native wrappers.",
+      "guide": "delivery-graphs.index.json",
+      "example": "examples/delivery-graph-dll/GraphDelivery.cs",
+      "signatureVerified": true,
+      "runtimeGameplayVerified": false,
+      "stability": "Preview",
+      "assembly": "EZapi.dll"
+    },
+    {
+      "id": "EZapi.DeliveryGraphAudit.SameObservation",
+      "memberKey": "M:EZapi.DeliveryGraphAudit.SameObservation(EZapi.DeliveryGraphSnapshot,EZapi.DeliveryGraphSnapshot)",
+      "signature": "System.Boolean EZapi.DeliveryGraphAudit::SameObservation(EZapi.DeliveryGraphSnapshot,EZapi.DeliveryGraphSnapshot)",
+      "parameters": [
+        {
+          "name": "first",
+          "type": "EZapi.DeliveryGraphSnapshot",
+          "optional": false,
+          "hasDefault": false,
+          "defaultValue": null,
+          "isOut": false,
+          "isParams": false
+        },
+        {
+          "name": "second",
+          "type": "EZapi.DeliveryGraphSnapshot",
+          "optional": false,
+          "hasDefault": false,
+          "defaultValue": null,
+          "isOut": false,
+          "isParams": false
+        }
+      ],
+      "phase": "Pure managed immutable complete observations; offline/workers allowed",
+      "result": "Managed complete graph evidence and exact same-load handoff audit; reload root receipt reconciliation only.",
+      "failure": "No partial capture. InFlight absence or graph differences remain uncertain; never automatically reissue or access old native wrappers.",
+      "guide": "delivery-graphs.index.json",
+      "example": "examples/delivery-graph-dll/GraphDelivery.cs",
+      "signatureVerified": true,
+      "runtimeGameplayVerified": false,
+      "stability": "Preview",
+      "assembly": "EZapi.dll"
+    },
+    {
+      "id": "EZapi.ItemGraphReceiptApi.CaptureDetached",
+      "memberKey": "M:EZapi.ItemGraphReceiptApi.CaptureDetached(Il2Cpp.GameItem,System.String,System.String)",
+      "signature": "EZapi.DeliveryGraphSnapshot EZapi.ItemGraphReceiptApi::CaptureDetached(Il2Cpp.GameItem,System.String,System.String)",
+      "parameters": [
+        {
+          "name": "root",
+          "type": "Il2Cpp.GameItem",
+          "optional": false,
+          "hasDefault": false,
+          "defaultValue": null,
+          "isOut": false,
+          "isParams": false
+        },
+        {
+          "name": "ownerId",
+          "type": "System.String",
+          "optional": false,
+          "hasDefault": false,
+          "defaultValue": null,
+          "isOut": false,
+          "isParams": false
+        },
+        {
+          "name": "key",
+          "type": "System.String",
+          "optional": false,
+          "hasDefault": false,
+          "defaultValue": null,
+          "isOut": false,
+          "isParams": false
+        }
+      ],
+      "phase": "Fresh current initialized game main-thread/run/build capture",
+      "result": "Managed complete graph evidence and exact same-load handoff audit; reload root receipt reconciliation only.",
+      "failure": "No partial capture. InFlight absence or graph differences remain uncertain; never automatically reissue or access old native wrappers.",
+      "guide": "delivery-graphs.index.json",
+      "example": "examples/delivery-graph-dll/GraphDelivery.cs",
+      "signatureVerified": true,
+      "runtimeGameplayVerified": false,
+      "stability": "Preview",
+      "assembly": "EZapi.dll"
+    },
+    {
+      "id": "EZapi.ItemGraphReceiptApi.CaptureRun",
+      "memberKey": "M:EZapi.ItemGraphReceiptApi.CaptureRun(System.String,System.String)",
+      "signature": "EZapi.DeliveryGraphSnapshot EZapi.ItemGraphReceiptApi::CaptureRun(System.String,System.String)",
+      "parameters": [
+        {
+          "name": "ownerId",
+          "type": "System.String",
+          "optional": false,
+          "hasDefault": false,
+          "defaultValue": null,
+          "isOut": false,
+          "isParams": false
+        },
+        {
+          "name": "key",
+          "type": "System.String",
+          "optional": false,
+          "hasDefault": false,
+          "defaultValue": null,
+          "isOut": false,
+          "isParams": false
+        }
+      ],
+      "phase": "Fresh current initialized game main-thread/run/build capture",
+      "result": "Managed complete graph evidence and exact same-load handoff audit; reload root receipt reconciliation only.",
+      "failure": "No partial capture. InFlight absence or graph differences remain uncertain; never automatically reissue or access old native wrappers.",
+      "guide": "delivery-graphs.index.json",
+      "example": "examples/delivery-graph-dll/GraphDelivery.cs",
+      "signatureVerified": true,
+      "runtimeGameplayVerified": false,
+      "stability": "Preview",
+      "assembly": "EZapi.dll"
     }
   ],
   "types": {
@@ -6644,7 +7467,7 @@
         }
       ],
       "metadataSource": "public-api.index.json",
-      "metadataDllSHA256": "48D037715375C8AFF6528AD6674A224FF7F953BE33BC1E04672462AC121A54E5"
+      "metadataDllSHA256": "F77382F3505352417D2AB1F503AC0F43312D3B6D2675FC4C710F54CEB422E00E"
     },
     "ContainerDefinition": {
       "Width": "int 1..12 required; internal cells",
@@ -6816,7 +7639,7 @@
         }
       ],
       "metadataSource": "public-api.index.json",
-      "metadataDllSHA256": "48D037715375C8AFF6528AD6674A224FF7F953BE33BC1E04672462AC121A54E5"
+      "metadataDllSHA256": "F77382F3505352417D2AB1F503AC0F43312D3B6D2675FC4C710F54CEB422E00E"
     },
     "DialogueApi": {
       "name": "EZapi.DialogueApi",
@@ -7004,7 +7827,7 @@
         }
       ],
       "metadataSource": "public-api.index.json",
-      "metadataDllSHA256": "48D037715375C8AFF6528AD6674A224FF7F953BE33BC1E04672462AC121A54E5"
+      "metadataDllSHA256": "F77382F3505352417D2AB1F503AC0F43312D3B6D2675FC4C710F54CEB422E00E"
     },
     "DialogueChoice": {
       "name": "EZapi.DialogueChoice",
@@ -7424,7 +8247,7 @@
         }
       ],
       "metadataSource": "public-api.index.json",
-      "metadataDllSHA256": "48D037715375C8AFF6528AD6674A224FF7F953BE33BC1E04672462AC121A54E5"
+      "metadataDllSHA256": "F77382F3505352417D2AB1F503AC0F43312D3B6D2675FC4C710F54CEB422E00E"
     },
     "DialogueContext": {
       "name": "EZapi.DialogueContext",
@@ -7870,7 +8693,7 @@
         }
       ],
       "metadataSource": "public-api.index.json",
-      "metadataDllSHA256": "48D037715375C8AFF6528AD6674A224FF7F953BE33BC1E04672462AC121A54E5"
+      "metadataDllSHA256": "F77382F3505352417D2AB1F503AC0F43312D3B6D2675FC4C710F54CEB422E00E"
     },
     "DialogueDefinition": {
       "name": "EZapi.DialogueDefinition",
@@ -8550,7 +9373,7 @@
         }
       ],
       "metadataSource": "public-api.index.json",
-      "metadataDllSHA256": "48D037715375C8AFF6528AD6674A224FF7F953BE33BC1E04672462AC121A54E5"
+      "metadataDllSHA256": "F77382F3505352417D2AB1F503AC0F43312D3B6D2675FC4C710F54CEB422E00E"
     },
     "DialogueScript": {
       "name": "EZapi.DialogueScript",
@@ -8599,7 +9422,7 @@
         }
       ],
       "metadataSource": "public-api.index.json",
-      "metadataDllSHA256": "48D037715375C8AFF6528AD6674A224FF7F953BE33BC1E04672462AC121A54E5"
+      "metadataDllSHA256": "F77382F3505352417D2AB1F503AC0F43312D3B6D2675FC4C710F54CEB422E00E"
     },
     "EnergyDebitResult": {
       "Status": "Debited/Insufficient/Rejected/Restored/RecoveryFailed/Reentrant",
@@ -8944,7 +9767,7 @@
         }
       ],
       "metadataSource": "public-api.index.json",
-      "metadataDllSHA256": "48D037715375C8AFF6528AD6674A224FF7F953BE33BC1E04672462AC121A54E5"
+      "metadataDllSHA256": "F77382F3505352417D2AB1F503AC0F43312D3B6D2675FC4C710F54CEB422E00E"
     },
     "FoodDefinition": {
       "Calories": "int 1..100000, required in JSON",
@@ -9050,7 +9873,7 @@
         }
       ],
       "metadataSource": "public-api.index.json",
-      "metadataDllSHA256": "48D037715375C8AFF6528AD6674A224FF7F953BE33BC1E04672462AC121A54E5"
+      "metadataDllSHA256": "F77382F3505352417D2AB1F503AC0F43312D3B6D2675FC4C710F54CEB422E00E"
     },
     "GameEventContext": {
       "Event": "GameEvent",
@@ -9361,7 +10184,7 @@
         }
       ],
       "metadataSource": "public-api.index.json",
-      "metadataDllSHA256": "48D037715375C8AFF6528AD6674A224FF7F953BE33BC1E04672462AC121A54E5"
+      "metadataDllSHA256": "F77382F3505352417D2AB1F503AC0F43312D3B6D2675FC4C710F54CEB422E00E"
     },
     "GameRunIdentity": {
       "SaveSlotId": "int",
@@ -9672,7 +10495,7 @@
         }
       ],
       "metadataSource": "public-api.index.json",
-      "metadataDllSHA256": "48D037715375C8AFF6528AD6674A224FF7F953BE33BC1E04672462AC121A54E5"
+      "metadataDllSHA256": "F77382F3505352417D2AB1F503AC0F43312D3B6D2675FC4C710F54CEB422E00E"
     },
     "InventoryPlacement": {
       "Item": "live product; synchronous use only; caller owns cleanup",
@@ -9952,7 +10775,7 @@
         }
       ],
       "metadataSource": "public-api.index.json",
-      "metadataDllSHA256": "48D037715375C8AFF6528AD6674A224FF7F953BE33BC1E04672462AC121A54E5"
+      "metadataDllSHA256": "F77382F3505352417D2AB1F503AC0F43312D3B6D2675FC4C710F54CEB422E00E"
     },
     "InventoryShape": {
       "X/Y": "global grid origin",
@@ -10401,7 +11224,7 @@
         }
       ],
       "metadataSource": "public-api.index.json",
-      "metadataDllSHA256": "48D037715375C8AFF6528AD6674A224FF7F953BE33BC1E04672462AC121A54E5"
+      "metadataDllSHA256": "F77382F3505352417D2AB1F503AC0F43312D3B6D2675FC4C710F54CEB422E00E"
     },
     "ItemDefinition": {
       "Id": {
@@ -11296,7 +12119,7 @@
         }
       ],
       "metadataSource": "public-api.index.json",
-      "metadataDllSHA256": "48D037715375C8AFF6528AD6674A224FF7F953BE33BC1E04672462AC121A54E5"
+      "metadataDllSHA256": "F77382F3505352417D2AB1F503AC0F43312D3B6D2675FC4C710F54CEB422E00E"
     },
     "ItemRegistrationResult": [
       "ItemId",
@@ -11674,7 +12497,7 @@
         }
       ],
       "metadataSource": "public-api.index.json",
-      "metadataDllSHA256": "48D037715375C8AFF6528AD6674A224FF7F953BE33BC1E04672462AC121A54E5"
+      "metadataDllSHA256": "F77382F3505352417D2AB1F503AC0F43312D3B6D2675FC4C710F54CEB422E00E"
     },
     "LiquidContainerDefinition": {
       "Capacity": "int 1..100000 ml default 500",
@@ -11744,7 +12567,7 @@
         }
       ],
       "metadataSource": "public-api.index.json",
-      "metadataDllSHA256": "48D037715375C8AFF6528AD6674A224FF7F953BE33BC1E04672462AC121A54E5"
+      "metadataDllSHA256": "F77382F3505352417D2AB1F503AC0F43312D3B6D2675FC4C710F54CEB422E00E"
     },
     "LiquidSnapshot": {
       "CapacityParts": "int",
@@ -11864,7 +12687,7 @@
         }
       ],
       "metadataSource": "public-api.index.json",
-      "metadataDllSHA256": "48D037715375C8AFF6528AD6674A224FF7F953BE33BC1E04672462AC121A54E5"
+      "metadataDllSHA256": "F77382F3505352417D2AB1F503AC0F43312D3B6D2675FC4C710F54CEB422E00E"
     },
     "LootDefinition": {
       "Tables": "LootListDefinition[]",
@@ -11944,7 +12767,7 @@
         }
       ],
       "metadataSource": "public-api.index.json",
-      "metadataDllSHA256": "48D037715375C8AFF6528AD6674A224FF7F953BE33BC1E04672462AC121A54E5"
+      "metadataDllSHA256": "F77382F3505352417D2AB1F503AC0F43312D3B6D2675FC4C710F54CEB422E00E"
     },
     "LootEntrySnapshot": [
       "Id",
@@ -12011,7 +12834,7 @@
         }
       ],
       "metadataSource": "public-api.index.json",
-      "metadataDllSHA256": "48D037715375C8AFF6528AD6674A224FF7F953BE33BC1E04672462AC121A54E5"
+      "metadataDllSHA256": "F77382F3505352417D2AB1F503AC0F43312D3B6D2675FC4C710F54CEB422E00E"
     },
     "LootListSnapshot": {
       "Id": "string",
@@ -12374,7 +13197,7 @@
         }
       ],
       "metadataSource": "public-api.index.json",
-      "metadataDllSHA256": "48D037715375C8AFF6528AD6674A224FF7F953BE33BC1E04672462AC121A54E5"
+      "metadataDllSHA256": "F77382F3505352417D2AB1F503AC0F43312D3B6D2675FC4C710F54CEB422E00E"
     },
     "LootPatchDefinition": {
       "Table": "string? xor Group",
@@ -12486,7 +13309,7 @@
         }
       ],
       "metadataSource": "public-api.index.json",
-      "metadataDllSHA256": "48D037715375C8AFF6528AD6674A224FF7F953BE33BC1E04672462AC121A54E5"
+      "metadataDllSHA256": "F77382F3505352417D2AB1F503AC0F43312D3B6D2675FC4C710F54CEB422E00E"
     },
     "LootRegistrationResult": [
       "Accepted",
@@ -12556,7 +13379,7 @@
         }
       ],
       "metadataSource": "public-api.index.json",
-      "metadataDllSHA256": "48D037715375C8AFF6528AD6674A224FF7F953BE33BC1E04672462AC121A54E5"
+      "metadataDllSHA256": "F77382F3505352417D2AB1F503AC0F43312D3B6D2675FC4C710F54CEB422E00E"
     },
     "MachineAutomationContext": {
       "IsCurrent": {
@@ -12738,7 +13561,7 @@
         }
       ],
       "metadataSource": "public-api.index.json",
-      "metadataDllSHA256": "48D037715375C8AFF6528AD6674A224FF7F953BE33BC1E04672462AC121A54E5"
+      "metadataDllSHA256": "F77382F3505352417D2AB1F503AC0F43312D3B6D2675FC4C710F54CEB422E00E"
     },
     "MachineAutomationPhase": {
       "enumValues": {
@@ -12794,7 +13617,7 @@
         }
       ],
       "metadataSource": "public-api.index.json",
-      "metadataDllSHA256": "48D037715375C8AFF6528AD6674A224FF7F953BE33BC1E04672462AC121A54E5"
+      "metadataDllSHA256": "F77382F3505352417D2AB1F503AC0F43312D3B6D2675FC4C710F54CEB422E00E"
     },
     "MachineDefinition": {
       "MachineId": {
@@ -13258,7 +14081,7 @@
         }
       ],
       "metadataSource": "public-api.index.json",
-      "metadataDllSHA256": "48D037715375C8AFF6528AD6674A224FF7F953BE33BC1E04672462AC121A54E5"
+      "metadataDllSHA256": "F77382F3505352417D2AB1F503AC0F43312D3B6D2675FC4C710F54CEB422E00E"
     },
     "MachineRuntimeApi": {
       "RuntimeInstalled": {
@@ -13390,7 +14213,7 @@
         }
       ],
       "metadataSource": "public-api.index.json",
-      "metadataDllSHA256": "48D037715375C8AFF6528AD6674A224FF7F953BE33BC1E04672462AC121A54E5"
+      "metadataDllSHA256": "F77382F3505352417D2AB1F503AC0F43312D3B6D2675FC4C710F54CEB422E00E"
     },
     "MachineView": {
       "OwnerId": {
@@ -13975,7 +14798,7 @@
         }
       ],
       "metadataSource": "public-api.index.json",
-      "metadataDllSHA256": "48D037715375C8AFF6528AD6674A224FF7F953BE33BC1E04672462AC121A54E5"
+      "metadataDllSHA256": "F77382F3505352417D2AB1F503AC0F43312D3B6D2675FC4C710F54CEB422E00E"
     },
     "ManufacturingTerminal": {
       "OwnerId": "ezapi.machines",
@@ -14233,7 +15056,7 @@
         }
       ],
       "metadataSource": "public-api.index.json",
-      "metadataDllSHA256": "48D037715375C8AFF6528AD6674A224FF7F953BE33BC1E04672462AC121A54E5"
+      "metadataDllSHA256": "F77382F3505352417D2AB1F503AC0F43312D3B6D2675FC4C710F54CEB422E00E"
     },
     "ManufacturingTerminalView": {
       "Registered": {
@@ -14583,7 +15406,7 @@
         }
       ],
       "metadataSource": "public-api.index.json",
-      "metadataDllSHA256": "48D037715375C8AFF6528AD6674A224FF7F953BE33BC1E04672462AC121A54E5"
+      "metadataDllSHA256": "F77382F3505352417D2AB1F503AC0F43312D3B6D2675FC4C710F54CEB422E00E"
     },
     "NativeHookStatus": {
       "OwnerId": "independent hook group",
@@ -14915,7 +15738,7 @@
         }
       ],
       "metadataSource": "public-api.index.json",
-      "metadataDllSHA256": "48D037715375C8AFF6528AD6674A224FF7F953BE33BC1E04672462AC121A54E5"
+      "metadataDllSHA256": "F77382F3505352417D2AB1F503AC0F43312D3B6D2675FC4C710F54CEB422E00E"
     },
     "NativeInventoryItem": {
       "NativeIdentity": "process/Epoch-scoped comparison only; never reconstruct pointer",
@@ -15319,7 +16142,7 @@
         }
       ],
       "metadataSource": "public-api.index.json",
-      "metadataDllSHA256": "48D037715375C8AFF6528AD6674A224FF7F953BE33BC1E04672462AC121A54E5"
+      "metadataDllSHA256": "F77382F3505352417D2AB1F503AC0F43312D3B6D2675FC4C710F54CEB422E00E"
     },
     "NativeInventorySnapshot": {
       "Status": "Ready/Unavailable/Invalid",
@@ -15804,7 +16627,7 @@
         }
       ],
       "metadataSource": "public-api.index.json",
-      "metadataDllSHA256": "48D037715375C8AFF6528AD6674A224FF7F953BE33BC1E04672462AC121A54E5"
+      "metadataDllSHA256": "F77382F3505352417D2AB1F503AC0F43312D3B6D2675FC4C710F54CEB422E00E"
     },
     "NativeTransferPreview": {
       "Status": "Ready/Unavailable/Invalid/SourceMismatch/Locked/NoWholeSlot",
@@ -16149,7 +16972,7 @@
         }
       ],
       "metadataSource": "public-api.index.json",
-      "metadataDllSHA256": "48D037715375C8AFF6528AD6674A224FF7F953BE33BC1E04672462AC121A54E5"
+      "metadataDllSHA256": "F77382F3505352417D2AB1F503AC0F43312D3B6D2675FC4C710F54CEB422E00E"
     },
     "PackDependency": {
       "Id": "owner ID",
@@ -16209,7 +17032,7 @@
         }
       ],
       "metadataSource": "public-api.index.json",
-      "metadataDllSHA256": "48D037715375C8AFF6528AD6674A224FF7F953BE33BC1E04672462AC121A54E5"
+      "metadataDllSHA256": "F77382F3505352417D2AB1F503AC0F43312D3B6D2675FC4C710F54CEB422E00E"
     },
     "PackManifest": {
       "required": [
@@ -16344,7 +17167,7 @@
         }
       ],
       "metadataSource": "public-api.index.json",
-      "metadataDllSHA256": "48D037715375C8AFF6528AD6674A224FF7F953BE33BC1E04672462AC121A54E5"
+      "metadataDllSHA256": "F77382F3505352417D2AB1F503AC0F43312D3B6D2675FC4C710F54CEB422E00E"
     },
     "PhoneApi": {
       "name": "EZapi.PhoneApi",
@@ -16486,7 +17309,7 @@
         }
       ],
       "metadataSource": "public-api.index.json",
-      "metadataDllSHA256": "48D037715375C8AFF6528AD6674A224FF7F953BE33BC1E04672462AC121A54E5"
+      "metadataDllSHA256": "F77382F3505352417D2AB1F503AC0F43312D3B6D2675FC4C710F54CEB422E00E"
     },
     "PhoneContact": {
       "name": "EZapi.PhoneContact",
@@ -16855,7 +17678,7 @@
         }
       ],
       "metadataSource": "public-api.index.json",
-      "metadataDllSHA256": "48D037715375C8AFF6528AD6674A224FF7F953BE33BC1E04672462AC121A54E5"
+      "metadataDllSHA256": "F77382F3505352417D2AB1F503AC0F43312D3B6D2675FC4C710F54CEB422E00E"
     },
     "PhoneContactView": {
       "name": "EZapi.PhoneContactView",
@@ -17244,7 +18067,7 @@
         }
       ],
       "metadataSource": "public-api.index.json",
-      "metadataDllSHA256": "48D037715375C8AFF6528AD6674A224FF7F953BE33BC1E04672462AC121A54E5"
+      "metadataDllSHA256": "F77382F3505352417D2AB1F503AC0F43312D3B6D2675FC4C710F54CEB422E00E"
     },
     "PhoneContext": {
       "name": "EZapi.PhoneContext",
@@ -17553,7 +18376,7 @@
         }
       ],
       "metadataSource": "public-api.index.json",
-      "metadataDllSHA256": "48D037715375C8AFF6528AD6674A224FF7F953BE33BC1E04672462AC121A54E5"
+      "metadataDllSHA256": "F77382F3505352417D2AB1F503AC0F43312D3B6D2675FC4C710F54CEB422E00E"
     },
     "PresentationResult": {
       "name": "EZapi.PresentationResult",
@@ -17822,7 +18645,7 @@
         }
       ],
       "metadataSource": "public-api.index.json",
-      "metadataDllSHA256": "48D037715375C8AFF6528AD6674A224FF7F953BE33BC1E04672462AC121A54E5"
+      "metadataDllSHA256": "F77382F3505352417D2AB1F503AC0F43312D3B6D2675FC4C710F54CEB422E00E"
     },
     "PresentationStatus": {
       "name": "EZapi.PresentationStatus",
@@ -17957,7 +18780,7 @@
         }
       ],
       "metadataSource": "public-api.index.json",
-      "metadataDllSHA256": "48D037715375C8AFF6528AD6674A224FF7F953BE33BC1E04672462AC121A54E5"
+      "metadataDllSHA256": "F77382F3505352417D2AB1F503AC0F43312D3B6D2675FC4C710F54CEB422E00E"
     },
     "ReadingApi": {
       "name": "EZapi.ReadingApi",
@@ -18203,7 +19026,7 @@
         }
       ],
       "metadataSource": "public-api.index.json",
-      "metadataDllSHA256": "48D037715375C8AFF6528AD6674A224FF7F953BE33BC1E04672462AC121A54E5"
+      "metadataDllSHA256": "F77382F3505352417D2AB1F503AC0F43312D3B6D2675FC4C710F54CEB422E00E"
     },
     "RecipeGuideDisplay": {
       "properties": [
@@ -18612,7 +19435,7 @@
         }
       ],
       "metadataSource": "public-api.index.json",
-      "metadataDllSHA256": "48D037715375C8AFF6528AD6674A224FF7F953BE33BC1E04672462AC121A54E5"
+      "metadataDllSHA256": "F77382F3505352417D2AB1F503AC0F43312D3B6D2675FC4C710F54CEB422E00E"
     },
     "RecipeGuideOptions": {
       "properties": [
@@ -18915,7 +19738,7 @@
         }
       ],
       "metadataSource": "public-api.index.json",
-      "metadataDllSHA256": "48D037715375C8AFF6528AD6674A224FF7F953BE33BC1E04672462AC121A54E5"
+      "metadataDllSHA256": "F77382F3505352417D2AB1F503AC0F43312D3B6D2675FC4C710F54CEB422E00E"
     },
     "RegisteredMachineRecipe": {
       "OwnerId": {
@@ -19203,7 +20026,7 @@
         }
       ],
       "metadataSource": "public-api.index.json",
-      "metadataDllSHA256": "48D037715375C8AFF6528AD6674A224FF7F953BE33BC1E04672462AC121A54E5"
+      "metadataDllSHA256": "F77382F3505352417D2AB1F503AC0F43312D3B6D2675FC4C710F54CEB422E00E"
     },
     "RunDataStore": {
       "properties": [
@@ -19896,7 +20719,7 @@
         }
       ],
       "metadataSource": "public-api.index.json",
-      "metadataDllSHA256": "48D037715375C8AFF6528AD6674A224FF7F953BE33BC1E04672462AC121A54E5"
+      "metadataDllSHA256": "F77382F3505352417D2AB1F503AC0F43312D3B6D2675FC4C710F54CEB422E00E"
     },
     "RunPurchaseApi": {
       "name": "EZapi.RunPurchaseApi",
@@ -20006,7 +20829,7 @@
         }
       ],
       "metadataSource": "public-api.index.json",
-      "metadataDllSHA256": "48D037715375C8AFF6528AD6674A224FF7F953BE33BC1E04672462AC121A54E5"
+      "metadataDllSHA256": "F77382F3505352417D2AB1F503AC0F43312D3B6D2675FC4C710F54CEB422E00E"
     },
     "RuntimeCapabilities": {
       "name": "EZapi.RuntimeCapabilities",
@@ -20048,7 +20871,7 @@
         }
       ],
       "metadataSource": "public-api.index.json",
-      "metadataDllSHA256": "48D037715375C8AFF6528AD6674A224FF7F953BE33BC1E04672462AC121A54E5"
+      "metadataDllSHA256": "F77382F3505352417D2AB1F503AC0F43312D3B6D2675FC4C710F54CEB422E00E"
     },
     "RuntimeCapabilitySnapshot": {
       "name": "EZapi.RuntimeCapabilitySnapshot",
@@ -20867,7 +21690,7 @@
         }
       ],
       "metadataSource": "public-api.index.json",
-      "metadataDllSHA256": "48D037715375C8AFF6528AD6674A224FF7F953BE33BC1E04672462AC121A54E5"
+      "metadataDllSHA256": "F77382F3505352417D2AB1F503AC0F43312D3B6D2675FC4C710F54CEB422E00E"
     },
     "SaveReadResult": {
       "name": "EZapi.SaveReadResult",
@@ -20962,7 +21785,7 @@
         }
       ],
       "metadataSource": "public-api.index.json",
-      "metadataDllSHA256": "48D037715375C8AFF6528AD6674A224FF7F953BE33BC1E04672462AC121A54E5"
+      "metadataDllSHA256": "F77382F3505352417D2AB1F503AC0F43312D3B6D2675FC4C710F54CEB422E00E"
     },
     "SaveReadStatus": {
       "name": "EZapi.SaveReadStatus",
@@ -21075,7 +21898,7 @@
         }
       ],
       "metadataSource": "public-api.index.json",
-      "metadataDllSHA256": "48D037715375C8AFF6528AD6674A224FF7F953BE33BC1E04672462AC121A54E5"
+      "metadataDllSHA256": "F77382F3505352417D2AB1F503AC0F43312D3B6D2675FC4C710F54CEB422E00E"
     },
     "SaveReadbackApi": {
       "name": "EZapi.SaveReadbackApi",
@@ -21373,7 +22196,7 @@
         }
       ],
       "metadataSource": "public-api.index.json",
-      "metadataDllSHA256": "48D037715375C8AFF6528AD6674A224FF7F953BE33BC1E04672462AC121A54E5"
+      "metadataDllSHA256": "F77382F3505352417D2AB1F503AC0F43312D3B6D2675FC4C710F54CEB422E00E"
     },
     "SupplierApi": {
       "name": "EZapi.SupplierApi",
@@ -21537,7 +22360,7 @@
         }
       ],
       "metadataSource": "public-api.index.json",
-      "metadataDllSHA256": "48D037715375C8AFF6528AD6674A224FF7F953BE33BC1E04672462AC121A54E5"
+      "metadataDllSHA256": "F77382F3505352417D2AB1F503AC0F43312D3B6D2675FC4C710F54CEB422E00E"
     },
     "SupplierDefinition": {
       "name": "EZapi.SupplierDefinition",
@@ -22222,7 +23045,7 @@
         }
       ],
       "metadataSource": "public-api.index.json",
-      "metadataDllSHA256": "48D037715375C8AFF6528AD6674A224FF7F953BE33BC1E04672462AC121A54E5"
+      "metadataDllSHA256": "F77382F3505352417D2AB1F503AC0F43312D3B6D2675FC4C710F54CEB422E00E"
     },
     "SupplierOffer": {
       "name": "EZapi.SupplierOffer",
@@ -22642,7 +23465,7 @@
         }
       ],
       "metadataSource": "public-api.index.json",
-      "metadataDllSHA256": "48D037715375C8AFF6528AD6674A224FF7F953BE33BC1E04672462AC121A54E5"
+      "metadataDllSHA256": "F77382F3505352417D2AB1F503AC0F43312D3B6D2675FC4C710F54CEB422E00E"
     },
     "SupplierPage": {
       "name": "EZapi.SupplierPage",
@@ -22962,7 +23785,7 @@
         }
       ],
       "metadataSource": "public-api.index.json",
-      "metadataDllSHA256": "48D037715375C8AFF6528AD6674A224FF7F953BE33BC1E04672462AC121A54E5"
+      "metadataDllSHA256": "F77382F3505352417D2AB1F503AC0F43312D3B6D2675FC4C710F54CEB422E00E"
     },
     "TransactionResult": {
       "name": "EZapi.TransactionResult",
@@ -23350,7 +24173,7 @@
         }
       ],
       "metadataSource": "public-api.index.json",
-      "metadataDllSHA256": "48D037715375C8AFF6528AD6674A224FF7F953BE33BC1E04672462AC121A54E5"
+      "metadataDllSHA256": "F77382F3505352417D2AB1F503AC0F43312D3B6D2675FC4C710F54CEB422E00E"
     },
     "TransactionStatus": {
       "name": "EZapi.TransactionStatus",
@@ -23436,7 +24259,7 @@
         }
       ],
       "metadataSource": "public-api.index.json",
-      "metadataDllSHA256": "48D037715375C8AFF6528AD6674A224FF7F953BE33BC1E04672462AC121A54E5"
+      "metadataDllSHA256": "F77382F3505352417D2AB1F503AC0F43312D3B6D2675FC4C710F54CEB422E00E"
     },
     "TransactionStep": {
       "name": "EZapi.TransactionStep",
@@ -23775,7 +24598,7 @@
         }
       ],
       "metadataSource": "public-api.index.json",
-      "metadataDllSHA256": "48D037715375C8AFF6528AD6674A224FF7F953BE33BC1E04672462AC121A54E5"
+      "metadataDllSHA256": "F77382F3505352417D2AB1F503AC0F43312D3B6D2675FC4C710F54CEB422E00E"
     },
     "Transactions": {
       "name": "EZapi.Transactions",
@@ -23824,7 +24647,7 @@
         }
       ],
       "metadataSource": "public-api.index.json",
-      "metadataDllSHA256": "48D037715375C8AFF6528AD6674A224FF7F953BE33BC1E04672462AC121A54E5"
+      "metadataDllSHA256": "F77382F3505352417D2AB1F503AC0F43312D3B6D2675FC4C710F54CEB422E00E"
     },
     "SpriteAssets": {
       "name": "EZapi.SpriteAssets",
@@ -23914,7 +24737,7 @@
         }
       ],
       "metadataSource": "public-api.index.json",
-      "metadataDllSHA256": "48D037715375C8AFF6528AD6674A224FF7F953BE33BC1E04672462AC121A54E5"
+      "metadataDllSHA256": "F77382F3505352417D2AB1F503AC0F43312D3B6D2675FC4C710F54CEB422E00E"
     },
     "EmbeddedSpriteAtlas": {
       "name": "EZapi.EmbeddedSpriteAtlas",
@@ -24201,7 +25024,7 @@
         }
       ],
       "metadataSource": "public-api.index.json",
-      "metadataDllSHA256": "48D037715375C8AFF6528AD6674A224FF7F953BE33BC1E04672462AC121A54E5"
+      "metadataDllSHA256": "F77382F3505352417D2AB1F503AC0F43312D3B6D2675FC4C710F54CEB422E00E"
     },
     "SpriteDefinition": {
       "name": "EZapi.SpriteDefinition",
@@ -24591,7 +25414,7 @@
         }
       ],
       "metadataSource": "public-api.index.json",
-      "metadataDllSHA256": "48D037715375C8AFF6528AD6674A224FF7F953BE33BC1E04672462AC121A54E5"
+      "metadataDllSHA256": "F77382F3505352417D2AB1F503AC0F43312D3B6D2675FC4C710F54CEB422E00E"
     },
     "SpriteFilter": {
       "name": "EZapi.SpriteFilter",
@@ -24649,7 +25472,7 @@
         }
       ],
       "metadataSource": "public-api.index.json",
-      "metadataDllSHA256": "48D037715375C8AFF6528AD6674A224FF7F953BE33BC1E04672462AC121A54E5"
+      "metadataDllSHA256": "F77382F3505352417D2AB1F503AC0F43312D3B6D2675FC4C710F54CEB422E00E"
     },
     "EnergyDebitStatus": [
       "Debited",
@@ -24937,7 +25760,7 @@
         }
       ],
       "metadataSource": "public-api.index.json",
-      "metadataDllSHA256": "48D037715375C8AFF6528AD6674A224FF7F953BE33BC1E04672462AC121A54E5"
+      "metadataDllSHA256": "F77382F3505352417D2AB1F503AC0F43312D3B6D2675FC4C710F54CEB422E00E"
     },
     "PowerSourceDebit": {
       "InstanceId": "source instance ID",
@@ -25248,7 +26071,7 @@
         }
       ],
       "metadataSource": "public-api.index.json",
-      "metadataDllSHA256": "48D037715375C8AFF6528AD6674A224FF7F953BE33BC1E04672462AC121A54E5"
+      "metadataDllSHA256": "F77382F3505352417D2AB1F503AC0F43312D3B6D2675FC4C710F54CEB422E00E"
     },
     "PowerBatchMath": {
       "Plan": "IReadOnlyList<PowerSourceDebit> Plan(IEnumerable<PowerSourceAmount> sources, int cost); pure managed; validates IDs/energy/duplicates; uses Int64 total and ascending instance ID",
@@ -25311,7 +26134,7 @@
         }
       ],
       "metadataSource": "public-api.index.json",
-      "metadataDllSHA256": "48D037715375C8AFF6528AD6674A224FF7F953BE33BC1E04672462AC121A54E5"
+      "metadataDllSHA256": "F77382F3505352417D2AB1F503AC0F43312D3B6D2675FC4C710F54CEB422E00E"
     },
     "LocalizedItemText": {
       "properties": [
@@ -25581,7 +26404,12 @@
               "isParams": false
             }
           ],
-          "documentation": null
+          "documentation": {
+            "summary": "只选择内联值，不重新校验；null 回退另一侧，空串原样保留。NativeItemOptions 可选说明以空串清空。",
+            "remarks": null,
+            "returns": null,
+            "parameters": {}
+          }
         },
         {
           "id": "M:EZapi.LocalizedItemText.Resolve(System.String,EZapi.LocalizationCatalog,System.String,System.Object[])",
@@ -25634,7 +26462,7 @@
           ],
           "documentation": {
             "summary": "按语言解析；有 Key 时依次查所给目录的语言表、英文表、内联文本和 readable fallback。",
-            "remarks": null,
+            "remarks": "这是要求非空白的通用可读文本接口。已注册 NativeItemOptions 的可选空说明由框架内联路由处理。",
             "returns": null,
             "parameters": {}
           }
@@ -25738,7 +26566,7 @@
         }
       ],
       "metadataSource": "public-api.index.json",
-      "metadataDllSHA256": "48D037715375C8AFF6528AD6674A224FF7F953BE33BC1E04672462AC121A54E5"
+      "metadataDllSHA256": "F77382F3505352417D2AB1F503AC0F43312D3B6D2675FC4C710F54CEB422E00E"
     },
     "NativeItemOptions": {
       "Name": {
@@ -26322,7 +27150,7 @@
         }
       ],
       "metadataSource": "public-api.index.json",
-      "metadataDllSHA256": "48D037715375C8AFF6528AD6674A224FF7F953BE33BC1E04672462AC121A54E5"
+      "metadataDllSHA256": "F77382F3505352417D2AB1F503AC0F43312D3B6D2675FC4C710F54CEB422E00E"
     },
     "ModuleText": {
       "AdditionalEffect": {
@@ -26610,7 +27438,7 @@
         }
       ],
       "metadataSource": "public-api.index.json",
-      "metadataDllSHA256": "48D037715375C8AFF6528AD6674A224FF7F953BE33BC1E04672462AC121A54E5"
+      "metadataDllSHA256": "F77382F3505352417D2AB1F503AC0F43312D3B6D2675FC4C710F54CEB422E00E"
     },
     "MachineContainerOutput": {
       "name": "EZapi.MachineContainerOutput",
@@ -26871,7 +27699,7 @@
         }
       ],
       "metadataSource": "public-api.index.json",
-      "metadataDllSHA256": "48D037715375C8AFF6528AD6674A224FF7F953BE33BC1E04672462AC121A54E5"
+      "metadataDllSHA256": "F77382F3505352417D2AB1F503AC0F43312D3B6D2675FC4C710F54CEB422E00E"
     },
     "MachineContainerSlot": {
       "name": "EZapi.MachineContainerSlot",
@@ -27009,7 +27837,7 @@
         }
       ],
       "metadataSource": "public-api.index.json",
-      "metadataDllSHA256": "48D037715375C8AFF6528AD6674A224FF7F953BE33BC1E04672462AC121A54E5"
+      "metadataDllSHA256": "F77382F3505352417D2AB1F503AC0F43312D3B6D2675FC4C710F54CEB422E00E"
     },
     "MachineOutputTemplate": {
       "name": "EZapi.MachineOutputTemplate",
@@ -27111,7 +27939,7 @@
         }
       ],
       "metadataSource": "public-api.index.json",
-      "metadataDllSHA256": "48D037715375C8AFF6528AD6674A224FF7F953BE33BC1E04672462AC121A54E5"
+      "metadataDllSHA256": "F77382F3505352417D2AB1F503AC0F43312D3B6D2675FC4C710F54CEB422E00E"
     },
     "MachineContainerConditionApi": {
       "name": "EZapi.MachineContainerConditionApi",
@@ -27197,7 +28025,7 @@
         }
       ],
       "metadataSource": "public-api.index.json",
-      "metadataDllSHA256": "48D037715375C8AFF6528AD6674A224FF7F953BE33BC1E04672462AC121A54E5"
+      "metadataDllSHA256": "F77382F3505352417D2AB1F503AC0F43312D3B6D2675FC4C710F54CEB422E00E"
     },
     "MachineContainerConditionView": {
       "name": "EZapi.MachineContainerConditionView",
@@ -27566,7 +28394,7 @@
         }
       ],
       "metadataSource": "public-api.index.json",
-      "metadataDllSHA256": "48D037715375C8AFF6528AD6674A224FF7F953BE33BC1E04672462AC121A54E5"
+      "metadataDllSHA256": "F77382F3505352417D2AB1F503AC0F43312D3B6D2675FC4C710F54CEB422E00E"
     },
     "MachineMaterialContentsPolicy": {
       "name": "EZapi.MachineMaterialContentsPolicy",
@@ -27624,7 +28452,7 @@
         }
       ],
       "metadataSource": "public-api.index.json",
-      "metadataDllSHA256": "48D037715375C8AFF6528AD6674A224FF7F953BE33BC1E04672462AC121A54E5"
+      "metadataDllSHA256": "F77382F3505352417D2AB1F503AC0F43312D3B6D2675FC4C710F54CEB422E00E"
     },
     "MachineRecipe": {
       "name": "EZapi.MachineRecipe",
@@ -28039,7 +28867,7 @@
         }
       ],
       "metadataSource": "public-api.index.json",
-      "metadataDllSHA256": "48D037715375C8AFF6528AD6674A224FF7F953BE33BC1E04672462AC121A54E5"
+      "metadataDllSHA256": "F77382F3505352417D2AB1F503AC0F43312D3B6D2675FC4C710F54CEB422E00E"
     },
     "RecipeGuideEntry": {
       "properties": [
@@ -28580,7 +29408,7 @@
         }
       ],
       "metadataSource": "public-api.index.json",
-      "metadataDllSHA256": "48D037715375C8AFF6528AD6674A224FF7F953BE33BC1E04672462AC121A54E5"
+      "metadataDllSHA256": "F77382F3505352417D2AB1F503AC0F43312D3B6D2675FC4C710F54CEB422E00E"
     },
     "RecipeGuideFigure": {
       "properties": [
@@ -29025,7 +29853,7 @@
         }
       ],
       "metadataSource": "public-api.index.json",
-      "metadataDllSHA256": "48D037715375C8AFF6528AD6674A224FF7F953BE33BC1E04672462AC121A54E5"
+      "metadataDllSHA256": "F77382F3505352417D2AB1F503AC0F43312D3B6D2675FC4C710F54CEB422E00E"
     },
     "RecipeGuideSnapshot": {
       "properties": [
@@ -29316,12 +30144,12 @@
         }
       ],
       "metadataSource": "public-api.index.json",
-      "metadataDllSHA256": "48D037715375C8AFF6528AD6674A224FF7F953BE33BC1E04672462AC121A54E5"
+      "metadataDllSHA256": "F77382F3505352417D2AB1F503AC0F43312D3B6D2675FC4C710F54CEB422E00E"
     }
   },
   "propertyIndex": "item-properties.index.json",
   "officialApiMap": "official-api-map.zh-CN.md",
-  "implementationVersion": "0.1.76",
+  "implementationVersion": "0.1.87",
   "jsonProtocolVersion": "0.1",
   "activationAPI": {
     "source": "../src/EZapi/ItemActivation.cs",
@@ -31664,8 +32492,8 @@
   "itemData": "item-data.index.json",
   "documentationContext": {
     "kind": "current-api-guide",
-    "releaseTag": "0.1.76-preview.1",
-    "assemblyVersion": "0.1.76",
+    "releaseTag": "0.1.87-preview.1",
+    "assemblyVersion": "0.1.87",
     "releaseStatus": "release-status.json",
     "nativeRuntimeVerified": false,
     "evidencePolicy": "Only explicitly scoped current-DLL observations apply. Historical evidence never transfers."

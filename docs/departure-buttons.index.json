@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "version": "0.1.76",
+  "version": "0.1.87",
   "taskZh": "在离开店铺的地图上添加自适应地点按钮",
   "taskEn": "Adaptive destination buttons on the native departure map",
   "guideZh": "departure-buttons.zh-CN.md",
@@ -59,8 +59,8 @@
   "independentCaller": "examples/departure-dll/DepartureMod.csproj",
   "documentationContext": {
     "kind": "current-api-guide",
-    "releaseTag": "0.1.76-preview.1",
-    "assemblyVersion": "0.1.76",
+    "releaseTag": "0.1.87-preview.1",
+    "assemblyVersion": "0.1.87",
     "releaseStatus": "release-status.json",
     "nativeRuntimeVerified": false,
     "evidencePolicy": "Only explicitly scoped current-DLL observations apply. Historical evidence never transfers."

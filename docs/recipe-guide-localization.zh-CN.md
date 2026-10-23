@@ -50,7 +50,7 @@ if (!result.Accepted) throw new InvalidOperationException(result.Reason);
 
 `RecipeGuideRules.ResolveLocale(entry, locale)` 是纯托管查询：返回新文本视图，不修改目录、稳定 ID、数量或原始双语字段。可用于离线工具和 AI 预览。locale 以 `zh` 开头时取中文（忽略大小写），其余语言取英文；空/未知 locale 也按英文路径回退。
 
-游戏图鉴在主线程通过当前构建的官方 `LocHelper.GetCurrentLocaleCode()` 读取语言，复用已验证的 `NativeItemLocalization`；不读取 Windows 语言猜测游戏语言。未知游戏构建或 getter 不可用时，沿用物品接口的英文回退与单次诊断。
+游戏图鉴在主线程通过当前构建的官方 `LocHelper.GetCurrentLocaleCode()` 读取语言，复用 `NativeItemLocalization` 的当前语言入口；不读取 Windows 语言猜测游戏语言。未初始化、非主线程、getter 不可用或 locale 非法时，沿用物品接口的英文回退与单次诊断。
 
 图鉴按钮、标题、材料/产出标题、缺图文案和分页同步切换。翻译后的当前条目只在选择、目录版本或语言改变时重新生成；图片缓存继续按稳定 ItemId 使用。关闭或读档清理文本视图与图片；不把翻译后的名称写进玩家存档。
 

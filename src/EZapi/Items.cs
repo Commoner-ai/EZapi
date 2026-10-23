@@ -26,7 +26,7 @@ public static class Items
     }
     private static void ValidateId(string id)
     {
-        if (string.IsNullOrWhiteSpace(id) || id.Length > 160 || id.Any(char.IsControl))
+        if (string.IsNullOrWhiteSpace(id) || id.Length > 256 || id.Any(char.IsControl))
             throw new ArgumentException("EZAPI_ITEM_ID: readable native item ID required.");
     }
 }

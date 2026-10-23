@@ -7,7 +7,7 @@ using MelonLoader;
 using MelonLoader.Utils;
 
 
-[assembly:MelonInfo(typeof(EZapi.EZapiBootstrap),"EZapi","0.1.76","EZapi")]
+[assembly:MelonInfo(typeof(EZapi.EZapiBootstrap),"EZapi","0.1.87","EZapi")]
 
 
 [assembly:MelonGame(null,null)]
@@ -64,7 +64,7 @@ public sealed class EZapiBootstrap:MelonMod
             ContentApi.Start();RegistrationApi.Start();
 
 
-            DepartureApi.Start();LifecycleApi.Start();ReadingApi.Start();DialogueApi.Start();PhoneApi.Start();ClientVisitApi.Start();SupplierApi.Start();
+            DepartureApi.Start();FactionUiApi.Start();LifecycleApi.Start();ReadingApi.Start();DialogueApi.Start();PhoneApi.Start();ClientVisitApi.Start();SupplierApi.Start();
 
 
             ModuleApi.Start();
@@ -130,7 +130,7 @@ public sealed class EZapiBootstrap:MelonMod
             _debug.Stop(); DeveloperToolsSettings.Reset(); DebugRegressionSession.Reset();
 
 
-            NativeUiPreviewApi.Close();WildNetworkBrowser.Stop();DebugSaveGraph.Clear();DebugRegistration.Clear();RegistrationApi.Stop();
+            NativeUiPreviewApi.Close();WildNetworkBrowser.Stop();FactionUiApi.Stop();DebugSaveGraph.Clear();DebugRegistration.Clear();RegistrationApi.Stop();
 
 
             Errors.Add("initialize: "+e.Message);
@@ -169,7 +169,7 @@ public sealed class EZapiBootstrap:MelonMod
             File.WriteAllText(Path.Combine(folder,"diagnostics.json"),JsonSerializer.Serialize(
 
 
-                new{version="0.1.76-usability",registrations=RegistrationApi.Report(),registrationDebug=DebugRegistration.LastReport,progressionDebug=DebugProgression.LastReport,saveGraphDebug=DebugSaveGraph.LastReport,saveGraph=new{canDecode=SaveGraphApi.CanDecode,reason=SaveGraphApi.DecodeUnavailableReason},debugUi=EZapiDebugOverlay.Report(),uiPreview=NativeUiPreviewApi.Report(),departureButtons=DepartureApi.Snapshot(),wildBrowser=WildNetworkBrowser.Report(),integration=new{
+                new{version="0.1.87-usability",registrations=RegistrationApi.Report(),registrationDebug=DebugRegistration.LastReport,progressionDebug=DebugProgression.LastReport,saveGraphDebug=DebugSaveGraph.LastReport,saveGraph=new{canDecode=SaveGraphApi.CanDecode,reason=SaveGraphApi.DecodeUnavailableReason},debugUi=EZapiDebugOverlay.Report(),uiPreview=NativeUiPreviewApi.Report(),departureButtons=DepartureApi.Snapshot(),wildBrowser=WildNetworkBrowser.Report(),factionBrowser=FactionReputationBrowser.Report(),integration=new{
 
 
                     host="MelonLoader IL2CPP .NET 6",directory="ModHook.OnModItemDirectoryInit",tooltip="ModHook.OnCreateTooltipEarly/Late",
@@ -202,7 +202,7 @@ public sealed class EZapiBootstrap:MelonMod
     {
 
 
-        NativeUiPreviewApi.Close();WildNetworkBrowser.Stop();DebugSaveGraph.Clear();DebugRegistration.Clear();RegistrationApi.Stop();
+        NativeUiPreviewApi.Close();WildNetworkBrowser.Stop();FactionUiApi.Stop();DebugSaveGraph.Clear();DebugRegistration.Clear();RegistrationApi.Stop();
 
 
         DepartureApi.Stop();ClientVisitApi.Stop();SupplierApi.Stop();DebugSupplier.Clear();StartApi.Stop();DebugWorkshop.Clear();WorkshopApi.Stop();PresentationApi.Stop();
@@ -232,7 +232,7 @@ public sealed class EZapiBootstrap:MelonMod
             _storeReadyPending=!GameSession.ObserveStoreReady();
 
 
-        NativeUiPreviewApi.Maintain();WildNetworkBrowser.Maintain();DepartureRuntime.Maintain();ReadingApi.Maintain();DialogueApi.Maintain();ClientVisitApi.Maintain();SupplierApi.Maintain();PhoneApi.Maintain();NativeFurnacePower.Maintain();EffectApi.Maintain();RecipeGuideBrowser.Update();WorkshopBrowser.Update();
+        NativeUiPreviewApi.Maintain();WildNetworkBrowser.Maintain();FactionReputationBrowser.Maintain();DepartureRuntime.Maintain();ReadingApi.Maintain();DialogueApi.Maintain();ClientVisitApi.Maintain();SupplierApi.Maintain();PhoneApi.Maintain();NativeFurnacePower.Maintain();EffectApi.Maintain();RecipeGuideBrowser.Update();WorkshopBrowser.Update();
         if(DeveloperToolsSettings.Current.Enabled){DebugInventory.Update();_debug.Update();}
         if(DeveloperToolsSettings.Current.RegressionFixtures){DebugSupplier.Maintain();DebugDialogue.Update();DebugPhone.Update();DebugReading.Update();DebugGuideLocalization.Update();DebugBatch.Update();}
         } }
@@ -259,7 +259,7 @@ public sealed class EZapiBootstrap:MelonMod
         if(!_ready)return;
 
 
-        NativeUiPreviewApi.Close();WildNetworkBrowser.SceneChanged();DepartureRuntime.SceneChanged();ReadingApi.SceneChanged();SupplierApi.SceneChanged();DebugSupplier.SceneChanged();ClientVisitApi.SceneChanged();DialogueApi.SceneChanged();PhoneApi.SceneChanged();RecipeGuideBrowser.Close();WorkshopBrowser.SceneChanged();
+        NativeUiPreviewApi.Close();WildNetworkBrowser.SceneChanged();FactionReputationBrowser.SceneChanged();DepartureRuntime.SceneChanged();ReadingApi.SceneChanged();SupplierApi.SceneChanged();DebugSupplier.SceneChanged();ClientVisitApi.SceneChanged();DialogueApi.SceneChanged();PhoneApi.SceneChanged();RecipeGuideBrowser.Close();WorkshopBrowser.SceneChanged();
 
 
         // 在旧场景卸载时关闭掉落入口；新场景 Awake 中的官方加载事件可能早于 OnSceneWasLoaded，不能事后抹掉它。

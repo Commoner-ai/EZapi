@@ -22,10 +22,18 @@ foreach(var locale in new string?[]{null,""," ","en us","en\n","汉语",new stri
 }
 LocHelper.Locale="zh";LocHelper.Throw=true;
 Check(GameLanguage.Current is{LocaleCode:"en",IsFallback:true,Reason:"EZAPI_LANGUAGE_READ: InvalidOperationException"},"native exception has reason and English fallback");LocHelper.Throw=false;
-var reads=LocHelper.Reads;GameBuildFingerprint.IsKnown=false;
-Check(GameLanguage.Current.IsFallback&&LocHelper.Reads==reads,"unknown build does not call native locale");GameBuildFingerprint.IsKnown=true;
+Check(GameLanguage.Current is{LocaleCode:"zh",IsFallback:false},"native exception is retried and Chinese recovers on the next read");
+GameBuildFingerprint.IsKnown=false;
+foreach(var locale in new[]{"zh-CN","en","fr"}) {
+    LocHelper.Locale=locale;var current=GameLanguage.Current;
+    Check(!current.IsFallback&&current.LocaleCode==locale,"unknown wrapper fingerprint still reads actual locale: "+locale);
+}
+var reads=LocHelper.Reads;
 GameSession.Started=false;Check(GameLanguage.Current.IsFallback&&LocHelper.Reads==reads,"before initialization does not call native locale");GameSession.Started=true;
 Check(Task.Run(()=>GameLanguage.Current).GetAwaiter().GetResult() is{IsFallback:true,LocaleCode:"en"}&&LocHelper.Reads==reads,"worker access does not call native locale");
+foreach(var type in new[]{typeof(MissingGetter),typeof(InstanceGetter),typeof(WrongReturnGetter),typeof(ParameterGetter),typeof(GenericGetter),typeof(InheritedGetter),typeof(PrivateGetter)})
+    Check(GameLanguage.BindLocaleGetter(type) is null,"reject incompatible locale getter: "+type.Name);
+Check(GameLanguage.BindLocaleGetter(typeof(CompatibleGetter))!()=="zh-CN","bind only the exact public static string getter");
 Check(english.Resolve(new LocalizedItemText("中文",null))=="中文"&&chinese.Resolve(new(null,"Only English"))=="Only English","typed text missing side uses provided language");
 Reject(()=>GameLanguage.Resolve(new LocalizedItemText()),"typed text requires at least one language");
 Reject(()=>GameLanguage.Resolve(new LocalizedItemText(" ","valid")),"provided blank text rejects");
@@ -58,3 +66,11 @@ Reject(()=>GameLanguage.Resolve((LocalizationCatalog)null!,"greeting","Unavailab
 var report=new{passed=cases.Count,failed=0,cases,nativeRuntimeVerified=false,scope="Actual GameLanguage and CSV/typed text implementations with explicit thread/build/native locale stubs; actual language switching requires separate native evidence."};
 File.WriteAllText("work/ezapi-language-tests.json",JsonSerializer.Serialize(report,new JsonSerializerOptions{WriteIndented=true}));
 Console.WriteLine(JsonSerializer.Serialize(new{report.passed,report.failed,report.scope}));
+sealed class MissingGetter { }
+sealed class InstanceGetter {public string GetCurrentLocaleCode()=>"zh";}
+sealed class WrongReturnGetter {public static int GetCurrentLocaleCode()=>1;}
+sealed class ParameterGetter {public static string GetCurrentLocaleCode(bool optional=false)=>"zh";}
+sealed class GenericGetter {public static string GetCurrentLocaleCode<T>()=>"zh";}
+class CompatibleGetter {public static string GetCurrentLocaleCode()=>"zh-CN";}
+sealed class InheritedGetter:CompatibleGetter { }
+sealed class PrivateGetter {private static string GetCurrentLocaleCode()=>"zh";}

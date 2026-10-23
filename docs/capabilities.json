@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "version": "0.1.76",
+  "version": "0.1.87",
   "capabilities": [
     {
       "id": "items.register",
@@ -1452,9 +1452,81 @@
       "declaredByFrameworkInfo": true,
       "evidence": "native-ui-preview.index.json",
       "scope": "Native logical pixel components, bounded JSON preview and actual font measurements. Layout only; no gameplay/save acceptance."
+    },
+    {
+      "id": "presentation.faction-browser",
+      "status": "Preview",
+      "implemented": true,
+      "compileVerified": true,
+      "evidence": "release-status.json",
+      "runtimeVerified": false,
+      "declaredByFrameworkInfo": true
+    },
+    {
+      "id": "runtime.item-catalog",
+      "status": "Preview",
+      "implemented": true,
+      "compileVerified": true,
+      "evidence": "item-catalog.index.json",
+      "runtimeVerified": false,
+      "declaredByFrameworkInfo": true
+    },
+    {
+      "id": "runtime.item-origin",
+      "status": "Preview",
+      "implemented": true,
+      "compileVerified": true,
+      "evidence": "release-status.json",
+      "runtimeVerified": false,
+      "declaredByFrameworkInfo": true
+    },
+    {
+      "id": "runtime.sprite-artwork",
+      "status": "Preview",
+      "implemented": true,
+      "compileVerified": true,
+      "evidence": "release-status.json",
+      "runtimeVerified": false,
+      "declaredByFrameworkInfo": true
+    },
+    {
+      "id": "assets.rgba-analysis",
+      "status": "Preview",
+      "implemented": true,
+      "compileVerified": true,
+      "evidence": "release-status.json",
+      "runtimeVerified": false,
+      "declaredByFrameworkInfo": true
+    },
+    {
+      "id": "runtime.delivery-receipts",
+      "status": "Preview",
+      "implemented": true,
+      "compileVerified": true,
+      "evidence": "release-status.json",
+      "runtimeVerified": false,
+      "declaredByFrameworkInfo": true
+    },
+    {
+      "id": "runtime.prepared-items",
+      "status": "Preview",
+      "implemented": true,
+      "compileVerified": true,
+      "evidence": "release-status.json",
+      "runtimeVerified": false,
+      "declaredByFrameworkInfo": true
+    },
+    {
+      "id": "runtime.delivery-graphs",
+      "status": "Preview",
+      "implemented": true,
+      "compileVerified": true,
+      "evidence": "release-status.json",
+      "runtimeVerified": false,
+      "declaredByFrameworkInfo": true
     }
   ],
-  "implementationVersion": "0.1.76",
+  "implementationVersion": "0.1.87",
   "nativeEvidence": "0.1.43: 2026-10-21, Probably Stolen 0.46D / MelonLoader 0.7.3, only EZapi 0.1.43 on disposable slot 533. Power native smoke test passed 20/20 for single and 5-unit stacked fixtures; all 533 save_*.es3 hashes were unchanged after exit. Game startup rewrote SaveFile.es3 settings metadata; the fixture made no save API call. PowerBatchMath.Plan passed 24/24 pure-managed tests and does not commit native power. Evidence: native-power-0.1.43.zh-CN.md. 0.1.42: on 2026-10-21, Probably Stolen 0.46D / MelonLoader 0.7.3 with only EZapi 0.1.42 on disposable slot 533 passed all 7 embedded sprite checks; diagnostics errors=[], and all 536 local save-related files matched their pre-test SHA-256. The item icon was not rendered on screen and save/reload was not tested. 0.1.41: official guide hashes and current Assembly-CSharp fingerprint match the recorded source index. On 2026-10-21, Probably Stolen 0.46D with only EZapi 0.1.41 on disposable slot 533 verified SupplierApi visitor arrival, portrait, quote preview/back/confirm, page refresh and dismissal; diagnostics ended Closed with queued=0, arrived=1, active=0, captureCalls=2, purchaseCalls=1, dismissCalls=1, errors=[]. The confirmation callback only counted and caused no payment, delivery, inventory mutation or save write; real transactions and LootRegistry supplier drops remain unverified. 0.1.36 inventory endpoint restore remains unavailable in the current game assembly. 0.1.55: five scripted groups485/0 on slot534; all536 ES3 unchanged. Endpoint restore limitation above describes historical0.1.36 only;0.1.53 completed native save/cold restore lifecycle.",
   "historicalMachinePersistenceEvidence": {
     "identifier": "verification/machine-persistence-native-0.1.62.json",
@@ -1518,12 +1590,12 @@
   "entryPoint": {
     "source": "../src/EZapi/FrameworkInfo.cs",
     "meaning": "declaredByFrameworkInfo identifies IDs returned by GetCapabilities. Legacy roadmap categories and descriptive aliases are retained separately.",
-    "count": 99
+    "count": 107
   },
   "documentationContext": {
     "kind": "current-api-guide",
-    "releaseTag": "0.1.76-preview.1",
-    "assemblyVersion": "0.1.76",
+    "releaseTag": "0.1.87-preview.1",
+    "assemblyVersion": "0.1.87",
     "releaseStatus": "release-status.json",
     "nativeRuntimeVerified": false,
     "evidencePolicy": "Only explicitly scoped current-DLL observations apply. Historical evidence never transfers."

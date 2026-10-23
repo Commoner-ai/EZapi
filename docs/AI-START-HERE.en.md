@@ -2,17 +2,20 @@
 
 # EZapi developer and AI entry point
 
-Current prerelease: **0.1.76-preview.1**, assembly 0.1.76. [Public distribution](https://github.com/Commoner-ai/EZapi). Framework implementation, offline tests and build projects are MIT open source; see [source builds](build-from-source.en.md). Use the public DLL APIs, metadata, guides and consumer examples.
+Current prerelease: **0.1.87-preview.1**, assembly 0.1.87. [Public distribution](https://github.com/Commoner-ai/EZapi). Framework implementation, offline tests and build projects are MIT open source; see [source builds](build-from-source.en.md). Use the public DLL APIs, metadata, guides and consumer examples.
 
 For artwork matching the original game, use the optional [item art guide](item-art.en.md), [asset/workflow index](item-art.index.json) and bundled same-category references.
 
 ## Choose a task
 
 - [Workflows](developer-workflows.index.json): JSON packs or DLL APIs, example and failure boundary.
+- [All native and Mod items](item-catalog.en.md): discover IDs without factories; explicitly scan metadata across frames; rebuild after language or run changes.
 - [Optional native-style tooltips](tooltip-style.en.md): native categories/value/properties, separate instructions/narrative, explicit attribution opt-out, extended-style alternative, JSON/DLL examples and [machine index](tooltip-style.index.json).
 - [Exact public signatures](public-api.index.json): types, overloads, parameters, defaults and XML documentation from the current binary; no method bodies.
 - [Task index](API.index.zh-CN.json), [domain index](source.index.json), [errors](errors.index.json). The repository domain index links implementation sources; the binary SDK lists modules and links to GitHub.
 - [Adaptive departure buttons](departure-buttons.en.md), [installation](install-and-debug.en.md), [entry automation](automation.en.md), [中文入口](AI-START-HERE.zh-CN.md).
+
+Use the SDK and source tag matching v0.1.87-preview.1 for these APIs.
 
 ## Download the developer package
 
@@ -53,8 +56,24 @@ Language follows game settings. Use GameLanguage.Current with inline bilingual t
 
 ## Verification scope
 
-Current checks are separated into 60 offline suites, 25 CLI process checks and scoped current-DLL native observations in release-status.json. **Full framework, mixed-Mod and save/reload acceptance remain pending.** Historical evidence never transfers.
+Current checks are separated into 67 offline suites, 25 CLI process checks and scoped current-DLL native observations in release-status.json. **Full framework, mixed-Mod and save/reload acceptance remain pending.** Historical evidence never transfers.
 
 Prefer the [official Probably Stolen guide](https://github.com/dragonpan2/probably-stolen-modding), the actual game signatures and each API result. EZapi has no Forge DLL dependency and promises no Forge binary compatibility.
 
 For native layouts, vertical centering, text sizes and overflow, start with the [UI preview index](native-ui-preview.index.json) and [native UI guide](native-ui-preview.en.md). Reload a template, inspect actual-font measurements and review the matching screenshot.
+
+
+[Faction reputation and extensions](faction-reputation.en.md): live factions and effects, real thresholds and native hover details; only the faction list scrolls.
+
+
+[Complete native/Mod item catalog](item-catalog.en.md): all IDs, explicit incremental metadata reads, per-item failures and run/locale invalidation.
+
+[Item origin and heat](item-origin.en.md): ordinary/stolen items, fixed percentages and native initialization with guarded readback.
+
+[Artwork inspection](artwork-inspection.en.md): source sprite crops, dark/transparent content, tight meshes, GPU and pure RGBA analysis.
+
+[Delivery receipts](delivery-receipts.en.md): stable gift/order tokens, detached item tags, fresh handoff audits and reload reconciliation. Uncertain delivery never triggers automatic reissue.
+
+[Native prepared items](prepared-items.en.md): explicit filled crates, random modules and a genuine injector; ordinary templates remain available and failures never automatically reroll.
+
+[Filled-container graph audit](delivery-graphs.en.md): compare root, descendants and inventory edges; uncertainty preserves the caller ledger without automatic reissue.

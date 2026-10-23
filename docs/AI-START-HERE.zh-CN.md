@@ -2,7 +2,7 @@
 
 # EZapi：开发者与AI入口
 
-当前预发布 **0.1.76-preview.1**，程序集版本0.1.76。公开发布仓库：[Commoner-ai/EZapi](https://github.com/Commoner-ai/EZapi)。框架、离线校验器、测试和构建工程已按 MIT 开源，见[源码构建](build-from-source.zh-CN.md)；开发普通 Mod 仍只需公开 DLL 接口。
+当前预发布版 **0.1.87-preview.1**，程序集版本0.1.87。公开发布仓库：[Commoner-ai/EZapi](https://github.com/Commoner-ai/EZapi)。框架、离线校验器、测试和构建工程已按 MIT 开源，见[源码构建](build-from-source.zh-CN.md)；开发普通 Mod 仍只需公开 DLL 接口。
 
 ## 从任务到示例
 
@@ -14,6 +14,8 @@
 
 - [物品美术参考与提示词](item-art.zh-CN.md)：需要贴近原版画风时，按类别选原版参考图；使用[item-art.index.json](item-art.index.json)查资源和提示词。
 - [可选原版 Tooltip 规范](tooltip-style.zh-CN.md)：原生分类/价格/属性与短说明、风味分层；显式关闭来源行，避免重复。扩展信息风格仍可选，含 JSON/DLL 示例与[机器索引](tooltip-style.index.json)。
+
+本版 API 请使用 v0.1.87-preview.1 配套开发包与源码标签。
 
 ## 先下载开发包
 
@@ -56,8 +58,24 @@ dotnet build ./SimpleMod.csproj -c Release '-p:GameDir=<你的游戏目录>'
 
 ## 当前证据
 
-当前检查分为60组离线套件、25项CLI检查，以及 release-status.json 明确列出的当前DLL局部原生观察。**全框架、组合Mod及保存重载仍待验收。** 历史DLL证据不能转移。
+当前检查分为67组离线套件、25项CLI检查，以及 release-status.json 明确列出的当前DLL局部原生观察。**全框架、组合Mod及保存重载仍待验收。** 历史DLL证据不能转移。
 
 Probably Stolen官方文档是优先参考：[probably-stolen-modding](https://github.com/dragonpan2/probably-stolen-modding)。具体游戏版本签名与接口自己的失败结果仍是准绳。EZapi不依赖Forge DLL，不承诺Forge二进制兼容。
 
 原生窗口布局、上下居中、字号与文字溢出：先读 [UI预览索引](native-ui-preview.index.json) 和 [原生UI指南](native-ui-preview.zh-CN.md)，选择模板、重载、导出真实字体报告，再结合截图调整。
+
+
+[阵营声望界面与扩展](faction-reputation.zh-CN.md)：动态发现阵营与权益，按真实阈值显示图标，悬停在下方显示原版效果；左侧可滚动，底部无滚动条。
+
+
+[原版与 Mod 全物品目录](item-catalog.zh-CN.md)：完整ID、分帧原生名称/价值/原图路径、失败条目和语言/周目失效。做图鉴或订货系统时从此入口开始，不用 `ItemApi.Snapshot()` 代替全目录；原生基础价不等于最终成交价。
+
+[物品来源与热度](item-origin.zh-CN.md)：普通货物、赃物、固定百分比与原生初始化，写后核对。
+
+[图片内容检测](artwork-inspection.zh-CN.md)：原生精灵裁切、黑图/透明图、紧密网格、GPU 与纯 RGBA 分析。
+
+[物品交付凭据与对账](delivery-receipts.zh-CN.md)：礼包、订单稳定编号、游离物品标签、交付写后核对与读档恢复。交付不明时不自动补发。
+
+[原生预制物品](prepared-items.zh-CN.md)：明确选择已填充物资箱、随机模块或真品注射器；保留普通目录创建行为，失败不自动重掷。
+
+[带内容容器整图交付核验](delivery-graphs.zh-CN.md)：比较物资箱根、子物品与库存边；不确定时保留账本，不自动补发。

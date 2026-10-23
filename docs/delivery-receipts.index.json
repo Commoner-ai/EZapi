@@ -1,0 +1,99 @@
+{
+  "schemaVersion": 1,
+  "version": "0.1.87",
+  "api": [
+    "EZapi.ItemReceiptApi",
+    "EZapi.DeliveryReceiptAudit"
+  ],
+  "taskZh": "礼包、订单交付凭据与防重复领奖恢复对账",
+  "taskEn": "Gift/order item delivery receipts and recovery reconciliation",
+  "guide": "delivery-receipts.zh-CN.md",
+  "englishGuide": "delivery-receipts.en.md",
+  "source": [
+    "../src/EZapi/DeliveryReceiptAudit.cs",
+    "../src/EZapi/ItemReceiptApi.cs"
+  ],
+  "example": "examples/delivery-receipt-dll/ReceiptDelivery.cs",
+  "project": "examples/delivery-receipt-dll/Receipts.csproj",
+  "methods": [
+    {
+      "memberKey": "M:EZapi.ItemReceiptApi.StampDetached(Il2Cpp.GameItem,System.String,System.String,EZapi.DeliveryReceipt)",
+      "thread": "initialized current-run main thread; known build and freeze gates"
+    },
+    {
+      "memberKey": "M:EZapi.ItemReceiptApi.Capture(System.String,System.String)",
+      "thread": "initialized current-run main thread; known build"
+    },
+    {
+      "memberKey": "M:EZapi.DeliveryReceiptAudit.Reconcile(EZapi.DeliveryReceiptSnapshot,EZapi.DeliveryReceipt,EZapi.DeliveryLedgerState)",
+      "thread": "pure managed; workers allowed with stable inputs"
+    },
+    {
+      "memberKey": "M:EZapi.DeliveryReceiptAudit.CheckHandoff(EZapi.DeliveryReceiptSnapshot,EZapi.DeliveryReceiptSnapshot,EZapi.DeliveryReceiptStamp,System.Nullable{System.Int64})",
+      "thread": "pure managed; same-load snapshots only"
+    }
+  ],
+  "limits": {
+    "items": 4096,
+    "jsonCharactersPerPass": 1048576,
+    "scanPasses": 2,
+    "operationIdCharacters": 128
+  },
+  "ledgerStates": [
+    "Pending",
+    "InFlight",
+    "Delivered"
+  ],
+  "decisions": [
+    "CanAttempt",
+    "Observed",
+    "Recorded",
+    "Conflict",
+    "Indeterminate",
+    "Invalid"
+  ],
+  "format": {
+    "itemDataVersion": 1,
+    "dedicatedOwnerKey": true,
+    "fields": [
+      "OperationId",
+      "ItemId",
+      "Units"
+    ],
+    "persistentOperationId": true,
+    "nativeIdentitiesPersistent": false
+  },
+  "policy": "Caller owns ledger/payment/native admission/save. Delivered ledger takes precedence even without a scan. InFlight absence never permits automatic resend.",
+  "observedFields": [
+    "native identity",
+    "instance ID",
+    "item ID",
+    "whole units",
+    "player ownership",
+    "parent inventory",
+    "dedicated receipt"
+  ],
+  "notObserved": [
+    "geometry",
+    "inventory locks",
+    "arbitrary tags",
+    "container-content correctness",
+    "cash",
+    "disk persistence"
+  ],
+  "language": "Stable IDs/enums/error codes for all locales; player text through GameLanguage.Resolve. No localized-name identity.",
+  "offlineVerification": {
+    "passed": 103,
+    "failed": 0,
+    "scope": "Production receipt sources, real ItemDataApi and distributed consumer; explicit native graph/ownership/admission stand-ins. Not native acceptance."
+  },
+  "nativeAcceptance": "Pending for current DLL. Shared game reserved for the other conversation.",
+  "documentationContext": {
+    "kind": "current-api-guide",
+    "releaseTag": "0.1.87-preview.1",
+    "assemblyVersion": "0.1.87",
+    "releaseStatus": "release-status.json",
+    "nativeRuntimeVerified": false,
+    "evidencePolicy": "Historical DLL evidence never transfers."
+  }
+}

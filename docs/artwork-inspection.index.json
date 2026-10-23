@@ -1,0 +1,95 @@
+{
+  "schemaVersion": 1,
+  "version": "0.1.87",
+  "api": [
+    "EZapi.SpriteArtworkApi",
+    "EZapi.ArtworkPixels"
+  ],
+  "taskZh": "检测物品精灵黑图透明图与可见内容",
+  "taskEn": "Inspect native sprite and caller-owned RGBA content",
+  "guide": "artwork-inspection.zh-CN.md",
+  "englishGuide": "artwork-inspection.en.md",
+  "source": [
+    "../src/EZapi/ArtworkPixels.cs",
+    "../src/EZapi/SpriteArtworkApi.cs"
+  ],
+  "example": "examples/sprite-inspection-dll/StockArtwork.cs",
+  "pureExample": "examples/artwork-dll/Artwork.cs",
+  "methods": [
+    {
+      "memberKey": "M:EZapi.SpriteArtworkApi.Inspect(UnityEngine.Sprite,EZapi.ArtworkOptions)",
+      "thread": "initialized Unity main thread"
+    },
+    {
+      "memberKey": "M:EZapi.SpriteArtworkApi.InspectItem(Il2Cpp.GameItem,EZapi.ArtworkOptions)",
+      "thread": "loaded current-run game main thread, known game build"
+    },
+    {
+      "memberKey": "M:EZapi.ArtworkPixels.AnalyzeRgba(System.Int32,System.Int32,System.Byte[],EZapi.ArtworkOptions)",
+      "thread": "pure managed; workers allowed"
+    }
+  ],
+  "defaults": {
+    "minimumAlpha": 16,
+    "maximumDarkChannel": 8,
+    "minimumDetailPixels": 2,
+    "minimumDetailFraction": 0.01,
+    "maximumPixels": 1048576,
+    "allowGpuReadback": true
+  },
+  "limits": {
+    "pixels": 1048576,
+    "vertices": 1024,
+    "indices": 6144,
+    "rasterWork": 8388608
+  },
+  "statuses": {
+    "Inspected": "Confirmed source statistics",
+    "Invalid": "Input/geometry rejected",
+    "Unavailable": "No reliable native evidence",
+    "LimitExceeded": "Entire inspection refused; no partial result",
+    "CleanupFailed": "No successful result despite pixel read; independent cleanup attempted"
+  },
+  "content": [
+    "Transparent",
+    "Dark",
+    "Artwork"
+  ],
+  "readPaths": [
+    "ReadableTexture",
+    "GpuReadback",
+    "Mixed"
+  ],
+  "policy": "Configurable content heuristic, not art-quality/style/sale eligibility; colored placeholders can pass.",
+  "nativeEntryPoints": [
+    "Il2Cpp.RenderHandler.LoadFromAtlasRaw(string,string)",
+    "UnityEngine.Sprite.texture/textureRect/uv/triangles/associatedAlphaSplitTexture",
+    "UnityEngine.Texture2D.GetPixels/ReadPixels/GetPixels32",
+    "UnityEngine.Graphics.Blit(Texture,RenderTexture,Vector2,Vector2)",
+    "UnityEngine.RenderTexture.GetTemporary/ReleaseTemporary/active",
+    "UnityEngine.GL.sRGBWrite"
+  ],
+  "cleanup": "Independently restore active target/sRGBWrite, destroy only owned readback texture and release only rented RT; never destroy source.",
+  "language": "Locale-independent enums/counts/English diagnostics. Caller text uses GameLanguage.Resolve.",
+  "offlineVerification": {
+    "passed": 96,
+    "failed": 0,
+    "scope": "Real production sources with explicit Unity stand-ins. Modelled GPU/color branches do not establish native rendering."
+  },
+  "nativeAcceptance": "Pending for current DLL; no shared-game inputs in this turn.",
+  "notGuaranteed": [
+    "native GPU/backend/color/compression behavior",
+    "custom shader/tint/final screen appearance",
+    "sale eligibility or all placeholder detection",
+    "arbitrary Mod resource lifecycle",
+    "interruption of synchronous GPU calls"
+  ],
+  "documentationContext": {
+    "kind": "current-api-guide",
+    "releaseTag": "0.1.87-preview.1",
+    "assemblyVersion": "0.1.87",
+    "releaseStatus": "release-status.json",
+    "nativeRuntimeVerified": false,
+    "evidencePolicy": "Historical DLL evidence never transfers."
+  }
+}

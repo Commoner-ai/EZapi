@@ -82,7 +82,7 @@
       "avoid": "Do not infer arbitrary trade behavior from actorId; do not queue for another save slot/run or retain client wrappers across an epoch."
     }
   ],
-  "implementationVersion": "0.1.76",
+  "implementationVersion": "0.1.87",
   "activation": {
     "initialization": "C# 注册同步托管回调；JSON 配置在注册时预检",
     "factory": "按 ID 绑定共享无实例状态的原生委托；每个读档重建实例重新绑定",
@@ -99,8 +99,8 @@
   "previousImplementationVersionBaseline": "0.1.7",
   "documentationContext": {
     "kind": "current-api-guide",
-    "releaseTag": "0.1.76-preview.1",
-    "assemblyVersion": "0.1.76",
+    "releaseTag": "0.1.87-preview.1",
+    "assemblyVersion": "0.1.87",
     "releaseStatus": "release-status.json",
     "nativeRuntimeVerified": false,
     "evidencePolicy": "Only explicitly scoped current-DLL observations apply. Historical evidence never transfers."

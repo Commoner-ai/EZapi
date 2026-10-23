@@ -19,6 +19,10 @@ Private canvases, independent buttons without NetworkElement, and another comple
 
 ## Lifecycle and diagnostics
 
+Since 0.1.77 the initial layout binds synchronously in the final OpenUI(bool) postfix, after ordinary Mod postfixes; it no longer waits for OnUpdate. The 0.35-second scan still discovers late extensions. `wildBrowser.opening` records opening/binding frames, trigger and same-call binding.
+
+An internal rapid direct CloseUI/OpenUI script produced CanvasGroup fallback warnings and is not treated as real close-button acceptance. Current evidence covers initial opening only; see release status for lifecycle limitations.
+
 The independent `ezapi.presentation.wild-browser` group checks exact OpenUI(bool)/CloseUI signatures. Both native methods always execute. Before open/close, on scene change and at shutdown, the adapter restores original parents, sibling order, geometry and component states, revokes owned callbacks and destroys owned UI. Unsupported structures/errors restore the original presentation and log `EZAPI_WILD_BROWSER`.
 
 The optional developer panel provides a disposable 84-card/new-category scrolling probe. It adds UI duplicates only, not upgrades or save data; closing the window removes them. Duplicates retain original IDs and must not be used to repeat purchase tests.

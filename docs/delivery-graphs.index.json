@@ -1,0 +1,67 @@
+{
+  "schemaVersion": 1,
+  "version": "0.1.87",
+  "api": [
+    "EZapi.ItemGraphReceiptApi",
+    "EZapi.DeliveryGraphAudit"
+  ],
+  "taskZh": "带内容容器整图交付核验",
+  "taskEn": "Filled-container delivery graph audit",
+  "guide": "delivery-graphs.zh-CN.md",
+  "englishGuide": "delivery-graphs.en.md",
+  "source": [
+    "../src/EZapi/DeliveryGraphAudit.cs",
+    "../src/EZapi/ItemGraphReceiptApi.cs"
+  ],
+  "example": "examples/delivery-graph-dll/GraphDelivery.cs",
+  "project": "examples/delivery-graph-dll/Graphs.csproj",
+  "methods": [
+    {
+      "memberKey": "M:EZapi.DeliveryGraphAudit.CheckHandoff(EZapi.DeliveryGraphSnapshot,EZapi.DeliveryGraphSnapshot,EZapi.DeliveryGraphSnapshot,System.Nullable{System.Int64},System.Boolean)",
+      "thread": "Pure managed immutable complete observations; offline/workers allowed"
+    },
+    {
+      "memberKey": "M:EZapi.DeliveryGraphAudit.Reconcile(EZapi.DeliveryGraphSnapshot,EZapi.DeliveryReceipt,EZapi.DeliveryLedgerState)",
+      "thread": "Pure managed immutable complete observations; offline/workers allowed"
+    },
+    {
+      "memberKey": "M:EZapi.DeliveryGraphAudit.SameObservation(EZapi.DeliveryGraphSnapshot,EZapi.DeliveryGraphSnapshot)",
+      "thread": "Pure managed immutable complete observations; offline/workers allowed"
+    },
+    {
+      "memberKey": "M:EZapi.ItemGraphReceiptApi.CaptureDetached(Il2Cpp.GameItem,System.String,System.String)",
+      "thread": "Fresh current initialized game main-thread/run/build capture"
+    },
+    {
+      "memberKey": "M:EZapi.ItemGraphReceiptApi.CaptureRun(System.String,System.String)",
+      "thread": "Fresh current initialized game main-thread/run/build capture"
+    }
+  ],
+  "limits": {
+    "nodes": 8192,
+    "items": 4096,
+    "combinedGraphReferences": 16384,
+    "jsonCharactersPerPass": 1048576
+  },
+  "defaults": {
+    "requiredInventoryIdentity": null,
+    "allowChildOwnershipInitialization": false
+  },
+  "scope": "Observed nodes, edges, native/instance IDs, item IDs, units, ownership, parent inventory and addressed receipts only. Not geometry, arbitrary tags, quality/heat, money or disk persistence.",
+  "recoveryBoundary": "Reconcile confirms current root receipt only; persist an expected content manifest for original child contents after cold load. Never serialize pointers as cross-load identity.",
+  "policy": "No native admission, cleanup, automatic retry, ledger update, payment or save.",
+  "offlineVerification": {
+    "passed": 156,
+    "failed": 0,
+    "scope": "Production graph/receipt/item-data sources and distributed consumer with explicit native boundary stand-ins; not native admission or save acceptance."
+  },
+  "nativeAcceptance": "Pending for current DLL; shared game reserved for the other conversation.",
+  "documentationContext": {
+    "kind": "current-api-guide",
+    "releaseTag": "0.1.87-preview.1",
+    "assemblyVersion": "0.1.87",
+    "releaseStatus": "release-status.json",
+    "nativeRuntimeVerified": false,
+    "evidencePolicy": "Historical DLL evidence never transfers."
+  }
+}

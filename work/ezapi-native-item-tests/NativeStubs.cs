@@ -3,9 +3,15 @@ namespace Il2CppSystem {
     public class Func<T> { public System.Func<T> Value=null!; public T Invoke()=>Value(); }
 }
 namespace Il2Cpp {
-    public static class LocHelper { public static string? GetCurrentLocaleCode()=>"en"; }
+    public static class LocHelper {
+        public static string Locale="en";public static bool Throw;public static int Reads;
+        public static string? GetCurrentLocaleCode(){Reads++;if(Throw)throw new InvalidOperationException("stub locale not ready");return Locale;}
+    }
     public class GameItem {
- private static int Next;public IntPtr Pointer {get;set;}=new(++Next);public int uniqueId=Next;public string identifier="",identifierName="",name="",shortDescription="",flavorText="";
+ private static int Next;public IntPtr Pointer {get;set;}=new(++Next);public int uniqueId=Next;public string identifier="",identifierName="",name="",shortDescription="",flavorText="",longDescription="",customText="";
+ public PixelWindow? contentWindow;
+ public string GetDisplayName(bool compact){EZapi.NativeHookGroup.Invoke(this,false);return name;}
+ public void RestoreContentWindowPosition()=>EZapi.NativeHookGroup.Invoke(this,true);
  public int unitCount=1;public object? parentInventory;public HashSet<string> Types=new();public bool IsGameItemType(string type)=>Types.Contains(type);
  public bool Destroyed;public void Destroy()=>Destroyed=true;
  public T? TryCast<T>() where T:class=>this as T;public long GetCurrentValue(bool a,bool b,bool c,bool d,int e)=>1;
@@ -35,7 +41,7 @@ namespace Il2CppInterop.Runtime {
 namespace MelonLoader {
     public static class MelonLogger {
         public static void Msg(string s) { }
-        public static void Warning(string s) { }
+        public static List<string> Warnings=new();public static void Warning(string s) { Warnings.Add(s); }
         public static void Error(string s) { }
     }
 }

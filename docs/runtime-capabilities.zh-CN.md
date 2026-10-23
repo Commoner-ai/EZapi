@@ -2,6 +2,8 @@
 
 # RuntimeCapabilities：运行时能力快照
 
+0.1.87 起，`GameLanguage.Current` 与已有物品本地化刷新不依赖 `KnownGameBuild`。前者检查主线程、实际 getter 签名和返回值；后者继续检查所需钩子的签名、原生入口及补丁所有者。包装 DLL 指纹未知仍会让 `KnownGameBuild=false`，但不能据此判定语言不可读。此调整仅覆盖语言链，其他能力的独立构建门控仍需遵守。
+
 `FrameworkInfo.GetCapabilities()` 是编译期能力清单：它说明 EZapi 声明了哪些入口。`RuntimeCapabilities.Current` 则在读取时重新检查 EZapi 自身的运行门控，不保留 Unity/IL2CPP 对象，也不把编译清单当成运行就绪状态。
 
 ```csharp

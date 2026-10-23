@@ -1,10 +1,12 @@
 # EZapi
 
+0.1.87 修复生成包装 DLL 指纹差异导致的英文回退，并恢复已有物品的语言刷新；主线程、实际接口与刷新钩子检查保留。其他功能的构建校验未扩展，当前 DLL 仍待实机验收。详见[当前语言指南](docs/game-language.zh-CN.md)。
+
 [当前版本与验收状态](docs/current-status.zh-CN.md) · [Historical records / 历史资料](docs/history/README.md)
 
 EZapi 是 Probably Stolen 的独立 Mod 前置框架，提供 DLL API、JSON 内容包、离线校验器、可编译示例及 AI 可读索引。优先使用游戏官方接口，并在当前游戏构建中集中处理兼容适配。
 
-**当前预发布：0.1.76-preview.1，程序集版本0.1.76。** 完整目标尚未完成。
+**当前预发布版：0.1.87-preview.1，程序集版本0.1.87。** 从 GitHub Releases 获取。 完整目标尚未完成。
 
 本仓库按 **MIT 许可证开源**：框架、离线校验器、测试、构建脚本、文档、接口索引和调用示例均可查看、修改与分发。旧私有仓库的历史不迁入，游戏程序集及私人数据不分发。玩家从 Releases 下载安装包，源码开发见[构建说明](docs/build-from-source.zh-CN.md)。
 
@@ -15,7 +17,7 @@ EZapi 是 Probably Stolen 的独立 Mod 前置框架，提供 DLL API、JSON 内
 - [常见 API 任务索引](docs/API.index.zh-CN.json)、[领域索引](docs/source.index.json)、[错误索引](docs/errors.index.json)。
 - [当前游戏语言指南](docs/game-language.zh-CN.md)、[English guide](docs/game-language.en.md)、[语言任务索引](docs/game-language.index.json)。
 - [知识库升级/服务/前置条件扩展](docs/progression-requirements.index.json)、[物品版本化数据](docs/item-data.index.json)、[Forge公共能力对照](docs/forge-parity.index.json)。
-- [本次版本与验证范围](docs/releases/0.1.76-preview.1.md)。
+- [本次版本与验证范围](docs/releases/0.1.87-preview.1.md)。
 
 - [贴近原版画风的物品美术](docs/item-art.zh-CN.md)：开发包附96张原版参考、8张分类图、透明单图与AI提示词；按需使用。原版美术保留独立权属。
 - [可选原版 Tooltip 规范](docs/tooltip-style.zh-CN.md)：原版/扩展两种风格、简介与风味摆放、JSON/DLL示例。开发包起步工具提供 `-TooltipStyle Native|Extended`，并附离线API查询工具。
@@ -62,8 +64,14 @@ dotnet build docs/examples/minimal-dll/SimpleMod.csproj -c Release -p:GameDir='<
 
 Forge参考功能覆盖为39/39组；这是功能对应清点，不承诺Forge二进制ABI兼容。EZapi使用自己的实现，并不依赖Forge DLL。
 
-语言跟随游戏当前设置，CSV可保留更多语言支持。本版增加[原生UI积木与AI预览](docs/native-ui-preview.zh-CN.md)：上下居中、间隔、字号、换行与真实字体溢出测量。60组离线回归、25项CLI检查和当前DLL局部原生检查分别记录；全框架、组合Mod与保存重载仍待验收。历史DLL结果不转移到当前版本。验证范围与哈希见发布附件的package-verification.json和包内verification.json。
+语言跟随游戏当前设置，CSV可保留更多语言支持。本版增加[原生UI积木与AI预览](docs/native-ui-preview.zh-CN.md)：上下居中、间隔、字号、换行与真实字体溢出测量。67组离线回归、25项CLI检查和当前DLL局部原生检查分别记录；全框架、组合Mod与保存重载仍待验收。历史DLL结果不转移到当前版本。验证范围与哈希见发布附件的package-verification.json和包内verification.json。
 
 源码与二进制采用 MIT 许可证，保留版权声明即可使用、修改与分发，见 LICENSE；第三方依赖说明见 THIRD-PARTY-NOTICES.md。
 
 Original game artwork references retain separate rights and are excluded from MIT; see [third-party notices](THIRD-PARTY-NOTICES.md). 原版美术参考不属于MIT授权。
+
+
+[阵营声望界面与扩展](docs/faction-reputation.zh-CN.md)：动态发现阵营与权益，按真实阈值显示图标，悬停在下方显示原版效果；左侧可滚动，底部无滚动条。
+
+
+[原版与 Mod 全物品目录](docs/item-catalog.zh-CN.md)：完整ID、分帧原生名称/价值/原图路径、失败条目和语言/周目失效。

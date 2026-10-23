@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "version": "0.1.76",
+  "version": "0.1.87",
   "purpose": "AI-readable native lifecycle, persistence and external-source lookup contract",
   "guideZh": "machine-persistence.zh-CN.md",
   "guideEn": "machine-persistence.en.md",
@@ -71,8 +71,8 @@
   "previousVersionBaseline": "0.1.62",
   "documentationContext": {
     "kind": "current-api-guide",
-    "releaseTag": "0.1.76-preview.1",
-    "assemblyVersion": "0.1.76",
+    "releaseTag": "0.1.87-preview.1",
+    "assemblyVersion": "0.1.87",
     "releaseStatus": "release-status.json",
     "nativeRuntimeVerified": false,
     "evidencePolicy": "Only explicitly scoped current-DLL observations apply. Historical evidence never transfers."

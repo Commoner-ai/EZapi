@@ -1,0 +1,140 @@
+{
+  "schemaVersion": 1,
+  "version": "0.1.87",
+  "api": [
+    "EZapi.PreparedItemApi"
+  ],
+  "taskZh": "原生预制物资箱随机模块真品注射器",
+  "taskEn": "Native filled loot crates, randomized modules and genuine injector",
+  "guide": "prepared-items.zh-CN.md",
+  "englishGuide": "prepared-items.en.md",
+  "source": [
+    "../src/EZapi/PreparedItems.cs"
+  ],
+  "example": "examples/prepared-item-dll/PreparedReward.cs",
+  "project": "examples/prepared-item-dll/Prepared.csproj",
+  "methods": [
+    {
+      "memberKey": "M:EZapi.PreparedItemApi.Describe",
+      "thread": "pure managed; workers allowed; no factories"
+    },
+    {
+      "memberKey": "M:EZapi.PreparedItemApi.Create(EZapi.PreparedItemKind,System.Boolean)",
+      "thread": "current initialized game main thread, known build and freeze gates"
+    }
+  ],
+  "recipes": [
+    {
+      "kind": "SecurityCrate",
+      "itemId": "sec_box",
+      "nativeFactory": "Il2Cpp.PreBuiltItemHelper.LootCrateSecurity()",
+      "lootRecipe": "loot_crate_security"
+    },
+    {
+      "kind": "MedicalCrate",
+      "itemId": "med_box",
+      "nativeFactory": "Il2Cpp.PreBuiltItemHelper.LootCrateMedical()",
+      "lootRecipe": "loot_crate_medical"
+    },
+    {
+      "kind": "EngineeringCrate",
+      "itemId": "eng_box",
+      "nativeFactory": "Il2Cpp.PreBuiltItemHelper.LootCrateEngineering()",
+      "lootRecipe": "loot_crate_engineering"
+    },
+    {
+      "kind": "ServiceCrate",
+      "itemId": "service_box",
+      "nativeFactory": "Il2Cpp.PreBuiltItemHelper.LootCrateService()",
+      "lootRecipe": "loot_crate_service"
+    },
+    {
+      "kind": "EvidenceCrate",
+      "itemId": "evidence_box",
+      "nativeFactory": "Il2Cpp.PreBuiltItemHelper.LootCrateEvidence()",
+      "lootRecipe": "loot_crate_evidence"
+    },
+    {
+      "kind": "PerformanceModule",
+      "itemId": "system_module_performance",
+      "nativeFactory": "Il2Cpp.PreBuiltItemHelper.RandomPerformanceModule()",
+      "lootRecipe": null
+    },
+    {
+      "kind": "EfficiencyModule",
+      "itemId": "system_module_efficiancy",
+      "nativeFactory": "Il2Cpp.PreBuiltItemHelper.RandomEfficiencyModule()",
+      "lootRecipe": null
+    },
+    {
+      "kind": "QualityModule",
+      "itemId": "system_module_quality",
+      "nativeFactory": "Il2Cpp.PreBuiltItemHelper.RandomQualityModule()",
+      "lootRecipe": null
+    },
+    {
+      "kind": "OverclockModule",
+      "itemId": "system_module_overclock",
+      "nativeFactory": "Il2Cpp.PreBuiltItemHelper.RandomOverclockModule()",
+      "lootRecipe": null
+    },
+    {
+      "kind": "EcoModule",
+      "itemId": "system_module_eco",
+      "nativeFactory": "Il2Cpp.PreBuiltItemHelper.RandomEcoModule()",
+      "lootRecipe": null
+    },
+    {
+      "kind": "FinenessModule",
+      "itemId": "system_module_fineness",
+      "nativeFactory": "Il2Cpp.PreBuiltItemHelper.RandomFinenessModule()",
+      "lootRecipe": null
+    },
+    {
+      "kind": "GenuineInjector",
+      "itemId": "large_purple_injector",
+      "nativeFactory": "Il2Cpp.PreBuiltItemHelper.CreateRealGenuineInjector()",
+      "lootRecipe": null
+    }
+  ],
+  "limits": {
+    "graphNodes": 8192,
+    "items": 4096,
+    "combinedGraphReferences": 16384
+  },
+  "defaults": {
+    "owned": true
+  },
+  "statuses": [
+    "Created",
+    "Invalid",
+    "Unavailable",
+    "Conflict",
+    "Indeterminate"
+  ],
+  "cleanup": [
+    "None",
+    "DestroyReturned",
+    "SkippedUnprovenGraph",
+    "SkippedStaleRun",
+    "Failed",
+    "FactoryDidNotReturn"
+  ],
+  "policy": "Exactly one native factory call. Result remains detached. No directory override, in-place repair, fill/refill, auto reroll, delivery, payment or save. Child contents retain native state.",
+  "deliveryBoundary": "DeliveryReceiptAudit.CheckHandoff remains single-addition. Populated graphs use ItemGraphReceiptApi / DeliveryGraphAudit; caller owns admission/ledger/save.",
+  "language": "Stable native IDs/kinds/statuses; caller player text uses GameLanguage.Resolve. Preserve system_module_efficiancy spelling.",
+  "offlineVerification": {
+    "passed": 135,
+    "failed": 0,
+    "scope": "Real PreparedItems.cs with explicit native factory/graph/ownership/lock stand-ins; not native contents, effects, random distributions or save/reload acceptance."
+  },
+  "nativeAcceptance": "Pending for current DLL; shared game remains reserved for the other conversation.",
+  "documentationContext": {
+    "kind": "current-api-guide",
+    "releaseTag": "0.1.87-preview.1",
+    "assemblyVersion": "0.1.87",
+    "releaseStatus": "release-status.json",
+    "nativeRuntimeVerified": false,
+    "evidencePolicy": "Historical DLL evidence never transfers."
+  }
+}

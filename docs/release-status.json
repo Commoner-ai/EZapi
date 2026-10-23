@@ -1,15 +1,15 @@
 {
   "schemaVersion": 1,
-  "releaseTag": "0.1.76-preview.1",
-  "assemblyVersion": "0.1.76",
+  "releaseTag": "0.1.87-preview.1",
+  "assemblyVersion": "0.1.87",
   "status": "prerelease",
   "license": "MIT",
   "repository": "https://github.com/Commoner-ai/EZapi",
-  "runtimeDllSHA256": "48D037715375C8AFF6528AD6674A224FF7F953BE33BC1E04672462AC121A54E5",
-  "runtimeChangedSince": "0.1.74-preview.2: native UI components/preview, developer bilingual usability and explicit transient regression binding",
+  "runtimeDllSHA256": "F77382F3505352417D2AB1F503AC0F43312D3B6D2675FC4C710F54CEB422E00E",
+  "runtimeChangedSince": "0.1.86-preview.1: locale getter binding and existing-item localization hooks no longer depend on a whole-wrapper-DLL SHA; exact getter, thread, value and native hook checks retained",
   "offlineVerification": {
     "sourceRebuildPassed": true,
-    "offlineSuitesPassed": 60,
+    "offlineSuitesPassed": 67,
     "cliProcessChecksPassed": 25,
     "sourceBuiltPackagingPassed": true
   },
@@ -17,7 +17,16 @@
   "pendingNativeAcceptance": [
     "Full framework gameplay acceptance",
     "Other Mod combinations and real machine-window integration",
-    "Native save and reload for current DLL"
+    "Native save and reload for current DLL",
+    "Rapid programmatic CloseUI/OpenUI and deferred CanvasGroup cleanup",
+    "Item catalog: repeat complete native Chinese/English scans and language restoration after the async locale readiness fix",
+    "Item origin: fixed0/100 heat, already-stolen/native initialization, native freeze/ownership, Chinese/English tooltips, overnight/detection and explicit save/reload",
+    "Sprite artwork: real readable/compressed/unreadable atlas pixels, tight UV meshes, split alpha, GPU color-space/restoration and mixed-Mod resource lifecycle",
+    "Delivery receipts: native empty-slot/fallback admission, wrapper destruction, mixed-Mod tags, ledger conflicts, overnight and cold save/reload recovery",
+    "Prepared items: all12 real native factories, filled crate graph/runtime lock/opening, random modules/genuine injector, root ownership, native cleanup, mixed-Mod graphs and explicit save/reload",
+    "Delivery graphs: real filled-container admission topology, child ownership/instance initialization, wrapper invalidation, mixed-Mod changes, overnight and cold save/reload with caller expected-content manifests",
+    "Optional DLL descriptions: empty short/flavor fields during native tooltip/reopen/language change and cold-load refresh; current DLL not installed",
+    "Locale compatibility: actual regenerated wrapper DLLs, Chinese/English reads and existing/cold-loaded item refresh on current DLL; no game installation or input in this fix"
   ],
   "referenceCoverage": {
     "implementedGroups": 39,
@@ -40,7 +49,27 @@
     "wildBrowserEn": "wild-network.en.md",
     "nativeUiZh": "native-ui-preview.zh-CN.md",
     "nativeUiEn": "native-ui-preview.en.md",
-    "nativeUiIndex": "native-ui-preview.index.json"
+    "nativeUiIndex": "native-ui-preview.index.json",
+    "factionBrowserZh": "faction-reputation.zh-CN.md",
+    "factionBrowserEn": "faction-reputation.en.md",
+    "itemCatalogZh": "item-catalog.zh-CN.md",
+    "itemCatalogEn": "item-catalog.en.md",
+    "itemCatalogIndex": "item-catalog.index.json",
+    "itemOriginZh": "item-origin.zh-CN.md",
+    "itemOriginEn": "item-origin.en.md",
+    "itemOriginIndex": "item-origin.index.json",
+    "artworkInspectionZh": "artwork-inspection.zh-CN.md",
+    "artworkInspectionEn": "artwork-inspection.en.md",
+    "artworkInspectionIndex": "artwork-inspection.index.json",
+    "deliveryReceiptsZh": "delivery-receipts.zh-CN.md",
+    "deliveryReceiptsEn": "delivery-receipts.en.md",
+    "deliveryReceiptsIndex": "delivery-receipts.index.json",
+    "preparedItemsZh": "prepared-items.zh-CN.md",
+    "preparedItemsEn": "prepared-items.en.md",
+    "preparedItemsIndex": "prepared-items.index.json",
+    "deliveryGraphsZh": "delivery-graphs.zh-CN.md",
+    "deliveryGraphsEn": "delivery-graphs.en.md",
+    "deliveryGraphsIndex": "delivery-graphs.index.json"
   },
   "historicalNativeObservations": {
     "assemblyVersion": "0.1.74",
@@ -69,7 +98,7 @@
       }
     ]
   },
-  "scopedNativeObservations": [
+  "historicalScopedNativeObservations": [
     {
       "feature": "Native UI preview and bilingual developer surfaces",
       "assemblyVersion": "0.1.76",
@@ -93,6 +122,76 @@
       "saveFilesUnchanged": 551,
       "scope": "explicitly bound transient UI fixtures; supplier arrival fixture-dispatched; no natural supplier visit/payment/delivery, machine production or disk save/reload acceptance",
       "evidenceAvailability": "local raw evidence retained privately; aggregate observations only are distributed"
+    },
+    {
+      "feature": "Wild network opening presentation",
+      "assemblyVersion": "0.1.77",
+      "dllSHA256": "58FF0D2A0701C63142444E009D702B9E00ED39BEEF07805D2285A43ACF2FB214",
+      "checks": [
+        "User confirmed direct opening without the original-window flash",
+        "Five instrumented OpenUI returns and their first Canvas callbacks had exactly one browser at width 1480",
+        "OpenUI.postfix binding completed in the same frame as native opening",
+        "Existing DeepSpace Mod entries retained; six categories and 38 live cards"
+      ],
+      "loadedModContext": "EZapi with the existing DeepSpace Mod 0.3.7; no arbitrary-Mod compatibility guarantee",
+      "limitations": [
+        "A direct CloseUI/OpenUI automation sequence caused three CanvasGroup restoration warnings. This probe is not accepted as a real close-button regression pass; the temporary probe was disabled after collection.",
+        "User resumed gameplay after the scripted checks. No claim of a completed save/reload or byte-unchanged full-session acceptance."
+      ],
+      "scope": "Opening and first-render presentation only; not a full UI lifecycle or framework acceptance",
+      "evidenceAvailability": "Private raw evidence retained locally; aggregate observations only are distributed"
+    },
+    {
+      "feature": "Faction reputation browser and larger native header controls",
+      "assemblyVersion": "0.1.78",
+      "dllSHA256": "4634EBCE7B3D6D71A1A3A11059D74536066198CB4A45A5FBAA412D7C58D8F5B5",
+      "checks": [
+        "Native close/info controls and hit areas are 44x44; close and reopen preserve the enlarged layout",
+        "Native information tooltip still opens; native close button returns to the shop",
+        "All five native factions and all 40 effect IDs, source order, text and signed thresholds match the original catalog",
+        "One real native hover per faction matches its native effect description; native PerkElement sprites retained",
+        "Same-frame opening, fixed hover detail area and no bottom benefit scrollbar",
+        "24 transient provider factions plus five native factions: vertical faction scrolling and search",
+        "28 effects per provider retained in two counted groups of 14; effect switching, negative threshold and seven-page long-text navigation",
+        "Closing clears all owned objects/callbacks and transient test factions; no faction provider/native errors in captured diagnostics"
+      ],
+      "loadedModContext": "EZapi with the existing DeepSpace Mod 0.4.3; no arbitrary-Mod compatibility guarantee",
+      "scope": "UI-only checks on the exact installed DLL; no gameplay reward/unlock, full framework or native disk save/reload acceptance",
+      "evidenceAvailability": "Private local screenshots, diagnostics, input journals and logs; only aggregate observations are distributed"
+    },
+    {
+      "feature": "Optional debug credit grant button",
+      "assemblyVersion": "0.1.79",
+      "dllSHA256": "1C1224F649005E50888C2042092914FF99BA7D094D52A2D266477E85F92C217E",
+      "checks": [
+        "Main-menu click without a loaded run is rejected before any native cash write",
+        "Public developer mode exposes the credit button without regression fixtures",
+        "First completed click: native cash 540 to 10540",
+        "Second completed click after closing/reopening the panel: native cash 10540 to 20540",
+        "Native GetCash and playerCash readback agree after both grants",
+        "No automatic save requested; all 556 existing save files unchanged during the scripted checks"
+      ],
+      "loadedModContext": "EZapi with the existing DeepSpace Mod; no arbitrary-Mod compatibility guarantee",
+      "scope": "Two explicit +10000 cash writes in disposable test run memory and unloaded-run rejection; integer-limit and stale-run guards reviewed in code, not native boundary acceptance; no disk save/reload or full framework acceptance",
+      "evidenceAvailability": "Private local screenshots, exact run diagnostics and input journal; aggregate observations only are distributed"
+    }
+  ],
+  "distributionStatus": "github-prerelease",
+  "publishedReleaseTag": "0.1.87-preview.1",
+  "scopedNativeObservations": [],
+  "historicalDevelopmentAttempts": [
+    {
+      "feature": "Complete item catalog language-switch probe",
+      "assemblyVersion": "0.1.80",
+      "dllSHA256": "4FE4806A7B020AEF92B9FB298264840D897F4EF2FAC4E867EA4440263DD9EC8D",
+      "result": "not accepted",
+      "observations": [
+        "Chinese scan read all 368 native/Mod IDs",
+        "After an explicit programmatic language switch, English read 318 entries and reported 50 native localization-handle exceptions",
+        "Original-language restoration timed out"
+      ],
+      "followUp": "Catalog entry now uses the existing asynchronous native locale readiness gate; final DLL has a different hash and still needs native reacceptance.",
+      "evidenceAvailability": "Private local raw evidence only; this attempt is not distributed native acceptance."
     }
   ]
 }

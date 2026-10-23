@@ -1,0 +1,8 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup><OutputType>Exe</OutputType><TargetFramework>net8.0</TargetFramework><Nullable>enable</Nullable><ImplicitUsings>enable</ImplicitUsings></PropertyGroup>
+  <ItemGroup>
+    <Compile Include="../../src/EZapi/ItemCatalog.cs" Link="Real/ItemCatalog.cs" />
+    <Compile Include="../../src/EZapi/ItemCatalogApi.cs" Link="Real/ItemCatalogApi.cs" />
+    <Compile Include="../../src/EZapi/GameRunIdentity.cs" Link="Real/GameRunIdentity.cs" />
+  </ItemGroup>
+</Project>

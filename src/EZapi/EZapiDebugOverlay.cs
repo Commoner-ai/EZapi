@@ -11,7 +11,7 @@ namespace EZapi;
 internal sealed class EZapiDebugOverlay
 {
     private static string L(string chinese, string english) => NativeItemLocalization.IsEnglish ? english : chinese;
-    private enum Request { None, UiPreview, WildStress, Persistence, Diagnostics, Spawn, SpawnEmptyLiquid, Verify, ReadRunData, IncrementRunData, ViewLoot, RollLoot, Localization, Resources, Inventory, FreezeFirst, ReleaseFreeze, SaveGraph, LifecycleTrace, Production, Batch, LiquidPreview, LiquidExecute, Modules, Factories, SpriteAssets, MachineLayouts, RecipeGuide, MachineTransactions, MachineRecipes, MachineMaterials, MachineRegistration, MachineAutomation, MachineNight, ManufacturingTerminal, TerminalFixture, ExternalPower, Power, NativeFurnace, SaveReadback, Reading, ReadingShow, ReadingClose, Dialogue, DialogueShow, DialogueClose, Supplier, SupplierStatus,Phone,PhoneShow,PhoneClear,PhoneDial,RunPurchase,Endpoint,EndpointPersist,EndpointDelete,Workshop,ItemInspection,ItemStock,NpcStock,Registration,SaveGraphRoundTrip }
+    private enum Request { None, CatalogScan, AddCredits, FactionOpen, FactionStress, UiPreview, WildStress, Persistence, Diagnostics, Spawn, SpawnEmptyLiquid, Verify, ReadRunData, IncrementRunData, ViewLoot, RollLoot, Localization, Resources, Inventory, FreezeFirst, ReleaseFreeze, SaveGraph, LifecycleTrace, Production, Batch, LiquidPreview, LiquidExecute, Modules, Factories, SpriteAssets, MachineLayouts, RecipeGuide, MachineTransactions, MachineRecipes, MachineMaterials, MachineRegistration, MachineAutomation, MachineNight, ManufacturingTerminal, TerminalFixture, ExternalPower, Power, NativeFurnace, SaveReadback, Reading, ReadingShow, ReadingClose, Dialogue, DialogueShow, DialogueClose, Supplier, SupplierStatus,Phone,PhoneShow,PhoneClear,PhoneDial,RunPurchase,Endpoint,EndpointPersist,EndpointDelete,Workshop,ItemInspection,ItemStock,NpcStock,Registration,SaveGraphRoundTrip }
     private static EZapiDebugOverlay? _current;
     private IReadOnlyList<DebugItemRow> _rows = Array.Empty<DebugItemRow>();
     private bool _open, _refresh = true;
@@ -24,6 +24,7 @@ internal sealed class EZapiDebugOverlay
     private bool? _messageEnglish;
     private string _location = "";
     private int _page;
+    private object? _lastCreditGrant;
     private GUIStyle? _label, _button, _title;
     private readonly List<(string Id, Rect Area, Action Click)> _buttons = new();
     private string? _pressed;
@@ -41,6 +42,7 @@ internal sealed class EZapiDebugOverlay
         enabled = DeveloperToolsSettings.Current.Enabled, regressionFixtures = DeveloperToolsSettings.Current.RegressionFixtures,
         regressionSession = DebugRegressionSession.Report(),
         initialized = _current is not null, open = _current?._open ?? false,
+        creditGrant = _current?._lastCreditGrant, itemCatalog = DebugItemCatalog.LastReport,
         suppressedByWorkshop = WorkshopApi.IsVisible, suppressedByGuide = RecipeGuideApi.IsVisible
     };
     private static Rect ToggleRect => new(12, 12, 168, 34);
@@ -90,6 +92,11 @@ internal sealed class EZapiDebugOverlay
         var request = _pending;
         _pending = Request.None; // 先消费，一次点击只有一次原生提交机会。
         if(DebugBatch.Running&&request!=Request.None){_message=L("批量检查运行中，请等待结果自动导出。", "Batch checks are running; results will be exported.");return;}
+        if(request==Request.CatalogScan) _message=DebugItemCatalog.Start();
+        DebugItemCatalog.Update();
+        if(request==Request.AddCredits) AddDebugCredits(_pendingDataRun);
+        if(request==Request.FactionOpen){_message=FactionUiApi.Open().ToString();_open=false;}
+        if(request==Request.FactionStress){_message=DebugFactions.Run();_open=false;}
         if (request == Request.UiPreview) { _message = NativeUiPreviewApi.ReloadFile(); EZapiBootstrap.WriteDiagnostics(); }
         if (request == Request.WildStress) {_message=WildNetworkBrowser.DebugStress();_open=false;}
         if (request == Request.Diagnostics)
@@ -162,6 +169,8 @@ internal sealed class EZapiDebugOverlay
         _pending = Request.None;
         _run = ""; _slot = -1;
         _pendingDataRun=null;
+        _lastCreditGrant=null;
+        DebugItemCatalog.Clear();
         _refresh = true;
     }
 
@@ -287,10 +296,57 @@ internal sealed class EZapiDebugOverlay
         DrawItemRows(x, width, view, pageSize);
     }
 
-    // Public developer mode offers inspection and explicit one-item generation.
+    // The click captures a run identity. Consume it once in Update and re-read native
+    // cash; never retain PlayerStore, write its cash field, auto-repeat or request saving.
+    private void AddDebugCredits(GameRunIdentity? expected)
+    {
+        int? before=null, after=null;
+        var amount=0;
+        var attempted=false;
+        try
+        {
+            if(expected is null || !GameSession.TryResolve(expected.Epoch,out var player) || GameSession.Identity!=expected)
+                throw new InvalidOperationException("Enter the store in the current loaded run before adding credits.");
+            before=player.GetCash();
+            if(before<0 || before!=player.playerCash)
+                throw new InvalidOperationException("Native cash could not be read consistently.");
+            amount=Math.Min(10_000,int.MaxValue-before.Value);
+            if(amount==0)
+            {
+                after=before;
+                _lastCreditGrant=new{run=expected,requested=10_000,amount,before,after,attempted,verified=true,saveRequested=false};
+                _message=L("信用点已达到数值上限。", "Credits are already at the numeric limit.");
+                return;
+            }
+            attempted=true; // A native exception may follow a partial write: never retry.
+            player.ModCash(amount,false);
+            if(!GameSession.TryResolve(expected.Epoch,out var current) || GameSession.Identity!=expected || current.Pointer!=player.Pointer)
+                throw new InvalidOperationException("The loaded run changed during the credit operation.");
+            after=current.GetCash();
+            if(after!=before+amount || after!=current.playerCash)
+                throw new InvalidOperationException("Native cash readback differs from the requested change; inspect the balance before retrying.");
+            _lastCreditGrant=new{run=expected,requested=10_000,amount,before,after,attempted,verified=true,saveRequested=false};
+            _message=L($"已增加 {amount:N0} 信用点；当前余额 {after:N0}。正常保存会保留。",
+                $"Added {amount:N0} credits; balance {after:N0}. A normal save retains this change.");
+            MelonLogger.Msg($"[EZapi] Debug credits: {before} + {amount} = {after}; native readback verified.");
+        }
+        catch(Exception e)
+        {
+            _lastCreditGrant=new{run=expected,requested=10_000,amount,before,after,attempted,verified=false,error=e.Message,saveRequested=false};
+            _message=L("信用点操作未确认，请核对余额后重试；详情见日志。", "Credit change not confirmed; check the balance and log before retrying.");
+            MelonLogger.Warning("[EZapi] EZAPI_DEBUG_CREDITS: "+e);
+        }
+    }
+
+    // Public developer mode offers inspection, credit grants and one-item generation.
     // Regression-only tests, locale switching and persistent fixtures are omitted.
     private void DrawDeveloperPanel(float x, float width, Rect panel)
     {
+        Button("credits-add", new Rect(x+400,panel.y+40,250,26), L("信用点 +10,000", "+10,000 credits"), () =>
+        {
+            _pendingDataRun=GameSession.Identity;
+            _pending=Request.AddCredits;
+        });
         Button("diagnostics", new Rect(x, panel.y + 70, 138, 30), L("导出诊断", "Export diagnostics"), () => _pending = Request.Diagnostics);
         Button("copy", new Rect(x+148, panel.y+70, 138, 30), L("复制全部 ID", "Copy all IDs"), () => GUIUtility.systemCopyBuffer=string.Join("\n",_rows.Select(r=>r.Id)));
         Button("inventory", new Rect(x+296,panel.y+70,164,30), L("读取库存", "Inspect inventory"), () => {_pendingDataRun=GameSession.Identity;_pending=Request.Inventory;});
@@ -300,13 +356,17 @@ internal sealed class EZapiDebugOverlay
         Button("wild-stress",new Rect(x+338,panel.y+106,196,30),L("人脉滚动压力检查", "Network scroll probe"),()=>_pending=Request.WildStress);
         Button("ui-preview",new Rect(x+544,panel.y+106,106,30),L("UI 预览", "UI preview"),()=>_pending=Request.UiPreview);
         GUI.Label(new Rect(x,panel.y+144,width,48),_message,_label);
-        var view=new Rect(x,panel.y+230,width,Mathf.Max(30,panel.height-242));
+        Button("item-catalog",new Rect(x,panel.y+230,220,28),L("导出原版与 Mod 全目录", "Export all native/Mod items"),()=>_pending=Request.CatalogScan);
+        GUI.Label(new Rect(x+230,panel.y+230,width-230,28),DebugItemCatalog.Status,_label);
+        var view=new Rect(x,panel.y+270,width,Mathf.Max(30,panel.height-282));
         var pageSize=Mathf.Max(1,(int)(view.height/184));
         var pages=Mathf.Max(1,(_rows.Count+pageSize-1)/pageSize);
         _page=Mathf.Clamp(_page,0,pages-1);
         Button("previous",new Rect(x,panel.y+194,90,28),L("上一页", "Previous"),()=>_page=Mathf.Max(0,_page-1));
         GUI.Label(new Rect(x+102,panel.y+196,150,25),$"{_page+1} / {pages}",_label);
         Button("next",new Rect(x+186,panel.y+194,90,28),L("下一页", "Next"),()=>_page=Mathf.Min(pages-1,_page+1));
+        Button("faction-open",new Rect(x+296,panel.y+194,168,28),L("阵营声望", "Faction reputation"),()=>_pending=Request.FactionOpen);
+        Button("faction-probe",new Rect(x+474,panel.y+194,176,28),L("阵营扩展检查", "Faction extension probe"),()=>_pending=Request.FactionStress);
         DrawItemRows(x,width,view,pageSize);
     }
 

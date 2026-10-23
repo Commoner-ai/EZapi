@@ -1,3 +1,3 @@
 namespace EZapi { internal static class GameSession { private static readonly int Thread=Environment.CurrentManagedThreadId; internal static bool OnThread=>Environment.CurrentManagedThreadId==Thread; internal static void RequireThread() { if(Environment.CurrentManagedThreadId!=Thread) throw new InvalidOperationException("thread"); } } internal static class RunData { internal static void ValidateModId(string id) { if(string.IsNullOrWhiteSpace(id)) throw new System.ArgumentException("owner"); } } }
-namespace EZapi { internal static class GameBuildFingerprint { internal static bool IsKnown=>false; } }
+namespace EZapi { internal static class GameBuildFingerprint { internal static bool IsKnown=false; } }
 namespace EZapi { internal static class PresentationApi { internal static string? ResolveOwnerDisplayName(string ownerId,string locale)=>null; } }

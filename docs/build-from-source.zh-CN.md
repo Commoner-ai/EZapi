@@ -4,6 +4,8 @@
 
 EZapi 自 0.1.73-preview.2 起公开当前源码，采用 [MIT 许可证](../LICENSE)。框架位于 `src/EZapi`，离线校验器位于 `src/EZapi.ContentValidator`，调用示例位于 `src/EZapi.Sample`。旧私有仓库历史不包含在此仓库中。
 
+本页描述 0.1.87 预发布版。获取本版源码请检出标签 `v0.1.87-preview.1`，不要用旧版源码构建后当作本版。
+
 ## 只运行离线验证
 
 安装 .NET 8 SDK、Python 3.12 或更新版本、PowerShell。无需游戏或 MelonLoader，无需启动游戏：
@@ -14,7 +16,7 @@ cd EZapi
 pwsh -NoProfile -File ./Build-EZapi.ps1 -OfflineOnly
 ```
 
-运行全部 60 组源代码链接测试、25 项校验器独立进程检查及能力索引检查。测试使用明确的原生边界替身；测试通过不证明真实游戏 UI、原生方法或跨天存档正常。输出报告在忽略的 `work/offline-tests-report.json`。
+运行全部 67 组源代码链接测试、25 项校验器独立进程检查及能力索引检查。测试使用明确的原生边界替身；测试通过不证明真实游戏 UI、原生方法或跨天存档正常。输出报告在忽略的 `work/offline-tests-report.json`。
 
 ## 构建游戏 DLL 与安装包候选
 

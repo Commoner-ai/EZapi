@@ -1,9 +1,74 @@
 {
   "schemaVersion": 1,
-  "version": "0.1.76",
+  "version": "0.1.87",
   "startHere": "AI-START-HERE.zh-CN.md",
   "tooltipStyle": "tooltip-style.index.json",
   "modules": [
+    {
+      "file": "../src/EZapi/ItemGraphReceiptApi.cs",
+      "purpose": "Fresh bounded two-pass current-run/detached receipt graph observations",
+      "boundary": "No native admission, cleanup, automatic retry, ledger update, payment or save; reload recovery establishes current root receipt only"
+    },
+    {
+      "file": "../src/EZapi/DeliveryGraphAudit.cs",
+      "purpose": "Pure managed complete-graph handoff comparison and root receipt reconciliation",
+      "boundary": "No native admission, cleanup, automatic retry, ledger update, payment or save; reload recovery establishes current root receipt only"
+    },
+    {
+      "file": "../src/EZapi/PreparedItems.cs",
+      "purpose": "Explicit native filled-crate/random-module/genuine-injector factories with bounded graph checks, root ownership and cleanup outcomes",
+      "boundary": "One native call; no ordinary directory override, in-place repair, automatic reroll, delivery, payment or save"
+    },
+    {
+      "file": "../src/EZapi/DeliveryReceiptAudit.cs",
+      "purpose": "Pure managed receipt reconciliation and exact single-item handoff delta audit",
+      "boundary": "Caller ledger assertions; inflight absence never authorizes automatic reissue; no native wrappers"
+    },
+    {
+      "file": "../src/EZapi/ItemReceiptApi.cs",
+      "purpose": "Detached official item-data receipt staging and two fresh bounded managed run captures",
+      "boundary": "Current game thread/run/build; no native admission, ledger, payment, save, cleanup or automatic retry"
+    },
+    {
+      "file": "../src/EZapi/ArtworkPixels.cs",
+      "purpose": "Managed RGBA classification and bounded UV triangle masking",
+      "boundary": "Caller-owned bytes; no original-art export or sale eligibility"
+    },
+    {
+      "file": "../src/EZapi/SpriteArtworkApi.cs",
+      "purpose": "Current item raw sprite, readable/GPU crop, split alpha and checked cleanup",
+      "boundary": "Initialized main thread; explicit bounded inspection, no native object caching or source writes"
+    },
+    {
+      "file": "../src/EZapi/ItemOriginApi.cs",
+      "purpose": "Native stolen origin and integer heat read/staging with explicit results",
+      "boundary": "Current main thread/run, native helpers, freeze/drag/ownership/readback; no save, random detection or delivery"
+    },
+    {
+      "file": "../src/EZapi/ItemCatalog.cs",
+      "purpose": "Incremental complete native catalog scan and managed snapshots",
+      "boundary": "Main thread, per-step budget, run/locale invalidation, no partial pool publication"
+    },
+    {
+      "file": "../src/EZapi/ItemCatalogApi.cs",
+      "purpose": "Official DirectoryMaster IDs and temporary native factory metadata",
+      "boundary": "No inventory delivery/save; calls and destroys detached native objects; other Mod factory side effects remain possible"
+    },
+    {
+      "file": "../src/EZapi/FactionPresentation.cs",
+      "purpose": "Faction definitions, strict JSON and owner-isolated providers",
+      "boundary": "No native state or save mutation"
+    },
+    {
+      "file": "../src/EZapi/FactionUiApi.cs",
+      "purpose": "One-call Mod faction presentation API",
+      "boundary": "Initialized main thread; provider reads current run"
+    },
+    {
+      "file": "../src/EZapi/FactionReputationBrowser.cs",
+      "purpose": "Native faction discovery, exact ruler markers and hover detail panel",
+      "boundary": "Window-scoped native controls; native perk formatter retained"
+    },
     {
       "file": "../src/EZapi/ContentPackLoader.cs",
       "purpose": "内容包发现、严格清单校验、整包提交",
@@ -1117,8 +1182,8 @@
   "installation": "install-and-debug.zh-CN.md",
   "documentationContext": {
     "kind": "current-api-guide",
-    "releaseTag": "0.1.76-preview.1",
-    "assemblyVersion": "0.1.76",
+    "releaseTag": "0.1.87-preview.1",
+    "assemblyVersion": "0.1.87",
     "releaseStatus": "release-status.json",
     "nativeRuntimeVerified": false,
     "evidencePolicy": "Only explicitly scoped current-DLL observations apply. Historical evidence never transfers."

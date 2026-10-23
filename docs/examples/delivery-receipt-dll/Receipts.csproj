@@ -1,0 +1,17 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework><AssemblyName>Author.Deliveries</AssemblyName>
+    <ImplicitUsings>enable</ImplicitUsings><Nullable>enable</Nullable>
+    <EZapiDll Condition="'$(EZapiDll)' == ''">$(MSBuildThisFileDirectory)../../../Mods/EZapi.dll</EZapiDll>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EZapi"><HintPath>$(EZapiDll)</HintPath><Private>false</Private></Reference>
+    <Reference Include="Assembly-CSharp"><HintPath>$(GameDir)/MelonLoader/Il2CppAssemblies/Assembly-CSharp.dll</HintPath><Private>false</Private></Reference>
+    <Reference Include="Il2CppInterop.Runtime"><HintPath>$(GameDir)/MelonLoader/net6/Il2CppInterop.Runtime.dll</HintPath><Private>false</Private></Reference>
+    <Reference Include="Il2Cppmscorlib"><HintPath>$(GameDir)/MelonLoader/Il2CppAssemblies/Il2Cppmscorlib.dll</HintPath><Private>false</Private></Reference>
+  </ItemGroup>
+  <Target Name="CheckDependencies" BeforeTargets="ResolveReferences">
+    <Error Condition="!Exists('$(EZapiDll)')" Text="Set EZapiDll to the local EZapi runtime." />
+    <Error Condition="!Exists('$(GameDir)/MelonLoader/Il2CppAssemblies/Assembly-CSharp.dll')" Text="Supply GameDir with your own generated IL2CPP wrappers." />
+  </Target>
+</Project>

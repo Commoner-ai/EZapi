@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "version": "0.1.76",
+  "version": "0.1.87",
   "guideZh": "public-helpers.zh-CN.md",
   "guideEn": "public-helpers.en.md",
   "example": "../src/EZapi.Sample/PublicHelperExamples.cs",
@@ -44,8 +44,8 @@
   "previousVersionBaseline": "0.1.70",
   "documentationContext": {
     "kind": "current-api-guide",
-    "releaseTag": "0.1.76-preview.1",
-    "assemblyVersion": "0.1.76",
+    "releaseTag": "0.1.87-preview.1",
+    "assemblyVersion": "0.1.87",
     "releaseStatus": "release-status.json",
     "nativeRuntimeVerified": false,
     "evidencePolicy": "Only explicitly scoped current-DLL observations apply. Historical evidence never transfers."

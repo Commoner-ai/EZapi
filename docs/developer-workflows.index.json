@@ -1,12 +1,90 @@
 {
   "schemaVersion": 1,
-  "version": "0.1.76",
+  "version": "0.1.87",
   "purpose": "Short, reproducible developer workflows; exact signatures are in public-api.index.json",
   "entryPoints": {
     "zh": "AI-START-HERE.zh-CN.md",
     "en": "AI-START-HERE.en.md"
   },
   "workflows": [
+    {
+      "id": "delivery-graphs",
+      "taskZh": "核验带内容物资箱和容器的整图交付，检查子物品缺失重复与变动",
+      "taskEn": "Audit filled crate and container delivery graphs for missing duplicate or changed children",
+      "guideZh": "delivery-graphs.zh-CN.md",
+      "guideEn": "delivery-graphs.en.md",
+      "index": "delivery-graphs.index.json",
+      "sample": "examples/delivery-graph-dll/GraphDelivery.cs",
+      "project": "examples/delivery-graph-dll/Graphs.csproj",
+      "boundary": "One caller native handoff; fresh managed graph evidence, no old-wrapper access/retry/save. Cold-load recovery confirms current root only; persist expected manifests separately."
+    },
+    {
+      "id": "prepared-items",
+      "taskZh": "创建已填充物资箱、随机模块、真品注射器，避免空箱模板",
+      "taskEn": "Create filled loot crates, random modules and a genuine injector rather than empty templates",
+      "guideZh": "prepared-items.zh-CN.md",
+      "guideEn": "prepared-items.en.md",
+      "index": "prepared-items.index.json",
+      "sample": "examples/prepared-item-dll/PreparedReward.cs",
+      "project": "examples/prepared-item-dll/Prepared.csproj",
+      "boundary": "Current game thread/run/build; one random native factory, no automatic reroll/delivery/save or existing item repair. Populated crates require graph-aware delivery reconciliation."
+    },
+    {
+      "id": "delivery-receipts",
+      "taskZh": "礼包订单物品发放、防止重复领奖、交付凭据、读档恢复对账",
+      "taskEn": "Gift/order delivery receipts, duplicate reward prevention and reload reconciliation",
+      "guideZh": "delivery-receipts.zh-CN.md",
+      "guideEn": "delivery-receipts.en.md",
+      "index": "delivery-receipts.index.json",
+      "sample": "examples/delivery-receipt-dll/ReceiptDelivery.cs",
+      "project": "examples/delivery-receipt-dll/Receipts.csproj",
+      "boundary": "Stable caller ledger required. No automatic handoff/retry/save; no old wrapper access after native handoff; absence after attempt remains uncertain."
+    },
+    {
+      "id": "sprite-artwork-content",
+      "taskZh": "筛选图片黑图、全透明图、图集邻图和紧密打包精灵",
+      "taskEn": "Inspect black/transparent artwork, atlas crops and tightly packed sprites",
+      "guideZh": "artwork-inspection.zh-CN.md",
+      "guideEn": "artwork-inspection.en.md",
+      "index": "artwork-inspection.index.json",
+      "sample": "examples/sprite-inspection-dll/StockArtwork.cs",
+      "project": "examples/sprite-inspection-dll/Inspection.csproj",
+      "pureExample": "examples/artwork-dll/Artwork.cs",
+      "boundary": "Only Inspected carries content evidence. GPU is synchronous; no automatic stock eligibility, caching, original-art export or source mutation."
+    },
+    {
+      "id": "native-item-origin",
+      "taskZh": "订货发货：设置普通货物、赃物和固定热度",
+      "taskEn": "Prepare delivery origin: ordinary/stolen and fixed heat",
+      "guideZh": "item-origin.zh-CN.md",
+      "guideEn": "item-origin.en.md",
+      "index": "item-origin.index.json",
+      "sample": "examples/item-origin-dll/Origin.cs",
+      "project": "examples/item-origin-dll/Origin.csproj",
+      "boundary": "Live native item, current main thread/run. Fixed zero differs from native initialization; Indeterminate requires reconciliation. No delivery/payment/save."
+    },
+    {
+      "id": "all-native-item-catalog",
+      "taskZh": "从原版与全部 Mod 物品筛选货源、图鉴和原生价值",
+      "taskEn": "Build stock/encyclopedias from all native and Mod items",
+      "guideZh": "item-catalog.zh-CN.md",
+      "guideEn": "item-catalog.en.md",
+      "index": "item-catalog.index.json",
+      "sample": "examples/item-catalog-dll/Catalog.cs",
+      "project": "examples/item-catalog-dll/Catalog.csproj",
+      "boundary": "CaptureIdentifiers executes no factories; Step explicitly reads detached unowned factory metadata across frames. Inspect failures; refresh after locale/load changes; artwork acceptance separate."
+    },
+    {
+      "id": "faction-reputation",
+      "taskZh": "扩展阵营和权益、原版效果悬停展示",
+      "taskEn": "Extend factions and effects with native hover details",
+      "guideZh": "faction-reputation.zh-CN.md",
+      "guideEn": "faction-reputation.en.md",
+      "schema": "../schemas/faction-ui.schema.json",
+      "sample": "examples/faction-ui/free-traders.json",
+      "project": "examples/faction-dll/Factions.csproj",
+      "boundary": "Presentation only. Native storeReputations auto discovery; provider owns gameplay and saves. Bottom details use hover, effect switching and text pages, no scrollbar."
+    },
     {
       "id": "native-ui-preview",
       "taskZh": "原版UI积木、上下居中与AI预览测量",
@@ -155,8 +233,8 @@
   },
   "documentationContext": {
     "kind": "current-api-guide",
-    "releaseTag": "0.1.76-preview.1",
-    "assemblyVersion": "0.1.76",
+    "releaseTag": "0.1.87-preview.1",
+    "assemblyVersion": "0.1.87",
     "releaseStatus": "release-status.json",
     "nativeRuntimeVerified": false,
     "evidencePolicy": "Only explicitly scoped current-DLL observations apply. Historical evidence never transfers."

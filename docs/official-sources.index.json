@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "implementationVersion": "0.1.76",
+  "implementationVersion": "0.1.87",
   "officialRepository": "https://github.com/dragonpan2/probably-stolen-modding",
   "sources": [
     {
@@ -41,7 +41,8 @@
       "currentDllEvidence": false
     },
     "runtimeVerified": false,
-    "boundary": "Current item factory selects Chinese for zh* and English otherwise; unknown build or getter failure falls back to English. Existing instances are not rewritten after a locale change."
+    "boundary": "GameLanguage validates the main thread, exact getter signature and returned locale independently of the wrapper DLL SHA. Chinese inline text for zh*, English otherwise; unavailable/invalid native reads fall back for that observation and can recover later. Applied EZapi item fields refresh on display/reopen/official tooltip callbacks; player-authored names are preserved. NativeHookGroup retains required target and ownership checks.",
+    "assemblySHA256Role": "Recorded reference-wrapper evidence, not the language-read admission gate since0.1.87."
   },
   "historicalLocalizationEvidence": {
     "identifier": "../verification/localization-api-contract.txt",
@@ -434,8 +435,8 @@
   "previousImplementationVersionBaseline": "0.1.67",
   "documentationContext": {
     "kind": "current-api-guide",
-    "releaseTag": "0.1.76-preview.1",
-    "assemblyVersion": "0.1.76",
+    "releaseTag": "0.1.87-preview.1",
+    "assemblyVersion": "0.1.87",
     "releaseStatus": "release-status.json",
     "nativeRuntimeVerified": false,
     "evidencePolicy": "Only explicitly scoped current-DLL observations apply. Historical evidence never transfers."

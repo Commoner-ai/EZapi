@@ -1,0 +1,10 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup><OutputType>Exe</OutputType><TargetFramework>net8.0</TargetFramework><ImplicitUsings>enable</ImplicitUsings><Nullable>enable</Nullable></PropertyGroup>
+  <ItemGroup>
+    <Compile Include="../../src/EZapi/FactionPresentation.cs" Link="Real/FactionPresentation.cs" />
+    <Compile Include="../../src/EZapi/FactionUiApi.cs" Link="Real/FactionUiApi.cs" />
+    <Compile Include="../../src/EZapi/LocalizedItemText.cs" Link="Real/LocalizedItemText.cs" />
+    <Compile Include="../../src/EZapi/PresentationResult.cs" Link="Real/PresentationResult.cs" />
+    <Compile Include="../../src/EZapi/GameRunIdentity.cs" Link="Real/GameRunIdentity.cs" />
+  </ItemGroup>
+</Project>

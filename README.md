@@ -1,12 +1,14 @@
 # EZapi
 
+Version 0.1.87 fixes locale fallback and existing-item localization refresh when the generated wrapper DLL fingerprint differs. Thread, actual API and refresh-hook checks remain. Other feature gates are unchanged; current-DLL native acceptance is pending. See the [language guide](docs/game-language.en.md).
+
 [Current release and verification](docs/current-status.en.md) · [Historical records / 历史资料](docs/history/README.md)
 
 **Probably Stolen 模组前置框架**：为玩家提供单DLL前置，为开发者和AI提供DLL API、JSON内容包、文档、调用示例及调试工具。框架、校验器与测试采用 MIT 开源。
 
 An independent **Probably Stolen** Mod framework: DLL APIs, declarative JSON packs, an offline validator, buildable examples and machine-readable AI indexes. Prefer official game APIs. No Forge runtime dependency or bundled game assemblies.
 
-**0.1.76-preview.1** is a prerelease, with assembly version 0.1.76. Reference functionality has 39 implemented groups; this is not a promise of binary compatibility or complete gameplay validation.
+**0.1.87-preview.1** is the current prerelease, with assembly version 0.1.87. Reference functionality has 39 implemented groups; this is not a promise of binary compatibility or complete gameplay validation.
 
 **MIT open source:** framework implementation, offline validator, tests, build tooling, documentation and examples are available here. Older private history is not imported. See [build from source](docs/build-from-source.en.md).
 
@@ -39,8 +41,14 @@ dotnet build docs/examples/minimal-dll/SimpleMod.csproj -c Release -p:GameDir='<
 
 Language follows game settings. Additional CSV locales remain supported with English/author fallback; Chinese/English are priority acceptance locales. Official docs: [probably-stolen-modding](https://github.com/dragonpan2/probably-stolen-modding). Build and reference-fetch scripts are available in this repository.
 
-This runtime adds native UI components, reloadable JSON preview, actual-font measurements and bilingual developer tools. Start with the [native UI guide](docs/native-ui-preview.en.md). Current scoped observations are recorded separately from 60 offline suites and 25 CLI checks. Full framework, mixed-Mod and save/reload acceptance remain pending; historical DLL results never transfer. See [release notes](docs/releases/0.1.76-preview.1.md).
+This prerelease includes explicit native prepared-item factories for filled crates, random modules and a genuine injector, alongside delivery receipts, catalog, origin/heat and sprite inspection. The faction browser and Wild opening fix are retained. Download this prerelease from GitHub Releases. Native UI components, JSON preview and bilingual tools remain available. Start with the [native UI guide](docs/native-ui-preview.en.md). Current scoped observations are recorded separately from 67 offline suites and 25 CLI checks. Full framework, mixed-Mod and save/reload acceptance remain pending; historical DLL results never transfer. See [release notes](docs/releases/0.1.87-preview.1.md).
 
 See the MIT LICENSE for source and binary reuse, and THIRD-PARTY-NOTICES.md for dependencies. Game/runtime DLLs and private workspace data are not redistributed.
 
 Original game artwork references retain separate rights and are excluded from MIT; see [third-party notices](THIRD-PARTY-NOTICES.md). 原版美术参考不属于MIT授权。
+
+
+[Faction reputation and extensions](docs/faction-reputation.en.md): live factions and effects, real thresholds and native hover details; only the faction list scrolls.
+
+
+[Complete native/Mod item catalog](docs/item-catalog.en.md): all IDs, explicit incremental metadata reads, per-item failures and run/locale invalidation.

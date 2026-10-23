@@ -1,0 +1,5 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup><TargetFramework>net6.0</TargetFramework><AssemblyName>Author.Guild</AssemblyName><ImplicitUsings>enable</ImplicitUsings><Nullable>enable</Nullable><EZapiDll Condition="'$(EZapiDll)' == ''">$(GameDir)/Mods/EZapi.dll</EZapiDll></PropertyGroup>
+  <ItemGroup><Reference Include="EZapi"><HintPath>$(EZapiDll)</HintPath><Private>false</Private></Reference></ItemGroup>
+  <Target Name="CheckDependencies" BeforeTargets="ResolveReferences"><Error Condition="!Exists('$(EZapiDll)')" Text="Set EZapiDll to the local EZapi runtime." /></Target>
+</Project>

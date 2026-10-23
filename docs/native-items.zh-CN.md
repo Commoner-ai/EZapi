@@ -28,9 +28,17 @@ ID 使用小写命名空间，例如 `author.tools.sensor`，并属于 owner 的
 
 `NativeItemOptions` 是不可变 DTO：Name、ShortDescription、FlavorText、SourceName、ShowSource 提供固定文本；LocalizedName、LocalizedShortDescription、LocalizedFlavorText、LocalizedSourceName 可覆盖对应文本并提供中英两份。null 保留工厂原值，说明的空串明确清空。来源行通过既有官方 tooltip 回调显示，不安装第二套 tooltip 补丁。没有提供名称时，调试列表使用 ID，实际物品名称仍取工厂结果。
 
+```csharp
+var options = new NativeItemOptions(
+    LocalizedShortDescription: new("", ""), // 中英文简介均明确清空
+    LocalizedFlavorText: new("中文风味", "")); // 中文显示，英文明确清空
+```
+
+这条空串约定适用于 DLL 的可选简介和风味，单侧 null 回退另一侧，两侧均 null 表示未提供覆盖。0.1.86 修复了“注册允许空说明，已有物品刷新却报 `readable text <=8192 required`”的不一致：工厂创建和刷新沿用相同内联语言规则，不把空串变成回退文字。名称、来源名仍须非空白，说明每侧仍最多 4000 字符。通用 `LocalizedItemText.Resolve` / `GameLanguage.Resolve` 的可读文本要求，以及 JSON/CSV 声明规则不因此放宽。当前 DLL 的真实悬停、切换语言和保存重载仍待实机验收。
+
 `ShowSource` 默认 true；希望贴近原版时显式传 `new NativeItemOptions(ShowSource: false, ...)`，不手工复写游戏已有分类、价格或属性。原生短说明用于操作，风味用于叙述；完整的可选规则见[Tooltip 风格规范](tooltip-style.zh-CN.md)。官方 Late 之后仍有原生描述，来源并不保证在最终末尾。
 
-双语文本按游戏当前 locale 选择：`zh` 开头（例如 `zh-CN`、`zh-TW`）选中文，其它 locale 选英文；某一侧缺失时用另一侧。当前构建通过官方 `LocHelper.GetCurrentLocaleCode()` 读取语言，并由 `Assembly-CSharp.dll` SHA-256 精确门控；游戏版本或 getter 不匹配时安全回退英文。低层 `ItemApi` 工厂的 Options 名称、简介与风味在创建时写入，查询显示名和来源时会重新解析。声明式 `ItemDefinition`/JSON 的已应用物品另有按显示/Tooltip/重开窗口触发的本地化刷新，保护玩家改名，不扫描全部库存；两类入口不可混为一谈，见[游戏语言指南](game-language.zh-CN.md)。
+双语文本按游戏当前 locale 选择：`zh` 开头（例如 `zh-CN`、`zh-TW`）选中文，其它 locale 选英文；某一侧缺失时用另一侧。0.1.87 起通过 `GameLanguage.Current` 核对主线程、官方 `public static string LocHelper.GetCurrentLocaleCode()` 签名及返回值，不再由整份 `Assembly-CSharp.dll` 的 SHA 精确门控；接口不可用或读取失败时本次回退英文，下次展示可以恢复。`ItemApi` 工厂的 Options 名称、简介与风味在创建时写入，查询显示名和来源时重新解析。已 Applied 的 DLL 工厂声明及 `ItemDefinition`/JSON 物品均可按显示/Tooltip/重开窗口触发本地化刷新，保护玩家改名，不扫描全部库存。刷新钩子保留准确签名、原生入口和补丁所有者检查，见[游戏语言指南](game-language.zh-CN.md)。
 
 ```csharp
 new NativeItemOptions(

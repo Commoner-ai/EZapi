@@ -41,6 +41,8 @@ Check(ItemText.Description(d,"zh")=="中文简介","registration description loo
 Reject(()=>Parse("""[{"id":"test.bad","localizedName":{"key":"name"}}]"""),"CSV item binding requires modId");
 Reject(()=>Parse("""[{"id":"test.bad","name":"x","localizedName":{}}]"""),"empty localization binding rejects");
 Reject(()=>Parse("""[{"id":"test.bad","name":"x","localizedName":{"english":" "}}]"""),"blank provided translation rejects");
+Reject(()=>Parse("""[{"id":"test.bad","name":"x","localizedShortDescription":{"chinese":"","english":""}}]"""),"JSON description retains its readable-translation declaration contract");
+Reject(()=>Parse("""[{"id":"test.bad","name":"x","localizedFlavorText":{}}]"""),"JSON empty binding remains invalid rather than gaining DLL no-override semantics");
 Reject(()=>Parse("""[{"id":"test.bad","name":"x","localizedName":{"english":"a","english":"b"}}]"""),"duplicate language field rejects");
 Reject(()=>Parse("""[{"id":"test.bad","name":"x","localizedName":{"en":"a"}}]"""),"unknown locale field rejects with strict parser");
 Reject(()=>Parse("""[{"id":"test.bad","name":"x","localizedName":{"english":null}}]"""),"explicit null translation rejects");
@@ -89,8 +91,12 @@ ItemRegistry.Definitions[module.Id]=module;var moduleItem=new GameItem{identifie
 Check(builder.Lines.SequenceEqual(new[]{"English module description"}),"localized module description is emitted through the live official tooltip callback");
 NativeItemLocalization.CurrentLocaleCode="zh";builder=new();ItemPresentation.Late(builder,moduleItem);
 Check(builder.Lines.SequenceEqual(new[]{"中文模块说明"}),"module text follows a language change without recreating or reinitializing module stats");
-GameBuildFingerprint.IsKnown=false;DeclarativeItemLocalization.DirectoryReady();Check(!DeclarativeItemLocalization.Status().Ready,"unknown build refuses localization hook installation");GameBuildFingerprint.IsKnown=true;
-DeclarativeItemLocalization.DirectoryReady();Check(DeclarativeItemLocalization.Status().Ready,"known build declares the localization hook group");
+GameBuildFingerprint.IsKnown=false;GameSession.OnThread=false;DeclarativeItemLocalization.DirectoryReady();
+Check(!DeclarativeItemLocalization.Status().Ready,"off-thread directory callback does not install localization hooks");GameSession.OnThread=true;
+NativeHookGroup.NativeTargetsAvailable=false;DeclarativeItemLocalization.DirectoryReady();
+Check(!DeclarativeItemLocalization.Status().Ready,"unavailable required native targets keep localization hooks disabled");
+NativeHookGroup.NativeTargetsAvailable=true;DeclarativeItemLocalization.DirectoryReady();
+Check(DeclarativeItemLocalization.Status().Ready,"unknown wrapper fingerprint permits localization hooks after target checks succeed");
 item.name="储物箱";item.identifierName="储物箱";item.RestoreContentWindowPosition();
 Check(item.contentWindow.titleString=="箱内物品","native reopen compact-name overwrite is followed by the installed localized-title callback");
 NativeItemLocalization.CurrentLocaleCode="en";item.RestoreContentWindowPosition();

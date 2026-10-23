@@ -1,0 +1,85 @@
+{
+  "schemaVersion": 1,
+  "version": "0.1.87",
+  "api": "EZapi.ItemOriginApi",
+  "taskZh": "读取物品来源、设置普通货物/赃物热度",
+  "taskEn": "Read/stage native item origin and heat",
+  "guide": "item-origin.zh-CN.md",
+  "englishGuide": "item-origin.en.md",
+  "source": "../src/EZapi/ItemOriginApi.cs",
+  "example": "examples/item-origin-dll/Origin.cs",
+  "project": "examples/item-origin-dll/Origin.csproj",
+  "methods": [
+    {
+      "memberKey": "M:EZapi.ItemOriginApi.Read(Il2Cpp.GameItem)",
+      "task": "Read native origin; null heat on ordinary item"
+    },
+    {
+      "memberKey": "M:EZapi.ItemOriginApi.StageClean(Il2Cpp.GameItem)",
+      "task": "Native removal, ordinary no-op"
+    },
+    {
+      "memberKey": "M:EZapi.ItemOriginApi.StageStolen(Il2Cpp.GameItem,System.Int32)",
+      "task": "Fixed integer0..100 heat including already-stolen items; default100"
+    },
+    {
+      "memberKey": "M:EZapi.ItemOriginApi.InitializeNative(Il2Cpp.GameItem)",
+      "task": "Native forcedHeat0; may leave low-value item ordinary; existing stolen unchanged"
+    }
+  ],
+  "phase": "Initialized game main thread; loaded run; live current item",
+  "nativeEntryPoints": [
+    "System.Boolean Il2Cpp.StolenHelper.IsStolenItem(Il2Cpp.GameItem)",
+    "System.Int32 Il2Cpp.StolenHelper.GetFoundChance(Il2Cpp.GameItem)",
+    "System.Void Il2Cpp.StolenHelper.InitStolenItem(Il2Cpp.GameItem,System.Int32)",
+    "System.Void Il2Cpp.StolenHelper.SetHeat(Il2Cpp.GameItem,System.Int32)",
+    "System.Void Il2Cpp.StolenHelper.RemoveStolenStatus(Il2Cpp.GameItem)",
+    "System.Void Il2Cpp.GameItem.SyncModifiedState()"
+  ],
+  "nativeContractBasis": "Current generated wrapper signatures plus local read-only semantic inspection; no addresses/offsets in product; native behavior still pending acceptance.",
+  "fixedZero": "StageStolen(item,0) is fixed zero; InitializeNative is explicit native/default/random semantics.",
+  "statuses": {
+    "Read": "Read-only snapshot",
+    "Unchanged": "No native write; actual desired state already present",
+    "StagedInMemory": "Native helper+sync+readback only; not saved",
+    "Invalid": "Invalid input; no write",
+    "Unavailable": "Missing thread/run/build/state/gates or prewrite exception",
+    "Frozen": "Owning transaction holds item",
+    "Conflict": "Drag/ownership/reentry or changed observed origin",
+    "Indeterminate": "Native write attempted; no unconfirmed After; reconcile before retry"
+  },
+  "guards": [
+    "known game build",
+    "current main thread/run/load epoch",
+    "live item/state/dictionary",
+    "same instance/id/count/parent",
+    "ready inventory-freeze gate",
+    "not frozen/dragging",
+    "player-owned inventory or caller-controlled detached item",
+    "nonrecursive mutation",
+    "native readback"
+  ],
+  "language": "Locale-independent statuses and percentages. Native tooltip localization retained; caller messages use GameLanguage.Resolve.",
+  "offlineVerification": {
+    "passed": 70,
+    "failed": 0,
+    "scope": "Real source with native-boundary stand-ins; no native/persistence acceptance"
+  },
+  "nativeAcceptance": "Pending for current DLL; no game installation or input in this offline turn.",
+  "notGuaranteed": [
+    "save/reload",
+    "nightly heat decay/detection",
+    "arbitrary other-Mod hooks",
+    "custom provenance or contraband cleanup",
+    "ownership proof for a bare detached wrapper",
+    "atomic payment/delivery"
+  ],
+  "documentationContext": {
+    "kind": "current-api-guide",
+    "releaseTag": "0.1.87-preview.1",
+    "assemblyVersion": "0.1.87",
+    "releaseStatus": "release-status.json",
+    "nativeRuntimeVerified": false,
+    "evidencePolicy": "Historical native evidence never transfers."
+  }
+}

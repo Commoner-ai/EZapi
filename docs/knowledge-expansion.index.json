@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "version": "0.1.76",
+  "version": "0.1.87",
   "purpose": "Track concrete APIs selected after independent reference feature coverage reached39/39.",
   "referencePolicy": "Probably Stolen skill is reference; current game signatures and official public APIs decide implementation. No Forge implementation copied.",
   "reviewedScenarios": [
@@ -42,7 +42,7 @@
       "api": "ItemDataApi.Read / Stage",
       "problemZh": "每个物品升级Mod重复处理标签、损坏JSON、版本迁移和交易冻结。",
       "problemEn": "Item upgrades otherwise duplicate tag ownership, malformed JSON, migration and freeze checks.",
-      "behavior": "Official versioned item JSON; compare revision, bounded data, native freeze, readback and graph restoration checked; no auto-save. Explicit native save and new-process restoration verified on five namespaced endpoint fixture items; Stage never saves.",
+      "behavior": "Official versioned item JSON; compare revision, bounded data, native freeze and readback checks; no auto-save. Historical0.1.72 scoped fixture save/restoration does not establish current-DLL native acceptance.",
       "source": [
         "../src/EZapi/ItemDataApi.cs"
       ],
@@ -53,6 +53,76 @@
         "availability": "not-distributed",
         "currentDllEvidence": false
       }
+    },
+    {
+      "api": "ItemCatalogApi / ItemCatalogScan",
+      "problemZh": "实战订货系统需要原版和其他Mod全物品货池，现有ItemApi快照仅覆盖EZapi声明，重复编写全目录枚举、分帧创建、销毁和语言缓存逻辑。",
+      "problemEn": "A real ordering Mod needs all native/other-Mod stock, but ItemApi snapshots only list EZapi declarations; directory enumeration, batched creation, cleanup and locale invalidation were duplicated.",
+      "behavior": "Native complete ID capture and explicit main-thread metadata scan, no silent truncation; per-item failures, detached cleanup and run/locale invalidation.",
+      "source": [
+        "../src/EZapi/ItemCatalog.cs",
+        "../src/EZapi/ItemCatalogApi.cs"
+      ],
+      "guide": "item-catalog.zh-CN.md",
+      "index": "item-catalog.index.json"
+    },
+    {
+      "api": "ItemOriginApi",
+      "problemZh": "实战订货重复初始化普通货物/赃物、覆盖已有赃物热度并核对结果。",
+      "problemEn": "Delivery consumers repeat native origin initialization, correction of already-stolen heat and readback.",
+      "behavior": "Explicit native clean/fixed heat/default initialization with snapshot and guarded readback. No save or delivery.",
+      "source": [
+        "../src/EZapi/ItemOriginApi.cs"
+      ],
+      "guide": "item-origin.zh-CN.md",
+      "index": "item-origin.index.json"
+    },
+    {
+      "api": "SpriteArtworkApi / ArtworkPixels",
+      "problemZh": "实战选货重复读取图集裁切，黑图/全透明图、不可读纹理和清理边界容易误判。",
+      "problemEn": "Real stock selection duplicates atlas crops, transparency/content tests, unreadable GPU readback and cleanup.",
+      "behavior": "Native raw Sprite inspection plus pure RGBA counts, UV masks, split alpha and explicit failure outcomes; no sale rules.",
+      "source": [
+        "../src/EZapi/ArtworkPixels.cs",
+        "../src/EZapi/SpriteArtworkApi.cs"
+      ],
+      "guide": "artwork-inspection.zh-CN.md",
+      "index": "artwork-inspection.index.json"
+    },
+    {
+      "api": "ItemReceiptApi / DeliveryReceiptAudit",
+      "problemZh": "实战订单和礼包重复实现凭据与库存对账；原生交付可能销毁旧包装对象，未找到凭据不能直接补发。",
+      "problemEn": "Orders and starter kits duplicate token/reconciliation logic; native handoff may destroy the old wrapper and absence must not authorize reissue.",
+      "behavior": "Official detached item-data stamps; two fresh bounded scans; exact managed handoff and stable-operation recovery; caller ledger/save/payment/native admission remain explicit.",
+      "source": [
+        "../src/EZapi/DeliveryReceiptAudit.cs",
+        "../src/EZapi/ItemReceiptApi.cs"
+      ],
+      "guide": "delivery-receipts.zh-CN.md",
+      "index": "delivery-receipts.index.json"
+    },
+    {
+      "api": "PreparedItemApi",
+      "problemZh": "实战订货将普通目录空箱模板当完整货物，另写物资填充、锁恢复和原地修复，随机模块/真品工厂也重复路由。",
+      "problemEn": "Orders confuse empty directory templates with filled native crates, duplicate prepared module/injector routes and later need legacy repair.",
+      "behavior": "Explicit12 native factories; preserve contents/RNG policy; bounded isolated graph checks, runtime crate lock and root ownership/readback; no automatic repair or delivery.",
+      "source": [
+        "../src/EZapi/PreparedItems.cs"
+      ],
+      "guide": "prepared-items.zh-CN.md",
+      "index": "prepared-items.index.json"
+    },
+    {
+      "api": "ItemGraphReceiptApi / DeliveryGraphAudit",
+      "problemZh": "装满子物品的物资箱会新增多个实例，单件凭据差额不足以确认完整交付。",
+      "problemEn": "A populated crate adds several instances, exceeding single-item receipt delta semantics.",
+      "behavior": "Bounded complete graph captures, exact same-load graph delta and explicit child ownership initialization policy; root-only receipt recovery after load.",
+      "source": [
+        "../src/EZapi/DeliveryGraphAudit.cs",
+        "../src/EZapi/ItemGraphReceiptApi.cs"
+      ],
+      "guide": "delivery-graphs.zh-CN.md",
+      "index": "delivery-graphs.index.json"
     }
   ],
   "remainingCandidateWork": [
@@ -77,10 +147,41 @@
   },
   "documentationContext": {
     "kind": "current-api-guide",
-    "releaseTag": "0.1.76-preview.1",
-    "assemblyVersion": "0.1.76",
+    "releaseTag": "0.1.87-preview.1",
+    "assemblyVersion": "0.1.87",
     "releaseStatus": "release-status.json",
     "nativeRuntimeVerified": false,
     "evidencePolicy": "Only explicitly scoped current-DLL observations apply. Historical evidence never transfers."
-  }
+  },
+  "practicalFollowUpCandidates": [
+    {
+      "idea": "Native stolen-origin helpers",
+      "status": "Implemented offline in0.1.81; current-DLL native acceptance pending",
+      "boundary": "Distinguish forcedHeat=0 native/random from fixed100, retain native tags and GetFoundChance behavior",
+      "guide": "item-origin.index.json"
+    },
+    {
+      "idea": "Verified native sprite artwork inspection",
+      "status": "Implemented offline in0.1.82; native GPU/color-space/resource acceptance pending",
+      "boundary": "Native textureRect crop, unreadable/compressed GPU path, bounded resources and cleanup; original art not exported",
+      "guide": "artwork-inspection.index.json"
+    },
+    {
+      "idea": "Counter delivery receipt and reconciliation helpers",
+      "status": "Implemented offline in0.1.83; native handoff, mixed-Mod and save/reload acceptance pending",
+      "boundary": "Native handoff may destroy wrapper; fresh token reconciliation and uncertain-delivery protection required",
+      "guide": "delivery-receipts.index.json"
+    },
+    {
+      "idea": "Supplier scheduling priority and future events",
+      "status": "Observed API boundary; research and lifecycle evidence required",
+      "boundary": "Do not claim persistent future scheduling from current in-memory queue"
+    },
+    {
+      "idea": "Native prepared item factories",
+      "status": "Implemented offline in0.1.84; native contents/effects/locks/save acceptance pending",
+      "boundary": "Explicit typed recipes, not replacement for item directory; caller owns native delivery, no automatic reroll",
+      "guide": "prepared-items.index.json"
+    }
+  ]
 }

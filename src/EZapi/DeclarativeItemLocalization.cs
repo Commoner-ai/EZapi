@@ -13,7 +13,9 @@ internal static class DeclarativeItemLocalization
     private static bool _refreshing;
     internal static void DirectoryReady()
     {
-        if(!GameBuildFingerprint.IsKnown)return;
+        if(!GameSession.OnThread)return;
+        // NativeHookGroup checks the required signatures, native entries and patch
+        // ownership. A regenerated wrapper DLL's whole-file hash is not a locale gate.
         Hooks.Install(typeof(DeclarativeItemLocalization),
             new(typeof(GameItem),nameof(GameItem.GetDisplayName),typeof(string),new[]{typeof(bool)},Prefix:nameof(BeforeDisplay)),
             // Native restoration can replace a container title with the compact item name.
@@ -55,10 +57,10 @@ internal static class DeclarativeItemLocalization
                 }
             }
             if(d.DescriptionPlacement=="native") {
-                if(d.LocalizedShortDescription is not null||d.LocalizedDescription is not null)item.shortDescription=ItemText.Resolve(d,d.LocalizedShortDescription??d.LocalizedDescription,d.ShortDescription??d.Description,locale);
-                if(d.LocalizedLongDescription is not null)item.longDescription=ItemText.Resolve(d,d.LocalizedLongDescription,d.LongDescription,locale);
-                if(d.LocalizedFlavorText is not null)item.flavorText=ItemText.Resolve(d,d.LocalizedFlavorText,d.FlavorText,locale);
-                if(d.LocalizedCustomText is not null)item.customText=ItemText.Resolve(d,d.LocalizedCustomText,d.CustomText,locale);
+                if(ItemText.HasTranslation(d.LocalizedShortDescription??d.LocalizedDescription))item.shortDescription=ItemText.Resolve(d,d.LocalizedShortDescription??d.LocalizedDescription,d.ShortDescription??d.Description,locale);
+                if(ItemText.HasTranslation(d.LocalizedLongDescription))item.longDescription=ItemText.Resolve(d,d.LocalizedLongDescription,d.LongDescription,locale);
+                if(ItemText.HasTranslation(d.LocalizedFlavorText))item.flavorText=ItemText.Resolve(d,d.LocalizedFlavorText,d.FlavorText,locale);
+                if(ItemText.HasTranslation(d.LocalizedCustomText))item.customText=ItemText.Resolve(d,d.LocalizedCustomText,d.CustomText,locale);
             }
             if(d.Container is {} box&&item.contentWindow is {} window) {
                 if(box.LocalizedTitle is not null||box.Title is null&&d.LocalizedName is not null) {

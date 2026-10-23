@@ -15,7 +15,7 @@ docs = root/'docs'
 status = json.loads((docs/'release-status.json').read_text(encoding='utf-8-sig'))
 assert status['nativeRuntimeVerified'] is False
 assert status['license'] == 'MIT'
-assert status['offlineVerification']['offlineSuitesPassed'] == 60
+assert status['offlineVerification']['offlineSuitesPassed'] == 67
 assert status['offlineVerification']['cliProcessChecksPassed'] == 25
 tag, version = status['releaseTag'], status['assemblyVersion']
 errors = []
@@ -64,12 +64,21 @@ for file in pages:
                 continue
             if re.search(r'(?:当前\s*DLL\s*已通过\s*415|(?:The )?current DLL passed 415)', line):
                 errors.append({'file': str(file.relative_to(root)), 'reason': 'historical 415 checks claimed as current'})
+            # Current guide introductions must not retain an older candidate after a bump.
+            # Historical release notes and explicit block quotes are excluded above.
+            for candidate in re.finditer(r'(?:Local\s+(?:unpublished\s+)?candidate|本地(?:未发布)?候选)\s*[:：]?\s*\*{0,2}(0\.1\.\d+(?:-preview\.\d+)?)', line, re.I):
+                if candidate[1] not in {version, tag}:
+                    errors.append({'file': str(file.relative_to(root)), 'reason': 'stale candidate in current guide', 'found': candidate[1]})
 
 for name in ['README.md', 'README.zh-CN.md', 'AI-START-HERE.zh-CN.md',
              'AI-START-HERE.en.md', 'install-and-debug.zh-CN.md', 'install-and-debug.en.md']:
     file = root/name if name.startswith('README') else docs/name
     if tag not in file.read_text(encoding='utf-8-sig'):
         errors.append({'file': name, 'reason': 'current entry does not name current release'})
+    entry_text = file.read_text(encoding='utf-8-sig')
+    for match in re.finditer(r'(?:assembly(?:\s+version)?|程序集(?:版本)?(?:为)?)\s*[:：]?\s*\*{0,2}(0\.1\.\d+)(?!\d|\.\d)', entry_text, re.I):
+        if match[1] != version:
+            errors.append({'file': name, 'reason': 'stale assembly version in current entry', 'found': match[1]})
     if re.search(r'implementation.*remains private|框架源码保持私有|框架源码不公开', file.read_text(encoding='utf-8-sig'), re.I):
         errors.append({'file': name, 'reason': 'obsolete closed-source policy'})
 
@@ -151,6 +160,61 @@ for rel in ui['templates']:
 assert (docs/ui['example']).is_file()
 for lang in ['zh-CN', 'en']:
     assert 'native-ui-preview' in (docs/f'AI-START-HERE.{lang}.md').read_text(encoding='utf-8-sig')
+
+# Origin guides and exact signatures travel together. This verifies the SDK
+# contract, not native heat, detection or save behavior.
+origin = json.loads((docs/'item-origin.index.json').read_text(encoding='utf-8-sig'))
+origin_type = next(t for t in full['types'] if t['name'] == 'EZapi.ItemOriginApi')
+assert {m['memberKey'] for m in origin['methods']} == {m['id'] for m in origin_type['methods']}
+fixed = next(m for m in origin_type['methods'] if m['name'] == 'StageStolen')
+assert fixed['parameters'][1]['name'] == 'heatPercent' and fixed['parameters'][1]['defaultValue'] == 100
+assert origin['offlineVerification']['failed'] == 0 and origin['nativeAcceptance'].startswith('Pending')
+assert (docs/origin['example']).is_file() and (docs/origin['project']).is_file()
+for lang in ['zh-CN', 'en']:
+    assert 'item-origin' in (docs/f'AI-START-HERE.{lang}.md').read_text(encoding='utf-8-sig')
+
+artwork = json.loads((docs/'artwork-inspection.index.json').read_text(encoding='utf-8-sig'))
+art_types = [t for t in full['types'] if t['name'] in {'EZapi.ArtworkPixels', 'EZapi.SpriteArtworkApi'}]
+art_methods = {m['id'] for t in art_types for m in t['methods']}
+assert {m['memberKey'] for m in artwork['methods']} == art_methods
+assert artwork['limits'] == {'pixels': 1048576, 'vertices': 1024, 'indices': 6144, 'rasterWork': 8388608}
+assert artwork['nativeAcceptance'].startswith('Pending')
+assert (docs/artwork['example']).is_file() and (docs/artwork['pureExample']).is_file()
+for lang in ['zh-CN', 'en']:
+    assert 'artwork-inspection' in (docs/f'AI-START-HERE.{lang}.md').read_text(encoding='utf-8-sig')
+
+receipt = json.loads((docs/'delivery-receipts.index.json').read_text(encoding='utf-8-sig'))
+receipt_types = [t for t in full['types'] if t['name'] in {'EZapi.ItemReceiptApi', 'EZapi.DeliveryReceiptAudit'}]
+assert {m['memberKey'] for m in receipt['methods']} == {m['id'] for t in receipt_types for m in t['methods']}
+assert receipt['limits']['items'] == 4096 and receipt['limits']['jsonCharactersPerPass'] == 1048576
+assert receipt['nativeAcceptance'].startswith('Pending')
+assert (docs/receipt['example']).is_file() and (docs/receipt['project']).is_file()
+for lang in ['zh-CN', 'en']:
+    assert 'delivery-receipts' in (docs/f'AI-START-HERE.{lang}.md').read_text(encoding='utf-8-sig')
+
+prepared = json.loads((docs/'prepared-items.index.json').read_text(encoding='utf-8-sig'))
+prepared_type = next(t for t in full['types'] if t['name'] == 'EZapi.PreparedItemApi')
+assert {m['memberKey'] for m in prepared['methods']} == {m['id'] for m in prepared_type['methods']}
+assert len(prepared['recipes']) == 12 and len({r['kind'] for r in prepared['recipes']}) == 12
+assert next(r for r in prepared['recipes'] if r['kind'] == 'EfficiencyModule')['itemId'] == 'system_module_efficiancy'
+assert next(m for m in prepared_type['methods'] if m['name'] == 'Create')['parameters'][1]['defaultValue'] is True
+assert prepared['nativeAcceptance'].startswith('Pending')
+assert (docs/prepared['example']).is_file() and (docs/prepared['project']).is_file()
+for lang in ['zh-CN', 'en']:
+    assert 'prepared-items' in (docs/f'AI-START-HERE.{lang}.md').read_text(encoding='utf-8-sig')
+
+graphs = json.loads((docs/'delivery-graphs.index.json').read_text(encoding='utf-8-sig'))
+graph_types = [t for t in full['types'] if t['name'] in {'EZapi.DeliveryGraphAudit', 'EZapi.ItemGraphReceiptApi'}]
+assert {m['memberKey'] for m in graphs['methods']} == {m['id'] for t in graph_types for m in t['methods']}
+assert len(graphs['methods']) == 5
+assert graphs['limits'] == {'nodes': 8192, 'items': 4096, 'combinedGraphReferences': 16384, 'jsonCharactersPerPass': 1048576}
+handoff = next(m for t in graph_types for m in t['methods'] if m['name'] == 'CheckHandoff')
+assert handoff['parameters'][3]['hasDefault'] and handoff['parameters'][3]['defaultValue'] is None
+assert handoff['parameters'][4]['name'] == 'allowChildOwnershipInitialization' and handoff['parameters'][4]['defaultValue'] is False
+assert graphs['nativeAcceptance'].startswith('Pending')
+assert (docs/graphs['example']).is_file() and (docs/graphs['project']).is_file()
+for lang in ['zh-CN', 'en']:
+    assert 'delivery-graphs' in (docs/f'AI-START-HERE.{lang}.md').read_text(encoding='utf-8-sig')
 assert not errors, json.dumps(errors, ensure_ascii=False, indent=2)
 print(json.dumps({'passed': True, 'releaseTag': tag, 'indexesChecked': indexes,
                   'markdownPagesChecked': len(pages), 'localLinksChecked': links,

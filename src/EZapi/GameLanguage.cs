@@ -1,3 +1,5 @@
+using System.Reflection;
+using System.Runtime.CompilerServices;
 namespace EZapi;
 
 /// <summary>一次游戏语言观察。IsFallback=true时使用英文且Reason解释原因；不保存原生Locale引用。</summary>
@@ -28,23 +30,40 @@ public sealed record GameLanguageSnapshot(string LocaleCode,bool IsFallback,stri
 }
 
 /// <summary>
-/// 当前游戏语言的只读便捷入口。仅初始化后的主线程、已核对构建调用原生getter；其它情况带原因回退英文。
+/// 当前游戏语言的只读便捷入口。仅初始化后的主线程调用签名匹配的原生getter；其它情况带原因回退英文。
 /// 不切换语言、不修改游戏字符串表。每次展示/刷新重新读取；缓存Snapshot不会随游戏语言自动变化。
 /// </summary>
 public static class GameLanguage
 {
+    // Cache only a validated method binding. Locale values and failed reads must be retried:
+    // the native localization service may not be ready at the first request.
+    private static Func<string>? _getter;
     public static GameLanguageSnapshot Current
     {
         get {
             if(!GameSession.OnThread)return Fallback("EZAPI_LANGUAGE_THREAD: use the initialized game main thread.");
-            if(!GameBuildFingerprint.IsKnown)return Fallback("EZAPI_LANGUAGE_BUILD: current game build is not verified.");
             try {
-                var code=Il2Cpp.LocHelper.GetCurrentLocaleCode();
+                var getter=_getter??=FindNativeGetter();
+                if(getter is null)return Fallback("EZAPI_LANGUAGE_API: public static string LocHelper.GetCurrentLocaleCode() is unavailable.");
+                var code=getter();
                 if(string.IsNullOrWhiteSpace(code)||code.Length>64||code.Any(c=>c is not (>= 'a' and <= 'z' or >= 'A' and <= 'Z' or >= '0' and <= '9' or '-' or '_')))
                     return Fallback("EZAPI_LANGUAGE_LOCALE: native locale is missing or invalid.");
                 return new(code,false);
             }catch(Exception error){return Fallback("EZAPI_LANGUAGE_READ: "+error.GetType().Name);}
         }
+    }
+    // Keep the optional generated type lookup outside Current's JIT body, so missing
+    // wrapper types/methods are handled by its fallback rather than a direct call token.
+    [MethodImpl(MethodImplOptions.NoInlining)]
+    private static Func<string>? FindNativeGetter()=>BindLocaleGetter(typeof(Il2Cpp.LocHelper));
+
+    internal static Func<string>? BindLocaleGetter(Type type)
+    {
+        var method=type.GetMethods(BindingFlags.Public|BindingFlags.Static|BindingFlags.DeclaredOnly)
+            .SingleOrDefault(m=>m.Name=="GetCurrentLocaleCode"&&m.ReturnType==typeof(string)&&
+                !m.IsAbstract&&!m.ContainsGenericParameters&&m.GetParameters().Length==0&&
+                (m.CallingConvention&CallingConventions.VarArgs)==0);
+        return method?.CreateDelegate<Func<string>>();
     }
     /// <summary>适合对话/电话/供应商等Func&lt;string&gt;动态文字，调用时读取当前语言。</summary>
     public static string Resolve(LocalizedItemText text)=>Current.Resolve(text);

@@ -2,12 +2,12 @@
 
 # 安装与可选开发工具
 
-此版为 0.1.76-preview.1。运行 DLL 的程序集版本为 0.1.76，调试功能开关在启动时读取，修改后重启游戏。
+此版为 0.1.87-preview.1。运行 DLL 的程序集版本为 0.1.87，调试功能开关在启动时读取，修改后重启游戏。
 
 | 下载 | 用途 | 内容 |
 | --- | --- | --- |
-| EZapi-0.1.76-preview.1-game.zip | 玩家和仅需要前置的用户 | 仅一份 Mods/EZapi.dll，默认不显示调试 |
-| EZapi-0.1.76-preview.1-developer.zip | Mod作者和AI | 同一份前置、可选调试配置、校验器、完整指南、索引和样例；不需要额外游戏插件 |
+| EZapi-0.1.87-preview.1-game.zip | 玩家和仅需要前置的用户 | 仅一份 Mods/EZapi.dll，默认不显示调试 |
+| EZapi-0.1.87-preview.1-developer.zip | Mod作者和AI | 同一份前置、可选调试配置、校验器、完整指南、索引和样例；不需要额外游戏插件 |
 
 ## 玩家安装
 
@@ -38,6 +38,8 @@ powershell -NoProfile -ExecutionPolicy Bypass -File ./Set-EZapiDeveloperTools.ps
 
 启用后左上角出现“EZapi 调试”：导出诊断、复制物品 ID、只读库存与资源、单件估值、打开配方图鉴、分页查看已登记物品和手动生成一件物品。生成会改变当前游戏内库存，之后正常保存会保留，建议使用测试档。诊断位置为 `UserData/EZapi/diagnostics.json`，排查时附上相同启动过程的 `MelonLoader/Latest.log`；分享前检查日志和存档身份信息。
 
+在普通开发模式面板的右上方点击 **“信用点 +10,000”**，每次完整点击增加 10,000 信用点并显示实际余额。先载入店铺；切换存档后旧点击失效。接近整数上限时只加剩余额度。此操作调用原生 `PlayerStore.ModCash`，会改变真实余额，之后正常保存会保留；不会自动发放或主动保存。最近一次操作的前后余额和核对结果在诊断 `debugUi.creditGrant` 中。
+
 ## 内部回归夹具
 
 `regressionFixtures` 默认为 false，公开开发工具预设也不会打开它。只有维护者专用测试环境才应同时启用两个选项。此模式会注册 `ezapi.debug.*` 内容，并提供冻结、跨夜、语言切换和持久测试夹具，不能当作普通玩家工具。
@@ -50,4 +52,10 @@ powershell -NoProfile -ExecutionPolicy Bypass -File ./Set-EZapiDeveloperTools.ps
 
 开发包中的样例包放在 `examples/ContentPacks`；仅当需要示例时复制到 `Mods/EZapiPacks`。DLL 样例和 JSON 包不要重复安装同一组示例物品。离线校验器需要 .NET8；游戏内前置需要 MelonLoader 的 .NET6。从 [AI 入口](AI-START-HERE.zh-CN.md)、[开发路径索引](developer-workflows.index.json) 和 [完整公开签名](public-api.index.json) 开始。
 
-本版运行 DLL 升级为 0.1.76，增加[原生UI积木与AI预览](native-ui-preview.zh-CN.md)和双语开发工具。准确局部原生检查与哈希见[当前状态](release-status.json)；全框架、组合Mod和保存重载仍待完成。旧DLL记录仅适用于其原始版本。
+当前预发布版 0.1.87 保留手动信用点按钮，保留王尔德打开闪屏修复和阵营声望界面，保留[原生UI积木与AI预览](native-ui-preview.zh-CN.md)和双语工具；从 GitHub Releases 获取对应版本。准确局部原生检查与哈希见[当前状态](release-status.json)；全框架、组合Mod和保存重载仍待完成。旧DLL记录仅适用于其原始版本。
+
+
+[阵营声望界面与扩展](faction-reputation.zh-CN.md)：动态发现阵营与权益，按真实阈值显示图标，悬停在下方显示原版效果；左侧可滚动，底部无滚动条。
+
+
+[原版与 Mod 全物品目录](item-catalog.zh-CN.md)：完整ID、分帧原生名称/价值/原图路径、失败条目和语言/周目失效。

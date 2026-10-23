@@ -1,0 +1,12 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup><TargetFramework>net8.0</TargetFramework><OutputType>Exe</OutputType><Nullable>enable</Nullable><ImplicitUsings>enable</ImplicitUsings></PropertyGroup>
+  <ItemGroup>
+    <Compile Include="../../docs/examples/delivery-graph-dll/GraphDelivery.cs" Link="Consumer/GraphDelivery.cs" />
+    <Compile Include="../../src/EZapi/DeliveryGraphAudit.cs" Link="Real/DeliveryGraphAudit.cs" />
+    <Compile Include="../../src/EZapi/ItemGraphReceiptApi.cs" Link="Real/ItemGraphReceiptApi.cs" />
+    <Compile Include="../../src/EZapi/DeliveryReceiptAudit.cs" Link="Real/DeliveryReceiptAudit.cs" />
+    <Compile Include="../../src/EZapi/ItemReceiptApi.cs" Link="Real/ItemReceiptApi.cs" />
+    <Compile Include="../../src/EZapi/ItemDataApi.cs" Link="Real/ItemDataApi.cs" />
+    <Compile Include="../../src/EZapi/GameRunIdentity.cs" Link="Real/GameRunIdentity.cs" />
+  </ItemGroup>
+</Project>

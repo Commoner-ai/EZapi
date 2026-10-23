@@ -1,4 +1,4 @@
-param(
+﻿param(
  [ValidateSet('RunPlan','Capture','Archive','Launch','Close')][string]$Action='Capture',
  [string]$Plan,[string]$EvidenceDir='work/native-0.1.18-20261020',
  [switch]$CaptureSteps,
@@ -13,6 +13,25 @@ Add-Type @'
 using System;
 using System.Runtime.InteropServices;
 public static class EzNativeInput {
+ private delegate bool EnumWindowCallback(IntPtr window,IntPtr state);
+ [DllImport("user32.dll")] private static extern bool EnumWindows(EnumWindowCallback callback,IntPtr state);
+ [DllImport("user32.dll")] private static extern bool IsWindowVisible(IntPtr window);
+ [DllImport("user32.dll",CharSet=CharSet.Unicode)] private static extern int GetClassName(IntPtr window,System.Text.StringBuilder name,int size);
+ [DllImport("user32.dll")] public static extern bool PostMessage(IntPtr window,uint message,IntPtr wparam,IntPtr lparam);
+ // MelonLoader's console shares the game PID and can become MainWindowHandle.
+ // Bind input/close to the unique visible Unity window, never to that console.
+ public static IntPtr FindUnityWindow(uint processId) {
+  IntPtr found=IntPtr.Zero;int matches=0;
+  EnumWindows((window,state)=>{
+   uint owner;GetWindowThreadProcessId(window,out owner);
+   if(owner==processId&&IsWindowVisible(window)) {
+    var name=new System.Text.StringBuilder(256);GetClassName(window,name,name.Capacity);
+    if(name.ToString()=="UnityWndClass"){found=window;matches++;}
+   }
+   return true;
+  },IntPtr.Zero);
+  return matches==1?found:IntPtr.Zero;
+ }
  [DllImport("user32.dll")] public static extern bool ShowWindow(IntPtr hwnd,int cmd);
  [DllImport("user32.dll")] public static extern bool SetForegroundWindow(IntPtr hwnd);
  [DllImport("user32.dll")] public static extern IntPtr GetForegroundWindow();
@@ -42,12 +61,15 @@ function Get-EzGame {
  $ezGames=@(Get-Process -Name 'Probably Stolen' -ErrorAction SilentlyContinue)
  if($ezGames.Count -ne 1){throw "Expected one game process; found $($ezGames.Count)."}
  if($ExpectedProcessId -ne 0 -and $ezGames[0].Id -ne $ExpectedProcessId){throw 'Game process differs from bound PID; no input sent.'}
+ $ezWindow=[EzNativeInput]::FindUnityWindow([uint32]$ezGames[0].Id)
+ if($ezWindow -eq [IntPtr]::Zero){throw 'Expected one visible Unity game window for the bound process; no input sent.'}
+ $ezGames[0]|Add-Member -NotePropertyName EzWindowHandle -NotePropertyValue $ezWindow -Force
  return $ezGames[0]
 }
 function Save-EzScreen([string]$Name) {
  $ezProcess=Get-EzGame
  $ezRect=New-Object EzNativeInput+RECT
- [EzNativeInput]::GetWindowRect($ezProcess.MainWindowHandle,[ref]$ezRect)|Out-Null
+ [EzNativeInput]::GetWindowRect($ezProcess.EzWindowHandle,[ref]$ezRect)|Out-Null
  $ezBitmap=New-Object Drawing.Bitmap ($ezRect.Right-$ezRect.Left),($ezRect.Bottom-$ezRect.Top)
  $ezGraphics=[Drawing.Graphics]::FromImage($ezBitmap)
  try{$ezGraphics.CopyFromScreen($ezRect.Left,$ezRect.Top,0,0,$ezBitmap.Size);$ezBitmap.Save((Join-Path $ezEvidence "$Name.png"))}
@@ -57,18 +79,18 @@ function Focus-EzGame {
  $ezProcess=Get-EzGame
  # 非交互PowerShell有时不拥有前台输入队列；短暂关联当前前台线程后切换到已核对的游戏窗口。
  # finally立即解除关联，随后仍核对真实焦点/窗口几何，不以API返回值代替已聚焦证据。
- [EzNativeInput]::FocusWindow($ezProcess.MainWindowHandle)
+ [EzNativeInput]::FocusWindow($ezProcess.EzWindowHandle)
  Start-Sleep -Milliseconds 800
- if([EzNativeInput]::GetForegroundWindow() -ne $ezProcess.MainWindowHandle){throw 'Game focus unavailable; no input sent.'}
+ if([EzNativeInput]::GetForegroundWindow() -ne $ezProcess.EzWindowHandle){throw 'Game focus unavailable; no input sent.'}
  $ezRect=New-Object EzNativeInput+RECT
- [EzNativeInput]::GetWindowRect($ezProcess.MainWindowHandle,[ref]$ezRect)|Out-Null
+ [EzNativeInput]::GetWindowRect($ezProcess.EzWindowHandle,[ref]$ezRect)|Out-Null
  # Unity启动时可能先出现带边框的最大化窗口，再切到既定全屏；只等待同一窗口稳定，不调整用户窗口。
  $ezGeometryDeadline=(Get-Date).AddSeconds(15)
  while(($ezRect.Left -ne 0 -or $ezRect.Top -ne 0 -or $ezRect.Right -ne 1920 -or $ezRect.Bottom -ne 1080) -and (Get-Date) -lt $ezGeometryDeadline) {
   if((Get-EzGame).Id -ne $ezProcess.Id){throw 'Game process changed while waiting for window geometry.'}
-  if([EzNativeInput]::GetForegroundWindow() -ne $ezProcess.MainWindowHandle){throw 'Game focus changed while waiting for window geometry; no input sent.'}
+  if([EzNativeInput]::GetForegroundWindow() -ne $ezProcess.EzWindowHandle){throw 'Game focus changed while waiting for window geometry; no input sent.'}
   Start-Sleep -Milliseconds 250
-  [EzNativeInput]::GetWindowRect($ezProcess.MainWindowHandle,[ref]$ezRect)|Out-Null
+  [EzNativeInput]::GetWindowRect($ezProcess.EzWindowHandle,[ref]$ezRect)|Out-Null
  }
  if($ezRect.Left -ne 0 -or $ezRect.Top -ne 0 -or $ezRect.Right -ne 1920 -or $ezRect.Bottom -ne 1080){throw "Plan requires 1920x1080 at 0,0; actual bounds: $($ezRect.Left),$($ezRect.Top),$($ezRect.Right),$($ezRect.Bottom). No input sent."}
  return $ezProcess.Id
@@ -80,7 +102,7 @@ if($Action -eq 'Launch'){
 }
 if($Action -eq 'Close'){
  $ezProcess=Get-EzGame
- $ezProcess.CloseMainWindow()|Out-Null
+ [EzNativeInput]::PostMessage($ezProcess.EzWindowHandle,0x0010,[IntPtr]::Zero,[IntPtr]::Zero)|Out-Null
  if(-not $ezProcess.WaitForExit(10000)){throw 'Game did not exit within 10s; inspect before installing.'}
  return
 }

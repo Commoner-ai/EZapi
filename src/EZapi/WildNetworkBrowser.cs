@@ -33,6 +33,8 @@ internal static class WildNetworkBrowser
     private static IntPtr _failedPanel;
     private static string? _error;
     private static float _next;
+    private static int _lastOpenFrame = -1, _lastBindFrame = -1;
+    private static string? _lastBindTrigger;
     private static bool _installed, _busy;
     private static bool _stressPending, _stressActive;
     private static long _generation;
@@ -58,7 +60,8 @@ internal static class WildNetworkBrowser
 
     internal static object Report() => new { hooks=Hooks.Snapshot(), visible=Alive(_panel), categories=Categories.Values.OrderBy(c=>c.Order).Select(c=>new {label=Alive(c.Label)?c.Label.text:"",count=c.Count}).ToArray(),
         items=Cards.Count,stressFixture=_stressActive,verticalScroll=Categories.Values.Where(c=>Alive(c.Root)).Select(c=>new{selected=c.Root.Pointer==_selected,contentHeight=c.Content.rect.height,viewportHeight=c.Viewport.rect.height,position=c.Scroll.verticalNormalizedPosition,scrollbarVisible=Alive(c.Scroll.verticalScrollbar)&&c.Scroll.verticalScrollbar.gameObject.activeInHierarchy}).ToArray(),
-        selectedCategory=_selected.ToString(),filter=_filter.ToString(),query=Alive(_search)?_search!.text:"",selectedId=Alive(_manager)?_manager!.currentSelectedId:null,error=_error };
+        selectedCategory=_selected.ToString(),filter=_filter.ToString(),query=Alive(_search)?_search!.text:"",selectedId=Alive(_manager)?_manager!.currentSelectedId:null,
+        opening=new{openFrame=_lastOpenFrame,bindFrame=_lastBindFrame,trigger=_lastBindTrigger,boundInOpenCall=_lastOpenFrame>=0&&_lastOpenFrame==_lastBindFrame&&_lastBindTrigger=="OpenUI.postfix"},error=_error };
 
     internal static void Maintain()
     {
@@ -66,17 +69,21 @@ internal static class WildNetworkBrowser
         if (!_installed) {
             _installed=true;
             Hooks.Install(typeof(WildNetworkBrowser),
-                new(typeof(WildUIManager),"OpenUI",typeof(void),new[]{typeof(bool)},Prefix:nameof(BeforeOpen)),
+                new(typeof(WildUIManager),"OpenUI",typeof(void),new[]{typeof(bool)},Prefix:nameof(BeforeOpen),Postfix:nameof(AfterOpen)),
                 new(typeof(WildUIManager),"CloseUI",typeof(void),Type.EmptyTypes,Prefix:nameof(BeforeClose)));
         }
         if (!Hooks.Ready) return;
+        RefreshOpenWindow(WildUIManager.Instance,"Update");
+    }
+    private static void RefreshOpenWindow(WildUIManager manager,string trigger)
+    {
+        if (_busy || !Hooks.Ready || !InventoryRuntime.CatalogReady || !GameSession.OnThread || !GameBuildFingerprint.IsKnown) return;
         _busy=true;
         try {
-            var manager=WildUIManager.Instance;
             if (!GameSession.TryResolve(null,out _) || !Alive(manager) || !Alive(manager.panel) || !manager.panel.activeInHierarchy) { Restore(); return; }
             if (_failedPanel==manager.panel.Pointer) return;
             if (!Alive(_manager) || _manager!.Pointer!=manager.Pointer || !Alive(_panel) || _panel!.gameObject.Pointer!=manager.panel.Pointer || _run!=GameSession.Identity) {
-                bool requested=_stressPending;Restore();_stressPending=requested;Bind(manager);
+                bool requested=_stressPending;Restore();_stressPending=requested;Bind(manager,trigger);
             }
             if(Time.unscaledTime<_next)return;
             _next=Time.unscaledTime+.35f;
@@ -88,7 +95,12 @@ internal static class WildNetworkBrowser
             Restore();_failedPanel=pointer;
         } finally {_busy=false;}
     }
-    private static void BeforeOpen(WildUIManager __instance) { if(Hooks.Ready){Restore();_failedPanel=IntPtr.Zero;} }
+    private static void BeforeOpen(WildUIManager __instance) { if(Hooks.Ready){Restore();_failedPanel=IntPtr.Zero;_lastOpenFrame=Time.frameCount;_lastBindFrame=-1;_lastBindTrigger=null;} }
+    // Run after native initialization and normal Mod postfixes (Priority.Last in
+    // NativeHookGroup), inside OpenUI's call stack and before its first render.
+    // Waiting for MelonLoader.OnUpdate lets the restored vanilla window render
+    // first when OpenUI runs later in the frame. Keep polling for late Mod rows.
+    private static void AfterOpen(WildUIManager __instance) => RefreshOpenWindow(__instance,"OpenUI.postfix");
     private static void BeforeClose(WildUIManager __instance) { if(Hooks.Ready)Restore(); }
     internal static void SceneChanged() { Restore();_failedPanel=IntPtr.Zero; }
     internal static void Stop() { SceneChanged();Hooks.Stop();_installed=false; }
@@ -176,7 +188,7 @@ internal static class WildNetworkBrowser
         // ScrollRect expands the handle to full height in that case.
         scroll.verticalScrollbar=bar;scroll.verticalScrollbarVisibility=ScrollRect.ScrollbarVisibility.Permanent;
     }
-    private static void Bind(WildUIManager manager)
+    private static void Bind(WildUIManager manager,string trigger)
     {
         _manager=manager;_run=GameSession.Identity;_panel=manager.panel.GetComponent<RectTransform>();Remember(_panel);_error=null;
         _panel.sizeDelta=new Vector2(1480,900);_panel.anchorMin=_panel.anchorMax=_panel.pivot=new Vector2(.5f,.5f);_panel.anchoredPosition=Vector2.zero;
@@ -210,7 +222,8 @@ internal static class WildNetworkBrowser
         var placeholder=Label(inputViewport,L("搜索名称 / ID…","Search name / ID…"));placeholder.alignment=TextAlignmentOptions.MidlineLeft;placeholder.color=new Color(.56f,.52f,.51f,1);
         _search=input.gameObject.AddComponent<TMP_InputField>();_search.textViewport=inputViewport;_search.textComponent=inputText;_search.placeholder=placeholder;_search.characterLimit=160;
         _hint=Label(Node("Hint",_panel,495,862,950,26),"");_hint.fontSize=18;_hint.alignment=TextAlignmentOptions.MidlineRight;
-        Discover();Refresh();Fit();EZapiBootstrap.WriteDiagnostics();MelonLogger.Msg("[EZapi] Wild browser bound: "+Categories.Count+" live categories, "+Cards.Count+" native entries.");
+        Discover();Refresh();Fit();_lastBindFrame=Time.frameCount;_lastBindTrigger=trigger;
+        EZapiBootstrap.WriteDiagnostics();MelonLogger.Msg("[EZapi] Wild browser bound: "+Categories.Count+" live categories, "+Cards.Count+" native entries; trigger="+trigger+", frame="+_lastBindFrame+".");
     }
     private static string FilterName(WildFilter f)=>f switch {WildFilter.Purchased=>L("已购买","Purchased"),WildFilter.Affordable=>L("可负担","Affordable"),_=>L("全部","All")};
 

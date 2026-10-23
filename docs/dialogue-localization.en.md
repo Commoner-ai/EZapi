@@ -20,7 +20,7 @@ Phone calls share the same graph behavior. Contact names remain `PhoneContact.Di
 
 `SupplierDefinition` covers speaker, confirmation, back, continue, leave, failure and pagination; `SupplierPage.LocalizedBody` covers captured menu text; `SupplierOffer` covers option, preview and per-offer confirmation. Capture callbacks receive capture-time locale, while purchase callbacks receive the opened graph locale. A visit may arrive in a different locale from the one used when queued. Continue captures a new menu and opens a new graph. Purchase exceptions are diagnosed once through `EZAPI_SUPPLIER_PURCHASE`, with the failure text resolved in the opening locale.
 
-> Historical verification note (0.1.72); not evidence for the current DLL. 
+> Historical verification note (0.1.72); not evidence for the current DLL.
 > Localization preserves stable IDs, run/epoch checks, at-most-once confirmation, automatic-offer rules and owned-resource cleanup. It does not translate author prose, make payments, deliver items or save. Linked production-source tests cover the managed/native-adapter paths. Historical 0.1.72 DLL English/Chinese pages, native choice labels and cleanup are included in the 415 scoped native checks (historical identifier `verification/disk-supplier-native-0.1.72.json`; original artifact not distributed). Supplier arrival/departure callbacks were fixture-dispatched; this run did not test natural arrival, payment or delivery.
 
 ## Reading and workshop entry points

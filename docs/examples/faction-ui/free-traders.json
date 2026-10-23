@@ -1,0 +1,8 @@
+{
+  "id": "author.guild.free_traders",
+  "name": {"chinese": "自由商会", "english": "Free traders"},
+  "color": "#71546D",
+  "order": 10,
+  "minimum": -200,
+  "maximum": 200
+}

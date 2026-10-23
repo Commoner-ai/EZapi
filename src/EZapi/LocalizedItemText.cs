@@ -5,6 +5,7 @@ public sealed record LocalizedItemText(string? Chinese = null, string? English =
 {
     /// <summary>可选所属内容包 CSV 键；ForLocale/For 只解析内联文字，Resolve 才读取 CSV。</summary>
     public string? Key { get; init; }
+    /// <summary>只选择内联值，不重新校验；null 回退另一侧，空串原样保留。NativeItemOptions 可选说明以空串清空。</summary>
     public string? ForLocale(string? locale)
     {
         var chinese = locale?.StartsWith("zh", StringComparison.OrdinalIgnoreCase) == true;
@@ -27,6 +28,7 @@ public sealed record LocalizedItemText(string? Chinese = null, string? English =
     }
 
     /// <summary>按语言解析；有 Key 时依次查所给目录的语言表、英文表、内联文本和 readable fallback。</summary>
+    /// <remarks>这是要求非空白的通用可读文本接口。已注册 NativeItemOptions 的可选空说明由框架内联路由处理。</remarks>
     public string Resolve(string locale,LocalizationCatalog? catalog,string fallback,params object?[] args)
     {
         ArgumentNullException.ThrowIfNull(locale);ArgumentNullException.ThrowIfNull(args);Validate(Localization.MaxTextLength,allowCsv:true);

@@ -1,0 +1,36 @@
+{
+  "schemaVersion": 1,
+  "version": "0.1.87",
+  "guideZh": "item-catalog.zh-CN.md",
+  "guideEn": "item-catalog.en.md",
+  "example": "examples/item-catalog-dll/Catalog.cs",
+  "project": "examples/item-catalog-dll/Catalog.csproj",
+  "apis": [
+    "ItemCatalogApi.CaptureIdentifiers",
+    "ItemCatalogApi.BeginScan",
+    "ItemCatalogScan.Step",
+    "ItemCatalogScan.Progress",
+    "ItemCatalogScan.Snapshot",
+    "ItemCatalogScan.Failures",
+    "ItemCatalogScan.Dispose"
+  ],
+  "distinction": "ItemApi snapshots list EZapi declarations; this API enumerates actual vanilla and Mod native item IDs.",
+  "limits": {
+    "maximumIdentifiers": 65536,
+    "defaultItemsPerStep": 4,
+    "defaultBudgetMilliseconds": 4,
+    "maximumItemsPerStep": 64,
+    "maximumBudgetMilliseconds": 50
+  },
+  "language": "Native GetDisplayName captured in actual current locale; change invalidates handle; rebuild consumer UI and managed snapshots.",
+  "effects": "Factories explicitly execute; destroys detached instances; no delivery/payment/save. Other-Mod factory side effects cannot be undone.",
+  "artwork": "Only native atlas/sprite keys; no pixel/artwork validity acceptance.",
+  "nativeRuntimeVerified": false,
+  "documentationContext": {
+    "kind": "current-api-guide",
+    "releaseTag": "0.1.87-preview.1",
+    "assemblyVersion": "0.1.87",
+    "releaseStatus": "release-status.json",
+    "nativeRuntimeVerified": false
+  }
+}

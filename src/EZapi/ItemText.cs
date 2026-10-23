@@ -7,7 +7,18 @@ internal static class ItemText
         => definition.ModId is { } owner ? Localization.GetPack(owner) : null;
 
     internal static string Resolve(ItemDefinition definition, LocalizedItemText? text, string? fallback, string locale)
-        => text is null ? fallback ?? "" : text.Resolve(locale, Catalog(definition), string.IsNullOrWhiteSpace(fallback) ? "EZapi" : fallback!);
+    {
+        if (text is null) return fallback ?? "";
+        // Inline fields were validated at declaration. NativeItemOptions deliberately allows
+        // empty descriptions: use its exact locale/null semantics again on every refresh.
+        // Generic LocalizedItemText.Resolve requires readable text and is still used for CSV.
+        if (text.Key is null) return text.ForLocale(locale) ?? fallback ?? "";
+        return text.Resolve(locale, Catalog(definition), string.IsNullOrWhiteSpace(fallback) ? "EZapi" : fallback!);
+    }
+
+    // An all-null optional DLL description supplies no override. Do not turn it into a clear.
+    internal static bool HasTranslation(LocalizedItemText? text)
+        => text is not null && (text.Key is not null || text.Chinese is not null || text.English is not null);
 
     internal static string Name(ItemDefinition definition, string locale)
         => Resolve(definition, definition.LocalizedName, definition.Name, locale);

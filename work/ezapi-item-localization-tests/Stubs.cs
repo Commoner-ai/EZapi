@@ -52,8 +52,9 @@ namespace EZapi {
     internal sealed record NativeHookSpec(Type Type,string Name,Type Return,Type[] Arguments,string? Prefix=null,string? Postfix=null);
     internal sealed class NativeHookGroup {
         private static Type? _callbacks;private static NativeHookSpec[] _targets=Array.Empty<NativeHookSpec>();
+        internal static bool NativeTargetsAvailable=true;
         internal bool Ready;internal NativeHookGroup(string owner) { }
-        internal void Install(Type callbacks,params NativeHookSpec[] targets){_callbacks=callbacks;_targets=targets;Ready=true;}
+        internal void Install(Type callbacks,params NativeHookSpec[] targets){_callbacks=callbacks;_targets=targets;Ready=NativeTargetsAvailable;}
         internal static void InvokePostfix(Il2Cpp.GameItem item){
             var target=_targets.SingleOrDefault(t=>t.Name==nameof(Il2Cpp.GameItem.RestoreContentWindowPosition));
             if(target?.Postfix is {} callback)_callbacks!.GetMethod(callback,System.Reflection.BindingFlags.Static|System.Reflection.BindingFlags.NonPublic)!.Invoke(null,new object[]{item,true});

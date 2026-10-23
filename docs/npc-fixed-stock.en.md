@@ -1,6 +1,6 @@
 > Current API guide. See [release status](current-status.en.md): current-DLL native acceptance is pending; older test counts apply only to their historical binaries.
 
-> Historical verification note (0.1.66); not evidence for the current DLL. 
+> Historical verification note (0.1.66); not evidence for the current DLL.
 > > 0.1.66: native household goods use HOUSEHOLD_GOOD (verified with actual water_filter_adv); HOUSEHOLD remains a legacy alias. A random batch containing only unclassified special goods remains unchanged. Eligible slots alone participate in substitution. Final native NPC checks 48/0; nine groups 954/0. See verification (historical identifier `verification/guide-mesh-native-0.1.66.json`; original artifact not distributed).
 
 # Fixed merchant slots and machine stock

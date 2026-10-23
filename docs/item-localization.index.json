@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "version": "0.1.76",
+  "version": "0.1.87",
   "status": "implemented; current-DLL native acceptance pending",
   "purpose": "Declare ordinary JSON item text once and display it using the current game locale without changing stable item IDs or player-authored names.",
   "resolver": {
@@ -86,7 +86,7 @@
     ],
     "refreshScope": "Only EZapi JSON/DLL items whose directory application state is Applied. No global inventory scan or native object cache.",
     "nameOwnership": "Updates a framework-generated name only; custom player names, item identifiers, tags and foreign item objects are preserved.",
-    "buildGate": "Harmony display/container hooks require the exact supported game build and independently report readiness."
+    "buildGate": "Since0.1.87 no whole-wrapper-DLL SHA gate. Initialized game main thread plus NativeHookGroup exact signatures, native executable entries and patch-owner checks; independently reports readiness."
   },
   "examples": {
     "json": "../src/EZapi.Sample/Content/items.json",
@@ -98,11 +98,13 @@
   },
   "verification": {
     "offline": [
-      "../work/ezapi-item-localization-tests/ItemLocalizationTests.csproj: 45 focused source-level checks",
+      "../work/ezapi-item-localization-tests/ItemLocalizationTests.csproj: 48 focused source-level checks",
       "../work/ezapi-pack-tests/PackTests.csproj: 71 checks including all JSON binding paths",
-      "../work/sample-pack-0.1.72: complete 10-item pack accepted with 94 CSV entries and no missing English keys"
+      "../work/sample-pack-0.1.72: complete 10-item pack accepted with 94 CSV entries and no missing English keys",
+      "../work/ezapi-native-item-tests/NativeItemTests.csproj:155 source-linked cases, including real factory registration-to-refresh checks across en/zh/fr with native boundaries replaced",
+      "../work/ezapi-language-tests/LanguageTests.csproj:46 source-linked cases, including unknown fingerprint, exact getter binding and transient native failure recovery; explicit native stubs"
     ],
-    "native": "415 en/zh checks include existing and disk-loaded items, tooltips, reopened container/machine titles, reading, workshop, dialogue, phone and fixture-dispatched supplier pages. See report boundaries."
+    "native": "Historical0.1.72 only:415 scoped en/zh checks. Current0.1.87 acceptance pending; see historicalNativeEvidence."
   },
   "historicalNativeEvidence": {
     "path": "verification/disk-supplier-native-0.1.72.json",
@@ -113,10 +115,48 @@
   },
   "documentationContext": {
     "kind": "current-api-guide",
-    "releaseTag": "0.1.76-preview.1",
-    "assemblyVersion": "0.1.76",
+    "releaseTag": "0.1.87-preview.1",
+    "assemblyVersion": "0.1.87",
     "releaseStatus": "release-status.json",
     "nativeRuntimeVerified": false,
     "evidencePolicy": "Only explicitly scoped current-DLL observations apply. Historical evidence never transfers."
+  },
+  "optionalDllDescriptions": {
+    "fields": [
+      "NativeItemOptions.LocalizedShortDescription",
+      "NativeItemOptions.LocalizedFlavorText"
+    ],
+    "empty": "Explicit empty string clears the selected description at creation and every refresh.",
+    "missing": "A missing language falls back to the other; both null supply no override and preserve the existing factory/restored field.",
+    "limits": "4000 characters per provided translation; names and sources still require readable nonblank text.",
+    "implementation": "Inline registered values use the same ForLocale route at factory creation and refresh. Generic readable Resolve and JSON/CSV declaration validation retain their stricter contracts.",
+    "introducedFix": "0.1.86",
+    "regression": {
+      "nativeItemSuitePassed": 147,
+      "itemLocalizationSuitePassed": 47,
+      "additionalCases": 54,
+      "nativeAcceptance": false,
+      "evidenceVersion": "0.1.86",
+      "scope": "Historical offline regression counts for the empty-description fix; current counts are in localeCompatibility."
+    }
+  },
+  "localeCompatibility": {
+    "introducedFix": "0.1.87",
+    "getter": "public static System.String Il2Cpp.LocHelper.GetCurrentLocaleCode()",
+    "shaGate": false,
+    "checks": [
+      "initialized game main thread",
+      "exact getter name, static/public/no parameters/non-generic/string return",
+      "locale value length1..64 and ASCII letters/digits/hyphen/underscore",
+      "required refresh-hook signatures, native entries and owner checks"
+    ],
+    "cache": "Successful method delegate only; no locale or failure-result cache.",
+    "scope": "Language read and existing-item localization only. Other feature build gates unchanged.",
+    "regression": {
+      "languageChecks": 46,
+      "nativeItemChecks": 155,
+      "itemLocalizationChecks": 48,
+      "nativeRuntimeVerified": false
+    }
   }
 }

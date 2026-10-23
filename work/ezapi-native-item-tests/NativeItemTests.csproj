@@ -1,6 +1,7 @@
 <Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup><TargetFramework>net8.0</TargetFramework><OutputType>Exe</OutputType><Nullable>enable</Nullable><ImplicitUsings>enable</ImplicitUsings></PropertyGroup>
   <ItemGroup>
+    <Compile Include="../../src/EZapi/DeclarativeItemLocalization.cs" Link="Real/DeclarativeItemLocalization.cs" />
     <Compile Include="../../src/EZapi/ItemRegistry.cs" Link="Real/ItemRegistry.cs" />
     <Compile Include="../../src/EZapi/ContentPackLoader.cs" Link="Real/ContentPackLoader.cs" />
     <Compile Include="../../src/EZapi/ItemDefinition.cs" Link="Real/ItemDefinition.cs" />

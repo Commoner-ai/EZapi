@@ -19,11 +19,11 @@
     },
     {
       "path": "AGENTS.md",
-      "sha256": "A6830CAB19C5383D06C98F3D8B7888CFCF4DD9EC46BE99132AA9CE23F39F469C"
+      "sha256": "C38A41D66EC33465A9484B89953E17C7F5B17919F5EB5B8A072BBE2D3699A8EA"
     },
     {
       "path": "Build-EZapi.ps1",
-      "sha256": "3B4F7BD50F0B574A1777FFF5C05750A467C223F2D01FF796D0F1C1E263994A16"
+      "sha256": "262BBAF0EA0E022C243DF5834CEDD03FC17DB9CBF58D333310CDDA3CC0AA7C02"
     },
     {
       "path": "LICENSE",
@@ -31,11 +31,11 @@
     },
     {
       "path": "README.md",
-      "sha256": "FB7360CCA75405C9C3CA467F4CB89AFE8A117618701CA2914AF01166D525EEFF"
+      "sha256": "8F95A5741F6872F685A8F741F221AB52A181D561A37AC4A7B5440C057B79741B"
     },
     {
       "path": "README.zh-CN.md",
-      "sha256": "CDC1FC5250B476A9C8F7A681CC6A068D45A0773D6439ED3E4F067617B0C9AD9C"
+      "sha256": "4AF6A60E5DE075583FE78D03D6B298922AEBBDA6A6D6E9A3185D4C226A96341E"
     },
     {
       "path": "THIRD-PARTY-NOTICES.md",
@@ -59,7 +59,7 @@
     },
     {
       "path": "developer-tools/automation/Invoke-EZapiNativeTest.ps1",
-      "sha256": "1DCE66F2BFE129C3B1E3CA983212C94A73041FAB375C13566ABB639817FC7279"
+      "sha256": "E85C6EC97471E513D8A8697B828F2FF9EEF7C06B7BA432DF7DAB79C7B003FEEC"
     },
     {
       "path": "developer-tools/automation/Invoke-EZapiTestBatch.ps1",
@@ -67,15 +67,15 @@
     },
     {
       "path": "developer-tools/automation/README.md",
-      "sha256": "F5508BEF8524398A832EA421EF653326C420C9597B2203688CBA05362AEC62A9"
+      "sha256": "6DC432FFB0768F729E108F23E20D74A3840CE3A5213DC24F68A828B3E8345616"
     },
     {
       "path": "developer-tools/automation/README.zh-CN.md",
-      "sha256": "B2826D719BE12A8DC00CC8EBF9E939DADBF09ACC91F4A894707EDBBBC07A7692"
+      "sha256": "18A53E9CCDEB5A614ADC56F3BF811802498DA9C3119F0B9635FAB5E169081AB3"
     },
     {
       "path": "distribution-verification.json",
-      "sha256": "8EAE5A9D3C53B9D415D7C79554605F7604EFC44693EB05A01578394DD65FD88D"
+      "sha256": "14DF63AD7A6BD015738E53557F13862DC4122C83E7028AC046A8067C0F83E5D6"
     },
     {
       "path": "distribution/Find-EZapiApi.ps1",
@@ -107,19 +107,19 @@
     },
     {
       "path": "docs/AI-START-HERE.en.md",
-      "sha256": "4802F03C9CFB4CD761FC3F0EC6143EC67DD5446C5C7FAAF4D60B24232BDEF1CF"
+      "sha256": "A54FDFACAD2F8C70E9351DB2BC1A6FCDE5C73936A663807F7AC5E87D3966FBCF"
     },
     {
       "path": "docs/AI-START-HERE.zh-CN.md",
-      "sha256": "4A3E57B3C7D7382A85CA9F82B012B883DC08B14D8FA7A501B21F86F7FCFE5A77"
+      "sha256": "A17A1E9BE3308097091CE794DE60FA7489A64ADA66773ED9440213A86E993B30"
     },
     {
       "path": "docs/API.index.zh-CN.json",
-      "sha256": "3A34A8F1A3336ED8932794568122D7A73D05F34D7491BE1040AC767985FDC324"
+      "sha256": "BCEE86ED268B02A21A1E7BDC273137D2D22B4D8C5A8691215400F7330E74BA1A"
     },
     {
       "path": "docs/FORGE-PARITY.zh-CN.md",
-      "sha256": "66FD0569482FA5012337BC93FCBD0FF1AF131D963380AC687EC4630A240169F1"
+      "sha256": "93DE4DDAA0BE3CDBA86BE01CE13E9CBA4C8364EBDAA128D60CAEC80FB0E97397"
     },
     {
       "path": "docs/SOURCE-PROVENANCE.zh-CN.md",
@@ -958,12 +958,24 @@
       "sha256": "CFD61FD83BC12F139D3D9FEEF51301A5D8017846BD98C0AE873347EAA17315C0"
     },
     {
+      "path": "docs/artwork-inspection.en.md",
+      "sha256": "381140C7FE986ECE2C96BE35161450CA820EEC19DDB05F6877B11BCFBCD66A77"
+    },
+    {
+      "path": "docs/artwork-inspection.index.json",
+      "sha256": "4C870B703D57E962C21EA19EE9FD9074EBAFBF9DB5D49517D07D48FFE4D27F44"
+    },
+    {
+      "path": "docs/artwork-inspection.zh-CN.md",
+      "sha256": "B8C124ADEC01AB8E0E7EA693AB59F44EF7C027B48009D178B81CE030123CC804"
+    },
+    {
       "path": "docs/automation.en.md",
-      "sha256": "3CEF30D1D60172381FC478971CC671F248A278A1B3466F9D0B289CFA84FFA9C7"
+      "sha256": "84CA6099FBF47DB77E1B5052027A4372BD5EB1A2CD7F37974EA82C8EB4FD9FAE"
     },
     {
       "path": "docs/automation.zh-CN.md",
-      "sha256": "567016F7613310FD250C932EDC27386FF6E4EDB77721ED416E9867F52589CC78"
+      "sha256": "C5509AD31793C0EA652BFC36F9511A81DF8D3B97687A1656AD0080430A69C330"
     },
     {
       "path": "docs/batch-validation.zh-CN.md",
@@ -971,15 +983,15 @@
     },
     {
       "path": "docs/build-from-source.en.md",
-      "sha256": "311785DE3F15864EF35537E506D2579C08F6B70B8ECA57016DE068E73D99D83A"
+      "sha256": "22F07D43D6FCB4196A80FBDF18734C3C308DBBCD661D29E09319057B9F0D051A"
     },
     {
       "path": "docs/build-from-source.zh-CN.md",
-      "sha256": "CF56C578046EA1080165301B03D6ACC1052D70B8A973380A5E92EAA82D973D3D"
+      "sha256": "9024F7E6D31B47D5B32788286D9F7054D0892BF6795C0C0B281EA270B01DC96D"
     },
     {
       "path": "docs/capabilities.json",
-      "sha256": "7904D5F24990C4CF1C1E89332B8D1DE262C2A7E02F2A59E38C325F4A7559A6FB"
+      "sha256": "5B3523DEE855496631553F0D5FBE02575262D219EB342C746096FB4C17F8A889"
     },
     {
       "path": "docs/client-visits.zh-CN.md",
@@ -999,11 +1011,35 @@
     },
     {
       "path": "docs/current-status.en.md",
-      "sha256": "DF4F5C09A35D87D8D84BC34D33B51EBFAE0149B6933ACEA842C48A0249FF0052"
+      "sha256": "AA492202508300DAB1F8110EA4057884DDD6178035265F261F5B38BEBD77C30F"
     },
     {
       "path": "docs/current-status.zh-CN.md",
-      "sha256": "9C7A4CCCEAA635E21F93536B80761A3E3C57DBD864ECEF411F03DC2FF13108AD"
+      "sha256": "4027284067346A2D7BA0E3ED05A86E6E53B1D50B34C87495C12DC266731E5882"
+    },
+    {
+      "path": "docs/delivery-graphs.en.md",
+      "sha256": "7FC90284D6A52CCDF032F51A8E463400B40DD227244C8C783B0FABBAD8365B0F"
+    },
+    {
+      "path": "docs/delivery-graphs.index.json",
+      "sha256": "FA701D5DCAB53156B213233D8CE1891BF2AD93E8C814F4009D26E2CA52AF39EF"
+    },
+    {
+      "path": "docs/delivery-graphs.zh-CN.md",
+      "sha256": "740842152A7472251581C30B47DB2AC9BE39022177B648CE697FE4501F47CC1C"
+    },
+    {
+      "path": "docs/delivery-receipts.en.md",
+      "sha256": "6447A0ED4B8C36074A4CE32151CE571F583A54BBBEDF58C85C05A144AC7F119D"
+    },
+    {
+      "path": "docs/delivery-receipts.index.json",
+      "sha256": "9BA6C9055987BC10FF22FC38E625128ED34156FB738B8CC7C153CE10F1A0DC60"
+    },
+    {
+      "path": "docs/delivery-receipts.zh-CN.md",
+      "sha256": "CD7627E518ACE4D426CD6FBFA41008781B12B32B4C5D23A9E71F485E1F1350F8"
     },
     {
       "path": "docs/departure-buttons.en.md",
@@ -1011,7 +1047,7 @@
     },
     {
       "path": "docs/departure-buttons.index.json",
-      "sha256": "D7F75C02C5229ABB20B4368668AF5189A16F898FFFE0F5136B8B93F068429910"
+      "sha256": "BDF97CB374F7035B91D3E122B936670892F08362E7DDD801DBFF9238254E67D6"
     },
     {
       "path": "docs/departure-buttons.zh-CN.md",
@@ -1023,15 +1059,15 @@
     },
     {
       "path": "docs/developer-workflows.index.json",
-      "sha256": "17BB48EE043A67FBE3FCEA4AF8C8A0EA1FD54721F6FF69489B55994B378E9E44"
+      "sha256": "72BD5946D7A4F630B82EC1161A3C095674A89B4D40DFFE5F8B4F729C81508446"
     },
     {
       "path": "docs/dialogue-localization.en.md",
-      "sha256": "B8A1BB615325506FD9FF7F7D20B093DB3E5558286FC7CA444F22D55157EB17B4"
+      "sha256": "5AFB93925E8D9567A14217C4FC7D8DE16CB45C2724C89BE13A55E044ADD1C40C"
     },
     {
       "path": "docs/dialogue-localization.index.json",
-      "sha256": "FBD539F2A35D5BC08EEC145F53DAD460571CA34576F7348F9E3E8C8D86E32F40"
+      "sha256": "25D20A43970A8383A6EFD7B2084AD947885BC8A05B5962C11E305D8CB7E454BB"
     },
     {
       "path": "docs/dialogue-localization.zh-CN.md",
@@ -1043,7 +1079,15 @@
     },
     {
       "path": "docs/errors.index.json",
-      "sha256": "EB48C20DB34AF8806CE7C7A375D2080ACEF53698C7DFB2791D580711A7C6D09D"
+      "sha256": "4013D6DE63D257F4935A027DD4A8AC55FA8ACCA7A2D3760FEFFE5334FBBF8319"
+    },
+    {
+      "path": "docs/examples/artwork-dll/Artwork.cs",
+      "sha256": "8572140C3A5C67703F6CFF26AF03A057AF880A09763A880FF0C0ABC15BD797D6"
+    },
+    {
+      "path": "docs/examples/artwork-dll/Artwork.csproj",
+      "sha256": "7F1D3DF44CFE53BD30529B94857DBF76639E3032510877D98F07BFDDCDF827C7"
     },
     {
       "path": "docs/examples/author.tools/items.json",
@@ -1052,6 +1096,22 @@
     {
       "path": "docs/examples/author.tools/pack.json",
       "sha256": "0D365D40B5F2B73B2A32DA45AF670BC8637667AA29159022E41E3A423C74619A"
+    },
+    {
+      "path": "docs/examples/delivery-graph-dll/GraphDelivery.cs",
+      "sha256": "25A455F55E1AB18B11A2C8570159DA05D2BCDBE2005A82A53BA941CDD962DE0A"
+    },
+    {
+      "path": "docs/examples/delivery-graph-dll/Graphs.csproj",
+      "sha256": "A39F878CA6C38CED7DDF0990D86FCF690338FD54ECAD6718DF732078B8D607EE"
+    },
+    {
+      "path": "docs/examples/delivery-receipt-dll/ReceiptDelivery.cs",
+      "sha256": "3D069D9D60EA6F4E07D6D7ABCC5A3101BCDAAA7354EE448A7805BD540E290127"
+    },
+    {
+      "path": "docs/examples/delivery-receipt-dll/Receipts.csproj",
+      "sha256": "0C6D12BF3E934EBB78E19B3C0854B489B5B58CFBDB166F2023429947747F64C1"
     },
     {
       "path": "docs/examples/departure-dll/DepartureMod.csproj",
@@ -1064,6 +1124,34 @@
     {
       "path": "docs/examples/external-power-status.json",
       "sha256": "0F212BF9C76B94299511D96CE9A706BC677F8C27DED849C07A93D19EB26D2E18"
+    },
+    {
+      "path": "docs/examples/faction-dll/Factions.cs",
+      "sha256": "90B0AA9062CD4F6446B10ACB75724B8B02678A87E498D7DF752E6258ACC6C78C"
+    },
+    {
+      "path": "docs/examples/faction-dll/Factions.csproj",
+      "sha256": "495ED50F4F8140AD223C008FB3FCDE35F3C8071D3E7D58D44AFBA822E55D29BF"
+    },
+    {
+      "path": "docs/examples/faction-ui/free-traders.json",
+      "sha256": "EFCB2E1C9A31897EF185AC4C6BC6CDD777E15D8F7E16B0FFFF181BBBFAF26519"
+    },
+    {
+      "path": "docs/examples/item-catalog-dll/Catalog.cs",
+      "sha256": "B6A7C20516D8552405D7CBC042F89873461BCA959302A05348136D0C1EFED894"
+    },
+    {
+      "path": "docs/examples/item-catalog-dll/Catalog.csproj",
+      "sha256": "6E8FC23D7539DB0193148EEB37FF444989971F1834D5235A54539030861C8AC2"
+    },
+    {
+      "path": "docs/examples/item-origin-dll/Origin.cs",
+      "sha256": "BD7CE9784329A9A97C18B8EBC5C3E0FCF2AAF6A962CF58A4A7604353E8E556FF"
+    },
+    {
+      "path": "docs/examples/item-origin-dll/Origin.csproj",
+      "sha256": "623899CF45899EC14ABC31FF8BEE359B6C99585D120D7D35335D5CAFDE670349"
     },
     {
       "path": "docs/examples/machine-automation-view.json",
@@ -1106,6 +1194,14 @@
       "sha256": "356F644B344DD3AA410CD2DA138D98697B6C7264542A8CB015CF2EA9DF1E6911"
     },
     {
+      "path": "docs/examples/prepared-item-dll/Prepared.csproj",
+      "sha256": "B7478EFECCE02B7EEDFB3F54F8DE8893930338AA378E1F3EC7385B40695DA349"
+    },
+    {
+      "path": "docs/examples/prepared-item-dll/PreparedReward.cs",
+      "sha256": "D333A6456BD10CED2506E71651337F49AAE7A4DD8D52037272AA9F9E4A884DE9"
+    },
+    {
       "path": "docs/examples/recipe-guide-bilingual.json",
       "sha256": "A82341D6D8612EB4973B59385CE0813F798B5CE2D62627A8C7AB7C169DAF86C6"
     },
@@ -1120,6 +1216,14 @@
     {
       "path": "docs/examples/requirements.json",
       "sha256": "A7D7EAF14518E6F9C25CCED42D726AFEF7B893A3B2D305E89C4E8558915350C1"
+    },
+    {
+      "path": "docs/examples/sprite-inspection-dll/Inspection.csproj",
+      "sha256": "0D2528FFBE8132129D93BE2E946911B5533D2BCCE95E40155E705A239B0B604A"
+    },
+    {
+      "path": "docs/examples/sprite-inspection-dll/StockArtwork.cs",
+      "sha256": "D34BD5C85447DECEB1D6CEF9E9C6BBA1B11BEBF0FCC20DE5E5443B6D81E22786"
     },
     {
       "path": "docs/examples/tooltip-dll/Mod.cs",
@@ -1158,12 +1262,20 @@
       "sha256": "48B9A86AEACBDB560F558DA96C63CD84345BDEBEA1CDFACBB1EB5ED5B3423EAA"
     },
     {
+      "path": "docs/faction-reputation.en.md",
+      "sha256": "ADB09326D06953F3388938D9D001C1B79917CF19178FF3E36078A9539844F89C"
+    },
+    {
+      "path": "docs/faction-reputation.zh-CN.md",
+      "sha256": "D7FB1DC30DAF1E6AFD18F090C4B5894F22AC86FD459E648524F994F8C9B07018"
+    },
+    {
       "path": "docs/forge-parity.index.json",
-      "sha256": "0D142FF0E9A901138DBE617CE529CCF836D01161792E6B8E7567F8FBA547B78D"
+      "sha256": "4F8E8C8B5B8DECD4A2C7C9F01996B20413BAAB4F76E3A0753A5350909504E380"
     },
     {
       "path": "docs/forge-public-contract.index.json",
-      "sha256": "F4A381290DB2B36A6029FAF4EC5E7FF22147553CF9E951A692FFC6F5EF263C13"
+      "sha256": "4F862761DC7D2C2A8800E5E033C927C845BFDDB88C75432D7189CB79320717B7"
     },
     {
       "path": "docs/furnace-contents.en.md",
@@ -1171,7 +1283,7 @@
     },
     {
       "path": "docs/furnace-contents.index.json",
-      "sha256": "B63E380A49FD1F9C1679375E0B8E71F17959BF9757F038AF134F88B018183139"
+      "sha256": "7AAEAE3D668FED9F7BC9BDBBF1158862F125B5D486B5952487652883EC5A74B8"
     },
     {
       "path": "docs/furnace-contents.zh-CN.md",
@@ -1183,15 +1295,15 @@
     },
     {
       "path": "docs/game-language.en.md",
-      "sha256": "AB17AFB8C7EEF3F9602F0F079F7EE0D03B7D05BA36BB83C041CA8A0DAA132C1F"
+      "sha256": "EE4669F03C04255ED1576188E97D925364119CEDFCED31D0BC6E893824190604"
     },
     {
       "path": "docs/game-language.index.json",
-      "sha256": "111168E02685C9A2DDF7D8600366CD01EC95109AB3CC6D163EBE68D1C2BDAF16"
+      "sha256": "20002184F1D45F9D62DE21266D2E73F69A9F25946D77C1990527710657B10B96"
     },
     {
       "path": "docs/game-language.zh-CN.md",
-      "sha256": "24AD3AC62F79453995B2821DC215BA425D584A85705DD1846059F23F5E3DF434"
+      "sha256": "E166FBDDE6F3CD2956CA471C4D710184C906C41F53AA923965FBA00008F7C08D"
     },
     {
       "path": "docs/history/README.md",
@@ -1311,11 +1423,11 @@
     },
     {
       "path": "docs/install-and-debug.en.md",
-      "sha256": "6575B2F092CCA44E6537FAEF949283A25C8FBE98132DC2E9753FC08E53CB801C"
+      "sha256": "5C94076AB76D127DBF77E2BD26631C16F54EF9F338FF997A3F1296C364024811"
     },
     {
       "path": "docs/install-and-debug.zh-CN.md",
-      "sha256": "26ACB3067A32EB1A099D7EB70D931AE1530B7C0B7DBE90D6CFAE18FFC5D7E1E6"
+      "sha256": "B04E9CF1BD3D2A2731CCF7FB0E0598FF1B00CFD9F5537A421470AA63422DBB48"
     },
     {
       "path": "docs/inventory-endpoints.zh-CN.md",
@@ -1339,11 +1451,23 @@
     },
     {
       "path": "docs/item-art.index.json",
-      "sha256": "47FA5B768CC490E503B30C0B578EE8CFC7872138B380558EE9A663378C997E3C"
+      "sha256": "EFA2A1F4E6F92BEAA32111738625AE06B0BE182B15AB437DBDF52692CB4D2DC9"
     },
     {
       "path": "docs/item-art.zh-CN.md",
       "sha256": "A1887D3D3C8F9867365CDA84EA9270C61690D2DBF0B75198ED3CE0B30E582EA7"
+    },
+    {
+      "path": "docs/item-catalog.en.md",
+      "sha256": "20CB240053123AF4A0D24D810B02E28DA38D5878F7A152DD08066383E93C32C0"
+    },
+    {
+      "path": "docs/item-catalog.index.json",
+      "sha256": "F35FCB69267FFA9499BF36E45FA0BF33578AAF831AA00883531AE7AEB4738AB6"
+    },
+    {
+      "path": "docs/item-catalog.zh-CN.md",
+      "sha256": "9118B16844893579C2A68F99860831293F8751DC795A7CA278DBB67BFF5481D9"
     },
     {
       "path": "docs/item-data.en.md",
@@ -1351,7 +1475,7 @@
     },
     {
       "path": "docs/item-data.index.json",
-      "sha256": "AE313C7F4ABC62CCA328EAF12EA5E4254051926A4A75A3CDD9BC768975BA1AC9"
+      "sha256": "03EECF919B6F46598A11FC385166C3D813352D19D644B43422F0CF11552C9014"
     },
     {
       "path": "docs/item-data.zh-CN.md",
@@ -1359,11 +1483,23 @@
     },
     {
       "path": "docs/item-localization.index.json",
-      "sha256": "33F73DF396FA43FC7032A4769D79C68E9EBC4E9C3664650ECC1E8BA2E85ECD06"
+      "sha256": "A180BFFB9549C1DB6F4F33A25429FD43D4A16F6A16BEB9FC784BEFB5A7444382"
+    },
+    {
+      "path": "docs/item-origin.en.md",
+      "sha256": "AED955B4AE24CB71FD74D3F08713A5ECCA8DF15BB1A9F21A2766BE6377F9AD50"
+    },
+    {
+      "path": "docs/item-origin.index.json",
+      "sha256": "0E6F8F9DCE24125B7CE6AAB334012BA8D23B2AD65BCD98DC5D632A74E7A803D8"
+    },
+    {
+      "path": "docs/item-origin.zh-CN.md",
+      "sha256": "C75E331592AD7A93450CEBC1545973CBA78BC244C522E7A69FB190190F89FDE4"
     },
     {
       "path": "docs/item-properties.index.json",
-      "sha256": "BD181FE00CFCA2FDF4713AF9ADBA9653CC4E6ECC90E70F67FAA700185F119C6E"
+      "sha256": "88DB5A5B7B2D785FD19C932F59AEBF38F49AFD26E028FC9BD826A1C31480EAD7"
     },
     {
       "path": "docs/item-stock.en.md",
@@ -1371,15 +1507,15 @@
     },
     {
       "path": "docs/item-stock.index.json",
-      "sha256": "3B1565CDAFA90F0C42F17FAC57F8C49D57EDE881EAAC0DA072839D2B70643944"
+      "sha256": "CFCB8D7FC3CFC856D48930E5C3C9A61EF43FE190000529EA91CABABBAA1B8982"
     },
     {
       "path": "docs/item-stock.zh-CN.md",
-      "sha256": "E067B2C4D1D6D1FD09D93F4A4062E73ACFD13870C7792DAA73DBC1E08D2C4493"
+      "sha256": "D161B301D48E120DFB90000A257EF55339CD9DAAF20BCD4A2D8C5DF80213394B"
     },
     {
       "path": "docs/knowledge-expansion.index.json",
-      "sha256": "2B6AA0055FDF91879F548991DB5BBEB9A6C90CAE01C41D0277E1E40DDA724DD3"
+      "sha256": "706DA7C045EB1D25B9A1BB1E583E9753D76FEAB2E9A83DA508BC369E1E457D35"
     },
     {
       "path": "docs/lifecycle-content.zh-CN.md",
@@ -1391,7 +1527,7 @@
     },
     {
       "path": "docs/lifecycle.index.json",
-      "sha256": "DCA2CF902016E9EB3EDFA5BA3B751179649B23D4DF91E68D2C5A1EC6BE755B83"
+      "sha256": "61FC27869F1400D44BB0E9506E3D7F2BB1E29A1EACCD42BFC3780F5E6EFC1F9E"
     },
     {
       "path": "docs/liquid-transfer.zh-CN.md",
@@ -1423,7 +1559,7 @@
     },
     {
       "path": "docs/machine-contract.index.json",
-      "sha256": "6CD375A7965753A1267B0312C5556BCC07719361EB4B5DC7FB92B2057B54A961"
+      "sha256": "F2333AD11CC96A87E1B1A0CDEACA2DE23F1A3266721EE1E9DC7B3E2E921C470D"
     },
     {
       "path": "docs/machine-contract.zh-CN.md",
@@ -1439,7 +1575,7 @@
     },
     {
       "path": "docs/machine-layout-localization.index.json",
-      "sha256": "CB19453C9B058F00E36356EA94FEA9D2CAA558CDB1DD03924D34D7FA0B981C79"
+      "sha256": "9A755C0C20F69DE5649656E7A423C7D36C2A625AB271B05D589ADDDBF52B05A2"
     },
     {
       "path": "docs/machine-layout-localization.zh-CN.md",
@@ -1475,7 +1611,7 @@
     },
     {
       "path": "docs/machine-night-readonly.index.json",
-      "sha256": "712A950942C42E843EC11FCF4BC8D9BA4024F37A57455A75AA824C23FB05CB1B"
+      "sha256": "08F561DD924ACCB2E482C65CA399813C1553B380A20F3B8646B548195416FD2D"
     },
     {
       "path": "docs/machine-night-readonly.zh-CN.md",
@@ -1487,7 +1623,7 @@
     },
     {
       "path": "docs/machine-persistence.index.json",
-      "sha256": "0A454E39E14F52F4720DA46BF9B9D06D07C852E65EA86AA01600B8D2BC186E08"
+      "sha256": "A2C3E62A14FA4ECE4B09BC27D62E30E9EE270FBF04759D015543D094FBC4B1EE"
     },
     {
       "path": "docs/machine-persistence.zh-CN.md",
@@ -1499,7 +1635,7 @@
     },
     {
       "path": "docs/machine-recipe-readonly.index.json",
-      "sha256": "32188B50E869609302DCD55AC60D276ABBCD32FCA15A4B738AE7D7F6330987E7"
+      "sha256": "384F9E63465036CE631FD672D0CBAE8A773875A1CEFD5C9AE8707BDF075F4DCB"
     },
     {
       "path": "docs/machine-recipe-readonly.zh-CN.md",
@@ -1531,7 +1667,7 @@
     },
     {
       "path": "docs/machine-status.index.json",
-      "sha256": "43104B75BBE4A59072F258C1C3EA3FAC68AE5E14A9EFFE81ADEE6CA5F6F16EC2"
+      "sha256": "F5C3D10C61D76A89955F4BACC09B46B65DDA8107D295945037CA876B8617DEF1"
     },
     {
       "path": "docs/machine-status.zh-CN.md",
@@ -1579,7 +1715,7 @@
     },
     {
       "path": "docs/native-item-types.json",
-      "sha256": "098EA2E03413CF71B7844C21E2D026A748D97ECD978DE31B07A9C3354D4E4AB5"
+      "sha256": "86894095768850387E4D090AA44EB5EADB21423D512A0F212426105B5EE8EE8A"
     },
     {
       "path": "docs/native-items-0.1.20.zh-CN.md",
@@ -1587,7 +1723,7 @@
     },
     {
       "path": "docs/native-items.zh-CN.md",
-      "sha256": "B086C83C2DF7A527B310DC633E3A7346572ABFF5BC15F0BF145131AF7CF59A1B"
+      "sha256": "135A29AAE7831290994CF628930D03A80B08305543FB04F6A9BB1F096F670651"
     },
     {
       "path": "docs/native-modules-0.1.19.zh-CN.md",
@@ -1623,7 +1759,7 @@
     },
     {
       "path": "docs/native-ui-preview.index.json",
-      "sha256": "036F3B9018EEDB316BAFB91D08A0AC7CE15F8EA491B9D2B6C69E0F88C4D39E7F"
+      "sha256": "BCA9DB43A13E56D7BC7598690A8455CC9C53108E75356E93B95F06309018B2CC"
     },
     {
       "path": "docs/native-ui-preview.zh-CN.md",
@@ -1631,11 +1767,11 @@
     },
     {
       "path": "docs/npc-fixed-stock.en.md",
-      "sha256": "CDA6E1B1069415547D6FF40401132225E7C03E94C067CDD8020B8366F2F3FA03"
+      "sha256": "548199C20D764B948EE1FE438B4DDCF36041A6F1CC97FCF01747D4243D821CDC"
     },
     {
       "path": "docs/npc-fixed-stock.index.json",
-      "sha256": "4A308CD54D88FBD739FADC9930D77603CF57BCE97102945E1315B750830F08E5"
+      "sha256": "991C3AA67D14EA4CA60650B95CA697F8267541848C004E259BE2AE04048C24DA"
     },
     {
       "path": "docs/npc-fixed-stock.zh-CN.md",
@@ -1651,11 +1787,11 @@
     },
     {
       "path": "docs/official-sources.index.json",
-      "sha256": "046245BF8CE1D971D804C52C197F2B4A1D5645C48596609CFCF46DDAB2AF5857"
+      "sha256": "6824E964FDDD654133A64FADBCE6A43162036A138B2A3DEAFACE2B32F783E863"
     },
     {
       "path": "docs/patches.index.json",
-      "sha256": "2D7B5E386D6C737F58985CE9007D256661D8C2D78A8A421588C1C5E1E560CBE8"
+      "sha256": "F0E4BA094696911F5731D3028B7036AFE5BBD1DD1C139B175DA82DC6E10BDFD3"
     },
     {
       "path": "docs/phone.zh-CN.md",
@@ -1664,6 +1800,18 @@
     {
       "path": "docs/power.zh-CN.md",
       "sha256": "B3EF5F6F169ADA36C3973500638E010152A24BCBC7E5B08ECD0E10EA020F1C72"
+    },
+    {
+      "path": "docs/prepared-items.en.md",
+      "sha256": "C019C18DB05E3E631E271A163A23440E4BE44E890A2A91F4BB74C133AF943EA4"
+    },
+    {
+      "path": "docs/prepared-items.index.json",
+      "sha256": "17810B303003882A5504CB733CE418BBD950D5D888E6F192F6878F79F8368FE0"
+    },
+    {
+      "path": "docs/prepared-items.zh-CN.md",
+      "sha256": "A8781A291917BE65151D0842821368BE031C939A882FAB9063E74F4788684CF6"
     },
     {
       "path": "docs/presentation.zh-CN.md",
@@ -1679,7 +1827,7 @@
     },
     {
       "path": "docs/progression-requirements.index.json",
-      "sha256": "4024D81C1B2B154B4DE34CD7EA8F4270AF918335F506F78047B610B442709F9C"
+      "sha256": "150785D0DBED0B6ABE36B1773AC4337E8BF9A80C2A7325B4850F4914C318131F"
     },
     {
       "path": "docs/progression-requirements.zh-CN.md",
@@ -1687,11 +1835,11 @@
     },
     {
       "path": "docs/public-api.index.json",
-      "sha256": "3FB0710F9476D504F5F0D1F12E78CE43AA91B064E54D4A0DB6D50C492FBD15C7"
+      "sha256": "F7B9A309A11A342EDBC485DE0DE625B90B2AD759A7C23DFE2FCFD84B1DB34A23"
     },
     {
       "path": "docs/public-contract-coverage.index.json",
-      "sha256": "1C2E29AE57621A3F5C9E3D164C6D38BA5457DF97B5790C2F13EEE41AAC193215"
+      "sha256": "AEC59E0D7D59A187AA0E78F1CBA91178BC0C14A64948A91FC70BB834AB3E1F53"
     },
     {
       "path": "docs/public-helpers.en.md",
@@ -1699,7 +1847,7 @@
     },
     {
       "path": "docs/public-helpers.index.json",
-      "sha256": "3B8FD7C85812370EDEC64204C1A3254F15E4999F6A1C6ADE77D5A4CB3C014F60"
+      "sha256": "F75A91B6EEC4EDB9FFEAC4295DE4C044F70A0DCA484B9EBE9793E9D16ED72AB2"
     },
     {
       "path": "docs/public-helpers.zh-CN.md",
@@ -1711,15 +1859,15 @@
     },
     {
       "path": "docs/recipe-guide-bilingual.index.json",
-      "sha256": "B78260E3EC7368224104F9FFB8E04062B57F929414B3F7617D6FC29FD3B82585"
+      "sha256": "57406EFFEEADD4F6ED4955CAB3B4F67E51880A91F325E90BB792D082B1C0478D"
     },
     {
       "path": "docs/recipe-guide-images.en.md",
-      "sha256": "3A84D98A537BB6C2630FA652B8953D8C8012C5D22275AFC16A33CBBA111621DB"
+      "sha256": "C35E945E15C2719CE382F0CB2C01EF215F002F10727F87154BDD7A799183FC3B"
     },
     {
       "path": "docs/recipe-guide-images.index.json",
-      "sha256": "F8998C933BA0DA58775DD50E44D74D1FCC7A36C555D9ED8BA323A6B72613EF5E"
+      "sha256": "4A36458E2B505F8838D1DE28776EC3194391EAF94ED637E0906E51AB79F8CEC7"
     },
     {
       "path": "docs/recipe-guide-images.zh-CN.md",
@@ -1731,7 +1879,7 @@
     },
     {
       "path": "docs/recipe-guide-localization.zh-CN.md",
-      "sha256": "779C5FD879DE847A73695A60700C0684450BE61B5B9EC1578F758E664CDB2337"
+      "sha256": "650EE005B5CB122E93C7F77CF29C9074BF302D6F3D420D904D9845E868E0C251"
     },
     {
       "path": "docs/registration.zh-CN.md",
@@ -1739,7 +1887,7 @@
     },
     {
       "path": "docs/release-status.json",
-      "sha256": "F86438723688AB0A516DDBD1C02D6E33173C7637E0C3F1E640B30C77951789A0"
+      "sha256": "62B51ECF60BBA450A366DACC0C5209ADE8E74C5E614F6A25787C795DF0A66E7F"
     },
     {
       "path": "docs/releases/0.1.72-preview.1.md",
@@ -1778,6 +1926,50 @@
       "sha256": "8474E833AEB74FCE7A17846C2D53A0593CE485A41D27E01DA38BC2B6A1CCAC22"
     },
     {
+      "path": "docs/releases/0.1.77-preview.1.md",
+      "sha256": "BBCD3176DA2EF12974AC1ACFF084835C542293457A4B67C13859EC57BB9638F3"
+    },
+    {
+      "path": "docs/releases/0.1.78-preview.1.md",
+      "sha256": "7EAA1CC60BCD1B974DFCA68142AFA9E57B1BDBA1F07430268BC82F08D8FD25F8"
+    },
+    {
+      "path": "docs/releases/0.1.79-preview.1.md",
+      "sha256": "A63E4FE5E508500074546A1408C6C609EE3E755DF5028C306F502248C44805F6"
+    },
+    {
+      "path": "docs/releases/0.1.80-preview.1.md",
+      "sha256": "68AD5723F790321A463A1418252469BD3CA8698375DF10D42E0C55167075B893"
+    },
+    {
+      "path": "docs/releases/0.1.81-preview.1.md",
+      "sha256": "A63E5E241C90E49B6EFB0524E92A23A4B14EF0BA737C77FDDD975DB24FEEAD02"
+    },
+    {
+      "path": "docs/releases/0.1.82-preview.1.md",
+      "sha256": "26F5D039DFA1716434A858E807B67F3DEBA0742C1040BA4F505608205ABEB3D4"
+    },
+    {
+      "path": "docs/releases/0.1.83-preview.1.md",
+      "sha256": "795B6AB994E8B2587F58325345FDC0EA1946FE05A77B21E5920F585DA0280F8F"
+    },
+    {
+      "path": "docs/releases/0.1.84-preview.1.md",
+      "sha256": "E51464115093D1B05846FE9F71A533649B762FDA6CF76F39E357D9D9136C38C0"
+    },
+    {
+      "path": "docs/releases/0.1.85-preview.1.md",
+      "sha256": "2FFE7671F8A07B46AED4B1DC2AD421F83FB9C33746CE8CD7AA2440ADA8BEDCA3"
+    },
+    {
+      "path": "docs/releases/0.1.86-preview.1.md",
+      "sha256": "77123FD7DAFC3D5B497916900E9ABCAE9F58F04719FBE1C7EC15BB87D954F9CC"
+    },
+    {
+      "path": "docs/releases/0.1.87-preview.1.md",
+      "sha256": "8CC6F083A9DC816F918505320832380053E9CC8B4A89B966C9AFDC4C6523E1DA"
+    },
+    {
       "path": "docs/releases/README.md",
       "sha256": "F5E18D78A7374327EDFE5139BE083C22C69053A7CAB94FFD4F2C8B68186F2A11"
     },
@@ -1795,7 +1987,7 @@
     },
     {
       "path": "docs/runtime-capabilities.zh-CN.md",
-      "sha256": "B761F9E311D1EAF99ADE15B650555D69C3CEA5398D0BEC76DCFE4B6BD6D21875"
+      "sha256": "C5BF14C0CCAF1DC158B513C581CE70CF8C0F828BAC79AF3575C820D8D3265586"
     },
     {
       "path": "docs/save-graph.zh-CN.md",
@@ -1811,7 +2003,7 @@
     },
     {
       "path": "docs/source.index.json",
-      "sha256": "2DB5A8A2EB89B6010E249E3019B7B46D7BA6FD6B8B82AE2D6E444CC050C16073"
+      "sha256": "7D8A77610DD05F3F5A2B67543D9EC833B493370A8D4BA02D6120FA4F1BADE9D5"
     },
     {
       "path": "docs/sprite-assets.zh-CN.md",
@@ -1839,7 +2031,7 @@
     },
     {
       "path": "docs/tooltip-style.index.json",
-      "sha256": "2BC5B36FF9C74AB374672127B0A44CE67F2B4D74C1A5D433CA8F972E356D72D4"
+      "sha256": "1B370C4DE126047D41EB41D766300013115E257CB1B95B3768084E042C1EE295"
     },
     {
       "path": "docs/tooltip-style.zh-CN.md",
@@ -1847,11 +2039,11 @@
     },
     {
       "path": "docs/wild-network.en.md",
-      "sha256": "91DCFA37AE54F4E256D4AF3CC699BC04C49BD7CE50CAEC4334B52225B8236AA9"
+      "sha256": "E03D3381F635B2F57049712BC337F7B0F6FD429482C4F66D2A10C4527333B93F"
     },
     {
       "path": "docs/wild-network.zh-CN.md",
-      "sha256": "CB6092A3EE8DB2FCC9E725999EEB87456F99F0FB0E35A8692D94E80C692A65D2"
+      "sha256": "A135BA9F3FB28ADE3052FD477A4D19E8A52F5FBFBE7E0355D2BC925DA525C4CA"
     },
     {
       "path": "docs/workshop-0.1.38.zh-CN.md",
@@ -1892,6 +2084,10 @@
     {
       "path": "schemas/ezapi-requirements.schema.json",
       "sha256": "74371694A03BCB1BCE30BC4FF29777B3F147954E19824F0CFD5D02FFC2415313"
+    },
+    {
+      "path": "schemas/faction-ui.schema.json",
+      "sha256": "D8984357158EA6B1D1994BEDDA55A03248587DA659D5C42AA1F58D0D245464D1"
     },
     {
       "path": "schemas/items.schema.json",
@@ -1943,7 +2139,7 @@
     },
     {
       "path": "scripts/Check-SourceDistribution.py",
-      "sha256": "B2E56658A0872F20ED6A3F0A7A3340443C85979720953BDD9490E83CB01C411C"
+      "sha256": "A7910790A4D0B86D8B1DEB187BB671A8A4A1282EE9368BC7AA33FD369EAF630B"
     },
     {
       "path": "scripts/Fetch-OfficialDocs.ps1",
@@ -1955,11 +2151,11 @@
     },
     {
       "path": "scripts/Test-EZapiOffline.ps1",
-      "sha256": "BEFB8864EDC8DBD288CBF9486E1D8B4490003E69DA9C9CA516E7A96D4570D173"
+      "sha256": "9D981DDCE2DE069BBD2016661C1822C86D7D101F1762020B778E34E4B57F65C0"
     },
     {
       "path": "scripts/Verify-Documentation.py",
-      "sha256": "39DD1428D99BE7E8B62483B4C2007D5EC692C0DB8E796315B595E923A9D2B15E"
+      "sha256": "36F76D16640A1CD4788363DAC3FC7A28B8331B8A3B3AE695F2203B1E696900DC"
     },
     {
       "path": "src/EZapi.ContentValidator/EZapi.ContentValidator.csproj",
@@ -2150,6 +2346,10 @@
       "sha256": "FDBFBCA2D7C44110BC3133D2C74727E9D2A3E47A53EA8FB3FD638902FB09FC16"
     },
     {
+      "path": "src/EZapi/ArtworkPixels.cs",
+      "sha256": "C4FEC0D75D6262FD2F90C9A4267E9437762635602790DA45ECBDF3686F08C101"
+    },
+    {
       "path": "src/EZapi/Assets/manufacturing-terminal.png",
       "sha256": "023FCC636CB3D873879CF017D97D29956A2B01BDAC258B784944C661AA47D48B"
     },
@@ -2198,6 +2398,10 @@
       "sha256": "77D35E15B6971F3456F55D7E41FB03D738B3FA8CDA558F9CE5BF68187707E0DD"
     },
     {
+      "path": "src/EZapi/DebugFactions.cs",
+      "sha256": "7C0434784E59C5A1A141E898FAD56E84F9D1BCD136990213A19872917E243DE1"
+    },
+    {
       "path": "src/EZapi/DebugGuideImages.cs",
       "sha256": "8D2FEE64C2D01D11E0DE117D9EEF6B4D72EB0E1A7C12220F3C3E3C9ADD04B1EF"
     },
@@ -2216,6 +2420,10 @@
     {
       "path": "src/EZapi/DebugInventoryEndpoint.cs",
       "sha256": "8FD7D3CD3913E2D3670531C27BB9C80841A2BC950DF58B3BAE56CD420C77B5FB"
+    },
+    {
+      "path": "src/EZapi/DebugItemCatalog.cs",
+      "sha256": "D64790FB005DDD95775BB1DF801DA1ABF0AFB29BE7DB59D1915F65F6AD74239F"
     },
     {
       "path": "src/EZapi/DebugItemData.cs",
@@ -2407,7 +2615,7 @@
     },
     {
       "path": "src/EZapi/DeclarativeItemLocalization.cs",
-      "sha256": "1897F5C880C68F81B0F0BE1B2A739AC98D259C05CA935ED8A77782294390EF9B"
+      "sha256": "EE9304E6EBD21181FD3B1BA28135CBFC9A7C62B84AAD808567C7AE73449C33AC"
     },
     {
       "path": "src/EZapi/DefaultMachineTransaction.cs",
@@ -2416,6 +2624,14 @@
     {
       "path": "src/EZapi/DefinitionRules.cs",
       "sha256": "8D3E4E670714D50C0797BE93DBF17D8AF7E0FEC7E441BED399161361BBB22FAF"
+    },
+    {
+      "path": "src/EZapi/DeliveryGraphAudit.cs",
+      "sha256": "493BB859686169810036B236F68A77F6D641E77DC732B7CAB7AF14A046B583FA"
+    },
+    {
+      "path": "src/EZapi/DeliveryReceiptAudit.cs",
+      "sha256": "4CFCC6B5841FE2B151A6BCDB7A1A0BAA3B5AE78D496860C905AEF09E8578B20A"
     },
     {
       "path": "src/EZapi/DepartureApi.cs",
@@ -2447,15 +2663,15 @@
     },
     {
       "path": "src/EZapi/EZapi.csproj",
-      "sha256": "3EBCF39EC47445CF0876252B8446E186E6D6204589321A9607746A644647C9AA"
+      "sha256": "651FBFA7B4EF3F224EF2438544ED487AE00020CC4C5BA0F6F043F5DB888CEE32"
     },
     {
       "path": "src/EZapi/EZapiBootstrap.cs",
-      "sha256": "5B0F0C1AD9BF5F48BB98C12663081CA7ACE63F78919B0BB36A5321C2F31097A1"
+      "sha256": "EF7C8101EA90BFB5FA29EF3C196C593D8C685DD2DED29A9C92C251E2AB83072D"
     },
     {
       "path": "src/EZapi/EZapiDebugOverlay.cs",
-      "sha256": "BD2B96576F3D4A86F7EC1E95E818DCDC5BCC2E3A68ADF2220D82CA78D0A3C109"
+      "sha256": "36A430C1A7DD8984CB230F3BD5288443A312C62DC16FB50158D1DB80EF42EC59"
     },
     {
       "path": "src/EZapi/Effects.cs",
@@ -2474,8 +2690,20 @@
       "sha256": "A51DE6279C4D2F57954F26EB8CFA0016B4308484E122CE915D00E0BFAE554146"
     },
     {
+      "path": "src/EZapi/FactionPresentation.cs",
+      "sha256": "82F9A017D0E8FCD59F40334EBEFF10F350DB7E19EC6ECFA93D5495BC235EE21E"
+    },
+    {
+      "path": "src/EZapi/FactionReputationBrowser.cs",
+      "sha256": "F5F6D5E61DD6D49618252184C1E585CEB9ED043F345F42BB814D9BDAA51F4B27"
+    },
+    {
+      "path": "src/EZapi/FactionUiApi.cs",
+      "sha256": "0E7823C310FE633E916E6848379462EADABEFE7A9928CF7F8FD688FF1E9BD6AD"
+    },
+    {
       "path": "src/EZapi/FrameworkInfo.cs",
-      "sha256": "E0ADB9604941AF9B60B32E922D67E0D7DC2A7CE705EECA3602992C84A5D27FCE"
+      "sha256": "2005733F583446BA64C17B7003917B47C4A0510A8548EF9078CF940659ED35E6"
     },
     {
       "path": "src/EZapi/GameEvents.cs",
@@ -2483,7 +2711,7 @@
     },
     {
       "path": "src/EZapi/GameLanguage.cs",
-      "sha256": "A1359F0D5115777620079E3B07A1D223261F8F264CDD9391FB08BF764C2ABF21"
+      "sha256": "95ED9F34E6A158D833EB81151AD107696FB6943F9BC927B65DCE6EAB2DFDB8AE"
     },
     {
       "path": "src/EZapi/GameRunIdentity.cs",
@@ -2530,6 +2758,14 @@
       "sha256": "3C18529EEBBB095A442DCF0083FE1B0178806A3E7E9C0C17FD518CEB6A113A26"
     },
     {
+      "path": "src/EZapi/ItemCatalog.cs",
+      "sha256": "75CC8AAF147A2301D4EAB79C10727A2E67A03E13538495D8CE5EA4FD97C75753"
+    },
+    {
+      "path": "src/EZapi/ItemCatalogApi.cs",
+      "sha256": "4BF746B0EA2DDB95E13EF76FDF273E2066F59CA20C7B070C060CBC731E164075"
+    },
+    {
       "path": "src/EZapi/ItemDataApi.cs",
       "sha256": "4C1A08214E79AEC07B67B9A216326E756BBECBBFB032EEF5C0927B6CB556E256"
     },
@@ -2542,8 +2778,20 @@
       "sha256": "7B5541D3FBB3EDD5C9EBE8A389F8856EEB4606B0A023A07BEF235604EA694ED8"
     },
     {
+      "path": "src/EZapi/ItemGraphReceiptApi.cs",
+      "sha256": "8906A0EECBFF9FEBAA63DA33E648E4897C7D9933323C94121987F8F8D9DCD20F"
+    },
+    {
+      "path": "src/EZapi/ItemOriginApi.cs",
+      "sha256": "B13E7205634B6E82319A66B3CFD862AD3B5A76F952B79108DAA0A3C0F16BC4E7"
+    },
+    {
       "path": "src/EZapi/ItemPresentation.cs",
       "sha256": "308C1679FB3C5B5BF6C5168F6AFF8516F437E0DD39B7E715C91BB870CB58859E"
+    },
+    {
+      "path": "src/EZapi/ItemReceiptApi.cs",
+      "sha256": "81EE7CDBEF4B56A9A2420DFF35372AF8D0279F6D247ECC67F0079A8059AE1EF2"
     },
     {
       "path": "src/EZapi/ItemRegistry.cs",
@@ -2559,7 +2807,7 @@
     },
     {
       "path": "src/EZapi/ItemText.cs",
-      "sha256": "78E248B36746DEB6484DA665AF785D5BEC12AA76CADD7B3EC06B26FB7FB2794D"
+      "sha256": "D0453920202B15EFEE800AB96ED33E0AAE3503704418EA5AB6272CED891E1239"
     },
     {
       "path": "src/EZapi/ItemTransfer.cs",
@@ -2567,7 +2815,7 @@
     },
     {
       "path": "src/EZapi/Items.cs",
-      "sha256": "E25B77959B0DF7E1A92B2D3016F77702088966157B33540EA53900F195C1DCA5"
+      "sha256": "18D1E9C06A8ABCE26E40825451C3F5E386090333B20F2E79238BC3142DB4371A"
     },
     {
       "path": "src/EZapi/JsonItems.cs",
@@ -2615,7 +2863,7 @@
     },
     {
       "path": "src/EZapi/LocalizedItemText.cs",
-      "sha256": "48C4A96B6A3BE8E331104A469BDA121829B583245FD4845C63A0B42A95652B9E"
+      "sha256": "0F7026174F1B4CA799496D28B4EAD806E2846E9B27890641217C9C3BA4AB167A"
     },
     {
       "path": "src/EZapi/LootDefinition.cs",
@@ -2751,7 +2999,7 @@
     },
     {
       "path": "src/EZapi/NativeItems.cs",
-      "sha256": "580A524A8457551CBC43A837C006D9CEBEDC74CC953666187237D63C4CC4A210"
+      "sha256": "258656F7449EE73C7905B09D123EBF71C27E3642DE3F043E55579880EDD76C22"
     },
     {
       "path": "src/EZapi/NativeLocaleCalendarGuard.cs",
@@ -2832,6 +3080,10 @@
     {
       "path": "src/EZapi/PowerBatchMath.cs",
       "sha256": "81730112DCE7F9AD3C4CCBDDF44F3CF72432EBDD870E230712031D850B07BCC3"
+    },
+    {
+      "path": "src/EZapi/PreparedItems.cs",
+      "sha256": "98DA177BB3E0C8B9CBE7765A9FA8EB54B38246507C2BFF81EA90D9294D133C5C"
     },
     {
       "path": "src/EZapi/PresentationApi.cs",
@@ -2942,6 +3194,10 @@
       "sha256": "50E8040427D4901C66585A1AE97ADD8FF156970B509995E5FE09AE38387EA228"
     },
     {
+      "path": "src/EZapi/SpriteArtworkApi.cs",
+      "sha256": "9380F10548F2A1D3801F0DBB5C56B63148A5E3DA76BA9576442FF3D450957495"
+    },
+    {
       "path": "src/EZapi/SpriteAssets.cs",
       "sha256": "3B36372DDE3F49DE47255CEBBD9320F74DAEE44F6B401ACB401AF4A0997430F2"
     },
@@ -2971,7 +3227,7 @@
     },
     {
       "path": "src/EZapi/WildNetworkBrowser.cs",
-      "sha256": "3A10676D1831D7113345B45AC0B0A01BA61AA34963712D20C8D8874059623D8D"
+      "sha256": "9F91B9E7B002D4BFD983643994452C7C228A8B2082ECEEDA114B4E5BAE0B3427"
     },
     {
       "path": "src/EZapi/WindowInputCapture.cs",
@@ -2999,7 +3255,7 @@
     },
     {
       "path": "work/Invoke-EZapiNativeTest.ps1",
-      "sha256": "71A26DAF1FEC4C45A6D77B67DC284A7BFE130902C8C58640F252AB0ED997F387"
+      "sha256": "E85C6EC97471E513D8A8697B828F2FF9EEF7C06B7BA432DF7DAB79C7B003FEEC"
     },
     {
       "path": "work/Invoke-EZapiTestBatch.ps1",
@@ -3007,7 +3263,7 @@
     },
     {
       "path": "work/build-public-api-index.py",
-      "sha256": "374FA8300232535A4C1FA99120CE9A25B299809C62AF1DF78F47F96BE6E7676C"
+      "sha256": "C5A8A65D3A5548E687750CD4C013C85B9A37ACA92765468F6CBEF8A8653C7400"
     },
     {
       "path": "work/ezapi-activation-tests/ActivationTests.csproj",
@@ -3024,6 +3280,18 @@
     {
       "path": "work/ezapi-activation-tests/Program.cs",
       "sha256": "028FAF3DC4906580A7C8505A4F5D5B56B184F8DF21C35A7AD5EDCABACB40A105"
+    },
+    {
+      "path": "work/ezapi-artwork-tests/Artwork.csproj",
+      "sha256": "5E6EC7952D04136E7E2C576E6A19F5AE3C531F50DB55C66D01E4EB3EE849DB1A"
+    },
+    {
+      "path": "work/ezapi-artwork-tests/Program.cs",
+      "sha256": "88B724B043918A1703D6B387DA3A33F5C1BEBAB50FFD77E0B109D3056FB4ACA4"
+    },
+    {
+      "path": "work/ezapi-artwork-tests/Stubs.cs",
+      "sha256": "C91CCAB1376C20958945CCA38DCA911EBC50EAB17F3FC78F2CAD420A3BB8D44F"
     },
     {
       "path": "work/ezapi-batch-tests/BatchTests.csproj",
@@ -3098,6 +3366,18 @@
       "sha256": "73AA63F0CD1C7A933370E01637627E40625A3C3C5D7320158C5498EF18E679CE"
     },
     {
+      "path": "work/ezapi-delivery-graph-tests/GraphTests.csproj",
+      "sha256": "F33E7A70C58B8866E6881FCCF1B9BEB246BBCFB38086F7C7ED1262F382A845B3"
+    },
+    {
+      "path": "work/ezapi-delivery-graph-tests/Program.cs",
+      "sha256": "2049BB1671670406E1CB0FFB34BFDCCA4839A30F0C3B5873EAB0DE93AD333AC8"
+    },
+    {
+      "path": "work/ezapi-delivery-graph-tests/Stubs.cs",
+      "sha256": "60423DBF6A3252877FB5F302B9ED53B83D973A9EC7A3E0DFFD9CC87FB1360779"
+    },
+    {
       "path": "work/ezapi-departure-tests/DepartureTests.csproj",
       "sha256": "1AFAB7EE7B9D69ABB89871663FED049920F8E05F23E45C9813F0DA54422389AB"
     },
@@ -3162,6 +3442,18 @@
       "sha256": "85BE5310E7F12320EC96C6C48DAC3486A216B19790300FDA85667BFE4635808E"
     },
     {
+      "path": "work/ezapi-faction-ui-tests/FactionUiTests.csproj",
+      "sha256": "BAFF21672A6C5891AB578973B6B86EFFC1FF507E90619D05792C3AE677EC093A"
+    },
+    {
+      "path": "work/ezapi-faction-ui-tests/Program.cs",
+      "sha256": "A94D8C821148A81C85FA65C207844CA9257E108B93AE4E381F94BF9B295BB234"
+    },
+    {
+      "path": "work/ezapi-faction-ui-tests/Stubs.cs",
+      "sha256": "06EAAAFE9E2C164AC4DBD0A0E4618AFA1BFA14F47CD92513C5DE22E7521E2DCA"
+    },
+    {
       "path": "work/ezapi-guard-tests/ExternalPowerBoundaryStub.cs",
       "sha256": "79904FA960F95DA6C0DEC0DABDB4644AABD34AC4F19F54FD9413F9813101C9DB"
     },
@@ -3222,6 +3514,18 @@
       "sha256": "BA9C5846EB2CE4DE3464C0AB3ACBBF7F4EE6D162717F83CD53E0389A1BC7C3B4"
     },
     {
+      "path": "work/ezapi-item-catalog-tests/ItemCatalogTests.csproj",
+      "sha256": "62B334DEDAA561ED9D5823B727B77DF231FBF8FEDAD5CBFA8973F66781B9D858"
+    },
+    {
+      "path": "work/ezapi-item-catalog-tests/Program.cs",
+      "sha256": "278CD9085422A7A699A3D341A77772F84DDC9ECFBE65C8F076E1A086308E7262"
+    },
+    {
+      "path": "work/ezapi-item-catalog-tests/Stubs.cs",
+      "sha256": "BE01A7A0AE57B2B1E580D313CBEBEDC028E4612698DA6526B9ADC32B68DD50B6"
+    },
+    {
       "path": "work/ezapi-item-data-tests/ItemDataTests.csproj",
       "sha256": "BA6C74C5D7C0B93FD734A1E8DC60C6C6BD84274C00A0DC238E9BAB137DBD9B9D"
     },
@@ -3239,11 +3543,23 @@
     },
     {
       "path": "work/ezapi-item-localization-tests/Program.cs",
-      "sha256": "E8768F1718869E8A7F5A075BBA4F523609F8AFF54FBDD546D6EBF34B266FB070"
+      "sha256": "4EE6CB031B66EB8F68937A66455617A7422988B0B80AA316557E3AE7A755F58A"
     },
     {
       "path": "work/ezapi-item-localization-tests/Stubs.cs",
-      "sha256": "23CFD353A6AA51F86D1EFD4C523FD438E682975B2560337084BE8265573ADE6C"
+      "sha256": "08E1E4FE165E3C2506450D98567C96F0B8F9A069576DB5E2FAFE65D795D27AED"
+    },
+    {
+      "path": "work/ezapi-item-origin-tests/Origin.csproj",
+      "sha256": "32C34A92A74B05DC3BD202F2F353698143417EBB409FE9D0ED124C8D543F7D02"
+    },
+    {
+      "path": "work/ezapi-item-origin-tests/Program.cs",
+      "sha256": "CD8BFA48F0DB2BF1F8D6EF5A5208A40D22BE2791EDEA9B6A0415A15DF522D0EE"
+    },
+    {
+      "path": "work/ezapi-item-origin-tests/Stubs.cs",
+      "sha256": "5CFB8B5F2B9E5B6268985E8AF84E6709901D8B0B857CB7A18D01A08F26861418"
     },
     {
       "path": "work/ezapi-language-tests/LanguageTests.csproj",
@@ -3251,7 +3567,7 @@
     },
     {
       "path": "work/ezapi-language-tests/Program.cs",
-      "sha256": "14B4737D6D6A9B1FBC1C90F65EFE08BFA59CB80686559731D6A1AAD2F8DED82F"
+      "sha256": "CC182E19501DF8B5115AF2DB4BB4819CB02DA1B1298CE1F37F224D0923755928"
     },
     {
       "path": "work/ezapi-language-tests/Stubs.cs",
@@ -3455,19 +3771,23 @@
     },
     {
       "path": "work/ezapi-native-item-tests/ContentTestStubs.cs",
-      "sha256": "33BEA42AC92E14F027CFABB4D9009A5275D9048E441B25FAB0A55F92B02F5AB8"
+      "sha256": "1217663997C78EE41460BEB79F08DE5A99030E2C721EAEBA20DAB67C021717CF"
+    },
+    {
+      "path": "work/ezapi-native-item-tests/LocalizationRefreshBoundary.cs",
+      "sha256": "1BFE2D0B973E271A35EA5A0FFDA3501D58DD399285ECE5F919DADE13223C9656"
     },
     {
       "path": "work/ezapi-native-item-tests/NativeItemTests.csproj",
-      "sha256": "1865007FCEF33F9FF64A7C2996571B834808F5505CCDE3FDB1B49B74C984418D"
+      "sha256": "EAFDC5388E2784C8B23E178182536B886074884553E58A7D4F327C01E2BAED2E"
     },
     {
       "path": "work/ezapi-native-item-tests/NativeStubs.cs",
-      "sha256": "9C0D796B39DDB6088C012108F333285D741789542E6802EBC83836298656B6D9"
+      "sha256": "96EA3FAC92CB099D45028B708A533A1FF508A9ED188AEF8AFFC130884BCA68B7"
     },
     {
       "path": "work/ezapi-native-item-tests/Program.cs",
-      "sha256": "BF9CFAEDCDEF9F8F0D962BAAFEB504029EA9B2A8524DC014B596BD4962332A97"
+      "sha256": "550F3FC1C18646CFAF7CA1FC3047B4DD5E3915546F50577AB1F95E8F175B88B3"
     },
     {
       "path": "work/ezapi-native-item-tests/StockStub.cs",
@@ -3598,6 +3918,18 @@
       "sha256": "4078256698807084997CF1F3A96723274D4FB119AC3EE23BC930D50FA4C5AEF5"
     },
     {
+      "path": "work/ezapi-prepared-items-tests/PreparedTests.csproj",
+      "sha256": "932FE4A6375BEAAA9777E13AA6330B5D95409BFF8D25A6AA985EB9136293B3E1"
+    },
+    {
+      "path": "work/ezapi-prepared-items-tests/Program.cs",
+      "sha256": "15A38F3A5E7A5551CE06071E3E0BC08AD22373E0DE0F2ACF7574D6BDDB2CC0A9"
+    },
+    {
+      "path": "work/ezapi-prepared-items-tests/Stubs.cs",
+      "sha256": "40A02AF507272CB52556CAF46AAC5BA679A6FDEEF36200544026120B048A79EC"
+    },
+    {
       "path": "work/ezapi-presentation-tests/PresentationTests.csproj",
       "sha256": "713099805CC0746711AF3DDEF6C9004B3EDA3AA6732A3812AC20EB50846E338D"
     },
@@ -3668,6 +4000,18 @@
     {
       "path": "work/ezapi-reading-tests/ReadingTests.csproj",
       "sha256": "3FC8E9E162278FBDBE57B647C259C770799F47EF061DC26E3FA489856EF3390A"
+    },
+    {
+      "path": "work/ezapi-receipt-tests/Program.cs",
+      "sha256": "73E0AE10672F2CE358F52CBA1D2292710B53E0399A41ACD738CA032DD6FA0AE8"
+    },
+    {
+      "path": "work/ezapi-receipt-tests/ReceiptTests.csproj",
+      "sha256": "D1BE4411061F3AFF904B38CC9408B800C70FE1F50235B37C9202477CBE9C094E"
+    },
+    {
+      "path": "work/ezapi-receipt-tests/Stubs.cs",
+      "sha256": "D5E8F21076E3F298963F658F2EB5F67090C83AF919108276660B7EFA9E89A3CC"
     },
     {
       "path": "work/ezapi-registration-tests/Program.cs",

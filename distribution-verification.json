@@ -1,19 +1,19 @@
 {
-  "tag": "0.1.76-preview.1",
+  "tag": "0.1.87-preview.1",
   "passed": true,
   "assets": [
     {
-      "file": "EZapi-0.1.76-preview.1-game.zip",
-      "sha256": "63179CADE5619F631102DF8FB17B19377F31EE351067E976755359F3FE63EE3B",
-      "bytes": 748372
+      "file": "EZapi-0.1.87-preview.1-game.zip",
+      "sha256": "E4F6DC7D4D5C7085AA6D78E6C5C8B4282E4F7FFD99120CEEFEE964D1B881ECF4",
+      "bytes": 818174
     },
     {
-      "file": "EZapi-0.1.76-preview.1-developer.zip",
-      "sha256": "8F3BFF325D9D772DB580A32FAE85E372418B1A38704A015186FEE212EFA041BD",
-      "bytes": 2577028
+      "file": "EZapi-0.1.87-preview.1-developer.zip",
+      "sha256": "E192A010A0D45BBACC4D7AEAA215A6D8642EF90F54930E58F42C0CC62B7F68D3",
+      "bytes": 2785177
     }
   ],
-  "dllSHA256": "48D037715375C8AFF6528AD6674A224FF7F953BE33BC1E04672462AC121A54E5",
+  "dllSHA256": "F77382F3505352417D2AB1F503AC0F43312D3B6D2675FC4C710F54CEB422E00E",
   "frameworkSourceIncluded": false,
   "internalTestsIncluded": false,
   "frameworkBuildProjectsIncluded": false,
@@ -41,11 +41,12 @@
   "sourcePublishedInRepository": true,
   "oldPrivateHistoryImported": false,
   "verification": {
-    "offlineSuites": 60,
+    "offlineSuites": 67,
     "cliProcessChecks": 25,
-    "scopedNativeChecksPassed": 421,
-    "scopedNativeChecksFailed": 0,
-    "saveFilesUnchanged": 551,
-    "evidenceScope": "exact current DLL transient bilingual UI fixtures only; full gameplay/mixed-Mod/save acceptance remains pending"
+    "languageSourceLinkedChecks": 46,
+    "nativeItemSourceLinkedChecks": 155,
+    "itemLocalizationSourceLinkedChecks": 48,
+    "packagedLanguageChecks": 21,
+    "evidenceScope": "Offline only. Current-DLL native UI, mixed-Mod and save/reload acceptance pending."
   }
 }

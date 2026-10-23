@@ -54,6 +54,17 @@ Check(ItemApi.RegisterAmenity("test.mod","test.mod.amenity",()=>Fresh("test.mod.
 Check(ItemApi.RegisterModule("test.mod","test.mod.module",()=>Fresh("test.mod.module","MODULE")).Accepted,"single module declaration accepted");
 Check(ItemApi.RegisterItem("test.mod","test.mod.item",()=>Fresh("test.mod.item"),new("new name","","flavor","source")).Accepted,"item and fixed text declared");
 Check(ItemApi.RegisterItem("test.mod","test.mod.localized",()=>Fresh("test.mod.localized"),localizedOptions).Accepted,"bilingual item registration accepted");
+var optionalDescriptions=new (string Id,LocalizedItemText Text)[]{
+ ("empty",new("","")),("chinese_empty",new("","English description")),("english_empty",new("中文说明","")),
+ ("missing_chinese",new(null,"English only")),("missing_english",new("仅中文",null)),("absent",new(null,null)),
+ ("whitespace",new(" \t "," \n ")),("max_description",new(new string('文',4000),new string('x',4000)))};
+foreach(var entry in optionalDescriptions) {
+ var id="test.mod."+entry.Id;
+ Check(ItemApi.RegisterItem("test.mod",id,()=>{var item=Fresh(id);item.shortDescription="Factory summary";item.flavorText="Factory flavor";return item;},
+  new(LocalizedShortDescription:entry.Text,LocalizedFlavorText:entry.Text)).Accepted,"optional description declaration accepted: "+entry.Id);
+}
+Check(!ItemApi.RegisterItem("test.mod","test.mod.empty_name",()=>Fresh("test.mod.empty_name"),new(LocalizedName:new("",""))).Accepted,"empty localized name still rejected");
+Check(!ItemApi.RegisterItem("test.mod","test.mod.empty_source",()=>Fresh("test.mod.empty_source"),new(LocalizedSourceName:new("",""))).Accepted,"empty localized source still rejected");
 Check(!NativeFactoryRegistry.StockDeclarations().Any(x=>x.Id=="test.mod.localized"),"options without stock policy do not enter stock declarations");
 Check(!NativeFactoryRegistry.StockDeclarations().Any(x=>x.Id=="test.mod.node"),"null options do not enter stock declarations or dereference null");
 Check(ItemApi.RegisterItem("test.mod","test.mod.conflict",()=>Fresh("test.mod.conflict")).Accepted,"native conflict staged before directory available");
@@ -91,6 +102,49 @@ Check(named.name=="new name"&&named.shortDescription==""&&named.flavorText=="fla
 Check(ItemRegistry.TryGet("test.mod.item",out var presentation)&&presentation.Tooltip.SourceName=="source","presentation participates in existing official tooltip path");
 Check(ItemApi.GetDisplayName("test.mod.localized")=="Localized name"&&ItemRegistry.TryGet("test.mod.localized",out var localizedPresentation)&&
     localizedPresentation.Name=="Localized name"&&localizedPresentation.Tooltip.SourceName=="Localized source","current-locale name and source flow into item API and official tooltip presentation");
+GameBuildFingerprint.IsKnown=false;
+DeclarativeItemLocalization.DirectoryReady();
+Check(DeclarativeItemLocalization.Status().Ready,"unknown wrapper fingerprint does not block localization hook declarations");
+LocHelper.Locale="zh-CN";
+var localeItem=directory.Factories["test.mod.localized"].Invoke();
+Check(localeItem.name=="本地化名称"&&localeItem.shortDescription=="本地化简介"&&localeItem.flavorText=="本地化风味",
+ "real locale-to-factory chain creates Chinese fields on an unknown wrapper fingerprint");
+Check(ItemApi.GetDisplayName(localeItem.identifier)=="本地化名称"&&ItemRegistry.TryGet(localeItem.identifier,out var zhPresentation)&&zhPresentation.Tooltip.SourceName=="本地化来源",
+ "real locale-to-presentation chain resolves Chinese name and source on an unknown fingerprint");
+var stableId=localeItem.identifier;var stableCount=localeItem.unitCount;
+LocHelper.Locale="en";
+Check(localeItem.GetDisplayName(false)=="Localized name"&&localeItem.shortDescription=="Localized summary"&&localeItem.flavorText=="Localized flavor",
+ "display callback refreshes an existing Chinese factory item to English");
+LocHelper.Locale="zh";localeItem.RestoreContentWindowPosition();
+Check(localeItem.name=="本地化名称"&&localeItem.shortDescription=="本地化简介"&&localeItem.identifier==stableId&&localeItem.unitCount==stableCount,
+ "reopen callback restores Chinese fields without changing item identity or count");
+localeItem.name="Player custom name";localeItem.identifierName="Player custom identifier name";
+LocHelper.Locale="en";localeItem.GetDisplayName(false);
+Check(localeItem.name=="Player custom name"&&localeItem.identifierName=="Player custom identifier name"&&localeItem.shortDescription=="Localized summary",
+ "unknown fingerprint refresh preserves player custom names while translating descriptions");
+LocHelper.Locale="en";
+var localeWarningCount=MelonLoader.MelonLogger.Warnings.Count;
+foreach(var entry in optionalDescriptions) {
+ var id="test.mod."+entry.Id;var instance=directory.Factories[id].Invoke();
+ foreach(var locale in new[]{"en","zh-CN","en","fr","zh-TW"}) {
+  LocHelper.Locale=locale;
+  // Model an existing/restored object carrying stale fields, not merely a newly-created item.
+  instance.shortDescription="Restored summary";instance.flavorText="Restored flavor";
+  var expected=entry.Text.ForLocale(locale);
+  DeclarativeItemLocalization.Refresh(instance);
+  Check(instance.shortDescription==(expected??"Restored summary")&&instance.flavorText==(expected??"Restored flavor"),
+   "accepted factory description survives existing-item locale refresh: "+entry.Id+" / "+locale);
+ }
+}
+Check(MelonLoader.MelonLogger.Warnings.Count==localeWarningCount,"all optional description refreshes avoid localization warnings");
+LocHelper.Locale="en";GameBuildFingerprint.IsKnown=false;
+LocHelper.Throw=true;var recovering=directory.Factories["test.mod.localized"].Invoke();
+Check(recovering.name=="Localized name"&&GameLanguage.Current.IsFallback,"temporarily unavailable native locale permits a readable English factory fallback");
+LocHelper.Throw=false;LocHelper.Locale="zh";recovering.GetDisplayName(false);
+Check(!GameLanguage.Current.IsFallback&&recovering.name=="本地化名称"&&recovering.shortDescription=="本地化简介",
+ "native locale recovery refreshes the same fallback-created item into Chinese");
+LocHelper.Locale="en";DeclarativeItemLocalization.Stop();
+Throws<ArgumentException>(()=>new LocalizedItemText("","").Resolve("en",null,"Readable fallback"),"standalone readable-text Resolve retains its nonempty contract");
 foreach(var mode in new[]{"null","wrong_id","attached","dead","count","throw"}) {
  bad=mode;
  Check(directory.Factories["test.mod.fail"].Invoke() is null,"factory "+mode+" isolated at native callback boundary");
